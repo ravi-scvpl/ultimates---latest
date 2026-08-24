@@ -1,0 +1,741 @@
+<!-- Premium Collection Grid Section -->
+{% assign selected_collection = section.settings.collection %}
+{% assign live_products = blank %}
+
+{% if selected_collection != blank %}
+  {% if selected_collection.products.size > 0 %}
+    {% assign live_products = selected_collection.products %}
+  {% elsif collections[selected_collection].products.size > 0 %}
+    {% assign live_products = collections[selected_collection].products %}
+  {% endif %}
+{% elsif collection != blank %}
+  {% assign live_products = collection.products %}
+{% endif %}
+
+{% comment %} Standard tags mapping lookup lists {% endcomment %}
+{% assign use_case_tags = 'residential,commercial' | split: ',' %}
+{% assign material_tags = 'recycled-nylon,nylon,coir-fibre,coir,aluminium-strip,aluminium,carpet,vinyl,rubber'
+  | split: ','
+%}
+{% assign color_tags = 'grey,brown,black,red,green,charcoal,burgundy' | split: ',' %}
+
+{% assign found_use_cases = '' %}
+{% assign found_materials = '' %}
+{% assign found_colors = '' %}
+
+{% if live_products != blank and live_products.size > 0 %}
+  {% for product in live_products %}
+    {% for tag in product.tags %}
+      {% assign clean_tag = tag | strip | downcase %}
+
+      {% if clean_tag contains ':' %}
+        {% assign parts = clean_tag | split: ':' %}
+        {% assign prefix = parts[0] | strip %}
+        {% assign val = parts[1] | strip %}
+        {% if prefix == 'use-case' or prefix == 'usecase' or prefix == 'placement' %}
+          {% if val == 'residential' or val == 'commercial' %}
+            {% assign check_val = val | append: ',' %}
+            {% unless found_use_cases contains check_val %}
+              {% assign found_use_cases = found_use_cases | append: val | append: ',' %}
+            {% endunless %}
+          {% endif %}
+        {% elsif prefix == 'material' %}
+          {% assign check_val = val | append: ',' %}
+          {% unless found_materials contains check_val %}
+            {% assign found_materials = found_materials | append: val | append: ',' %}
+          {% endunless %}
+        {% elsif prefix == 'color' %}
+          {% assign check_val = val | append: ',' %}
+          {% unless found_colors contains check_val %}
+            {% assign found_colors = found_colors | append: val | append: ',' %}
+          {% endunless %}
+        {% endif %}
+      {% else %}
+        {% if use_case_tags contains clean_tag %}
+          {% assign check_val = clean_tag | append: ',' %}
+          {% unless found_use_cases contains check_val %}
+            {% assign found_use_cases = found_use_cases | append: clean_tag | append: ',' %}
+          {% endunless %}
+        {% elsif material_tags contains clean_tag %}
+          {% assign check_val = clean_tag | append: ',' %}
+          {% unless found_materials contains check_val %}
+            {% assign found_materials = found_materials | append: clean_tag | append: ',' %}
+          {% endunless %}
+        {% elsif color_tags contains clean_tag %}
+          {% assign check_val = clean_tag | append: ',' %}
+          {% unless found_colors contains check_val %}
+            {% assign found_colors = found_colors | append: clean_tag | append: ',' %}
+          {% endunless %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% comment %} Fallback: Scan product title/type for keywords {% endcomment %}
+    {% assign down_title = product.title | downcase %}
+    {% assign down_type = product.type | downcase %}
+
+    {% for color in color_tags %}
+      {% if down_title contains color %}
+        {% assign check_val = color | append: ',' %}
+        {% unless found_colors contains check_val %}
+          {% assign found_colors = found_colors | append: color | append: ',' %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+
+    {% for uc in use_case_tags %}
+      {% if down_title contains uc or down_type contains uc %}
+        {% assign check_val = uc | append: ',' %}
+        {% unless found_use_cases contains check_val %}
+          {% assign found_use_cases = found_use_cases | append: uc | append: ',' %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+
+    {% for mat in material_tags %}
+      {% if down_title contains mat or down_type contains mat %}
+        {% assign check_val = mat | append: ',' %}
+        {% unless found_materials contains check_val %}
+          {% assign found_materials = found_materials | append: mat | append: ',' %}
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endif %}
+
+{% assign use_case_array = found_use_cases | split: ',' | compact %}
+{% assign material_array = found_materials | split: ',' | compact %}
+{% assign color_array = found_colors | split: ',' | compact %}
+
+<section
+  id="premium-collection-grid-{{ section.id }}"
+  class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-20 relative z-10"
+  style="background-color: {{ section.settings.bg_color | default: '#fdf9f1' }}; font-family: 'Inter', sans-serif;"
+>
+  <div class="flex flex-col lg:flex-row gap-12">
+    <!-- Sidebar Filters (Hidden on Mobile Phones) -->
+    <aside class="hidden md:block w-full lg:w-64 flex-shrink-0">
+      <div class="sticky top-32">
+        <h3 class="font-label-caps text-label-caps text-primary mb-8 tracking-wider">
+          {{ section.settings.filter_heading | default: 'Refine Search' }}
+        </h3>
+
+        <div class="space-y-8 text-left">
+          {% if live_products != blank and live_products.size > 0 %}
+            <!-- Dynamic Use Case Filter with Static Fail-safe Fallback -->
+            {% if section.settings.show_use_case_filter %}
+              <div>
+                <h4 class="font-label-md text-label-md text-primary mb-4 uppercase tracking-wider font-semibold">
+                  Use Case
+                </h4>
+                <div class="space-y-3">
+                  {% if found_use_cases != blank %}
+                    {% for val in use_case_array %}
+                      {% assign clean_val = val | strip | downcase %}
+                      {% if clean_val == 'residential' or clean_val == 'commercial' %}
+                        <label class="flex items-center gap-3 group cursor-pointer">
+                          <input
+                            type="checkbox"
+                            name="use-case"
+                            value="{{ clean_val }}"
+                            class="rounded-sm border-outline focus:ring-primary text-primary w-4 h-4 bg-transparent cursor-pointer"
+                          >
+                          <span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors text-sm capitalize">
+                            {{- clean_val | replace: '-', ' ' -}}
+                          </span>
+                        </label>
+                      {% endif %}
+                    {% endfor %}
+                  {% else %}
+                    <label class="flex items-center gap-3 group cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="use-case"
+                        value="residential"
+                        class="rounded-sm border-outline focus:ring-primary text-primary w-4 h-4 bg-transparent cursor-pointer"
+                      >
+                      <span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors text-sm"
+                        >Residential</span
+                      >
+                    </label>
+                    <label class="flex items-center gap-3 group cursor-pointer">
+                      <input
+                        type="checkbox"
+                        name="use-case"
+                        value="commercial"
+                        class="rounded-sm border-outline focus:ring-primary text-primary w-4 h-4 bg-transparent cursor-pointer"
+                      >
+                      <span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors text-sm"
+                        >Commercial</span
+                      >
+                    </label>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+
+
+
+            <!-- Dynamic Color Filter -->
+            {% if found_colors != blank %}
+              <div>
+                <h4 class="font-label-md text-label-md text-primary mb-4 uppercase tracking-wider font-semibold">
+                  Color
+                </h4>
+                <div class="space-y-3">
+                  {% for val in color_array %}
+                    {% assign clean_val = val | strip %}
+                    {% if clean_val != blank %}
+                      <label class="flex items-center gap-3 group cursor-pointer">
+                        <input
+                          type="checkbox"
+                          name="color"
+                          value="{{ clean_val }}"
+                          class="rounded-sm border-outline focus:ring-primary text-primary w-4 h-4 bg-transparent cursor-pointer"
+                        >
+                        <span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors text-sm capitalize">
+                          {{- clean_val | replace: '-', ' ' -}}
+                        </span>
+                      </label>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+
+          {% else %}
+            <!-- FALLBACK FILTERS (Original Static new-ui Checkboxes) -->
+            {% if section.settings.show_use_case_filter %}
+              <div>
+                <h4 class="font-label-md text-label-md text-primary mb-4 uppercase tracking-wider font-semibold">
+                  Use Case
+                </h4>
+                <div class="space-y-3">
+                  <label class="flex items-center gap-3 group cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="use-case"
+                      value="residential"
+                      class="rounded-sm border-outline focus:ring-primary text-primary w-4 h-4 bg-transparent cursor-pointer"
+                    >
+                    <span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors text-sm"
+                      >Residential</span
+                    >
+                  </label>
+                  <label class="flex items-center gap-3 group cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="use-case"
+                      value="commercial"
+                      class="rounded-sm border-outline focus:ring-primary text-primary w-4 h-4 bg-transparent cursor-pointer"
+                    >
+                    <span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors text-sm"
+                      >Commercial</span
+                    >
+                  </label>
+                </div>
+              </div>
+            {% endif %}
+
+
+          {% endif %}
+
+          <!-- Standard Sizes Grid (Always Rendered) -->
+          <div>
+            <h4 class="font-label-md text-label-md text-primary mb-4 uppercase tracking-wider font-semibold">
+              Standard Sizes
+            </h4>
+            <div class="grid grid-cols-2 gap-2">
+              <button class="border border-outline-variant py-2 rounded-full text-xs font-label-md text-on-surface-variant hover:border-primary hover:text-primary transition-colors bg-transparent">
+                60x90cm
+              </button>
+              <button class="border border-outline-variant py-2 rounded-full text-xs font-label-md text-on-surface-variant hover:border-primary hover:text-primary transition-colors bg-transparent">
+                90x150cm
+              </button>
+              <button class="border border-outline-variant py-2 rounded-full text-xs font-label-md text-on-surface-variant hover:border-primary hover:text-primary transition-colors bg-transparent">
+                120x180cm
+              </button>
+              <a
+                href="{{ section.settings.m2m_url | default: '/pages/made-to-measure-page' }}"
+                class="border border-primary bg-primary text-white py-2 rounded-full text-xs font-label-md text-center hover:opacity-90 transition-opacity"
+                >Custom</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Product Grid -->
+    <div class="flex-grow">
+      <div id="premium-products-grid" class="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-x-6 md:gap-y-16">
+        {% if live_products != blank and live_products.size > 0 %}
+          <!-- Live Shopify Products Mode -->
+          {% for product in live_products %}
+            <!-- Parse tags for clean dynamic attributes -->
+            {% assign p_use_cases = '' %}
+            {% assign p_materials = '' %}
+            {% assign p_colors = '' %}
+
+            {% for tag in product.tags %}
+              {% assign clean_tag = tag | strip | downcase %}
+              {% if clean_tag contains ':' %}
+                {% assign parts = clean_tag | split: ':' %}
+                {% assign prefix = parts[0] | strip %}
+                {% assign val = parts[1] | strip %}
+                {% if prefix == 'use-case' or prefix == 'usecase' or prefix == 'placement' -%}
+                  {%- if val == 'residential' or val == 'commercial' -%}
+                    {%- assign p_use_cases = p_use_cases | append: val | append: ',' -%}
+                  {%- endif -%}
+                {%- endif %}
+                {% if prefix == 'material' -%}
+                  {%- assign p_materials = p_materials | append: val | append: ',' -%}
+                {%- endif %}
+                {% if prefix == 'color' %}{% assign p_colors = p_colors | append: val | append: ',' %}{% endif %}
+              {% else %}
+                {% if use_case_tags contains clean_tag -%}
+                  {%- assign p_use_cases = p_use_cases | append: clean_tag | append: ',' -%}
+                {%- endif %}
+                {% if material_tags contains clean_tag -%}
+                  {%- assign p_materials = p_materials | append: clean_tag | append: ',' -%}
+                {%- endif %}
+                {% if color_tags contains clean_tag -%}
+                  {%- assign p_colors = p_colors | append: clean_tag | append: ',' -%}
+                {%- endif %}
+              {% endif %}
+            {% endfor %}
+
+            {% comment %} Fallback keywords checking {% endcomment %}
+            {% assign down_title = product.title | downcase %}
+            {% assign down_type = product.type | downcase %}
+            {% for color in color_tags %}
+              {% if down_title contains color %}
+                {% assign p_colors = p_colors | append: color | append: ',' %}
+              {% endif %}
+            {% endfor %}
+            {% for uc in use_case_tags %}
+              {% if down_title contains uc or down_type contains uc %}
+                {% assign p_use_cases = p_use_cases | append: uc | append: ',' %}
+              {% endif %}
+            {% endfor %}
+            {% for mat in material_tags %}
+              {% if down_title contains mat or down_type contains mat %}
+                {% assign p_materials = p_materials | append: mat | append: ',' %}
+              {% endif %}
+            {% endfor %}
+
+            <!-- Product Card -->
+            <a
+              href="{{ product.url }}"
+              class="group block cursor-pointer product-grid-card transition-all duration-500"
+              data-use-cases="{{ p_use_cases }}"
+              data-materials="{{ p_materials }}"
+              data-colors="{{ p_colors }}"
+            >
+              <div class="aspect-[1/1] overflow-hidden bg-surface-container mb-4 md:mb-6 relative rounded-2xl border border-on-surface/5">
+                {% if product.featured_media != blank %}
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    src="{{ product.featured_media | image_url: width: 800 }}"
+                    alt="{{ product.title | escape }}"
+                    loading="lazy"
+                  >
+                {% else %}
+                  {{
+                    'image'
+                    | placeholder_svg_tag: 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 bg-surface-container-high'
+                  }}
+                {% endif %}
+
+                {% assign first_tag = product.tags | first %}
+                {% if first_tag != blank %}
+                  <span class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-[10px] font-label-caps shadow-sm text-primary font-bold uppercase tracking-wider">
+                    {{- first_tag -}}
+                  </span>
+                {% endif %}
+              </div>
+              <div class="flex justify-between items-start text-left">
+                <div>
+                  <h3 class="font-body-md font-bold md:font-normal text-base md:text-2xl mb-1 group-hover:text-primary transition-colors text-primary">
+                    {{ product.title }}
+                  </h3>
+                  <p class="hidden md:block text-on-surface-variant font-body-md text-sm mb-4">
+                    {{ product.type | default: 'Premium Quality Mat' }}
+                  </p>
+                  <p class="font-label-md text-label-md text-primary font-bold">{{ product.price | money }}</p>
+                </div>
+                <div class="hidden md:flex w-10 h-10 rounded-full border border-primary items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Inject Custom Quote CTA Card in Position 3 dynamically -->
+            {% if forloop.index == 2 %}
+              {% render 'premium-collection-cta-card', section: section %}
+            {% endif %}
+          {% endfor %}
+
+        {% else %}
+          <!-- Fallback High-Fidelity Mock Cards Mode -->
+          <!-- Product 1 -->
+          <a
+            href="{{ section.settings.m2m_url | default: '/pages/made-to-measure-page' }}"
+            class="group block cursor-pointer product-grid-card transition-all duration-500"
+            data-use-cases="commercial"
+            data-materials="recycled-nylon"
+            data-colors=""
+          >
+            <div class="aspect-[1/1] overflow-hidden bg-surface-container mb-4 md:mb-6 relative rounded-2xl border border-on-surface/5">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZcZS5ENNe6ageGMTZeoQ7CpyuwbxTWFP0Bn2PSyiiWHNjpHyWzGoCB7ZRnF8Umu_NQRVHWG0zZkZMmLfpbL2Zz4s1KI-kCZgu0PuSuAHbtAV4wuX7o1LKsGKDmxvX4PL2QJV9hC4vD7j0rxdfVWfw6s47GlL2B6rfUoux5SDSuvgNC2U-ohi2LLBBILQNrwnBSsy71PsU5USjA0CJalXbW-iXz8GWVjxhYpz2om7R0b7HS7o4nuqRsWnZF1HDMnklFfcN4b6t6xk"
+                alt="Titanium-Pro Ribbed Mat"
+                loading="lazy"
+              >
+              <span class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-[10px] font-label-caps shadow-sm text-primary font-bold uppercase tracking-wider"
+                >BEST FOR HOTELS</span
+              >
+            </div>
+            <div class="flex justify-between items-start text-left">
+              <div>
+                <h3 class="font-body-md font-bold md:font-normal text-base md:text-2xl mb-1 group-hover:text-primary transition-colors text-primary">
+                  Titanium-Pro Ribbed
+                </h3>
+                <p class="hidden md:block text-on-surface-variant font-body-md text-sm mb-4">Heavy-duty scraping performance</p>
+                <p class="font-label-md text-label-md text-primary font-bold">Starting at £89.00</p>
+              </div>
+              <div class="hidden md:flex w-10 h-10 rounded-full border border-primary items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Product 2 -->
+          <a
+            href="{{ section.settings.m2m_url | default: '/pages/made-to-measure-page' }}"
+            class="group block cursor-pointer product-grid-card transition-all duration-500"
+            data-use-cases="residential"
+            data-materials="coir-fibre"
+            data-colors=""
+          >
+            <div class="aspect-[1/1] overflow-hidden bg-surface-container mb-4 md:mb-6 relative rounded-2xl border border-on-surface/5">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOAZBfXb64y-HJwsEVT0S2W1_NiAF16akR8lpGWsRdETO5PRUszh7nwyQ6Mp9V84-D8u_LAZ_F0xyhs3ukyGmyEc5VR1nkIHE_0cDE_o9c3L9wtPiyxjLUmWuYqPr8st8ChbK0vUzOJ8FjDcwH1fpdOOK9rv_FFeB8C_jcCjviNsMn1i-zuS6HXEUFP65yV-QNPea7H3t92cTpk8pU3MN-KNvNFKYsW_n5At7AnyHrEnzMg6P4KaJ3NqeukXywfDVr1468GVsWo6w"
+                alt="Elite Plush Barrier Mat"
+                loading="lazy"
+              >
+              <span class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-[10px] font-label-caps shadow-sm text-primary font-bold uppercase tracking-wider"
+                >BEST FOR HOMES</span
+              >
+            </div>
+            <div class="flex justify-between items-start text-left">
+              <div>
+                <h3 class="font-body-md font-bold md:font-normal text-base md:text-2xl mb-1 group-hover:text-primary transition-colors text-primary">
+                  Elite Plush Barrier
+                </h3>
+                <p class="hidden md:block text-on-surface-variant font-body-md text-sm mb-4">Maximum moisture absorption</p>
+                <p class="font-label-md text-label-md text-primary font-bold">Starting at £124.00</p>
+              </div>
+              <div class="hidden md:flex w-10 h-10 rounded-full border border-primary items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Mid-grid CTA Card (Injected in Position 3) -->
+          {% render 'premium-collection-cta-card', section: section %}
+
+          <!-- Product 3 -->
+          <a
+            href="{{ section.settings.m2m_url | default: '/pages/made-to-measure-page' }}"
+            class="group block cursor-pointer product-grid-card transition-all duration-500"
+            data-use-cases="commercial"
+            data-materials="aluminium-strip"
+            data-colors=""
+          >
+            <div class="aspect-[1/1] overflow-hidden bg-surface-container mb-4 md:mb-6 relative rounded-2xl border border-on-surface/5">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkwbvxXGhYJmZmIZyr6dEBVmB6FCfmXqEVCxthpDp7M-sF0a891_SUUAK9XNHYtLT9XAAacekeXmPoDlJ6rp_XOQR4jadzn8zfsDRk5J061uSo_eOnWN09ceMypqrMmqPveZFvjOY8XHV1rSQ-LW5VRXMoqQOPdclT-19HeiK9zIf6ugDyHoO-WIipiVxq-oToAky9R4RY0Xvpry5McPdY6HAwT2iOSrBUSmX_6qMZ4rNdM66p3IPkCMhxZ418qMZKpKM3LYLIi4E"
+                alt="Architectural Aluminium Insert"
+                loading="lazy"
+              >
+              <span class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-[10px] font-label-caps shadow-sm text-primary font-bold uppercase tracking-wider"
+                >BEST FOR OFFICES</span
+              >
+            </div>
+            <div class="flex justify-between items-start text-left">
+              <div>
+                <h3 class="font-body-md font-bold md:font-normal text-base md:text-2xl mb-1 group-hover:text-primary transition-colors text-primary">
+                  Architectural Alu-Insert
+                </h3>
+                <p class="hidden md:block text-on-surface-variant font-body-md text-sm mb-4">Recessed commercial solution</p>
+                <p class="font-label-md text-label-md text-primary font-bold">From £240.00 / sqm</p>
+              </div>
+              <div class="hidden md:flex w-10 h-10 rounded-full border border-primary items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Product 4 -->
+          <a
+            href="{{ section.settings.m2m_url | default: '/pages/made-to-measure-page' }}"
+            class="group block cursor-pointer product-grid-card transition-all duration-500"
+            data-use-cases="commercial"
+            data-materials="recycled-nylon"
+            data-colors=""
+          >
+            <div class="aspect-[1/1] overflow-hidden bg-surface-container mb-4 md:mb-6 relative rounded-2xl border border-on-surface/5">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbHsoyu13kXSKvw8w9lhmikYn4jKP9x_Jyw4RrLKq2997_rAnI-t0E39mPtoGH4Yf29QwmEQuPAzjP6ZwJAGd-Hjg4egnX6GhjPkyppXdwgyRzogHg3S_ZeErFEwjnGR2Gr1cuZ_VqAwSCOLJ_dwEEx03LwkASgbVmCQ71QuoSIh8wbpST0twXsXPXeqQCtZEpA-uSdVmil--H06x8QR5cRriW1b7k5RixAHOlvTaLjhGEdTAEV2vbixN3thoRJ5dCHJSesc32j2Q"
+                alt="Vertex Circular Grip Mat"
+                loading="lazy"
+              >
+              <span class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-[10px] font-label-caps shadow-sm text-primary font-bold uppercase tracking-wider"
+                >BEST FOR RETAIL</span
+              >
+            </div>
+            <div class="flex justify-between items-start text-left">
+              <div>
+                <h3 class="font-body-md font-bold md:font-normal text-base md:text-2xl mb-1 group-hover:text-primary transition-colors text-primary">
+                  Vertex Circular Grip
+                </h3>
+                <p class="hidden md:block text-on-surface-variant font-body-md text-sm mb-4">All-weather traction pattern</p>
+                <p class="font-label-md text-label-md text-primary font-bold">Starting at £95.00</p>
+              </div>
+              <div class="hidden md:flex w-10 h-10 rounded-full border border-primary items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Vanilla JS client-side filter logic -->
+<script>
+  (function () {
+    function initFilters() {
+      const sectionContainer = document.getElementById('premium-collection-grid-{{ section.id }}');
+      if (!sectionContainer) {
+        console.warn('[Premium Grid] Section container not found for ID: premium-collection-grid-{{ section.id }}');
+        return;
+      }
+      
+      // Strict guard flag to completely prevent duplicate event bindings and timeout race conditions
+      if (sectionContainer.dataset.filtersInitialized === 'true') {
+        console.log('[Premium Grid] Filters already initialized, bypassing duplicate bind.');
+        return;
+      }
+      sectionContainer.dataset.filtersInitialized = 'true';
+      console.log('[Premium Grid] Initializing filters...');
+
+      const useCaseChecks = sectionContainer.querySelectorAll('input[name="use-case"]');
+      const materialChecks = sectionContainer.querySelectorAll('input[name="material"]');
+      const colorChecks = sectionContainer.querySelectorAll('input[name="color"]');
+      const productCards = sectionContainer.querySelectorAll('.product-grid-card');
+
+      console.log(
+        `[Premium Grid] Found ${useCaseChecks.length} use-case inputs, ${materialChecks.length} material inputs, ${colorChecks.length} color inputs, and ${productCards.length} cards.`
+      );
+
+      function filterProducts() {
+        // Collect checked values, trimmed and lowercased
+        const activeUseCases = Array.from(useCaseChecks)
+          .filter((c) => c.checked)
+          .map((c) => c.value.trim().toLowerCase());
+        const activeMaterials = Array.from(materialChecks)
+          .filter((c) => c.checked)
+          .map((c) => c.value.trim().toLowerCase());
+        const activeColors = Array.from(colorChecks)
+          .filter((c) => c.checked)
+          .map((c) => c.value.trim().toLowerCase());
+
+        console.log('[Premium Grid] Active Filters:', { activeUseCases, activeMaterials, activeColors });
+
+        productCards.forEach((card, index) => {
+          // Read card data attributes
+          const cardUseCasesRaw = card.getAttribute('data-use-cases') || '';
+          const cardMaterialsRaw = card.getAttribute('data-materials') || '';
+          const cardColorsRaw = card.getAttribute('data-colors') || '';
+
+          const cardUseCases = cardUseCasesRaw
+            .split(',')
+            .map((s) => s.trim().toLowerCase())
+            .filter((s) => s);
+          const cardMaterials = cardMaterialsRaw
+            .split(',')
+            .map((s) => s.trim().toLowerCase())
+            .filter((s) => s);
+          const cardColors = cardColorsRaw
+            .split(',')
+            .map((s) => s.trim().toLowerCase())
+            .filter((s) => s);
+
+          // Filter checks: if empty array, matches everything. Otherwise check if any active filter is included in the card's attributes.
+          const matchesUseCase = activeUseCases.length === 0 || activeUseCases.some((uc) => cardUseCases.includes(uc));
+          const matchesMaterial =
+            activeMaterials.length === 0 || activeMaterials.some((m) => cardMaterials.includes(m));
+          const matchesColor = activeColors.length === 0 || activeColors.some((c) => cardColors.includes(c));
+
+          const isMatch = matchesUseCase && matchesMaterial && matchesColor;
+
+          // Clear any existing transition timeout for this card to prevent race conditions
+          if (card.dataset.timeoutId) {
+            clearTimeout(parseInt(card.dataset.timeoutId, 10));
+            card.removeAttribute('data-timeout-id');
+          }
+
+          if (isMatch) {
+            card.style.display = 'block';
+            // Force browser reflow to ensure transitions occur smoothly
+            card.offsetHeight;
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(16px)';
+            const timeoutId = setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+            card.dataset.timeoutId = timeoutId;
+          }
+        });
+      }
+
+      // 1. Direct event listeners for individual checkboxes converting NodeLists cleanly to standard Arrays
+      const allCheckboxes = [
+        ...Array.from(useCaseChecks),
+        ...Array.from(materialChecks),
+        ...Array.from(colorChecks)
+      ];
+      
+      allCheckboxes.forEach((cb) => {
+        cb.removeEventListener('change', filterProducts);
+        cb.addEventListener('change', filterProducts);
+      });
+
+      // 2. Delegated event listener on the container as a fail-safe fallback
+      sectionContainer.removeEventListener('change', handleDelegatedChange);
+      sectionContainer.addEventListener('change', handleDelegatedChange);
+
+      function handleDelegatedChange(e) {
+        if (e.target && (e.target.name === 'use-case' || e.target.name === 'material' || e.target.name === 'color')) {
+          console.log('[Premium Grid] Delegated change event captured for:', e.target.name, '=', e.target.value);
+          filterProducts();
+        }
+      }
+
+      // Initial filter run to align with URL or pre-checked defaults
+      filterProducts();
+    }
+
+    // Run on script execution
+    initFilters();
+
+    // Hook into both standard load and Shopify Theme Editor events for dynamic reloading
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFilters);
+    } else {
+      initFilters();
+    }
+
+    // Shopify customizer lifecycle handlers
+    document.addEventListener('shopify:section:load', function (e) {
+      if (e.detail.sectionId === '{{ section.id }}' || e.target.id === 'shopify-section-{{ section.id }}') {
+        console.log('[Premium Grid] Shopify section loaded event triggered.');
+        initFilters();
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Premium Filter Grid",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Aesthetics"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background",
+      "default": "#fdf9f1"
+    },
+    {
+      "type": "text",
+      "id": "filter_heading",
+      "label": "Sidebar Filter Heading",
+      "default": "Refine Search"
+    },
+    {
+      "type": "header",
+      "content": "Catalog Settings"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Shopify Collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_use_case_filter",
+      "label": "Show Use Case Filter",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Bespoke Size CTA Box"
+    },
+    {
+      "type": "color",
+      "id": "cta_bg",
+      "label": "CTA Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "cta_text_color",
+      "label": "CTA Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "CTA Box Heading",
+      "default": "Need a custom size?"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_description",
+      "label": "CTA Box Description",
+      "default": "We manufacture bespoke barrier solutions for unique architectural footprints. Request a made-to-measure quote today."
+    },
+    {
+      "type": "text",
+      "id": "cta_btn_text",
+      "label": "CTA Button Text",
+      "default": "Request Quote"
+    },
+    {
+      "type": "url",
+      "id": "m2m_url",
+      "label": "CTA / Custom Size Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Filter Grid",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,134 @@
+<!-- Premium Related Products / Same Material Recommendations -->
+{%- liquid
+  assign current_handle = page.handle | downcase
+  assign materials_headline = 'Suggested Solutions'
+  assign materials_subhead = 'Discover other high-performance entrance matting options.'
+  
+  assign rec_handles = ''
+  
+  if current_handle == 'ultiscrape'
+    assign materials_headline = 'UltiScrape Color Options'
+    assign materials_subhead = 'Choose from our range of high-performance stiff-fibre scraper entrance mat colors.'
+    assign rec_handles = 'ultiscrape-1,ultiscrape-2,ultiscrape-3,ultiscrape-4'
+  elsif current_handle == 'ultiscrub'
+    assign materials_headline = 'UltiScrub Color Options'
+    assign materials_subhead = 'Choose from our range of heavy-traffic DualTread barrier mat colors.'
+    assign rec_handles = 'ultiscrub-heavy-traffic-dualtread-barrier-mat-grey,ultiscrub-heavy-traffic-dualtread-barrier-mat-green,ultiscrub-heavy-traffic-dualtread-barrier-mat-red,ultiscrub-heavy-traffic-dualtread-barrier-mat-charcoal'
+  elsif current_handle == 'ultiwipe'
+    assign materials_headline = 'UltiWipe Color Options'
+    assign materials_subhead = 'Choose from our range of CleanScrape all-weather cut-pile mat colors.'
+    assign rec_handles = 'ultiwipe-cleanscrape-all-weather-mat-grey-black,ultiwipe-cleanscrape-all-weather-mat-red-black,ultiwipe-cleanscrape-all-weather-mat-green-black,ultiwipe-cleanscrape-all-weather-mat-brown-black'
+  elsif current_handle == 'ultidure'
+    assign materials_headline = 'UltiDure Options'
+    assign materials_subhead = 'Premium anti-slip all-terrain mats engineered for durability.'
+    assign rec_handles = 'nanotech-toughtread-technology-integrated-commercial-mat-charcoal,nanotech-toughtread-technology-integrated-commercial-mat-light-grey'
+  elsif current_handle == 'ultimat'
+    assign materials_headline = 'UltiMat Product Styles'
+    assign materials_subhead = 'Choose from our heavy-duty and medium-duty vinyl loop mats.'
+    assign rec_handles = 'ultimat-vinyl-looped-heavy-duty-bordered-floormats,ultimat-presized,ultimat-heavy-duty-vinyl-looped-matting'
+  elsif current_handle == 'ultizig'
+    assign materials_headline = 'UltiZig Product Styles'
+    assign materials_subhead = 'Premium vinyl Z-web construction floor matting.'
+    assign rec_handles = 'ultizig-presized'
+  else
+    # Fallback vinyl vs carpet grouping
+    if current_handle contains 'zig' or current_handle contains 'ultimat' or current_handle contains 'clean' or current_handle contains 'hybrid'
+      assign materials_headline = 'Suggested Vinyl Matting Solutions'
+      assign materials_subhead = 'Crafted from architectural-grade PVC and heavy-duty vinyl loop fibers.'
+      assign rec_handles = 'ultizig-presized,ultimat-presized,ulticlean'
+    else
+      assign materials_headline = 'Suggested Carpet Matting Solutions'
+      assign materials_subhead = 'Engineered with coarse scraping fibers and moisture-wicking technology.'
+      assign rec_handles = 'ultiscrub-heavy-traffic-dualtread-barrier-mat-grey,ultiwipe-cleanscrape-all-weather-mat-grey-black,ultiscrape-1'
+    endif
+  endif
+  
+  assign handle_array = rec_handles | split: ','
+-%}
+
+<div class="product-recommendations max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24 relative z-10 font-body-md text-on-surface" id="premium-related-products-{{ section.id }}">
+  
+  <div class="flex justify-between items-end mb-12 md:mb-16">
+    <div class="text-left">
+      <h2 class="font-display-xl text-headline-lg text-primary mb-4">
+        {{ materials_headline }}
+      </h2>
+      <p class="text-on-surface-variant font-body-lg text-sm md:text-base">
+        {{ materials_subhead }}
+      </p>
+    </div>
+  </div>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-left">
+    {%- assign show_count = 0 -%}
+    {%- for h in handle_array -%}
+      {%- assign rec_product = all_products[h] -%}
+      {%- if rec_product != blank -%}
+        <a href="{{ rec_product.url }}" class="group cursor-pointer">
+          <div class="aspect-[3/4] bg-surface-container-low mb-6 overflow-hidden rounded-lg border border-on-surface/5 shadow-sm transition-all duration-300 hover:shadow-md">
+            {%- if rec_product.featured_media != blank -%}
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                   src="{{ rec_product.featured_media | image_url: width: 600 }}" 
+                   alt="{{ rec_product.featured_media.alt | escape }}">
+            {%- else -%}
+              {{ 'product-' | append: forloop.index | placeholder_svg_tag: 'w-full h-full object-cover bg-surface-container-highest' }}
+            {%- endif -%}
+          </div>
+          <p class="font-label-caps text-secondary text-xs font-bold uppercase tracking-widest mb-2 leading-none">
+            {{ rec_product.type | default: 'Entrance' }}
+          </p>
+          <h3 class="font-display-xl text-xl font-normal mb-2 text-primary group-hover:underline decoration-primary underline-offset-4 decoration-1">
+            {{ rec_product.title }}
+          </h3>
+          <p class="font-body-md font-semibold text-primary">
+            {{ rec_product.price | money }}
+          </p>
+        </a>
+        {%- assign show_count = show_count | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+    
+    {%- if show_count == 0 -%}
+      <!-- Fallback loop to all products if handles don't match database exactly -->
+      {%- assign limit_count = 0 -%}
+      {%- for fallback_product in collections.all.products -%}
+        {%- if limit_count < 4 -%}
+          <a href="{{ fallback_product.url }}" class="group cursor-pointer">
+            <div class="aspect-[3/4] bg-surface-container-low mb-6 overflow-hidden rounded-lg border border-on-surface/5 shadow-sm transition-all duration-300 hover:shadow-md">
+              {%- if fallback_product.featured_media != blank -%}
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                     src="{{ fallback_product.featured_media | image_url: width: 600 }}" 
+                     alt="{{ fallback_product.featured_media.alt | escape }}">
+              {%- else -%}
+                {{ 'product-' | append: forloop.index | placeholder_svg_tag: 'w-full h-full object-cover bg-surface-container-highest' }}
+              {%- endif -%}
+            </div>
+            <p class="font-label-caps text-secondary text-xs font-bold uppercase tracking-widest mb-2 leading-none">
+              {{ fallback_product.type | default: 'Entrance' }}
+            </p>
+            <h3 class="font-display-xl text-xl font-normal mb-2 text-primary group-hover:underline decoration-primary underline-offset-4 decoration-1">
+              {{ fallback_product.title }}
+            </h3>
+            <p class="font-body-md font-semibold text-primary">
+              {{ fallback_product.price | money }}
+            </p>
+          </a>
+          {%- assign limit_count = limit_count | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Related Same Material",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Related Same Material",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,9 @@
+{
+  "parent": "product.ultirakem2m.json",
+  "context": {
+    "market": "in"
+  },
+  "sections": {
+    "product-information": {}
+  }
+}

@@ -1,0 +1,711 @@
+{% doc %}
+  @prompt
+    create customer reviews block with Gold Stars (Centred on top), followed by Review Heading, then Review Text and lastly, Customer Name and Location in Italics. There should be 4 cards horizotontally displayed for both mobile and non-mobile devices and a slider to see more cards. Each card should have a light grey background and a 20pc spacing between each card, Add top and bottom spacing of 20px to the block, Increase top spacing to 50px
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-reviews-container-{{ ai_gen_id }} {
+    padding: 50px 0 20px;
+    width: 100%;
+    display: block;
+  }
+
+  .ai-reviews-wrapper-{{ ai_gen_id }} {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ai-reviews-slider-{{ ai_gen_id }} {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 20px;
+  }
+
+  .ai-reviews-slider-{{ ai_gen_id }}::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ai-review-card-{{ ai_gen_id }} {
+    flex: 0 0 calc(25% - 15px);
+    min-width: 250px;
+    background-color: {{ block.settings.card_background }};
+    padding: 30px 20px;
+    border-radius: {{ block.settings.card_border_radius }}px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .ai-review-stars-{{ ai_gen_id }} {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+  }
+
+  .ai-review-star-{{ ai_gen_id }} {
+    width: {{ block.settings.star_size }}px;
+    height: {{ block.settings.star_size }}px;
+    color: {{ block.settings.star_color }};
+  }
+
+  .ai-review-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.text_color }};
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .ai-review-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .ai-review-customer-{{ ai_gen_id }} {
+    font-size: {{ block.settings.customer_size }}px;
+    color: {{ block.settings.customer_color }};
+    font-style: italic;
+    margin: 0;
+  }
+
+  .ai-reviews-nav-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 0 20px;
+  }
+
+  .ai-reviews-nav-button-{{ ai_gen_id }} {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: {{ block.settings.nav_button_bg }};
+    color: {{ block.settings.nav_button_color }};
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .ai-reviews-nav-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.nav_button_hover_bg }};
+    color: {{ block.settings.nav_button_hover_color }};
+  }
+
+  .ai-reviews-nav-button-{{ ai_gen_id }}:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .ai-reviews-nav-button-{{ ai_gen_id }} svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media screen and (max-width: 989px) {
+    .ai-review-card-{{ ai_gen_id }} {
+      flex: 0 0 calc(25% - 15px);
+      min-width: 220px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-review-card-{{ ai_gen_id }} {
+      flex: 0 0 calc(25% - 15px);
+      min-width: 200px;
+    }
+  }
+{% endstyle %}
+
+<customer-reviews-{{ ai_gen_id }} class="ai-reviews-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-reviews-wrapper-{{ ai_gen_id }}">
+    <div class="ai-reviews-slider-{{ ai_gen_id }}" data-slider>
+      {% for i in (1..8) %}
+        {% liquid
+          assign review_enabled_key = 'review_' | append: i | append: '_enabled'
+          assign review_rating_key = 'review_' | append: i | append: '_rating'
+          assign review_heading_key = 'review_' | append: i | append: '_heading'
+          assign review_text_key = 'review_' | append: i | append: '_text'
+          assign review_customer_key = 'review_' | append: i | append: '_customer'
+          assign review_location_key = 'review_' | append: i | append: '_location'
+
+          assign review_enabled = block.settings[review_enabled_key]
+          assign review_rating = block.settings[review_rating_key]
+          assign review_heading = block.settings[review_heading_key]
+          assign review_text = block.settings[review_text_key]
+          assign review_customer = block.settings[review_customer_key]
+          assign review_location = block.settings[review_location_key]
+        %}
+
+        {% if review_enabled %}
+          <div class="ai-review-card-{{ ai_gen_id }}">
+            <div class="ai-review-stars-{{ ai_gen_id }}">
+              {% for star in (1..5) %}
+                <svg class="ai-review-star-{{ ai_gen_id }}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="{% if star <= review_rating %}currentColor{% else %}none{% endif %}" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              {% endfor %}
+            </div>
+
+            {% if review_heading != blank %}
+              <h3 class="ai-review-heading-{{ ai_gen_id }}">{{ review_heading }}</h3>
+            {% endif %}
+
+            {% if review_text != blank %}
+              <p class="ai-review-text-{{ ai_gen_id }}">{{ review_text }}</p>
+            {% endif %}
+
+            {% if review_customer != blank or review_location != blank %}
+              <p class="ai-review-customer-{{ ai_gen_id }}">
+                {% if review_customer != blank %}{{ review_customer }}{% endif %}{% if review_customer != blank and review_location != blank %}, {% endif %}{% if review_location != blank %}{{ review_location }}{% endif %}
+              </p>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="ai-reviews-nav-{{ ai_gen_id }}">
+      <button class="ai-reviews-nav-button-{{ ai_gen_id }}" data-prev aria-label="Previous reviews">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button class="ai-reviews-nav-button-{{ ai_gen_id }}" data-next aria-label="Next reviews">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+</customer-reviews-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class CustomerReviews{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.slider = this.querySelector('[data-slider]');
+        this.prevButton = this.querySelector('[data-prev]');
+        this.nextButton = this.querySelector('[data-next]');
+      }
+
+      connectedCallback() {
+        this.setupNavigation();
+        this.updateButtonStates();
+        this.slider.addEventListener('scroll', () => this.updateButtonStates());
+      }
+
+      setupNavigation() {
+        this.prevButton.addEventListener('click', () => this.scroll('prev'));
+        this.nextButton.addEventListener('click', () => this.scroll('next'));
+      }
+
+      scroll(direction) {
+        const scrollAmount = this.slider.offsetWidth * 0.8;
+        const currentScroll = this.slider.scrollLeft;
+        
+        if (direction === 'next') {
+          this.slider.scrollLeft = currentScroll + scrollAmount;
+        } else {
+          this.slider.scrollLeft = currentScroll - scrollAmount;
+        }
+      }
+
+      updateButtonStates() {
+        const isAtStart = this.slider.scrollLeft <= 0;
+        const isAtEnd = this.slider.scrollLeft + this.slider.offsetWidth >= this.slider.scrollWidth - 1;
+        
+        this.prevButton.disabled = isAtStart;
+        this.nextButton.disabled = isAtEnd;
+      }
+    }
+
+    customElements.define('customer-reviews-{{ ai_gen_id }}', CustomerReviews{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Customer reviews",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#efefef"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "label": "Card border radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Stars"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star color",
+      "default": "#FFD700"
+    },
+    {
+      "type": "range",
+      "id": "star_size",
+      "label": "Star size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Text style"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Review text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "customer_color",
+      "label": "Customer name color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "customer_size",
+      "label": "Customer name size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Navigation buttons"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_bg",
+      "label": "Button background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_color",
+      "label": "Button icon color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_hover_bg",
+      "label": "Hover background",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "nav_button_hover_color",
+      "label": "Hover icon color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Review 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_1_enabled",
+      "label": "Enable review 1",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "review_1_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_1_heading",
+      "label": "Heading",
+      "default": "Excellent Quality"
+    },
+    {
+      "type": "textarea",
+      "id": "review_1_text",
+      "label": "Review text",
+      "default": "These mats are absolutely fantastic! The quality exceeded my expectations and they look great in my home."
+    },
+    {
+      "type": "text",
+      "id": "review_1_customer",
+      "label": "Customer name",
+      "default": "Priya Sharma"
+    },
+    {
+      "type": "text",
+      "id": "review_1_location",
+      "label": "Location",
+      "default": "Mumbai"
+    },
+    {
+      "type": "header",
+      "content": "Review 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_2_enabled",
+      "label": "Enable review 2",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "review_2_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_2_heading",
+      "label": "Heading",
+      "default": "Perfect Fit"
+    },
+    {
+      "type": "textarea",
+      "id": "review_2_text",
+      "label": "Review text",
+      "default": "The mat fits perfectly in my entryway. Very durable and easy to clean. Highly recommend!"
+    },
+    {
+      "type": "text",
+      "id": "review_2_customer",
+      "label": "Customer name",
+      "default": "Rajesh Kumar"
+    },
+    {
+      "type": "text",
+      "id": "review_2_location",
+      "label": "Location",
+      "default": "Delhi"
+    },
+    {
+      "type": "header",
+      "content": "Review 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_3_enabled",
+      "label": "Enable review 3",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "review_3_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_3_heading",
+      "label": "Heading",
+      "default": "Love It"
+    },
+    {
+      "type": "textarea",
+      "id": "review_3_text",
+      "label": "Review text",
+      "default": "Beautiful design and great quality. It has made such a difference in keeping my floors clean."
+    },
+    {
+      "type": "text",
+      "id": "review_3_customer",
+      "label": "Customer name",
+      "default": "Anita Desai"
+    },
+    {
+      "type": "text",
+      "id": "review_3_location",
+      "label": "Location",
+      "default": "Bangalore"
+    },
+    {
+      "type": "header",
+      "content": "Review 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_4_enabled",
+      "label": "Enable review 4",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "review_4_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_4_heading",
+      "label": "Heading",
+      "default": "Great Purchase"
+    },
+    {
+      "type": "textarea",
+      "id": "review_4_text",
+      "label": "Review text",
+      "default": "Very happy with this purchase. The mat is sturdy and looks premium. Worth every rupee!"
+    },
+    {
+      "type": "text",
+      "id": "review_4_customer",
+      "label": "Customer name",
+      "default": "Vikram Singh"
+    },
+    {
+      "type": "text",
+      "id": "review_4_location",
+      "label": "Location",
+      "default": "Pune"
+    },
+    {
+      "type": "header",
+      "content": "Review 5"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_5_enabled",
+      "label": "Enable review 5",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "review_5_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "review_5_heading",
+      "label": "Heading",
+      "default": "Very Good"
+    },
+    {
+      "type": "textarea",
+      "id": "review_5_text",
+      "label": "Review text",
+      "default": "Good quality mat. Does exactly what it's supposed to do. Would buy again."
+    },
+    {
+      "type": "text",
+      "id": "review_5_customer",
+      "label": "Customer name",
+      "default": "Meera Patel"
+    },
+    {
+      "type": "text",
+      "id": "review_5_location",
+      "label": "Location",
+      "default": "Ahmedabad"
+    },
+    {
+      "type": "header",
+      "content": "Review 6"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_6_enabled",
+      "label": "Enable review 6",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "review_6_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_6_heading",
+      "label": "Heading",
+      "default": "Highly Recommended"
+    },
+    {
+      "type": "textarea",
+      "id": "review_6_text",
+      "label": "Review text",
+      "default": "Fantastic product! The cleaning tools are also top-notch. Will definitely order more."
+    },
+    {
+      "type": "text",
+      "id": "review_6_customer",
+      "label": "Customer name",
+      "default": "Arjun Reddy"
+    },
+    {
+      "type": "text",
+      "id": "review_6_location",
+      "label": "Location",
+      "default": "Hyderabad"
+    },
+    {
+      "type": "header",
+      "content": "Review 7"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_7_enabled",
+      "label": "Enable review 7",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "review_7_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_7_heading",
+      "label": "Heading",
+      "default": "Best Mat Ever"
+    },
+    {
+      "type": "textarea",
+      "id": "review_7_text",
+      "label": "Review text",
+      "default": "This is the best mat I've ever purchased. Super absorbent and looks elegant too."
+    },
+    {
+      "type": "text",
+      "id": "review_7_customer",
+      "label": "Customer name",
+      "default": "Kavita Nair"
+    },
+    {
+      "type": "text",
+      "id": "review_7_location",
+      "label": "Location",
+      "default": "Chennai"
+    },
+    {
+      "type": "header",
+      "content": "Review 8"
+    },
+    {
+      "type": "checkbox",
+      "id": "review_8_enabled",
+      "label": "Enable review 8",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "review_8_rating",
+      "label": "Rating",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "review_8_heading",
+      "label": "Heading",
+      "default": "Outstanding"
+    },
+    {
+      "type": "textarea",
+      "id": "review_8_text",
+      "label": "Review text",
+      "default": "Outstanding quality and service. The mat arrived quickly and was exactly as described."
+    },
+    {
+      "type": "text",
+      "id": "review_8_customer",
+      "label": "Customer name",
+      "default": "Sanjay Gupta"
+    },
+    {
+      "type": "text",
+      "id": "review_8_location",
+      "label": "Location",
+      "default": "Kolkata"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Customer reviews"
+    }
+  ]
+}
+{% endschema %}

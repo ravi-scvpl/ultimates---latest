@@ -1,0 +1,48 @@
+{%- comment -%}
+SCV WhatsApp Widget
+No metafields used.
+Uses Liquid page context + JS dynamic selection context.
+{%- endcomment -%}
+{% assign scv_whatsapp_number = '919599273345' %}
+{% assign widget_label = 'Need help?' %}
+{% assign widget_subtext = 'Ask Ultimats' %}
+{% if product %}
+{% assign widget_label = 'Product help?' %}
+{% assign widget_subtext = 'Ask on WhatsApp' %}
+{% elsif collection %}
+{% assign widget_label = 'Choosing mats?' %}
+{% assign widget_subtext = 'Get guidance' %}
+{% elsif template.name contains 'page' and page_title contains 'Made' %}
+{% assign widget_label = 'Custom size?' %}
+{% assign widget_subtext = 'Get quote' %}
+{% endif %}
+
+<div
+ id="scv-whatsapp-widget"
+ class="scv-whatsapp-widget"
+ data-whatsapp-number="{{ scv_whatsapp_number }}"
+ data-page-title="{{ page_title | escape }}"
+ data-page-url="{{ canonical_url | default: shop.url | escape }}"
+ data-template="{{ template.name | escape }}"
+{% if product %}
+ data-product-title="{{ product.title | escape }}"
+ data-product-url="{{ shop.url }}{{ product.url }}"
+ data-product-type="{{ product.type | escape }}"
+ data-product-vendor="{{ product.vendor | escape }}"
+{% endif %}
+{% if collection %}
+ data-collection-title="{{ collection.title | escape }}"
+ data-collection-url="{{ shop.url }}{{ collection.url }}"
+{% endif %}
+>
+  <button type="button" class="scv-whatsapp-widget__button" aria-label="Chat with Ultimats on WhatsApp">
+    <div class="scv-whatsapp-widget__avatars">
+      <img src="{{ 'sara.png' | asset_url }}" alt="Sara" class="scv-whatsapp-widget__avatar" loading="lazy">
+      <img src="{{ 'buster.png' | asset_url }}" alt="Buster" class="scv-whatsapp-widget__avatar scv-whatsapp-widget__avatar--buster" loading="lazy">
+    </div>
+    <span class="scv-whatsapp-widget__text">
+      <strong>{{ widget_label }}</strong>
+      <small>{{ widget_subtext }}</small>
+    </span>
+  </button>
+</div>

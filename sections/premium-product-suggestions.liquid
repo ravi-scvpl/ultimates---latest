@@ -1,0 +1,143 @@
+<!-- Premium Product Suggestions Section -->
+{%- liquid
+  assign product_list = section.settings.product_list
+  assign columns = section.settings.columns | default: 4
+  assign title = section.settings.title
+  assign font_size = section.settings.font_size | default: 100
+  assign bg_color = section.settings.bg_color | default: '#fdf9f1'
+
+  case columns
+    when 2
+      assign grid_cols_class = 'grid-cols-1 sm:grid-cols-2'
+    when 3
+      assign grid_cols_class = 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3'
+    else
+      assign grid_cols_class = 'grid-cols-1 sm:grid-cols-2 md:grid-cols-4'
+  endcase
+-%}
+
+<div class="premium-product-suggestions-section relative z-10 w-full" style="background-color: {{ bg_color }};">
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
+    {%- if title != blank -%}
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="font-display-xl text-headline-lg text-primary tracking-tight" style="font-size: calc({{ font_size }}% * 0.01 * 3rem);">
+          {{ title | escape }}
+        </h2>
+      </div>
+    {%- endif -%}
+
+    <div class="grid {{ grid_cols_class }} gap-8 md:gap-10">
+      {%- if product_list != blank and product_list.count > 0 -%}
+        {%- for product in product_list -%}
+          <div class="product-suggestion-card flex flex-col">
+            <a href="{{ product.url }}" class="group block w-full cursor-pointer">
+              <!-- Image Container with Extremely Rounded Corners -->
+              <div class="aspect-[3/4] w-full mb-6 overflow-hidden rounded-[2.5rem] md:rounded-[3rem] bg-surface-container-low transition-all duration-300 group-hover:shadow-md border border-on-surface/5">
+                {%- if product.featured_media != blank -%}
+                  <img 
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 lazyload" 
+                    src="{{ product.featured_media | image_url: width: 600 }}" 
+                    alt="{{ product.featured_media.alt | escape }}"
+                    loading="lazy"
+                    width="600"
+                    height="800"
+                  >
+                {%- else -%}
+                  {{ 'product-' | append: forloop.index | placeholder_svg_tag: 'w-full h-full object-cover bg-surface-container-highest' }}
+                {%- endif -%}
+              </div>
+
+              <!-- Product Category / Collection Tag -->
+              <span class="font-sans text-[#8e7a6b] text-xs font-bold uppercase tracking-widest mb-2 block leading-none">
+                {{ product.type | default: 'COMMERCIAL MATTING' }}
+              </span>
+
+              <!-- Product Title in Serif Font -->
+              <h3 class="font-serif text-[26px] md:text-[30px] font-normal leading-[1.2] text-primary mb-3 transition-colors group-hover:text-secondary">
+                {{ product.title }}
+              </h3>
+
+              <!-- Price in Bold Sans-Serif Font -->
+              <p class="font-sans text-[18px] md:text-[20px] font-bold text-primary">
+                {{ product.price | money }}
+              </p>
+            </a>
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        <!-- Fallback if no products selected -->
+        {%- for i in (1..4) -%}
+          <div class="product-suggestion-card flex flex-col">
+            <div class="aspect-[3/4] w-full mb-6 overflow-hidden rounded-[2.5rem] md:rounded-[3rem] bg-surface-container-highest">
+              {{ 'product-' | append: i | placeholder_svg_tag: 'w-full h-full object-cover' }}
+            </div>
+            <span class="font-sans text-[#8e7a6b] text-xs font-bold uppercase tracking-widest mb-2 block leading-none">
+              COMMERCIAL MATTING
+            </span>
+            <h3 class="font-serif text-[26px] md:text-[30px] font-normal leading-[1.2] text-primary mb-3">
+              Sample Product Title
+            </h3>
+            <p class="font-sans text-[18px] md:text-[20px] font-bold text-primary">
+              {{ 0 | money }}
+            </p>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Premium Suggestions",
+  "tag": "section",
+  "class": "section-premium-suggestions",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "FEATURED PRODUCTS",
+      "label": "Section Title"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Title Font Size",
+      "default": 100,
+      "min": 80,
+      "max": 120,
+      "unit": "%",
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FAF8F5"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "limit": 8,
+      "label": "Products to Suggest"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Columns on Desktop",
+      "default": 4,
+      "min": 2,
+      "max": 4,
+      "step": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Suggestions"
+    }
+  ]
+}
+{% endschema %}

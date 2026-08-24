@@ -1,0 +1,23 @@
+{
+  "context": {
+    "market": "in"
+  },
+  "parent": "product.ultidurenewm2m.json",
+  "sections": {
+    "product-information": {},
+    "product-content": {
+      "settings": {},
+      "blocks": {
+        "checklist": {
+          "settings": {
+            "image": "shopify://shop_images/UltiDure_Grey_Brown_Burgundy_CloseUp_Rolled.webp",
+            "text_1": "Reinforced Borders",
+            "text_2": "Elegant and Functional",
+            "text_3": "Machine Washable",
+            "text_4": "True Anti Slip"
+          }
+        }
+      }
+    }
+  }
+}

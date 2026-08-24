@@ -1,0 +1,603 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "wrapper": "div.template-product-hybrid-wrapper",
+  "sections": {
+    "custom_liquid_zVPFrc": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% comment %}\n  Breadcrumb Navigation for Shopify (wrapped in container)\n{% endcomment %}\n<div class=\"container\">\n  <nav class=\"breadcrumb\" role=\"navigation\" aria-label=\"breadcrumbs\">\n    <a href=\"{{ routes.root_url }}\">Home</a>\n    \n    {% if collection %}\n      <span class=\"divider\">/</span>\n      <a href=\"{{ collection.url }}\">{{ collection.title }}</a>\n    {% elsif product.collections.size > 0 %}\n      {%- assign first_collection = product.collections.first -%}\n      <span class=\"divider\">/</span>\n      <a href=\"{{ first_collection.url }}\">{{ first_collection.title }}</a>\n    {% endif %}\n\n    {% if product %}\n      <span class=\"divider\">/</span>\n      <span>{{ product.title }}</span>\n    {% elsif article %}\n      <span class=\"divider\">/</span>\n      <a href=\"{{ blog.url }}\">{{ blog.title }}</a>\n      <span class=\"divider\">/</span>\n      <span>{{ article.title }}</span>\n    {% elsif search %}\n      <span class=\"divider\">/</span>\n      <span>Search</span>\n    {% elsif page %}\n      <span class=\"divider\">/</span>\n      <span>{{ page.title }}</span>\n    {% endif %}\n  </nav>\n</div>\n\n<style>\n  .container {\n    max-width: 1160px; /* Match your theme's container width */\n    margin: 0 auto;\n    padding: 0 15px;\n  }\n  .breadcrumb {\n    font-size: 14px;\n    margin-bottom: 0px;\n    font-family: Arial, sans-serif;\n  }\n  .breadcrumb a {\n    color: #555;\n    text-decoration: none;\n  }\n  .breadcrumb a:hover {\n    text-decoration: underline;\n  }\n  .breadcrumb .divider {\n    margin: 0 5px;\n    color: #aaa;\n  }\n</style>",
+        "padding_top": 0,
+        "padding_bottom": 19
+      }
+    },
+    "product-information-hybrid": {
+      "type": "product-information-hybrid",
+      "blocks": {
+        "selling_features": {
+          "type": "selling_features",
+          "settings": {
+            "show_rating": false
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "show_vendor": false,
+            "vendor_link": "",
+            "short_description": "ultimats presized",
+            "font_size": 80
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "font_size": 110
+          }
+        },
+        "judge_me_reviews_preview_badge_Ew7CAF": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "font_size": 100
+          }
+        },
+        "custom_liquid_PhWw6c": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.tags contains 'Hybrid' %}\n<div id=\"mat-custom-switches\">\n  <p class=\"color-caption\">Pattern</p>\n<div class=\"mats-switchsrow\">\n\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/hybrid-black-gray\">\n      <div class=\"color-varientbox color-varientbox1\"></div>\n      <p>Black Grey</p>\n    </a>\n  </div>\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/hybrid-black-red\">\n      <div class=\"color-varientbox color-varientbox2\"></div>\n      <p>Black Red</p>\n    </a>\n  </div>\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/indias-first-dual-zone-smart-mat-black-green\">\n      <div class=\"color-varientbox color-varientbox5\"></div>\n      <p>Black Green</p>\n    </a>\n  </div>\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/indias-first-dual-zone-smart-mat-black-brown\">\n      <div class=\"color-varientbox color-varientbox6\"></div>\n      <p>Black Brown</p>\n    </a>\n  </div>\n \n\n</div>\n</div>\n\n{% endif %}\n{% if product.tags contains 'ulticlean' %}\n<div id=\"mat-custom-switches\">\n  <p class=\"color-caption\">Colour</p>\n<div class=\"mats-switchsrow\">\n\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/ulticlean\">\n      <div class=\"color-varientbox color-varientbox3\"></div>\n      <p>Grey</p>\n    </a>\n  </div>\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/ulticlean-red-black\">\n      <div class=\"color-varientbox color-varientbox4\"></div>\n      <p>Red</p>\n    </a>\n  </div>\n    <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/ultimate-dirt-trap-mat-brown\">\n      <div class=\"color-varientbox color-varientbox7\"></div>\n      <p>Brown</p>\n    </a>\n  </div>\n    <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/first-ultimate-dirt-trap-mat-green\">\n      <div class=\"color-varientbox color-varientbox8\"></div>\n      <p>Green</p>\n    </a>\n  </div>\n \n\n</div>\n</div>\n\n{% endif %}\n\n{% if product.tags contains 'ultiScrape' %}\n<div id=\"mat-custom-switches\">\n  <p class=\"color-caption\">color</p>\n<div class=\"mats-switchsrow\">\n\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/ultiscrape-1\">\n      <div class=\"color-varientbox ultiScrape color-varientbox1\"></div>\n      <p>Grey</p>\n    </a>\n  </div>\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/ultiscrape-3\">\n      <div class=\"color-varientbox ultiScrape color-varientbox2\"></div>\n      <p>Red</p>\n    </a>\n  </div>\n   <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/ultiscrape-4\">\n      <div class=\"color-varientbox ultiScrape color-varientbox3\"></div>\n      <p>Brown</p>\n    </a>\n  </div>\n   <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/ultiscrape-2\">\n      <div class=\"color-varientbox ultiScrape color-varientbox4\"></div>\n      <p>Green</p>\n    </a>\n  </div>\n \n\n</div>\n</div>\n\n{% endif %}\n\n{% if product.tags contains 'ultidure' %}\n<div id=\"mat-custom-switches\">\n  <p class=\"color-caption\">Colour</p>\n<div class=\"mats-switchsrow\">\n\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/nanotech-toughtread-technology-integrated-commercial-mat-dark-grey\">\n      <div class=\"color-varientbox color-varientbox-ultidure1\"></div>\n      <p>Charcoal</p>\n    </a>\n  </div>\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/nanotech-toughtread-technology-integrated-commercial-mat-light-grey\">\n      <div class=\"color-varientbox color-varientbox-ultidure2\"></div>\n      <p>Light Grey</p>\n    </a>\n  </div>\n\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/ultidure-high-performance-commercial-mat-burgundy-1\">\n      <div class=\"color-varientbox color-varientbox-ultidure3\"></div>\n      <p>Burgundy</p>\n    </a>\n  </div>\n\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/ultidure-high-performance-commercial-mat-brown\">\n      <div class=\"color-varientbox color-varientbox-ultidure4\"></div>\n      <p>Brown</p>\n    </a>\n  </div>\n\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/ultidure-high-performance-commercial-mat-hunter-green\">\n      <div class=\"color-varientbox color-varientbox-ultidure5\"></div>\n      <p>Hunter Green</p>\n    </a>\n  </div>\n \n\n</div>\n</div>\n\n{% endif %}\n\n{% if product.tags contains 'ultidure_custom' %}\n<div id=\"mat-custom-switches\">\n  <p class=\"color-caption\">Colour</p>\n<div class=\"mats-switchsrow\">\n\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/nanotech-toughtread-technology-integrated-commercial-mat-dark-grey-custom-size\">\n      <div class=\"color-varientbox color-varientbox-ultidure1\"></div>\n      <p>Charcoal</p>\n    </a>\n  </div>\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/nanotech-toughtread-technology-integrated-commercial-mat-light-grey-custom-sizes\">\n      <div class=\"color-varientbox color-varientbox-ultidure2\"></div>\n      <p>Light Grey</p>\n    </a>\n  </div>\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/ultidure-high-performance-commercial-mat-burgundy-1\">\n      <div class=\"color-varientbox color-varientbox-ultidure3\"></div>\n      <p>Burgundy</p>\n    </a>\n  </div>\n\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/ultidure-high-performance-commercial-mat-brown\">\n      <div class=\"color-varientbox color-varientbox-ultidure4\"></div>\n      <p>Brown</p>\n    </a>\n  </div>\n\n  <div class=\"mat-mutiple-pd\">\n    <a href=\"/products/ultidure-high-performance-commercial-mat-hunter-green\">\n      <div class=\"color-varientbox color-varientbox-ultidure5\"></div>\n      <p>Hunter Green</p>\n    </a>\n  </div>\n\n</div>\n</div>\n\n{% endif %}\n<style>\n  .mats-switchsrow {\n    display: flex;\n    align-items: center;\n    column-gap: 1.3rem;\n  }\ndiv#mat-custom-switches {\n    margin-bottom: 1.5rem;\n}\n  .color-varientbox {\n    width: 60px;\n    height: 60px;\n    display: block !important;\n    border-radius: 50%;\n    margin-inline: auto;\n    box-shadow: 0 1px 2px #00000040;\n  }\n\n\n\n\n  .mat-multiple-row {\n    display: flex;\n    align-items: center;\n    flex-wrap: wrap;\n    column-gap: 0;\n  }\n\n  .mat-mutiple-pd a {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n  }\n\n  .mat-mutiple-pd {\n  \n    display: flex;\n    align-items: start;\n    \n\n  }\n\n  .mat-mutiple-pd p {\n     letter-spacing: 0;\n    line-height: 1.2;\n    font-weight: 100 !important;\n    margin: 0 !important;\n    /* text-transform: uppercase; */\n    font-family: var(--font-body-family);\n    color: rgb(var(--color-foreground)) ! IMPORTANT;\n    font-weight: 100;\n    text-align: center;\n    font-size: calc(.875rem * var(--font-section-scale, 1));\n    margin-top: 0.5rem ! IMPORTANT;\n  }\n\n.color-varientbox1 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/black-white.png?v=1714634153);\n  background-position-x: 50%;\n}\n.color-varientbox2 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/black-red.png?v=1714634153);\n  background-position-x: 50%;\n}\n.color-varientbox3 {\n  background: url(https://6iau9m12oha1q88j-64137167030.shopifypreview.com/cdn/shop/files/product-option-ulticlean-grey-black_120x120.png?v=7435699526537035550);\n  background-position-x: 50%;\n}\n.color-varientbox4 {\n  background: url(https://6iau9m12oha1q88j-64137167030.shopifypreview.com/cdn/shop/files/product-option-ulticlean-red-black_120x120.png?v=11258299124206662848);\n  background-position-x: 50%;\n}\n.color-varientbox5 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/1_13.png?v=1722242611);\n  background-position-x: 50%;\n}\n.color-varientbox6 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/4_5.png?v=1722242611);\n  background-position-x: 50%;\n}\n.color-varientbox7 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/3_6.png?v=1722242611);\n  background-position-x: 50%;\n}\n.color-varientbox8 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/2_11.png?v=1722242611);\n  background-position-x: 50%;\n}\n\n.ultiScrape.color-varientbox1 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultiscrape-grey.png);\n  background-position-x: 50%;\n  background-size: 100% auto;\n}\n.ultiScrape.color-varientbox2 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultiscrape-red.png);\n  background-position-x: 50%;\n  background-size: 100% auto;\n}\n.ultiScrape.color-varientbox3 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/varientbox7.png);\n  background-position-x: 50%;\n  background-size: 100% auto;\n}\n.ultiScrape.color-varientbox4 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultiscrape-green.png);\n  background-position-x: 50%;\n  background-size: 100% auto;\n}\n.color-varientbox-ultidure1 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultidure-charcoal.png?v=1751452089);\n  background-position-x: 50%;\n  background-size: 100% auto;\n}\n.color-varientbox-ultidure2 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/LIGHT-GREY.png?v=1723704747);\n  background-position-x: 50%;\n  background-size: 100% auto;\n}\n\n.color-varientbox-ultidure3 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultidure-burgundy.png?v=1751452090);\n  background-position-x: 50%;\n  background-size: 100% auto;\n}\n.color-varientbox-ultidure4 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultidurem2m-brown.png?v=1751452089);\n  background-position-x: 50%;\n  background-size: 100% auto;\n}\n\n.color-varientbox-ultidure5 {\n  background: url(https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultidure-hunter-green.png?v=1751452089);\n  background-position-x: 50%;\n  background-size: 100% auto;\n}\n  \n\n  p.color-caption {\n  \n       font-family: var(--font-body-family);\n \n    font-weight: 400;\n  \n    font-size: calc(.875rem * var(--font-section-scale, 1));\n    \n    letter-spacing: 0;\n    line-height: 1.2;\n       text-transform: uppercase;\n  color: rgb(var(--color-foreground-2)) ! IMPORTANT;\n \n    margin-bottom: 0.4rem ! IMPORTANT;\n  }\n\n  @media (max-width:768px) {\n\n    .mats-switchsrow {\n      flex-wrap: wrap;\n      row-gap: 1rem;\n    }\n\n    .mat-mutiple-pd p {\n      font-size: 14px!important;\n    }\n\n\n  }\n</style>\n\n\n\n{% if product.tags contains 'ulticlean' %}\n  <style>\n  </style>\n\n  {% endif %}"
+          }
+        },
+        "product_custom_option_wfXPC7": {
+          "type": "product_custom_option",
+          "disabled": true,
+          "settings": {
+            "type": "swatches",
+            "option_name": "ultiscrape",
+            "label": "Select Color",
+            "required": false,
+            "values": "Grey, Red, Brown, Green",
+            "color_swatch_shape": "circle",
+            "swatch_size": 60,
+            "min_selected_options": 2,
+            "max_date": ""
+          }
+        },
+        "variant_picker_zUj6Jz": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "color_swatch_type": "none",
+            "color_swatch_shape": "rectangle",
+            "swatch_size": 60
+          }
+        },
+        "custom_liquid_76qWpy": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div id=\"size-offer-box\" class=\"size-offer-box\" style=\"display:none;\">\n  <p class=\"offer-heading\">Special Offer (Valid only on 2ft x 3ft)</p>\n  \n  <div class=\"offer-row\">\n    <span>Buy 2 Mats</span>\n    <span class=\"discount\">7% OFF</span>\n  </div>\n\n  <div class=\"offer-row\">\n    <span>Buy 3 Mats</span>\n    <span class=\"discount\">10% OFF</span>\n  </div>\n</div>\n\n<style>\n.size-offer-box {\n  margin-top: 15px;\n  padding: 16px;\n  border-radius: 10px;\n  background: #f4f9ff;\n  border: 1px solid #d6eaff;\n}\n\n.offer-heading {\n  font-weight: 600;\n  font-size: 16px;\n  margin-bottom: 10px;\n  color: #0d6efd;\n}\n\n.offer-row {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 6px 0;\n  font-size: 14px;\n  border-bottom: 1px dashed #ddd;\n}\n\n.offer-row:last-child {\n  border-bottom: none;\n}\n\n.discount {\n  background: #000;\n  color: #fff;\n  padding: 4px 10px;\n  border-radius: 20px;\n  font-size: 13px;\n  font-weight: 500;\n}\n</style>\n\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n\n  const offerBox = document.getElementById(\"size-offer-box\");\n\n  // FIRST VARIANT ID (Automatically from Shopify)\n  const firstVariantId = {{ product.variants.first.id }};\n\n  function checkVariant() {\n    const currentVariantInput = document.querySelector('input[name=\"id\"]');\n    \n    if (!currentVariantInput) return;\n\n    const selectedVariantId = parseInt(currentVariantInput.value);\n\n    if (selectedVariantId === firstVariantId) {\n      offerBox.style.display = \"block\";\n    } else {\n      offerBox.style.display = \"none\";\n    }\n  }\n\n  // Detect variant change\n  document.addEventListener(\"change\", function(e) {\n    if (e.target.name === \"id\" || e.target.closest(\"variant-radios\") || e.target.closest(\"variant-selects\")) {\n      setTimeout(checkVariant, 200);\n    }\n  });\n\n  checkVariant();\n});\n</script>\n\n<br>"
+          }
+        },
+        "custom_liquid_UictdQ": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "</> NOT YOUR SIZE?</> &nbsp; &nbsp;\n<button type=\"button\"\n\nclass=\"GFG\"\n\nonclick=\"document.location='https://ultimats.com/products/ultiwipe-carpet-mat'\"\n\n>CUSTOMIZE YOUR ORDER\n\n</button>"
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "disabled": true,
+          "settings": {
+            "countdown_title": "Sales ends in:",
+            "font_size": 100,
+            "background": "alt-sale"
+          }
+        },
+        "custom_liquid_9mTgMi": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"custmizeButton\">\n      <label class=\"button_label\">Not your size?</label>\n  \n      {% if product.handle == \"ultiscrape-1\" or product.handle == \"ultiscrape-2\" or product.handle == \"ultiscrape-3\" or product.handle == \"ultiscrape-4\" %}\n        <a href=\"/products/ultiscrape-carpet-mat\">Customize your order</a>\n      {% elsif product.handle == \"ulticlean\" or product.handle == \"ulticlean-red-black\" or product.handle == \"ultimate-dirt-trap-mat-brown\" or product.handle == \"first-ultimate-dirt-trap-mat-green\" %}\n        <a href=\"/products/ulticlean-carpet-mat-1\">Customize your order</a>\n      {% elsif product.title contains \"UltiWipe\"%} \n      <a href=\"https://ultimats.com/products/ultiwipe-carpet-mat\">Customize your order</a>\n      {% elsif product.title contains \"UltiScrub\"%} \n      <a href=\"https://ultimats.com/products/ultiscrub-carpet-mat-1\">Customize your order</a>\n      {% else %}\n        <a href=\"/products/ultidure-carpet-mat\">Customize your order</a>\n      {% endif %}\n  \n    </div>"
+          }
+        },
+        "custom_liquid_qHcTx8": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.title == \"UltiWipe CleanScrape All-weather Mat\" %}\n<style>\n.product-form__buy-buttons {\n  display: none;\n}\n</style>\n{% endif %}\n{% if product.title contains \"UltiWipe\" %}\n<style>\ndiv#mat-custom-switches {\n    display: none;\n}\n</style>\n{% endif %}\n{% if product.title contains \"UltiWipe\" %}\n  <style>\n    .color-selector {\n      max-width: 600px;\n      margin: 20px auto;\n    }\n    .color-selector h3 {\n      margin-bottom: 10px;\n      font-size: 1.2rem;\n      color: #333;\n    }\n    .color-options {\n      display: flex;\n      gap: 20px;\n      flex-wrap: wrap;\n    }\n    .color-item {\n      text-align: center;\n      cursor: pointer;\n    }\n    .color-circle {\n      width: 60px;\n      height: 60px;\n      border-radius: 50%;\n      background-size: cover;\n      background-position: center;\n      border: 2px solid #ccc;\n      margin: 0 auto 8px;\n      transition: transform 0.2s ease, border-color 0.3s ease;\n    }\n    .color-item:hover .color-circle {\n      transform: scale(1.1);\n      border-color: #333;\n    }\n    .color-name {\n      font-size: 0.9rem;\n      color: #333;\n    }\n  </style>\n\n  <div class=\"color-selector\">\n    <h3>COLOUR</h3>\n    <div class=\"color-options\">\n        <div class=\"color-item\" data-url=\"https://ultimats.com/products/ultiwipe-cleanscrape-all-weather-mat-grey-black\">\n          <div class=\"color-circle\" style=\"background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/WhatsApp_Image_2025-07-18_at_09.57.13_1.jpg?v=1753163820');\"></div>\n          <div class=\"color-name\">Grey Black</div>\n        </div>\n        <div class=\"color-item\" data-url=\"https://ultimats.com/products/ultiwipe-cleanscrape-all-weather-mat-red-black\">\n          <div class=\"color-circle\" style=\"background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/WhatsApp_Image_2025-07-18_at_09.57.14.jpg?v=1753163820');\"></div>\n          <div class=\"color-name\">Red Black</div>\n        </div>\n        <div class=\"color-item\" data-url=\"https://ultimats.com/products/ultiwipe-cleanscrape-all-weather-mat-brown-black\">\n          <div class=\"color-circle\" style=\"background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/WhatsApp_Image_2025-07-18_at_09.57.12.jpg?v=1753163820');\"></div>\n          <div class=\"color-name\">Brown Black</div>\n        </div>\n        <div class=\"color-item\" data-url=\"https://ultimats.com/products/ultiwipe-cleanscrape-all-weather-mat-green-black\">\n          <div class=\"color-circle\" style=\"background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/WhatsApp_Image_2025-07-18_at_09.57.13.jpg?v=1753163820');\"></div>\n          <div class=\"color-name\">Green Black</div>\n        </div>\n      </div>\n  </div>\n\n  <script>\n    document.querySelectorAll('.color-item').forEach(function(item) {\n      item.addEventListener('click', function() {\n        const targetUrl = item.getAttribute('data-url');\n        window.location.href = targetUrl; // Redirect to the page\n      });\n    });\n  </script>\n{% endif %}"
+          }
+        },
+        // "custom_liquid_wbjbjL": {
+        //   "type": "custom_liquid",
+        //   "settings": {
+        //     "custom_liquid": "<!--UltiDure bydefault page : ultidure-presized-->\n{% if product.title contains \"UltiDure\" %}\n  <style>\n    .color-selector {\n      max-width: 600px;\n      margin: 20px auto;\n    }\n    .color-selector h3 {\n      margin-bottom: 10px;\n      font-size: 1.2rem;\n      color: #333;\n    }\n    .color-options {\n      display: flex;\n      gap: 20px;\n      flex-wrap: wrap;\n    }\n    .color-item {\n      text-align: center;\n      cursor: pointer;\n    }\n    .color-circle {\n      width: 60px;\n      height: 60px;\n      border-radius: 50%;\n      background-size: cover;\n      background-position: center;\n      border: 2px solid #ccc;\n      margin: 0 auto 8px;\n      transition: transform 0.2s ease, border-color 0.3s ease;\n    }\n    .color-item:hover .color-circle {\n      transform: scale(1.1);\n      border-color: #333;\n    }\n    .color-name {\n      font-size: 0.9rem;\n      color: #333;\n    }\n  </style>\n\n  <div class=\"color-selector\">\n    <h3>COLOUR</h3>\n    <div class=\"color-options\">\n        <div class=\"color-item\" data-url=\"https://ultimats.com/products/nanotech-toughtread-technology-integrated-commercial-mat-light-grey\">\n          <div class=\"color-circle\" style=\"background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/LIGHT-GREY.png?v=1723704747');\"></div>\n          <div class=\"color-name\">Grey</div>\n        </div>\n        <div class=\"color-item\" data-url=\"https://ultimats.com/products/ultidure-high-performance-commercial-mat-burgundy-1\">\n          <div class=\"color-circle\" style=\"background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultidure-burgundy.png?v=1751452090');\"></div>\n          <div class=\"color-name\">Red</div>\n        </div>\n        <div class=\"color-item\" data-url=\"https://ultimats.com/products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal\">\n          <div class=\"color-circle\" style=\"background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultidure-charcoal.png?v=1751452089');\"></div>\n          <div class=\"color-name\">Charcoal</div>\n        </div>\n        <div class=\"color-item\" data-url=\"https://ultimats.com/products/ultidure-high-performance-commercial-mat-brown\">\n            <div class=\"color-circle\" style=\"background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultidurem2m-brown.png?v=1751452089');\"></div>\n            <div class=\"color-name\">Brown</div>\n          </div>\n      </div>\n  </div>\n\n  <script>\n    document.querySelectorAll('.color-item').forEach(function(item) {\n      item.addEventListener('click', function() {\n        const targetUrl = item.getAttribute('data-url');\n        window.location.href = targetUrl; // Redirect to the page\n      });\n    });\n  </script>\n{% endif %}\n\n{% if product.title contains \"UltiDure\" %}\n<style>\ndiv#mat-custom-switches {\n    display: none;\n}\n</style>\n{% endif %}\n\n<!-- display none for two main product btn  -->\n{% if product.title == \"UltiDure AntiSlip All Terrain Commercial Floor Mat\" %}\n<style>\n.product-form__buy-buttons {\n  display: none;\n}\n</style>\n{% endif %}"
+        //   }
+        // },
+
+        "custom_liquid_wbjbjL": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% if product.title contains \"UltiDure\" %}<style>.color-selector{max-width:600px;margin:20px auto}.color-selector h3{margin-bottom:10px;font-size:1.2rem;color:#333}.color-options{display:flex;gap:20px;flex-wrap:wrap}.color-item{text-align:center;cursor:pointer}.color-circle{width:60px;height:60px;border-radius:50%;background-size:cover;background-position:center;border:2px solid #ccc;margin:0 auto 8px;transition:transform .2s ease,border-color .3s ease}.color-item:hover .color-circle{transform:scale(1.1);border-color:#333}.color-name{font-size:.9rem;color:#333}</style><div class=\"color-selector\"><h3>COLOUR</h3><div class=\"color-options\"><div class=\"color-item\" data-url=\"https://ultimats.com/products/nanotech-toughtread-technology-integrated-commercial-mat-light-grey\"><div class=\"color-circle\" style=\"background-image:url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/LIGHT-GREY.png?v=1723704747');\"></div><div class=\"color-name\">Grey</div></div><div class=\"color-item\" data-url=\"https://ultimats.com/products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal\"><div class=\"color-circle\" style=\"background-image:url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultidure-charcoal.png?v=1751452089');\"></div><div class=\"color-name\">Charcoal</div></div></div></div><script>document.querySelectorAll('.color-item').forEach(function(item){item.addEventListener('click',function(){window.location.href=item.getAttribute('data-url');});});</script>{% endif %}{% if product.title contains \"UltiDure\" %}<style>div#mat-custom-switches{display:none}</style>{% endif %}{% if product.title == \"UltiDure AntiSlip All Terrain Commercial Floor Mat\" %}<style>.product-form__buy-buttons{display:none}</style>{% endif %}"
+          }
+        },
+
+
+        "custom_liquid_daLFJE": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<!-- next product UltiScrub -->\n{% if product.title == \"UltiScrub Heavy Traffic DualTread Barrier Matting\" %}\n<style>\n.product-form__buy-buttons {\n  display: none;\n} \n</style>\n{% endif %}\n{% if product.title contains \"UltiScrub\" %}\n  <style>\n    .color-selector {\n      max-width: 600px;\n      margin: 20px auto;\n    }\n    .color-selector h3 {\n      margin-bottom: 10px;\n      font-size: 1.2rem;\n      color: #333;\n    }\n    .color-options {\n      display: flex;\n      gap: 20px;\n      flex-wrap: wrap;\n    }\n    .color-item {\n      text-align: center;\n      cursor: pointer;\n    }\n    .color-circle {\n      width: 60px;\n      height: 60px;\n      border-radius: 50%;\n      background-size: cover;\n      background-position: center;\n      border: 2px solid #ccc;\n      margin: 0 auto 8px;\n      transition: transform 0.2s ease, border-color 0.3s ease;\n    }\n    .color-item:hover .color-circle {\n      transform: scale(1.1);\n      border-color: #333;\n    }\n    .color-name {\n      font-size: 0.9rem;\n      color: #333;\n    }\n  </style>\n\n  <div class=\"color-selector\">\n    <h3>COLOUR</h3>\n    <div class=\"color-options\">\n        <div class=\"color-item\" data-url=\"https://ultimats.com/products/ultiscrub-heavy-traffic-dualtread-barrier-mat-charcoal\">\n          <div class=\"color-circle\" style=\"background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/WhatsApp_Image_2025-07-18_at_09.59.00.jpg?v=1753163357');\"></div>\n          <div class=\"color-name\">Charcoal Noir</div>\n        </div>\n        <div class=\"color-item\" data-url=\"https://ultimats.com/products/ultiscrub-heavy-traffic-dualtread-barrier-mat-grey\">\n          <div class=\"color-circle\" style=\"background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/WhatsApp_Image_2025-07-18_at_09.59.02.jpg?v=1753163357');\"></div>\n          <div class=\"color-name\">Modern Grey</div>\n        </div>\n        <div class=\"color-item\" data-url=\"https://ultimats.com/products/ultiscrub-heavy-traffic-dualtread-barrier-mat-red\">\n          <div class=\"color-circle\" style=\"background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/WhatsApp_Image_2025-07-18_at_09.59.02_1.jpg?v=1753163357');\"></div>\n          <div class=\"color-name\">Crimson Red</div>\n        </div>\n        <div class=\"color-item\" data-url=\"https://ultimats.com/products/ultiscrub-heavy-traffic-dualtread-barrier-mat-green\">\n          <div class=\"color-circle\" style=\"background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/WhatsApp_Image_2025-07-18_at_09.59.01_1.jpg?v=1753163356');\"></div>\n          <div class=\"color-name\">Forest Green</div>\n        </div>\n        <div class=\"color-item\" data-url=\"https://ultimats.com/products/ultiscrub-heavy-traffic-dualtread-barrier-mat-brown\">\n            <div class=\"color-circle\" style=\"background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/WhatsApp_Image_2025-07-18_at_09.59.01.jpg?v=1753163357');\"></div>\n            <div class=\"color-name\">Earth Brown</div>\n        </div>\n      </div>\n  </div>\n\n  <script>\n    document.querySelectorAll('.color-item').forEach(function(item) {\n      item.addEventListener('click', function() {\n        const targetUrl = item.getAttribute('data-url');\n        window.location.href = targetUrl; // Redirect to the page\n      });\n    });\n  </script>\n{% endif %}\n\n{% if product.title contains \"UltiScrub\" %}\n<style>\ndiv#mat-custom-switches {\n    display: none;\n}\n</style>\n{% endif %}"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_inventory_notification": false,
+            "quantity_threshold": 0,
+            "notification_message": "",
+            "show_gift_card_recipient": false,
+            "show_dynamic_checkout": true,
+            "show_quantity_selector": true
+          }
+        },
+        "siblings_dUe3kL": {
+          "type": "siblings",
+          "disabled": true,
+          "settings": {
+            "sibling_option": "Brush + Rubber",
+            "sibling_option_value": "{{ product.metafields.theme.sibling_option_value.value }}",
+            "sibling_collection": "{{ product.metafields.theme.sibling_collection_handle.value }}",
+            "color_swatch_type": "image_thumbnail",
+            "color_swatch_shape": "circle",
+            "swatch_size": 36
+          }
+        },
+        "custom_liquid_LE9jYH": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "{% render 'Landingpage-accordion' %}"
+          }
+        }
+      },
+      "block_order": [
+        "selling_features",
+        "text",
+        "title",
+        "judge_me_reviews_preview_badge_Ew7CAF",
+        "price",
+        "custom_liquid_PhWw6c",
+        "product_custom_option_wfXPC7",
+        "variant_picker_zUj6Jz",
+        "custom_liquid_76qWpy",
+        "custom_liquid_UictdQ",
+        "countdown",
+        "custom_liquid_9mTgMi",
+        "custom_liquid_qHcTx8",
+        "custom_liquid_wbjbjL",
+        "custom_liquid_daLFJE",
+        "buy_buttons",
+        "siblings_dUe3kL",
+        "custom_liquid_LE9jYH"
+      ],
+      "custom_css": [
+        ".product-meta-selector.product-meta-selector-- {display: none;}"
+      ],
+      "settings": {
+        "show_breadcrumbs": true,
+        "enable_all_images": true,
+        "enable_image_zoom": true,
+        "autoplay_video": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_rVU8DQ": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"container\">\n  <div class=\"product-description\">\n    {{ product.description }}\n  </div>\n</div> \n\n<style>\n  .container {\n    max-width: 1160px;\n    margin: 0 auto;\n    padding: 0 15px; /* Add some side padding for mobile */\n  }\n  .product-description {\n    font-size: 16px;\n    line-height: 1.6;\n    color: #333;\n  }\n</style>",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "custom_liquid_67cWCH": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".accordion-box.content.ctm-box {max-width: 1130px !important; margin: 0 auto;}",
+        "@media (min-width: 769px) {.ctm-box {display: flex; width: 75%; left: 0%; position: relative; margin: 0 auto; }}"
+      ],
+      "settings": {
+        "custom_liquid": "{% render 'Landingpage-accordion' %}",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_AqJtzz": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render 'sc-custom' %}",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product_benefits_reels_LaqHqw": {
+      "type": "product-benefits-reels",
+      "name": "Product video reels",
+      "settings": {
+        "section_title": "Better By Design"
+      }
+    },
+    "video_column_WxkNP4": {
+      "type": "video-column",
+      "blocks": {
+        "column_CFzWQk": {
+          "type": "column",
+          "settings": {
+            "video": "shopify://files/videos/Popular one.mp4",
+            "video_embed": "",
+            "video_link": ""
+          }
+        },
+        "column_ppnqqe": {
+          "type": "column",
+          "settings": {
+            "video": "shopify://files/videos/UltiClean Ad.mp4",
+            "video_embed": "",
+            "video_link": ""
+          }
+        },
+        "column_Nw3ARq": {
+          "type": "column",
+          "settings": {
+            "video": "shopify://files/videos/Hybrid Ad 1.mp4",
+            "video_embed": "",
+            "video_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_CFzWQk",
+        "column_ppnqqe",
+        "column_Nw3ARq"
+      ],
+      "settings": {
+        "title": "product videos",
+        "description": "Discover the features and benefits of  ULTIMATS in these quick, engaging videos. See how our mats perform, learn about their key functionalities, and get a closer look at our designs. Perfect for anyone looking to make an informed purchase decision!",
+        "play_onload": false,
+        "social_handle": "instagram.com/ultimats_official/",
+        "social_link": "social_instagram_link",
+        "font_size": 100,
+        "background": "main-background",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product-content": {
+      "type": "product-content",
+      "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {
+            "padding_top": 0,
+            "padding_bottom": 40
+          }
+        },
+        "product_features": {
+          "type": "product_features",
+          "settings": {
+            "font_size": 100,
+            "icon_size": 100,
+            "background": "background-modal",
+            "feature_title_1": "Color Options",
+            "feature_icon_1": "palette",
+            "feature_text_1": "<p>Choose your mat color</p>",
+            "feature_link_1": "",
+            "feature_title_2": "Premium Product",
+            "feature_icon_2": "star",
+            "feature_text_2": "<p>High-quality materials & finishing</p>",
+            "feature_link_2": "",
+            "feature_title_3": "Made in India",
+            "feature_icon_3": "globe",
+            "feature_text_3": "<p>Exported worldwide</p>",
+            "feature_link_3": "",
+            "feature_title_4": "",
+            "feature_icon_4": "none",
+            "feature_text_4": "",
+            "feature_link_4": "",
+            "feature_title_5": "",
+            "feature_icon_5": "none",
+            "feature_text_5": "",
+            "feature_link_5": "",
+            "feature_title_6": "",
+            "feature_icon_6": "none",
+            "feature_text_6": "",
+            "feature_link_6": "",
+            "padding_top": 0,
+            "padding_bottom": 50
+          }
+        },
+        "checklist": {
+          "type": "checklist",
+          "settings": {
+            "image": "shopify://shop_images/hybrid_section_detail.png",
+            "show_scrim": false,
+            "scrim_lightness": 0,
+            "icon": "shield-check",
+            "text": "",
+            "font_size": 70,
+            "font_type": "body-font",
+            "icon_1": "shield-check",
+            "text_1": "No toxic chemicals used",
+            "icon_2": "shield-check",
+            "text_2": "REACH and ROHS compliant",
+            "icon_3": "shield-check",
+            "text_3": "100% washable",
+            "icon_4": "shield-check",
+            "text_4": "Traps dirt and retains moisture",
+            "background": "background-modal",
+            "padding_top": 0,
+            "padding_bottom": 40
+          }
+        },
+        "product_notes": {
+          "type": "product_notes",
+          "disabled": true,
+          "settings": {
+            "collapsible_content": true,
+            "notes_title": "Dimensions & Weight",
+            "notes_text": "<ul><li>Dimensions: 2ft x3ft   |  3ft x 5ft </li><li>Weight:       1.65 Kgs   |  4.10 Kgs</li></ul>",
+            "page": "",
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "product_notes_cCUfWj": {
+          "type": "product_notes",
+          "settings": {
+            "collapsible_content": true,
+            "notes_title": "Shipping & Returns Policy",
+            "notes_text": "<p>Receive free standard shipping within India. We ship via Shiprocket and Delhivery. Dispatch times are 0 -7  days within India.</p><p>Ultimats is committed to delivering high quality products to our customers and we want you to be 100% happy with your online purchase.</p><p>We offer full refund within 7 days if the product does not meet quality standards or if you change your mind. The product should not be used or damaged.</p>",
+            "page": "",
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "scale": {
+          "type": "scale",
+          "disabled": true,
+          "settings": {
+            "collapsible_content": true,
+            "scale_title": "Scale",
+            "scale_text": "",
+            "scale_value": "0",
+            "scale_label_1": "Step 1",
+            "scale_label_2": "Step 2",
+            "scale_label_3": "",
+            "scale_label_4": "",
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "product_care": {
+          "type": "product_care",
+          "settings": {
+            "collapsible_content": true,
+            "care_title": "",
+            "care_text_1": "Machine wash",
+            "care_icon_1": "washing-machine",
+            "care_text_2": "Add care detail",
+            "care_icon_2": "hands-bubbles",
+            "care_text_3": "",
+            "care_icon_3": "clothes-hanger",
+            "care_text_4": "",
+            "care_icon_4": "clothes-hanger",
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_facebook": true,
+            "share_twitter": true,
+            "share_pinterest": true,
+            "padding_top": 0,
+            "padding_bottom": 50
+          }
+        },
+        "complementary": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Pairs well with",
+            "product_list_limit": 10,
+            "picker_type": "button",
+            "color_swatch_type": "none",
+            "color_swatch_shape": "circle",
+            "swatch_size": 36,
+            "padding_top": 0,
+            "padding_bottom": 50
+          }
+        }
+      },
+      "block_order": [
+        "description",
+        "product_features",
+        "checklist",
+        "product_notes",
+        "product_notes_cCUfWj",
+        "scale",
+        "product_care",
+        "share",
+        "complementary"
+      ],
+      "disabled": true,
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "size-chart": {
+      "type": "size-chart",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "is_thead": true,
+            "row_name": "Size",
+            "column_values": "XS, S, M, L, XL, 1X"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "is_thead": false,
+            "row_name": "Bust",
+            "column_values": "32, 34, 36, 40, 43, 45"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "is_thead": false,
+            "row_name": "Waist",
+            "column_values": "24, 26, 28, 32, 35, 37"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Size chart",
+        "note": "Sizes are American and expressed in inches.",
+        "background": "background-modal",
+        "padding_top": 0,
+        "padding_bottom": 44
+      }
+    },
+    "customer_reviews_DkBmVL": {
+      "type": "customer-reviews",
+      "blocks": {
+        "review_VxNbUD": {
+          "type": "review",
+          "settings": {
+            "autoplay_video": true,
+            "value_rating": 5,
+            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "location": "Author's Location",
+            "link": ""
+          }
+        },
+        "review_BGCcVH": {
+          "type": "review",
+          "settings": {
+            "autoplay_video": true,
+            "value_rating": 5,
+            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "location": "Author's Location",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_VxNbUD",
+        "review_BGCcVH"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Customer Reviews",
+        "subheading": "",
+        "color_text": "primary-text-1",
+        "font_size": 100,
+        "columns": 2,
+        "card_font_size": 100,
+        "background": "background-modal",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "custom_liquid_bLw4Pp": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% render \"sc-custom-faq-accordion\" %}",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "featured_collection_pyeMBP": {
+      "type": "featured-collection",
+      "disabled": true,
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "",
+        "font_size": 100,
+        "color_text": "primary-text-1",
+        "collection": "",
+        "product_list": [],
+        "columns": 3,
+        "font_card_size": 100,
+        "background": "background-modal",
+        "show_view_all": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "1711616947bd501cf7": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_eznDAC": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_eznDAC"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {}
+    }
+  },
+  "order": [
+    "custom_liquid_zVPFrc",
+    "product-information-hybrid",
+    "custom_liquid_rVU8DQ",
+    "custom_liquid_67cWCH",
+    "custom_liquid_AqJtzz",
+    "product_benefits_reels_LaqHqw",
+    "video_column_WxkNP4",
+    "product-content",
+    "size-chart",
+    "customer_reviews_DkBmVL",
+    "custom_liquid_bLw4Pp",
+    "featured_collection_pyeMBP",
+    "1711616947bd501cf7",
+    "product-recommendations"
+  ]
+}

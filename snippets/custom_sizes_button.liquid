@@ -1,0 +1,20 @@
+{% comment %}
+{% if product.metafields.g_tag.custom_sizes != nil %}
+  <div class="custmizeButton">
+    <label class="button_label">Not your size?</label>
+
+    {% if product.handle == "ultiscrape-1" or product.handle == "ultiscrape-2" or product.handle == "ultiscrape-3" or product.handle == "ultiscrape-4" %}
+      <a href="/products/ultiscrape-carpet-mat">Customize your order</a>
+    {% elsif product.handle == "ulticlean" or product.handle == "ulticlean-red-black" or product.handle == "ultimate-dirt-trap-mat-brown" or product.handle == "first-ultimate-dirt-trap-mat-green" %}
+      <a href="/products/ulticlean-carpet-mat-1">Customize your order</a>
+    {% elsif product.title contains "UltiWipe"%} 
+    <a href="https://ultimats.com/products/ultiwipe-carpet-mat">Customize your order</a>
+    {% elsif product.title contains "UltiScrub"%} 
+    <a href="https://ultimats.com/products/ultiscrub-carpet-mat-1">Customize your order</a>
+    {% else %}
+      <a href="/products/ultidure-carpet-mat">Customize your order</a>
+    {% endif %}
+
+  </div>
+{% endif %}
+{% endcomment %}

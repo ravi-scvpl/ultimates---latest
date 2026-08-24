@@ -1,0 +1,9 @@
+{
+  "parent": "product.ultiscrubnewm2m.json",
+  "context": {
+    "market": "in"
+  },
+  "sections": {
+    "product-information": {}
+  }
+}

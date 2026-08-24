@@ -1,0 +1,210 @@
+{
+  "layout": "theme.premium-hero",
+  "sections": {
+    "main": {
+      "type": "premium-hero",
+      "settings": {
+        "tagline": "ALUMINIUM ENTRANCE GRATES",
+        "heading": "Robust. Architectural. _Indestructible._",
+        "subheading": "Top-of-the-line aluminium entrance matting systems designed to endure the most challenging high-traffic environments.",
+        "image": "shopify://shop_images/Entrance.png",
+        "btn_1_text": "Configure Mat",
+        "btn_1_link": "#technical",
+        "btn_2_text": "Contact Us",
+        "btn_2_link": "#contact",
+        "show_proof_widget": true,
+        "proof_icon": "verified",
+        "proof_label": "RATED #1",
+        "proof_value": "Architect-Approved 5 Year Warranty"
+      }
+    },
+    "feature_grid": {
+      "type": "premium-feature-grid",
+      "blocks": {
+        "card_1": {
+          "type": "media_card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2024-02-18_at_11.56.39_AM.png",
+            "title": "UltiBrush",
+            "text": "Stiff PA brush infills to aggressively remove large quantities of dirt (Zone 1)."
+          }
+        },
+        "card_2": {
+          "type": "media_card",
+          "settings": {
+            "image": "shopify://shop_images/Brush_Rub_Side.png",
+            "title": "Look inside",
+            "text": "Alternate brush and ribbed rubber infills for heavy scraping with slip protection (Zone 1)."
+          }
+        },
+        "card_3": {
+          "type": "media_card",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2024-02-18_at_11.57.25_AM.png",
+            "title": "UltiRub",
+            "text": "Heavy duty rubber ribs for scraping and slip protection (Zone 1 & 2)."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ],
+      "settings": {
+        "heading": "CHOICE OF MAT INSERTS",
+        "subheading": "Customizable mat inserts in configurations best-suited to your application."
+      }
+    },
+    "collage_styles": {
+      "type": "premium-collage",
+      "blocks": {
+        "media1": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/Placed_in_recess_with_frame.png",
+            "link": ""
+          }
+        },
+        "media2": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/Suface_Laid_with_Frame_464px.png",
+            "link": ""
+          }
+        },
+        "media3": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/surface_loose_laid.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "media1",
+        "media2",
+        "media3"
+      ],
+      "settings": {
+        "tagline": "LAYING STYLES",
+        "title": "Laying Styles",
+        "text": "Choose how your aluminium mats are installed: placed in a recessed matwell, laid to surface with a ramp frame, or loose laid.",
+        "button_label": "Request a Quote",
+        "button_link": "#contact"
+      }
+    },
+    "technical": {
+      "type": "premium-technical-specs",
+      "settings": {
+        "heading": "Technical Specifications",
+        "description": "UltiGrate satisfies all regulatory guidelines, including ADA accessibility requirements.",
+        "spec_1_title": "Material Composition",
+        "spec_1_content": "<ul><li><strong>Frame:</strong> 6063T6 Anodized Aluminium.</li><li><strong>Base:</strong> TPR Anti-slip Rubber.</li><li><strong>Infill Options:</strong> Brush, Rubber, Ribbed Carpet, PA Carpet.</li></ul>",
+        "spec_2_title": "Durability & Traffic",
+        "spec_2_content": "<p>Approved for up to 10 million annual pedestrian crossings and heavy trolley crossings up to 600 Kgs.</p>",
+        "spec_3_title": "Warranty & Edging",
+        "spec_3_content": "<p>5-year framework warranty. Edging profiles include recessed support frames, surface ramp frames, and loose-laid ramping.</p>"
+      }
+    },
+    "testimonial_new": {
+      "type": "premium-testimonials",
+      "blocks": {
+        "testimonial_MnQ4mk": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "Ultimats is a regular supplier of quality floor matting across all our properties. Quality is good and consistent, and we are happy with the Vendor.",
+            "author_name": "David Ashley",
+            "author_title": "Sterling Resorts"
+          }
+        },
+        "testimonial_FjaGCH": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "Great professional and prompt service. Our requirement was understood and right products were offered. We are happy and satisfied.",
+            "author_name": "Ratanlal Goel",
+            "author_title": "Agarwal Packers"
+          }
+        },
+        "testimonial_jrbwxV": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "The Ultimats brand is synonymous with quality and creativity, and we are using their floormats since several years.",
+            "author_name": "Mahesh Kumar",
+            "author_title": "LG Electronics"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_MnQ4mk",
+        "testimonial_FjaGCH",
+        "testimonial_jrbwxV"
+      ],
+      "settings": {
+        "heading": "What Our Customers Say"
+      }
+    },
+    "featured_clients_logos": {
+      "type": "premium-client-logo",
+      "blocks": {
+        "logo_4gHFDn": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/apml.png"
+          }
+        },
+        "logo_xNFQVr": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/indag_1c0be82d-b19b-403d-8afb-4770d3ec19fd.png"
+          }
+        },
+        "logo_dtrKCK": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/Screen_Shot_2019-06-28_at_09.51.53_a17a2253-e3f4-4d21-9ee3-90dab3224cb1.png"
+          }
+        },
+        "logo_AdDTJE": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/JKLakshmi_e22a5b48-1e8d-40f6-bfad-b3700b13e3e6.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_4gHFDn",
+        "logo_xNFQVr",
+        "logo_dtrKCK",
+        "logo_AdDTJE"
+      ],
+      "settings": {}
+    },
+    "contact": {
+      "type": "premium-contact",
+      "settings": {
+        "title": "Need product support?",
+        "tagline": "Our Customer Service Team Will Connect With You",
+        "address": "Ultimate Industries Limited, Plot 32, Naharpur Nawada Road, Sector 81, Gurgaon 122004, Haryana, INDIA",
+        "hours": "<p>Monday - Saturday<br>8am - 5pm</p>",
+        "email": "info@ultimats.com",
+        "phone": "+91 79828 15749",
+        "payment_title": "Online Direct Payment Link",
+        "payment_desc": "Use this payment link for making direct online payments for specific offline transactions.",
+        "payment_button_label": "Direct Payment",
+        "payment_button_link": "https://pages.razorpay.com/ultimats_payments",
+        "map_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5228.7760392511145!2d76.9364451410703!3d28.38886693384552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3de63fcdd98f%3A0x478c2588f9e4ea77!2sUltimate%20Industries%20Limited!5e0!3m2!1sen!2sin!4v1708343809942!5m2!1sen!2sin\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "contact_image": "shopify://shop_images/sara (2).png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "feature_grid",
+    "collage_styles",
+    "technical",
+    "testimonial_new",
+    "featured_clients_logos",
+    "contact"
+  ]
+}

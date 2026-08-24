@@ -1,0 +1,209 @@
+<!-- Premium Commercial Hero Section -->
+{% style %}
+  #premium-commercial-hero-{{ section.id }} .glass-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(25, 23, 21, 0.1);
+  }
+  #premium-commercial-hero-{{ section.id }} .fade-in-up {
+    animation: fadeInUp-{{ section.id }} 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @keyframes fadeInUp-{{ section.id }} {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+{% endstyle %}
+
+<section
+  id="premium-commercial-hero-{{ section.id }}"
+  class="px-margin-mobile md:px-margin-desktop py-12 md:py-24 max-w-container-max mx-auto flex flex-col md:flex-row items-center gap-16 relative z-10"
+>
+  <!-- Content Column -->
+  <div class="w-full md:w-1/2 space-y-8 fade-in-up">
+    {% if section.settings.tagline != blank %}
+      <span class="text-label-caps font-label-caps uppercase text-secondary tracking-widest block">
+        {{ section.settings.tagline }}
+      </span>
+    {% endif %}
+
+    {% if section.settings.heading != blank %}
+      <h1 class="font-display-xl text-display-xl-mobile md:text-display-xl leading-tight text-primary">
+        {{ section.settings.heading }}
+      </h1>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg leading-relaxed">
+        {{ section.settings.description }}
+      </p>
+    {% endif %}
+
+    <div class="flex flex-wrap gap-4 pt-2">
+      {% if section.settings.btn_1_text != blank %}
+        {% if section.settings.btn_1_link != blank %}
+          <a
+            href="{{ section.settings.btn_1_link }}"
+            class="inline-block bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:opacity-90 transition-all text-center"
+          >
+            {{ section.settings.btn_1_text }}
+          </a>
+        {% else %}
+          <button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md hover:opacity-90 transition-all text-center">
+            {{ section.settings.btn_1_text }}
+          </button>
+        {% endif %}
+      {% endif %}
+
+      {% if section.settings.btn_2_text != blank %}
+        {% if section.settings.btn_2_link != blank %}
+          <a
+            href="{{ section.settings.btn_2_link }}"
+            class="inline-block border border-primary text-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all text-center"
+          >
+            {{ section.settings.btn_2_text }}
+          </a>
+        {% else %}
+          <button class="border border-primary text-primary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all text-center">
+            {{ section.settings.btn_2_text }}
+          </button>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Media Column -->
+  <div class="w-full md:w-1/2 relative">
+    <div class="aspect-[4/5] rounded-lg overflow-hidden border border-on-surface/10 bg-surface-container">
+      {% if section.settings.image != blank %}
+        <img
+          alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}"
+          class="w-full h-full object-cover"
+          src="{{ section.settings.image | image_url: width: 1200 }}"
+          loading="eager"
+        >
+      {% else %}
+        <img
+          alt="Commercial Entrance"
+          class="w-full h-full object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFDTpET0hIkZ9etnUvd_xWKw-KlY-8chYishY7JtXA9si33xmVhnWi1C6B9olMZuej7ggFVKlMW9ENRdBs_FpiFONIF2X2kh048TGcQOUKJsGX1i4cQGYiP2doTpck8odTE9Z94sCv9R0J_uFYswuFyXMxCoWieI77WgWCetjY2cF9lWNYcAr2wbdQA2WEkfSf_38WvxoWAVa1tWTiMyesjV6eDtJx0f9_97ZA7oLcqGhn8kRdbxYazdk7w4lVp7qeIH7bJmwV40Y"
+        >
+      {% endif %}
+    </div>
+
+    <!-- Glass Proof Widget -->
+    {% if section.settings.show_proof %}
+      <div class="absolute -bottom-8 -left-8 glass-card p-6 rounded-lg max-w-[220px] hidden md:block text-left shadow-lg">
+        <div class="flex items-center gap-2 mb-2">
+          {% if section.settings.proof_icon != blank %}
+            <span
+              class="material-symbols-outlined text-secondary"
+              style="font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;"
+            >
+              {{ section.settings.proof_icon }}
+            </span>
+          {% endif %}
+          <span class="font-label-caps text-label-caps text-primary tracking-wider font-semibold">
+            {{ section.settings.proof_kicker | default: 'PROVEN' }}
+          </span>
+        </div>
+        <p class="text-label-md font-label-md text-on-surface-variant leading-relaxed">
+          {{ section.settings.proof_text }}
+        </p>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Premium Commercial Hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero Content"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Architectural Entrance Solutions"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Entrance control for high-traffic spaces."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Solutions for commercial, hospitality, and retail environments designed for durability, architectural integration, and impeccable first impressions."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "text",
+      "id": "btn_1_text",
+      "label": "Button 1 Text",
+      "default": "Download Technical Specs"
+    },
+    {
+      "type": "url",
+      "id": "btn_1_link",
+      "label": "Button 1 Link"
+    },
+    {
+      "type": "text",
+      "id": "btn_2_text",
+      "label": "Button 2 Text",
+      "default": "View Projects"
+    },
+    {
+      "type": "url",
+      "id": "btn_2_link",
+      "label": "Button 2 Link"
+    },
+    {
+      "type": "header",
+      "content": "Proof Widget"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_proof",
+      "label": "Show Proof Card",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "proof_icon",
+      "label": "Material Icon Name",
+      "default": "verified"
+    },
+    {
+      "type": "text",
+      "id": "proof_kicker",
+      "label": "Proof Title",
+      "default": "PROVEN"
+    },
+    {
+      "type": "textarea",
+      "id": "proof_text",
+      "label": "Proof Details",
+      "default": "Tested to 10k+ daily footfalls in retail environments."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Commercial Hero"
+    }
+  ]
+}
+{% endschema %}

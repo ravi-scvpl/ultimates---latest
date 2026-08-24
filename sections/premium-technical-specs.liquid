@@ -1,0 +1,220 @@
+<!-- Premium Technical Specs & Accordions Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 relative z-10 font-body-md text-on-surface">
+  
+  <!-- Left Column: Specs & Accordions -->
+  <div class="text-left">
+    {% if section.settings.heading != blank %}
+      <h2 class="font-display-xl text-headline-lg font-normal leading-tight text-primary mb-6">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+    
+    {% if section.settings.description != blank %}
+      <p class="text-on-surface-variant font-body-lg text-sm md:text-base leading-relaxed mb-10">
+        {{ section.settings.description }}
+      </p>
+    {% endif %}
+    
+    <div class="space-y-4">
+      <!-- Accordion 1 -->
+      {% if section.settings.spec_1_title != blank and section.settings.spec_1_content != blank %}
+        <details class="group border-b border-on-surface/10 pb-4" open>
+          <summary class="flex justify-between items-center cursor-pointer list-none font-headline-md text-lg md:text-xl py-4 select-none focus:outline-none">
+            <span class="text-primary">{{ section.settings.spec_1_title }}</span>
+            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary text-xl flex-shrink-0">
+              expand_more
+            </span>
+          </summary>
+          <div class="py-4 text-on-surface-variant font-body-md text-sm md:text-base leading-relaxed">
+            {{ section.settings.spec_1_content }}
+          </div>
+        </details>
+      {% endif %}
+      
+      <!-- Accordion 2 -->
+      {% if section.settings.spec_2_title != blank and section.settings.spec_2_content != blank %}
+        <details class="group border-b border-on-surface/10 pb-4">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-headline-md text-lg md:text-xl py-4 select-none focus:outline-none">
+            <span class="text-primary">{{ section.settings.spec_2_title }}</span>
+            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary text-xl flex-shrink-0">
+              expand_more
+            </span>
+          </summary>
+          <div class="py-4 text-on-surface-variant font-body-md text-sm md:text-base leading-relaxed">
+            {{ section.settings.spec_2_content }}
+          </div>
+        </details>
+      {% endif %}
+      
+      <!-- Accordion 3 -->
+      {% if section.settings.spec_3_title != blank and section.settings.spec_3_content != blank %}
+        <details class="group border-b border-on-surface/10 pb-4">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-headline-md text-lg md:text-xl py-4 select-none focus:outline-none">
+            <span class="text-primary">{{ section.settings.spec_3_title }}</span>
+            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary text-xl flex-shrink-0">
+              expand_more
+            </span>
+          </summary>
+          <div class="py-4 text-on-surface-variant font-body-md text-sm md:text-base leading-relaxed">
+            {{ section.settings.spec_3_content }}
+          </div>
+        </details>
+      {% endif %}
+    </div>
+  </div>
+  
+  <!-- Right Column: Made to Measure Callout Box -->
+  <div class="bg-primary-container text-on-primary-fixed p-8 md:p-12 rounded-lg relative overflow-hidden flex flex-col justify-between shadow-sm min-h-[350px] md:min-h-[400px]">
+    <div class="relative z-10 text-left">
+      {% if section.settings.cta_heading != blank %}
+        <h3 class="font-display-xl text-headline-lg font-normal leading-tight text-white mb-6">
+          {{ section.settings.cta_heading }}
+        </h3>
+      {% endif %}
+      
+      {% if section.settings.cta_description != blank %}
+        <p class="text-on-primary-container text-sm md:text-base leading-relaxed mb-10 max-w-md">
+          {{ section.settings.cta_description }}
+        </p>
+      {% endif %}
+      
+      {% if section.settings.cta_button_text != blank %}
+        <a href="{{ section.settings.cta_button_link | default: '/pages/made-to-measure' }}" 
+           class="bg-surface text-primary px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white hover:scale-105 hover:shadow-md transition-all text-center inline-block">
+          {{ section.settings.cta_button_text }}
+        </a>
+      {% endif %}
+    </div>
+    
+    <!-- Background Icon overlay -->
+    <div class="absolute right-[-80px] bottom-[-80px] opacity-[0.08] pointer-events-none select-none">
+      <span class="material-symbols-outlined text-[300px] md:text-[400px] text-white">
+        straighten
+      </span>
+    </div>
+  </div>
+  
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Accordion group behavior: close other accordions when one is opened
+    const detailsElements = document.querySelectorAll('details.group');
+    detailsElements.forEach(el => {
+      el.addEventListener('click', function(e) {
+        if (!el.open) {
+          detailsElements.forEach(otherEl => {
+            if (otherEl !== el) {
+              otherEl.removeAttribute('open');
+            }
+          });
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Premium Technical Specs",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Spec Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Technical Specifications"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Section Description",
+      "default": "We believe in transparency of craftsmanship. Every mat is built to exacting architectural standards using sustainably sourced materials."
+    },
+    {
+      "type": "header",
+      "content": "Accordion 1"
+    },
+    {
+      "type": "text",
+      "id": "spec_1_title",
+      "label": "Accordion 1 Title",
+      "default": "Material Composition"
+    },
+    {
+      "type": "richtext",
+      "id": "spec_1_content",
+      "label": "Accordion 1 Content",
+      "default": "<p><strong>Surface:</strong> 100% Solution-dyed Polypropylene.<br><strong>Backing:</strong> Heavy-duty Nitrile EX™ rubber.<br><strong>Height:</strong> 12mm profile.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Accordion 2"
+    },
+    {
+      "type": "text",
+      "id": "spec_2_title",
+      "label": "Accordion 2 Title",
+      "default": "Care & Maintenance"
+    },
+    {
+      "type": "richtext",
+      "id": "spec_2_content",
+      "label": "Accordion 2 Content",
+      "default": "<p>Pressure wash or vacuum daily for optimal performance. Resistant to commercial-grade cleaning agents and grease.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Accordion 3"
+    },
+    {
+      "type": "text",
+      "id": "spec_3_title",
+      "label": "Accordion 3 Title",
+      "default": "Shipping & Lead Times"
+    },
+    {
+      "type": "richtext",
+      "id": "spec_3_content",
+      "label": "Accordion 3 Content",
+      "default": "<p>Standard sizes ship within 3-5 business days. Bespoke cuts require 10-14 days for precision manufacturing and edging.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Custom Size Callout CTA"
+    },
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "CTA Box Heading",
+      "default": "Need a custom size?"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_description",
+      "label": "CTA Box Description",
+      "default": "Our architects can design a bespoke matting system for complex shapes, large voids, or specific branding requirements."
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "CTA Button Text",
+      "default": "Start Made to Measure"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_link",
+      "label": "CTA Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Technical Specs",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

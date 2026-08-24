@@ -1,0 +1,57 @@
+{
+  "layout": "theme.premium-hero",
+  "sections": {
+    "main": {
+      "type": "premium-product-info",
+      "settings": {
+        "show_breadcrumbs": true,
+        "tagline_text": "Heavy traffic performance",
+        "show_vat_text": true,
+        "badge_1_icon": "verified",
+        "badge_1_text": "Architect-Approved",
+        "badge_2_icon": "bolt",
+        "badge_2_text": "Tested to 100k Steps"
+      }
+    },
+    "recommendations": {
+      "type": "premium-product-recommendations",
+      "settings": {
+        "heading": "You May Also Like",
+        "subheading": "Explore complementary products for a cohesive entrance experience."
+      }
+    },
+    "product_benefits_reels_LaqHqw": {
+      "type": "product-benefits-reels",
+      "name": "Product video reels",
+      "settings": {
+        "section_title": "Better By Design"
+      }
+    },
+    "enquiry": {
+      "type": "premium-commercial-enquiry",
+      "settings": {}
+    },
+    "reviews": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_benefits_reels_LaqHqw",
+    "recommendations",
+    "enquiry",
+    "reviews"
+  ]
+}

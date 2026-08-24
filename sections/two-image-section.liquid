@@ -1,0 +1,143 @@
+{% schema %}
+{
+  "name": "Two Image with Buttons",
+  "tag": "section",
+  "class": "two-image-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Collections"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_left",
+      "label": "Left Image"
+    },
+    {
+      "type": "url",
+      "id": "link_left",
+      "label": "Left Image Link"
+    },
+    {
+      "type": "text",
+      "id": "btn_text_left",
+      "label": "Left Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_right",
+      "label": "Right Image"
+    },
+    {
+      "type": "url",
+      "id": "link_right",
+      "label": "Right Image Link"
+    },
+    {
+      "type": "text",
+      "id": "btn_text_right",
+      "label": "Right Button Text",
+      "default": "Shop Now"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two Image with Buttons",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="two-image-section-wrapper">
+  {% if section.settings.heading != blank %}
+    <h2 class="two-image-heading">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  <div class="two-image-grid">
+    <!-- Left -->
+    <div class="image-container">
+      {% if section.settings.image_left %}
+        <img src="{{ section.settings.image_left | img_url: '800x' }}" alt="Left Image">
+      {% endif %}
+      {% if section.settings.link_left %}
+        <a href="{{ section.settings.link_left }}" class="image-button">{{ section.settings.btn_text_left }}</a>
+      {% endif %}
+    </div>
+
+    <!-- Right -->
+    <div class="image-container">
+      {% if section.settings.image_right %}
+        <img src="{{ section.settings.image_right | img_url: '800x' }}" alt="Right Image">
+      {% endif %}
+      {% if section.settings.link_right %}
+        <a href="{{ section.settings.link_right }}" class="image-button">{{ section.settings.btn_text_right }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+.two-image-section-wrapper {
+    text-align: center;
+    padding: 20px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.two-image-heading {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #000;
+}
+
+.two-image-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.image-container {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.image-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.image-button:hover {
+  background-color: #333;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .two-image-grid {
+    flex-direction: column;
+  }
+  .image-container {
+    flex: 1 1 100%;
+  }
+}
+</style>

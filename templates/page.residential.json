@@ -1,0 +1,119 @@
+{
+  "layout": "theme.premium-hero",
+  "sections": {
+    "hero": {
+      "type": "premium-commercial-hero",
+      "settings": {
+        "tagline": "Elegant Home Entrance Solutions",
+        "heading": "Luxury and durability for your home entrance.",
+        "description": "High-performance floor matting designed for residential properties, combining elegant design, moisture retention, and easy cleaning.",
+        "btn_1_text": "Explore Home Range",
+        "btn_1_link": "/collections/all",
+        "btn_2_text": "Contact Specialist",
+        "btn_2_link": "/pages/contact",
+        "proof_text": "Designed for maximum home comfort and heavy family traffic."
+      }
+    },
+    "bento": {
+      "type": "premium-commercial-bento",
+      "blocks": {
+        "sector_1": {
+          "type": "sector_card",
+          "settings": {
+            "col_span": "8",
+            "title": "Villas & Estates",
+            "description": "Grand entrances requiring high moisture retention and bespoke sizing.",
+            "fallback_image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuB2clhdN6SyobB401IvxJ6YY7bKEjRcqoVWByJGYFMIjLfqYnoNlCNpVptwKgENXPYwD479wkeAqeLuzz3PR6Bu3qGUzFzb8lsJchYYbkeslfb4n7zc0WDd-ZiVFJTv173y-lSlzDVuTbjKhKy58Y_X0nOKCJCSU6GyU-TDhSNP_gQbdAKSglhfjFKDYfVhVRueiIDUonLK3OicgpFxaII5DzQO1pG21LXob3NoEi741G3AUNG1wEjEha6HYYOAPMOsOe_9tnhwI2Y"
+          }
+        },
+        "sector_2": {
+          "type": "sector_card",
+          "settings": {
+            "col_span": "4",
+            "title": "Apartments",
+            "description": "Sleek, low-profile designs that fit under standard doorway clearances.",
+            "fallback_image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCs-oluhPd_s-QKQC7W4qt_ANpjjuSHBRvkASJ9ZB9FQtf3uW0WDay4Xu4ko9QBtp4lDskWiUeUH2ejtq9PbABSujiyTg2M_75WzQkIc19SfbtPsy_C0ObLR0Wb47owSYFd9Jz0lwN4tRO__PPF4q_3lELaGGOGT6uUtMINVHwtXVgw3H0uBxt-Q2oVwj0Iv8QE4cvdqA7g4DR-Ru56mZ7DvSnWmarkmna3D8ER-j1-JxHYHFYTMl5b983UNw61sRAdUawyjTnjRHw"
+          }
+        },
+        "sector_3": {
+          "type": "sector_card",
+          "settings": {
+            "col_span": "4",
+            "title": "Patios & Decks",
+            "description": "All-weather scraper matting for outdoor access areas.",
+            "fallback_image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDI4FTz05BOknFn71ebxOLwa4QeEPZG640K6yKubIl6iD2RVeNok2MRnw0Be426IICCp6oC5-ZchrRUXaeMymg18ZTzeRf4W6VnLTnhyDeJco9CJ9xWBNlSfOkrrVDYx3HCQ0uNHn5DqEFUT0xIa3uOKh43tH9jQrb-DAwn23p_WMLuN1XwH8WT1jOgb5DCVJZ0tPcP5Znq9BxzapNERPHUJg3X04RxA6KD7no6CFlQLlVSlo07GNo-cJXPbM4Gf9bh7KMrFA1gLjo"
+          }
+        },
+        "sector_4": {
+          "type": "sector_card",
+          "settings": {
+            "col_span": "8",
+            "title": "Kitchens & Mudrooms",
+            "description": "Comfortable anti-slip backing for active internal areas.",
+            "fallback_image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAW_t_KcrKu54XLCePp9B3S2aW20o1RAJuWNmroOrTFlGBOELEAE9Q7PsuKc7M-VOXBeNNC1eRf4jA1NtC9fd5plmLesMbdzH3WpJnyftzw7bA-CsRoOTku_3rTwqWfY5e8vtctidh_afZ8p4d3ybDXO2iwUjG8slXMmhUTXo71gWPGaz8ohafPbWoxEwE2OZngC0_XUiCwQnwRkj-7rD-IjVoFkc6oH93ZQ0P3dSXT78wgL2BUyoyYjZViGu_wO4NZ5VyxaC_zRD4"
+          }
+        }
+      },
+      "block_order": [
+        "sector_1",
+        "sector_2",
+        "sector_3",
+        "sector_4"
+      ],
+      "settings": {}
+    },
+    "products": {
+      "type": "premium-collection-grid",
+      "settings": {
+        "collection": "shop-floormats",
+        "show_use_case_filter": false
+      }
+    },
+    "features": {
+      "type": "premium-commercial-features",
+      "blocks": {
+        "feature_1": {
+          "type": "feature_item",
+          "settings": {
+            "icon": "home",
+            "title": "Bespoke Home Sizing",
+            "description": "Custom width and length to fit any private entry threshold perfectly."
+          }
+        },
+        "feature_2": {
+          "type": "feature_item",
+          "settings": {
+            "icon": "wash",
+            "title": "Machine Washable",
+            "description": "Easy cleaning support, machine washable up to 50°C."
+          }
+        },
+        "feature_3": {
+          "type": "feature_item",
+          "settings": {
+            "icon": "shield",
+            "title": "Non-Slip Safety",
+            "description": "High-grip backing prevents trips and slips on smooth residential tiling."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
+      "settings": {}
+    },
+    "enquiry": {
+      "type": "premium-commercial-enquiry",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "bento",
+    "products",
+    "features",
+    "enquiry"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "context": {
+    "market": "in"
+  },
+  "parent": "page.residential.json",
+  "sections": {}
+}

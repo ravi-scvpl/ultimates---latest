@@ -1,0 +1,122 @@
+{% schema %}
+{
+  "name": "Client Logo Marquee",
+  "tag": "section",
+  "class": "client-logo-marquee",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "FEATURED CLIENTS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Client Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Client Logo"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Client Logo Marquee",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="client-logo-section">
+  {% if section.settings.heading != blank %}
+    <h2 class="h1 scroll-animate fade-in scroll-animate-init">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  <div class="marquee">
+    <div class="marquee-content">
+      {% for block in section.blocks %}
+        {% if block.settings.logo_image %}
+          <div class="client-logo">
+            <img src="{{ block.settings.logo_image | img_url: '200x' }}" alt="Client Logo" loading="lazy">
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+.client-logo-section {
+  padding: 20px 0;
+  background: #fff;
+  text-align: center;
+  overflow: hidden;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.client-logo-heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+  margin-top:40px;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 40px;
+  animation: scroll-left 30s linear infinite;
+  width: max-content;
+}
+
+.client-logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-logo img {
+  height: 82px;
+  width: auto;
+  filter: grayscale(0%);
+  opacity: 1;
+  transition: filter 0.3s ease;
+}
+
+.client-logo img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .marquee-content {
+    gap: 20px;
+    animation-duration: 20s;
+  }
+
+  .client-logo img {
+    height: 50px;
+  }
+}
+</style>

@@ -1,0 +1,340 @@
+{%- style -%}
+  #premium-contact-{{ section.id }} {
+    background-color: {{ section.settings.bg_color | default: '#FAF8F5' }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  .contact-card-box {
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .contact-input-field {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #1F2937;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  .contact-input-field::placeholder {
+    color: #9CA3AF;
+  }
+  .contact-input-field:focus {
+    border-color: #000000;
+  }
+  .contact-submit-btn {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 9999px;
+    padding: 16px 32px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-submit-btn:hover {
+    background-color: #1F2937;
+  }
+{%- endstyle -%}
+
+<section id="premium-contact-{{ section.id }}" class="relative w-full z-10 font-body-md text-on-surface">
+  <div class="max-w-7xl mx-auto px-6 md:px-12">
+    
+    <!-- Section Header -->
+    <div class="text-left max-w-4xl mb-12">
+      <p class="text-xs tracking-widest uppercase text-[#8C6D4F] font-bold mb-3">Connect With Us</p>
+      <h1 class="text-5xl md:text-6xl font-normal leading-tight mb-4 text-black" style="font-family: 'Playfair Display', serif;">
+        {{ section.settings.title | default: "Contact Us" }}
+      </h1>
+      {% if section.settings.tagline != blank %}
+        <p class="text-neutral-600 text-base md:text-lg leading-relaxed max-w-2xl">
+          {{ section.settings.tagline }}
+        </p>
+      {% endif %}
+      <div class="h-1 w-20 bg-black mt-6"></div>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16">
+      
+      <!-- Left Column: Address & Details -->
+      <div class="lg:col-span-5 space-y-6 text-left">
+        <!-- Headquarters Details -->
+        <div class="contact-card-box space-y-6">
+          <h3 class="text-2xl text-black font-normal" style="font-family: 'Playfair Display', serif;">Headquarters</h3>
+          <div class="h-[2px] w-8 bg-[#8C6D4F]"></div>
+          
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="p-2 rounded-full bg-[#FAF8F5] text-[#8C6D4F] mt-1">
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742c1.002-.722 2.607-1.996 3.658-3.786 1.099-1.869 1.45-3.838 1.45-5.323 0-3.916-3.125-7.042-7.042-7.042C7.542 5.5 4.416 8.625 4.416 12.542c0 1.485.35 3.454 1.45 5.322 1.05 1.79 2.656 3.064 3.658 3.786a16.974 16.974 0 001.143.742zM12 15a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-bold text-[#8C6D4F] text-xs uppercase tracking-wider mb-1">Address</p>
+                <p class="text-neutral-600 text-sm leading-relaxed">{{ section.settings.address }}</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="p-2 rounded-full bg-[#FAF8F5] text-[#8C6D4F] mt-1">
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-bold text-[#8C6D4F] text-xs uppercase tracking-wider mb-1">Hours</p>
+                <div class="text-neutral-600 text-sm leading-relaxed">{{ section.settings.hours }}</div>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="p-2 rounded-full bg-[#FAF8F5] text-[#8C6D4F] mt-1">
+                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                  <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-bold text-[#8C6D4F] text-xs uppercase tracking-wider mb-1">Email</p>
+                <a href="mailto:{{ section.settings.email }}" class="text-black hover:underline text-sm">{{ section.settings.email }}</a>
+              </div>
+            </div>
+
+            {% if section.settings.phone != blank %}
+              <div class="flex items-start space-x-4">
+                <div class="p-2 rounded-full bg-[#FAF8F5] text-[#8C6D4F] mt-1">
+                  <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c.135.251.35.53.64.84.53.57 1.16 1.07 1.83 1.48l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-bold text-[#8C6D4F] text-xs uppercase tracking-wider mb-1">Phone</p>
+                  <a href="tel:{{ section.settings.phone }}" class="text-black hover:underline text-sm">{{ section.settings.phone }}</a>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Online Direct Payment -->
+        {% if section.settings.payment_title != blank %}
+          <div class="contact-card-box space-y-4">
+            <h4 class="text-xl text-black font-normal" style="font-family: 'Playfair Display', serif;">
+              {{ section.settings.payment_title }}
+            </h4>
+            <p class="text-neutral-500 text-xs leading-relaxed">
+              {{ section.settings.payment_desc }}
+            </p>
+            {% if section.settings.payment_button_link != blank %}
+              <div class="pt-2">
+                <a href="{{ section.settings.payment_button_link }}" target="_blank" class="contact-submit-btn text-xs font-semibold uppercase tracking-wider">
+                  <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4.5 3.75a3 3 0 00-3 3v.75h21v-.75a3 3 0 00-3-3h-15z" />
+                    <path fill-rule="evenodd" d="M22.5 9.75h-21v7.5a3 3 0 003 3h15a3 3 0 003-3v-7.5zm-18 3.75a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z" clip-rule="evenodd" />
+                  </svg>
+                  {{ section.settings.payment_button_label | default: "Make Direct Payment" }}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+      </div>
+
+      <!-- Right Column: Contact Form -->
+      <div class="lg:col-span-7">
+        <div class="contact-card-box text-left h-full flex flex-col justify-between">
+          <div>
+            <h3 class="text-2xl text-black font-normal mb-8" style="font-family: 'Playfair Display', serif;">Send a Message</h3>
+            
+            {% form 'contact', id: 'premium-contact-form' %}
+              {% if form.posted_successfully? %}
+                <div class="p-4 bg-green-50 text-green-800 text-sm rounded-lg mb-6 flex items-center space-x-2 border border-green-200">
+                  <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span>Thank you! Your message has been sent successfully.</span>
+                </div>
+              {% endif %}
+
+              {% if form.errors %}
+                <div class="p-4 bg-red-50 text-red-800 text-sm rounded-lg mb-6 border border-red-200">
+                  {{ form.errors | default_errors }}
+                </div>
+              {% endif %}
+
+              <div class="space-y-6">
+                <div>
+                  <label class="block text-xs uppercase font-bold text-neutral-500 tracking-wider mb-2">Your Name</label>
+                  <input 
+                    type="text" 
+                    name="contact[name]" 
+                    required 
+                    class="contact-input-field"
+                    placeholder="e.g. Jane Doe"
+                  >
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label class="block text-xs uppercase font-bold text-neutral-500 tracking-wider mb-2">Your Email</label>
+                    <input 
+                      type="email" 
+                      name="contact[email]" 
+                      required 
+                      class="contact-input-field"
+                      placeholder="name@company.com"
+                    >
+                  </div>
+                  <div>
+                    <label class="block text-xs uppercase font-bold text-neutral-500 tracking-wider mb-2">Phone Number</label>
+                    <input 
+                      type="tel" 
+                      name="contact[phone]" 
+                      class="contact-input-field"
+                      placeholder="+1 (555) 000-0000"
+                    >
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs uppercase font-bold text-neutral-500 tracking-wider mb-2">Message</label>
+                  <textarea 
+                    name="contact[body]" 
+                    rows="5" 
+                    required
+                    class="contact-input-field"
+                    placeholder="Tell us about your project requirements..."
+                  ></textarea>
+                </div>
+
+                <div class="pt-4">
+                  <button type="submit" class="contact-submit-btn w-full md:w-auto">
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            {% endform %}
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Map Embedded Frame -->
+    {% if section.settings.map_embed != blank %}
+      <div class="w-full rounded-[24px] overflow-hidden border border-neutral-200 shadow-sm mt-12">
+        {{ section.settings.map_embed }}
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Premium Contact Page",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#fdf9f1"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Heading",
+      "default": "Contact Us"
+    },
+    {
+      "type": "textarea",
+      "id": "tagline",
+      "label": "Subheading Tagline"
+    },
+    {
+      "type": "textarea",
+      "id": "address",
+      "label": "Headquarters Address"
+    },
+    {
+      "type": "richtext",
+      "id": "hours",
+      "label": "Working Hours"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email Address",
+      "default": "info@ultimats.com"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone Number"
+    },
+    {
+      "type": "text",
+      "id": "payment_title",
+      "label": "Payment Card Title"
+    },
+    {
+      "type": "textarea",
+      "id": "payment_desc",
+      "label": "Payment Card Description"
+    },
+    {
+      "type": "text",
+      "id": "payment_button_label",
+      "label": "Payment Button Label"
+    },
+    {
+      "type": "text",
+      "id": "payment_button_link",
+      "label": "Payment Button Link"
+    },
+    {
+      "type": "html",
+      "id": "map_embed",
+      "label": "Google Map Iframe Embed"
+    },
+    {
+      "type": "image_picker",
+      "id": "contact_image",
+      "label": "Contact Page Image"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 80
+    }
+  ]
+}
+{% endschema %}

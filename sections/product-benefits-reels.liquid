@@ -1,0 +1,216 @@
+{% comment %}
+    SECTION SCHEMA: Defines the editable settings for the merchant (Title and Video Files)
+    The type 'video' correctly handles the Shopify GID format and output.
+{% endcomment %}
+{% schema %}
+{
+  "name": "Product Video Reels",
+  "tag": "section",
+  "class": "product-video-reels-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Heading",
+      "default": "Product Benefits"
+    },
+    {
+      "type": "header",
+      "content": "Video Reels (Requires Video File Metafields)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Ensure the product metafields for videos (Video 1, Video 2, Video 3) are populated with valid Shopify Video files for this section to display."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Video Reels",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}
+
+{% comment %}
+    CHECK CONDITION: The section only renders if ALL THREE video metafields have data.
+    The section settings are accessed using 'section.settings'.
+{% endcomment %}
+
+{% if 
+    product.metafields.custom.product_video1 != blank and 
+    product.metafields.custom.product_video2 != blank and 
+    product.metafields.custom.product_video3 != blank 
+%}
+
+<div class="product-video-reel-section">
+<style>
+    /* --- SECTION-LEVEL CONTAINMENT --- */
+    .product-video-reel-section {
+        display: block;
+        background-color: #ffffff;
+        font-family: Arial, sans-serif;
+        padding-top: 50px;
+        width: 100%; 
+        overflow-x: hidden; /* Fixes page-level horizontal scroll on mobile */
+    }
+    
+    .product-video-reel-section .page-title {
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+    }
+
+    /* --- DESKTOP LAYOUT (3 centered videos) --- */
+    .product-video-reel-section .reel-containers-new {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        max-width: 1000px;
+        padding: 0 20px;
+    }
+
+    .product-video-reel-section .reel {
+        width: 340px;
+        height: 520px;
+        flex-shrink: 0; 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    /* --- MEDIA CONTENT & UI STYLES --- */
+    .product-video-reel-section .reel-content {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .product-video-reel-section .text-overlay {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding: 10px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+        color: white;
+        font-size: 0.9em;
+        text-align: left;
+    }
+
+    .product-video-reel-section .mute-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 3;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.2s;
+    }
+
+    .product-video-reel-section .mute-button:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    /* ------------------------------------------- */
+    /* --- MOBILE RESPONSIVE STYLES (VERTICAL) --- */
+    /* ------------------------------------------- */
+    @media (max-width: 768px) {
+        .product-video-reel-section .reel-containers-new {
+            /* MOBILE: Stack vertically */
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center;
+            overflow-x: hidden; 
+            padding: 0 20px; 
+            gap: 30px; 
+            margin: 0 auto; 
+        }
+        
+        .product-video-reel-section .reel {
+            width: 100%; 
+            height: 520px; 
+        }
+    }
+</style>
+
+<h2 class="page-title">{{ section.settings.section_title }}</h2>
+
+<div class="reel-containers-new">
+
+    <div class="reel reel-1">
+        <video 
+            class="reel-content" 
+            src="{{ product.metafields.custom.product_video1 | file_url }}" 
+            loop muted autoplay playsinline
+        ></video>
+        <button class="mute-button" data-reel-id="reel-1">🔊</button>
+        {% comment %} Optional text overlay can be added here using another metafield {% endcomment %}
+    </div>
+
+    <div class="reel reel-2">
+        <video 
+            class="reel-content" 
+            src="{{ product.metafields.custom.product_video2 | file_url }}" 
+            loop muted autoplay playsinline
+        ></video>
+        <button class="mute-button" data-reel-id="reel-2">🔊</button>
+    </div>
+
+    <div class="reel reel-3">
+        <video 
+            class="reel-content" 
+            src="{{ product.metafields.custom.product_video3 | file_url }}" 
+            loop muted autoplay playsinline
+        ></video>
+        <button class="mute-button" data-reel-id="reel-3">🔊</button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Scoped query selector to ensure we only target buttons within this section
+        const muteButtons = document.querySelectorAll('.product-video-reel-section .mute-button');
+
+        muteButtons.forEach(button => {
+            const reelElement = button.closest('.reel');
+            const videoElement = reelElement ? reelElement.querySelector('video') : null;
+
+            if (videoElement) {
+                // Initialize button icon based on video's starting muted state
+                button.textContent = videoElement.muted ? '🔇' : '🔊';
+
+                button.addEventListener('click', () => {
+                    // Toggle the muted state
+                    videoElement.muted = !videoElement.muted;
+
+                    // Update the button icon
+                    button.textContent = videoElement.muted ? '🔇' : '🔊';
+                });
+            } else {
+                button.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+</div> {% endif %}

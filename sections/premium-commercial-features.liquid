@@ -1,0 +1,228 @@
+<!-- Premium Commercial Features & Technicals -->
+<section
+  id="premium-commercial-features-{{ section.id }}"
+  class="px-margin-mobile md:px-margin-desktop py-20 md:py-28 max-w-container-max mx-auto relative z-10"
+>
+  <div class="flex flex-col lg:flex-row gap-24 items-start text-left">
+    <!-- Left Column: Features List -->
+    <div class="w-full lg:w-1/3">
+      {% if section.settings.heading != blank %}
+        <h2 class="font-headline-lg text-headline-lg mb-8 text-primary leading-tight">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+      
+      {% if section.settings.description != blank %}
+        <p class="font-body-md text-on-surface-variant mb-12 leading-relaxed">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+      
+      <ul class="space-y-8">
+        {% for block in section.blocks %}
+          {% if block.settings.title != blank %}
+            <li class="flex gap-4" {{ block.shopify_attributes }}>
+              {% if block.settings.icon != blank %}
+                <div class="bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center shrink-0">
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;"
+                  >
+                    {{ block.settings.icon }}
+                  </span>
+                </div>
+              {% endif %}
+              <div>
+                <h4 class="font-label-md text-label-md text-primary mb-1 font-semibold uppercase tracking-wider">
+                  {{ block.settings.title }}
+                </h4>
+                <p class="text-body-md text-on-surface-variant leading-relaxed">
+                  {{ block.settings.description }}
+                </p>
+              </div>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Right Column: Testimonial Box -->
+    <div class="w-full lg:w-2/3">
+      <div
+        class="bg-surface-container rounded-lg p-8 md:p-16 relative overflow-hidden"
+        style="background-color: {{ section.settings.testimonial_bg | default: '#f1ede6' }};"
+      >
+        <div class="relative z-10">
+          <span
+            class="material-symbols-outlined text-primary text-5xl mb-6 block"
+            style="font-variation-settings: 'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 48;"
+          >
+            format_quote
+          </span>
+          
+          {% if section.settings.quote != blank %}
+            <blockquote class="font-display-xl text-headline-md md:text-headline-lg mb-10 leading-snug italic text-primary">
+              "{{ section.settings.quote }}"
+            </blockquote>
+          {% endif %}
+          
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-full overflow-hidden bg-surface-container-high border border-on-surface/5 flex-shrink-0">
+              {% if section.settings.author_image != blank %}
+                <img
+                  alt="{{ section.settings.author_name | escape }}"
+                  class="w-full h-full object-cover"
+                  src="{{ section.settings.author_image | image_url: width: 150 }}"
+                  loading="lazy"
+                >
+              {% else %}
+                <img
+                  alt="{{ section.settings.author_name | escape }}"
+                  class="w-full h-full object-cover"
+                  src="{{ section.settings.fallback_author_url }}"
+                  loading="lazy"
+                >
+              {% endif %}
+            </div>
+            
+            <div>
+              {% if section.settings.author_name != blank %}
+                <p class="font-label-md text-label-md text-primary font-bold">
+                  {{ section.settings.author_name }}
+                </p>
+              {% endif %}
+              
+              {% if section.settings.author_title != blank %}
+                <p class="text-body-md text-on-surface-variant">
+                  {{ section.settings.author_title }}
+                </p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Premium Support & Quote",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Architectural Support Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Architectural Support"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Section Description",
+      "default": "We provide comprehensive documentation and support for large-scale developments."
+    },
+    {
+      "type": "header",
+      "content": "Testimonial Card Settings"
+    },
+    {
+      "type": "color",
+      "id": "testimonial_bg",
+      "label": "Card Background",
+      "default": "#f1ede6"
+    },
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Quote Text",
+      "default": "The level of precision in ULTIMATS' technical drawings made the installation in our hotel lobby seamless. They understand the balance between aesthetics and extreme durability."
+    },
+    {
+      "type": "image_picker",
+      "id": "author_image",
+      "label": "Author Profile Image"
+    },
+    {
+      "type": "text",
+      "id": "fallback_author_url",
+      "label": "Fallback Profile Image URL"
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Author Name",
+      "default": "Marcus Sterling"
+    },
+    {
+      "type": "text",
+      "id": "author_title",
+      "label": "Author Title",
+      "default": "Senior Facility Director, Grand Vista Hotels"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_item",
+      "name": "Support Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Material Icon Name",
+          "default": "architecture"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Title",
+          "default": "Bulk Sizing Support"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Feature Description",
+          "default": "Custom widths up to 12m for expansive airport and mall entrances."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Support & Quote",
+      "blocks": [
+        {
+          "type": "feature_item",
+          "settings": {
+            "icon": "architecture",
+            "title": "Bulk Sizing Support",
+            "description": "Custom widths up to 12m for expansive airport and mall entrances."
+          }
+        },
+        {
+          "type": "feature_item",
+          "settings": {
+            "icon": "branding_watermark",
+            "title": "Custom Branding",
+            "description": "Inlaid logos with laser-precision cutting for corporate identity."
+          }
+        },
+        {
+          "type": "feature_item",
+          "settings": {
+            "icon": "build",
+            "title": "Maintenance Guidance",
+            "description": "Comprehensive schedules to ensure 10+ year product lifespan."
+          }
+        }
+      ],
+      "settings": {
+        "fallback_author_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAaLtvLp_eZjPqgrWR-fJzWOxYJX8VB99Uf3hNsXKCna5tYRm99L6BfpbFfnda2nrRTXiDzp-W0ZkS0638FQFHNg5ls8wZOjwkfHnTNfoXpynZuQuC9pqWp2xPHsRbqQN5gAZ_oATWiGx448xKklMjJOLxlYIszpmEUVyAldpPubXua_Dr_tUGN9E69CpsQZBgwA-9NGxuu_Y77Jn0Jc_ewUdbIWQQ7NoPxIRh-5clFVZI-ue6iCaYphKZd7u6cJq6HkwtkXel2YXE"
+      }
+    }
+  ]
+}
+{% endschema %}

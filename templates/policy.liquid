@@ -1,0 +1,48 @@
+<div class="page-width py-16 md:py-24 max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop min-h-[60vh] flex flex-col justify-center">
+  <div class="max-w-4xl mx-auto w-full text-left">
+    <!-- Policy Title -->
+    <h1 class="font-display-xl text-[40px] md:text-[56px] font-bold text-primary mb-8 md:mb-12 leading-tight uppercase tracking-tight border-b border-on-surface/10 pb-6">
+      {{ policy.title }}
+    </h1>
+    
+    <!-- Policy Content Body -->
+    <div class="rte font-body-md text-[16px] md:text-[18px] text-on-surface-variant leading-relaxed space-y-6">
+      {{ policy.body }}
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Standard styles for rich text content within policy page */
+  .rte p {
+    margin-bottom: 1.5rem;
+  }
+  .rte h2, .rte h3, .rte h4 {
+    color: rgb(var(--color-foreground));
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .rte h2 {
+    font-size: 1.5rem;
+  }
+  .rte h3 {
+    font-size: 1.25rem;
+  }
+  .rte ul, .rte ol {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+    list-style-position: outside;
+  }
+  .rte ul {
+    list-style-type: disc;
+  }
+  .rte ol {
+    list-style-type: decimal;
+  }
+  .rte li {
+    margin-bottom: 0.5rem;
+  }
+</style>

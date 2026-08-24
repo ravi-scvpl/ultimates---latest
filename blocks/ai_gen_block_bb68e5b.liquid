@@ -1,0 +1,518 @@
+{% doc %}
+  @prompt
+    Create a theme section that displays an image with a customizable text overlay. The section should include settings for: text content, font family selection (from a list of web-safe and Google fonts), text color picker, font size, font weight, and text position over the image (horizontal: left/center/right and vertical: top/middle/bottom). The text should be elegantly overlaid on the image with optional background overlay opacity for readability. Should work responsively on mobile and desktop.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-image-text-overlay-{{ ai_gen_id }} {
+    position: relative;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    display: block;
+  }
+
+  .ai-image-text-overlay__wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .ai-image-text-overlay__image-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-image-text-overlay__placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    min-height: 400px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-image-text-overlay__placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .ai-image-text-overlay__empty-state-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  .ai-image-text-overlay__overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.overlay_color }};
+    opacity: {{ block.settings.overlay_opacity }};
+    pointer-events: none;
+  }
+
+  .ai-image-text-overlay__content-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: {{ block.settings.content_padding }}px;
+    z-index: 1;
+    
+    {% if block.settings.vertical_position == 'top' %}
+      align-items: flex-start;
+    {% elsif block.settings.vertical_position == 'middle' %}
+      align-items: center;
+    {% else %}
+      align-items: flex-end;
+    {% endif %}
+    
+    {% if block.settings.horizontal_position == 'left' %}
+      justify-content: flex-start;
+    {% elsif block.settings.horizontal_position == 'center' %}
+      justify-content: center;
+    {% else %}
+      justify-content: flex-end;
+    {% endif %}
+  }
+
+  .ai-image-text-overlay__text-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: {{ block.settings.font_weight }};
+    text-align: {{ block.settings.text_align }};
+    max-width: {{ block.settings.text_max_width }}%;
+    line-height: {{ block.settings.line_height }};
+    margin: 0;
+    
+    {% if block.settings.font_family == 'arial' %}
+      font-family: Arial, sans-serif;
+    {% elsif block.settings.font_family == 'helvetica' %}
+      font-family: Helvetica, Arial, sans-serif;
+    {% elsif block.settings.font_family == 'georgia' %}
+      font-family: Georgia, serif;
+    {% elsif block.settings.font_family == 'times' %}
+      font-family: 'Times New Roman', Times, serif;
+    {% elsif block.settings.font_family == 'courier' %}
+      font-family: 'Courier New', Courier, monospace;
+    {% elsif block.settings.font_family == 'verdana' %}
+      font-family: Verdana, Geneva, sans-serif;
+    {% elsif block.settings.font_family == 'trebuchet' %}
+      font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    {% elsif block.settings.font_family == 'playfair' %}
+      font-family: 'Playfair Display', Georgia, serif;
+    {% elsif block.settings.font_family == 'montserrat' %}
+      font-family: 'Montserrat', Arial, sans-serif;
+    {% elsif block.settings.font_family == 'roboto' %}
+      font-family: 'Roboto', Arial, sans-serif;
+    {% elsif block.settings.font_family == 'opensans' %}
+      font-family: 'Open Sans', Arial, sans-serif;
+    {% elsif block.settings.font_family == 'lato' %}
+      font-family: 'Lato', Arial, sans-serif;
+    {% elsif block.settings.font_family == 'raleway' %}
+      font-family: 'Raleway', Arial, sans-serif;
+    {% elsif block.settings.font_family == 'poppins' %}
+      font-family: 'Poppins', Arial, sans-serif;
+    {% elsif block.settings.font_family == 'merriweather' %}
+      font-family: 'Merriweather', Georgia, serif;
+    {% endif %}
+    
+    {% if block.settings.text_shadow %}
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    {% endif %}
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-image-text-overlay__text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.7 }}px;
+    }
+    
+    .ai-image-text-overlay__content-{{ ai_gen_id }} {
+      padding: {{ block.settings.content_padding | times: 0.6 }}px;
+    }
+    
+    .ai-image-text-overlay__text-{{ ai_gen_id }} {
+      max-width: 90%;
+    }
+  }
+
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+    .ai-image-text-overlay__text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.85 }}px;
+    }
+  }
+{% endstyle %}
+
+{% if block.settings.font_family == 'playfair' or block.settings.font_family == 'montserrat' or block.settings.font_family == 'roboto' or block.settings.font_family == 'opensans' or block.settings.font_family == 'lato' or block.settings.font_family == 'raleway' or block.settings.font_family == 'poppins' or block.settings.font_family == 'merriweather' %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {% if block.settings.font_family == 'playfair' %}
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  {% elsif block.settings.font_family == 'montserrat' %}
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  {% elsif block.settings.font_family == 'roboto' %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  {% elsif block.settings.font_family == 'opensans' %}
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  {% elsif block.settings.font_family == 'lato' %}
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  {% elsif block.settings.font_family == 'raleway' %}
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  {% elsif block.settings.font_family == 'poppins' %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  {% elsif block.settings.font_family == 'merriweather' %}
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+  {% endif %}
+{% endif %}
+
+<image-text-overlay-{{ ai_gen_id }} class="ai-image-text-overlay-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-image-text-overlay__wrapper-{{ ai_gen_id }}">
+    {% if block.settings.image %}
+      <img
+        src="{{ block.settings.image | image_url: width: 2000 }}"
+        alt="{{ block.settings.image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.image.width }}"
+        height="{{ block.settings.image.height }}"
+        class="ai-image-text-overlay__image-{{ ai_gen_id }}"
+      >
+    {% else %}
+      <div class="ai-image-text-overlay__placeholder-{{ ai_gen_id }}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag }}
+        <div class="ai-image-text-overlay__empty-state-{{ ai_gen_id }}">
+          Add an image to get started
+        </div>
+      </div>
+    {% endif %}
+    
+    {% if block.settings.show_overlay %}
+      <div class="ai-image-text-overlay__overlay-{{ ai_gen_id }}"></div>
+    {% endif %}
+    
+    <div class="ai-image-text-overlay__content-{{ ai_gen_id }}">
+      {% if block.settings.text != blank %}
+        <div class="ai-image-text-overlay__text-{{ ai_gen_id }}">
+          {{ block.settings.text }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</image-text-overlay-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class ImageTextOverlay{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        this.style.display = 'block';
+      }
+    }
+
+    customElements.define('image-text-overlay-{{ ai_gen_id }}', ImageTextOverlay{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Image with text overlay",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Text content"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Discover our collection</p>"
+    },
+    {
+      "type": "select",
+      "id": "font_family",
+      "label": "Font family",
+      "options": [
+        {
+          "value": "arial",
+          "label": "Arial"
+        },
+        {
+          "value": "helvetica",
+          "label": "Helvetica"
+        },
+        {
+          "value": "georgia",
+          "label": "Georgia"
+        },
+        {
+          "value": "times",
+          "label": "Times New Roman"
+        },
+        {
+          "value": "courier",
+          "label": "Courier New"
+        },
+        {
+          "value": "verdana",
+          "label": "Verdana"
+        },
+        {
+          "value": "trebuchet",
+          "label": "Trebuchet MS"
+        },
+        {
+          "value": "playfair",
+          "label": "Playfair Display (Google)"
+        },
+        {
+          "value": "montserrat",
+          "label": "Montserrat (Google)"
+        },
+        {
+          "value": "roboto",
+          "label": "Roboto (Google)"
+        },
+        {
+          "value": "opensans",
+          "label": "Open Sans (Google)"
+        },
+        {
+          "value": "lato",
+          "label": "Lato (Google)"
+        },
+        {
+          "value": "raleway",
+          "label": "Raleway (Google)"
+        },
+        {
+          "value": "poppins",
+          "label": "Poppins (Google)"
+        },
+        {
+          "value": "merriweather",
+          "label": "Merriweather (Google)"
+        }
+      ],
+      "default": "montserrat"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 16,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra bold"
+        },
+        {
+          "value": "900",
+          "label": "Black"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "range",
+      "id": "line_height",
+      "label": "Line height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "default": 1.2
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "text_max_width",
+      "label": "Text max width",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 80
+    },
+    {
+      "type": "checkbox",
+      "id": "text_shadow",
+      "label": "Add text shadow",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Text position"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_position",
+      "label": "Horizontal position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "vertical_position",
+      "label": "Vertical position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "middle"
+    },
+    {
+      "type": "range",
+      "id": "content_padding",
+      "label": "Content padding",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Background overlay"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show overlay",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.3
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text overlay"
+    }
+  ]
+}
+{% endschema %}

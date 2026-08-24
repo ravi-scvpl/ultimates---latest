@@ -1,0 +1,658 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "theme.premium-hero",
+  "sections": {
+    "main": {
+      "type": "premium-hero",
+      "settings": {
+        "show_grid_bg": true,
+        "color_bg": "#fdf9f1",
+        "color_primary": "#000000",
+        "color_secondary": "#79573e",
+        "color_text": "#1c1c17",
+        "color_text_muted": "#4c4640",
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "tagline": "PREMIUM PROTECTION",
+        "heading": "Architectural _Foundation_ Defined.",
+        "subheading": "Built to stop dirt, dust, and moisture at the threshold. Our architectural-grade barrier solutions preserve your interior floors while making a statement.",
+        "badges": "Homes, Offices, Hotels",
+        "video_filename": "",
+        "btn_1_text": "Explore Collection",
+        "btn_1_link": "",
+        "btn_2_text": "The Process",
+        "btn_2_link": "",
+        "show_proof_widget": true,
+        "proof_icon": "verified",
+        "proof_label": "ARCHITECT RATED",
+        "proof_value": "Heavy Traffic Approved"
+      }
+    },
+    "feature_grid": {
+      "type": "premium-feature-grid",
+      "blocks": {
+        "card_1": {
+          "type": "media_card",
+          "settings": {
+            "video_url": "https://ultimats.com/cdn/shop/videos/c/vp/1b28d026bc0a467ca378ecedfbd73c8b/1b28d026bc0a467ca378ecedfbd73c8b.HD-1080p-7.2Mbps-49948366.mp4?v=0",
+            "title": "Premium Walking Experience",
+            "text": "Engineered for superior comfort and exceptional durability under heavy daily foot traffic."
+          }
+        },
+        "card_2": {
+          "type": "media_card",
+          "settings": {
+            "video_url": "https://ultimats.com/cdn/shop/videos/c/vp/957f4c12a2164e8c9ca7cf1d9fbce8a8/957f4c12a2164e8c9ca7cf1d9fbce8a8.HD-1080p-3.3Mbps-49275905.mp4?v=0",
+            "title": "Aggressive Scraping Action",
+            "text": "Stiff coarse fibers actively brush and scrape stubborn dirt and debris off shoe soles."
+          }
+        },
+        "card_3": {
+          "type": "media_card",
+          "settings": {
+            "video_url": "https://ultimats.com/cdn/shop/videos/c/vp/97c745230d354052bff2b7f69d9c58b3/97c745230d354052bff2b7f69d9c58b3.HD-1080p-3.3Mbps-49275906.mp4?v=0",
+            "title": "Reinforced Borders",
+            "text": "Double-compressed vinyl borders provide structural support and prevent tripping hazards."
+          }
+        },
+        "card_4": {
+          "type": "media_card",
+          "settings": {
+            "video_url": "https://ultimats.com/cdn/shop/videos/c/vp/fad43db421c146a4a6e5b4c5d665cda9/fad43db421c146a4a6e5b4c5d665cda9.HD-1080p-3.3Mbps-49275903.mp4?v=0",
+            "title": "Anti-Skid Vinyl Backing",
+            "text": "Heavy-duty waterproof backing ensures superior floor grip and holds mat firmly in place."
+          }
+        },
+        "card_5": {
+          "type": "media_card",
+          "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video_url": "",
+            "title": "Easy To Maintain",
+            "text": "Hose down, shake, or vacuum to easily remove trapped dirt and restore standard appearance."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5"
+      ],
+      "settings": {
+        "bg_color": "#fdf9f1",
+        "heading": "ULTISCRAPE",
+        "subheading": "Outdoor Floor Mat for Aggressive Scraping of Dirt",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "performance": {
+      "type": "premium-performance",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "icon": "water_drop",
+            "video": "shopify://files/videos/1st.mp4",
+            "video_url": "",
+            "title": "Moisture Lock",
+            "description": "High-density fibers trap up to 6 liters of water per square meter."
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "icon": "grid_view",
+            "video": "shopify://files/videos/2nd.mp4",
+            "video_url": "",
+            "title": "Dirt Scrub",
+            "description": "Coarse monofilaments actively scrub debris from footwear soles."
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "icon": "security",
+            "video_url": "",
+            "title": "Anti-Slip Base",
+            "description": "Nitrile rubber backing ensures zero movement on any floor surface."
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "icon": "eco",
+            "video_url": "",
+            "title": "Sustainable",
+            "description": "Crafted from 100% recycled nylon yarn for a lower footprint."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
+      "settings": {
+        "enable_radial_gradient": true,
+        "bg_color": "#15140f",
+        "heading_color": "#ffffff",
+        "subheading_color": "#ffffffa6",
+        "border_color": "#ffffff40",
+        "card_bg": "#ffffff",
+        "card_title_color": "#14110d",
+        "card_text_color": "#5b5751",
+        "icon_color": "#79573e",
+        "eyebrow": "Built for the door",
+        "heading": "Engineered for Performance",
+        "subheading": "The science of keeping your space pristine starts at the door."
+      }
+    },
+    "made_to_measure_collage": {
+      "type": "premium-collage",
+      "blocks": {
+        "media1": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/UltiWipe_5_colors_orange_background.webp",
+            "autoplay_video": true,
+            "link": "/pages/made-to-measure-mats"
+          }
+        },
+        "media2": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/Made_to_Measure_Grey_Mat.png",
+            "autoplay_video": true,
+            "link": "/pages/made-to-measure-mats"
+          }
+        },
+        "media3": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/UltiWipe_Grey_profile_fb8744a6-a5da-4521-b543-c374035f6804.png",
+            "autoplay_video": true,
+            "link": "/pages/made-to-measure-mats"
+          }
+        },
+        "media4": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/Ronit_Made_to_Measur_2-2.5.png",
+            "autoplay_video": true,
+            "link": "/pages/made-to-measure-mats"
+          }
+        }
+      },
+      "block_order": [
+        "media1",
+        "media2",
+        "media3",
+        "media4"
+      ],
+      "settings": {
+        "bg_color": "#fdf9f1",
+        "tagline": "Bespoke Sizing",
+        "title": "Made to Measure",
+        "text": "Customize your Floor Mat in your Preferred Style and Color - Tailor-made to your Exact Size",
+        "button_label": "Shop Customized Mats",
+        "button_link": "/pages/made-to-measure-mats",
+        "layout": "right",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "collection-grid": {
+      "type": "premium-collection-grid",
+      "settings": {
+        "bg_color": "#fdf9f1",
+        "filter_heading": "Refine Search",
+        "collection": "shop-floormats",
+        "cta_bg": "#000000",
+        "cta_text_color": "#ffffff",
+        "cta_heading": "Need a custom size?",
+        "cta_description": "We manufacture bespoke barrier solutions for unique architectural footprints. Request a made-to-measure quote today.",
+        "cta_btn_text": "Request Quote",
+        "m2m_url": ""
+      }
+    },
+    "three_layer_tech": {
+      "type": "media-with-text",
+      "blocks": {
+        "subtitle": {
+          "type": "heading",
+          "settings": {
+            "title": "PRODUCT TECHNOLOGY",
+            "font_size": 80,
+            "font_type": "accent-font"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "MAT LAYER TECH",
+            "font_size": 120,
+            "font_type": "heading-font"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Premium polyamide cut-pile carpet matting with non-tearable double-reinforced borders. Machine-washable and anti-slip.</p>",
+            "font_size": 100,
+            "font_type": "body-font"
+          }
+        }
+      },
+      "block_order": [
+        "subtitle",
+        "heading",
+        "text"
+      ],
+      "custom_css": [],
+      "settings": {
+        "autoplay_video": true,
+        "video_asset_name": "three-layar.mp4",
+        "image_ratio": "16-9",
+        "media_width": 600,
+        "vertical_text_align": "top",
+        "layout": "right",
+        "section_align": "center",
+        "overlap_text": false,
+        "image_animation": "none",
+        "background": "background-modal",
+        "frosted_glass": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "all_terrain_media_grid": {
+      "type": "premium-media-grid",
+      "blocks": {
+        "media_jXEVna": {
+          "type": "media",
+          "settings": {
+            "video": "shopify://files/videos/UltiDure Walking Video.mp4",
+            "autoplay_video": true,
+            "item_width": 2,
+            "item_height": 3,
+            "show_scrim": true,
+            "scrim_lightness": 0,
+            "title": "",
+            "text": "Offices",
+            "link": "/products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal"
+          }
+        },
+        "media_F7rJGT": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/UltiDure_Grey_Brown_Burgundy_CloseUp_Rolled.webp",
+            "autoplay_video": true,
+            "item_width": 1,
+            "item_height": 1,
+            "show_scrim": true,
+            "scrim_lightness": 0,
+            "title": "",
+            "text": "",
+            "link": "/products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal"
+          }
+        },
+        "media_T8Aitj": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/UltiDure_Grey_Entrance_Long_1000.png",
+            "autoplay_video": true,
+            "item_width": 1,
+            "item_height": 2,
+            "show_scrim": true,
+            "scrim_lightness": 0,
+            "title": "",
+            "text": "Villas",
+            "link": "/products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal"
+          }
+        },
+        "media_EMY3UU": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/UltiDure_6x4_Mall.png",
+            "autoplay_video": true,
+            "item_width": 1,
+            "item_height": 2,
+            "show_scrim": true,
+            "scrim_lightness": 0,
+            "title": "",
+            "text": "Malls",
+            "link": "/products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal"
+          }
+        },
+        "media_AxN4Tq": {
+          "type": "media",
+          "settings": {
+            "image": "shopify://shop_images/UltiDure_Brown_Mat_at_Entrance.png",
+            "autoplay_video": true,
+            "item_width": 1,
+            "item_height": 1,
+            "show_scrim": true,
+            "scrim_lightness": 0,
+            "title": "",
+            "text": "Homes",
+            "link": "/products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal"
+          }
+        }
+      },
+      "block_order": [
+        "media_jXEVna",
+        "media_F7rJGT",
+        "media_T8Aitj",
+        "media_EMY3UU",
+        "media_AxN4Tq"
+      ],
+      "settings": {
+        "bg_color": "#fdf9f1",
+        "title": "",
+        "text": "All Terrain Premium Commercial Floor Mats",
+        "button_label": "",
+        "button_link": "/products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal",
+        "row_height": 170,
+        "text_position": "bottom-left",
+        "title_on_hover": false,
+        "description_on_hover": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "testimonial_new_tR48BX": {
+      "type": "premium-testimonials",
+      "blocks": {
+        "testimonial_MnQ4mk": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "Ultimats is a regular supplier of quality floor matting across all our properties. Quality is good and consistent, and we are happy with the Vendor.",
+            "author_name": "David Ashley",
+            "author_title": "Sterling Resorts"
+          }
+        },
+        "testimonial_FjaGCH": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "Great professional and prompt service. Our requirement was understood and right products were offered. We are happy and satisfied.",
+            "author_name": "Ratanlal Goel",
+            "author_title": "Agarwal Packers"
+          }
+        },
+        "testimonial_jrbwxV": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "The Ultimats brand is synonymous with quality and creativity, and we are using their floormats since several years.",
+            "author_name": "Mahesh Kumar",
+            "author_title": "LG Electronics"
+          }
+        },
+        "testimonial_Nrx7xY": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "We have been using Ultimats for several years. They have a versatile product range of very good quality, and manufactured our special order to our desired specifications.",
+            "author_name": "Sharmila Deb",
+            "author_title": "Jaypee Group"
+          }
+        },
+        "testimonial_xC8AED": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "Received the product (UltiScrape Dirt Scraper Outdoor Entrance Mat, Green 3x4ft) … it’s more than my expectations. Thanks",
+            "author_name": "Meenakshi Rathore",
+            "author_title": "Homemaker, Verified Buyer"
+          }
+        },
+        "testimonial_9QR84R": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "Mat (UltiClean Soft Tread Dirt & Wetness Lock Floor Mat 2x3ft)  sticks to floor well. Easy to clean.",
+            "author_name": "Sushmita Jacob",
+            "author_title": "Ernakulam, Verified Buyer"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_MnQ4mk",
+        "testimonial_FjaGCH",
+        "testimonial_jrbwxV",
+        "testimonial_Nrx7xY",
+        "testimonial_xC8AED",
+        "testimonial_9QR84R"
+      ],
+      "name": "Testimonials-new",
+      "settings": {
+        "bg_color": "#fdf9f1",
+        "heading": "What Our Customers Say",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "featured_clients_logos": {
+      "type": "premium-client-logo",
+      "blocks": {
+        "logo_4gHFDn": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/apml.png"
+          }
+        },
+        "logo_xNFQVr": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/indag_1c0be82d-b19b-403d-8afb-4770d3ec19fd.png"
+          }
+        },
+        "logo_dtrKCK": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/Screen_Shot_2019-06-28_at_09.51.53_a17a2253-e3f4-4d21-9ee3-90dab3224cb1.png"
+          }
+        },
+        "logo_AdDTJE": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/JKLakshmi_e22a5b48-1e8d-40f6-bfad-b3700b13e3e6.png"
+          }
+        },
+        "logo_dndLBL": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/Pacific_32ee7a79-95f3-4633-bf15-72c0eed1cdc6.png"
+          }
+        },
+        "logo_6gLeHU": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/minda.png"
+          }
+        },
+        "logo_fAAiqQ": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/JLL_463e97f5-35a5-4fc7-9f50-e9ba6c282dbf.png"
+          }
+        },
+        "logo_WHUPXR": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/pvr_png_040fc74b-2b62-4655-ae3e-e81bd86dbc87.png"
+          }
+        },
+        "logo_Eee7eX": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/Ashok.png"
+          }
+        },
+        "logo_e6amVE": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/JKTyre_2.png"
+          }
+        },
+        "logo_amiiGf": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/Bloom_Hotels.png"
+          }
+        },
+        "logo_zP6kHf": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/LG_2.png"
+          }
+        },
+        "logo_G3BGWL": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/le_Meridien_png_1.png"
+          }
+        },
+        "logo_Qd6Pjk": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/toyota.png"
+          }
+        },
+        "logo_r38XDq": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/DLF_hosp_Logo.png"
+          }
+        },
+        "logo_4UcPnB": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/The_Lodi_logo.jpg"
+          }
+        },
+        "logo_VMppMc": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/The_Lalit_Logo.png"
+          }
+        },
+        "logo_xt3yFn": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/Leela_logo.png"
+          }
+        },
+        "logo_LETRTX": {
+          "type": "logo",
+          "settings": {
+            "logo_image": "shopify://shop_images/Holiday_Inn_Logo.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "logo_4gHFDn",
+        "logo_xNFQVr",
+        "logo_dtrKCK",
+        "logo_AdDTJE",
+        "logo_dndLBL",
+        "logo_6gLeHU",
+        "logo_fAAiqQ",
+        "logo_WHUPXR",
+        "logo_Eee7eX",
+        "logo_e6amVE",
+        "logo_amiiGf",
+        "logo_zP6kHf",
+        "logo_G3BGWL",
+        "logo_Qd6Pjk",
+        "logo_r38XDq",
+        "logo_4UcPnB",
+        "logo_VMppMc",
+        "logo_xt3yFn",
+        "logo_LETRTX"
+      ],
+      "settings": {
+        "bg_color": "rgba(0,0,0,0)",
+        "heading": "FEATURED CLIENTS",
+        "speed": 30,
+        "pause_on_hover": true,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "latest_from_blog": {
+      "type": "premium-featured-blog",
+      "settings": {
+        "bg_color": "#fdf9f1",
+        "title": "Latest from our blog",
+        "subheading": "Insights, stories, and design inspiration from the Ultimats team.",
+        "blog": "news",
+        "limit": 3,
+        "columns_desktop": 3,
+        "show_excerpt": true,
+        "show_view_all": true,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "faq": {
+      "type": "premium-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I order a custom size?",
+            "answer": "Yes. Most of our barrier mat ranges can be manufactured to your specific dimensions. We offer a \"Made to Measure\" service where you can specify width and length to the millimeter for a perfect architectural fit.",
+            "open_by_default": true
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I clean my barrier mat?",
+            "answer": "Regular maintenance involves daily vacuuming to remove dry soil. For deeper cleans, our mats are compatible with injection-extraction cleaning systems. For smaller sizes, many are machine washable up to 30°C.",
+            "open_by_default": false
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What is the expected lifespan?",
+            "answer": "Our commercial-grade barrier mats are engineered for longevity. In high-traffic environments like hotel lobbies, you can expect 5-7 years of peak performance with proper maintenance. Residential usage often exceeds 10 years.",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "heading": "Expert Guidance"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "feature_grid",
+    "performance",
+    "made_to_measure_collage",
+    "collection-grid",
+    "three_layer_tech",
+    "all_terrain_media_grid",
+    "testimonial_new_tR48BX",
+    "featured_clients_logos",
+    "latest_from_blog",
+    "faq"
+  ]
+}

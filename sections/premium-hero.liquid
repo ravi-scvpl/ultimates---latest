@@ -1,0 +1,607 @@
+<!-- Scoped Google Fonts and Material Symbols for flawless stand-alone premium UI styling -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet" />
+
+{% style %}
+  #premium-hero-{{ section.id }} {
+    --primary-color: {{ section.settings.color_primary }};
+    --secondary-color: {{ section.settings.color_secondary }};
+    --background-color: {{ section.settings.color_bg }};
+    --text-on-surface: {{ section.settings.color_text }};
+    --text-muted: {{ section.settings.color_text_muted }};
+    
+    position: relative;
+    background-color: var(--background-color);
+    color: var(--text-on-surface);
+    overflow: hidden;
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px 0;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 1024px) {
+    #premium-hero-{{ section.id }} {
+      height: 100vh;
+      min-height: 700px;
+      padding: 0;
+    }
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(#191715 1px, transparent 1px), linear-gradient(90deg, #191715 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 1024px) {
+    #premium-hero-{{ section.id }} .premium-hero-container {
+      padding: 0 40px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #premium-hero-{{ section.id }} .premium-hero-container {
+      padding: 0 20px;
+    }
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 1024px) {
+    #premium-hero-{{ section.id }} .premium-hero-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #premium-hero-{{ section.id }} .premium-hero-grid {
+      display: none !important;
+    }
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @media screen and (min-width: 768px) {
+    #premium-hero-{{ section.id }} .premium-hero-mobile {
+      display: none !important;
+    }
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    color: var(--secondary-color);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+    margin: 0 0 24px 0;
+  }
+
+  @media screen and (max-width: 1200px) {
+    #premium-hero-{{ section.id }} .premium-hero-heading {
+      font-size: 64px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #premium-hero-{{ section.id }} .premium-hero-heading {
+      font-size: 44px;
+    }
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-subheading {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin: 0 0 32px 0;
+    max-width: 512px;
+  }
+
+  @media screen and (max-width: 768px) {
+    #premium-hero-{{ section.id }} .premium-hero-subheading {
+      font-size: 16px;
+    }
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-badge {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(25, 23, 21, 0.1);
+    padding: 6px 16px;
+    border-radius: 9999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-on-surface);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-badge:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-media {
+    position: relative;
+    width: 100%;
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-image-wrapper {
+    aspect-ratio: 4 / 3;
+    border-radius: 32px;
+    overflow: hidden;
+    border: 1px solid rgba(28, 28, 23, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.02);
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-image-wrapper:hover .premium-hero-image {
+    transform: scale(1.04);
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-proof {
+    position: absolute;
+    bottom: -24px;
+    left: -24px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(25, 23, 21, 0.1);
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 40px 80px -20px rgba(25, 23, 21, 0.04);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 3;
+    animation: floatWidget 4s ease-in-out infinite;
+  }
+
+  @keyframes floatWidget {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  @media screen and (max-width: 768px) {
+    #premium-hero-{{ section.id }} .premium-hero-proof {
+      bottom: -16px;
+      left: 16px;
+    }
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-proof-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    background: #191d0e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-proof-icon-box .material-symbols-outlined {
+    color: #ffffff;
+    font-size: 20px;
+    font-variation-settings: 'FILL' 1, 'wght' 400;
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-proof-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-proof-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin: 0 0 2px 0;
+    text-transform: uppercase;
+  }
+
+  #premium-hero-{{ section.id }} .premium-hero-proof-value {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-on-surface);
+    margin: 0;
+  }
+{% endstyle %}
+
+{% assign heading_parts = section.settings.heading | split: '_' %}
+{% if heading_parts.size > 1 %}
+  {% assign formatted_heading = "" %}
+  {% for part in heading_parts %}
+    {% assign mod = forloop.index | modulo: 2 %}
+    {% if mod == 0 %}
+      {% assign formatted_heading = formatted_heading | append: '<span class="italic">' | append: part | append: '</span>' %}
+    {% else %}
+      {% assign formatted_heading = formatted_heading | append: part %}
+    {% endif %}
+  {% endfor %}
+{% else %}
+  {% assign formatted_heading = section.settings.heading %}
+{% endif %}
+
+<section class="premium-hero-section" id="premium-hero-{{ section.id }}">
+  {% if section.settings.show_grid_bg %}
+    <div class="premium-hero-grid-bg"></div>
+  {% endif %}
+
+  <div class="premium-hero-container">
+    <!-- Desktop Grid (Hidden on Mobile) -->
+    <div class="hidden md:grid premium-hero-grid">
+      
+      <!-- Left Column (Content and Badges) -->
+      <div class="premium-hero-content">
+        {% if section.settings.tagline != blank %}
+          <span class="premium-hero-tagline">{{ section.settings.tagline }}</span>
+        {% endif %}
+        
+        {% if section.settings.heading != blank %}
+          <h1 class="premium-hero-heading">{{ formatted_heading }}</h1>
+        {% endif %}
+        
+        {% if section.settings.subheading != blank %}
+          <p class="premium-hero-subheading">{{ section.settings.subheading }}</p>
+        {% endif %}
+        
+        {% if section.settings.badges != blank %}
+          <div class="premium-hero-badges">
+            {% assign badge_array = section.settings.badges | split: ',' %}
+            {% for badge in badge_array %}
+              {% assign clean_badge = badge | strip %}
+              {% if clean_badge != blank %}
+                <span class="premium-hero-badge">{{ clean_badge }}</span>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      
+      <!-- Right Column (Media and Proof Widget) -->
+      <div class="premium-hero-media">
+        <div class="premium-hero-image-wrapper">
+          {% if section.settings.video_filename != blank %}
+            <video class="premium-hero-image w-full h-full object-cover" 
+                   autoplay 
+                   loop 
+                   muted 
+                   playsinline>
+              <source src="{{ section.settings.video_filename | asset_url }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          {% elsif section.settings.image != blank %}
+            <img class="premium-hero-image" 
+                 src="{{ section.settings.image | image_url: width: 1200 }}" 
+                 alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}" 
+                 loading="eager">
+          {% else %}
+            <video class="premium-hero-image w-full h-full object-cover" 
+                   autoplay 
+                   loop 
+                   muted 
+                   playsinline>
+              <source src="{{ '28bfbcdb977c4b51aebb1934c61b29b5.mp4' | asset_url }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          {% endif %}
+        </div>
+        
+        {% if section.settings.show_proof_widget %}
+          <!-- Proof Widget -->
+          <div class="premium-hero-proof">
+            <div class="premium-hero-proof-icon-box">
+              <span class="material-symbols-outlined">{{ section.settings.proof_icon }}</span>
+            </div>
+            <div class="premium-hero-proof-text">
+              <p class="premium-hero-proof-label">{{ section.settings.proof_label }}</p>
+              <p class="premium-hero-proof-value">{{ section.settings.proof_value }}</p>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      
+    </div>
+
+    <!-- Mobile Stack Layout (Visible ONLY on Mobile, matching mobile-home.html) -->
+    <div class="premium-hero-mobile flex flex-col md:hidden w-full pt-16 pb-12">
+      <div class="mb-8">
+        {% if section.settings.heading != blank %}
+          <h1 class="font-display-xl-mobile text-display-xl-mobile text-primary mb-6">
+            {{ formatted_heading }}
+          </h1>
+        {% endif %}
+        
+        {% if section.settings.subheading != blank %}
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-[95%] mb-10 leading-relaxed">
+            {{ section.settings.subheading }}
+          </p>
+        {% endif %}
+        
+        <div class="flex flex-col gap-4">
+          {% if section.settings.btn_1_text != blank %}
+            <a href="{{ section.settings.btn_1_link | default: '/collections/all' }}" class="bg-primary text-on-primary font-body-md py-6 px-10 rounded-full font-bold uppercase tracking-widest text-center block hover:opacity-90 transition-opacity">
+              {{ section.settings.btn_1_text }}
+            </a>
+          {% endif %}
+          
+          {% if section.settings.btn_2_text != blank %}
+            <a href="{{ section.settings.btn_2_link | default: '#faq-section' }}" class="border border-primary text-primary font-body-md py-6 px-10 rounded-full font-bold uppercase tracking-widest text-center block hover:bg-primary hover:text-on-primary transition-all">
+              {{ section.settings.btn_2_text }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      
+      <!-- Bottom Rounded Media Frame -->
+      <div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden border border-on-surface/10 bg-surface-container">
+        {% if section.settings.video_filename != blank %}
+          <video class="w-full h-full object-cover" 
+                 autoplay 
+                 loop 
+                 muted 
+                 playsinline>
+            <source src="{{ section.settings.video_filename | asset_url }}" type="video/mp4">
+          </video>
+        {% elsif section.settings.image != blank %}
+          <img class="w-full h-full object-cover" 
+               src="{{ section.settings.image | image_url: width: 800 }}" 
+               alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}" 
+               loading="eager">
+        {% else %}
+          <!-- Mockup fallback image -->
+          <img class="w-full h-full object-cover" 
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz8dYnjnuFxa9tCpIcHtTUy1tlbaPn9MISWTCzxzrC2K_7VK3YAQ8VIB-ylIFYumNFEV5wmE1kRkD3oIYtU3WkqLwRz3nWScyZTH3WF9eWPRwzLXuClUN9xAxqc7g7B9wYQjgyBrPzMI4j6UTwkLIeBKKnEkKbVlMuzEjMAoJMfitqkObLNWNasu9f792UEXAhC9NtrKg_0Ko7SG73EsQSzgcAA6edqBA-fh5BjQWUJJQlu_VwbEbhZn4GpZ94Fub4pCcgnpX5aCM"
+               alt="Architectural Entrance">
+        {% endif %}
+        
+        <!-- Bottom overlay proof widget for mobile -->
+        {% if section.settings.show_proof_widget %}
+          <div class="absolute bottom-4 left-4 bg-white/60 backdrop-blur-md dark:bg-surface-dim/60 border border-on-surface/10 p-3 rounded-lg flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-white text-[16px]">{{ section.settings.proof_icon }}</span>
+            </div>
+            <div class="flex flex-col text-left">
+              <span class="text-[8px] font-bold tracking-wider text-on-surface-variant uppercase leading-none mb-0.5">{{ section.settings.proof_label }}</span>
+              <span class="text-xs font-semibold text-primary leading-none">{{ section.settings.proof_value }}</span>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Premium Brand Hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Aesthetic Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_grid_bg",
+      "label": "Show Grid Background Overlay",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Background Color",
+      "default": "#fdf9f1"
+    },
+    {
+      "type": "color",
+      "id": "color_primary",
+      "label": "Primary / Heading Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "color_secondary",
+      "label": "Secondary / Tagline Color",
+      "default": "#79573e"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text Color",
+      "default": "#1c1c17"
+    },
+    {
+      "type": "color",
+      "id": "color_text_muted",
+      "label": "Muted Text Color",
+      "default": "#4c4640"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 40,
+      "max": 240,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 40,
+      "max": 240,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 120
+    },
+    {
+      "type": "header",
+      "content": "Hero Content"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "PREMIUM PROTECTION"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading (use underscores _word_ for italics)",
+      "default": "Architectural _Foundation_ Defined."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Built to stop dirt, dust, and moisture at the threshold. Our architectural-grade barrier solutions preserve your interior floors while making a statement."
+    },
+    {
+      "type": "text",
+      "id": "badges",
+      "label": "Badges (comma-separated)",
+      "default": "Homes, Offices, Hotels"
+    },
+    {
+      "type": "text",
+      "id": "video_filename",
+      "label": "Hero Video Asset Filename",
+      "info": "To use a video from your assets folder, type its complete filename here (e.g., 28bfbcdb977c4b51aebb1934c61b29b5.mp4). Leaving this blank will play the default MP4 video.",
+      "default": "28bfbcdb977c4b51aebb1934c61b29b5.mp4"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "header",
+      "content": "Call-To-Actions (Buttons)"
+    },
+    {
+      "type": "text",
+      "id": "btn_1_text",
+      "label": "Button 1 Text (Primary)",
+      "default": "Explore Collection"
+    },
+    {
+      "type": "url",
+      "id": "btn_1_link",
+      "label": "Button 1 Link (Primary)"
+    },
+    {
+      "type": "text",
+      "id": "btn_2_text",
+      "label": "Button 2 Text (Secondary)",
+      "default": "The Process"
+    },
+    {
+      "type": "url",
+      "id": "btn_2_link",
+      "label": "Button 2 Link (Secondary)"
+    },
+    {
+      "type": "header",
+      "content": "Proof Widget"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_proof_widget",
+      "label": "Show Proof Widget",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "proof_icon",
+      "label": "Google Material Icon Name",
+      "default": "verified"
+    },
+    {
+      "type": "text",
+      "id": "proof_label",
+      "label": "Proof Label",
+      "default": "ARCHITECT RATED"
+    },
+    {
+      "type": "text",
+      "id": "proof_value",
+      "label": "Proof Value",
+      "default": "Heavy Traffic Approved"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Brand Hero",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

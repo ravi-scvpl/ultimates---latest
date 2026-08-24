@@ -1,0 +1,306 @@
+<div class="premium-video-showcase-wrapper" style="background-color: {{ section.settings.bg_color }};">
+  <div class="premium-video-showcase-container">
+    <div class="premium-video-showcase-row{% if section.settings.layout == 'right' %} premium-video-showcase-row--reverse{% endif %}">
+      
+      <!-- Video Column -->
+      <div class="premium-video-showcase-col premium-video-showcase-col--video">
+        <div class="premium-video-showcase-media">
+          {%- if section.settings.video_url != blank -%}
+            <video 
+              src="{{ section.settings.video_url }}{% unless section.settings.video_url contains '#t=' %}#t=16,25{% endunless %}" 
+              autoplay 
+              loop 
+              muted 
+              playsinline
+              class="premium-video-showcase-video"
+              onplay="if(this.currentTime < 16) this.currentTime = 16;"
+              ontimeupdate="if(this.currentTime >= 25) this.currentTime = 16;"
+            ></video>
+          {%- else -%}
+            <div class="premium-video-showcase-placeholder">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- Text Column -->
+      <div class="premium-video-showcase-col premium-video-showcase-col--text">
+        <div class="premium-video-showcase-content">
+          {%- if section.settings.tagline != blank -%}
+            <span class="premium-video-showcase-tagline">{{ section.settings.tagline }}</span>
+          {%- endif -%}
+          
+          {%- if section.settings.title != blank -%}
+            <h2 class="premium-video-showcase-title">{{ section.settings.title }}</h2>
+          {%- endif -%}
+
+          {%- if section.settings.text_1 != blank -%}
+            <div class="premium-video-showcase-desc">{{ section.settings.text_1 }}</div>
+          {%- endif -%}
+
+          {%- if section.settings.text_2 != blank -%}
+            <div class="premium-video-showcase-desc">{{ section.settings.text_2 }}</div>
+          {%- endif -%}
+          
+          {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+            <a href="{{ section.settings.button_link }}" class="premium-video-showcase-btn">
+              {{ section.settings.button_label }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.premium-video-showcase-wrapper {
+  padding: 80px 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+.premium-video-showcase-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+
+.premium-video-showcase-row {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.premium-video-showcase-row--reverse {
+  flex-direction: row-reverse;
+}
+
+.premium-video-showcase-col {
+  flex: 0 0 calc(50% - 40px);
+  width: calc(50% - 40px);
+  max-width: 50%;
+}
+
+.premium-video-showcase-media {
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.03);
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.premium-video-showcase-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.premium-video-showcase-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+}
+
+.premium-video-showcase-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.premium-video-showcase-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #79573e;
+  margin-bottom: 1rem;
+}
+
+.premium-video-showcase-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.75rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.premium-video-showcase-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+}
+
+.premium-video-showcase-desc p {
+  margin: 0 0 1rem 0;
+}
+
+.premium-video-showcase-desc:last-of-type {
+  margin-bottom: 0;
+}
+
+.premium-video-showcase-btn {
+  align-self: flex-start;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  padding: 1.1rem 2.2rem;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.premium-video-showcase-btn:hover {
+  background-color: #79573e;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+@media screen and (max-width: 1024px) {
+  .premium-video-showcase-container {
+    padding: 0 40px;
+  }
+  .premium-video-showcase-row {
+    gap: 40px;
+  }
+  .premium-video-showcase-col {
+    flex: 0 0 calc(50% - 20px);
+    width: calc(50% - 20px);
+  }
+  .premium-video-showcase-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .premium-video-showcase-wrapper {
+    padding: 40px 0;
+  }
+  .premium-video-showcase-container {
+    padding: 0 20px;
+  }
+  .premium-video-showcase-row {
+    flex-direction: column !important;
+    gap: 24px;
+  }
+  .premium-video-showcase-col {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+  .premium-video-showcase-content {
+    text-align: center !important;
+    align-items: center !important;
+  }
+  .premium-video-showcase-title {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+  }
+  .premium-video-showcase-desc {
+    font-size: 1rem !important;
+    text-align: center !important;
+  }
+  .premium-video-showcase-btn {
+    align-self: center !important;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Premium Video Showcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video MP4 URL",
+      "default": "https://cdn.shopify.com/videos/c/o/v/09625732cc8d4cbcad7fcae52232116a.mp4"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Video Position",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Product Technology"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "HEAT TRAP TECH"
+    },
+    {
+      "type": "richtext",
+      "id": "text_1",
+      "label": "Text Block 1",
+      "default": "<p>Zarf's multi-layered winter blankets ensure maximum warmth with minimum weight.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "text_2",
+      "label": "Text Block 2",
+      "default": "<p>Each layer traps heat individually to ensure that warmth stays consistent throughout the night. Layering the fabric increases heat retention levels as compared to traditional thick blanket fabrics.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Video Showcase"
+    }
+  ]
+}
+{% endschema %}

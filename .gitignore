@@ -1,0 +1,14 @@
+# Shopify CLI
+.shopify-cli/
+.env
+
+# MacOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Node
+node_modules/
+package-lock.json

@@ -1,0 +1,279 @@
+{%- style -%}
+  #premium-collage-{{ section.id }} {
+    background-color: {{ section.settings.bg_color | default: '#fdf9f1' }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+<section id="premium-collage-{{ section.id }}" class="relative w-full z-10 font-body-md text-on-surface">
+  <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Text Content Column -->
+      <div class="lg:col-span-5 {% if section.settings.layout == 'right' %}lg:order-last{% endif %} flex flex-col space-y-6 text-left">
+        {% if section.settings.tagline != blank %}
+          <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider block">
+            {{ section.settings.tagline }}
+          </span>
+        {% endif %}
+        
+        {% if section.settings.title != blank %}
+          <h2 class="font-display-xl text-4xl lg:text-6xl font-normal leading-tight text-primary">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+        
+        {% if section.settings.text != blank %}
+          <p class="font-body-lg text-base lg:text-lg text-on-surface-variant leading-relaxed">
+            {{ section.settings.text }}
+          </p>
+        {% endif %}
+        
+        {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+          <div class="pt-4">
+            <a href="{{ section.settings.button_link }}" class="inline-block px-8 py-3 bg-primary text-on-primary font-label-caps uppercase tracking-wider rounded hover:bg-secondary hover:text-white transition-all duration-300">
+              {{ section.settings.button_label }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Collage Images Column -->
+      <div class="lg:col-span-7">
+        <div class="grid grid-cols-2 gap-4 md:gap-6">
+          
+          <!-- Column 1 (Items 1 & 2) -->
+          <div class="space-y-4 md:space-y-6">
+            {% for block in section.blocks limit: 2 %}
+              <div 
+                class="relative overflow-hidden rounded-lg custom-shadow group aspect-[4/5] sm:aspect-square md:aspect-[4/5]" 
+                {{ block.shopify_attributes }}
+              >
+                {% if block.settings.link != blank %}
+                  <a href="{{ block.settings.link }}" class="block w-full h-full">
+                {% else %}
+                  <div class="w-full h-full">
+                {% endif %}
+
+                <!-- Media -->
+                <div class="absolute inset-0 w-full h-full">
+                  {% if block.settings.video != blank %}
+                    {% liquid
+                      if block.settings.autoplay_video
+                        assign playsinline = true
+                        assign loop = true
+                        assign autoplay = true
+                        assign muted = true
+                        assign controls = false
+                      else
+                        assign playsinline = true
+                        assign loop = false
+                        assign autoplay = false
+                        assign muted = false
+                        assign controls = true
+                      endif
+                    %}
+                    {{ block.settings.video | video_tag: class: 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105', autoplay: autoplay, loop: loop, muted: muted, playsinline: playsinline, controls: controls }}
+                  {% elsif block.settings.image != blank %}
+                    <img 
+                      src="{{ block.settings.image | image_url: width: 800 }}" 
+                      alt="Collage Image" 
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'w-full h-full object-cover bg-surface-container-high' }}
+                  {% endif %}
+                </div>
+
+                {% if block.settings.link != blank %}
+                  </a>
+                {% else %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+
+          <!-- Column 2 (Items 3 & 4 - Staggered offset padding top) -->
+          <div class="space-y-4 md:space-y-6 pt-8 md:pt-16">
+            {% for block in section.blocks offset: 2 limit: 2 %}
+              <div 
+                class="relative overflow-hidden rounded-lg custom-shadow group aspect-[4/5] sm:aspect-square md:aspect-[4/5]" 
+                {{ block.shopify_attributes }}
+              >
+                {% if block.settings.link != blank %}
+                  <a href="{{ block.settings.link }}" class="block w-full h-full">
+                {% else %}
+                  <div class="w-full h-full">
+                {% endif %}
+
+                <!-- Media -->
+                <div class="absolute inset-0 w-full h-full">
+                  {% if block.settings.video != blank %}
+                    {% liquid
+                      if block.settings.autoplay_video
+                        assign playsinline = true
+                        assign loop = true
+                        assign autoplay = true
+                        assign muted = true
+                        assign controls = false
+                      else
+                        assign playsinline = true
+                        assign loop = false
+                        assign autoplay = false
+                        assign muted = false
+                        assign controls = true
+                      endif
+                    %}
+                    {{ block.settings.video | video_tag: class: 'w-full h-full object-cover transition-transform duration-500 group-hover:scale-105', autoplay: autoplay, loop: loop, muted: muted, playsinline: playsinline, controls: controls }}
+                  {% elsif block.settings.image != blank %}
+                    <img 
+                      src="{{ block.settings.image | image_url: width: 800 }}" 
+                      alt="Collage Image" 
+                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'w-full h-full object-cover bg-surface-container-high' }}
+                  {% endif %}
+                </div>
+
+                {% if block.settings.link != blank %}
+                  </a>
+                {% else %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Premium Collage",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#fdf9f1"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline Label",
+      "default": "Bespoke Sizing"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Made to Measure"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Description",
+      "default": "Customize your Floor Mat in your Preferred Style and Color - Tailor-made to your Exact Size"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Shop Customized Mats"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Text on Left, Collage on Right"
+        },
+        {
+          "value": "right",
+          "label": "Text on Right, Collage on Left"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "media",
+      "name": "Collage Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay_video",
+          "default": true,
+          "label": "Autoplay Video"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Collage",
+      "blocks": [
+        { "type": "media" },
+        { "type": "media" },
+        { "type": "media" },
+        { "type": "media" }
+      ]
+    }
+  ]
+}
+{% endschema %}

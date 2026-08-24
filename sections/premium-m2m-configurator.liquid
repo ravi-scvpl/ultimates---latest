@@ -1,0 +1,126 @@
+<!-- Sections: Premium Made to Measure Landing Showcase Section -->
+<main class="pt-32 pb-section-gap bg-surface" style="font-family: 'Inter', sans-serif;">
+  
+  <!-- Hero Section -->
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-6 text-left">
+        <p class="font-label-caps text-label-caps uppercase text-secondary mb-4 tracking-widest font-semibold text-xs">Precision Craftsmanship</p>
+        <h1
+          class="font-display-xl text-display-xl-mobile md:text-display-xl leading-tight mb-8 text-primary font-normal"
+          style="font-family: 'Playfair Display', serif;"
+        >
+          Bespoke Made-To-Measure Mats for Any Architectural Space
+        </h1>
+        <p class="text-on-surface-variant font-body-lg text-lg mb-8 max-w-xl leading-relaxed">
+          Tailored floor mats engineered to fit exact specifications. Designed for heavy commercial traffic, residential doorways, and custom recessed wells where standard sizes fail to provide adequate coverage.
+        </p>
+        <div class="h-1 w-24 bg-primary mb-8"></div>
+      </div>
+      <div class="lg:col-span-6">
+        <div class="relative rounded-lg overflow-hidden border border-on-surface/10 shadow-2xl aspect-[4/3] bg-surface-container-low">
+          <!-- Main Hero Image (using standard measure image from assets) -->
+          <img src="{{ 'Ultimat_with_Borders_464px.png' | file_img_url: '1000x' }}" class="w-full h-full object-cover" alt="Custom Measured Mats" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Showcase Grid -->
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24">
+    <div class="text-center mb-16">
+      <h2 class="font-display-md text-headline-lg text-primary mb-4" style="font-family: 'Playfair Display', serif;">Select Mat to Customize</h2>
+      <p class="text-on-surface-variant max-w-xl mx-auto text-sm">Choose from our high-performance range below to configure custom dimensions, colors, and border styles with real-time live previewing.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {%- liquid
+        assign m2m_handles = 'ultiscrub-carpet-mat-1,ultidure-carpet-mat,ultiwipe-carpet-mat,ultiscrape-carpet-mat,ultimat-heavy-duty-vinyl-looped-matting,ulticlean-carpet-mat-1,ultirake-carpet-mat,ultizig-barrier-mat,ultizig-barrier-mat-with-backing' | split: ','
+      -%}
+      {% for handle in m2m_handles %}
+        {% assign prod = all_products[handle] %}
+        {% if prod != blank %}
+          <a href="{{ prod.url }}" class="group flex flex-col bg-surface-container-low border border-on-surface/5 rounded-xl overflow-hidden hover:border-primary/20 hover:shadow-2xl transition-all duration-500">
+            <div class="aspect-[4/3] w-full overflow-hidden bg-surface-container-highest relative">
+              {% if prod.featured_image != blank %}
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                     src="{{ prod.featured_image | img_url: '600x450', crop: 'center' }}"
+                     alt="{{ prod.title | escape }}" loading="lazy">
+              {% else %}
+                <div class="w-full h-full flex items-center justify-center text-on-surface-variant/40 bg-surface-container-low">
+                  <span class="material-symbols-outlined text-[48px]">image</span>
+                </div>
+              {% endif %}
+            </div>
+            <div class="p-6 text-left flex-1 flex flex-col justify-between">
+              <div>
+                <h3 class="font-headline-md text-xl text-primary mb-2" style="font-family: 'Playfair Display', serif;">{{ prod.title | replace: ' - Made to Measure', '' | replace: ' - Custom Size', '' }}</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+                  {% if prod.metafields.custom.short_description != blank %}
+                    {{ prod.metafields.custom.short_description }}
+                  {% else %}
+                    {{ prod.description | strip_html | truncatewords: 15 }}
+                  {% endif %}
+                </p>
+              </div>
+              <div class="flex items-center text-primary font-bold text-xs uppercase tracking-wider font-label-caps mt-2">
+                <span>Customize Mat</span>
+                <span class="material-symbols-outlined text-sm ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </div>
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Quote Request Form -->
+  <section class="max-w-3xl mx-auto px-margin-mobile mb-24">
+    <div class="glass-card rounded-xl p-8 border border-on-surface/10 shadow-2xl text-left bg-surface/50">
+      <h2 class="font-display-md text-headline-md text-primary mb-2 text-center" style="font-family: 'Playfair Display', serif;">Request a Custom Size Quote</h2>
+      <p class="text-on-surface-variant text-center text-sm mb-8">Need custom shapes, logo integration, or dimensions larger than standard size limits? Let our designers help.</p>
+
+      {% form 'contact', id: 'm2m-custom-enquiry-form' %}
+        {% if form.posted_successfully? %}
+          <div class="p-4 bg-primary text-white text-sm rounded-lg mb-6">
+            Thank you! Your quote request has been sent successfully. We will contact you soon.
+          </div>
+        {% endif %}
+
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs uppercase font-bold text-primary mb-1 tracking-wider font-label-caps">Your Name</label>
+            <input type="text" name="contact[name]" required class="w-full bg-white/50 border border-on-surface/10 rounded-md px-3 py-2 text-sm text-primary outline-none focus:border-primary">
+          </div>
+          <div>
+            <label class="block text-xs uppercase font-bold text-primary mb-1 tracking-wider font-label-caps">Your Email</label>
+            <input type="email" name="contact[email]" required class="w-full bg-white/50 border border-on-surface/10 rounded-md px-3 py-2 text-sm text-primary outline-none focus:border-primary">
+          </div>
+          <div>
+            <label class="block text-xs uppercase font-bold text-primary mb-1 tracking-wider font-label-caps">Project Description & Dimensions</label>
+            <textarea name="contact[body]" rows="4" required class="w-full bg-white/50 border border-on-surface/10 rounded-md px-3 py-2 text-sm text-primary outline-none focus:border-primary" placeholder="Enter shape details, dimensions, application environments..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-primary text-white rounded-full py-4 text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity cursor-pointer">
+            Send Enquiry
+          </button>
+        </div>
+      {% endform %}
+    </div>
+  </section>
+
+</main>
+
+<style>
+  .glass-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(25, 23, 21, 0.1);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "M2M Showcase Landing",
+  "settings": []
+}
+{% endschema %}

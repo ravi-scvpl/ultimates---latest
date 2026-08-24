@@ -1,0 +1,9 @@
+{
+  "parent": "product.ultiwipem2m.json",
+  "context": {
+    "market": "in"
+  },
+  "sections": {
+    "product-information": {}
+  }
+}

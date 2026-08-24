@@ -1,0 +1,669 @@
+<!-- Premium Header Section -->
+<nav id="premium-header-{{ section.id }}" class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl dark:bg-surface-dim/80 border-b border-on-surface/10 dark:border-on-primary-fixed/10" style="background-color: rgba(253, 249, 241, 0.8);">
+  <!-- Desktop Navigation Header (Hidden on Mobile) -->
+  <div class="hidden md:flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto relative w-full">
+    <!-- Logo / Brand Title -->
+    <a href="{{ routes.root_url }}" class="font-display-xl text-headline-md text-primary dark:text-on-primary-fixed tracking-tighter cursor-pointer hover:opacity-80 transition-opacity">
+      {{ section.settings.logo_text | default: shop.name }}
+    </a>
+
+    <!-- Desktop Navigation Loop -->
+    <div class="flex items-center gap-6">
+      {% assign navigation_menu = section.settings.menu %}
+      {% if navigation_menu != blank and linklists[navigation_menu].links.size > 0 %}
+        {% for link in linklists[navigation_menu].links %}
+          {% assign downcase_title = link.title | downcase %}
+          {% if downcase_title contains 'rental' or downcase_title contains 'associate' or downcase_title contains 'distribution' or downcase_title contains 'architect' or downcase_title contains 'designer' or downcase_title contains 'reseller' or downcase_title contains 'career' %}
+            {% continue %}
+          {% endif %}
+          {% if downcase_title contains 'made to measure' or downcase_title contains 'configurator' %}
+            
+            <!-- Made to Measure Single Link (No Dropdown) -->
+            <a href="{{ link.url }}" class="font-body-md text-body-md uppercase tracking-wider text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 {% if link.current %}text-primary border-b border-primary pb-1{% endif %}">
+              {{ link.title }}
+            </a>
+
+          {% elsif link.links.size > 0 %}
+            {% assign is_mega = true %}
+            {% if downcase_title contains 'rental' or downcase_title contains 'associate' or downcase_title contains 'shop' %}
+              {% assign is_mega = false %}
+            {% endif %}
+
+            {% if is_mega %}
+              <!-- Mega Dropdown -->
+              <div class="group">
+                <a href="{{ link.url }}" class="flex items-center gap-1 font-body-md text-body-md uppercase tracking-wider text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300">
+                  <span>{{ link.title }}</span>
+                  <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">keyboard_arrow_down</span>
+                </a>
+                <div class="absolute left-0 right-0 top-full mt-2 w-full rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden bg-white/95 backdrop-blur-md dark:bg-surface-dim/95 border border-on-surface/10 dark:border-on-primary-fixed/10 p-8 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3 before:bg-transparent">
+                  <div class="max-w-container-max mx-auto flex flex-row justify-start items-start gap-16">
+                    {% for sub_link in link.links %}
+                      <div class="flex flex-col min-w-[200px] text-left">
+                        <!-- Column Header -->
+                        <a href="{{ sub_link.url }}" class="font-bold text-sm uppercase tracking-wider text-on-surface dark:text-on-primary-fixed hover:text-primary transition-colors border-b border-on-surface/10 dark:border-on-primary-fixed/10 pb-2 mb-3 block">
+                          {{ sub_link.title }}
+                        </a>
+                        
+                        <!-- Sub-links / Grandchildren -->
+                        {% if sub_link.links.size > 0 %}
+                          <div class="flex flex-col gap-2">
+                            {% for grandchild_link in sub_link.links %}
+                              <a href="{{ grandchild_link.url }}" class="text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors">
+                                {{ grandchild_link.title }}
+                              </a>
+                            {% endfor %}
+                          </div>
+                        {% endif %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            {% else %}
+              <!-- Standard Dropdown -->
+              <div class="relative group">
+                <a href="{{ link.url }}" class="flex items-center gap-1 font-body-md text-body-md uppercase tracking-wider text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300">
+                  <span>{{ link.title }}</span>
+                  <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">keyboard_arrow_down</span>
+                </a>
+                <div class="absolute left-0 mt-2 w-48 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden flex flex-col p-2 text-left bg-white/90 backdrop-blur-md dark:bg-surface-dim/95 border border-on-surface/10 dark:border-on-primary-fixed/10 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3 before:bg-transparent">
+                  {% for sub_link in link.links %}
+                    <a href="{{ sub_link.url }}" class="p-2 hover:bg-surface-container rounded-md transition-colors text-on-surface-variant hover:text-primary text-sm uppercase tracking-wider font-label-md">
+                      {{ sub_link.title }}
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+
+          {% else %}
+            
+            <!-- Single Link -->
+            <a href="{{ link.url }}" class="font-body-md text-body-md uppercase tracking-wider text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 {% if link.current %}text-primary border-b border-primary pb-1{% endif %}">
+              {{ link.title }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% assign is_commercial = false %}
+        {% if request.path contains '/commercial' %}
+          {% assign is_commercial = true %}
+        {% endif %}
+        {% assign is_about = false %}
+        {% if request.path contains '/about' %}
+          {% assign is_about = true %}
+        {% endif %}
+        {% assign is_contact = false %}
+        {% if request.path contains '/contact' %}
+          {% assign is_contact = true %}
+        {% endif %}
+        {% assign is_shop = false %}
+        {% if request.path contains '/collections' or request.path contains '/products' %}
+          {% assign is_shop = true %}
+        {% endif %}
+        
+        <!-- Fallback Static Menu replicating the new requested structure -->
+        <!-- 1. Catalog (Mega Dropdown) -->
+        <div class="group">
+          <button class="flex items-center gap-1 font-body-md text-body-md uppercase tracking-wider text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 focus:outline-none">
+            <span>Catalog</span>
+            <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">keyboard_arrow_down</span>
+          </button>
+          <div class="absolute left-0 right-0 top-full mt-2 w-full rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden bg-white/95 backdrop-blur-md dark:bg-surface-dim/95 border border-on-surface/10 dark:border-on-primary-fixed/10 p-8 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3 before:bg-transparent">
+            <div class="max-w-container-max mx-auto flex flex-row justify-start items-start gap-16">
+              
+              <!-- Column 1: Aluminium Matting -->
+              <div class="flex flex-col min-w-[200px] text-left">
+                <a href="/pages/aluminium" class="font-bold text-sm uppercase tracking-wider text-on-surface dark:text-on-primary-fixed hover:text-primary transition-colors border-b border-on-surface/10 dark:border-on-primary-fixed/10 pb-2 mb-3 block">
+                  Aluminium Matting
+                </a>
+              </div>
+              
+              <!-- Column 2: Barrier Matting -->
+              <div class="flex flex-col min-w-[200px] text-left">
+                <a href="/pages/barrier" class="font-bold text-sm uppercase tracking-wider text-on-surface dark:text-on-primary-fixed hover:text-primary transition-colors border-b border-on-surface/10 dark:border-on-primary-fixed/10 pb-2 mb-3 block">
+                  Barrier Matting
+                </a>
+                <div class="flex flex-col gap-2">
+                  <a href="/pages/ultimat" class="text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors">Ultimat</a>
+                  <a href="/pages/ultiscrape" class="text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors">Ultiscrape</a>
+                  <a href="/pages/ultizig" class="text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors">Ultizig</a>
+                </div>
+              </div>
+              
+              <!-- Column 3: Carpet Mats -->
+              <div class="flex flex-col min-w-[200px] text-left">
+                <a href="/pages/carpet" class="font-bold text-sm uppercase tracking-wider text-on-surface dark:text-on-primary-fixed hover:text-primary transition-colors border-b border-on-surface/10 dark:border-on-primary-fixed/10 pb-2 mb-3 block">
+                  Carpet Mats
+                </a>
+                <div class="flex flex-col gap-2">
+                  <a href="/pages/ultiscrub" class="text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors">Ultiscrub</a>
+                  <a href="/pages/ultidure" class="text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors">Ultidure</a>
+                  <a href="/pages/ultiwipe" class="text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors">Ultiwipe</a>
+                  <a href="/pages/ultispark" class="text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors">Ultispark</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Shop Mats -->
+        <div class="relative group">
+          <a id="nav-link-shop" class="flex items-center gap-1 font-body-md text-body-md uppercase tracking-wider transition-colors duration-300 {% if request.path contains '/collections' or request.path contains '/products' %}text-primary border-b border-primary pb-1{% else %}text-on-surface-variant hover:text-primary{% endif %}" href="/collections/all">
+            <span>Shop Mats</span>
+            <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">keyboard_arrow_down</span>
+          </a>
+          <div class="absolute left-0 mt-2 w-48 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden flex flex-col p-2 text-left bg-white/95 backdrop-blur-md dark:bg-surface-dim/95 border border-on-surface/10 dark:border-on-primary-fixed/10 before:content-[''] before:absolute before:-top-3 before:left-0 before:w-full before:h-3 before:bg-transparent" style="background-color: #fdf9f1;">
+            <a href="/pages/commercial" class="p-2 hover:bg-surface-container rounded-md transition-colors text-on-surface-variant hover:text-primary text-sm uppercase tracking-wider font-label-md">
+              Commercial
+            </a>
+            <a href="/pages/mats-for-home" class="p-2 hover:bg-surface-container rounded-md transition-colors text-on-surface-variant hover:text-primary text-sm uppercase tracking-wider font-label-md">
+              Residential
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Made to Measure -->
+        <a id="nav-btn-m2m" class="font-body-md text-body-md uppercase tracking-wider transition-colors duration-300 {% if request.path contains 'made-to-measure' %}text-primary border-b border-primary pb-1{% else %}text-on-surface-variant hover:text-primary{% endif %}" href="/pages/made-to-measure-page">Made to Measure</a>
+
+        <!-- 4. About Us -->
+        <a id="nav-link-about" class="font-body-md text-body-md uppercase tracking-wider transition-colors duration-300 {% if request.path contains 'about' %}text-primary border-b border-primary pb-1{% else %}text-on-surface-variant hover:text-primary{% endif %}" href="/pages/about-us">About Us</a>
+
+        <!-- 5. Contact -->
+        <a id="nav-link-contact" class="font-body-md text-body-md uppercase tracking-wider transition-colors duration-300 {% if request.path contains 'contact' %}text-primary border-b border-primary pb-1{% else %}text-on-surface-variant hover:text-primary{% endif %}" href="/pages/contact">Contact</a>
+      {% endif %}
+    </div>
+
+    <!-- Right Icons and Call-to-Action -->
+    <div class="flex items-center gap-6">
+      
+      <!-- Search Form Trigger -->
+      <details-modal class="header__search">
+        <details>
+          <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="Search" style="list-style:none; cursor:pointer;">
+            <span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
+              search
+            </span>
+          </summary>
+          <div class="search-modal modal__content main-background" role="dialog" aria-modal="true" aria-label="Search" style="position:fixed; top:70px; left:0; width:100%; z-index:49; background:#fff; padding:15px; border-bottom:1px solid rgba(0,0,0,0.1);">
+            <div class="modal-overlay"></div>
+            <div class="search-modal__content page-width">
+              <form action="/search" method="get" role="search" class="search search-modal__form" style="display:flex; align-items:center; gap:10px;">
+                <input class="search__input field__input" type="search" name="q" value="" placeholder="Search..." style="flex:1; border:1px solid #ccc; padding:8px 12px; border-radius:4px; font-size:14px; background:#fff; color:#000;">
+                <input type="hidden" name="options[prefix]" value="last">
+                <button class="search__button field__button button--icon" aria-label="Submit Search" style="background:none; border:none; cursor:pointer;">
+                  <span class="material-symbols-outlined text-primary">search</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </details>
+      </details-modal>
+      
+      <!-- Customer Account Page Link -->
+      {% if shop.customer_accounts_enabled %}
+        <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" aria-label="Account">
+          person
+        </a>
+      {% endif %}
+
+      <!-- Shopping Bag -->
+      <a href="{{ routes.cart_url }}" class="relative group block" aria-label="Cart">
+        <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">shopping_bag</span>
+        <span id="premium-cart-count" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
+          {{ cart.item_count }}
+        </span>
+      </a>
+
+      <!-- Custom Quote CTA Button -->
+      {% if section.settings.cta_text != blank %}
+        <a href="{{ section.settings.cta_url | default: '/pages/contact' }}" class="hidden lg:block bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:opacity-90 transition-all text-center">
+          {{ section.settings.cta_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Phone Navigation Header (Visible ONLY on Mobile, matching mobile-home.html) -->
+  <div class="flex md:hidden justify-between items-center px-margin-mobile py-4 w-full relative">
+    <!-- Left Menu Trigger -->
+    <button class="flex items-center justify-center focus:outline-none" id="mobile-menu-trigger-phone" aria-label="Toggle navigation">
+      <span class="material-symbols-outlined text-primary text-[28px]">menu</span>
+    </button>
+    
+    <!-- Centered Logo -->
+    <a href="{{ routes.root_url }}" class="absolute left-1/2 -translate-x-1/2 font-display-xl text-headline-md text-primary dark:text-on-primary-fixed tracking-tighter cursor-pointer hover:opacity-80 transition-opacity">
+      {{ section.settings.logo_text | default: shop.name }}
+    </a>
+    
+    <!-- Right Search and Shopping Bag -->
+    <div class="flex items-center gap-4">
+      <details-modal class="header__search">
+        <details>
+          <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="Search" style="list-style:none; cursor:pointer;">
+            <span class="material-symbols-outlined text-primary">search</span>
+          </summary>
+          <div class="search-modal modal__content main-background" role="dialog" aria-modal="true" aria-label="Search" style="position:fixed; top:60px; left:0; width:100%; z-index:49; background:#fff; padding:12px; border-bottom:1px solid rgba(0,0,0,0.1);">
+            <div class="modal-overlay"></div>
+            <div class="search-modal__content page-width">
+              <form action="/search" method="get" role="search" class="search search-modal__form" style="display:flex; align-items:center; gap:8px;">
+                <input class="search__input field__input" type="search" name="q" value="" placeholder="Search..." style="flex:1; border:1px solid #ccc; padding:6px 10px; border-radius:4px; font-size:14px; background:#fff; color:#000;">
+                <input type="hidden" name="options[prefix]" value="last">
+                <button class="search__button field__button button--icon" aria-label="Submit Search" style="background:none; border:none; cursor:pointer;">
+                  <span class="material-symbols-outlined text-primary">search</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </details>
+      </details-modal>
+      
+      <a href="{{ routes.cart_url }}" class="relative group block" aria-label="Cart">
+        <span class="material-symbols-outlined text-primary">shopping_bag</span>
+        <span id="premium-cart-count-phone" class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
+          {{ cart.item_count }}
+        </span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+  <!-- Mobile sliding menu drawer matching mobile-home page -->
+  <div class="fixed inset-0 bg-primary/40 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-500" id="mobile-overlay-phone">
+    <div class="absolute top-0 left-0 w-[80%] max-w-[400px] h-full bg-surface dark:bg-surface-dim shadow-2xl -translate-x-full transition-transform duration-500 ease-in-out p-6 flex flex-col justify-between overflow-y-auto" id="side-drawer-phone" style="background-color: #fdf9f1;">
+      <div>
+        <div class="flex justify-between items-center mb-6">
+          <a href="{{ routes.root_url }}" class="font-display-xl text-headline-md text-primary dark:text-on-primary-fixed tracking-tighter cursor-pointer hover:opacity-80 transition-opacity">
+            {{ section.settings.logo_text | default: shop.name }}
+          </a>
+          <button class="material-symbols-outlined text-primary" id="close-menu-phone" aria-label="Close menu">close</button>
+        </div>
+        
+        <ul class="space-y-4">
+          {% if navigation_menu != blank and linklists[navigation_menu].links.size > 0 %}
+            {% for link in linklists[navigation_menu].links %}
+              {% assign downcase_title = link.title | downcase %}
+              {% if downcase_title contains 'rental' or downcase_title contains 'associate' or downcase_title contains 'distribution' or downcase_title contains 'architect' or downcase_title contains 'designer' or downcase_title contains 'reseller' or downcase_title contains 'career' %}
+                {% continue %}
+              {% endif %}
+              {% if downcase_title contains 'made to measure' or downcase_title contains 'configurator' %}
+                <!-- Made to Measure Single Link (No Submenu) -->
+                <li>
+                  <a class="font-body-md text-xl uppercase block hover:text-primary transition-colors" href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% elsif link.links.size > 0 %}
+                <!-- Standard/Mega Submenu Accordion -->
+                <li>
+                  <details class="group">
+                    <summary class="flex justify-between items-center font-body-md text-xl uppercase block cursor-pointer list-none py-2 hover:text-primary transition-colors">
+                      <span>{{ link.title }}</span>
+                      <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                    </summary>
+                    <ul class="pl-4 mt-2 space-y-4 border-l border-on-surface/10">
+                      <li>
+                        <a class="font-body-md text-[14px] uppercase block text-on-surface-variant hover:text-primary transition-colors" href="{{ link.url }}">
+                          All {{ link.title }}
+                        </a>
+                      </li>
+                      {% for sub_link in link.links %}
+                        {% if sub_link.links.size > 0 %}
+                          <!-- Static header for grandchildren links (instead of details accordion) -->
+                          <li class="py-1">
+                            <span class="font-body-md text-[14px] uppercase block text-on-surface font-semibold mb-1">
+                              {{ sub_link.title }}
+                            </span>
+                            <ul class="pl-4 mt-1 space-y-2 border-l border-on-surface/5">
+                              {% for grandchild_link in sub_link.links %}
+                                <li>
+                                  <a class="font-body-md text-[12px] uppercase block text-on-surface-variant/80 hover:text-primary transition-colors" href="{{ grandchild_link.url }}">
+                                    {{ grandchild_link.title }}
+                                  </a>
+                                </li>
+                              {% endfor %}
+                            </ul>
+                          </li>
+                        {% else %}
+                          <li>
+                            <a class="font-body-md text-[14px] uppercase block text-on-surface-variant hover:text-primary transition-colors" href="{{ sub_link.url }}">
+                              {{ sub_link.title }}
+                            </a>
+                          </li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  </details>
+                </li>
+              {% else %}
+                <li>
+                  <a class="font-body-md text-xl uppercase block hover:text-primary transition-colors" href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+            {% assign is_commercial = false %}
+            {% if request.path contains '/commercial' %}
+              {% assign is_commercial = true %}
+            {% endif %}
+            {% assign is_about = false %}
+            {% if request.path contains '/about' %}
+              {% assign is_about = true %}
+            {% endif %}
+            {% assign is_contact = false %}
+            {% if request.path contains '/contact' %}
+              {% assign is_contact = true %}
+            {% endif %}
+            {% assign is_shop = false %}
+            {% if request.path contains '/collections' or request.path contains '/products' %}
+              {% assign is_shop = true %}
+            {% endif %}
+            
+            <!-- 1. Catalog (Mobile Accordion) -->
+            <li>
+              <details class="group">
+                <summary class="flex justify-between items-center font-body-md text-xl uppercase block cursor-pointer list-none py-1 text-on-surface-variant hover:text-primary transition-colors">
+                  <span>Catalog</span>
+                  <span class="material-symbols-outlined text-[24px] transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                </summary>
+                <ul class="pl-4 mt-2 space-y-4 border-l border-on-surface/5">
+                  <!-- Aluminium Matting -->
+                  <li>
+                    <a class="font-body-md text-[16px] uppercase block text-on-surface-variant hover:text-primary transition-colors" href="/pages/aluminium">Aluminium Matting</a>
+                  </li>
+                  <!-- Barrier Matting -->
+                  <li class="py-1">
+                    <span class="font-body-md text-[16px] uppercase block text-on-surface font-semibold mb-1">Barrier Matting</span>
+                    <ul class="pl-4 mt-1 space-y-2 border-l border-on-surface/5">
+                      <li><a class="font-body-md text-[14px] uppercase block text-on-surface-variant/85 hover:text-primary transition-colors" href="/pages/ultimat">Ultimat</a></li>
+                      <li><a class="font-body-md text-[14px] uppercase block text-on-surface-variant/85 hover:text-primary transition-colors" href="/pages/ultiscrape">Ultiscrape</a></li>
+                      <li><a class="font-body-md text-[14px] uppercase block text-on-surface-variant/85 hover:text-primary transition-colors" href="/pages/ultizig">Ultizig</a></li>
+                    </ul>
+                  </li>
+                  <!-- Carpet Mats -->
+                  <li class="py-1">
+                    <span class="font-body-md text-[16px] uppercase block text-on-surface font-semibold mb-1">Carpet Mats</span>
+                    <ul class="pl-4 mt-1 space-y-2 border-l border-on-surface/5">
+                      <li><a class="font-body-md text-[14px] uppercase block text-on-surface-variant/85 hover:text-primary transition-colors" href="/pages/ultiscrub">Ultiscrub</a></li>
+                      <li><a class="font-body-md text-[14px] uppercase block text-on-surface-variant/85 hover:text-primary transition-colors" href="/pages/ultidure">Ultidure</a></li>
+                      <li><a class="font-body-md text-[14px] uppercase block text-on-surface-variant/85 hover:text-primary transition-colors" href="/pages/ultiwipe">Ultiwipe</a></li>
+                      <li><a class="font-body-md text-[14px] uppercase block text-on-surface-variant/85 hover:text-primary transition-colors" href="/pages/ultispark">Ultispark</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </details>
+            </li>
+
+            <!-- 2. Shop Mats -->
+            <li>
+              <details class="group">
+                <summary class="flex justify-between items-center font-body-md text-xl uppercase block cursor-pointer list-none py-1 text-on-surface-variant hover:text-primary transition-colors">
+                  <span>Shop Mats</span>
+                  <span class="material-symbols-outlined text-[24px] transition-transform duration-300 group-open:rotate-180">expand_more</span>
+                </summary>
+                <ul class="pl-4 mt-2 space-y-4 border-l border-on-surface/5">
+                  <li><a class="font-body-md text-[16px] uppercase block text-on-surface-variant hover:text-primary transition-colors" href="/collections/all">All Shop Mats</a></li>
+                  <li><a class="font-body-md text-[16px] uppercase block text-on-surface-variant hover:text-primary transition-colors" href="/pages/commercial">Commercial</a></li>
+                  <li><a class="font-body-md text-[16px] uppercase block text-on-surface-variant hover:text-primary transition-colors" href="/pages/mats-for-home">Residential</a></li>
+                </ul>
+              </details>
+            </li>
+
+            <!-- 3. Made to Measure -->
+            <li>
+              <a id="nav-summary-m2m" class="font-body-md text-xl uppercase block transition-colors {% if request.path contains 'made-to-measure' %}text-primary font-bold{% else %}hover:text-primary{% endif %}" href="/pages/made-to-measure-page">Made to Measure</a>
+            </li>
+
+            <!-- 4. About Us -->
+            <li>
+              <a id="nav-link-about-mobile" class="font-body-md text-xl uppercase block transition-colors {% if request.path contains 'about' %}text-primary font-bold{% else %}hover:text-primary{% endif %}" href="/pages/about-us">About Us</a>
+            </li>
+
+            <!-- 5. Contact -->
+            <li>
+              <a id="nav-link-contact-mobile" class="font-body-md text-xl uppercase block transition-colors {% if request.path contains 'contact' %}text-primary font-bold{% else %}hover:text-primary{% endif %}" href="/pages/contact">Contact</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+      
+      {% if section.settings.cta_text != blank %}
+        <div class="pt-4 mt-8">
+          <a href="{{ section.settings.cta_url | default: '/pages/contact' }}" class="w-full bg-primary text-on-primary font-body-md py-5 px-8 rounded-full font-bold uppercase tracking-widest text-center block hover:opacity-90 transition-opacity">
+            {{ section.settings.cta_text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+
+<!-- JavaScript to toggle burger menu drawers dynamically -->
+<script>
+  (function() {
+    function highlightActiveNav() {
+      var path = window.location.pathname.replace(/\/$/, '').toLowerCase();
+      var search = window.location.search.toLowerCase();
+      
+      // Select elements
+      var shopLinks = [document.getElementById('nav-link-shop'), document.getElementById('nav-link-shop-mobile')];
+      var m2mLinks = [document.getElementById('nav-btn-m2m'), document.getElementById('nav-summary-m2m')];
+      var aboutLinks = [document.getElementById('nav-link-about'), document.getElementById('nav-link-about-mobile')];
+      var contactLinks = [document.getElementById('nav-link-contact'), document.getElementById('nav-link-contact-mobile')];
+
+      var allGroups = [shopLinks, m2mLinks, aboutLinks, contactLinks];
+
+      // Reset styles for all
+      allGroups.forEach(function(group) {
+        group.forEach(function(el) {
+          if (!el) return;
+          el.classList.remove('text-primary', 'border-b', 'border-primary', 'pb-1', 'font-bold');
+          el.classList.add('text-on-surface-variant');
+        });
+      });
+
+      // Determine current active group based on final path/query context
+      var activeGroup = null;
+      if (path.indexOf('/collections') !== -1 || path.indexOf('/products') !== -1) {
+        activeGroup = shopLinks;
+      } else if (path === '/made-to-measure' || path.indexOf('made-to-measure') !== -1 || search.indexOf('made-to-measure-page') !== -1) {
+        activeGroup = m2mLinks;
+      } else if (path === '/about-us' || path.indexOf('about-us') !== -1) {
+        activeGroup = aboutLinks;
+      } else if (path === '/contact' || path.indexOf('contact') !== -1) {
+        // Only trigger contact if it's not made-to-measure
+        if (search.indexOf('made-to-measure') === -1) {
+          activeGroup = contactLinks;
+        }
+      }
+
+      // Highlight active group
+      if (activeGroup) {
+        activeGroup.forEach(function(el) {
+          if (!el) return;
+          el.classList.remove('text-on-surface-variant');
+          if (el.tagName === 'A' && el.id.indexOf('mobile') === -1) {
+            el.classList.add('text-primary', 'border-b', 'border-primary', 'pb-1');
+          } else if (el.tagName === 'BUTTON') {
+            el.classList.add('text-primary', 'border-b', 'border-primary', 'pb-1');
+          } else {
+            el.classList.add('text-primary', 'font-bold');
+          }
+        });
+      }
+    }
+    
+    highlightActiveNav();
+    document.addEventListener('DOMContentLoaded', highlightActiveNav);
+    window.addEventListener('load', highlightActiveNav);
+
+    const triggerPhone = document.getElementById('mobile-menu-trigger-phone');
+    const overlayPhone = document.getElementById('mobile-overlay-phone');
+    const drawerPhone = document.getElementById('side-drawer-phone');
+    const closeBtnPhone = document.getElementById('close-menu-phone');
+    
+    function togglePhoneMenu() {
+      const isOpen = overlayPhone.classList.contains('opacity-100');
+      if (isOpen) {
+        overlayPhone.classList.remove('opacity-100');
+        overlayPhone.classList.add('opacity-0', 'pointer-events-none');
+        drawerPhone.classList.add('-translate-x-full');
+        document.body.style.overflow = '';
+      } else {
+        overlayPhone.classList.add('opacity-100');
+        overlayPhone.classList.remove('opacity-0', 'pointer-events-none');
+        drawerPhone.classList.remove('-translate-x-full');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    
+    if (triggerPhone && overlayPhone && drawerPhone && closeBtnPhone) {
+      triggerPhone.addEventListener('click', togglePhoneMenu);
+      closeBtnPhone.addEventListener('click', togglePhoneMenu);
+      overlayPhone.addEventListener('click', function(e) {
+        if (e.target === overlayPhone) togglePhoneMenu();
+      });
+      
+      // Close drawer when link clicked
+      drawerPhone.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          overlayPhone.classList.remove('opacity-100');
+          overlayPhone.classList.add('opacity-0', 'pointer-events-none');
+          drawerPhone.classList.add('-translate-x-full');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Premium Navigation Header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Branding"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text",
+      "default": "ULTIMATS"
+    },
+    {
+      "type": "header",
+      "content": "Navigation Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation Menu override",
+      "info": "Leave blank to display default premium static links"
+    },
+    {
+      "type": "header",
+      "content": "Call-To-Action Button"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Request Custom Quote"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Mega Dropdown Item 1"
+    },
+    {
+      "type": "text",
+      "id": "m2m_title_1",
+      "label": "Title",
+      "default": "Configurator Wizard"
+    },
+    {
+      "type": "text",
+      "id": "m2m_desc_1",
+      "label": "Description",
+      "default": "Step-by-step custom size builder"
+    },
+    {
+      "type": "text",
+      "id": "m2m_url_1",
+      "label": "URL / Path",
+      "default": "/pages/made-to-measure-page"
+    },
+    {
+      "type": "header",
+      "content": "Mega Dropdown Item 2"
+    },
+    {
+      "type": "text",
+      "id": "m2m_title_2",
+      "label": "Title",
+      "default": "Barrier Mats"
+    },
+    {
+      "type": "text",
+      "id": "m2m_desc_2",
+      "label": "Description",
+      "default": "Configure ribbed dirt-trap mats"
+    },
+    {
+      "type": "text",
+      "id": "m2m_url_2",
+      "label": "URL / Path",
+      "default": "/pages/made-to-measure-page"
+    },
+    {
+      "type": "header",
+      "content": "Mega Dropdown Item 3"
+    },
+    {
+      "type": "text",
+      "id": "m2m_title_3",
+      "label": "Title",
+      "default": "Aluminium Systems"
+    },
+    {
+      "type": "text",
+      "id": "m2m_desc_3",
+      "label": "Description",
+      "default": "Configure heavy traffic entrance frames"
+    },
+    {
+      "type": "text",
+      "id": "m2m_url_3",
+      "label": "URL / Path",
+      "default": "/pages/made-to-measure-page"
+    },
+    {
+      "type": "header",
+      "content": "Mega Dropdown Item 4"
+    },
+    {
+      "type": "text",
+      "id": "m2m_title_4",
+      "label": "Title",
+      "default": "Carpet Mats"
+    },
+    {
+      "type": "text",
+      "id": "m2m_desc_4",
+      "label": "Description",
+      "default": "Configure soft plush dust-trap mats"
+    },
+    {
+      "type": "text",
+      "id": "m2m_url_4",
+      "label": "URL / Path",
+      "default": "/pages/made-to-measure-page"
+    }
+  ]
+}
+{% endschema %}

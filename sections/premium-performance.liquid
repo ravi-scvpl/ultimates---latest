@@ -1,0 +1,622 @@
+{%- liquid
+  assign is_full_screen = true
+  if section.settings.layout_style == 'standard'
+    assign is_full_screen = false
+  endif
+-%}
+
+{%- style -%}
+  #premium-performance-{{ section.id }} {
+    position: relative;
+    overflow: hidden;
+    padding: 72px 0;
+    {% if section.settings.enable_radial_gradient %}
+      background: linear-gradient(120deg, #1c1a15 0%, #0f0e0b 55%, #1a1712 100%);
+    {% else %}
+      background-color: {{ section.settings.bg_color | default: '#15140f' }};
+    {% endif %}
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__backdrop {
+    position: absolute;
+    inset: 0;
+    {% if section.settings.enable_radial_gradient %}
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.06), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(255,255,255,0.05), transparent 45%),
+        linear-gradient(120deg, #1c1a15 0%, #0f0e0b 55%, #1a1712 100%);
+    {% else %}
+      background: {{ section.settings.bg_color | default: '#15140f' }};
+    {% endif %}
+    z-index: 0;
+  }
+  #premium-performance-{{ section.id }} .feature-showcase__backdrop::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 72px;
+    display: flex;
+    align-items: flex-start;
+    gap: 56px;
+  }
+
+  /* --- Fixed left heading column, does NOT scroll with the cards --- */
+  #premium-performance-{{ section.id }} .feature-showcase__intro {
+    flex: 0 0 auto;
+    width: 340px;
+    padding-top: 8px;
+    color: {{ section.settings.heading_color | default: '#FFFFFF' }};
+    text-align: left;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: {{ section.settings.subheading_color | default: 'rgba(255,255,255,0.6)' }};
+    margin: 0 0 20px;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__heading {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 20px;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__subheading {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: {{ section.settings.subheading_color | default: 'rgba(255,255,255,0.65)' }};
+    margin: 0 0 40px;
+    max-width: 300px;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__arrow {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid {{ section.settings.border_color | default: 'rgba(255,255,255,0.4)' }};
+    background: transparent;
+    color: {{ section.settings.heading_color | default: '#FFFFFF' }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+  }
+  #premium-performance-{{ section.id }} .feature-showcase__arrow:hover:not(:disabled) { 
+    background-color: rgba(255,255,255,0.1); 
+  }
+  #premium-performance-{{ section.id }} .feature-showcase__arrow:disabled { 
+    opacity: 0.3; 
+    cursor: default; 
+  }
+  #premium-performance-{{ section.id }} .feature-showcase__arrow svg { 
+    width: 16px; 
+    height: 16px; 
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__scrubber {
+    position: relative;
+    width: 120px;
+    height: 1px;
+    background: {{ section.settings.border_color | default: 'rgba(255,255,255,0.25)' }};
+  }
+  #premium-performance-{{ section.id }} .feature-showcase__scrubber-fill {
+    position: absolute;
+    top: 0; left: 0; height: 100%;
+    background: {{ section.settings.heading_color | default: '#FFFFFF' }};
+    transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  /* --- Scrolling card viewport, right side only --- */
+  #premium-performance-{{ section.id }} .feature-showcase__viewport {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;           /* Firefox */
+    -ms-overflow-style: none;        /* old Edge/IE */
+    -webkit-overflow-scrolling: touch;
+  }
+  #premium-performance-{{ section.id }} .feature-showcase__scroll::-webkit-scrollbar { 
+    display: none; 
+  } /* Chrome/Safari */
+  
+  #premium-performance-{{ section.id }} .feature-showcase__scroll.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__progress-row {
+    position: relative;
+    height: 1px;
+    background: {{ section.settings.border_color | default: 'rgba(255,255,255,0.3)' }};
+    margin: 0 0 32px;
+  }
+  #premium-performance-{{ section.id }} .feature-showcase__progress-row .dot {
+    position: absolute;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: {{ section.settings.heading_color | default: '#FFFFFF' }};
+    transform: translate(-50%, -50%);
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__card {
+    flex: 0 0 auto;
+    width: 280px;
+    background: {{ section.settings.card_bg | default: '#FFFFFF' }};
+    border-radius: 12px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__card-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__card-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__card-body {
+    padding: 22px 22px 26px;
+    text-align: left;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__card-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: {{ section.settings.card_title_color | default: '#14110D' }};
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+
+  #premium-performance-{{ section.id }} .feature-showcase__card-text {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: {{ section.settings.card_text_color | default: '#5B5751' }};
+    margin: 0;
+  }
+
+  @media screen and (max-width: 1000px) {
+    #premium-performance-{{ section.id }} .feature-showcase__inner { 
+      flex-direction: column; 
+      gap: 32px; 
+    }
+    #premium-performance-{{ section.id }} .feature-showcase__intro { 
+      width: 100%; 
+    }
+    #premium-performance-{{ section.id }} .feature-showcase__viewport { 
+      width: 100%; 
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    #premium-performance-{{ section.id }} { 
+      padding: 48px 0; 
+    }
+    #premium-performance-{{ section.id }} .feature-showcase__inner { 
+      padding: 0 24px; 
+    }
+    #premium-performance-{{ section.id }} .feature-showcase__card { 
+      width: 220px; 
+    }
+  }
+{%- endstyle -%}
+
+<section id="premium-performance-{{ section.id }}">
+  <div class="feature-showcase__backdrop"></div>
+
+  <div class="feature-showcase__inner">
+
+    <!-- Left column: stays put, never scrolls -->
+    <div class="feature-showcase__intro">
+      <p class="feature-showcase__eyebrow">{{ section.settings.eyebrow | default: 'Built for the door' }}</p>
+      <h2 class="feature-showcase__heading">{{ section.settings.heading | default: 'Engineered for Performance' }}</h2>
+      <p class="feature-showcase__subheading">{{ section.settings.subheading | default: 'The science of keeping your space pristine starts at the door.' }}</p>
+
+      <div class="feature-showcase__controls">
+        <button class="feature-showcase__arrow" id="prevBtn-{{ section.id }}" aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <div class="feature-showcase__scrubber">
+          <div class="feature-showcase__scrubber-fill" id="scrubberFill-{{ section.id }}"></div>
+        </div>
+        <button class="feature-showcase__arrow" id="nextBtn-{{ section.id }}" aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right column: only this scrolls -->
+    <div class="feature-showcase__viewport">
+      <div class="feature-showcase__progress-row" id="progressRow-{{ section.id }}"></div>
+
+      <div class="feature-showcase__scroll" id="scrollArea-{{ section.id }}">
+        <div class="feature-showcase__track" id="track-{{ section.id }}">
+
+          {% for block in section.blocks %}
+            <div class="feature-showcase__card" {{ block.shopify_attributes }}>
+              <div class="feature-showcase__card-media">
+                {% if block.settings.video != blank %}
+                  {{ block.settings.video | video_tag: class: 'w-full h-full object-cover', autoplay: true, loop: true, muted: true, playsinline: true }}
+                {% elsif block.settings.video_url != blank %}
+                  <video src="{{ block.settings.video_url }}" autoplay muted loop playsinline></video>
+                {% elsif block.settings.image != blank %}
+                  <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.title | escape }}" loading="lazy">
+                {% else %}
+                  {%- liquid
+                    assign video_filename = ''
+                    if forloop.index == 1
+                      assign video_filename = '1st.mp4'
+                    elsif forloop.index == 2
+                      assign video_filename = '2nd.mp4'
+                    elsif forloop.index == 3
+                      assign video_filename = '3rd.mp4'
+                    elsif forloop.index == 4
+                      assign video_filename = '4th.mp4'
+                    elsif forloop.index == 5
+                      assign video_filename = '5th.mp4'
+                    elsif forloop.index == 6
+                      assign video_filename = '6th.mp4'
+                    endif
+                  -%}
+                  {% if video_filename != '' %}
+                    <video src="{{ video_filename | asset_url }}" autoplay muted loop playsinline></video>
+                  {% elsif block.settings.icon != blank %}
+                    <div class="flex items-center justify-center w-full h-full bg-[#fdf9f1] dark:bg-surface-dim">
+                      <span class="material-symbols-outlined text-[48px]" style="color: {{ section.settings.icon_color | default: '#79573e' }}; font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48;">
+                        {{ block.settings.icon }}
+                      </span>
+                    </div>
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'w-full h-full object-cover bg-surface-container-high' }}
+                  {% endif %}
+                {% endif %}
+              </div>
+              <div class="feature-showcase__card-body">
+                <h3 class="feature-showcase__card-title">{{ block.settings.title }}</h3>
+                <p class="feature-showcase__card-text">{{ block.settings.description }}</p>
+              </div>
+            </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  (function () {
+    const scrollArea = document.getElementById('scrollArea-{{ section.id }}');
+    const track = document.getElementById('track-{{ section.id }}');
+    if (!scrollArea || !track) return;
+
+    const cards = Array.from(track.querySelectorAll('.feature-showcase__card'));
+    const prevBtn = document.getElementById('prevBtn-{{ section.id }}');
+    const nextBtn = document.getElementById('nextBtn-{{ section.id }}');
+    const scrubberFill = document.getElementById('scrubberFill-{{ section.id }}');
+    const progressRow = document.getElementById('progressRow-{{ section.id }}');
+    if (cards.length === 0) return;
+
+    function buildDots() {
+      if (!progressRow) return;
+      progressRow.innerHTML = '';
+      const total = cards.length;
+      cards.forEach((_, i) => {
+        const d = document.createElement('div');
+        d.className = 'dot';
+        d.style.left = (total <= 1 ? 0 : (i / (total - 1)) * 100) + '%';
+        progressRow.appendChild(d);
+      });
+    }
+
+    function maxScroll() {
+      return scrollArea.scrollWidth - scrollArea.clientWidth;
+    }
+
+    function updateButtonsAndProgress() {
+      const max = maxScroll();
+      if (prevBtn) prevBtn.disabled = scrollArea.scrollLeft <= 2;
+      if (nextBtn) nextBtn.disabled = scrollArea.scrollLeft >= max - 2;
+
+      const progress = max <= 0 ? 100 : (scrollArea.scrollLeft / max) * 100;
+      if (scrubberFill) scrubberFill.style.width = Math.min(100, Math.max(0, progress)) + '%';
+    }
+
+    function stepDistance() {
+      const cardWidth = cards[0].getBoundingClientRect().width;
+      return cardWidth + 24; // card width + gap
+    }
+
+    // --- Arrow buttons: scroll by one card ---
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        scrollArea.scrollBy({ left: -stepDistance(), behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        scrollArea.scrollBy({ left: stepDistance(), behavior: 'smooth' });
+      });
+    }
+
+    // --- Native scroll/swipe (touch, trackpad) keeps buttons + progress in sync ---
+    scrollArea.addEventListener('scroll', () => {
+      window.requestAnimationFrame(updateButtonsAndProgress);
+    }, { passive: true });
+
+    // --- Click-and-drag scrolling for desktop mouse users ---
+    let isDown = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let moved = false;
+
+    scrollArea.addEventListener('pointerdown', (e) => {
+      isDown = true;
+      moved = false;
+      scrollArea.classList.add('is-dragging');
+      startX = e.clientX;
+      startScrollLeft = scrollArea.scrollLeft;
+      scrollArea.setPointerCapture(e.pointerId);
+    });
+
+    scrollArea.addEventListener('pointermove', (e) => {
+      if (!isDown) return;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 3) moved = true;
+      scrollArea.scrollLeft = startScrollLeft - dx;
+    });
+
+    function endDrag(e) {
+      isDown = false;
+      scrollArea.classList.remove('is-dragging');
+    }
+    scrollArea.addEventListener('pointerup', endDrag);
+    scrollArea.addEventListener('pointercancel', endDrag);
+    scrollArea.addEventListener('pointerleave', endDrag);
+
+    // Prevent the drag from also triggering a click on the link/video underneath
+    scrollArea.addEventListener('click', (e) => {
+      if (moved) { e.preventDefault(); e.stopPropagation(); }
+    }, true);
+
+    window.addEventListener('resize', updateButtonsAndProgress);
+
+    buildDots();
+    updateButtonsAndProgress();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Premium Performance Info",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Aesthetics"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_radial_gradient",
+      "label": "Enable Dark Theme Backdrop Radial Gradient",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Solid Background Color",
+      "default": "#15140f",
+      "info": "Applies when backdrop gradient is disabled"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading/Eyebrow Text Color",
+      "default": "rgba(255,255,255,0.65)"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Scrubber & Controls Color",
+      "default": "rgba(255,255,255,0.25)"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card Title Color",
+      "default": "#14110d"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card Description Color",
+      "default": "#5b5751"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Card Icons Color",
+      "default": "#79573e",
+      "info": "Applies when Google Material Icons are displayed"
+    },
+    {
+      "type": "header",
+      "content": "Section Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Section Eyebrow",
+      "default": "Built for the door"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Engineered for Performance"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Section Subheading",
+      "default": "The science of keeping your space pristine starts at the door."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Performance Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Material Icon Name",
+          "info": "Choose an icon from Google Material Symbols (e.g. water_drop, grid_view, security, eco, search, air). Overridden if image or video is specified.",
+          "default": "water_drop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image",
+          "info": "Overridden if video is specified."
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Card Video (Shopify Library)"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Card Video URL (Direct link to MP4)",
+          "info": "Useful for external URLs or Shopify CDN direct links."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Title",
+          "default": "Card Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Card Description",
+          "default": "Explain how your product engineered features function."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Performance Info",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "icon": "water_drop",
+            "title": "Moisture Lock",
+            "description": "High-density fibers trap up to 6 liters of water per square meter."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon": "grid_view",
+            "title": "Dirt Scrub",
+            "description": "Coarse monofilaments actively scrub debris from footwear soles."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon": "security",
+            "title": "Anti-Slip Base",
+            "description": "Nitrile rubber backing ensures zero movement on any floor surface."
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "icon": "eco",
+            "title": "Sustainable",
+            "description": "Crafted from 100% recycled nylon yarn for a lower footprint."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

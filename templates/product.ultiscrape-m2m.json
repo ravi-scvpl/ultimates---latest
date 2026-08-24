@@ -1,0 +1,328 @@
+{
+  "wrapper": "div.template-product-wrapper",
+  "sections": {
+    "product-information": {
+      "type": "premium-product-info",
+      "settings": {
+        "show_breadcrumbs": true,
+        "tagline_text": "Heavy traffic performance",
+        "show_vat_text": true,
+        "badge_1_icon": "verified",
+        "badge_1_text": "Architect-Approved",
+        "badge_2_icon": "bolt",
+        "badge_2_text": "Tested to 100k Steps"
+      }
+    },
+    "size-chart": {
+      "type": "size-chart",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "is_thead": true,
+            "row_name": "(A) 24\"   x    (B) -->",
+            "column_values": "48\", 54\", 60\", 66\", 72\", 78\", 84\", 90\", 96\", 102\", 108\", 114\", 120\", 126\", 132\", 138\", 144\""
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "is_thead": false,
+            "row_name": "(A) 36\"x    (B) -->",
+            "column_values": "48\", 54\", 60\", 66\", 72\", 78\", 84\", 90\", 96\", 102\", 108\", 114\", 120\", 126\", 132\", 138\", 144\""
+          }
+        },
+        "row_ktRGjU": {
+          "type": "row",
+          "settings": {
+            "is_thead": false,
+            "row_name": "(A) 48\"x    (B) -->",
+            "column_values": "48\", 54\", 60\", 66\", 72\", 78\", 84\", 90\", 96\", 102\", 108\", 114\", 120\", 126\", 132\", 138\", 144\""
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_ktRGjU"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Size chart",
+        "note": "Please select the closest higher dimension that matches your custom size. For example, if your mat dimension (A) is 31\" and mat dimension (B) is 94\",  then select (A) as 36\" and (B) as 96\" from the dropdown options. If your desired size is not mentioned in the above chart, please request a quote by filling the form below.",
+        "background": "background-modal",
+        "padding_top": 0,
+        "padding_bottom": 44
+      }
+    },
+    "product-content": {
+      "type": "product-content",
+      "blocks": {
+        "product_features": {
+          "type": "product_features",
+          "settings": {
+            "font_size": 100,
+            "icon_size": 100,
+            "background": "background-modal",
+            "feature_title_1": "Customizable",
+            "feature_icon_1": "palette",
+            "feature_text_1": "<p>Choose your size, border & color</p>",
+            "feature_link_1": "",
+            "feature_title_2": "Premium Product",
+            "feature_icon_2": "star",
+            "feature_text_2": "<p>Quality materials & finish</p>",
+            "feature_link_2": "",
+            "feature_title_3": "Made in India",
+            "feature_icon_3": "globe",
+            "feature_text_3": "<p>Fast execution & support</p>",
+            "feature_link_3": "",
+            "feature_title_4": "",
+            "feature_icon_4": "none",
+            "feature_text_4": "",
+            "feature_link_4": "",
+            "feature_title_5": "",
+            "feature_icon_5": "none",
+            "feature_text_5": "",
+            "feature_link_5": "",
+            "feature_title_6": "",
+            "feature_icon_6": "none",
+            "feature_text_6": "",
+            "feature_link_6": "",
+            "padding_top": 0,
+            "padding_bottom": 50
+          }
+        },
+        "checklist": {
+          "type": "checklist",
+          "settings": {
+            "image": "shopify://shop_images/UltiScrape_Double_Compressed.png",
+            "show_scrim": false,
+            "scrim_lightness": 0,
+            "icon": "shield-check",
+            "text": "",
+            "font_size": 70,
+            "font_type": "body-font",
+            "icon_1": "badge-check",
+            "text_1": "Unique double-compressed bordering technology",
+            "icon_2": "badge-check",
+            "text_2": "Adds elegance and aesthetics",
+            "icon_3": "badge-check",
+            "text_3": "Prevents mat from fraying at edges",
+            "icon_4": "badge-check",
+            "text_4": "Extends mat life",
+            "background": "background-modal",
+            "padding_top": 0,
+            "padding_bottom": 40
+          }
+        },
+        "product_notes": {
+          "type": "product_notes",
+          "disabled": true,
+          "settings": {
+            "collapsible_content": true,
+            "notes_title": "",
+            "notes_text": "",
+            "page": "",
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "scale": {
+          "type": "scale",
+          "disabled": true,
+          "settings": {
+            "collapsible_content": true,
+            "scale_title": "Scale Title",
+            "scale_text": "<p>Add scale description</p>",
+            "scale_value": "0",
+            "scale_label_1": "Step 1",
+            "scale_label_2": "Step 2",
+            "scale_label_3": "",
+            "scale_label_4": "",
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "product_care": {
+          "type": "product_care",
+          "disabled": true,
+          "settings": {
+            "collapsible_content": true,
+            "care_title": "Care",
+            "care_text_1": "Machine wash",
+            "care_icon_1": "washing-machine",
+            "care_text_2": "Add care detail",
+            "care_icon_2": "hands-bubbles",
+            "care_text_3": "",
+            "care_icon_3": "clothes-hanger",
+            "care_text_4": "",
+            "care_icon_4": "clothes-hanger",
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_facebook": true,
+            "share_twitter": true,
+            "share_pinterest": true,
+            "padding_top": 0,
+            "padding_bottom": 50
+          }
+        },
+        "complementary": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Pairs well with",
+            "product_list_limit": 10,
+            "picker_type": "button",
+            "color_swatch_type": "none",
+            "color_swatch_shape": "circle",
+            "swatch_size": 36,
+            "padding_top": 0,
+            "padding_bottom": 50
+          }
+        }
+      },
+      "block_order": [
+        "product_features",
+        "checklist",
+        "product_notes",
+        "scale",
+        "product_care",
+        "share",
+        "complementary"
+      ],
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collection_rLUiHF": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "You might also like",
+        "font_size": 90,
+        "color_text": "primary-text-1",
+        "collection": "",
+        "product_list": [
+          "ultiwipe-carpet-mat",
+          "ultidure-carpet-mat",
+          "ultirake-carpet-mat",
+          "ultimat-heavy-duty-vinyl-looped-matting",
+          "ultiscrub-carpet-mat-1",
+          "ultizig-barrier-mat-with-backing",
+          "ultizig-barrier-mat",
+          "ulticlean-carpet-mat-1"
+        ],
+        "columns": 4,
+        "font_card_size": 100,
+        "background": "background-modal",
+        "show_view_all": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "contact_form_CyjdAg": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "REQUEST A QUOTE",
+        "subtitle": "Our Customer Service Team Will Connect With You",
+        "show_email": false,
+        "show_phone": false,
+        "show_address": false,
+        "custom_address": "",
+        "show_facebook": false,
+        "handle_facebook": "Find us on Facebook",
+        "show_instagram": false,
+        "handle_instagram": "Find us on Instagram",
+        "show_twitter": false,
+        "handle_twitter": "Find us on Twitter",
+        "operation": "",
+        "response_time": "",
+        "font_size": 90,
+        "background": "background-modal",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "rich_text_Gd4ENY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_cfQ4jC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "font_size": 100,
+            "font_type": "heading-font"
+          }
+        },
+        "text_NQW9m9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "font_size": 100,
+            "font_type": "body-font"
+          }
+        },
+        "button_jBwAXE": {
+          "type": "button",
+          "settings": {
+            "button_label": "Optional button",
+            "button_link": "",
+            "button_style": "ghost"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cfQ4jC",
+        "text_NQW9m9",
+        "button_jBwAXE"
+      ],
+      "disabled": true,
+      "settings": {
+        "text_align": "left",
+        "background": "main-background",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "1711617065d9c72ecf": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_w6jaMD": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_w6jaMD"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "product-information",
+    "size-chart",
+    "product-content",
+    "product-recommendations",
+    "featured_collection_rLUiHF",
+    "contact_form_CyjdAg",
+    "rich_text_Gd4ENY",
+    "1711617065d9c72ecf"
+  ]
+}

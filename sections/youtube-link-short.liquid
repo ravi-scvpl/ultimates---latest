@@ -1,0 +1,256 @@
+{% comment %} 
+  ========================================================================================
+  YOUTUBE SHORTS CAROUSEL SECTION (IFRAME EMBEDS)
+  A horizontal, scrollable carousel of hardcoded YouTube Short video embeds.
+  ========================================================================================
+{% endcomment %}
+
+{% comment %} --- SECTION SETTINGS --- {% endcomment %}
+{% assign section_id = section.id %}
+{% assign section_heading = section.settings.title %}
+
+<section class="shorts-carousel-section section-{{ section_id }}">
+  {% if section_heading != blank %}
+    <h2 class="section-heading">{{ section_heading | escape }}</h2>
+  {% endif %}
+
+  <div class="carousel-container">
+    
+    {% comment %} --- Navigation Arrows --- {% endcomment %}
+    <button class="carousel-arrow carousel-arrow--prev" aria-label="Previous short">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>
+    </button>
+    
+    <div class="short-grid carousel-track" id="ShortsCarouselTrack-{{ section_id }}">
+      
+      {% comment %} 
+        --- 🎥 HARDCODED YOUTUBE SHORTS IDs --- 
+        The HTML structure uses hardcoded iframes for 5 videos.
+      {% endcomment %}
+      <div class="short-wrap">
+        <iframe src="https://www.youtube.com/embed/GIOkur4YO6M?controls=0&modestbranding=1&rel=0&playsinline=1"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="short-wrap">
+        <iframe src="https://www.youtube.com/embed/eBHlhha5rkg?controls=0&modestbranding=1&rel=0&playsinline=1"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="short-wrap">
+        <iframe src="https://www.youtube.com/embed/PeeNjRRnM9Y?controls=0&modestbranding=1&rel=0&playsinline=1"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="short-wrap">
+        <iframe src="https://www.youtube.com/embed/vlmFZuq0S-M?controls=0&modestbranding=1&rel=0&playsinline=1"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="short-wrap">
+        <iframe src="https://www.youtube.com/embed/zKRRlkr8Sms?controls=0&modestbranding=1&rel=0&playsinline=1"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      
+    </div>
+    
+    <button class="carousel-arrow carousel-arrow--next" aria-label="Next short">
+      <svg viewBox="0 0 24 24" width="24" height="24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+    </button>
+    
+  </div>
+</section>
+
+<style>
+  /* --------------------------------------------------------------------- */
+  /* --- 1. CAROUSEL LAYOUT --- */
+  /* --------------------------------------------------------------------- */
+  .shorts-carousel-section {
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+  .section-heading {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .carousel-container {
+    position: relative;
+  }
+  
+  .short-grid.carousel-track {
+    display: flex;
+    flex-wrap: nowrap; 
+    
+    overflow-x: scroll;
+    overflow-y: hidden;
+    
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch;
+    
+    gap: 20px; 
+    padding-bottom: 20px; 
+    margin: 0 -15px; 
+    
+    scrollbar-width: none;
+  }
+  .short-grid.carousel-track::-webkit-scrollbar {
+      display: none;
+  }
+
+  .short-wrap {
+    position: relative;
+    width: 260px;           
+    height: 462px;
+    flex-shrink: 0; 
+    
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    
+    scroll-snap-align: start;
+  }
+
+  .short-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+  }
+  
+  /* --------------------------------------------------------------------- */
+  /* --- 2. NAVIGATION ARROWS --- */
+  /* --------------------------------------------------------------------- */
+  
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .carousel-arrow:hover {
+    background: #f5f5f5;
+  }
+  .carousel-arrow svg {
+    fill: #333;
+    width: 24px;
+    height: 24px;
+  }
+
+  .carousel-arrow--prev {
+    left: 0;
+  }
+  .carousel-arrow--next {
+    right: 0;
+  }
+  
+
+  /* --------------------------------------------------------------------- */
+  /* --- 3. RESPONSIVE / MOBILE OPTIMIZATION --- */
+  /* --------------------------------------------------------------------- */
+  @media (max-width: 768px) {
+    .shorts-carousel-section {
+        padding: 0;
+    }
+    .carousel-arrow {
+        display: none; 
+    }
+    .short-grid.carousel-track {
+        padding: 10px 15px 30px 15px; 
+        margin: 0;
+        gap: 15px;
+        scroll-snap-align: center;
+    }
+    
+    .short-wrap {
+      width: 75vw;
+      height: calc(75vw * 16 / 9);
+      scroll-snap-align: center; 
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('ShortsCarouselTrack-{{ section_id }}');
+    // Ensure selectors target the correct section instance using the section ID
+    const prevButton = document.querySelector('.section-{{ section_id }} .carousel-arrow--prev');
+    const nextButton = document.querySelector('.section-{{ section_id }} .carousel-arrow--next');
+    
+    if (!track || !prevButton || !nextButton) return;
+    
+    // Calculate scroll amount based on item width + gap
+    const item = track.querySelector('.short-wrap');
+    const scrollAmount = item ? item.offsetWidth + 20 : 280; 
+
+    nextButton.addEventListener('click', () => {
+      track.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    });
+
+    prevButton.addEventListener('click', () => {
+      track.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Shorts Carousel",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Heading",
+        "default": "Watch Our Latest Shorts"
+      },
+      {
+        "type": "paragraph",
+        "content": "NOTE: The 5 videos are currently hardcoded directly into the Liquid file and must be manually updated in the HTML source code."
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shorts Carousel (Iframe)"
+      }
+    ]
+  }
+{% endschema %}

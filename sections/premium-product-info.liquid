@@ -1,0 +1,1307 @@
+<!-- Premium Product Info Section -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{%- liquid
+  assign m2m_handles = 'ultiscrub-carpet-mat-1,ultiscrape-carpet-mat,ulticlean-carpet-mat-1,ultimat-heavy-duty-vinyl-looped-matting,ultirake-carpet-mat,ultizig-barrier-mat,ultizig-barrier-mat-with-backing,ultidure-carpet-mat,ultiwipe-carpet-mat' | split: ','
+  assign is_m2m = false
+  if m2m_handles contains product.handle
+    assign is_m2m = true
+  endif
+-%}
+{% if is_m2m %}
+  <script src="{{ 'ultiscrub.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign featured_media = product.featured_media
+-%}
+
+<style>
+/* Custom layout fixes for regular theme */
+.premium-product-info-container {
+  max-width: 1440px !important;
+  margin: 0 auto !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+.premium-product-info-grid {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 30px !important;
+}
+.premium-product-info-left {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+.premium-product-info-right {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+@media screen and (min-width: 769px) {
+  .premium-product-info-container {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+  .premium-product-info-grid {
+    display: grid !important;
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    gap: 40px !important;
+  }
+  .premium-product-info-left {
+    grid-column: span 7 / span 7 !important;
+  }
+  .premium-product-info-right {
+    grid-column: span 5 / span 5 !important;
+    position: sticky !important;
+    top: 120px !important;
+    height: fit-content !important;
+  }
+}
+
+/* Margin and spacing helpers */
+.mb-2 { margin-bottom: 8px !important; }
+.mb-3 { margin-bottom: 12px !important; }
+.mb-4 { margin-bottom: 16px !important; }
+.mb-6 { margin-bottom: 24px !important; }
+.mt-2 { margin-top: 8px !important; }
+.mt-6 { margin-top: 24px !important; }
+.mt-12 { margin-top: 48px !important; }
+.space-y-3 > * + * { margin-top: 12px !important; }
+.space-y-4 > * + * { margin-top: 16px !important; }
+.space-y-6 > * + * { margin-top: 24px !important; }
+.space-y-8 > * + * { margin-top: 32px !important; }
+.gap-3 { gap: 12px !important; }
+.gap-4 { gap: 16px !important; }
+
+/* Swatches alignment */
+.option-buttons-group {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+/* Responsive visibility helpers */
+@media screen and (min-width: 769px) {
+  .md\:hidden {
+    display: none !important;
+  }
+  .md\:block {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hidden {
+    display: none !important;
+  }
+}
+
+/* Style overrides to match regular theme (Dawn aesthetics) */
+.premium-product-info-container,
+.premium-product-info-container * {
+  font-family: var(--font-body-family) !important;
+}
+
+.premium-product-info-container h1,
+.premium-product-info-container h2,
+.premium-product-info-container h3,
+.premium-product-info-container h4,
+.premium-product-info-container .font-display-xl {
+  font-family: var(--font-heading-family) !important;
+  font-weight: var(--font-heading-weight, normal) !important;
+  letter-spacing: normal !important;
+}
+
+/* Breadcrumbs text styling */
+.premium-product-info-container nav a,
+.premium-product-info-container nav span {
+  font-size: 11px !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 500 !important;
+}
+
+/* Reassurance text block */
+.premium-product-info-container p {
+  line-height: 1.6 !important;
+}
+
+/* Dimensions Input Fields (Step 2) */
+#CustomWidthInput,
+#CustomLengthInput {
+  border: 1px solid rgba(var(--color-foreground), 0.2) !important;
+  border-radius: var(--border-radius-form-elements, 0px) !important;
+  background: rgb(var(--color-background)) !important;
+  color: rgb(var(--color-foreground)) !important;
+  padding: 12px 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  outline: none !important;
+  width: 100% !important;
+  box-shadow: none !important;
+}
+#CustomWidthInput:focus,
+#CustomLengthInput:focus {
+  border-color: rgb(var(--color-foreground)) !important;
+}
+
+/* Option Buttons & Swatches (Step 3 / Step 1) */
+.option-buttons-group button:not(.swatch-btn) {
+  border-radius: var(--border-radius-form-elements, 0px) !important;
+  border: 1px solid rgba(var(--color-foreground), 0.2) !important;
+  background: rgb(var(--color-background)) !important;
+  color: rgb(var(--color-foreground)) !important;
+  padding: 12px 20px !important;
+  cursor: pointer !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  transition: all 0.2s ease !important;
+}
+.option-buttons-group button:not(.swatch-btn).bg-primary {
+  background: rgb(var(--color-foreground)) !important;
+  color: rgb(var(--color-background)) !important;
+  border-color: rgb(var(--color-foreground)) !important;
+}
+.option-buttons-group button:not(.swatch-btn):hover {
+  border-color: rgb(var(--color-foreground)) !important;
+}
+
+.option-buttons-group .swatch-btn {
+  border-radius: 9999px !important;
+  padding: 0 !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  cursor: pointer !important;
+  border: 1px solid rgba(var(--color-foreground), 0.15) !important;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1) !important;
+  transition: transform 0.2s ease, border-color 0.2s ease !important;
+}
+
+.option-buttons-group .swatch-btn:hover {
+  transform: scale(1.08) !important;
+}
+
+/* Swatches ring wrapper color */
+.option-buttons-group .swatch-btn.ring-2 {
+  --tw-ring-color: rgb(var(--color-foreground)) !important;
+  border-color: rgb(var(--color-foreground)) !important;
+}
+
+/* Add to Cart & Buy Now Buttons */
+#PremiumAddToCartBtn,
+#PremiumBuyNowBtn {
+  border-radius: var(--border-radius-button, 0px) !important;
+  background: rgb(var(--color-button)) !important;
+  color: rgb(var(--color-button-text)) !important;
+  font-family: var(--font-button-family) !important;
+  border: 1px solid rgb(var(--color-button)) !important;
+  padding: 16px 28px !important;
+  height: 52px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  text-transform: uppercase !important;
+  font-size: 13px !important;
+  letter-spacing: 0.15em !important;
+  font-weight: bold !important;
+  transition: opacity 0.2s ease, background 0.2s ease !important;
+}
+#PremiumAddToCartBtn:hover,
+#PremiumBuyNowBtn:hover {
+  opacity: 0.9 !important;
+}
+#PremiumBuyNowBtn {
+  background: transparent !important;
+  color: rgb(var(--color-foreground)) !important;
+  border-color: rgba(var(--color-foreground), 0.3) !important;
+}
+#PremiumProductImageCarousel.slick-initialized {
+  display: block !important;
+  overflow: hidden !important;
+}
+#PremiumProductImageCarousel.slick-initialized .slick-track {
+  display: flex !important;
+}
+#PremiumProductImageCarousel.slick-initialized .slick-slide {
+  height: auto !important;
+}
+
+/* Quantity Control Box */
+.premium-product-info-right .flex.items-center.border {
+  border-radius: var(--border-radius-button, 0px) !important;
+  border: 1px solid rgba(var(--color-foreground), 0.2) !important;
+  padding: 4px 16px !important;
+  height: 52px !important;
+}
+.premium-product-info-right .flex.items-center.border button {
+  background: transparent !important;
+  border: none !important;
+  color: rgb(var(--color-foreground)) !important;
+  cursor: pointer !important;
+  padding: 0 12px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Live Render Preview Box */
+.m2m-live-preview-container {
+  background: rgba(var(--color-foreground), 0.02) !important;
+  border: 1px solid rgba(var(--color-foreground), 0.08) !important;
+  border-radius: var(--border-radius-container, 0px) !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+  padding: 20px !important;
+}
+.m2m-live-preview-container span.font-label-caps {
+  color: rgba(var(--color-foreground), 0.6) !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+}
+.m2m-live-preview-container #preview-width-label,
+.m2m-live-preview-container #preview-length-label {
+  color: rgb(var(--color-foreground)) !important;
+  font-family: var(--font-body-family) !important;
+}
+
+/* Reassurances bottom grid style */
+.premium-product-info-right .grid-cols-3 span.material-symbols-outlined {
+  color: rgba(var(--color-foreground), 0.6) !important;
+}
+.premium-product-info-right .grid-cols-3 p {
+  color: rgb(var(--color-foreground)) !important;
+}
+</style>
+
+<section class="premium-product-info-container max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 md:pt-36 pb-20 relative z-10 font-body-md text-on-surface">
+  <div class="premium-product-info-grid grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-gutter">
+    
+
+    <!-- Mobile Product Title & Tagline & Breadcrumbs & Ratings (Visible on Mobile only, above image gallery) -->
+    <div class="block md:hidden col-span-1 md:col-span-12 mb-2">
+      <!-- Breadcrumbs -->
+      {% if section.settings.show_breadcrumbs %}
+        <nav class="flex items-center gap-2 mb-4 text-xs font-semibold uppercase tracking-wider text-on-surface-variant/80 font-label-caps">
+          <a href="/collections/all" class="hover:text-primary transition-colors">Shop</a>
+          <span class="text-on-surface-variant/50">/</span>
+          <span class="hover:text-primary transition-colors">{{ product.type | default: 'Entrance' }}</span>
+          <span class="text-on-surface-variant/50">/</span>
+          <span class="text-primary truncate max-w-[120px]">{{ product.title }}</span>
+        </nav>
+      {% endif %}
+      
+      <!-- Product Heading & Tagline -->
+      <h1 class="font-display-xl text-headline-lg font-normal leading-tight tracking-tight text-primary mb-2" style="font-size: 24px;">
+        {{ product.title }}
+      </h1>
+      
+      {% if section.settings.tagline_text != blank %}
+        <p class="font-body-lg text-secondary uppercase tracking-[0.15em] font-semibold text-xs mb-2">
+          {{ section.settings.tagline_text }}
+        </p>
+      {% endif %}
+
+      <!-- Product Ratings (Judge.me Badge and fallback Rating stars) -->
+      <div class="product-rating-mobile mt-2 mb-4">
+        <!-- Render Judge.me badge -->
+        {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: product %}
+        
+        <!-- Standard Rating stars fallback -->
+        {% liquid
+          assign rating = product.metafields.reviews.rating.value
+          assign value_rating = product.metafields.reviews.rating.value.rating
+          assign scale_max = product.metafields.reviews.rating.value.scale_max
+          assign rating_count = product.metafields.reviews.rating_count
+        %}
+        {%- if rating != blank -%}
+          {% liquid
+            assign rating_decimal = 0
+            assign decimal = value_rating | modulo: 1
+            if decimal >= 0.3 and decimal <= 0.7
+              assign rating_decimal = 0.5
+            elsif decimal > 0.7
+              assign rating_decimal = 1
+            endif
+          %}
+          <div class="rating flex items-center gap-1.5 mt-2" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: rating, rating_max: scale_max }}">
+            <span aria-hidden="true" class="rating-star" style="--rating: {{ value_rating | floor }}; --rating-max: {{ scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
+            <p class="rating-count caption" style="margin: 0;">
+              <span aria-hidden="true">({{ rating_count }})</span>
+            </p>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <!-- Left Column: Product Gallery -->
+    <div class="premium-product-info-left" style="display: flex; flex-direction: column; gap: 16px; width: 100%; position: relative;">
+      
+      <!-- Main Media Carousel Container (Adaptive Height) -->
+      <div style="position: relative; width: 100%; height: auto; background-color: #f3f4f6; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 1px 3px rgba(0,0,0,0.08);">
+        
+        <!-- Swipeable track for slides -->
+        <div id="PremiumProductImageCarousel" style="display: block; width: 100%; overflow: hidden;">
+          {% for media in product.media %}
+            <div data-media-index="{{ forloop.index0 }}" style="width: 100%; height: auto; position: relative; overflow: hidden;">
+              <img style="width: 100%; height: auto; display: block; transition: transform 0.7s ease;" 
+                   src="{{ media | image_url: width: 1200 }}" 
+                   alt="{{ media.alt | default: product.title | escape }}">
+            </div>
+          {%- else -%}
+            <div style="width: 100%; height: auto;">
+              {{ 'product-1' | placeholder_svg_tag: 'w-full h-full object-cover bg-surface-container-highest' }}
+            </div>
+          {% endfor %}
+        </div>
+
+        <!-- Left/Right navigation arrows (Positioned centered vertically, per request) -->
+        {% if product.media.size > 1 %}
+          <button type="button" id="PrevGalleryBtn" style="position: absolute !important; left: 24px !important; top: 50% !important; transform: translateY(-50%) !important; width: 48px !important; height: 48px !important; border-radius: 50% !important; border: none !important; background-color: #ffffff !important; color: #000000 !important; display: flex !important; align-items: center !important; justify-content: center !important; box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important; cursor: pointer !important; z-index: 100 !important; transition: transform 0.2s ease;">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display: block; margin: 0;"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button type="button" id="NextGalleryBtn" style="position: absolute !important; right: 24px !important; top: 50% !important; transform: translateY(-50%) !important; width: 48px !important; height: 48px !important; border-radius: 50% !important; border: none !important; background-color: #ffffff !important; color: #000000 !important; display: flex !important; align-items: center !important; justify-content: center !important; box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important; cursor: pointer !important; z-index: 100 !important; transition: transform 0.2s ease;">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display: block; margin: 0;"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+          
+          <!-- Pagination dots (Visible on both mobile and desktop) -->
+          <div style="position: absolute !important; bottom: 16px !important; left: 0 !important; right: 0 !important; display: flex !important; justify-content: center !important; gap: 8px !important; z-index: 100 !important;">
+            {% for media in product.media %}
+              <span class="carousel-dot" data-index="{{ forloop.index0 }}" style="width: 8px; height: 8px; border-radius: 50%; background-color: rgba(255,255,255,0.6); transition: all 0.3s ease; display: inline-block; cursor: pointer;"></span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      
+      <!-- Circular Thumbnails Grid Slider -->
+      {% if product.media.size > 1 %}
+        <div style="width: 100%; overflow: hidden; margin-top: 8px;">
+          <div id="PremiumGallerySlider" style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 16px !important; width: 100% !important;">
+            {% for media in product.media %}
+              <div class="premium-gallery-thumb-wrapper" data-thumb-index="{{ forloop.index0 }}" style="border-radius: 50% !important; width: 72px !important; height: 72px !important; border: 3px solid {% if forloop.first %}#000000{% else %}transparent{% endif %}; cursor: pointer; transition: all 0.3s ease; overflow: hidden; display: block;">
+                <img class="premium-gallery-thumb" 
+                     src="{{ media | image_url: width: 200 }}" 
+                     alt="{{ media.alt | default: product.title | escape }}"
+                     style="border-radius: 50% !important; width: 100% !important; height: 100% !important; object-fit: cover !important; display: block !important;">
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Product Description Block (Left Column Under Gallery) -->
+      <div class="hidden md:block prose prose-sm max-w-none mt-12 text-on-surface-variant font-body-md leading-relaxed border-t border-on-surface/10 pt-8 text-left">
+        <h3 class="text-lg font-bold text-primary mb-4">Description</h3>
+        <p class="mb-6">A premium polyamide all-weather use mat. Traps tracked-in dirt and retains high levels of moisture. This mat is exceptionally durable and versatile, perfect for all seasons. Its reinforced borders and anti-slip nitrile rubber backing provide extra stability and safety. 100% machine-washable at 50C.</p>
+        
+        <div class="space-y-3 mt-6 text-sm">
+          <div><strong class="text-primary font-bold">Material:</strong> Polyamide cut-pile carpet with nitrile rubber backing and reinforced borders</div>
+          <div><strong class="text-primary font-bold">Size:</strong> Custom-built to your requirement | Click for Presized Mats</div>
+          <div><strong class="text-primary font-bold">Colors:</strong> Dark Grey | Light Grey</div>
+          <div><strong class="text-primary font-bold">Application:</strong> Both outdoor and indoor use at all commercial and residential areas</div>
+          <div><strong class="text-primary font-bold">Care Instructions:</strong> Dust-off dirt regularly by light tapping or vacuum. Machine-wash at 50C for deep cleaning</div>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- Right Column: Product Info & Selector Box -->
+    <div class="premium-product-info-right md:col-span-5 flex flex-col justify-start pt-4 md:pt-0 md:sticky md:top-32 h-fit">
+      
+      
+      <!-- Desktop Product Title & Tagline & Breadcrumbs (Visible on Desktop only) -->
+      <div class="hidden md:block">
+        <!-- Breadcrumbs -->
+        {% if section.settings.show_breadcrumbs %}
+          <nav class="flex items-center gap-2 mb-4 text-xs font-semibold uppercase tracking-wider text-on-surface-variant/80 font-label-caps">
+            <a href="/collections/all" class="hover:text-primary transition-colors">Shop</a>
+            <span class="text-on-surface-variant/50">/</span>
+            <span class="hover:text-primary transition-colors">{{ product.type | default: 'Entrance' }}</span>
+            <span class="text-on-surface-variant/50">/</span>
+            <span class="text-primary truncate max-w-[120px]">{{ product.title }}</span>
+          </nav>
+        {% endif %}
+        
+        <!-- Product Heading & Tagline & Ratings -->
+        <div class="flex flex-row items-baseline gap-6 flex-wrap mb-2">
+          <h1 class="font-display-xl text-headline-lg font-normal leading-tight tracking-tight text-primary">
+            {{ product.title }}
+          </h1>
+          
+          <div class="product-rating-desktop shrink-0 mb-1">
+            <!-- Render Judge.me badge -->
+            {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: product %}
+            
+
+          </div>
+        </div>
+        
+        {% if section.settings.tagline_text != blank %}
+          <p class="font-body-lg text-secondary uppercase tracking-[0.15em] font-semibold text-sm mb-6">
+            {{ section.settings.tagline_text }}
+          </p>
+        {% endif %}
+      </div>
+      
+      <!-- Pricing (Moved below) -->
+      
+
+      
+      <!-- Product Actions Form -->
+      {%- form 'product', product, id: 'PremiumProductForm', class: 'space-y-8' -%}
+        <!-- Hidden input for matching variant ID -->
+        <input type="hidden" name="id" id="ProductVariantId" value="{{ current_variant.id }}">
+        <input type="hidden" name="quantity" id="ProductQuantityInput" value="1">
+        
+        <!-- Dynamic Option Selectors -->
+        {% unless product.has_only_default_variant %}
+          <div class="space-y-6">
+          {% if is_m2m %}
+            <!-- Custom Options for M2M Products -->
+            <!-- Step 1: Select Color -->
+            <div class="option-selector-wrapper">
+              <label class="block text-xs font-bold uppercase tracking-widest text-primary mb-3 font-label-caps">
+                Step 1: Select Color
+              </label>
+              <div class="flex gap-3 option-buttons-group color-custom-group">
+                <button type="button" class="w-10 h-10 rounded-full transition-all duration-300 custom-option-btn swatch-btn ring-offset-1 ring-2 ring-primary ring-offset-2" style="background-color: #1d1b19;" data-name="properties[Mat Color]" data-value="Charcoal Noir" title="Charcoal Noir"></button>
+                <button type="button" class="w-10 h-10 rounded-full transition-all duration-300 custom-option-btn swatch-btn ring-offset-1 ring-1 ring-outline-variant" style="background-color: #7d766f;" data-name="properties[Mat Color]" data-value="Modern Grey" title="Modern Grey"></button>
+                <button type="button" class="w-10 h-10 rounded-full transition-all duration-300 custom-option-btn swatch-btn ring-offset-1 ring-1 ring-outline-variant" style="background-color: #8b0000;" data-name="properties[Mat Color]" data-value="Crimson Red" title="Crimson Red"></button>
+                <button type="button" class="w-10 h-10 rounded-full transition-all duration-300 custom-option-btn swatch-btn ring-offset-1 ring-1 ring-outline-variant" style="background-color: #1b4d3e;" data-name="properties[Mat Color]" data-value="Forest Green" title="Forest Green"></button>
+                <button type="button" class="w-10 h-10 rounded-full transition-all duration-300 custom-option-btn swatch-btn ring-offset-1 ring-1 ring-outline-variant" style="background-color: #5c4033;" data-name="properties[Mat Color]" data-value="Earth Brown" title="Earth Brown"></button>
+              </div>
+              <input type="hidden" name="properties[Mat Color]" id="CustomColorInput" value="Charcoal Noir">
+            </div>
+
+            <!-- Live Preview Container for M2M Products (Visualizer directly under Step 1) -->
+            <div class="m2m-live-preview-container glass-card rounded-lg p-6 my-6 shadow-xl text-left" style="border: 1px solid rgba(0,0,0,0.1); border-radius: 8px; padding: 20px; background: rgba(255,255,255,0.4); backdrop-filter: blur(16px); width: 100%;">
+              <!-- Header with pulsing dot -->
+              <div class="flex items-center justify-between mb-6" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <span class="font-label-caps uppercase text-on-surface-variant tracking-wider" style="font-weight: bold; font-size: 12px; letter-spacing: 1px; color: #555;">Your Custom Mat Preview</span>
+                <div class="flex items-center space-x-2" style="display: flex; align-items: center; gap: 8px;">
+                  <span class="relative flex h-2 w-2" style="position: relative; display: flex; height: 8px; width: 8px;">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" style="position: absolute; display: inline-flex; height: 100%; width: 100%; border-radius: 50%; background-color: #ef4444; opacity: 0.75; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500" style="position: relative; display: inline-flex; border-radius: 50%; height: 8px; width: 8px; background-color: #ef4444;"></span>
+                  </span>
+                  <span class="text-[10px] font-semibold uppercase text-red-500 tracking-widest" style="font-size: 10px; font-weight: 700; color: #ef4444; letter-spacing: 1.5px;">Live Render</span>
+                </div>
+              </div>
+
+              <!-- Mat Visualizer Box -->
+              <div class="relative w-full overflow-hidden" style="position: relative; width: 100%; height: 320px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.03); border-radius: 8px; padding: 24px; margin-bottom: 20px;">
+                
+                <!-- Outlined Footprints (Top, Inside Visualizer Box) -->
+                <div style="position: absolute; top: 16px; left: 50%; transform: translateX(-50%); pointer-events: none; z-index: 10;">
+                  <img src="{{ 'shoe-print-th.png' | asset_url }}" style="width: 32px; height: 32px; opacity: 0.6; display: block;" alt="shoe print" loading="lazy">
+                </div>
+
+                <!-- Solid Footprints (Bottom, Inside Visualizer Box) -->
+                <div style="position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); pointer-events: none; z-index: 10;">
+                  <img src="{{ 'shoe-print-filled.png' | asset_url }}" style="width: 32px; height: 32px; display: block;" alt="shoe print" loading="lazy">
+                </div>
+
+                <div class="relative flex items-center justify-center w-[200px] h-[200px]" style="position: relative; width: 200px; height: 200px; display: flex; align-items: center; justify-content: center;">
+                  
+                  <!-- Length Arrow & Label (Top Horizontal Arrow) -->
+                  <div id="length-arrow-container" class="absolute" style="position: absolute; display: flex; flex-direction: column; align-items: center; width: 100%;">
+                    <span class="text-[10px] font-bold text-primary" id="preview-length-label" style="font-size: 11px; font-weight: bold; color: #111; margin-bottom: 2px;">Length: --</span>
+                    <div class="w-full flex items-center justify-between px-2" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+                      <span class="select-none flex items-center justify-center" style="color: #666;"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M15 18l-6-6 6-6z"/></svg></span>
+                      <div class="flex-1 h-[1px] bg-on-surface/10 mx-1" style="flex: 1; height: 1px; background: rgba(0,0,0,0.15); margin: 0 4px;"></div>
+                      <span class="select-none flex items-center justify-center" style="color: #666;"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6z"/></svg></span>
+                    </div>
+                  </div>
+
+                  <!-- Width Arrow & Label (Left Vertical Arrow) -->
+                  <div id="width-arrow-container" class="absolute" style="position: absolute; display: flex; align-items: center; justify-content: center; width: 44px;">
+                    <!-- The Arrow Line -->
+                    <div class="absolute right-0 top-0 bottom-0 flex flex-col items-center py-2 h-full" style="width: 10px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 100%;">
+                      <span class="select-none flex items-center justify-center" style="color: #666; line-height: 1;"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M18 15l-6-6-6 6z"/></svg></span>
+                      <div class="w-[1px] flex-1 bg-on-surface/10 my-1" style="width: 1px; flex: 1; background: rgba(0,0,0,0.15); margin: 2px 0;"></div>
+                      <span class="select-none flex items-center justify-center" style="color: #666; line-height: 1;"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M18 9l-6 6-6-6z"/></svg></span>
+                    </div>
+                    <!-- The Rotated Text (placed to the left, centered vertically) -->
+                    <div class="absolute left-0 top-1/2 -translate-y-1/2 flex items-center justify-center" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;">
+                      <span class="text-center whitespace-nowrap text-[10px] font-bold text-primary select-none" id="preview-width-label" style="font-size: 11px; font-weight: bold; color: #111; transform: rotate(-90deg); transform-origin: center; display: inline-block;">Width: --</span>
+                    </div>
+                  </div>
+
+                  <style>
+                    #CustomWidthInput::placeholder,
+                    #CustomLengthInput::placeholder {
+                      opacity: 0.35 !important;
+                    }
+                  </style>
+
+                  <!-- Mat Representation (Horizontal by default, No Rotation) -->
+                  <div id="side-mat-preview" class="transition-all duration-500 rounded overflow-hidden shadow-2xl" style="width: 200px; height: 100px; background-color: #1d1b19; border-radius: 4px; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: all 0.5s ease;">
+                    <!-- Texture Overlay -->
+                    <div id="side-mat-texture" data-handle="{{ product.handle }}" class="absolute inset-0 transition-opacity duration-300 texture-carpet" style="position: absolute; inset: 0; transition: opacity 0.3s;"></div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Enter exact Width and Length -->
+            <div class="option-selector-wrapper" style="margin-top: 24px;">
+              <label style="display: block; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: #111; margin-bottom: 12px;">
+                Step 2: Enter Dimensions
+              </label>
+              <div style="display: flex; gap: 16px; width: 100%;">
+                <div style="flex: 1;">
+                  <label for="CustomWidthInput" style="display: block; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; color: #555; margin-bottom: 8px;">
+                    Exact Width (24" to 48")
+                  </label>
+                  <input type="number" 
+                         id="CustomWidthInput" 
+                         name="properties[Exact Mat Width]" 
+                         style="border: 1px solid #ccc; border-radius: 6px; padding: 12px 16px; width: 100%; font-size: 14px; font-weight: 600; outline: none; box-sizing: border-box;"
+                         placeholder="Width (e.g. 24)" 
+                         min="24" 
+                         max="48" 
+                         required>
+                </div>
+                <div style="flex: 1;">
+                  <label for="CustomLengthInput" style="display: block; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; color: #555; margin-bottom: 8px;">
+                    Exact Length (48" to 144")
+                  </label>
+                  <input type="number" 
+                         id="CustomLengthInput" 
+                         name="properties[Exact Mat Length]" 
+                         style="border: 1px solid #ccc; border-radius: 6px; padding: 12px 16px; width: 100%; font-size: 14px; font-weight: 600; outline: none; box-sizing: border-box;"
+                         placeholder="Length (e.g. 48)" 
+                         min="48" 
+                         max="144" 
+                         required>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Select Border Style -->
+            <div class="option-selector-wrapper" style="margin-top: 24px;">
+              <label style="display: block; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: #111; margin-bottom: 12px;">
+                Step 3: Select Border Style
+              </label>
+              <div class="option-buttons-group border-custom-group" style="display: flex; gap: 8px; width: 100%;">
+                <button type="button" class="custom-option-btn bg-primary text-on-primary border-primary" data-name="properties[Borders]" data-value="4 side borders" style="flex: 1; border: 1px solid #000; padding: 12px; border-radius: 6px; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; background-color: #000; color: #fff; cursor: pointer; text-align: center; transition: all 0.3s;">
+                  4 Side Borders
+                </button>
+                <button type="button" class="custom-option-btn border-outline-variant text-on-surface hover:border-primary" data-name="properties[Borders]" data-value="no border" style="flex: 1; border: 1px solid #ccc; padding: 12px; border-radius: 6px; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; background-color: transparent; color: #111; cursor: pointer; text-align: center; transition: all 0.3s;">
+                  No Border
+                </button>
+              </div>
+              <input type="hidden" name="properties[Borders]" id="CustomBordersInput" value="4 side borders">
+            </div>
+            
+            <!-- Hidden standard options block to ensure standard scripts/form selectors find target elements -->
+            <div style="display: none !important;">
+              {% for option in product.options_with_values %}
+                <select id="Option-{{ section.id }}-{{ forloop.index0 }}" class="product-meta-option--{{ option.name | handleize }}">
+                  {% for value in option.values %}
+                    <option value="{{ value | escape }}">{{ value }}</option>
+                  {% endfor %}
+                </select>
+              {% endfor %}
+            </div>
+
+          {% else %}
+            {% for option in product.options_with_values %}
+              {% assign option_index = forloop.index0 %}
+              {% assign option_name_lower = option.name | downcase %}
+              
+              <div class="option-selector-wrapper" data-option-index="{{ option_index }}">
+                <label class="block text-xs font-bold uppercase tracking-widest text-primary mb-3 font-label-caps">
+                  Select {{ option.name }}
+                </label>
+                
+                <!-- Display logic matching new-ui specs -->
+                {% if option_name_lower contains 'color' or option_name_lower contains 'colour' or option_name_lower contains 'frame' %}
+                  <!-- Render circular color swatches -->
+                  <div class="flex gap-3 option-buttons-group">
+                    {%- liquid
+                      assign has_custom_colors = false
+                      if product.tags contains 'Hybrid' or product.tags contains 'ulticlean' or product.tags contains 'ultiScrape' or product.tags contains 'ultidure'
+                        assign has_custom_colors = true
+                      endif
+                    -%}
+                    
+                    {% if has_custom_colors %}
+                      <!-- CUSTOM CROSS-PRODUCT COLOR SWITCHER -->
+                      {% if product.tags contains 'Hybrid' %}
+                        <!-- Hybrid Swatches -->
+                        <a href="/products/hybrid-black-gray" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'hybrid-black-gray' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/black-white.png?v=1714634153'); background-size: cover;" title="Black Grey"></a>
+                        <a href="/products/hybrid-black-red" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'hybrid-black-red' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/black-red.png?v=1714634153'); background-size: cover;" title="Black Red"></a>
+                        <a href="/products/indias-first-dual-zone-smart-mat-black-green" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'indias-first-dual-zone-smart-mat-black-green' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/1_13.png?v=1722242611'); background-size: cover;" title="Black Green"></a>
+                        <a href="/products/indias-first-dual-zone-smart-mat-black-brown" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'indias-first-dual-zone-smart-mat-black-brown' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/4_5.png?v=1722242611'); background-size: cover;" title="Black Brown"></a>
+                      {% elsif product.tags contains 'ulticlean' %}
+                        <!-- UltiClean Swatches -->
+                        <a href="/products/ulticlean" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'ulticlean' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://6iau9m12oha1q88j-64137167030.shopifypreview.com/cdn/shop/files/product-option-ulticlean-grey-black_120x120.png?v=7435699526537035550'); background-size: cover;" title="Grey"></a>
+                        <a href="/products/ulticlean-red-black" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'ulticlean-red-black' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://6iau9m12oha1q88j-64137167030.shopifypreview.com/cdn/shop/files/product-option-ulticlean-red-black_120x120.png?v=11258299124206662848'); background-size: cover;" title="Red"></a>
+                        <a href="/products/ultimate-dirt-trap-mat-brown" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'ultimate-dirt-trap-mat-brown' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/3_6.png?v=1722242611'); background-size: cover;" title="Brown"></a>
+                        <a href="/products/first-ultimate-dirt-trap-mat-green" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'first-ultimate-dirt-trap-mat-green' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/2_11.png?v=1722242611'); background-size: cover;" title="Green"></a>
+                      {% elsif product.tags contains 'ultiScrape' %}
+                        <!-- UltiScrape Swatches -->
+                        <a href="/products/ultiscrape-1" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'ultiscrape-1' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultiscrape-grey.png'); background-size: cover;" title="Grey"></a>
+                        <a href="/products/ultiscrape-3" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'ultiscrape-3' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultiscrape-red.png'); background-size: cover;" title="Red"></a>
+                        <a href="/products/ultiscrape-4" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'ultiscrape-4' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/varientbox7.png'); background-size: cover;" title="Brown"></a>
+                        <a href="/products/ultiscrape-2" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'ultiscrape-2' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultiscrape-green.png'); background-size: cover;" title="Green"></a>
+                      {% elsif product.tags contains 'ultidure' %}
+                        <!-- UltiDure Swatches -->
+                        <a href="/products/nanotech-toughtread-technology-integrated-commercial-mat-dark-grey" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'nanotech-toughtread-technology-integrated-commercial-mat-dark-grey' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultidure-charcoal.png?v=1751452089'); background-size: cover;" title="Charcoal"></a>
+                        <a href="/products/nanotech-toughtread-technology-integrated-commercial-mat-light-grey" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'nanotech-toughtread-technology-integrated-commercial-mat-light-grey' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/LIGHT-GREY.png?v=1723704747'); background-size: cover;" title="Light Grey"></a>
+                        <a href="/products/ultidure-high-performance-commercial-mat-burgundy-1" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'ultidure-high-performance-commercial-mat-burgundy-1' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultidure-burgundy.png?v=1751452090'); background-size: cover;" title="Burgundy"></a>
+                        <a href="/products/ultidure-high-performance-commercial-mat-brown" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'ultidure-high-performance-commercial-mat-brown' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultidurem2m-brown.png?v=1751452089'); background-size: cover;" title="Brown"></a>
+                        <a href="/products/ultidure-high-performance-commercial-mat-hunter-green" class="w-10 h-10 rounded-full transition-all duration-300 ring-offset-1 {% if product.handle == 'ultidure-high-performance-commercial-mat-hunter-green' %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" style="background-image: url('https://cdn.shopify.com/s/files/1/0641/3716/7030/files/product-option-ultidure-hunter-green.png?v=1751452089'); background-size: cover;" title="Hunter Green"></a>
+                      {% endif %}
+                    {% else %}
+                      <!-- Standard Swatches -->
+                      {% for value in option.values %}
+                        {%- liquid
+                          assign is_active = false
+                          if option.selected_value == value
+                            assign is_active = true
+                          endif
+                          
+                          # Set dynamic swatches colors
+                          assign val_lower = value | downcase
+                          assign hex_color = '#191715'
+                          if val_lower contains 'grey' or val_lower contains 'gray'
+                            assign hex_color = '#4A4A4A'
+                          elsif val_lower contains 'silver' or val_lower contains 'light'
+                            assign hex_color = '#8E8E8E'
+                          elsif val_lower contains 'brown' or val_lower contains 'coco'
+                            assign hex_color = '#79573e'
+                          elsif val_lower contains 'red'
+                            assign hex_color = '#93000a'
+                          elsif val_lower contains 'green'
+                            assign hex_color = '#444937'
+                          endif
+                        -%}
+                        <button type="button" 
+                                class="w-10 h-10 rounded-full transition-all duration-300 option-btn swatch-btn ring-offset-1 {% if is_active %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}"
+                                style="background-color: {{ hex_color }};"
+                                data-value="{{ value | escape }}"
+                                title="{{ value | escape }}"></button>
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+                {% else %}
+                  <!-- Render pill-button grid -->
+                  <div class="grid grid-cols-3 gap-2 option-buttons-group">
+                    {% for value in option.values %}
+                      {% assign is_active = false %}
+                      {% if option.selected_value == value %}
+                        {% assign is_active = true %}
+                      {% endif %}
+                      <button type="button" 
+                              class="border py-3 rounded-md text-xs font-bold tracking-wider font-label-md transition-all duration-300 option-btn {% if is_active %}bg-primary text-on-primary border-primary{% else %}border-outline-variant text-on-surface hover:border-primary{% endif %}"
+                              data-value="{{ value | escape }}">
+                        {{ value }}
+                      </button>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          {% endif %}
+          </div>
+        {% endunless %}
+        
+        <!-- Pricing Display (Just above Quantity controls) -->
+        <div class="flex items-baseline gap-3 my-4" style="display: flex; align-items: baseline; gap: 12px; margin: 24px 0 16px 0;">
+          <span id="PremiumPriceDisplay" class="font-display-xl text-headline-md font-normal text-primary" style="font-size: 24px; font-weight: normal; color: #111;">
+            {{ current_variant.price | money }}
+          </span>
+          {% if section.settings.show_vat_text %}
+            <span class="text-on-surface-variant text-xs font-semibold uppercase tracking-wider font-label-caps" style="font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: #555;">
+              Excl. VAT
+            </span>
+          {% endif %}
+        </div>
+
+        <input type="hidden" name="quantity" id="ProductQuantityInput" value="1">
+
+        <!-- Buy Controls Box -->
+        <div class="flex flex-col gap-4 pt-4" style="display: flex; flex-direction: column; gap: 16px; padding-top: 16px;">
+          <div class="flex gap-4" style="display: flex; gap: 16px; align-items: stretch; width: 100%;">
+            <!-- Quantity Control -->
+            <div class="flex items-center border border-outline-variant rounded-full px-6 py-2" style="display: flex; align-items: center; border: 1px solid #ccc; border-radius: 999px; overflow: hidden; padding: 0 8px; flex: 0 0 auto;">
+              <button type="button" id="QtyDecreaseBtn" class="p-2 text-on-surface-variant hover:text-primary transition-colors focus:outline-none select-none" style="padding: 0 12px; font-size: 18px; font-weight: bold; background: transparent; border: none; cursor: pointer; color: #555; height: 48px; display: flex; align-items: center; justify-content: center;">-</button>
+              <span id="QtyDisplay" class="px-5 font-bold text-sm select-none" style="padding: 0 16px; font-weight: bold; font-size: 14px; color: #111; min-width: 24px; text-align: center;">1</span>
+              <button type="button" id="QtyIncreaseBtn" class="p-2 text-on-surface-variant hover:text-primary transition-colors focus:outline-none select-none" style="padding: 0 12px; font-size: 18px; font-weight: bold; background: transparent; border: none; cursor: pointer; color: #555; height: 48px; display: flex; align-items: center; justify-content: center;">+</button>
+            </div>
+            
+            <!-- Add To Cart -->
+            <button type="submit" 
+                    name="add" 
+                    id="PremiumAddToCartBtn" 
+                    class="flex-1 bg-primary text-on-primary py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed select-none"
+                    style="flex: 1; background-color: #000; color: #fff; border: none; border-radius: 999px; height: 48px; font-weight: bold; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center;"
+                    {% unless current_variant.available %}disabled{% endunless %}>
+              {% if current_variant.available %}
+                Add to Cart
+              {% else %}
+                Sold Out
+              {% endif %}
+            </button>
+          </div>
+          
+          <!-- Buy Now -->
+          {% if section.settings.show_buy_now %}
+            <button type="button" 
+                    id="PremiumBuyNowBtn" 
+                    class="w-full bg-secondary text-on-secondary py-5 rounded-full font-bold text-xs uppercase tracking-widest hover:opacity-90 transition-all focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed select-none"
+                    style="width: 100%; background-color: #f0f0f0; color: #000; border: 1px solid #ccc; border-radius: 999px; height: 48px; font-weight: bold; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center;"
+                    {% unless current_variant.available %}disabled{% endunless %}>
+              Buy Now
+            </button>
+          {% endif %}
+        </div>
+      {%- endform -%}
+      
+      <!-- Dynamic Tags Badges -->
+      {% if product.metafields.product.custom-pills.value != blank %}
+        <div style="margin-top: 24px;">
+          {{ product.metafields.product.custom-pills.value }}
+        </div>
+      {% elsif product.tags.size > 0 %}
+        <div class="ultimats-pills" style="margin-top: 24px;">
+          {% for tag in product.tags %}
+            {% assign stripped_tag = tag | strip %}
+            {% unless stripped_tag contains '__' or stripped_tag contains 'layout:' or stripped_tag == blank %}
+              <p style="display: inline-block; padding: 4px 12px; background: #f5f5f5; border-radius: 999px; font-size: 11px; margin: 0 8px 8px 0; border: 1px solid #e0e0e0;">{{ stripped_tag }}</p>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <!-- Reassurances (Color Options, Premium Product, Made in India) -->
+      <div class="grid grid-cols-3 gap-2 md:gap-4 border-t border-on-surface/10 pt-8 mt-2 text-center" style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; border-top: 1px solid #eee; padding-top: 32px; margin-top: 24px; text-align: center; gap: 12px;">
+        <div class="flex flex-col items-center text-center space-y-2" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <span class="material-symbols-outlined text-secondary text-3xl" style="font-size: 28px; color: #555; font-variation-settings: 'FILL' 0, 'wght' 300;">palette</span>
+          <div>
+            <p class="font-bold text-[10px] md:text-xs uppercase tracking-wider font-label-caps text-primary leading-tight mb-1" style="font-weight: bold; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #111; margin: 0 0 4px 0;">Color Options</p>
+            <p class="text-[10px] md:text-[11px] text-on-surface-variant leading-normal" style="font-size: 11px; color: #666; margin: 0; line-height: 1.4;">Choose your mat color</p>
+          </div>
+        </div>
+        <div class="flex flex-col items-center text-center space-y-2" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <span class="material-symbols-outlined text-secondary text-3xl" style="font-size: 28px; color: #555; font-variation-settings: 'FILL' 0, 'wght' 300;">star</span>
+          <div>
+            <p class="font-bold text-[10px] md:text-xs uppercase tracking-wider font-label-caps text-primary leading-tight mb-1" style="font-weight: bold; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #111; margin: 0 0 4px 0;">Premium Product</p>
+            <p class="text-[10px] md:text-[11px] text-on-surface-variant leading-normal" style="font-size: 11px; color: #666; margin: 0; line-height: 1.4;">High-quality materials & finishing</p>
+          </div>
+        </div>
+        <div class="flex flex-col items-center text-center space-y-2" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <span class="material-symbols-outlined text-secondary text-3xl" style="font-size: 28px; color: #555; font-variation-settings: 'FILL' 0, 'wght' 300;">public</span>
+          <div>
+            <p class="font-bold text-[10px] md:text-xs uppercase tracking-wider font-label-caps text-primary leading-tight mb-1" style="font-weight: bold; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: #111; margin: 0 0 4px 0;">Made in India</p>
+            <p class="text-[10px] md:text-[11px] text-on-surface-variant leading-normal" style="font-size: 11px; color: #666; margin: 0; line-height: 1.4;">Exported worldwide</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Mobile Product Description Block (Visible on Mobile only, at the bottom of the section) -->
+  <div class="block md:hidden prose prose-sm max-w-none mt-8 text-on-surface-variant font-body-md leading-relaxed border-t border-on-surface/10 pt-6 text-left">
+    <h3 class="text-lg font-bold text-primary mb-4">Description</h3>
+    <p class="mb-6">A premium polyamide all-weather use mat. Traps tracked-in dirt and retains high levels of moisture. This mat is exceptionally durable and versatile, perfect for all seasons. Its reinforced borders and anti-slip nitrile rubber backing provide extra stability and safety. 100% machine-washable at 50C.</p>
+    
+    <div class="space-y-3 mt-6 text-sm">
+      <div><strong class="text-primary font-bold">Material:</strong> Polyamide cut-pile carpet with nitrile rubber backing and reinforced borders</div>
+      <div><strong class="text-primary font-bold">Size:</strong> Custom-built to your requirement | Click for Presized Mats</div>
+      <div><strong class="text-primary font-bold">Colors:</strong> Dark Grey | Light Grey</div>
+      <div><strong class="text-primary font-bold">Application:</strong> Both outdoor and indoor use at all commercial and residential areas</div>
+      <div><strong class="text-primary font-bold">Care Instructions:</strong> Dust-off dirt regularly by light tapping or vacuum. Machine-wash at 50C for deep cleaning</div>
+    </div>
+  </div>
+</section>
+
+<!-- Active Variant Selector Logic script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 1. Gallery Carousel & Thumbnail Interaction via Slick JS
+    const thumbs = document.querySelectorAll('.premium-gallery-thumb-wrapper');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const prevBtn = document.getElementById('PrevGalleryBtn');
+    const nextBtn = document.getElementById('NextGalleryBtn');
+    const $carousel = $('#PremiumProductImageCarousel');
+    
+    function updateActiveGalleryItems(activeIndex) {
+      thumbs.forEach((thumb, idx) => {
+        if (idx === activeIndex) {
+          thumb.style.borderColor = '#000000';
+          thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        } else {
+          thumb.style.borderColor = 'transparent';
+        }
+      });
+      
+      dots.forEach((dot, idx) => {
+        if (idx === activeIndex) {
+          dot.style.backgroundColor = '#000000';
+          dot.style.width = '16px';
+        } else {
+          dot.style.backgroundColor = 'rgba(255,255,255,0.6)';
+          dot.style.width = '8px';
+        }
+      });
+    }
+
+    function initSlickCarousel() {
+      if (typeof $ !== 'undefined' && $.fn.slick && $carousel.length) {
+        if ($carousel.children().length > 1) {
+          $carousel.slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false, // Turn off Slick's arrows so we can bind clicks manually
+            dots: false,
+            infinite: true,
+            fade: false,
+            speed: 400
+          });
+
+          // Set initial styles for dots
+          updateActiveGalleryItems(0);
+
+          // Manually trigger Prev/Next slide navigation
+          $('#PrevGalleryBtn').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $carousel.slick('slickPrev');
+          });
+
+          $('#NextGalleryBtn').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $carousel.slick('slickNext');
+          });
+
+          $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            updateActiveGalleryItems(nextSlide);
+          });
+
+          // Sync thumbnails click to slick slide control
+          thumbs.forEach(thumb => {
+            thumb.addEventListener('click', function() {
+              const index = parseInt(this.getAttribute('data-thumb-index'), 10);
+              $carousel.slick('slickGoTo', index);
+            });
+          });
+
+          // Sync dots click to slick slide control
+          dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+              const index = parseInt(this.getAttribute('data-index'), 10);
+              $carousel.slick('slickGoTo', index);
+            });
+          });
+        }
+      } else {
+        setTimeout(initSlickCarousel, 50);
+      }
+    }
+
+    initSlickCarousel();
+
+    // M2M Live Configurator Updates
+    const colorMap = {
+      'Charcoal Noir': '#1d1b19',
+      'Modern Grey': '#7d766f',
+      'Crimson Red': '#8b0000',
+      'Forest Green': '#1b4d3e',
+      'Earth Brown': '#5c4033'
+    };
+
+    function updateLivePreview() {
+      // 1. Update Sizes
+      const widthVal = parseFloat($('#CustomWidthInput').val()) || 24;
+      const lengthVal = parseFloat($('#CustomLengthInput').val()) || 48;
+
+      $('#preview-width-label').text('Width: ' + widthVal + '"');
+      $('#preview-length-label').text('Length: ' + lengthVal + '"');
+
+      // Linearly map length (48" - 144") to a visual width of 200px - 340px
+      const clampedLength = Math.max(48, Math.min(144, lengthVal));
+      let pWidth = 200 + ((clampedLength - 48) / (144 - 48)) * 140;
+
+      // Mat height (vertical side) is proportional
+      let pHeight = pWidth * (widthVal / lengthVal);
+
+      // Apply size to the mat preview
+      $('#side-mat-preview').css({
+        width: pWidth + 'px',
+        height: pHeight + 'px'
+      });
+
+      // Align horizontal arrow (Length) above the mat
+      $('#length-arrow-container').css({
+        width: pWidth + 'px',
+        left: '50%',
+        top: 'calc(50% - ' + (pHeight / 2 + 32) + 'px)',
+        transform: 'translateX(-50%)'
+      });
+
+      // Align vertical arrow (Width) to the left of the mat
+      $('#width-arrow-container').css({
+        height: pHeight + 'px',
+        left: 'calc(50% - ' + (pWidth / 2 + 40) + 'px)',
+        top: '50%',
+        transform: 'translateY(-50%)'
+      });
+
+      // 2. Update Colors
+      const activeColor = $('#CustomColorInput').val();
+      const colorHex = colorMap[activeColor] || '#1d1b19';
+      $('#side-mat-preview').css('background-color', colorHex);
+
+      // 3. Update Borders
+      const activeBorder = $('#CustomBordersInput').val();
+      if (activeBorder === '4 side borders') {
+        $('#side-mat-preview').css('border', '6px solid #000000');
+      } else {
+        $('#side-mat-preview').css('border', 'none');
+      }
+    }
+
+    // Bind custom options click events
+    $('.color-custom-group').on('click', '.custom-option-btn', function(e) {
+      e.preventDefault();
+      $('.color-custom-group .custom-option-btn').removeClass('ring-2 ring-primary ring-offset-2').addClass('ring-1 ring-outline-variant');
+      $(this).addClass('ring-2 ring-primary ring-offset-2').removeClass('ring-1 ring-outline-variant');
+      
+      const val = $(this).attr('data-value');
+      $('#CustomColorInput').val(val);
+      updateLivePreview();
+    });
+
+    $('.border-custom-group').on('click', '.custom-option-btn', function(e) {
+      e.preventDefault();
+      $('.border-custom-group .custom-option-btn').removeClass('bg-primary text-on-primary border-primary').addClass('border-outline-variant text-on-surface hover:border-primary');
+      $(this).addClass('bg-primary text-on-primary border-primary').removeClass('border-outline-variant text-on-surface hover:border-primary');
+      
+      const val = $(this).attr('data-value');
+      $('#CustomBordersInput').val(val);
+      updateLivePreview();
+    });
+
+    // Bind inputs input events
+    $('#CustomWidthInput, #CustomLengthInput').on('input change', function() {
+      updateLivePreview();
+    });
+
+    // Run once on load to initialize preview layout
+    setTimeout(updateLivePreview, 100);
+    
+    // 2. Quantity Interactions
+    const qtyDisplay = document.getElementById('QtyDisplay');
+    const qtyInput = document.getElementById('ProductQuantityInput');
+    const decreaseBtn = document.getElementById('QtyDecreaseBtn');
+    const increaseBtn = document.getElementById('QtyIncreaseBtn');
+    
+    if (decreaseBtn && increaseBtn && qtyDisplay && qtyInput) {
+      decreaseBtn.addEventListener('click', function() {
+        let currentQty = parseInt(qtyInput.value) || 1;
+        if (currentQty > 1) {
+          currentQty--;
+          qtyInput.value = currentQty;
+          qtyDisplay.textContent = currentQty;
+          matchSelectedVariant();
+        }
+      });
+      
+      increaseBtn.addEventListener('click', function() {
+        let currentQty = parseInt(qtyInput.value) || 1;
+        currentQty++;
+        qtyInput.value = currentQty;
+        qtyDisplay.textContent = currentQty;
+        matchSelectedVariant();
+      });
+    }
+    
+    // 3. Variant Match Logic
+    // Load Shopify variants object from JSON
+    const variantsData = {{ product.variants | json }};
+    
+    const optionBtns = document.querySelectorAll('.option-btn');
+    const variantIdInput = document.getElementById('ProductVariantId');
+    const priceDisplay = document.getElementById('PremiumPriceDisplay');
+    const cartBtn = document.getElementById('PremiumAddToCartBtn');
+    const buyBtn = document.getElementById('PremiumBuyNowBtn');
+    
+    optionBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const parentGroup = this.closest('.option-buttons-group');
+        const isSwatch = this.classList.contains('swatch-btn');
+        
+        // Remove active class from other options in same group
+        parentGroup.querySelectorAll('.option-btn').forEach(b => {
+          if (isSwatch) {
+            b.classList.remove('ring-2', 'ring-primary', 'ring-offset-2');
+            b.classList.add('ring-1', 'ring-outline-variant');
+          } else {
+            b.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
+            b.classList.add('border-outline-variant', 'text-on-surface');
+          }
+        });
+        
+        // Add active class to selected option button
+        if (isSwatch) {
+          this.classList.add('ring-2', 'ring-primary', 'ring-offset-2');
+          this.classList.remove('ring-1', 'ring-outline-variant');
+        } else {
+          this.classList.add('bg-primary', 'text-on-primary', 'border-primary');
+          this.classList.remove('border-outline-variant', 'text-on-surface');
+        }
+        
+        // Find matching variant based on current options selected
+        matchSelectedVariant();
+      });
+    });
+    
+    function matchSelectedVariant() {
+      const isM2M = {{ is_m2m | json }};
+      let matchedVariant = null;
+      
+      if (isM2M) {
+        // M2M Variant Selection based on Width & Length
+        const widthInput = document.getElementById('CustomWidthInput');
+        const lengthInput = document.getElementById('CustomLengthInput');
+        if (widthInput && lengthInput) {
+          const exactWVal = parseInt(widthInput.value, 10) || 24;
+          const exactLVal = parseInt(lengthInput.value, 10) || 48;
+          
+          const standardWidths = [24, 36, 48];
+          const standardLengths = [48, 54, 60, 66, 72, 78, 84, 90, 96, 102, 108, 114, 120, 126, 132, 138, 144];
+          
+          function getNearestM2M(val, list) {
+            let matched = list.find(item => item >= val);
+            if (!matched) matched = list[list.length - 1];
+            return matched;
+          }
+          
+          const chargeableW = getNearestM2M(exactWVal, standardWidths);
+          const chargeableL = getNearestM2M(exactLVal, standardLengths);
+          
+          const targetWStr = chargeableW + '"';
+          const targetLStr = chargeableL + '"';
+          
+          matchedVariant = variantsData.find(variant => {
+            const opt1 = (variant.option1 || '').trim();
+            const opt2 = (variant.option2 || '').trim();
+            
+            return (opt1 === targetWStr && opt2 === targetLStr) || (opt1 === targetLStr && opt2 === targetWStr) ||
+                   (opt1 === chargeableW.toString() && opt2 === chargeableL.toString()) || (opt1 === chargeableL.toString() && opt2 === chargeableW.toString());
+          });
+        }
+      } else {
+        // Standard Option matching
+        const selectedOptions = [];
+        const optionWrappers = document.querySelectorAll('.option-selector-wrapper');
+        
+        optionWrappers.forEach(wrapper => {
+          const activeBtn = wrapper.querySelector('.ring-2') || wrapper.querySelector('.bg-primary');
+          if (activeBtn) {
+            selectedOptions.push(activeBtn.getAttribute('data-value'));
+          }
+        });
+        
+        if (selectedOptions.length > 0 && variantsData) {
+          matchedVariant = variantsData.find(variant => {
+            let match = true;
+            for (let i = 0; i < selectedOptions.length; i++) {
+              const optIndex = 'option' + (i + 1);
+              if (variant[optIndex] !== selectedOptions[i]) {
+                match = false;
+                break;
+              }
+            }
+            return match;
+          });
+        }
+      }
+      
+      if (matchedVariant) {
+        // Update input ID
+        variantIdInput.value = matchedVariant.id;
+        
+        // Update Price with quantity multiplier
+        const qty = parseInt(document.getElementById('ProductQuantityInput').value) || 1;
+        const totalPrice = matchedVariant.price * qty;
+        const formattedPrice = formatShopifyMoney(totalPrice);
+        priceDisplay.textContent = formattedPrice;
+        
+        // Update Add to Cart / Buy Now buttons availability
+        if (matchedVariant.available) {
+          cartBtn.removeAttribute('disabled');
+          cartBtn.textContent = 'Add to Cart';
+          if (buyBtn) {
+            buyBtn.removeAttribute('disabled');
+          }
+        } else {
+          cartBtn.setAttribute('disabled', 'disabled');
+          cartBtn.textContent = 'Sold Out';
+          if (buyBtn) {
+            buyBtn.setAttribute('disabled', 'disabled');
+          }
+        }
+      } else {
+        // No match found
+        cartBtn.setAttribute('disabled', 'disabled');
+        cartBtn.textContent = 'Unavailable';
+        if (buyBtn) {
+          buyBtn.setAttribute('disabled', 'disabled');
+        }
+      }
+    }
+
+    // Attach event listeners to M2M inputs to trigger price updating dynamically
+    const widthInputEl = document.getElementById('CustomWidthInput');
+    const lengthInputEl = document.getElementById('CustomLengthInput');
+    if (widthInputEl && lengthInputEl) {
+      widthInputEl.addEventListener('input', matchSelectedVariant);
+      lengthInputEl.addEventListener('input', matchSelectedVariant);
+    }
+
+    // Execute immediately to calculate default initial pricing
+    setTimeout(matchSelectedVariant, 300);
+    
+    // Quick helper to format money dynamically
+    function formatShopifyMoney(cents) {
+      const value = (cents / 100).toFixed(2);
+      // Determine currency sign (default to British pound as in mockup)
+      const currencySign = '{{ cart.currency.symbol }}' || '£';
+      return currencySign + value;
+    }
+    
+    // Quick checkout Buy Now action
+    if (buyBtn) {
+      buyBtn.addEventListener('click', function() {
+        const varId = variantIdInput.value;
+        const qty = qtyInput.value;
+        if (varId) {
+          // Dynamic checkout URL redirect
+          window.location.href = `/cart/${varId}:${qty}`;
+        }
+      });
+    }
+  });
+</script>
+
+<style>
+  /* 1. Tufted Carpet (UltiScrub, UltiDure, UltiWipe, UltiClean, UltiRake) */
+  .texture-carpet {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25) 1.5px, transparent 1.5px),
+                      radial-gradient(rgba(255, 255, 255, 0.1) 1.5px, transparent 1.5px);
+    background-size: 5px 5px;
+    background-position: 0 0, 2.5px 2.5px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* 2. Ribbed Scraper (UltiScrape) */
+  .texture-ribbed {
+    background: repeating-linear-gradient(
+      90deg,
+      rgba(0,0,0,0.3) 0px,
+      rgba(0,0,0,0.3) 6px,
+      rgba(255,255,255,0.05) 6px,
+      rgba(255,255,255,0.05) 12px
+    );
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* 3. Spaghetti / Coiled Vinyl (UltiMat Heavy Duty) */
+  .texture-loops {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10c5-5 15-5 20 0s15 5 20 0M0 30c5-5 15-5 20 0s15 5 20 0' stroke='rgba(0,0,0,0.35)' stroke-width='3' fill='none'/%3E%3Cpath d='M10 0c-5 5-5 15 0 20s5 15 0 20M30 0c-5 5-5 15 0 20s5 15 0 20' stroke='rgba(255,255,255,0.1)' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-size: 20px 20px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* 4. Z-Web Grid (UltiZig) */
+  .texture-zweb {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='20' viewBox='0 0 30 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L15 20 L30 0' stroke='rgba(0,0,0,0.4)' stroke-width='2.5' fill='none'/%3E%3Cpath d='M0 20 L15 0 L30 20' stroke='rgba(255,255,255,0.1)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-size: 15px 10px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Premium Product Info",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_breadcrumbs",
+      "label": "Show Breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "tagline_text",
+      "label": "Product Tagline",
+      "default": "Heavy traffic performance"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vat_text",
+      "label": "Show 'Excl. VAT' Price Suffix",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_buy_now",
+      "label": "Show Buy Now Button",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Proof Badge 1"
+    },
+    {
+      "type": "text",
+      "id": "badge_1_icon",
+      "label": "Material Icon Name",
+      "default": "verified"
+    },
+    {
+      "type": "text",
+      "id": "badge_1_text",
+      "label": "Badge Text",
+      "default": "Architect-Approved"
+    },
+    {
+      "type": "header",
+      "content": "Proof Badge 2"
+    },
+    {
+      "type": "text",
+      "id": "badge_2_icon",
+      "label": "Material Icon Name",
+      "default": "bolt"
+    },
+    {
+      "type": "text",
+      "id": "badge_2_text",
+      "label": "Badge Text",
+      "default": "Tested to 100k Steps"
+    }
+  ]
+}
+{% endschema %}

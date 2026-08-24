@@ -1,0 +1,223 @@
+<!-- Premium Product Recommendations / Complete the Solution Section -->
+{%- liquid
+  assign m2m_handles = 'ultiscrub-carpet-mat-1,ultiscrape-carpet-mat,ulticlean-carpet-mat-1,ultimat-heavy-duty-vinyl-looped-matting,ultirake-carpet-mat,ultizig-barrier-mat,ultizig-barrier-mat-with-backing,ultidure-carpet-mat,ultiwipe-carpet-mat' | split: ','
+  
+  assign current_is_m2m = false
+  if m2m_handles contains product.handle
+    assign current_is_m2m = true
+  endif
+
+  assign current_product_tags = product.tags | join: ',' | downcase
+  assign current_is_residential = false
+  if current_product_tags contains 'home' or current_product_tags contains 'residential' or product.handle contains 'presized'
+    assign current_is_residential = true
+  endif
+-%}
+<div class="product-recommendations max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24 relative z-10 font-body-md text-on-surface"
+     data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=12"
+     id="product-recommendations-{{ section.id }}">
+  
+  {%- if recommendations.performed and recommendations.products_count > 0 -%}
+    <div class="flex justify-between items-end mb-12 md:mb-16">
+      <div class="text-left">
+        <h2 class="font-display-xl text-headline-lg text-primary mb-4">
+          {{ section.settings.heading }}
+        </h2>
+        <p class="text-on-surface-variant font-body-lg text-sm md:text-base">
+          {{ section.settings.subheading }}
+        </p>
+      </div>
+      <a class="font-label-caps text-xs font-bold uppercase tracking-wider text-primary border-b border-primary pb-1 hidden md:block hover:opacity-80 transition-opacity" 
+         href="/collections/all">
+        View All Collection
+      </a>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-gutter text-left">
+      {%- assign limit_count = 0 -%}
+      {%- for recommendation in recommendations.products -%}
+        {%- liquid
+          assign rec_is_m2m = false
+          if m2m_handles contains recommendation.handle
+            assign rec_is_m2m = true
+          endif
+          
+          assign rec_tags = recommendation.tags | join: ',' | downcase
+          assign rec_is_residential = false
+          if rec_tags contains 'home' or rec_tags contains 'residential' or recommendation.handle contains 'presized'
+            assign rec_is_residential = true
+          endif
+
+          assign match = false
+          if current_is_m2m and rec_is_m2m
+            assign match = true
+          elsif current_is_residential and rec_is_residential and rec_is_m2m == false
+            assign match = true
+          elsif current_is_m2m == false and current_is_residential == false and rec_is_m2m == false and rec_is_residential == false
+            assign match = true
+          endif
+        -%}
+        {%- if match and limit_count < 4 -%}
+          <a href="{{ recommendation.url }}" class="group cursor-pointer">
+            <div class="aspect-[3/4] bg-surface-container-low mb-6 overflow-hidden rounded-lg border border-on-surface/5 shadow-sm transition-all duration-300 hover:shadow-md">
+              {%- if recommendation.featured_media != blank -%}
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                     src="{{ recommendation.featured_media | image_url: width: 600 }}" 
+                     alt="{{ recommendation.featured_media.alt | escape }}">
+              {%- else -%}
+                {{ 'product-' | append: forloop.index | placeholder_svg_tag: 'w-full h-full object-cover bg-surface-container-highest' }}
+              {%- endif -%}
+            </div>
+            <p class="font-label-caps text-secondary text-xs font-bold uppercase tracking-widest mb-2 leading-none">
+              {{ recommendation.type | default: 'Entrance' }}
+            </p>
+            <h3 class="font-display-xl text-xl font-normal mb-2 text-primary group-hover:underline decoration-primary underline-offset-4 decoration-1">
+              {{ recommendation.title }}
+            </h3>
+            <p class="font-body-md font-semibold text-primary">
+              {{ recommendation.price | money }}
+            </p>
+          </a>
+          {%- assign limit_count = limit_count | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    <!-- Fallback collection loop so it never renders blank initially or in customizers -->
+    <div class="flex justify-between items-end mb-12 md:mb-16">
+      <div class="text-left">
+        <h2 class="font-display-xl text-headline-lg text-primary mb-4">
+          {{ section.settings.heading }}
+        </h2>
+        <p class="text-on-surface-variant font-body-lg text-sm md:text-base">
+          {{ section.settings.subheading }}
+        </p>
+      </div>
+      <a class="font-label-caps text-xs font-bold uppercase tracking-wider text-primary border-b border-primary pb-1 hidden md:block hover:opacity-80 transition-opacity" 
+         href="/collections/all">
+        View All Collection
+      </a>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-gutter text-left">
+      {%- assign fallback_col_handle = section.settings.fallback_collection | default: 'all' -%}
+      {%- assign fallback_collection = collections[fallback_col_handle] -%}
+      {%- if fallback_collection == blank or fallback_collection.products_count == 0 -%}
+        {%- assign fallback_collection = collections.all -%}
+      {%- endif -%}
+      
+      {%- assign limit_count = 0 -%}
+      {%- for fallback_product in fallback_collection.products -%}
+        {%- liquid
+          assign fall_is_m2m = false
+          if m2m_handles contains fallback_product.handle
+            assign fall_is_m2m = true
+          endif
+          
+          assign fall_tags = fallback_product.tags | join: ',' | downcase
+          assign fall_is_residential = false
+          if fall_tags contains 'home' or fall_tags contains 'residential' or fallback_product.handle contains 'presized'
+            assign fall_is_residential = true
+          endif
+
+          assign match = false
+          if current_is_m2m and fall_is_m2m
+            assign match = true
+          elsif current_is_residential and fall_is_residential and fall_is_m2m == false
+            assign match = true
+          elsif current_is_m2m == false and current_is_residential == false and fall_is_m2m == false and fall_is_residential == false
+            assign match = true
+          endif
+        -%}
+        {%- if fallback_product.id != product.id and match and limit_count < 4 -%}
+          <a href="{{ fallback_product.url }}" class="group cursor-pointer">
+            <div class="aspect-[3/4] bg-surface-container-low mb-6 overflow-hidden rounded-lg border border-on-surface/5 shadow-sm transition-all duration-300 hover:shadow-md">
+              {%- if fallback_product.featured_media != blank -%}
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                     src="{{ fallback_product.featured_media | image_url: width: 600 }}" 
+                     alt="{{ fallback_product.featured_media.alt | escape }}">
+              {%- else -%}
+                {{ 'product-' | append: forloop.index | placeholder_svg_tag: 'w-full h-full object-cover bg-surface-container-highest' }}
+              {%- endif -%}
+            </div>
+            <p class="font-label-caps text-secondary text-xs font-bold uppercase tracking-widest mb-2 leading-none">
+              {{ fallback_product.type | default: 'Entrance' }}
+            </p>
+            <h3 class="font-display-xl text-xl font-normal mb-2 text-primary group-hover:underline decoration-primary underline-offset-4 decoration-1">
+              {{ fallback_product.title }}
+            </h3>
+            <p class="font-body-md font-semibold text-primary">
+              {{ fallback_product.price | money }}
+            </p>
+          </a>
+          {%- assign limit_count = limit_count | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
+
+<!-- Dynamic AJax Loader for personalization -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const recommendationsContainer = document.querySelector('.product-recommendations');
+    
+    if (recommendationsContainer) {
+      const handleIntersection = (entries, observer) => {
+        if (!entries[0].isIntersecting) return;
+        observer.unobserve(recommendationsContainer);
+
+        const url = recommendationsContainer.getAttribute('data-url');
+
+        fetch(url)
+          .then(response => response.text())
+          .then(text => {
+            const html = document.createElement('div');
+            html.innerHTML = text;
+            const recommendations = html.querySelector('.product-recommendations');
+
+            if (recommendations && recommendations.innerHTML.trim().length > 0) {
+              recommendationsContainer.innerHTML = recommendations.innerHTML;
+            }
+          })
+          .catch(e => {
+            console.error('Recommendations loading error:', e);
+          });
+      };
+
+      const observer = new IntersectionObserver(handleIntersection, {rootMargin: '0px 0px 200px 0px'});
+      observer.observe(recommendationsContainer);
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Premium Recommendations",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "You also might like"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Section Subheading",
+      "default": "Explore complementary products for a cohesive entrance experience."
+    },
+    {
+      "type": "collection",
+      "id": "fallback_collection",
+      "label": "Fallback Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Premium Recommendations",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}

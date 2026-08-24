@@ -1,0 +1,112 @@
+{
+  "layout": "theme.premium-hero",
+  "sections": {
+    "hero": {
+      "type": "premium-commercial-hero",
+      "settings": {}
+    },
+    "bento": {
+      "type": "premium-commercial-bento",
+      "blocks": {
+        "sector_1": {
+          "type": "sector_card",
+          "settings": {
+            "col_span": "8",
+            "title": "Hotels",
+            "description": "Acoustic dampening and luxury finishes for the perfect guest arrival.",
+            "fallback_image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuB2clhdN6SyobB401IvxJ6YY7bKEjRcqoVWByJGYFMIjLfqYnoNlCNpVptwKgENXPYwD479wkeAqeLuzz3PR6Bu3qGUzFzb8lsJchYYbkeslfb4n7zc0WDd-ZiVFJTv173y-lSlzDVuTbjKhKy58Y_X0nOKCJCSU6GyU-TDhSNP_gQbdAKSglhfjFKDYfVhVRueiIDUonLK3OicgpFxaII5DzQO1pG21LXob3NoEi741G3AUNG1wEjEha6HYYOAPMOsOe_9tnhwI2Y"
+          }
+        },
+        "sector_2": {
+          "type": "sector_card",
+          "settings": {
+            "col_span": "4",
+            "title": "Corporate",
+            "description": "Sleek, technical aesthetics for modern office headquarters.",
+            "fallback_image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuCs-oluhPd_s-QKQC7W4qt_ANpjjuSHBRvkASJ9ZB9FQtf3uW0WDay4Xu4ko9QBtp4lDskWiUeUH2ejtq9PbABSujiyTg2M_75WzQkIc19SfbtPsy_C0ObLR0Wb47owSYFd9Jz0lwN4tRO__PPF4q_3lELaGGOGT6uUtMINVHwtXVgw3H0uBxt-Q2oVwj0Iv8QE4cvdqA7g4DR-Ru56mZ7DvSnWmarkmna3D8ER-j1-JxHYHFYTMl5b983UNw61sRAdUawyjTnjRHw"
+          }
+        },
+        "sector_3": {
+          "type": "sector_card",
+          "settings": {
+            "col_span": "4",
+            "title": "Retail",
+            "description": "High-frequency durability for malls and boutiques.",
+            "fallback_image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuDI4FTz05BOknFn71ebxOLwa4QeEPZG640K6yKubIl6iD2RVeNok2MRnw0Be426IICCp6oC5-ZchrRUXaeMymg18ZTzeRf4W6VnLTnhyDeJco9CJ9xWBNlSfOkrrVDYx3HCQ0uNHn5DqEFUT0xIa3uOKh43tH9jQrb-DAwn23p_WMLuN1XwH8WT1jOgb5DCVJZ0tPcP5Znq9BxzapNERPHUJg3X04RxA6KD7no6CFlQLlVSlo07GNo-cJXPbM4Gf9bh7KMrFA1gLjo"
+          }
+        },
+        "sector_4": {
+          "type": "sector_card",
+          "settings": {
+            "col_span": "8",
+            "title": "Healthcare",
+            "description": "Anti-slip and hygienic solutions for medical facilities.",
+            "fallback_image_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAW_t_KcrKu54XLCePp9B3S2aW20o1RAJuWNmroOrTFlGBOELEAE9Q7PsuKc7M-VOXBeNNC1eRf4jA1NtC9fd5plmLesMbdzH3WpJnyftzw7bA-CsRoOTku_3rTwqWfY5e8vtctidh_afZ8p4d3ybDXO2iwUjG8slXMmhUTXo71gWPGaz8ohafPbWoxEwE2OZngC0_XUiCwQnwRkj-7rD-IjVoFkc6oH93ZQ0P3dSXT78wgL2BUyoyYjZViGu_wO4NZ5VyxaC_zRD4"
+          }
+        }
+      },
+      "block_order": [
+        "sector_1",
+        "sector_2",
+        "sector_3",
+        "sector_4"
+      ],
+      "settings": {}
+    },
+    "products": {
+      "type": "premium-collection-grid",
+      "settings": {
+        "collection": "shop-floormats",
+        "show_use_case_filter": false
+      }
+    },
+    "features": {
+      "type": "premium-commercial-features",
+      "blocks": {
+        "feature_1": {
+          "type": "feature_item",
+          "settings": {
+            "icon": "architecture",
+            "title": "Bulk Sizing Support",
+            "description": "Custom widths up to 12m for expansive airport and mall entrances."
+          }
+        },
+        "feature_2": {
+          "type": "feature_item",
+          "settings": {
+            "icon": "branding_watermark",
+            "title": "Custom Branding",
+            "description": "Inlaid logos with laser-precision cutting for corporate identity."
+          }
+        },
+        "feature_3": {
+          "type": "feature_item",
+          "settings": {
+            "icon": "build",
+            "title": "Maintenance Guidance",
+            "description": "Comprehensive schedules to ensure 10+ year product lifespan."
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3"
+      ],
+      "settings": {
+        "fallback_author_url": "https://lh3.googleusercontent.com/aida-public/AB6AXuAaLtvLp_eZjPqgrWR-fJzWOxYJX8VB99Uf3hNsXKCna5tYRm99L6BfpbFfnda2nrRTXiDzp-W0ZkS0638FQFHNg5ls8wZOjwkfHnTNfoXpynZuQuC9pqWp2xPHsRbqQN5gAZ_oATWiGx448xKklMjJOLxlYIszpmEUVyAldpPubXua_Dr_tUGN9E69CpsQZBgwA-9NGxuu_Y77Jn0Jc_ewUdbIWQQ7NoPxIRh-5clFVZI-ue6iCaYphKZd7u6cJq6HkwtkXel2YXE"
+      }
+    },
+    "enquiry": {
+      "type": "premium-commercial-enquiry",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "bento",
+    "products",
+    "features",
+    "enquiry"
+  ]
+}

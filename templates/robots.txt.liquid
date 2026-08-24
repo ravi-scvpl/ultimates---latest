@@ -1,0 +1,80 @@
+# Ultimats (Shopify) – SEO-safe robots.txt
+# Blocks checkout/account/private URLs + reduces crawl waste from sort/filter duplicates.
+
+User-agent: *
+Disallow: /admin
+Disallow: /cart
+Disallow: /carts
+Disallow: /orders
+Disallow: /checkouts/
+Disallow: /checkout
+Disallow: /account
+
+# Shopify downloads + internal endpoints
+Disallow: /a/downloads/-/*
+Disallow: /sf_private_access_tokens
+Disallow: /.well-known/shopify/
+Disallow: /.well-known/shopify/monorail
+Disallow: /apple-app-site-association
+Disallow: /recommendations/products
+Disallow: /*/recommendations/products
+
+# Search results (thin/duplicate)
+Disallow: /search
+
+# Policies (optional; keep Disallow if you don't want them indexed)
+Disallow: /policies/
+Disallow: /*/policies/
+
+# Sort/filter/parameter crawl control (common Shopify duplicate sources)
+Disallow: /collections/*sort_by*
+Disallow: /*/collections/*sort_by*
+Disallow: */collections/*filter*&*filter*
+Disallow: /collections/*+*
+Disallow: /collections/*%2B*
+Disallow: /collections/*%2b*
+Disallow: /*/collections/*+*
+Disallow: /*/collections/*%2B*
+Disallow: /*/collections/*%2b*
+Disallow: /blogs/*+*
+Disallow: /blogs/*%2B*
+Disallow: /blogs/*%2b*
+Disallow: /*/blogs/*+*
+Disallow: /*/blogs/*%2B*
+Disallow: /*/blogs/*%2b*
+
+# Preview parameters
+Disallow: /*preview_theme_id*
+Disallow: /*preview_script_id*
+Disallow: /*?*oseid=*
+
+# Sitemap
+Sitemap: https://ultimats.com/sitemap.xml
+
+
+# --- Optional bot policies (safe defaults) ---
+
+# Allow Google Ads crawler to verify landing pages
+User-agent: AdsBot-Google
+Allow: /
+
+# Throttle heavy SEO crawlers (optional)
+User-agent: AhrefsBot
+Crawl-delay: 10
+Allow: /
+
+User-agent: AhrefsSiteAudit
+Crawl-delay: 10
+Allow: /
+
+User-agent: MJ12bot
+Crawl-delay: 10
+Allow: /
+
+User-agent: Pinterest
+Crawl-delay: 1
+Allow: /
+
+# Block known aggressive crawler (optional)
+User-agent: Nutch
+Disallow: /

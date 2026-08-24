@@ -1,0 +1,209 @@
+{% comment %} File: sections/reels-section.liquid {% endcomment %}
+
+<section class="reels-section section" style="padding: 20px; background: #fafafa;">
+    <div style="justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h3 class="section-heading h3">{{ section.settings.heading }}</h3>
+    </div>
+  
+    <div class="reels-carousel" style="display: flex; overflow-x: auto; gap: 10px; scrollbar-width: none; -ms-overflow-style: none; padding-bottom: 10px;">
+      {% for block in section.blocks %}
+        {% if block.settings.video_url != blank %}
+          <a href="{{ block.settings.products }}" style="text-decoration: none;" class="reel-link">
+            <div class="reel-card" style="flex: 0 0 auto; width: 260px; background: #fff; border-radius: 8px; overflow: hidden; position: relative;">
+              <video
+                class="reel-video"
+                src="{{ block.settings.video_url }}"
+                muted
+                loop
+                playsinline
+                style="width: 100%; height: 500px; object-fit: cover; margin-bottom: -8px;"
+              ></video>
+  
+              <!-- Audio Icon Button -->
+              <button class="audio-icon" style="
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: rgba(0,0,0,0.6);
+                color: #fff;
+                border: none;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+                cursor: pointer;
+                z-index: 3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              ">🔇</button>
+  
+              {% if block.settings.caption != blank %}
+                <div style="padding: 10px; font-size: 14px; color: #333; background-color: lightgray;">
+                  {{ block.settings.caption }}
+                </div>
+              {% endif %}
+            </div>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+  
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all videos
+    const videos = document.querySelectorAll('.reel-video');
+    
+    videos.forEach(video => {
+      // Ensure videos are muted by default (required for autoplay)
+      video.muted = true;
+      
+      // Attempt to play (may be blocked by browser policy)
+      video.play().catch(error => {
+        console.log('Autoplay prevented:', error);
+      });
+    });
+  
+    // Audio toggle functionality
+    document.querySelectorAll('.audio-icon').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const video = this.closest('.reel-card').querySelector('video');
+        
+        // Toggle mute state
+        video.muted = !video.muted;
+        
+        // Update icon
+        this.textContent = video.muted ? '🔇' : '🔊';
+        
+        // If unmuting, try to play the video
+        if (!video.muted) {
+          video.play().catch(error => {
+            console.log('Playback prevented:', error);
+            // Show a message to the user if needed
+          });
+        }
+      });
+    });
+  
+    // Pause videos when they're not visible
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target.querySelector('video');
+        if (video) {
+          if (entry.isIntersecting) {
+            video.play().catch(e => console.log('Playback error:', e));
+          } else {
+            video.pause();
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+  
+    document.querySelectorAll('.reel-card').forEach(card => {
+      observer.observe(card);
+    });
+  });
+  </script>
+  
+  <style>
+    @media (min-width: 769px) {
+    .reels-carousel {
+      {% comment %} justify-content: center; {% endcomment %}
+    }
+  }
+    .reels-carousel::-webkit-scrollbar {
+      display: none;
+    }
+  
+    @media(max-width: 768px) {
+      .reel-card {
+        width: 85vw !important;
+      }
+    }
+    h3.section-heading.h3 {
+        text-align: center;
+    }
+    /* Prevent clicking through the audio button */
+    .audio-icon {
+      pointer-events: auto;
+    }
+    
+    /* Make sure links still work */
+    .reel-link {
+      position: relative;
+    }
+  </style>
+  
+  {% schema %}
+  {
+    "name": "Reels Section",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Reels"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "reel_video",
+        "name": "Reel Video",
+        "settings": [
+          {
+            "type": "url",
+            "id": "video_url",
+            "label": "MP4 Video URL",
+            "info": "Upload .mp4 file in Settings > Files and paste the link here"
+          },
+          {
+            "type": "url",
+            "id": "products",
+            "label": "Product Link",
+            "info": "Paste the product page URL here"
+          },
+          {
+            "type": "text",
+            "id": "caption",
+            "label": "Caption",
+            "default": "Reel caption here"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 50,
+    "presets": [
+      {
+        "name": "Instagram Reels",
+        "category": "Custom",
+        "settings": {
+          "heading": "Reels"
+        },
+        "blocks": [
+          {
+            "type": "reel_video",
+            "settings": {
+              "video_url": "",
+              "products": "",
+              "caption": "Sample reel 1"
+            }
+          },
+          {
+            "type": "reel_video",
+            "settings": {
+              "video_url": "",
+              "products": "",
+              "caption": "Sample reel 2"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}
