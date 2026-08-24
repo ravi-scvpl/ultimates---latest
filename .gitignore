@@ -12,3 +12,17 @@
 # Node
 node_modules/
 package-lock.json
+
+# Media & Large Assets
+*.mp4
+*.mov
+*.webm
+*.avi
+*.mkv
+*.pdf
+*.zip
+*.tar
+*.gz
+assets/*.mp4
+assets/*.mov
+assets/*.webm
