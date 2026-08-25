@@ -1,0 +1,140 @@
+<style>
+  .three-layer-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: {{ section.settings.bg_color | default: '#000000' }};
+    color: {{ section.settings.text_color | default: '#ffffff' }};
+    padding: 80px 40px;
+    min-height: 600px;
+  }
+  .three-layer-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+  }
+  .three-layer-media {
+    width: 50%;
+    padding-right: 60px;
+  }
+  .three-layer-media video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .three-layer-content {
+    width: 50%;
+    padding-left: 40px;
+  }
+  .three-layer-content h2 {
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+    font-family: var(--font-heading-family);
+    color: inherit;
+    text-transform: uppercase;
+  }
+  .three-layer-content .description,
+  .three-layer-content .description p,
+  .three-layer-content .description span {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+  .three-layer-content .description p {
+    margin-bottom: 20px;
+  }
+  
+  @media screen and (max-width: 990px) {
+    .three-layer-section {
+      padding: 60px 20px;
+    }
+    .three-layer-media,
+    .three-layer-content {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .three-layer-media {
+      margin-bottom: 40px;
+    }
+  }
+</style>
+
+<section class="three-layer-section" id="ThreeLayer-{{ section.id }}">
+  <div class="three-layer-container">
+    <div class="three-layer-media">
+      {% if section.settings.asset_video_name != blank %}
+        <video src="{{ section.settings.asset_video_name | asset_url }}" autoplay loop muted playsinline></video>
+      {% elsif section.settings.video %}
+        {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+    </div>
+    
+    <div class="three-layer-content">
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      
+      {% if section.settings.description != blank %}
+        <div class="description">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Three Layer Feature",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "asset_video_name",
+      "label": "Asset Video Filename",
+      "info": "E.g., three-layar.mp4 (must be in assets folder)"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Fallback Video (if not using asset)"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "THREE LAYER TECH"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Our multi-layered mats ensure maximum performance with minimum weight.</p><p>Each layer traps dirt individually to ensure that your space stays clean throughout the day.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Three Layer Feature"
+    }
+  ]
+}
+{% endschema %}

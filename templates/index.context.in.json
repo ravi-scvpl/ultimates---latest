@@ -25,58 +25,6 @@
       "block_order": [],
       "name": "t:sections.hero-video.presets.name"
     },
-    "reels_NpHLx": {
-      "type": "reels",
-      "disabled": true,
-      "settings": {
-        "heading": "Ronit Roy X Ultimats"
-      },
-      "blocks": {
-        "reel_video_MYQVn": {
-          "type": "reel_video",
-          "disabled": false,
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/fc57fee591ee432a9b26461e574f2ff9.mp4",
-            "products": "",
-            "caption": ""
-          }
-        },
-        "reel_video_aBfTn": {
-          "type": "reel_video",
-          "disabled": false,
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/4d000153152640828c49d85b15b77138.mp4",
-            "products": "",
-            "caption": ""
-          }
-        },
-        "reel_video_V3RdE": {
-          "type": "reel_video",
-          "disabled": false,
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/2bc3f8093bf3489dbe2b6ef78ce2194a.mp4",
-            "products": "",
-            "caption": ""
-          }
-        },
-        "reel_video_KyGYz": {
-          "type": "reel_video",
-          "disabled": false,
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/7e348645e7844d52b6e0e5c931dae130.mp4",
-            "products": "",
-            "caption": ""
-          }
-        }
-      },
-      "block_order": [
-        "reel_video_MYQVn",
-        "reel_video_aBfTn",
-        "reel_video_V3RdE",
-        "reel_video_KyGYz"
-      ],
-      "name": "Instagram Reels"
-    },
     "17720141253be01e38": {
       "type": "apps",
       "disabled": false,
@@ -110,11 +58,6 @@
       "block_order": [
         "forms_inline_7ahpT"
       ]
-    },
-    "media_with_text_D4CAWR": {
-      "disabled": true,
-      "settings": {},
-      "blocks": {}
     },
     "multicolor-cards": {
       "settings": {},
@@ -153,14 +96,14 @@
   },
   "order": [
     "hero_video_6t98P",
-    "media_with_text_D4CAWR",
     "multicolor-cards",
     "collage",
     "media_grid_pKd9B9",
     "shop_the_look_8ez66U",
-    "reels_NpHLx",
     "featured-shops",
     "promise_slider_new",
+    "custom_liquid_m2m",
+    "three_layer_new",
     "media_with_text_DFHWX8",
     "testimonial_new_tR48BX",
     "feature_cards_NkQehE",
@@ -174,7 +117,6 @@
     "client_logo_PUM3CL",
     "featured_blog_mMxPbi",
     "social-media-banner",
-    "contact_form_JpmeCa",
     "17720141253be01e38",
     "multicolumn_BTtBaV"
   ]

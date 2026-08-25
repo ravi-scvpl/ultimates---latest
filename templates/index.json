@@ -1102,33 +1102,6 @@
         "padding_bottom": 44
       }
     },
-    "contact_form_JpmeCa": {
-      "type": "contact-form",
-      "disabled": true,
-      "custom_css": [
-        "body {background-color: #efefef;}"
-      ],
-      "settings": {
-        "heading": "Can’t find what you need?",
-        "subtitle": "Contact our Customer Service Team",
-        "show_email": false,
-        "show_phone": false,
-        "show_address": false,
-        "custom_address": "",
-        "show_facebook": false,
-        "handle_facebook": "Find us on Facebook",
-        "show_instagram": false,
-        "handle_instagram": "Find us on Instagram",
-        "show_twitter": false,
-        "handle_twitter": "Find us on Twitter",
-        "operation": "",
-        "response_time": "Thank you for contacting us. We will reply within 1 business day.",
-        "font_size": 100,
-        "background": "main-background",
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
     "1772172695c3964146": {
       "type": "apps",
       "blocks": {
@@ -1300,6 +1273,20 @@
         "card_5",
         "card_6"
       ]
+    },
+    "three_layer_new": {
+      "type": "three-layer-feature",
+      "settings": {
+        "asset_video_name": "three-layar.mp4",
+        "heading": "HEAT TRAP TECH",
+        "description": "<p>Zarf’s multi-layered winter blankets ensure maximum warmth with minimum weight.</p><p>Each layer traps heat individually to ensure that warmth stays consistent throughout the night. Layering the fabric increases heat retention levels as compared to traditional thick blanket fabrics.</p>"
+      }
+    },
+    "custom_liquid_m2m": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div style=\"text-align: center; padding: 60px 20px; background: #ffffff; color: #111111;\"><h2 style=\"font-size: 36px; margin-bottom: 16px; font-weight: 400; font-family: var(--font-heading-family); text-transform: uppercase;\">Made to Measure</h2><p style=\"font-size: 18px; color: #444444; max-width: 800px; margin: 0 auto;\">Customize your Floor Mat in your Preferred Style and Color - Tailor-made to your Exact Size</p></div>"
+      }
     }
   },
   "order": [
@@ -1310,6 +1297,8 @@
     "shop_the_look_8ez66U",
     "featured-shops",
     "promise_slider_new",
+    "custom_liquid_m2m",
+    "three_layer_new",
     "media_with_text_DFHWX8",
     "testimonial_new_tR48BX",
     "feature_cards_NkQehE",
@@ -1323,7 +1312,6 @@
     "client_logo_PUM3CL",
     "featured_blog_mMxPbi",
     "social-media-banner",
-    "contact_form_JpmeCa",
     "1772172695c3964146",
     "featured_blog_qWdxAQ",
     "multicolumn_BTtBaV"
