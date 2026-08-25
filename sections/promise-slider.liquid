@@ -1,0 +1,396 @@
+{% style %}
+  .promise-slider-section {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0;
+    color: #fff;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    background-color: #222;
+  }
+  .promise-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 0;
+    object-fit: cover;
+  }
+  .promise-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+  .promise-content-wrap {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .promise-left {
+    width: 35%;
+    padding-right: 60px;
+  }
+  .promise-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 24px;
+    color: #f5f5f5;
+  }
+  .promise-right {
+    width: 65%;
+  }
+  .promise-carousel {
+    margin: 0 -10px;
+  }
+  .promise-card-wrapper {
+    padding: 0 10px;
+    outline: none;
+  }
+  .promise-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    color: #111;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+  .promise-card img, .promise-card svg {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .promise-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    font-family: var(--font-heading-family);
+    letter-spacing: 0.05em;
+  }
+  .promise-card .card-text {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.5;
+  }
+  
+  /* Timeline Dots above cards */
+  .promise-timeline-wrap {
+    position: relative;
+    margin-bottom: 24px;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .promise-timeline-line {
+    height: 1px;
+    background: rgba(255,255,255,0.4);
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    z-index: 1;
+  }
+  .promise-timeline-dots {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 2;
+  }
+  .promise-dot {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.2);
+  }
+
+  /* Controls */
+  .promise-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 40px;
+    gap: 20px;
+    padding: 0 10px;
+  }
+  .promise-controls button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .promise-controls button:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: #fff;
+  }
+  .promise-progress-container {
+    flex: 1;
+    max-width: 400px;
+    height: 2px;
+    background: rgba(255,255,255,0.2);
+    position: relative;
+  }
+  .promise-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #fff;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+
+  @media screen and (max-width: 990px) {
+    .promise-content-wrap {
+      flex-direction: column;
+      padding: 0 20px;
+    }
+    .promise-left {
+      width: 100%;
+      padding-right: 0;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .promise-right {
+      width: 100%;
+    }
+    .promise-controls {
+      justify-content: center;
+    }
+  }
+{% endstyle %}
+
+<section class="promise-slider-section" id="PromiseSlider-{{ section.id }}">
+  {% if section.settings.background_video != blank %}
+    {{ section.settings.background_video | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'promise-bg-video' }}
+  {% endif %}
+  <div class="promise-bg-overlay" style="background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});"></div>
+
+  <div class="promise-content-wrap">
+    <div class="promise-left">
+      {% if section.settings.logo_image %}
+        <img src="{{ section.settings.logo_image | image_url: width: 600 }}" alt="Promise Logo" style="max-width: 100%; height: auto; margin-bottom: 24px;">
+      {% else %}
+        <h2 style="font-size: 42px; font-weight: bold; font-family: var(--font-heading-family); margin-bottom: 24px;">THE STITCHcraft PROMISE</h2>
+      {% endif %}
+      <div class="promise-desc">
+        {{ section.settings.description }}
+      </div>
+    </div>
+    
+    <div class="promise-right">
+      <div class="promise-timeline-wrap">
+        <div class="promise-timeline-line"></div>
+        <div class="promise-timeline-dots" id="PromiseDots-{{ section.id }}">
+          {% for block in section.blocks %}
+            <div class="promise-dot"></div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="promise-carousel" id="PromiseCarousel-{{ section.id }}">
+        {% for block in section.blocks %}
+          <div class="promise-card-wrapper" {{ block.shopify_attributes }}>
+            <div class="promise-card">
+              {% if block.settings.image %}
+                <img src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.title }}" loading="lazy">
+              {% else %}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              {% endif %}
+              <h3>{{ block.settings.title }}</h3>
+              <div class="card-text">{{ block.settings.text }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="promise-controls">
+        <button class="promise-prev" id="PromisePrev-{{ section.id }}">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </button>
+        <div class="promise-progress-container">
+          <div class="promise-progress-bar" id="PromiseProgress-{{ section.id }}"></div>
+        </div>
+        <button class="promise-next" id="PromiseNext-{{ section.id }}">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var $carousel = $('#PromiseCarousel-{{ section.id }}');
+    var $progressBar = $('#PromiseProgress-{{ section.id }}');
+    
+    if (typeof $ !== 'undefined' && $.fn.slick && $carousel.length) {
+      $carousel.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
+        infinite: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1
+            }
+          }
+        ]
+      });
+
+      var totalSlides = {{ section.blocks.size }};
+      var slidesToShow = $carousel.slick('slickGetOption', 'slidesToShow');
+      var maxSlide = Math.max(0, totalSlides - slidesToShow);
+      
+      function updateProgress(currentSlide) {
+        var calc = ((currentSlide + 1) / (maxSlide + 1)) * 100;
+        if(calc > 100) calc = 100;
+        $progressBar.css('width', calc + '%');
+      }
+
+      // Init progress bar
+      updateProgress(0);
+
+      $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        updateProgress(nextSlide);
+      });
+
+      $('#PromisePrev-{{ section.id }}').on('click', function() {
+        $carousel.slick('slickPrev');
+      });
+      $('#PromiseNext-{{ section.id }}').on('click', function() {
+        $carousel.slick('slickNext');
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Promise Slider",
+  "settings": [
+    {
+      "type": "video",
+      "id": "background_video",
+      "label": "Background Video (Autoplay)"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "default": 40
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "Logo Image"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Promise Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Title",
+          "default": "12 EXTENSIVE QUALITY CHECKS"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Card Text",
+          "default": "<p>Our 12-step quality assurance process ensures our output is excellent without fail, every single time!</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promise Slider",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "title": "12 EXTENSIVE QUALITY CHECKS",
+            "text": "<p>Our 12-step quality assurance process ensures our output is excellent without fail, every single time!</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "PERFECTION IN EVERY PIECE",
+            "text": "<p>Fabric testing, weight evaluation, seam quality check, and 9 other tests guarantee perfection in each product.</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "UNMATCHABLE QUALITY",
+            "text": "<p>We take immense pride in our product quality that remains unparalleled and timeless!</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "title": "QUILTING OPULENCE",
+            "text": "<p>Highest standard of low-residue thread go neat look quilting.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div style='background: red; padding: 100px; color: white; font-size: 50px; text-align: center; width: 100%; position: relative; z-index: 9999;'>TESTING SECTION RENDER</div>

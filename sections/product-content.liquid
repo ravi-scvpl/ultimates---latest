@@ -49,6 +49,7 @@
                 </div>
               {%- endif -%}
             {%- when 'product_features' -%}
+              {% comment %}
               {% assign features_empty = true %}
               {% for i in (1..6) %}
                 {% capture feature_title %}feature_title_{{i}}{% endcapture %}
@@ -163,6 +164,7 @@
                   </ul>
                 </div>
               {% endif %}
+              {% endcomment %}
             {%- when 'product_notes' -%}
               {% if block.settings.notes_text != blank or block.settings.page != blank %}
                 <div

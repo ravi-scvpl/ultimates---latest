@@ -1,4 +1,5 @@
 <!-- Premium Product Info Section -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {%- liquid
   assign m2m_handles = 'ultiscrub-carpet-mat-1,ultiscrape-carpet-mat,ulticlean-carpet-mat-1,ultimat-heavy-duty-vinyl-looped-matting,ultirake-carpet-mat,ultizig-barrier-mat,ultizig-barrier-mat-with-backing,ultidure-carpet-mat,ultiwipe-carpet-mat' | split: ','
@@ -103,8 +104,12 @@
 
 /* Style overrides to match regular theme (Dawn aesthetics) */
 .premium-product-info-container,
-.premium-product-info-container * {
+.premium-product-info-container *:not(.material-symbols-outlined) {
   font-family: var(--font-body-family) !important;
+}
+
+.premium-product-info-container .material-symbols-outlined {
+  font-family: 'Material Symbols Outlined' !important;
 }
 
 .premium-product-info-container h1,
@@ -229,7 +234,7 @@
   overflow: hidden !important;
 }
 #PremiumProductImageCarousel.slick-initialized .slick-track {
-  display: flex !important;
+  /* removed display flex to allow adaptive height */
 }
 #PremiumProductImageCarousel.slick-initialized .slick-slide {
   height: auto !important;
@@ -867,7 +872,8 @@
             dots: false,
             infinite: true,
             fade: false,
-            speed: 400
+            speed: 400,
+            adaptiveHeight: true
           });
 
           // Set initial styles for dots
