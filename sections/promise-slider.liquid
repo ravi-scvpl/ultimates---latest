@@ -1,4 +1,4 @@
-{% style %}
+<style>
   .promise-slider-section {
     position: relative;
     overflow: hidden;
@@ -45,11 +45,13 @@
     width: 35%;
     padding-right: 60px;
   }
-  .promise-desc {
+  .promise-desc,
+  .promise-desc p,
+  .promise-desc span {
     font-size: 16px;
     line-height: 1.6;
     margin-top: 24px;
-    color: #f5f5f5;
+    color: #e0e0e0 !important;
   }
   .promise-right {
     width: 65%;
@@ -67,9 +69,11 @@
     padding: 20px;
     color: #111;
     height: 100%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   }
-  .promise-card img, .promise-card svg {
+  .promise-card img,
+  .promise-card svg,
+  .promise-card video {
     width: 100%;
     height: 180px;
     object-fit: cover;
@@ -91,7 +95,7 @@
     color: #444;
     line-height: 1.5;
   }
-  
+
   /* Timeline Dots above cards */
   .promise-timeline-wrap {
     position: relative;
@@ -101,7 +105,7 @@
   }
   .promise-timeline-line {
     height: 1px;
-    background: rgba(255,255,255,0.4);
+    background: rgba(255, 255, 255, 0.4);
     position: absolute;
     top: 50%;
     left: 10%;
@@ -119,7 +123,7 @@
     height: 8px;
     background: #fff;
     border-radius: 50%;
-    box-shadow: 0 0 0 4px rgba(255,255,255,0.2);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
   }
 
   /* Controls */
@@ -133,7 +137,7 @@
   }
   .promise-controls button {
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.6);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     width: 44px;
     height: 44px;
@@ -145,14 +149,14 @@
     transition: all 0.3s ease;
   }
   .promise-controls button:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-color: #fff;
   }
   .promise-progress-container {
     flex: 1;
     max-width: 400px;
     height: 2px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     position: relative;
   }
   .promise-progress-bar {
@@ -183,26 +187,35 @@
       justify-content: center;
     }
   }
-{% endstyle %}
+</style>
 
 <section class="promise-slider-section" id="PromiseSlider-{{ section.id }}">
   {% if section.settings.background_video != blank %}
-    {{ section.settings.background_video | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'promise-bg-video' }}
+    {{
+      section.settings.background_video
+      | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'promise-bg-video'
+    }}
   {% endif %}
-  <div class="promise-bg-overlay" style="background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});"></div>
+  <div class="promise-bg-overlay" style="background: rgba(0, 0, 0, 0.4);"></div>
 
   <div class="promise-content-wrap">
     <div class="promise-left">
       {% if section.settings.logo_image %}
-        <img src="{{ section.settings.logo_image | image_url: width: 600 }}" alt="Promise Logo" style="max-width: 100%; height: auto; margin-bottom: 24px;">
+        <img
+          src="{{ section.settings.logo_image | image_url: width: 600 }}"
+          alt="Promise Logo"
+          style="max-width: 100%; height: auto; margin-bottom: 24px;"
+        >
       {% else %}
-        <h2 style="font-size: 42px; font-weight: bold; font-family: var(--font-heading-family); margin-bottom: 24px;">THE STITCHcraft PROMISE</h2>
+        <h2 style="font-size: 42px; font-weight: bold; font-family: var(--font-heading-family); margin-bottom: 24px; color: #fff;">
+          PREMIUM MAT PROPERTIES
+        </h2>
       {% endif %}
       <div class="promise-desc">
         {{ section.settings.description }}
       </div>
     </div>
-    
+
     <div class="promise-right">
       <div class="promise-timeline-wrap">
         <div class="promise-timeline-line"></div>
@@ -217,8 +230,14 @@
         {% for block in section.blocks %}
           <div class="promise-card-wrapper" {{ block.shopify_attributes }}>
             <div class="promise-card">
-              {% if block.settings.image %}
-                <img src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.title }}" loading="lazy">
+              {% if block.settings.asset_video_name != blank %}
+                <video src="{{ block.settings.asset_video_name | asset_url }}" autoplay loop muted playsinline></video>
+              {% elsif block.settings.image %}
+                <img
+                  src="{{ block.settings.image | image_url: width: 400 }}"
+                  alt="{{ block.settings.title }}"
+                  loading="lazy"
+                >
               {% else %}
                 {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
               {% endif %}
@@ -231,13 +250,35 @@
 
       <div class="promise-controls">
         <button class="promise-prev" id="PromisePrev-{{ section.id }}">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
         </button>
         <div class="promise-progress-container">
           <div class="promise-progress-bar" id="PromiseProgress-{{ section.id }}"></div>
         </div>
         <button class="promise-next" id="PromiseNext-{{ section.id }}">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
         </button>
       </div>
     </div>
@@ -248,7 +289,7 @@
   document.addEventListener('DOMContentLoaded', function() {
     var $carousel = $('#PromiseCarousel-{{ section.id }}');
     var $progressBar = $('#PromiseProgress-{{ section.id }}');
-    
+
     if (typeof $ !== 'undefined' && $.fn.slick && $carousel.length) {
       $carousel.slick({
         slidesToShow: 3,
@@ -275,7 +316,7 @@
       var totalSlides = {{ section.blocks.size }};
       var slidesToShow = $carousel.slick('slickGetOption', 'slidesToShow');
       var maxSlide = Math.max(0, totalSlides - slidesToShow);
-      
+
       function updateProgress(currentSlide) {
         var calc = ((currentSlide + 1) / (maxSlide + 1)) * 100;
         if(calc > 100) calc = 100;
@@ -342,6 +383,12 @@
         },
         {
           "type": "text",
+          "id": "asset_video_name",
+          "label": "Asset Video Filename",
+          "info": "E.g., 1st.mp4 (must be in assets folder)"
+        },
+        {
+          "type": "text",
           "id": "title",
           "label": "Card Title",
           "default": "12 EXTENSIVE QUALITY CHECKS"
@@ -392,5 +439,3 @@
   ]
 }
 {% endschema %}
-
-<div style='background: red; padding: 100px; color: white; font-size: 50px; text-align: center; width: 100%; position: relative; z-index: 9999;'>TESTING SECTION RENDER</div>

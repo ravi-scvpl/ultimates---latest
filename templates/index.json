@@ -1239,16 +1239,6 @@
         "padding_bottom": 0
       }
     },
-    "custom_liquid_n3T9Ep": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<!-- WhatsApp Floating Button -->\n<a href=\"https://wa.me/919599273345\"\n   class=\"floating-whatsapp\"\n   target=\"_blank\"\n   aria-label=\"Chat on WhatsApp\">\n\n  <svg xmlns=\"http://www.w3.org/2000/svg\"\n       viewBox=\"0 0 32 32\"\n       fill=\"white\">\n    <path d=\"M19.11 17.21c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.91 1.12-.17.19-.33.21-.62.07-.29-.14-1.21-.44-2.31-1.39-.85-.76-1.43-1.69-1.59-1.98-.17-.29-.02-.45.12-.59.12-.12.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36s-1 1-.98 2.45c.02 1.45 1.03 2.85 1.18 3.05.14.19 2.02 3.09 4.89 4.33.68.29 1.21.47 1.62.6.68.21 1.29.18 1.78.11.54-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33z\"/>\n    <path d=\"M16.01 3C8.83 3 3 8.82 3 16c0 2.54.74 5.01 2.14 7.14L3 29l5.99-2.1A12.94 12.94 0 0016.01 29C23.18 29 29 23.18 29 16S23.18 3 16.01 3zm0 23.5c-2.06 0-4.08-.55-5.85-1.6l-.42-.25-3.56 1.25 1.19-3.47-.27-.44A10.45 10.45 0 015.5 16C5.5 10.2 10.2 5.5 16.01 5.5S26.5 10.2 26.5 16 21.81 26.5 16.01 26.5z\"/>\n  </svg>\n</a>\n\n<style>\n.floating-whatsapp{\n  position: fixed;\n  right: 18px;\n  bottom: 90px;\n  width: 58px;\n  height: 58px;\n  background: #25D366;\n  border-radius: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 99999;\n  text-decoration: none;\n  box-shadow: 0 4px 14px rgba(0,0,0,0.18);\n  transition: transform 0.3s ease;\n  overflow: hidden;\n}\n\n.floating-whatsapp:hover{\n  transform: scale(1.08);\n}\n\n.floating-whatsapp svg{\n  width: 28px;\n  height: 28px;\n  display: block;\n}\n\n@media screen and (max-width: 749px){\n\n  .floating-whatsapp{\n    width: 54px;\n    height: 54px;\n    right: 14px;\n    bottom: 85px;\n  }\n\n  .floating-whatsapp svg{\n    width: 25px;\n    height: 25px;\n  }\n}\n</style>",
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
     "promise_slider_new": {
       "type": "promise-slider",
       "settings": {},
@@ -1257,42 +1247,48 @@
           "type": "card",
           "settings": {
             "title": "Moisture lock",
-            "text": "<p>UltiClean Red-Black</p>"
+            "text": "<p>UltiClean Red-Black</p>",
+            "asset_video_name": "1st.mp4"
           }
         },
         "card_2": {
           "type": "card",
           "settings": {
             "title": "Dirt scrub",
-            "text": "<p>UltiScrape Grey</p>"
+            "text": "<p>UltiScrape Grey</p>",
+            "asset_video_name": "2nd.mp4"
           }
         },
         "card_3": {
           "type": "card",
           "settings": {
             "title": "Anti slip Base",
-            "text": "<p>UltiDure Charcoal</p>"
+            "text": "<p>UltiDure Charcoal</p>",
+            "asset_video_name": "3rd.mp4"
           }
         },
         "card_4": {
           "type": "card",
           "settings": {
             "title": "sustainable",
-            "text": "<p>Ultimat HD with borders - Grey</p>"
+            "text": "<p>Ultimat HD with borders - Grey</p>",
+            "asset_video_name": "4th.mp4"
           }
         },
         "card_5": {
           "type": "card",
           "settings": {
             "title": "fast drying",
-            "text": "<p>UltiWipe Brown Black</p>"
+            "text": "<p>UltiWipe Brown Black</p>",
+            "asset_video_name": "5th.mp4"
           }
         },
         "card_6": {
           "type": "card",
           "settings": {
             "title": "built to last",
-            "text": "<p>UltiScrub Charcoal Noir</p>"
+            "text": "<p>UltiScrub Charcoal Noir</p>",
+            "asset_video_name": "6th.mp4"
           }
         }
       },
@@ -1330,7 +1326,6 @@
     "contact_form_JpmeCa",
     "1772172695c3964146",
     "featured_blog_qWdxAQ",
-    "multicolumn_BTtBaV",
-    "custom_liquid_n3T9Ep"
+    "multicolumn_BTtBaV"
   ]
 }
