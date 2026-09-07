@@ -69,6 +69,7 @@
 
 .template-product .jdgm-preview-badge .jdgm-star {
     color: gold !important;
+    font-family: 'JudgemeStar' !important;
 }
 .template-product h1.product__title.product-title-style.uppercase {
     margin-bottom: 0.7rem;
@@ -136,9 +137,9 @@
 span.jdgm-rev__timestamp {
     display: none;
 }
-.jdgm-rev-widg .jdgm-star, .jdgm-revs-tab .jdgm-star, .jdgm-all-reviews .jdgm-star, .jdgm-gallery-popup .jdgm-star {
-   
+.jdgm-rev-widg .jdgm-star, .jdgm-revs-tab .jdgm-star, .jdgm-all-reviews .jdgm-star, .jdgm-gallery-popup .jdgm-star, .jdgm-preview-badge .jdgm-star {
     color: gold !important;
+    font-family: 'JudgemeStar' !important;
 }
 .jdgm-histogram__bar-content {
     background-color: gold !important;

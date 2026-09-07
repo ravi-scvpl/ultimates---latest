@@ -9,6 +9,7 @@
   endif
 -%}
 {% if is_m2m %}
+  <script src="{{ 'm2m-config.js' | asset_url }}"></script>
   <script src="{{ 'ultiscrub.js' | asset_url }}" defer="defer"></script>
 {% endif %}
 {%- liquid
@@ -41,6 +42,34 @@
   display: flex !important;
   flex-direction: column !important;
   width: 100% !important;
+}
+
+/* Circular Gallery Thumbnails */
+#PremiumGallerySlider {
+  gap: 8px !important;
+}
+.premium-gallery-thumb-wrapper {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  overflow: hidden !important;
+  display: block !important;
+  border-style: solid !important;
+  border-width: 2px !important;
+  box-sizing: border-box !important;
+}
+
+@media screen and (min-width: 769px) {
+  #PremiumGallerySlider {
+    gap: 16px !important;
+  }
+  .premium-gallery-thumb-wrapper {
+    width: 72px !important;
+    height: 72px !important;
+    border-width: 3px !important;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -234,10 +263,11 @@
   overflow: hidden !important;
 }
 #PremiumProductImageCarousel.slick-initialized .slick-track {
-  /* removed display flex to allow adaptive height */
+  max-width: none !important;
 }
 #PremiumProductImageCarousel.slick-initialized .slick-slide {
   height: auto !important;
+  max-width: none !important;
 }
 
 /* Quantity Control Box */
@@ -287,6 +317,7 @@
 </style>
 
 <section class="premium-product-info-container max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 md:pt-36 pb-20 relative z-10 font-body-md text-on-surface">
+
   <div class="premium-product-info-grid grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-gutter">
     
 
@@ -318,31 +349,6 @@
       <div class="product-rating-mobile mt-2 mb-4">
         <!-- Render Judge.me badge -->
         {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', jm_style: '', concierge_install: true, product: product %}
-        
-        <!-- Standard Rating stars fallback -->
-        {% liquid
-          assign rating = product.metafields.reviews.rating.value
-          assign value_rating = product.metafields.reviews.rating.value.rating
-          assign scale_max = product.metafields.reviews.rating.value.scale_max
-          assign rating_count = product.metafields.reviews.rating_count
-        %}
-        {%- if rating != blank -%}
-          {% liquid
-            assign rating_decimal = 0
-            assign decimal = value_rating | modulo: 1
-            if decimal >= 0.3 and decimal <= 0.7
-              assign rating_decimal = 0.5
-            elsif decimal > 0.7
-              assign rating_decimal = 1
-            endif
-          %}
-          <div class="rating flex items-center gap-1.5 mt-2" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: rating, rating_max: scale_max }}">
-            <span aria-hidden="true" class="rating-star" style="--rating: {{ value_rating | floor }}; --rating-max: {{ scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
-            <p class="rating-count caption" style="margin: 0;">
-              <span aria-hidden="true">({{ rating_count }})</span>
-            </p>
-          </div>
-        {%- endif -%}
       </div>
     </div>
 
@@ -355,10 +361,16 @@
         <!-- Swipeable track for slides -->
         <div id="PremiumProductImageCarousel" style="display: block; width: 100%; overflow: hidden;">
           {% for media in product.media %}
-            <div data-media-index="{{ forloop.index0 }}" style="width: 100%; height: auto; position: relative; overflow: hidden;">
-              <img style="width: 100%; height: auto; display: block; transition: transform 0.7s ease;" 
-                   src="{{ media | image_url: width: 1200 }}" 
-                   alt="{{ media.alt | default: product.title | escape }}">
+            <div data-media-index="{{ forloop.index0 }}">
+              <div style="position: relative; width: 100%; padding-top: 100%; display: block;">
+                {% assign image_url_val = media | image_url: width: 800 %}
+                {% if media.media_type != 'image' %}
+                  {% assign image_url_val = media.preview_image | image_url: width: 800 %}
+                {% endif %}
+                <img src="{{ image_url_val }}" 
+                     style="position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; object-fit: contain !important; display: block !important; margin: 0 !important; opacity: 1 !important; visibility: visible !important; transform: none !important; border: none !important;" 
+                     alt="{{ media.alt | default: product.title | escape }}">
+              </div>
             </div>
           {%- else -%}
             <div style="width: 100%; height: auto;">
@@ -388,9 +400,9 @@
       <!-- Circular Thumbnails Grid Slider -->
       {% if product.media.size > 1 %}
         <div style="width: 100%; overflow: hidden; margin-top: 8px;">
-          <div id="PremiumGallerySlider" style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 16px !important; width: 100% !important;">
+          <div id="PremiumGallerySlider" style="display: flex !important; flex-wrap: wrap !important; justify-content: center !important; width: 100% !important;">
             {% for media in product.media %}
-              <div class="premium-gallery-thumb-wrapper" data-thumb-index="{{ forloop.index0 }}" style="border-radius: 50% !important; width: 72px !important; height: 72px !important; border: 3px solid {% if forloop.first %}#000000{% else %}transparent{% endif %}; cursor: pointer; transition: all 0.3s ease; overflow: hidden; display: block;">
+              <div class="premium-gallery-thumb-wrapper" data-thumb-index="{{ forloop.index0 }}" style="border-color: {% if forloop.first %}#000000{% else %}transparent{% endif %};">
                 <img class="premium-gallery-thumb" 
                      src="{{ media | image_url: width: 200 }}" 
                      alt="{{ media.alt | default: product.title | escape }}"
@@ -469,20 +481,199 @@
         {% unless product.has_only_default_variant %}
           <div class="space-y-6">
           {% if is_m2m %}
+            {%- liquid
+              assign m2m_widths = ''
+              assign m2m_lengths = ''
+              
+              for option in product.options_with_values
+                assign opt_name = option.name | downcase
+                if opt_name contains 'width' or opt_name contains 'size'
+                  for val in option.values
+                    assign num = val | replace: '"', '' | strip | plus: 0
+                    if num > 0
+                      assign m2m_widths = m2m_widths | append: num | append: ','
+                    endif
+                  endfor
+                elsif opt_name contains 'length'
+                  for val in option.values
+                    assign num = val | replace: '"', '' | strip | plus: 0
+                    if num > 0
+                      assign m2m_lengths = m2m_lengths | append: num | append: ','
+                    endif
+                  endfor
+                endif
+              endfor
+              
+              if m2m_widths == blank and product.options_with_values.size > 0
+                for val in product.options_with_values[0].values
+                  assign num = val | replace: '"', '' | strip | plus: 0
+                  if num > 0
+                    assign m2m_widths = m2m_widths | append: num | append: ','
+                  endif
+                endfor
+              endif
+              if m2m_lengths == blank and product.options_with_values.size > 1
+                for val in product.options_with_values[1].values
+                  assign num = val | replace: '"', '' | strip | plus: 0
+                  if num > 0
+                    assign m2m_lengths = m2m_lengths | append: num | append: ','
+                  endif
+                endfor
+              endif
+              
+              assign m2m_widths_arr = m2m_widths | split: ','
+              assign m2m_lengths_arr = m2m_lengths | split: ','
+              
+              assign min_width = 9999
+              assign max_width = 0
+              for w in m2m_widths_arr
+                assign w_num = w | plus: 0
+                if w_num < min_width and w_num > 0
+                  assign min_width = w_num
+                endif
+                if w_num > max_width
+                  assign max_width = w_num
+                endif
+              endfor
+              
+              assign min_length = 9999
+              assign max_length = 0
+              for l in m2m_lengths_arr
+                assign l_num = l | plus: 0
+                if l_num < min_length and l_num > 0
+                  assign min_length = l_num
+                endif
+                if l_num > max_length
+                  assign max_length = l_num
+                endif
+              endfor
+              
+              if min_width == 9999
+                assign min_width = 24
+              endif
+              if max_width == 0
+                assign max_width = 48
+              endif
+              if min_length == 9999
+                assign min_length = 48
+              endif
+              if max_length == 0
+                assign max_length = 144
+              endif
+            -%}
             <!-- Custom Options for M2M Products -->
             <!-- Step 1: Select Color -->
             <div class="option-selector-wrapper">
-              <label class="block text-xs font-bold uppercase tracking-widest text-primary mb-3 font-label-caps">
-                Step 1: Select Color
-              </label>
-              <div class="flex gap-3 option-buttons-group color-custom-group">
-                <button type="button" class="w-10 h-10 rounded-full transition-all duration-300 custom-option-btn swatch-btn ring-offset-1 ring-2 ring-primary ring-offset-2" style="background-color: #1d1b19;" data-name="properties[Mat Color]" data-value="Charcoal Noir" title="Charcoal Noir"></button>
-                <button type="button" class="w-10 h-10 rounded-full transition-all duration-300 custom-option-btn swatch-btn ring-offset-1 ring-1 ring-outline-variant" style="background-color: #7d766f;" data-name="properties[Mat Color]" data-value="Modern Grey" title="Modern Grey"></button>
-                <button type="button" class="w-10 h-10 rounded-full transition-all duration-300 custom-option-btn swatch-btn ring-offset-1 ring-1 ring-outline-variant" style="background-color: #8b0000;" data-name="properties[Mat Color]" data-value="Crimson Red" title="Crimson Red"></button>
-                <button type="button" class="w-10 h-10 rounded-full transition-all duration-300 custom-option-btn swatch-btn ring-offset-1 ring-1 ring-outline-variant" style="background-color: #1b4d3e;" data-name="properties[Mat Color]" data-value="Forest Green" title="Forest Green"></button>
-                <button type="button" class="w-10 h-10 rounded-full transition-all duration-300 custom-option-btn swatch-btn ring-offset-1 ring-1 ring-outline-variant" style="background-color: #5c4033;" data-name="properties[Mat Color]" data-value="Earth Brown" title="Earth Brown"></button>
-              </div>
-              <input type="hidden" name="properties[Mat Color]" id="CustomColorInput" value="Charcoal Noir">
+              {% assign color_option = blank %}
+              {% for option in product.options_with_values %}
+                {% assign option_name_lower = option.name | downcase %}
+                {% if option_name_lower contains 'color' or option_name_lower contains 'colour' or option_name_lower contains 'mat color' or option_name_lower contains 'm2m' %}
+                  {% assign color_option = option %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+              
+              {% if color_option != blank %}
+                <label class="block text-xs font-bold uppercase tracking-widest text-primary mb-3 font-label-caps">
+                  STEP 1... SELECT COLOR: <span id="SelectedColorName">{{ color_option.selected_value | upcase }}</span>
+                </label>
+                <div class="flex gap-3 option-buttons-group color-custom-group" style="flex-wrap: wrap;">
+                  {% for value in color_option.values %}
+                    {% assign swatch_image = value.swatch.image %}
+                    {% assign swatch_color = value.swatch.color | default: '#1d1b19' %}
+                    {% assign variant_image = blank %}
+                    
+                    {% if swatch_image == blank %}
+                      {% for variant in product.variants %}
+                        {% assign opt_idx = 'option' | append: color_option.position %}
+                        {% if variant[opt_idx] == value.name or variant[opt_idx] == value %}
+                          {% if variant.image %}
+                            {% assign variant_image = variant.image %}
+                            {% break %}
+                          {% endif %}
+                        {% endif %}
+                      {% endfor %}
+                    {% endif %}
+                    
+                    {% assign custom_file_name = blank %}
+                    {% if swatch_image == blank and variant_image == blank %}
+                      {% assign option_name_prefix = 'ultiscrubm2m' %}
+                      {% if product.handle contains 'ultidure' %}
+                        {% assign option_name_prefix = 'ultidurem2m' %}
+                      {% elsif product.handle contains 'ultiwipe' %}
+                        {% assign option_name_prefix = 'ultiwipem2m' %}
+                      {% elsif product.handle contains 'ultiscrape' %}
+                        {% assign option_name_prefix = 'ultiscrapem2m' %}
+                      {% elsif product.handle contains 'ulticlean' %}
+                        {% assign option_name_prefix = 'ulticleanm2m' %}
+                      {% endif %}
+                      
+                      {% assign handle_value = value.name | default: value | handleize %}
+                      {% assign custom_file_name = 'product-option-' | append: option_name_prefix | append: '-' | append: handle_value | append: '.png' %}
+                      {% assign custom_file_url = custom_file_name | file_img_url: '100x100' %}
+                    {% endif %}
+                    
+                    <button type="button" 
+                            class="w-12 h-12 rounded-md transition-all duration-300 custom-option-btn swatch-btn ring-offset-1 {% if color_option.selected_value == value.name or color_option.selected_value == value %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}"
+                            style="{% if swatch_image != blank %}background-image: url('{{ swatch_image | image_url: width: 100 }}'); background-size: cover; background-position: center;{% elsif variant_image != blank %}background-image: url('{{ variant_image | image_url: width: 100 }}'); background-size: cover; background-position: center;{% elsif custom_file_name != blank %}background-image: url('{{ custom_file_url }}'); background-color: {{ swatch_color }}; background-size: cover; background-position: center;{% else %}background-color: {{ swatch_color }};{% endif %} border-radius: 6px !important;" 
+                            data-name="properties[Mat Color]" 
+                            data-value="{{ value.name | default: value | escape }}" 
+                            title="{{ value.name | default: value | escape }}"></button>
+                  {% endfor %}
+                </div>
+                <input type="hidden" name="properties[Mat Color]" id="CustomColorInput" value="{{ color_option.selected_value | escape }}">
+              {% else %}
+                <label class="block text-xs font-bold uppercase tracking-widest text-primary mb-3 font-label-caps">
+                  Step 1: Select Color
+                </label>
+                <div class="flex gap-3 option-buttons-group color-custom-group" style="flex-wrap: wrap;">
+                  {% assign option_name_prefix = 'ultiscrubm2m' %}
+                  {% assign fallback_colors_str = "Charcoal Noir|#1d1b19,Modern Grey|#7d766f,Crimson Red|#922222,Forest Green|#1a4f32,Earth Brown|#4b3621" %}
+                  
+                  {% if product.handle contains 'ultidure' %}
+                    {% assign option_name_prefix = 'ultidure' %}
+                    {% assign fallback_colors_str = "Grey|#8E8E8E,Dark Grey|#4A4A4A" %}
+                  {% elsif product.handle contains 'ultiwipe' %}
+                    {% assign option_name_prefix = 'ultiwipem2m' %}
+                    {% assign fallback_colors_str = "Grey Black|#4A4A4A,Red Black|#922222,Brown Black|#4b3621,Green Black|#1a4f32" %}
+                  {% elsif product.handle contains 'ultiscrape' %}
+                    {% assign option_name_prefix = 'ultiscrapem2m' %}
+                    {% assign fallback_colors_str = "Grey Black|#4A4A4A,Red Black|#922222,Brown Black|#4b3621,Green Black|#1a4f32,Black|#1d1b19" %}
+                  {% elsif product.handle contains 'ulticlean' %}
+                    {% assign option_name_prefix = 'ulticleanm2m' %}
+                    {% assign fallback_colors_str = "Grey Black|#4A4A4A,Red Black|#922222,Brown Black|#4b3621,Green Black|#1a4f32" %}
+                  {% elsif product.handle contains 'ultimat-heavy' %}
+                    {% assign option_name_prefix = 'ultimat' %}
+                    {% assign fallback_colors_str = "Grey|#8E8E8E,Black|#1d1b19,Red|#922222" %}
+                  {% elsif product.handle contains 'ultirake' %}
+                    {% assign option_name_prefix = 'ultirake' %}
+                    {% assign fallback_colors_str = "Grey Black|#4A4A4A,Green Black|#1a4f32,Brown Black|#4b3621,Beige Black|#c8ad7f" %}
+                  {% elsif product.handle contains 'ultizig' %}
+                    {% assign option_name_prefix = 'ultizig' %}
+                    {% assign fallback_colors_str = "Grey|#8E8E8E,Black|#1d1b19,Red|#922222" %}
+                  {% endif %}
+                  
+                  {% assign fallback_colors = fallback_colors_str | split: "," %}
+                  {% for color_data in fallback_colors %}
+                    {% assign color_parts = color_data | split: "|" %}
+                    {% assign color_name = color_parts[0] %}
+                    {% assign color_hex = color_parts[1] %}
+                    
+                    {% assign handle_value = color_name | handleize %}
+                    {% assign file_name = 'product-option-' | append: option_name_prefix | append: '-' | append: handle_value | append: '.png' %}
+                    {% assign colorImgUrl = file_name | file_img_url: '100x100' %}
+                    
+                    <button type="button" 
+                            class="w-12 h-12 rounded-md transition-all duration-300 custom-option-btn swatch-btn ring-offset-1 {% if forloop.first %}ring-2 ring-primary ring-offset-2{% else %}ring-1 ring-outline-variant{% endif %}" 
+                            style="background-image: url('{{ colorImgUrl }}'); background-color: {{ color_hex }}; background-size: cover; background-position: center; border-radius: 6px !important;" 
+                            data-name="properties[Mat Color]" 
+                            data-value="{{ color_name }}" 
+                            title="{{ color_name }}"></button>
+                  {% endfor %}
+                </div>
+                {% assign first_fallback = fallback_colors[0] | split: "|" %}
+                <input type="hidden" name="properties[Mat Color]" id="CustomColorInput" value="{{ first_fallback[0] }}">
+              {% endif %}
             </div>
 
             <!-- Live Preview Container for M2M Products (Visualizer directly under Step 1) -->
@@ -555,7 +746,7 @@
               </div>
             </div>
 
-            <!-- Step 2: Enter exact Width and Length -->
+             <!-- Step 2: Enter exact Width and Length -->
             <div class="option-selector-wrapper" style="margin-top: 24px;">
               <label style="display: block; font-size: 12px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: #111; margin-bottom: 12px;">
                 Step 2: Enter Dimensions
@@ -563,29 +754,31 @@
               <div style="display: flex; gap: 16px; width: 100%;">
                 <div style="flex: 1;">
                   <label for="CustomWidthInput" style="display: block; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; color: #555; margin-bottom: 8px;">
-                    Exact Width (24" to 48")
+                    Exact Width ({{ min_width }}" to {{ max_width }}")
                   </label>
                   <input type="number" 
                          id="CustomWidthInput" 
                          name="properties[Exact Mat Width]" 
                          style="border: 1px solid #ccc; border-radius: 6px; padding: 12px 16px; width: 100%; font-size: 14px; font-weight: 600; outline: none; box-sizing: border-box;"
-                         placeholder="Width (e.g. 24)" 
-                         min="24" 
-                         max="48" 
+                         placeholder="Width (e.g. {{ min_width }})" 
+                         min="{{ min_width }}" 
+                         max="{{ max_width }}" 
                          required>
+                  <p id="WidthErrorMsg" style="color: #ef4444; font-size: 11px; font-weight: bold; margin-top: 6px; display: none;">Must be between {{ min_width }} and {{ max_width }}</p>
                 </div>
                 <div style="flex: 1;">
                   <label for="CustomLengthInput" style="display: block; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; color: #555; margin-bottom: 8px;">
-                    Exact Length (48" to 144")
+                    Exact Length ({{ min_length }}" to {{ max_length }}")
                   </label>
                   <input type="number" 
                          id="CustomLengthInput" 
                          name="properties[Exact Mat Length]" 
                          style="border: 1px solid #ccc; border-radius: 6px; padding: 12px 16px; width: 100%; font-size: 14px; font-weight: 600; outline: none; box-sizing: border-box;"
-                         placeholder="Length (e.g. 48)" 
-                         min="48" 
-                         max="144" 
+                         placeholder="Length (e.g. {{ min_length }})" 
+                         min="{{ min_length }}" 
+                         max="{{ max_length }}" 
                          required>
+                  <p id="LengthErrorMsg" style="color: #ef4444; font-size: 11px; font-weight: bold; margin-top: 6px; display: none;">Must be between {{ min_length }} and {{ max_length }}</p>
                 </div>
               </div>
             </div>
@@ -834,6 +1027,40 @@
 <!-- Active Variant Selector Logic script -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // Override limits dynamically from assets/m2m-config.js if available
+    const isM2M = {{ is_m2m | json }};
+    const productHandle = {{ product.handle | json }};
+    
+    if (isM2M && window.M2M_CONFIG && window.M2M_CONFIG[productHandle]) {
+      const config = window.M2M_CONFIG[productHandle];
+      
+      const widthInput = document.getElementById('CustomWidthInput');
+      const lengthInput = document.getElementById('CustomLengthInput');
+      
+      if (widthInput && lengthInput) {
+        widthInput.min = config.minWidth;
+        widthInput.max = config.maxWidth;
+        widthInput.placeholder = "Width (e.g. " + config.minWidth + ")";
+        
+        lengthInput.min = config.minLength;
+        lengthInput.max = config.maxLength;
+        lengthInput.placeholder = "Length (e.g. " + config.minLength + ")";
+        
+        // Update labels text
+        const widthLabel = widthInput.previousElementSibling;
+        if (widthLabel) widthLabel.textContent = "Exact Width (" + config.minWidth + '\" to ' + config.maxWidth + '\")';
+        
+        const lengthLabel = lengthInput.previousElementSibling;
+        if (lengthLabel) lengthLabel.textContent = "Exact Length (" + config.minLength + '\" to ' + config.maxLength + '\")';
+        
+        // Update error messages text
+        const widthError = document.getElementById('WidthErrorMsg');
+        if (widthError) widthError.textContent = "Must be between " + config.minWidth + " and " + config.maxWidth;
+        
+        const lengthError = document.getElementById('LengthErrorMsg');
+        if (lengthError) lengthError.textContent = "Must be between " + config.minLength + " and " + config.maxLength;
+      }
+    }
     // 1. Gallery Carousel & Thumbnail Interaction via Slick JS
     const thumbs = document.querySelectorAll('.premium-gallery-thumb-wrapper');
     const dots = document.querySelectorAll('.carousel-dot');
@@ -925,20 +1152,29 @@
       'Modern Grey': '#7d766f',
       'Crimson Red': '#8b0000',
       'Forest Green': '#1b4d3e',
-      'Earth Brown': '#5c4033'
+      'Earth Brown': '#5c4033',
+      'Grey Black': '#4A4A4A',
+      'Red Black': '#922222',
+      'Brown Black': '#4b3621',
+      'Green Black': '#1a4f32',
+      'Beige Black': '#c8ad7f',
+      'Grey': '#8E8E8E',
+      'Dark Grey': '#4A4A4A',
+      'Black': '#1d1b19',
+      'Red': '#922222'
     };
 
     function updateLivePreview() {
       // 1. Update Sizes
-      const widthVal = parseFloat($('#CustomWidthInput').val()) || 24;
-      const lengthVal = parseFloat($('#CustomLengthInput').val()) || 48;
+      const widthVal = parseFloat($('#CustomWidthInput').val()) || {{ min_width }};
+      const lengthVal = parseFloat($('#CustomLengthInput').val()) || {{ min_length }};
 
       $('#preview-width-label').text('Width: ' + widthVal + '"');
       $('#preview-length-label').text('Length: ' + lengthVal + '"');
 
-      // Linearly map length (48" - 144") to a visual width of 200px - 340px
-      const clampedLength = Math.max(48, Math.min(144, lengthVal));
-      let pWidth = 200 + ((clampedLength - 48) / (144 - 48)) * 140;
+      // Linearly map length (min - max) to a visual width of 200px - 340px
+      const clampedLength = Math.max({{ min_length }}, Math.min({{ max_length }}, lengthVal));
+      let pWidth = 200 + ((clampedLength - {{ min_length }}) / ({{ max_length }} - {{ min_length }})) * 140;
 
       // Mat height (vertical side) is proportional
       let pHeight = pWidth * (widthVal / lengthVal);
@@ -987,6 +1223,7 @@
       
       const val = $(this).attr('data-value');
       $('#CustomColorInput').val(val);
+      $('#SelectedColorName').text(val.toUpperCase());
       updateLivePreview();
     });
 
@@ -1077,37 +1314,78 @@
     function matchSelectedVariant() {
       const isM2M = {{ is_m2m | json }};
       let matchedVariant = null;
+      let invalidDimensions = false;
       
       if (isM2M) {
         // M2M Variant Selection based on Width & Length
         const widthInput = document.getElementById('CustomWidthInput');
         const lengthInput = document.getElementById('CustomLengthInput');
+        const widthErrorMsg = document.getElementById('WidthErrorMsg');
+        const lengthErrorMsg = document.getElementById('LengthErrorMsg');
+
         if (widthInput && lengthInput) {
-          const exactWVal = parseInt(widthInput.value, 10) || 24;
-          const exactLVal = parseInt(lengthInput.value, 10) || 48;
+          const exactWVal = parseInt(widthInput.value, 10);
+          const exactLVal = parseInt(lengthInput.value, 10);
           
-          const standardWidths = [24, 36, 48];
-          const standardLengths = [48, 54, 60, 66, 72, 78, 84, 90, 96, 102, 108, 114, 120, 126, 132, 138, 144];
+          const minW = parseInt(widthInput.min) || {{ min_width }};
+          const maxW = parseInt(widthInput.max) || {{ max_width }};
+          const minL = parseInt(lengthInput.min) || {{ min_length }};
+          const maxL = parseInt(lengthInput.max) || {{ max_length }};
           
-          function getNearestM2M(val, list) {
-            let matched = list.find(item => item >= val);
-            if (!matched) matched = list[list.length - 1];
-            return matched;
+          let wInvalid = false;
+          let lInvalid = false;
+
+          if (widthInput.value !== '' && (exactWVal < minW || exactWVal > maxW)) {
+            wInvalid = true;
+            invalidDimensions = true;
           }
           
-          const chargeableW = getNearestM2M(exactWVal, standardWidths);
-          const chargeableL = getNearestM2M(exactLVal, standardLengths);
-          
-          const targetWStr = chargeableW + '"';
-          const targetLStr = chargeableL + '"';
-          
-          matchedVariant = variantsData.find(variant => {
-            const opt1 = (variant.option1 || '').trim();
-            const opt2 = (variant.option2 || '').trim();
+          if (lengthInput.value !== '' && (exactLVal < minL || exactLVal > maxL)) {
+            lInvalid = true;
+            invalidDimensions = true;
+          }
+
+          if (widthErrorMsg) {
+            widthErrorMsg.style.display = wInvalid ? 'block' : 'none';
+            widthInput.style.borderColor = wInvalid ? '#ef4444' : '#ccc';
+          }
+          if (lengthErrorMsg) {
+            lengthErrorMsg.style.display = lInvalid ? 'block' : 'none';
+            lengthInput.style.borderColor = lInvalid ? '#ef4444' : '#ccc';
+          }
+
+          const calcWVal = exactWVal || minW;
+          const calcLVal = exactLVal || minL;
+
+          if (!invalidDimensions) {
+            let standardWidths = [{{ m2m_widths | split: ',' | join: ',' }}].filter(x => x > 0).sort((a, b) => a - b);
+            let standardLengths = [{{ m2m_lengths | split: ',' | join: ',' }}].filter(x => x > 0).sort((a, b) => a - b);
             
-            return (opt1 === targetWStr && opt2 === targetLStr) || (opt1 === targetLStr && opt2 === targetWStr) ||
-                   (opt1 === chargeableW.toString() && opt2 === chargeableL.toString()) || (opt1 === chargeableL.toString() && opt2 === chargeableW.toString());
-          });
+            if (window.M2M_CONFIG && window.M2M_CONFIG[productHandle]) {
+              standardWidths = window.M2M_CONFIG[productHandle].widths;
+              standardLengths = window.M2M_CONFIG[productHandle].lengths;
+            }
+            
+            function getNearestM2M(val, list) {
+              let matched = list.find(item => item >= val);
+              if (!matched) matched = list[list.length - 1];
+              return matched;
+            }
+            
+            const chargeableW = getNearestM2M(calcWVal, standardWidths);
+            const chargeableL = getNearestM2M(calcLVal, standardLengths);
+            
+            const targetWStr = chargeableW + '"';
+            const targetLStr = chargeableL + '"';
+            
+            matchedVariant = variantsData.find(variant => {
+              const opt1 = (variant.option1 || '').trim();
+              const opt2 = (variant.option2 || '').trim();
+              
+              return (opt1 === targetWStr && opt2 === targetLStr) || (opt1 === targetLStr && opt2 === targetWStr) ||
+                     (opt1 === chargeableW.toString() && opt2 === chargeableL.toString()) || (opt1 === chargeableL.toString() && opt2 === chargeableW.toString());
+            });
+          }
         }
       } else {
         // Standard Option matching
@@ -1136,7 +1414,14 @@
         }
       }
       
-      if (matchedVariant) {
+      if (invalidDimensions) {
+        cartBtn.setAttribute('disabled', 'disabled');
+        cartBtn.textContent = 'Invalid Size';
+        if (buyBtn) {
+          buyBtn.setAttribute('disabled', 'disabled');
+        }
+        priceDisplay.textContent = '---';
+      } else if (matchedVariant) {
         // Update input ID
         variantIdInput.value = matchedVariant.id;
         
@@ -1167,6 +1452,7 @@
         if (buyBtn) {
           buyBtn.setAttribute('disabled', 'disabled');
         }
+        priceDisplay.textContent = '---';
       }
     }
 
@@ -1192,6 +1478,7 @@
     // Quick checkout Buy Now action
     if (buyBtn) {
       buyBtn.addEventListener('click', function() {
+        if (this.hasAttribute('disabled')) return;
         const varId = variantIdInput.value;
         const qty = qtyInput.value;
         if (varId) {

@@ -59,6 +59,12 @@
   .promise-carousel {
     margin: 0 -10px;
   }
+  .promise-carousel.slick-initialized .slick-track {
+    max-width: none !important;
+  }
+  .promise-carousel.slick-initialized .slick-slide {
+    max-width: none !important;
+  }
   .promise-card-wrapper {
     padding: 0 10px;
     outline: none;
@@ -290,53 +296,59 @@
     var $carousel = $('#PromiseCarousel-{{ section.id }}');
     var $progressBar = $('#PromiseProgress-{{ section.id }}');
 
-    if (typeof $ !== 'undefined' && $.fn.slick && $carousel.length) {
-      $carousel.slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        arrows: false,
-        dots: false,
-        infinite: false,
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 2
+    function initPromiseCarousel() {
+      if (typeof $ !== 'undefined' && $.fn.slick && $carousel.length) {
+        $carousel.slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: false,
+          infinite: false,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1
+              }
             }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
+          ]
+        });
 
-      var totalSlides = {{ section.blocks.size }};
-      var slidesToShow = $carousel.slick('slickGetOption', 'slidesToShow');
-      var maxSlide = Math.max(0, totalSlides - slidesToShow);
+        var totalSlides = {{ section.blocks.size }};
+        var slidesToShow = $carousel.slick('slickGetOption', 'slidesToShow');
+        var maxSlide = Math.max(0, totalSlides - slidesToShow);
 
-      function updateProgress(currentSlide) {
-        var calc = ((currentSlide + 1) / (maxSlide + 1)) * 100;
-        if(calc > 100) calc = 100;
-        $progressBar.css('width', calc + '%');
+        function updateProgress(currentSlide) {
+          var calc = ((currentSlide + 1) / (maxSlide + 1)) * 100;
+          if(calc > 100) calc = 100;
+          $progressBar.css('width', calc + '%');
+        }
+
+        // Init progress bar
+        updateProgress(0);
+
+        $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+          updateProgress(nextSlide);
+        });
+
+        $('#PromisePrev-{{ section.id }}').on('click', function() {
+          $carousel.slick('slickPrev');
+        });
+        $('#PromiseNext-{{ section.id }}').on('click', function() {
+          $carousel.slick('slickNext');
+        });
+      } else {
+        setTimeout(initPromiseCarousel, 50);
       }
-
-      // Init progress bar
-      updateProgress(0);
-
-      $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-        updateProgress(nextSlide);
-      });
-
-      $('#PromisePrev-{{ section.id }}').on('click', function() {
-        $carousel.slick('slickPrev');
-      });
-      $('#PromiseNext-{{ section.id }}').on('click', function() {
-        $carousel.slick('slickNext');
-      });
     }
+
+    initPromiseCarousel();
   });
 </script>
 

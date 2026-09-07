@@ -5607,13 +5607,12 @@ quality-checklist[data-animation=true] .checklist-wrap__image .icon {
   line-height: 1;
   display: inline-block;
   vertical-align: middle;
-  font-family: 'icomoon';
   position: relative;
   margin: 0 -3px 0 0;
 }
 
 .rating-star::after {
-  content: '\e900 \e900 \e900 \e900 \e900';
+  content: '★★★★★';
   left: 0;
   color: rgb(var(--color-foreground));
   letter-spacing: calc(var(--letter-spacing) * 1rem);
@@ -5621,7 +5620,7 @@ quality-checklist[data-animation=true] .checklist-wrap__image .icon {
 
 .rating-star::before {
   position: absolute;
-  content: '\e901 \e901 \e901 \e901 \e901';
+  content: '★★★★★';
   left: 0;
   background: linear-gradient(
     90deg,

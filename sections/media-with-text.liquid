@@ -33,7 +33,7 @@
                 {% case block.type %}
                   {%- when 'heading' -%}
                     <h2
-                      class="h2 {{ block.settings.font_type }}"
+                      class="h2 {{ block.settings.font_type }} feature-row__title"
                       style="--font-section-scale: {{ block.settings.font_size | divided_by: 100.0 }};"
                       {{ block.shopify_attributes }}
                     >
@@ -70,7 +70,7 @@
             class="feature-row__item feature-row__item--image"
             style="--media-width: {{ section.settings.media_width }}px;"
           >
-            {% if section.settings.image != blank or section.settings.video != blank %}
+            {% if section.settings.image != blank or section.settings.video != blank or section.settings.video_asset_name != blank %}
               {% capture img_id %}FeatureRowImage-{{ section.id }}{% endcapture %}
               {% capture wrapper_id %}FeatureRowImageWrapper-{{ section.id }}{% endcapture %}
               {% assign media_aspect_ratio = 1.7 %}
@@ -90,7 +90,14 @@
                       style="padding-bottom: {{ 1 | divided_by: media_aspect_ratio | times: 100 }}%;"
                     {% endif %}
                   >
-                    {% if section.settings.video != blank %}
+                    {% if section.settings.video_asset_name != blank %}
+                      <video
+                        src="{{ section.settings.video_asset_name | asset_url }}"
+                        class="feature-row__image"
+                        {% if section.settings.autoplay_video %}autoplay loop muted playsinline{% else %}controls{% endif %}
+                        style="width: 100%; height: 100%; object-fit: cover;"
+                      ></video>
+                    {% elsif section.settings.video != blank %}
                       {%- capture "video_classes" -%}
                         feature-row__image{% if section.settings.autoplay_video %} feature-row__video--autoplay{% else%} feature-row__video{% endif %}{%- endcapture -%}
                       {% liquid
@@ -238,6 +245,12 @@
       "id": "video",
       "label": "t:sections.media-with-text.settings.video.label",
       "info": "t:sections.media-with-text.settings.video.info"
+    },
+    {
+      "type": "text",
+      "id": "video_asset_name",
+      "label": "Asset Video Filename",
+      "info": "E.g., three-layar.mp4 (must be in assets folder)"
     },
     {
       "type": "checkbox",
@@ -437,8 +450,12 @@
     {
       "type": "heading",
       "name": "t:sections.media-with-text.blocks.heading.name",
-      "limit": 1,
       "settings": [
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge / Eyebrow Text"
+        },
         {
           "type": "text",
           "id": "title",
@@ -484,7 +501,6 @@
     {
       "type": "text",
       "name": "t:sections.media-with-text.blocks.text.name",
-      "limit": 1,
       "settings": [
         {
           "type": "richtext",
@@ -531,7 +547,6 @@
     {
       "type": "button",
       "name": "t:sections.media-with-text.blocks.button.name",
-      "limit": 1,
       "settings": [
         {
           "type": "text",

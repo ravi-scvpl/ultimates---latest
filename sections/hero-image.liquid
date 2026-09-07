@@ -123,11 +123,11 @@
                     style="--font-color: {{ block.settings.font_color }};--font-section-scale: {{ block.settings.font_size | divided_by: 100.0 }};"
                     {{ block.shopify_attributes }}
                   >
-                    <h2 class="h0">
+                    <h2 class="h0 hero-image__title">
                       {{ block.settings.heading }}
                     </h2>
                     {%- if block.settings.subheading != blank -%}
-                      <p>{{ block.settings.subheading }}</p>
+                      <p class="hero-image__description">{{ block.settings.subheading }}</p>
                     {%- endif -%}
                   </div>
                 {%- when 'buttons' -%}
@@ -218,11 +218,19 @@
                         style="--font-color: {{ block.settings.font_color }};--font-section-scale: {{ block.settings.font_size | divided_by: 100.0 }};"
                         {{ block.shopify_attributes }}
                       >
-                        <h2 class="h0">
+                        {%- if block.settings.badge != blank -%}
+                          <div class="hero-image__badge-wrapper">
+                            <span class="hero-image__badge">
+                              <span class="hero-image__badge-dot"></span>
+                              {{ block.settings.badge }}
+                            </span>
+                          </div>
+                        {%- endif -%}
+                        <h2 class="h0 hero-image__title">
                           {{ block.settings.heading }}
                         </h2>
                         {%- if block.settings.subheading != blank -%}
-                          <p>{{ block.settings.subheading }}</p>
+                          <p class="hero-image__description">{{ block.settings.subheading }}</p>
                         {%- endif -%}
                       </div>
                     {%- when 'buttons' -%}
@@ -509,6 +517,11 @@
       "name": "t:sections.hero-image.blocks.heading.name",
       "limit": 1,
       "settings": [
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Eyebrow / Badge Text"
+        },
         {
           "type": "text",
           "id": "heading",

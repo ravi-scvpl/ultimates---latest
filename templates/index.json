@@ -6,7 +6,7 @@
         "heading_4YygYm": {
           "type": "heading",
           "settings": {
-            "title": "",
+            "title": "Welcome to Ultimats",
             "font_size": 93,
             "font_type": "heading-font"
           }
@@ -14,7 +14,7 @@
         "text_cynpJ6": {
           "type": "text",
           "settings": {
-            "text": "<h3>Welcome to Ultimats</h3><p>Ultimats is India’s leading brand of premium floor mats for commercial & home spaces, engineered for superior functional<br/>performance. </p><p>At Ultimats, we specialize in creating bespoke matting products that elevate the aesthetic appeal of your premises. Our strength lies in our passion for innovation and functional design, as each mat is crafted with precision and attention to detail.</p><p>Our manufactured product range includes aluminium entrance mats, commercial barrier matting and dust-control carpet floormats for both outdoor and indoor use.</p><p>Step into a world where form meets function, and every detail reflects uncompromising quality. </p>",
+            "text": "<p>India’s leading brand of premium floor mats for commercial & residential spaces, engineered for superior functional performance and aesthetic refinement.</p><p>We craft bespoke entrance solutions—from architectural aluminium grates to luxury barrier and dust-control mats—engineered with precision, durability, and elegance.</p>",
             "font_size": 100,
             "font_type": "body-font"
           }
@@ -22,8 +22,8 @@
         "button_E7ayH6": {
           "type": "button",
           "settings": {
-            "button_label": "",
-            "button_link": ""
+            "button_label": "Explore Collections",
+            "button_link": "/collections/all"
           }
         }
       },
@@ -1278,8 +1278,8 @@
       "type": "three-layer-feature",
       "settings": {
         "asset_video_name": "three-layar.mp4",
-        "heading": "HEAT TRAP TECH",
-        "description": "<p>Zarf’s multi-layered winter blankets ensure maximum warmth with minimum weight.</p><p>Each layer traps heat individually to ensure that warmth stays consistent throughout the night. Layering the fabric increases heat retention levels as compared to traditional thick blanket fabrics.</p>"
+        "heading": "DUST TRAP TECH",
+        "description": "<p>Ultimats mats multi-layered structure.</p><p>Each layer traps dirt individually to ensure that dirt stays trapped throughout the night. Layering the fabric increases dirt trapping levels as compared to traditional mats.</p>"
       }
     },
     "custom_liquid_m2m": {

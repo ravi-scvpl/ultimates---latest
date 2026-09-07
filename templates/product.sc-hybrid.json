@@ -232,58 +232,6 @@
         "padding_bottom": 0
       }
     },
-    "product_benefits_reels_LaqHqw": {
-      "type": "product-benefits-reels",
-      "name": "Product video reels",
-      "settings": {
-        "section_title": "Better By Design"
-      }
-    },
-    "video_column_WxkNP4": {
-      "type": "video-column",
-      "blocks": {
-        "column_CFzWQk": {
-          "type": "column",
-          "settings": {
-            "video": "shopify://files/videos/Popular one.mp4",
-            "video_embed": "",
-            "video_link": ""
-          }
-        },
-        "column_ppnqqe": {
-          "type": "column",
-          "settings": {
-            "video": "shopify://files/videos/UltiClean Ad.mp4",
-            "video_embed": "",
-            "video_link": ""
-          }
-        },
-        "column_Nw3ARq": {
-          "type": "column",
-          "settings": {
-            "video": "shopify://files/videos/Hybrid Ad 1.mp4",
-            "video_embed": "",
-            "video_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_CFzWQk",
-        "column_ppnqqe",
-        "column_Nw3ARq"
-      ],
-      "settings": {
-        "title": "product videos",
-        "description": "Discover the features and benefits of  ULTIMATS in these quick, engaging videos. See how our mats perform, learn about their key functionalities, and get a closer look at our designs. Perfect for anyone looking to make an informed purchase decision!",
-        "play_onload": false,
-        "social_handle": "instagram.com/ultimats_official/",
-        "social_link": "social_instagram_link",
-        "font_size": 100,
-        "background": "main-background",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "product-content": {
       "type": "product-content",
       "blocks": {
@@ -590,8 +538,6 @@
     "custom_liquid_rVU8DQ",
     "custom_liquid_67cWCH",
     "custom_liquid_AqJtzz",
-    "product_benefits_reels_LaqHqw",
-    "video_column_WxkNP4",
     "product-content",
     "size-chart",
     "customer_reviews_DkBmVL",

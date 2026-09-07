@@ -869,31 +869,35 @@ display: none;
   overflow: hidden !important;
 }
 
-/* Style Hero text colors and typography for premium cream background */
+/* Style Hero text typography and colors for premium layout */
 .premium-hero-layout .hero-image__text h2,
-.premium-hero-layout .hero-image__text p {
-  color: #1c1c17 !important;
-  --font-color: #1c1c17 !important;
-}
-.premium-hero-layout .hero-image__text h2 {
+.premium-hero-layout .hero-image__title {
+  color: #ffffff !important;
   font-family: 'Playfair Display', serif !important;
-  font-size: 4.5rem !important;
-  font-weight: 400 !important;
-  line-height: 1.1 !important;
-  margin: 0 0 1rem 0 !important;
+  font-size: clamp(2.4rem, 4vw, 4rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.12 !important;
+  margin: 0 0 0.875rem 0 !important;
   text-transform: none !important;
-  letter-spacing: normal !important;
+  letter-spacing: -0.015em !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45) !important;
 }
+
 @media screen and (max-width: 768px) {
-  .premium-hero-layout .hero-image__text h2 {
-    font-size: 2.75rem !important;
+  .premium-hero-layout .hero-image__text h2,
+  .premium-hero-layout .hero-image__title {
+    font-size: 2.25rem !important;
   }
 }
-.premium-hero-layout .hero-image__text p {
-  font-family: 'Inter', sans-serif !important;
-  font-size: 1.25rem !important;
-  line-height: 1.5 !important;
-  opacity: 0.8 !important;
+
+.premium-hero-layout .hero-image__text p,
+.premium-hero-layout .hero-image__description {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  font-size: clamp(0.95rem, 1.15vw, 1.15rem) !important;
+  line-height: 1.65 !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35) !important;
+  opacity: 1 !important;
   margin: 0 !important;
 }
 

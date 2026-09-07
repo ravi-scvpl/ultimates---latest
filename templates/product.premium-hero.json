@@ -20,13 +20,6 @@
         "subheading": "Explore complementary products for a cohesive entrance experience."
       }
     },
-    "product_benefits_reels_LaqHqw": {
-      "type": "product-benefits-reels",
-      "name": "Product video reels",
-      "settings": {
-        "section_title": "Better By Design"
-      }
-    },
     "enquiry": {
       "type": "premium-commercial-enquiry",
       "settings": {}
@@ -49,7 +42,6 @@
   },
   "order": [
     "main",
-    "product_benefits_reels_LaqHqw",
     "recommendations",
     "enquiry",
     "reviews"
