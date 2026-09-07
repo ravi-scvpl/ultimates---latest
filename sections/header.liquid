@@ -289,7 +289,14 @@
                                               {%- endif -%}
                                               {{ childlink_title }}
                                             </div>
-                                            <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                             <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                              {%- assign has_ulticlean_mob = false -%}
+                                              {%- for grandchildlink in childlink.links -%}
+                                                {%- assign check_g_title = grandchildlink.title | downcase -%}
+                                                {%- if check_g_title contains 'ulticlean' -%}
+                                                  {%- assign has_ulticlean_mob = true -%}
+                                                {%- endif -%}
+                                              {%- endfor -%}
                                               {%- for grandchildlink in childlink.links -%}
                                                 {% liquid
                                                   assign grandchildlink_title = grandchildlink.title | escape
@@ -305,7 +312,22 @@
                                                       assign icon_grandchild_file_url = grandchildlink_icon | append: '.png' | file_img_url: '100x100'
                                                     endif
                                                   endif
+                                                  assign gtitle_down = grandchildlink_title | downcase
                                                 %}
+                                                {%- if childlink_title == 'Carpet Mats' and gtitle_down contains 'ultispark' and has_ulticlean_mob == false -%}
+                                                  <li>
+                                                    <a
+                                                      href="/pages/ulticlean"
+                                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if request.path == '/pages/ulticlean' %} menu-drawer__menu-item--active{% endif %}"
+                                                      {% if request.path == '/pages/ulticlean' %}
+                                                        aria-current="page"
+                                                      {% endif %}
+                                                    >
+                                                      ULTICLEAN
+                                                    </a>
+                                                  </li>
+                                                  {%- assign has_ulticlean_mob = true -%}
+                                                {%- endif -%}
                                                 <li>
                                                   <a
                                                     href="{{ grandchildlink.url }}"
@@ -330,6 +352,19 @@
                                                   </a>
                                                 </li>
                                               {%- endfor -%}
+                                              {%- if childlink_title == 'Carpet Mats' and has_ulticlean_mob == false -%}
+                                                <li>
+                                                  <a
+                                                    href="/pages/ulticlean"
+                                                    class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if request.path == '/pages/ulticlean' %} menu-drawer__menu-item--active{% endif %}"
+                                                    {% if request.path == '/pages/ulticlean' %}
+                                                      aria-current="page"
+                                                    {% endif %}
+                                                  >
+                                                    ULTICLEAN
+                                                  </a>
+                                                </li>
+                                              {%- endif -%}
                                             </ul>
                                           </div>
                                         {%- endif -%}
@@ -426,7 +461,29 @@
                                                 {{ childlink.title | escape }}
                                               </div>
                                               <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                                {%- assign has_ulticlean_mob2 = false -%}
                                                 {%- for grandchildlink in childlink.links -%}
+                                                  {%- assign check_g_title = grandchildlink.title | downcase -%}
+                                                  {%- if check_g_title contains 'ulticlean' -%}
+                                                    {%- assign has_ulticlean_mob2 = true -%}
+                                                  {%- endif -%}
+                                                {%- endfor -%}
+                                                {%- for grandchildlink in childlink.links -%}
+                                                  {%- assign gtitle_down = grandchildlink.title | downcase -%}
+                                                  {%- if childlink.title == 'Carpet Mats' and gtitle_down contains 'ultispark' and has_ulticlean_mob2 == false -%}
+                                                    <li>
+                                                      <a
+                                                        href="/pages/ulticlean"
+                                                        class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if request.path == '/pages/ulticlean' %} menu-drawer__menu-item--active{% endif %}"
+                                                        {% if request.path == '/pages/ulticlean' %}
+                                                          aria-current="page"
+                                                        {% endif %}
+                                                      >
+                                                        ULTICLEAN
+                                                      </a>
+                                                    </li>
+                                                    {%- assign has_ulticlean_mob2 = true -%}
+                                                  {%- endif -%}
                                                   <li>
                                                     <a
                                                       href="{{ grandchildlink.url }}"
@@ -439,6 +496,19 @@
                                                     </a>
                                                   </li>
                                                 {%- endfor -%}
+                                                {%- if childlink.title == 'Carpet Mats' and has_ulticlean_mob2 == false -%}
+                                                  <li>
+                                                    <a
+                                                      href="/pages/ulticlean"
+                                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if request.path == '/pages/ulticlean' %} menu-drawer__menu-item--active{% endif %}"
+                                                      {% if request.path == '/pages/ulticlean' %}
+                                                        aria-current="page"
+                                                      {% endif %}
+                                                    >
+                                                      ULTICLEAN
+                                                    </a>
+                                                  </li>
+                                                {%- endif -%}
                                               </ul>
                                             </div>
                                           {%- endif -%}
@@ -1275,6 +1345,13 @@
 
                                     </div>
                                     <ul class="header__submenu list-menu">
+                                      {%- assign has_ulticlean = false -%}
+                                      {%- for grandchildlink in childlink.links -%}
+                                        {%- assign check_g_title = grandchildlink.title | downcase -%}
+                                        {%- if check_g_title contains 'ulticlean' -%}
+                                          {%- assign has_ulticlean = true -%}
+                                        {%- endif -%}
+                                      {%- endfor -%}
                                       {%- for grandchildlink in childlink.links -%}
                                         {% liquid
                                           assign grandchildlink_title = grandchildlink.title | escape
@@ -1290,7 +1367,22 @@
                                               assign icon_grandchild_file_url = grandchildlink_icon | append: '.png' | file_img_url: '100x100'
                                             endif
                                           endif
+                                          assign gtitle_down = grandchildlink_title | downcase
                                         %}
+                                        {%- if childlink_title == 'Carpet Mats' and gtitle_down contains 'ultispark' and has_ulticlean == false -%}
+                                          <li>
+                                            <a
+                                              href="/pages/ulticlean"
+                                              class="header__menu-item list-menu__item link link--text focus-inset{% if request.path == '/pages/ulticlean' %} list-menu__item--active{% endif %}"
+                                              {% if request.path == '/pages/ulticlean' %}
+                                                aria-current="page"
+                                              {% endif %}
+                                            >
+                                              ULTICLEAN
+                                            </a>
+                                          </li>
+                                          {%- assign has_ulticlean = true -%}
+                                        {%- endif -%}
                                         <li>
                                           <a
                                             href="{{ grandchildlink.url }}"
@@ -1315,6 +1407,19 @@
                                           </a>
                                         </li>
                                       {%- endfor -%}
+                                      {%- if childlink_title == 'Carpet Mats' and has_ulticlean == false -%}
+                                        <li>
+                                          <a
+                                            href="/pages/ulticlean"
+                                            class="header__menu-item list-menu__item link link--text focus-inset{% if request.path == '/pages/ulticlean' %} list-menu__item--active{% endif %}"
+                                            {% if request.path == '/pages/ulticlean' %}
+                                              aria-current="page"
+                                            {% endif %}
+                                          >
+                                            ULTICLEAN
+                                          </a>
+                                        </li>
+                                      {%- endif -%}
                                     </ul>
                                   </div>
                                 {%- endif -%}

@@ -1,0 +1,457 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_height": 40,
+        "background": "main-background",
+        "banner_image": "shopify://shop_images/golden-autumn-leaves.jpg",
+        "parallax": true,
+        "show_scrim": true,
+        "scrim_lightness": 75
+      }
+    },
+    "rich_text_jEwqRH": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_bi7zR4": {
+          "type": "heading",
+          "settings": {
+            "heading": "About US",
+            "font_size": 100,
+            "font_type": "heading-font"
+          }
+        },
+        "text_aE4dpi": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>We are committed to growing with our partners by providing the best matting solution, highest quality and the fastest delivery to the end-user customer. This commitment is the reason why we are by far the #1 Mat Company in the Indian Sub-Continent.</p><p>Backed with a strong national network and a large reseller base internationally, our diversified operations are seamlessly integrated right from product manufacturing to organized retail to providing high quality end-customer service.</p><p>Our high business ethics, reliability of our products and services and respect for people have contributed towards building our good corporate image in the industry.</p>",
+            "font_size": 100,
+            "font_type": "body-font"
+          }
+        },
+        "button_ndQX9i": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style": "ghost"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bi7zR4",
+        "text_aE4dpi",
+        "button_ndQX9i"
+      ],
+      "disabled": true,
+      "settings": {
+        "text_align": "left",
+        "background": "main-background",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "hero_image_V6thPj": {
+      "type": "hero-image",
+      "blocks": {
+        "heading_AMVL39": {
+          "type": "heading",
+          "settings": {
+            "heading": "ULTICLEAN®",
+            "subheading": "Plush dual-tone soft fibre carpet matting with durable vinyl backing and double-compressed borders for superior interior dust control.",
+            "font_size": 100,
+            "font_color": "#ffffff"
+          }
+        },
+        "buttons_Pjhx84": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Customize Your Mat",
+            "button_link_1": "https://ultimats.com/products/ulticlean-carpet-mat-1",
+            "button_label_2": "Explore Specs",
+            "button_link_2": "",
+            "font_size": 100,
+            "button_color": "#ffffff",
+            "font_button_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_AMVL39",
+        "buttons_Pjhx84"
+      ],
+      "settings": {
+        "background_image": "none",
+        "custom_background_image": "shopify://shop_images/product-option-ulticlean-grey-black.png",
+        "image_height": 70,
+        "show_scrim": false,
+        "scrim_lightness_background": 0,
+        "image_animation": "fade-in",
+        "transparent_header": false,
+        "image_size": 50,
+        "image_vertical_position": "bottom",
+        "image_below_position": 5,
+        "image_horizontal_position": 100,
+        "show_secondary_scrim": false,
+        "scrim_lightness": 0,
+        "content_aligment": "left",
+        "vertical_position": 50,
+        "horizontal_position": 10,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "media_with_text_QiiP9T": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_nG9xjU": {
+          "type": "heading",
+          "settings": {
+            "title": "UltiClean® Performance",
+            "font_size": 100,
+            "font_type": "heading-font"
+          }
+        },
+        "text_6P6iEr": {
+          "type": "text",
+          "settings": {
+            "text": "<p>UltiClean is an uber rich-look floormat with a plush dual-tone soft fibre carpet and a durable vinyl backing. Customize to your required size with our exclusive double compressed borders.</p>",
+            "font_size": 100,
+            "font_type": "body-font"
+          }
+        },
+        "button_9We6cF": {
+          "type": "button",
+          "settings": {
+            "button_label": "Configure Your UltiClean",
+            "button_link": "https://ultimats.com/products/ulticlean-carpet-mat-1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_nG9xjU",
+        "text_6P6iEr",
+        "button_9We6cF"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/product-option-ulticlean-grey-black.png",
+        "autoplay_video": false,
+        "image_ratio": "adapt",
+        "media_width": 780,
+        "vertical_text_align": "top",
+        "layout": "right",
+        "section_align": "center",
+        "overlap_text": true,
+        "image_animation": "discover-image",
+        "background": "background-modal",
+        "frosted_glass": false,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "media_with_text_dPNJTY": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_LDRVbE": {
+          "type": "heading",
+          "settings": {
+            "title": "",
+            "font_size": 100,
+            "font_type": "heading-font"
+          }
+        },
+        "text_t6wY4w": {
+          "type": "text",
+          "settings": {
+            "text": "<p>1. Plush dual-tone soft fibres for superior dust trapping and moisture retention</p><p>2. Double-compressed vinyl borders for extended longevity, safety and neat looks</p>",
+            "font_size": 100,
+            "font_type": "body-font"
+          }
+        },
+        "button_z66EVg": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_LDRVbE",
+        "text_t6wY4w",
+        "button_z66EVg"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/product-option-president-grey-black.png",
+        "autoplay_video": true,
+        "image_ratio": "adapt",
+        "media_width": 780,
+        "vertical_text_align": "center",
+        "layout": "left",
+        "section_align": "center",
+        "overlap_text": true,
+        "image_animation": "fade-up",
+        "background": "background-modal",
+        "frosted_glass": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "checklist_iP6XbV": {
+      "type": "checklist",
+      "blocks": {
+        "line_text_fDihxG": {
+          "type": "line_text",
+          "settings": {
+            "icon": "shield-check",
+            "text": "Plush dual-tone soft fibres"
+          }
+        },
+        "line_text_CrhqBR": {
+          "type": "line_text",
+          "settings": {
+            "icon": "shield-check",
+            "text": "Durable prime vinyl backing"
+          }
+        },
+        "line_text_qMhNcq": {
+          "type": "line_text",
+          "settings": {
+            "icon": "shield-check",
+            "text": "Removes and hides dirt & moisture"
+          }
+        },
+        "line_text_UXwHwM": {
+          "type": "line_text",
+          "settings": {
+            "icon": "shield-check",
+            "text": "Double-compressed vinyl borders"
+          }
+        },
+        "line_text_PCwie9": {
+          "type": "line_text",
+          "settings": {
+            "icon": "shield-check",
+            "text": "100% washable & easy to maintain"
+          }
+        },
+        "line_text_wJMWyM": {
+          "type": "line_text",
+          "settings": {
+            "icon": "shield-check",
+            "text": "made in india"
+          }
+        }
+      },
+      "block_order": [
+        "line_text_fDihxG",
+        "line_text_CrhqBR",
+        "line_text_qMhNcq",
+        "line_text_UXwHwM",
+        "line_text_PCwie9",
+        "line_text_wJMWyM"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/product-option-ulticlean-grey-black.png",
+        "show_scrim": false,
+        "scrim_lightness": 0,
+        "icon": "shield-check",
+        "text": "",
+        "link": "",
+        "font_size": 70,
+        "font_type": "heading-font",
+        "background": "background-modal",
+        "margin_top": 44,
+        "margin_bottom": 44
+      }
+    },
+    "media_with_text_f6VaAm": {
+      "type": "media-with-text",
+      "blocks": {
+        "heading_xKT8RP": {
+          "type": "heading",
+          "settings": {
+            "title": "Technical Specifications",
+            "font_size": 80,
+            "font_type": "heading-font"
+          }
+        },
+        "text_rRUwgB": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Product Name: UltiClean</p><p>Application: Commercial & residential interior/exterior use</p><p>Surface Material: Dual-tone plush soft polypropylene carpet fibres</p><p>Backing Material: Prime vinyl</p><p>Product Height : 9 mm</p><p>Borders: 12 mm double-compressed vinyl</p><p>Sizes: Customized & Standard Presized</p><p>Cleaning: 100% Washable</p><p>Warranty: 12 months</p>",
+            "font_size": 80,
+            "font_type": "body-font"
+          }
+        },
+        "button_CcRHKM": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_xKT8RP",
+        "text_rRUwgB",
+        "button_CcRHKM"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/product-option-president-grey-black.png",
+        "autoplay_video": true,
+        "image_ratio": "adapt",
+        "media_width": 780,
+        "vertical_text_align": "top",
+        "layout": "left",
+        "section_align": "left",
+        "overlap_text": true,
+        "image_animation": "fade-up",
+        "background": "background-modal",
+        "frosted_glass": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "collapsible_content_QXqK9a": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_WD6BM3": {
+          "type": "collapsible_row",
+          "settings": {
+            "row_icon": "none",
+            "title": "Why choose UltiClean?",
+            "row_content": "<p>UltiClean offers a plush, luxurious aesthetic combined with robust dirt-trapping and moisture absorption capabilities, making it ideal for entrance doorways, office spaces, reception areas, and residential interiors.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_tdPPJk": {
+          "type": "collapsible_row",
+          "settings": {
+            "row_icon": "none",
+            "title": "Is UltiClean easy to clean?",
+            "row_content": "<p>Yes. UltiClean is 100% washable and quick-drying. Tap or vacuum for light cleaning or hose-down with water for deep-cleaning.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_jGM4U8": {
+          "type": "collapsible_row",
+          "settings": {
+            "row_icon": "none",
+            "title": "Why should a mat have double-compressed borders?",
+            "row_content": "<p>Double-compressed vinyl borders help significantly reduce trip and fall accidents, increase mat longevity by preventing edge fraying, and give an overall neat and finished appearance.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_3JfeEa": {
+          "type": "collapsible_row",
+          "settings": {
+            "row_icon": "none",
+            "title": "Are there any regulatory guidelines on commercial entrance matting?",
+            "row_content": "<p>The Americans with Disabilities Act sets specific code regulations for public and commercial buildings so that people with a wide range of disabilities can freely and easily access all areas. UltiClean satisfies ADA regulatory guidelines with its low profile and ramped borders.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_WD6BM3",
+        "collapsible_row_tdPPJk",
+        "collapsible_row_jGM4U8",
+        "collapsible_row_3JfeEa"
+      ],
+      "settings": {
+        "show_information": false,
+        "title": "FAQ",
+        "description": "<p>We've compiled a list of frequently asked questions to help you decide which matting configuration is the right choice for your premises.</p>",
+        "email_label": "",
+        "email": "",
+        "phone_label": "",
+        "phone": "",
+        "hours_label": "",
+        "hours": "",
+        "font_size": 100,
+        "background": "background-modal",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "rich_text_AkVmJE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gTBFic": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "font_size": 100,
+            "font_type": "heading-font"
+          }
+        },
+        "text_gqEX8q": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "font_size": 100,
+            "font_type": "heading-font"
+          }
+        },
+        "button_Yh9wT9": {
+          "type": "button",
+          "settings": {
+            "button_label": "customize your ulticlean",
+            "button_link": "https://ultimats.com/products/ulticlean-carpet-mat-1",
+            "button_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gTBFic",
+        "text_gqEX8q",
+        "button_Yh9wT9"
+      ],
+      "settings": {
+        "text_align": "center",
+        "background": "main-background",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "contact_form_awRX6D": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "need product support or a quote?",
+        "subtitle": "Our Customer Service Team Will Connect With You",
+        "show_email": false,
+        "show_phone": false,
+        "show_address": false,
+        "custom_address": "",
+        "show_facebook": false,
+        "handle_facebook": "Find us on Facebook",
+        "show_instagram": false,
+        "handle_instagram": "Find us on Instagram",
+        "show_twitter": false,
+        "handle_twitter": "Find us on Twitter",
+        "operation": "",
+        "response_time": "Thank you for contacting us. We will respond within 2 working days",
+        "font_size": 100,
+        "background": "main-background",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_jEwqRH",
+    "hero_image_V6thPj",
+    "media_with_text_QiiP9T",
+    "media_with_text_dPNJTY",
+    "checklist_iP6XbV",
+    "media_with_text_f6VaAm",
+    "collapsible_content_QXqK9a",
+    "rich_text_AkVmJE",
+    "contact_form_awRX6D"
+  ]
+}
