@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "parent": "index.json",
   "context": {
@@ -106,11 +115,9 @@
     "three_layer_new",
     "media_with_text_DFHWX8",
     "testimonial_new_tR48BX",
-    "feature_cards_NkQehE",
     "shop_by_collection_7nG7ye",
     "youtube_R7Aybe",
     "before-after",
-    "media_with_text_NBnet8",
     "collection_list_M8PTLN",
     "media_grid_RDgTig",
     "video_column_kginnU",
