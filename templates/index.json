@@ -67,7 +67,7 @@
         "card1": {
           "type": "card",
           "settings": {
-            "card_image": "shopify://shop_images/Hybrid_GreyMat_at_Home_entrance.png",
+            "card_image": "shopify://shop_images/003.png",
             "card_title": "Residential Mats",
             "link": "shopify://collections/shop-floormats",
             "background": "#565658",
@@ -77,7 +77,7 @@
         "card2": {
           "type": "card",
           "settings": {
-            "card_image": "shopify://shop_images/UltiDure_Grey_Mat_at_Office_Entrance.png",
+            "card_image": "shopify://shop_images/006.png",
             "card_title": "COMMERCIAL MATS",
             "link": "shopify://collections/commercial-floormats",
             "background": "#565658",
@@ -87,7 +87,7 @@
         "card3": {
           "type": "card",
           "settings": {
-            "card_image": "shopify://shop_images/UltiGrate_Pic_7d4cc6d5-5180-4b18-a700-7288325d5cc7.jpg",
+            "card_image": "shopify://shop_images/002.png",
             "card_title": "Aluminium Dust Buster Mats",
             "link": "shopify://pages/aluminium-dust-buster-mat",
             "background": "#565658",
@@ -97,7 +97,7 @@
         "card4": {
           "type": "card",
           "settings": {
-            "card_image": "shopify://shop_images/UltiDure_Living_Room_Interior.png",
+            "card_image": "shopify://shop_images/008.png",
             "card_title": "Anti-Skid       FloorMats",
             "link": "shopify://products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal",
             "background": "#565658",
