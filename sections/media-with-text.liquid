@@ -32,6 +32,11 @@
               {%- for block in section.blocks -%}
                 {% case block.type %}
                   {%- when 'heading' -%}
+                    {%- if block.settings.badge != blank -%}
+                      <div class="accent-font feature-row__badge" style="font-size: 0.85em; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;">
+                        {{ block.settings.badge | escape }}
+                      </div>
+                    {%- endif -%}
                     <h2
                       class="h2 {{ block.settings.font_type }} feature-row__title"
                       style="--font-section-scale: {{ block.settings.font_size | divided_by: 100.0 }};"
@@ -450,6 +455,7 @@
     {
       "type": "heading",
       "name": "t:sections.media-with-text.blocks.heading.name",
+      "limit": 1,
       "settings": [
         {
           "type": "text",

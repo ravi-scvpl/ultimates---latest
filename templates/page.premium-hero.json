@@ -230,17 +230,10 @@
     "three_layer_tech": {
       "type": "media-with-text",
       "blocks": {
-        "subtitle": {
-          "type": "heading",
-          "settings": {
-            "title": "PRODUCT TECHNOLOGY",
-            "font_size": 80,
-            "font_type": "accent-font"
-          }
-        },
         "heading": {
           "type": "heading",
           "settings": {
+            "badge": "PRODUCT TECHNOLOGY",
             "title": "MAT LAYER TECH",
             "font_size": 120,
             "font_type": "heading-font"
@@ -256,7 +249,6 @@
         }
       },
       "block_order": [
-        "subtitle",
         "heading",
         "text"
       ],
