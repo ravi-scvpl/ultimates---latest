@@ -326,12 +326,15 @@
       <!-- Right Column (Media and Proof Widget) -->
       <div class="premium-hero-media">
         <div class="premium-hero-image-wrapper">
-          {% if section.settings.video_filename != blank %}
-            <video class="premium-hero-image w-full h-full object-cover" 
-                   autoplay 
-                   loop 
-                   muted 
-                   playsinline>
+          {% if section.settings.video_url != blank %}
+            <video class="premium-hero-image w-full h-full object-cover" autoplay loop muted playsinline>
+              <source src="{{ section.settings.video_url }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          {% elsif section.settings.video != blank %}
+            {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, class: "premium-hero-image w-full h-full object-cover" }}
+          {% elsif section.settings.video_filename != blank %}
+            <video class="premium-hero-image w-full h-full object-cover" autoplay loop muted playsinline>
               <source src="{{ section.settings.video_filename | asset_url }}" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -341,12 +344,8 @@
                  alt="{{ section.settings.image.alt | default: section.settings.heading | escape }}" 
                  loading="eager">
           {% else %}
-            <video class="premium-hero-image w-full h-full object-cover" 
-                   autoplay 
-                   loop 
-                   muted 
-                   playsinline>
-              <source src="{{ '28bfbcdb977c4b51aebb1934c61b29b5.mp4' | asset_url }}" type="video/mp4">
+            <video class="premium-hero-image w-full h-full object-cover" autoplay loop muted playsinline>
+              <source src="https://cdn.shopify.com/videos/c/o/v/28bfbcdb977c4b51aebb1934c61b29b5.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           {% endif %}
@@ -531,11 +530,21 @@
       "default": "Homes, Offices, Hotels"
     },
     {
+      "type": "video",
+      "id": "video",
+      "label": "Shopify Hosted Video"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Direct Video URL (CDN Link)",
+      "info": "Paste CDN link from Shopify Admin > Content > Files"
+    },
+    {
       "type": "text",
       "id": "video_filename",
-      "label": "Hero Video Asset Filename",
-      "info": "To use a video from your assets folder, type its complete filename here (e.g., 28bfbcdb977c4b51aebb1934c61b29b5.mp4). Leaving this blank will play the default MP4 video.",
-      "default": "28bfbcdb977c4b51aebb1934c61b29b5.mp4"
+      "label": "Hero Video Asset Filename (Legacy)",
+      "info": "To use a video from your assets folder, type its complete filename here. Leaving this blank will play the default MP4 video."
     },
     {
       "type": "image_picker",

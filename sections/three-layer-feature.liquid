@@ -68,10 +68,12 @@
 <section class="three-layer-section" id="ThreeLayer-{{ section.id }}">
   <div class="three-layer-container">
     <div class="three-layer-media">
-      {% if section.settings.asset_video_name != blank %}
-        <video src="{{ section.settings.asset_video_name | asset_url }}" autoplay loop muted playsinline></video>
-      {% elsif section.settings.video %}
+      {% if section.settings.video_url != blank %}
+        <video src="{{ section.settings.video_url }}" autoplay loop muted playsinline></video>
+      {% elsif section.settings.video != blank %}
         {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+      {% elsif section.settings.asset_video_name != blank %}
+        <video src="{{ section.settings.asset_video_name | asset_url }}" autoplay loop muted playsinline></video>
       {% else %}
         {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
       {% endif %}
@@ -108,15 +110,21 @@
       "default": "#ffffff"
     },
     {
+      "type": "video",
+      "id": "video",
+      "label": "Shopify Hosted Video"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Direct Video URL (CDN Link)",
+      "info": "Paste CDN link from Shopify Admin > Content > Files"
+    },
+    {
       "type": "text",
       "id": "asset_video_name",
       "label": "Asset Video Filename",
-      "info": "E.g., three-layar.mp4 (must be in assets folder)"
-    },
-    {
-      "type": "video",
-      "id": "video",
-      "label": "Fallback Video (if not using asset)"
+      "info": "E.g., three-layar.mp4 (legacy assets folder fallback)"
     },
     {
       "type": "text",
