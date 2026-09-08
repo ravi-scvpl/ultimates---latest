@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "media_with_text_D4CAWR": {
@@ -6,6 +15,7 @@
         "heading_4YygYm": {
           "type": "heading",
           "settings": {
+            "badge": "",
             "title": "Welcome to Ultimats",
             "font_size": 93,
             "font_type": "heading-font"
@@ -35,6 +45,8 @@
       "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/Lady_Legs_Gif.gif",
+        "video_url": "",
+        "video_asset_name": "",
         "autoplay_video": false,
         "image_ratio": "adapt",
         "media_width": 570,
@@ -429,12 +441,110 @@
         "padding_bottom": 44
       }
     },
+    "promise_slider_new": {
+      "type": "promise-slider",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/1st.mp4",
+            "video_url": "",
+            "asset_video_name": "1st.mp4",
+            "title": "Moisture lock",
+            "text": "<p>UltiClean Red-Black</p>"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/2nd.mp4",
+            "video_url": "",
+            "asset_video_name": "2nd.mp4",
+            "title": "Dirt scrub",
+            "text": "<p>UltiScrape Grey</p>"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/3rd.mp4",
+            "video_url": "",
+            "asset_video_name": "3rd.mp4",
+            "title": "Anti slip Base",
+            "text": "<p>UltiDure Charcoal</p>"
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/4th.mp4",
+            "video_url": "",
+            "asset_video_name": "4th.mp4",
+            "title": "sustainable",
+            "text": "<p>Ultimat HD with borders - Grey</p>"
+          }
+        },
+        "card_5": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/5th.mp4",
+            "video_url": "",
+            "asset_video_name": "5th.mp4",
+            "title": "fast drying",
+            "text": "<p>UltiWipe Brown Black</p>"
+          }
+        },
+        "card_6": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/6th.mp4",
+            "video_url": "",
+            "asset_video_name": "6th.mp4",
+            "title": "built to last",
+            "text": "<p>UltiScrub Charcoal Noir</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5",
+        "card_6"
+      ],
+      "settings": {
+        "overlay_opacity": 40,
+        "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
+      }
+    },
+    "custom_liquid_m2m": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div style=\"text-align: center; padding: 60px 20px; background: #ffffff; color: #111111;\"><h2 style=\"font-size: 36px; margin-bottom: 16px; font-weight: 400; font-family: var(--font-heading-family); text-transform: uppercase;\">Made to Measure</h2><p style=\"font-size: 18px; color: #444444; max-width: 800px; margin: 0 auto;\">Customize your Floor Mat in your Preferred Style and Color - Tailor-made to your Exact Size</p></div>",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "three_layer_new": {
+      "type": "three-layer-feature",
+      "settings": {
+        "bg_color": "#000000",
+        "text_color": "#ffffff",
+        "video": "shopify://files/videos/WhatsApp Video 2026-09-04 at 2.57.29 PM.mp4",
+        "video_url": "",
+        "asset_video_name": "three-layar.mp4",
+        "heading": "DUST TRAP TECH",
+        "description": "<p>Ultimats mats multi-layered structure.</p><p>Each layer traps dirt individually to ensure that dirt stays trapped throughout the night. Layering the fabric increases dirt trapping levels as compared to traditional mats.</p>"
+      }
+    },
     "media_with_text_DFHWX8": {
       "type": "media-with-text",
       "blocks": {
         "heading_N4BLJG": {
           "type": "heading",
           "settings": {
+            "badge": "",
             "title": "UltiDure",
             "font_size": 100,
             "font_type": "heading-font"
@@ -464,6 +574,8 @@
       "name": "t:sections.media-with-text.presets.name",
       "settings": {
         "video": "shopify://files/videos/52E63c29d70040e79c8610922cf6f716.Hd-1080P-7.2Mbps-53637853.mp4",
+        "video_url": "",
+        "video_asset_name": "",
         "autoplay_video": true,
         "image_ratio": "square",
         "media_width": 460,
@@ -631,6 +743,9 @@
         "title": "Outdoor & Indoor Mats",
         "description": "Suited for all application areas",
         "font_size": 100,
+        "label_before": "Before",
+        "label_after": "After",
+        "initial_position": 50,
         "button_label": "",
         "button_link": "",
         "color_text": "primary-text-1",
@@ -646,6 +761,7 @@
         "heading_RyrjT3": {
           "type": "heading",
           "settings": {
+            "badge": "",
             "title": "Ultimat Heavy Duty Exterior Dirt Barrier Matting",
             "font_size": 80,
             "font_type": "heading-font"
@@ -675,6 +791,8 @@
       "name": "t:sections.media-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/Ultimat_HD_Side_with_borders_rolled-up.png",
+        "video_url": "",
+        "video_asset_name": "",
         "autoplay_video": true,
         "image_ratio": "adapt",
         "media_width": 570,
@@ -1210,82 +1328,6 @@
         "columns": 4,
         "padding_top": 0,
         "padding_bottom": 0
-      }
-    },
-    "promise_slider_new": {
-      "type": "promise-slider",
-      "settings": {},
-      "blocks": {
-        "card_1": {
-          "type": "card",
-          "settings": {
-            "title": "Moisture lock",
-            "text": "<p>UltiClean Red-Black</p>",
-            "asset_video_name": "1st.mp4"
-          }
-        },
-        "card_2": {
-          "type": "card",
-          "settings": {
-            "title": "Dirt scrub",
-            "text": "<p>UltiScrape Grey</p>",
-            "asset_video_name": "2nd.mp4"
-          }
-        },
-        "card_3": {
-          "type": "card",
-          "settings": {
-            "title": "Anti slip Base",
-            "text": "<p>UltiDure Charcoal</p>",
-            "asset_video_name": "3rd.mp4"
-          }
-        },
-        "card_4": {
-          "type": "card",
-          "settings": {
-            "title": "sustainable",
-            "text": "<p>Ultimat HD with borders - Grey</p>",
-            "asset_video_name": "4th.mp4"
-          }
-        },
-        "card_5": {
-          "type": "card",
-          "settings": {
-            "title": "fast drying",
-            "text": "<p>UltiWipe Brown Black</p>",
-            "asset_video_name": "5th.mp4"
-          }
-        },
-        "card_6": {
-          "type": "card",
-          "settings": {
-            "title": "built to last",
-            "text": "<p>UltiScrub Charcoal Noir</p>",
-            "asset_video_name": "6th.mp4"
-          }
-        }
-      },
-      "block_order": [
-        "card_1",
-        "card_2",
-        "card_3",
-        "card_4",
-        "card_5",
-        "card_6"
-      ]
-    },
-    "three_layer_new": {
-      "type": "three-layer-feature",
-      "settings": {
-        "asset_video_name": "three-layar.mp4",
-        "heading": "DUST TRAP TECH",
-        "description": "<p>Ultimats mats multi-layered structure.</p><p>Each layer traps dirt individually to ensure that dirt stays trapped throughout the night. Layering the fabric increases dirt trapping levels as compared to traditional mats.</p>"
-      }
-    },
-    "custom_liquid_m2m": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<div style=\"text-align: center; padding: 60px 20px; background: #ffffff; color: #111111;\"><h2 style=\"font-size: 36px; margin-bottom: 16px; font-weight: 400; font-family: var(--font-heading-family); text-transform: uppercase;\">Made to Measure</h2><p style=\"font-size: 18px; color: #444444; max-width: 800px; margin: 0 auto;\">Customize your Floor Mat in your Preferred Style and Color - Tailor-made to your Exact Size</p></div>"
       }
     }
   },
