@@ -598,7 +598,7 @@
         "card_GL4BL": {
           "type": "card",
           "settings": {
-            "card_image": "shopify://shop_images/Office_Entry_Ultimat_HD.png",
+            "card_image": "shopify://shop_images/006.png",
             "card_title": "Commercial Mats",
             "link": "shopify://collections/commercial-floormats",
             "background": "#3a3a3e",
@@ -608,7 +608,7 @@
         "card_eFrMj": {
           "type": "card",
           "settings": {
-            "card_image": "shopify://shop_images/UltiGrate_Woman_in_Heels.png",
+            "card_image": "shopify://shop_images/002.png",
             "card_title": "Aluminium Mats",
             "link": "shopify://pages/aluminium-dust-buster-mat",
             "background": "#3a3a3e",
