@@ -655,70 +655,6 @@
         "heading": "What Our Customers Say"
       }
     },
-    "feature_cards_NkQehE": {
-      "type": "feature-cards",
-      "blocks": {
-        "column_feature_p4UqTq": {
-          "type": "column_feature",
-          "settings": {
-            "feature_image": "shopify://shop_images/UltiDure_Burgundy_Villa_dark.png",
-            "video": "shopify://files/videos/D55095cf2b904d02a255cec4abd42380.Hd-720P-4.5Mbps-59514823.mp4",
-            "autoplay_video": true,
-            "feature_title": "Elevate the Everyday",
-            "feature_icon": "none",
-            "feature_text": "<p>Ultimats is a premium floor matting brand designed to elevate the aesthetics of your premises.</p>",
-            "button_label": "",
-            "link": ""
-          }
-        },
-        "column_feature_zwm77K": {
-          "type": "column_feature",
-          "settings": {
-            "video": "shopify://files/videos/9Bd8fcb3f34d4f3e88bb67afcde74219.Sd-480P-1.5Mbps-53679649.mp4",
-            "autoplay_video": true,
-            "feature_title": "finest materials",
-            "feature_icon": "none",
-            "feature_text": "<p>Sophisticated in the selection of the finest materials, we obsess over every detail.</p>",
-            "button_label": "",
-            "link": ""
-          }
-        },
-        "column_feature_rTygbH": {
-          "type": "column_feature",
-          "settings": {
-            "feature_image": "shopify://shop_images/UltiWipe_Low_Profile_Mats_4.png",
-            "video": "shopify://files/videos/0661F20bd8274eaeb8560bea92a2eb07.Hd-720P-4.5Mbps-59514768.mp4",
-            "autoplay_video": true,
-            "feature_title": "Safe and Secure",
-            "feature_icon": "none",
-            "feature_text": "<p>Our signature all-around mat borders ensure safety while enhancing looks and durability.</p>",
-            "button_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_feature_p4UqTq",
-        "column_feature_zwm77K",
-        "column_feature_rTygbH"
-      ],
-      "custom_css": [
-        "@media (max-width: 767px) {ul.icon-column-section__list {display: block; }}",
-        ".card-box__text p {font-size: 14px;}"
-      ],
-      "name": "t:sections.feature-cards.presets.name",
-      "settings": {
-        "image_ratio": "landscape",
-        "columns": 2,
-        "font_size": 80,
-        "icon_size": 30,
-        "align_text": "center",
-        "button_style": "solid",
-        "background": "main-background",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "shop_by_collection_7nG7ye": {
       "type": "shop-by-collection",
       "name": "Product Carousel",
@@ -753,58 +689,6 @@
         "image_after": "shopify://shop_images/Scrub_ready_to_use.png",
         "padding_top": 30,
         "padding_bottom": 30
-      }
-    },
-    "media_with_text_NBnet8": {
-      "type": "media-with-text",
-      "blocks": {
-        "heading_RyrjT3": {
-          "type": "heading",
-          "settings": {
-            "badge": "",
-            "title": "Ultimat Heavy Duty Exterior Dirt Barrier Matting",
-            "font_size": 80,
-            "font_type": "heading-font"
-          }
-        },
-        "text_KxRJdJ": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Vinyl looped barrier matting with all around compressed borders made to your exact size for commercial heavy foot-traffic entrances. </p>",
-            "font_size": 100,
-            "font_type": "body-font"
-          }
-        },
-        "button_mzAyDb": {
-          "type": "button",
-          "settings": {
-            "button_label": "CUSTOMIZE YOUR MAT NOW",
-            "button_link": "https://ultimats.com/products/ultimat-heavy-duty-vinyl-looped-matting"
-          }
-        }
-      },
-      "block_order": [
-        "heading_RyrjT3",
-        "text_KxRJdJ",
-        "button_mzAyDb"
-      ],
-      "name": "t:sections.media-with-text.presets.name",
-      "settings": {
-        "image": "shopify://shop_images/Ultimat_HD_Side_with_borders_rolled-up.png",
-        "video_url": "",
-        "video_asset_name": "",
-        "autoplay_video": true,
-        "image_ratio": "adapt",
-        "media_width": 570,
-        "vertical_text_align": "center",
-        "layout": "right",
-        "section_align": "center",
-        "overlap_text": true,
-        "image_animation": "fade-up",
-        "background": "background-modal",
-        "frosted_glass": true,
-        "padding_top": 40,
-        "padding_bottom": 20
       }
     },
     "collection_list_M8PTLN": {
@@ -1343,11 +1227,9 @@
     "three_layer_new",
     "media_with_text_DFHWX8",
     "testimonial_new_tR48BX",
-    "feature_cards_NkQehE",
     "shop_by_collection_7nG7ye",
     "youtube_R7Aybe",
     "before-after",
-    "media_with_text_NBnet8",
     "collection_list_M8PTLN",
     "media_grid_RDgTig",
     "video_column_kginnU",
