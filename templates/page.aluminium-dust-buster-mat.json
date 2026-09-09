@@ -196,10 +196,28 @@
         "map_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5228.7760392511145!2d76.9364451410703!3d28.38886693384552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3de63fcdd98f%3A0x478c2588f9e4ea77!2sUltimate%20Industries%20Limited!5e0!3m2!1sen!2sin!4v1708343809942!5m2!1sen!2sin\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
         "contact_image": "shopify://shop_images/sara (2).png"
       }
+    },
+    "contained_video_box": {
+      "type": "contained-video",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "youtube_vimeo_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "max_width": 960,
+        "aspect_ratio": "16:9",
+        "border_radius": 16,
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "show_controls": false,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
   "order": [
     "main",
+    "contained_video_box",
     "feature_grid",
     "collage_styles",
     "technical",
