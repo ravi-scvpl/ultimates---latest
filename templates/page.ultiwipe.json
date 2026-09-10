@@ -148,11 +148,11 @@
         "button_9We6cF"
       ],
       "settings": {
-        "image": "shopify://shop_images/UltiWipe_Red_Folded_6x4_b03c11e8-ebad-414d-9689-bb016ae950be.png",
+        "image": "shopify://shop_images/hf_20260705_143249_f1f4e7ad-a4d2-4138-8ef9-21c714093f49.png",
         "video_url": "",
         "video_asset_name": "",
         "autoplay_video": false,
-        "image_ratio": "adapt",
+        "image_ratio": "16-9",
         "media_width": 780,
         "vertical_text_align": "top",
         "layout": "left",
@@ -327,7 +327,7 @@
         "line_text_wJMWyM"
       ],
       "settings": {
-        "image": "shopify://shop_images/product-option-ultiwipem2m-grey-black.png",
+        "image": "shopify://shop_images/021.png",
         "show_scrim": false,
         "scrim_lightness": 0,
         "icon": "shield-check",
@@ -466,11 +466,11 @@
         "button_CcRHKM"
       ],
       "settings": {
-        "image": "shopify://shop_images/UltiWipe_6x4_Y_with_Color_Swatches.png",
+        "image": "shopify://shop_images/magnific_the-strips-of-the-mat-in-_wPqCb3Z7EI.png",
         "video_url": "",
         "video_asset_name": "",
         "autoplay_video": true,
-        "image_ratio": "adapt",
+        "image_ratio": "4-5",
         "media_width": 780,
         "vertical_text_align": "top",
         "layout": "left",
