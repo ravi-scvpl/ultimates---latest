@@ -128,11 +128,11 @@
         "{font-size: 22px;}"
       ],
       "settings": {
-        "image": "shopify://shop_images/Entrance.png",
+        "image": "shopify://shop_images/right_one.png",
         "video_url": "",
         "video_asset_name": "",
         "autoplay_video": false,
-        "image_ratio": "5-4",
+        "image_ratio": "4-5",
         "media_width": 780,
         "vertical_text_align": "top",
         "layout": "left",
@@ -205,6 +205,7 @@
         "heading_alignment": "center",
         "video": "shopify://files/videos/horizontal mall walkthrough.mp4",
         "mp4_url": "",
+        "youtube_vimeo_url": "",
         "max_width": 960,
         "aspect_ratio": "16:9",
         "border_radius": 16,
