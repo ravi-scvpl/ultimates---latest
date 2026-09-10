@@ -148,11 +148,11 @@
         "button_9We6cF"
       ],
       "settings": {
-        "image": "shopify://shop_images/UltiScrape_Mall_Entrance_Red_2e9a716a-b657-493f-94c7-e7adb6a0d22b.png",
+        "image": "shopify://shop_images/close_up_1.png",
         "video_url": "",
         "video_asset_name": "",
         "autoplay_video": false,
-        "image_ratio": "adapt",
+        "image_ratio": "16-9",
         "media_width": 780,
         "vertical_text_align": "top",
         "layout": "right",
@@ -203,7 +203,7 @@
         "video_url": "",
         "video_asset_name": "",
         "autoplay_video": true,
-        "image_ratio": "adapt",
+        "image_ratio": "16-9",
         "media_width": 780,
         "vertical_text_align": "top",
         "layout": "left",
@@ -309,6 +309,7 @@
         "media_6wdzp9",
         "media_WmDHpJ"
       ],
+      "disabled": true,
       "settings": {
         "show_scrim": true,
         "scrim_lightness": 0,
@@ -377,7 +378,7 @@
         "line_text_wJMWyM"
       ],
       "settings": {
-        "image": "shopify://shop_images/product-option-ultiscrapem2m-grey-black.png",
+        "image": "shopify://shop_images/hf_20260705_083945_410219c9-e117-4dc6-ab37-93083419e424.png",
         "show_scrim": false,
         "scrim_lightness": 0,
         "icon": "shield-check",
@@ -472,11 +473,11 @@
         "button_qj8rWM"
       ],
       "settings": {
-        "image": "shopify://shop_images/UltiScrape_Rolls_Tech_Specs_Image.png",
+        "image": "shopify://shop_images/hf_20260703_130010_8a8b86c4-d520-4707-b897-d64006929a52.png",
         "video_url": "",
         "video_asset_name": "",
         "autoplay_video": true,
-        "image_ratio": "adapt",
+        "image_ratio": "4-5",
         "media_width": 780,
         "vertical_text_align": "top",
         "layout": "left",
