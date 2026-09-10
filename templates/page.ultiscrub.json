@@ -314,6 +314,7 @@
         "media_6wdzp9",
         "media_WmDHpJ"
       ],
+      "disabled": true,
       "settings": {
         "show_scrim": true,
         "scrim_lightness": 0,
@@ -382,7 +383,7 @@
         "line_text_wJMWyM"
       ],
       "settings": {
-        "image": "shopify://shop_images/UltiScrub_Grey_Foot_Enlarge_view_1c25eba2-35fe-491a-b65e-c4b994954910.png",
+        "image": "shopify://shop_images/magnific_extreme-macro-shot-of-wat_fFMeDPbCDY.png",
         "show_scrim": false,
         "scrim_lightness": 0,
         "icon": "shield-check",
@@ -521,11 +522,11 @@
         "button_CcRHKM"
       ],
       "settings": {
-        "image": "shopify://shop_images/UltiScrub_6x4_with_Swatches_1.png",
+        "image": "shopify://shop_images/ChatGPT_Image_Jun_18_2026_06_59_37_PM.png",
         "video_url": "",
         "video_asset_name": "",
         "autoplay_video": true,
-        "image_ratio": "adapt",
+        "image_ratio": "4-5",
         "media_width": 780,
         "vertical_text_align": "top",
         "layout": "left",
