@@ -168,43 +168,26 @@
         "padding_bottom": 44
       }
     },
-    "media_grid_DYcTbq": {
-      "type": "media-grid",
-      "blocks": {
-        "media_FHbyPK": {
-          "type": "media",
-          "settings": {
-            "video": "shopify://files/videos/UltiDure CGI video.mp4",
-            "autoplay_video": true,
-            "item_width": 2,
-            "item_height": 3,
-            "show_scrim": true,
-            "scrim_lightness": 0,
-            "title": "",
-            "text": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "media_FHbyPK"
-      ],
-      "name": "t:sections.media-grid.name",
+    "contained_video_bxXLYY": {
+      "type": "contained-video",
+      "name": "Contained Video Box",
       "settings": {
-        "title": "",
-        "text": "",
-        "font_size": 100,
-        "color_text": "primary-text-1",
-        "button_label": "",
-        "button_link": "",
-        "row_height": 170,
-        "font_image_size": 100,
-        "color_image_text": "secondary-text-4",
-        "title_on_hover": false,
-        "description_on_hover": true,
-        "text_position": "bottom-left",
-        "padding_top": 44,
-        "padding_bottom": 44
+        "heading": "See It In Action",
+        "subheading": "Watch how our high-performance mats protect your space.",
+        "heading_alignment": "center",
+        "video": "shopify://files/videos/UltiDure CGI video.mp4",
+        "mp4_url": "",
+        "max_width": 960,
+        "aspect_ratio": "16:9",
+        "border_radius": 16,
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "show_controls": false,
+        "bg_color": "",
+        "text_color": "",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "hero_video_dU6LiN": {
@@ -351,6 +334,7 @@
         "media_qQqPrp",
         "media_WmDHpJ"
       ],
+      "disabled": true,
       "settings": {
         "show_scrim": true,
         "scrim_lightness": 0,
@@ -566,11 +550,11 @@
         "button_CcRHKM"
       ],
       "settings": {
-        "image": "shopify://shop_images/UltiDure_Grey_Brown_Burgundy_CloseUp_Rolled.webp",
+        "image": "shopify://shop_images/magnific_i-want-close-up-of-the-wo_DoBuQ50pcl.png",
         "video_url": "",
         "video_asset_name": "",
         "autoplay_video": true,
-        "image_ratio": "5-4",
+        "image_ratio": "4-5",
         "media_width": 780,
         "vertical_text_align": "top",
         "layout": "left",
@@ -843,7 +827,7 @@
     "main",
     "rich_text_jEwqRH",
     "media_with_text_QiiP9T",
-    "media_grid_DYcTbq",
+    "contained_video_bxXLYY",
     "hero_video_dU6LiN",
     "collage_dxK46A",
     "social_media_banner_QkKgiN",
