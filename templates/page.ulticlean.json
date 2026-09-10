@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -60,6 +69,7 @@
         "heading_AMVL39": {
           "type": "heading",
           "settings": {
+            "badge": "",
             "heading": "ULTICLEAN®",
             "subheading": "Plush dual-tone soft fibre carpet matting with durable vinyl backing and double-compressed borders for superior interior dust control.",
             "font_size": 100,
@@ -85,7 +95,7 @@
       ],
       "settings": {
         "background_image": "none",
-        "custom_background_image": "shopify://shop_images/product-option-ulticlean-grey-black.png",
+        "custom_background_image": "shopify://shop_images/magnific_closeup-of-premium-brown-_43xfsAV9Aa_1.png",
         "image_height": 70,
         "show_scrim": false,
         "scrim_lightness_background": 0,
@@ -110,6 +120,7 @@
         "heading_nG9xjU": {
           "type": "heading",
           "settings": {
+            "badge": "",
             "title": "UltiClean® Performance",
             "font_size": 100,
             "font_type": "heading-font"
@@ -137,7 +148,9 @@
         "button_9We6cF"
       ],
       "settings": {
-        "image": "shopify://shop_images/product-option-ulticlean-grey-black.png",
+        "image": "shopify://shop_images/ulticlean4.png",
+        "video_url": "",
+        "video_asset_name": "",
         "autoplay_video": false,
         "image_ratio": "adapt",
         "media_width": 780,
@@ -158,6 +171,7 @@
         "heading_LDRVbE": {
           "type": "heading",
           "settings": {
+            "badge": "",
             "title": "",
             "font_size": 100,
             "font_type": "heading-font"
@@ -185,7 +199,9 @@
         "button_z66EVg"
       ],
       "settings": {
-        "image": "shopify://shop_images/product-option-president-grey-black.png",
+        "image": "shopify://shop_images/magnific_place-the-matte-texture-i_aQM3cLNfSh.png",
+        "video_url": "",
+        "video_asset_name": "",
         "autoplay_video": true,
         "image_ratio": "adapt",
         "media_width": 780,
@@ -198,6 +214,28 @@
         "frosted_glass": true,
         "padding_top": 44,
         "padding_bottom": 44
+      }
+    },
+    "contained_video_pEfbDk": {
+      "type": "contained-video",
+      "name": "Contained Video Box",
+      "settings": {
+        "heading": "See It In Action",
+        "subheading": "Watch how our high-performance mats protect your space.",
+        "heading_alignment": "center",
+        "video": "shopify://files/videos/WhatsApp Video 2026-09-08 at 5.44.55 PM.mp4",
+        "mp4_url": "",
+        "max_width": 960,
+        "aspect_ratio": "16:9",
+        "border_radius": 16,
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "show_controls": false,
+        "bg_color": "",
+        "text_color": "",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "checklist_iP6XbV": {
@@ -255,7 +293,7 @@
         "line_text_wJMWyM"
       ],
       "settings": {
-        "image": "shopify://shop_images/product-option-ulticlean-grey-black.png",
+        "image": "shopify://shop_images/magnific_replace-the-texture-of-th_745E3T9JAL.png",
         "show_scrim": false,
         "scrim_lightness": 0,
         "icon": "shield-check",
@@ -274,6 +312,7 @@
         "heading_xKT8RP": {
           "type": "heading",
           "settings": {
+            "badge": "",
             "title": "Technical Specifications",
             "font_size": 80,
             "font_type": "heading-font"
@@ -301,7 +340,9 @@
         "button_CcRHKM"
       ],
       "settings": {
-        "image": "shopify://shop_images/product-option-president-grey-black.png",
+        "image": "shopify://shop_images/magnific_generate-a-916-image-img1_ubINJnNQLD.png",
+        "video_url": "",
+        "video_asset_name": "",
         "autoplay_video": true,
         "image_ratio": "adapt",
         "media_width": 780,
@@ -448,6 +489,7 @@
     "hero_image_V6thPj",
     "media_with_text_QiiP9T",
     "media_with_text_dPNJTY",
+    "contained_video_pEfbDk",
     "checklist_iP6XbV",
     "media_with_text_f6VaAm",
     "collapsible_content_QXqK9a",
