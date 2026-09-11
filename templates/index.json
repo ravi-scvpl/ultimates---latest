@@ -305,6 +305,83 @@
         "padding_bottom": 30
       }
     },
+    "promise_slider_new": {
+      "type": "promise-slider",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/1st.mp4",
+            "video_url": "",
+            "asset_video_name": "1st.mp4",
+            "title": "Dirt and Moisture lock",
+            "text": "<p>UltiClean</p>"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/2nd.mp4",
+            "video_url": "",
+            "asset_video_name": "2nd.mp4",
+            "title": "Outdoor Dirt Scraping",
+            "text": "<p>UltiScrape</p>"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/3rd.mp4",
+            "video_url": "",
+            "asset_video_name": "3rd.mp4",
+            "title": "Anti Slip All Terrain",
+            "text": "<p>UltiDure</p>"
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/4th.mp4",
+            "video_url": "",
+            "asset_video_name": "4th.mp4",
+            "title": "Barrier Matting",
+            "text": "<p>Ultimat HD with borders</p>"
+          }
+        },
+        "card_5": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/5th.mp4",
+            "video_url": "",
+            "asset_video_name": "5th.mp4",
+            "title": "All Weather Scrape + Wetness Lock",
+            "text": "<p>UltiWipe</p>"
+          }
+        },
+        "card_6": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/6th.mp4",
+            "video_url": "",
+            "asset_video_name": "6th.mp4",
+            "title": "Dual-Tread Barrier",
+            "text": "<p>UltiScrub</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4",
+        "card_5",
+        "card_6"
+      ],
+      "settings": {
+        "overlay_opacity": 40,
+        "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
+      }
+    },
     "shop_the_look_8ez66U": {
       "type": "shop-the-look",
       "blocks": {
@@ -470,83 +547,6 @@
         "font_type": "body-font",
         "padding_top": 44,
         "padding_bottom": 44
-      }
-    },
-    "promise_slider_new": {
-      "type": "promise-slider",
-      "blocks": {
-        "card_1": {
-          "type": "card",
-          "settings": {
-            "video": "shopify://files/videos/1st.mp4",
-            "video_url": "",
-            "asset_video_name": "1st.mp4",
-            "title": "Moisture lock",
-            "text": "<p>UltiClean Red-Black</p>"
-          }
-        },
-        "card_2": {
-          "type": "card",
-          "settings": {
-            "video": "shopify://files/videos/2nd.mp4",
-            "video_url": "",
-            "asset_video_name": "2nd.mp4",
-            "title": "Dirt scrub",
-            "text": "<p>UltiScrape Grey</p>"
-          }
-        },
-        "card_3": {
-          "type": "card",
-          "settings": {
-            "video": "shopify://files/videos/3rd.mp4",
-            "video_url": "",
-            "asset_video_name": "3rd.mp4",
-            "title": "Anti slip Base",
-            "text": "<p>UltiDure Charcoal</p>"
-          }
-        },
-        "card_4": {
-          "type": "card",
-          "settings": {
-            "video": "shopify://files/videos/4th.mp4",
-            "video_url": "",
-            "asset_video_name": "4th.mp4",
-            "title": "sustainable",
-            "text": "<p>Ultimat HD with borders - Grey</p>"
-          }
-        },
-        "card_5": {
-          "type": "card",
-          "settings": {
-            "video": "shopify://files/videos/5th.mp4",
-            "video_url": "",
-            "asset_video_name": "5th.mp4",
-            "title": "fast drying",
-            "text": "<p>UltiWipe Brown Black</p>"
-          }
-        },
-        "card_6": {
-          "type": "card",
-          "settings": {
-            "video": "shopify://files/videos/6th.mp4",
-            "video_url": "",
-            "asset_video_name": "6th.mp4",
-            "title": "built to last",
-            "text": "<p>UltiScrub Charcoal Noir</p>"
-          }
-        }
-      },
-      "block_order": [
-        "card_1",
-        "card_2",
-        "card_3",
-        "card_4",
-        "card_5",
-        "card_6"
-      ],
-      "settings": {
-        "overlay_opacity": 40,
-        "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
       }
     },
     "custom_liquid_m2m": {
@@ -1241,9 +1241,9 @@
     "collage",
     "three_layer_new",
     "media_grid_pKd9B9",
+    "promise_slider_new",
     "shop_the_look_8ez66U",
     "featured-shops",
-    "promise_slider_new",
     "custom_liquid_m2m",
     "media_with_text_DFHWX8",
     "testimonial_new_tR48BX",
