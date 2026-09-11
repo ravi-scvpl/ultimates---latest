@@ -42,6 +42,7 @@
         "text_cynpJ6",
         "button_E7ayH6"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "image": "shopify://shop_images/Lady_Legs_Gif.gif",
@@ -59,6 +60,24 @@
         "frosted_glass": true,
         "padding_top": 44,
         "padding_bottom": 44
+      }
+    },
+    "hero_video_yxHRby": {
+      "type": "hero-video",
+      "name": "Hero video (static mp4)",
+      "settings": {
+        "image_height": 70,
+        "media_position": "center",
+        "content_aligment": "center",
+        "container_width": 375,
+        "vertical_position": 50,
+        "horizontal_position": 50,
+        "show_scrim": true,
+        "scrim_lightness": 0,
+        "video_animation": "slide-in",
+        "transparent_header": false,
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "multicolor-cards": {
@@ -1217,6 +1236,7 @@
   },
   "order": [
     "media_with_text_D4CAWR",
+    "hero_video_yxHRby",
     "multicolor-cards",
     "collage",
     "media_grid_pKd9B9",
