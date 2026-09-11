@@ -194,6 +194,18 @@
         "padding_bottom": 30
       }
     },
+    "three_layer_new": {
+      "type": "three-layer-feature",
+      "settings": {
+        "bg_color": "#000000",
+        "text_color": "#ffffff",
+        "video": "shopify://files/videos/WhatsApp Video 2026-09-04 at 2.57.29 PM.mp4",
+        "video_url": "",
+        "asset_video_name": "",
+        "heading": "THREE LAYERS. ONE PURPOSE.",
+        "description": "<p><strong>SCRAPE. RETAIN. GRIP.</strong></p><p>Three engineered layers work in sequence to remove dirt, hold it deep within the mat, and keep the mat firmly in place—stopping dirt at the entrance.</p>"
+      }
+    },
     "media_grid_pKd9B9": {
       "type": "media-grid",
       "blocks": {
@@ -543,18 +555,6 @@
         "custom_liquid": "<div style=\"text-align: center; padding: 60px 20px; background: #ffffff; color: #111111;\"><h2 style=\"font-size: 36px; margin-bottom: 16px; font-weight: 400; font-family: var(--font-heading-family); text-transform: uppercase;\">Made to Measure</h2><p style=\"font-size: 18px; color: #444444; max-width: 800px; margin: 0 auto;\">Customize your Floor Mat in your Preferred Style and Color - Tailor-made to your Exact Size</p></div>",
         "padding_top": 44,
         "padding_bottom": 44
-      }
-    },
-    "three_layer_new": {
-      "type": "three-layer-feature",
-      "settings": {
-        "bg_color": "#000000",
-        "text_color": "#ffffff",
-        "video": "shopify://files/videos/WhatsApp Video 2026-09-04 at 2.57.29 PM.mp4",
-        "video_url": "",
-        "asset_video_name": "",
-        "heading": "DUST TRAP TECH",
-        "description": "<p>Ultimats mats multi-layered structure.</p><p>Each layer traps dirt individually to ensure that dirt stays trapped throughout the night. Layering the fabric increases dirt trapping levels as compared to traditional mats.</p>"
       }
     },
     "media_with_text_DFHWX8": {
@@ -1239,12 +1239,12 @@
     "hero_video_yxHRby",
     "multicolor-cards",
     "collage",
+    "three_layer_new",
     "media_grid_pKd9B9",
     "shop_the_look_8ez66U",
     "featured-shops",
     "promise_slider_new",
     "custom_liquid_m2m",
-    "three_layer_new",
     "media_with_text_DFHWX8",
     "testimonial_new_tR48BX",
     "shop_by_collection_7nG7ye",
