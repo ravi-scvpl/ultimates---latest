@@ -1,10 +1,13 @@
 <style>
+  #PromiseSlider-{{ section.id }} {
+    min-height: {{ section.settings.section_height | default: 800 }}px;
+    padding-top: {{ section.settings.padding_top | default: 100 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | default: 100 }}px;
+  }
   .promise-slider-section {
     position: relative;
     overflow: hidden;
-    padding: 80px 0;
     color: #fff;
-    min-height: 600px;
     display: flex;
     align-items: center;
     background-color: #222;
@@ -199,10 +202,12 @@
   {% if section.settings.background_video != blank %}
     {{
       section.settings.background_video
-      | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'promise-bg-video'
+      | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, class: 'promise-bg-video'
     }}
+  {% elsif section.settings.background_video_url != blank %}
+    <video src="{{ section.settings.background_video_url }}" autoplay loop muted playsinline class="promise-bg-video"></video>
   {% endif %}
-  <div class="promise-bg-overlay" style="background: rgba(0, 0, 0, 0.4);"></div>
+  <div class="promise-bg-overlay" style="background: rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }});"></div>
 
   <div class="promise-content-wrap">
     <div class="promise-left">
@@ -364,7 +369,43 @@
     {
       "type": "video",
       "id": "background_video",
-      "label": "Background Video (Autoplay)"
+      "label": "Background Video (Shopify Hosted)"
+    },
+    {
+      "type": "url",
+      "id": "background_video_url",
+      "label": "Background Video URL (Direct MP4/CDN Link)",
+      "info": "Paste direct video link if not using Shopify Hosted Video"
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "min": 500,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "label": "Section Minimum Height",
+      "default": 800
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 40,
+      "max": 160,
+      "step": 10,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 40,
+      "max": 160,
+      "step": 10,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 100
     },
     {
       "type": "range",
