@@ -206,15 +206,16 @@
 
   <div class="promise-content-wrap">
     <div class="promise-left">
-      {% if section.settings.logo_image %}
+      {% if section.settings.logo_image != blank %}
         <img
           src="{{ section.settings.logo_image | image_url: width: 600 }}"
           alt="Promise Logo"
           style="max-width: 100%; height: auto; margin-bottom: 24px;"
         >
-      {% else %}
+      {% endif %}
+      {% if section.settings.heading != blank %}
         <h2 style="font-size: 42px; font-weight: bold; font-family: var(--font-heading-family); margin-bottom: 24px; color: #fff;">
-          PREMIUM MAT PROPERTIES
+          {{ section.settings.heading }}
         </h2>
       {% endif %}
       <div class="promise-desc">
@@ -379,6 +380,12 @@
       "type": "image_picker",
       "id": "logo_image",
       "label": "Logo Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "PREMIUM MAT PROPERTIES"
     },
     {
       "type": "richtext",
