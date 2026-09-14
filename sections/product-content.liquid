@@ -372,7 +372,7 @@
                 style="--padding-top: {{ block.settings.padding_top }}px; --padding-bottom: {{ block.settings.padding_bottom }}px;"
                 {{ block.shopify_attributes }}
               >
-                {% render 'social-sharing' share_facebook: block.settings.share_facebook, share_twitter: block.settings.share_twitter, share_pinterest: block.settings.share_pinterest, , share_permalink: product.url, share_title: product.title, share_image: product.featured_image %}
+                {% render 'social-sharing', share_facebook: block.settings.share_facebook, share_twitter: block.settings.share_twitter, share_pinterest: block.settings.share_pinterest, share_permalink: product.url, share_title: product.title, share_image: product.featured_image %}
               </div>
             {%- when 'checklist' -%}
               <div
@@ -12865,3 +12865,19 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'social-sharing' share_facebook: block.settings.share_facebook,
+    share_twitter: block.settings.share_twitter, share_pinterest: block.settings.share_pinterest,
+    , share_permalink: product.url, share_title: product.title, share_image: product.featured_image
+    %}"
+  to: "{% render 'social-sharing', share_facebook: block.settings.share_facebook,
+    share_twitter: block.settings.share_twitter, share_pinterest: block.settings.share_pinterest,
+    share_permalink: product.url, share_title: product.title, share_image: product.featured_image
+    %}"
+  position: 21014..21279
+{% endcomment %}

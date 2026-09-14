@@ -21,7 +21,7 @@
     data-account-orders
   >
     <div class="myaccount__order-history">
-      {% paginate customer.orders by 10 | sort: 'created_at' | reverse %}
+      {% paginate customer.orders by 10 %}
         {% if customer.orders.size != 0 %}
           <ul class="myaccount_list" id="data-pagination">
             {% for order in customer.orders %}
@@ -118,3 +118,13 @@
     </div>
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% paginate customer.orders by 10 | sort: 'created_at' | reverse %}"
+  to: "{% paginate customer.orders by 10 %}"
+  position: 896..932
+{% endcomment %}
