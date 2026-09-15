@@ -911,6 +911,21 @@
         "padding_top": 44,
         "padding_bottom": 44
       }
+    },
+    "catalog_care_new": {
+      "type": "catalog-care"
+    },
+    "catalog_where_it_performs_new": {
+      "type": "catalog-where-it-performs"
+    },
+    "catalog_resources_new": {
+      "type": "catalog-resources"
+    },
+    "catalog_purchase_cta_new": {
+      "type": "catalog-purchase-cta"
+    },
+    "catalog_product_family_new": {
+      "type": "catalog-product-family"
     }
   },
   "order": [
@@ -930,6 +945,11 @@
     "promise_slider_Wh8jKn",
     "three_layer_feature_REyGhN",
     "catalog_performance_specs_MUiU78",
+    "catalog_care_new",
+    "catalog_where_it_performs_new",
+    "catalog_resources_new",
+    "catalog_purchase_cta_new",
+    "catalog_product_family_new",
     "collapsible_content_QXqK9a",
     "rich_text_aXwYKq",
     "contact_form_awRX6D"
