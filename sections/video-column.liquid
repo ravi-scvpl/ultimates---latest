@@ -76,7 +76,7 @@
                       <a href="{{ block.settings.video_link}}">
                     {%- endif -%}
                     <div class="video-column__custom-video">
-                      {%- capture "video_classes" -%}
+                      {%- capture video_classes -%}
                           feature-row__image{% if section.settings.play_onload %} feature-row__video--autoplay{% else%} feature-row__video{% endif %}{%- endcapture -%}
                       {% liquid
                         if section.settings.play_onload
@@ -315,3 +315,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{%- capture "video_classes" -%}'
+  to: "{%- capture video_classes -%}"
+  position: 3539..3568
+{% endcomment %}

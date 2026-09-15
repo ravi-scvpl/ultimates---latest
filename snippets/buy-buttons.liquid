@@ -66,7 +66,7 @@
   {% assign section_id = section.id | append: block_id %}
 {% endif %}
 
-{%- capture "form_classes" -%}
+{%- capture form_classes -%}
   product-form product-form-{{ section_id }}
   form
   product-form--hide-variant-labels
@@ -414,3 +414,13 @@
     {% endif %}
   </a>
 {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{%- capture "form_classes" -%}'
+  to: "{%- capture form_classes -%}"
+  position: 2695..2723
+{% endcomment %}

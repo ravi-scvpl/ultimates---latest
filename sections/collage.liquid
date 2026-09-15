@@ -89,7 +89,7 @@
             {% endif %}
             <div class="media media--transparent">
               {% if block.settings.video != blank %}
-                {%- capture "video_classes" -%}media__video{% if block.settings.autoplay_video %} media__video--autoplay{% endif %}{%- endcapture -%}
+                {%- capture video_classes -%}media__video{% if block.settings.autoplay_video %} media__video--autoplay{% endif %}{%- endcapture -%}
                 {% liquid
                   if block.settings.autoplay_video
                     assign playsinline = true
@@ -380,3 +380,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{%- capture "video_classes" -%}'
+  to: "{%- capture video_classes -%}"
+  position: 3843..3872
+{% endcomment %}
