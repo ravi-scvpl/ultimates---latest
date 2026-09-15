@@ -1,0 +1,757 @@
+{% comment %}
+  Catalog Resources Section (Architect / Builder / PMC Focused)
+  Two modern action cards:
+  1. TECHNICAL DATA (PDF File upload / Download link)
+  2. PRODUCT DEMO (Video Modal / YouTube player showing walking action)
+{% endcomment %}
+
+<style>
+  #CatalogResources-{{ section.id }} {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.section_bg_color }};
+    overflow: hidden;
+  }
+
+  .catalog-resources__container {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .catalog-resources__header {
+    text-align: {{ section.settings.header_alignment }};
+    margin-bottom: 48px;
+    max-width: 800px;
+    {% if section.settings.header_alignment == 'center' %}
+      margin-left: auto;
+      margin-right: auto;
+    {% elsif section.settings.header_alignment == 'right' %}
+      margin-left: auto;
+      margin-right: 0;
+    {% else %}
+      margin-left: 0;
+      margin-right: auto;
+    {% endif %}
+  }
+
+  .catalog-resources__subtitle {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 12px;
+  }
+
+  .catalog-resources__title {
+    font-size: {{ section.settings.title_font_size }}px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 16px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .catalog-resources__description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+  }
+
+  /* Grid Layout (2 Cards) */
+  .catalog-resources__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  /* Card Styling */
+  .catalog-resources__card {
+    position: relative;
+    border-radius: {{ section.settings.card_border_radius }}px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+
+    {% if section.settings.enable_glassmorphism %}
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.05);
+    {% else %}
+      background-color: {{ section.settings.card_bg_color }};
+      border: 1px solid {{ section.settings.card_border_color }};
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    {% endif %}
+  }
+
+  .catalog-resources__card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.09);
+  }
+
+  .catalog-resources__card-top {
+    margin-bottom: 32px;
+  }
+
+  .catalog-resources__icon-wrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: {{ section.settings.accent_color | color_modify: 'alpha', 0.1 }};
+    color: {{ section.settings.accent_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .catalog-resources__icon-wrapper svg {
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+
+  .catalog-resources__badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 8px;
+  }
+
+  .catalog-resources__card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+  }
+
+  .catalog-resources__card-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+  }
+
+  /* Specs & Details Meta list inside card */
+  .catalog-resources__meta-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .catalog-resources__meta-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: {{ section.settings.text_color }};
+  }
+
+  .catalog-resources__meta-item svg {
+    width: 16px;
+    height: 16px;
+    stroke: {{ section.settings.accent_color }};
+    stroke-width: 2.5;
+  }
+
+  /* Modern Action Button */
+  .catalog-resources__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 28px;
+    border-radius: {{ section.settings.btn_border_radius }}px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+  }
+
+  .catalog-resources__btn--primary {
+    background-color: {{ section.settings.btn_primary_bg }};
+    color: {{ section.settings.btn_primary_text }};
+    box-shadow: 0 8px 20px {{ section.settings.btn_primary_bg | color_modify: 'alpha', 0.3 }};
+  }
+
+  .catalog-resources__btn--primary:hover {
+    background-color: {{ section.settings.btn_primary_bg | color_darken: 8 }};
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px {{ section.settings.btn_primary_bg | color_modify: 'alpha', 0.4 }};
+  }
+
+  .catalog-resources__btn--secondary {
+    background-color: {{ section.settings.btn_secondary_bg }};
+    color: {{ section.settings.btn_secondary_text }};
+    border: 1px solid {{ section.settings.btn_secondary_border }};
+  }
+
+  .catalog-resources__btn--secondary:hover {
+    background-color: {{ section.settings.btn_secondary_bg | color_darken: 5 }};
+    transform: translateY(-2px);
+  }
+
+  .catalog-resources__btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+
+  /* Video Modal Popup */
+  .catalog-resources__modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .catalog-resources__modal.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .catalog-resources__modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;
+    background: #000000;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  }
+
+  .catalog-resources__modal-close {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+  }
+
+  .catalog-resources__iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* Responsive Adjustments */
+  @media screen and (max-width: 989px) {
+    .catalog-resources__grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .catalog-resources__card {
+      padding: 30px 24px;
+    }
+
+    .catalog-resources__title {
+      font-size: calc({{ section.settings.title_font_size }}px * 0.8);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    #CatalogResources-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | divided_by: 1.5 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | divided_by: 1.5 }}px;
+    }
+  }
+</style>
+
+<div id="CatalogResources-{{ section.id }}" class="catalog-resources">
+  <div class="catalog-resources__container">
+    {% if section.settings.title != blank or section.settings.subtitle != blank or section.settings.description != blank %}
+      <div class="catalog-resources__header">
+        {% if section.settings.subtitle != blank %}
+          <span class="catalog-resources__subtitle">{{ section.settings.subtitle | escape }}</span>
+        {% endif %}
+
+        {% if section.settings.title != blank %}
+          <h2 class="catalog-resources__title">{{ section.settings.title | escape }}</h2>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div class="catalog-resources__description">{{ section.settings.description }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="catalog-resources__grid">
+      
+      <!-- CARD 1: TECHNICAL DATA (PDF FILE DOWNLOAD) -->
+      <div class="catalog-resources__card">
+        <div class="catalog-resources__card-top">
+          <div class="catalog-resources__icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <span class="catalog-resources__badge">{{ section.settings.pdf_badge | default: 'Architectural Spec Sheet' }}</span>
+          <h3 class="catalog-resources__card-title">{{ section.settings.pdf_title | default: 'TECHNICAL DATA' }}</h3>
+          <p class="catalog-resources__card-desc">{{ section.settings.pdf_desc | default: 'Complete product specifications, CAD profiles, material composition, load ratings, and test certificates for architects and PMCs.' }}</p>
+
+          <ul class="catalog-resources__meta-list">
+            {% if section.settings.pdf_spec_1 != blank %}
+              <li class="catalog-resources__meta-item">
+                <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{{ section.settings.pdf_spec_1 }}</span>
+              </li>
+            {% endif %}
+            {% if section.settings.pdf_spec_2 != blank %}
+              <li class="catalog-resources__meta-item">
+                <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{{ section.settings.pdf_spec_2 }}</span>
+              </li>
+            {% endif %}
+            {% if section.settings.pdf_spec_3 != blank %}
+              <li class="catalog-resources__meta-item">
+                <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{{ section.settings.pdf_spec_3 }}</span>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+
+        <div class="catalog-resources__card-bottom">
+          {% assign pdf_link = section.settings.pdf_file %}
+          {% if pdf_link == blank and section.settings.pdf_url != blank %}
+            {% assign pdf_link = section.settings.pdf_url %}
+          {% endif %}
+          
+          <a href="{{ pdf_link | default: '#' }}" {% if pdf_link != blank and pdf_link != '#' %}target="_blank" download{% endif %} class="catalog-resources__btn catalog-resources__btn--primary">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>{{ section.settings.pdf_btn_text | default: 'Download Technical Specs (PDF)' }}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- CARD 2: PRODUCT DEMO (YOUTUBE / VIDEO POPUP) -->
+      <div class="catalog-resources__card">
+        <div class="catalog-resources__card-top">
+          <div class="catalog-resources__icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </div>
+          <span class="catalog-resources__badge">{{ section.settings.video_badge | default: 'Product Walkthrough' }}</span>
+          <h3 class="catalog-resources__card-title">{{ section.settings.video_title | default: 'PRODUCT DEMO' }}</h3>
+          <p class="catalog-resources__card-desc">{{ section.settings.video_desc | default: 'Product overview video showing walking action, dirt extraction efficiency, and seamless floor integration in real time.' }}</p>
+
+          <ul class="catalog-resources__meta-list">
+            {% if section.settings.video_spec_1 != blank %}
+              <li class="catalog-resources__meta-item">
+                <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{{ section.settings.video_spec_1 }}</span>
+              </li>
+            {% endif %}
+            {% if section.settings.video_spec_2 != blank %}
+              <li class="catalog-resources__meta-item">
+                <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{{ section.settings.video_spec_2 }}</span>
+              </li>
+            {% endif %}
+            {% if section.settings.video_spec_3 != blank %}
+              <li class="catalog-resources__meta-item">
+                <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{{ section.settings.video_spec_3 }}</span>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+
+        <div class="catalog-resources__card-bottom">
+          <button type="button" class="catalog-resources__btn catalog-resources__btn--secondary js-resource-video-trigger">
+            <svg viewBox="0 0 24 24" fill="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>{{ section.settings.video_btn_text | default: 'Watch Product Demo Video' }}</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal Lightbox for YouTube / Vimeo / Video -->
+  <div class="catalog-resources__modal js-resource-modal">
+    <div class="catalog-resources__modal-content">
+      <button class="catalog-resources__modal-close js-resource-modal-close">&times;</button>
+      <div class="js-resource-modal-video-target" style="width: 100%; height: 100%;">
+        <!-- Video iframe injected dynamically via JS -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sectionContainer = document.getElementById('CatalogResources-{{ section.id }}');
+    if(!sectionContainer) return;
+
+    const modal = sectionContainer.querySelector('.js-resource-modal');
+    const modalClose = sectionContainer.querySelector('.js-resource-modal-close');
+    const triggerBtn = sectionContainer.querySelector('.js-resource-video-trigger');
+    const videoTarget = sectionContainer.querySelector('.js-resource-modal-video-target');
+
+    {% assign yt_url = section.settings.youtube_url %}
+    {% assign yt_type = yt_url.type %}
+    {% assign yt_id = yt_url.id %}
+
+    triggerBtn.addEventListener('click', function() {
+      let iframeMarkup = '';
+      {% if section.settings.youtube_url != blank %}
+        {% if yt_type == 'youtube' %}
+          iframeMarkup = `<iframe class="catalog-resources__iframe" src="https://www.youtube.com/embed/{{ yt_id }}?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        {% elsif yt_type == 'vimeo' %}
+          iframeMarkup = `<iframe class="catalog-resources__iframe" src="https://player.vimeo.com/video/{{ yt_id }}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        {% endif %}
+      {% elsif section.settings.mp4_video != blank %}
+        iframeMarkup = `<video class="catalog-resources__iframe" src="{{ section.settings.mp4_video.sources[1].url | default: section.settings.mp4_video.sources[0].url }}" controls autoplay></video>`;
+      {% else %}
+        iframeMarkup = `<iframe class="catalog-resources__iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+      {% endif %}
+
+      videoTarget.innerHTML = iframeMarkup;
+      modal.classList.add('is-active');
+    });
+
+    function closeModal() {
+      modal.classList.remove('is-active');
+      videoTarget.innerHTML = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) {
+      if(e.target === modal) {
+        closeModal();
+      }
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Architect Resources",
+  "tag": "section",
+  "class": "section-catalog-resources",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Section Subtitle / Eyebrow",
+      "default": "Architect & PMC Documentation"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Resources & Specifications"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Section Description",
+      "default": "<p>Essential technical documentation and video demonstrations curated for Architects, Builders, and Project Management Consultants.</p>"
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Header Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 24,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "CARD 1: TECHNICAL DATA (PDF)"
+    },
+    {
+      "type": "text",
+      "id": "pdf_badge",
+      "label": "Badge Text",
+      "default": "Specification Sheet"
+    },
+    {
+      "type": "text",
+      "id": "pdf_title",
+      "label": "Card 1 Title",
+      "default": "TECHNICAL DATA"
+    },
+    {
+      "type": "textarea",
+      "id": "pdf_desc",
+      "label": "Card 1 Description",
+      "default": "Complete product specifications, CAD profiles, material composition, load ratings, and test certificates for architects and PMCs."
+    },
+    {
+      "type": "text",
+      "id": "pdf_spec_1",
+      "label": "Feature Item 1",
+      "default": "Comprehensive Material & Load Test Specs"
+    },
+    {
+      "type": "text",
+      "id": "pdf_spec_2",
+      "label": "Feature Item 2",
+      "default": "Architectural CAD & Profile Dimensions"
+    },
+    {
+      "type": "text",
+      "id": "pdf_spec_3",
+      "label": "Feature Item 3",
+      "default": "Fire & Safety Certifications Included"
+    },
+    {
+      "type": "url",
+      "id": "pdf_url",
+      "label": "PDF File Download URL (External / Media CDN)"
+    },
+    {
+      "type": "text",
+      "id": "pdf_btn_text",
+      "label": "Download Button Text",
+      "default": "Download Technical Specs (PDF)"
+    },
+    {
+      "type": "header",
+      "content": "CARD 2: PRODUCT DEMO (VIDEO)"
+    },
+    {
+      "type": "text",
+      "id": "video_badge",
+      "label": "Badge Text",
+      "default": "Product Walkthrough"
+    },
+    {
+      "type": "text",
+      "id": "video_title",
+      "label": "Card 2 Title",
+      "default": "PRODUCT DEMO"
+    },
+    {
+      "type": "textarea",
+      "id": "video_desc",
+      "label": "Card 2 Description",
+      "default": "Product overview video showing walking action, dirt extraction efficiency, and seamless floor integration in real time."
+    },
+    {
+      "type": "text",
+      "id": "video_spec_1",
+      "label": "Feature Item 1",
+      "default": "Real-time walking action & debris trapping"
+    },
+    {
+      "type": "text",
+      "id": "video_spec_2",
+      "label": "Feature Item 2",
+      "default": "Recessed vs Surface Mount installation"
+    },
+    {
+      "type": "text",
+      "id": "video_spec_3",
+      "label": "Feature Item 3",
+      "default": "Sound absorption & heavy load demonstration"
+    },
+    {
+      "type": "video_url",
+      "id": "youtube_url",
+      "label": "YouTube / Vimeo Video URL",
+      "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "video",
+      "id": "mp4_video",
+      "label": "Shopify Hosted Video File (Fallback)"
+    },
+    {
+      "type": "text",
+      "id": "video_btn_text",
+      "label": "Video Button Text",
+      "default": "Watch Product Demo Video"
+    },
+    {
+      "type": "header",
+      "content": "Styling & Layout"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#f8f9fa"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card Border Color",
+      "default": "#e5e7eb"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#0066ff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Body Text Color",
+      "default": "#4b5563"
+    },
+    {
+      "type": "color",
+      "id": "btn_primary_bg",
+      "label": "Primary Button BG (PDF)",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "btn_primary_text",
+      "label": "Primary Button Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "btn_secondary_bg",
+      "label": "Secondary Button BG (Demo)",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "btn_secondary_text",
+      "label": "Secondary Button Text",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "btn_secondary_border",
+      "label": "Secondary Button Border",
+      "default": "#d1d5db"
+    },
+    {
+      "type": "boolean",
+      "id": "enable_glassmorphism",
+      "label": "Enable Glassmorphism Cards",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "btn_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Border Radius",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 1000,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "label": "Maximum Section Width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "Architect Resources",
+      "category": "Catalog"
+    }
+  ]
+}
+{% endschema %}

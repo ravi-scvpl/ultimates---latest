@@ -1,0 +1,696 @@
+<style>
+  #PerformanceSpecs-{{ section.id }} {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.bg_color }};
+    color: {{ section.settings.text_color }};
+  }
+
+  .specs-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .specs-header {
+    margin-bottom: 40px;
+    text-align: {{ section.settings.header_alignment }};
+  }
+
+  .specs-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: {{ section.settings.badge_color }};
+    margin-bottom: 10px;
+  }
+
+  .specs-heading {
+    margin: 0 0 12px 0;
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+    font-family: var(--font-heading-family, inherit);
+    line-height: 1.2;
+  }
+
+  .specs-subheading {
+    margin: 0;
+    font-size: 16px;
+    color: {{ section.settings.subheading_color }};
+    max-width: 700px;
+    {% if section.settings.header_alignment == 'center' %}
+      margin-left: auto;
+      margin-right: auto;
+    {% endif %}
+  }
+
+  .specs-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    {% if section.settings.layout_position == 'image_first' %}
+      flex-direction: row-reverse;
+    {% endif %}
+  }
+
+  .specs-column-table {
+    flex: 1 1 500px;
+    min-width: 320px;
+  }
+
+  .specs-column-media {
+    flex: 1 1 500px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Specification Table Card */
+  .specs-table-card {
+    background-color: {{ section.settings.card_bg_color }};
+    border-radius: {{ section.settings.card_corner_radius }}px;
+    padding: {{ section.settings.card_padding }}px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid {{ section.settings.border_color }};
+  }
+
+  .specs-table-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid {{ section.settings.heading_color }};
+    color: {{ section.settings.heading_color }};
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .specs-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 12px;
+    border-bottom: 1px solid {{ section.settings.border_color }};
+    transition: background-color 0.2s ease;
+    border-radius: 4px;
+  }
+
+  .spec-row:last-child {
+    border-bottom: none;
+  }
+
+  .spec-row:hover {
+    background-color: {{ section.settings.row_hover_color }};
+  }
+
+  .spec-label {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: {{ section.settings.label_color }};
+    flex: 0 0 40%;
+    padding-right: 12px;
+  }
+
+  .spec-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: {{ section.settings.value_color }};
+    flex: 0 0 60%;
+    text-align: right;
+    word-break: break-word;
+  }
+
+  /* Media & Swatches Container */
+  .specs-media-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: {{ section.settings.card_corner_radius }}px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    border: 1px solid {{ section.settings.border_color }};
+  }
+
+  .specs-main-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .specs-swatches-container {
+    padding: 20px;
+    background-color: {{ section.settings.card_bg_color }};
+    border-top: 1px solid {{ section.settings.border_color }};
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .swatches-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  .swatches-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: {{ section.settings.label_color }};
+  }
+
+  .swatch-selected-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: {{ section.settings.value_color }};
+  }
+
+  .swatches-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .swatch-item {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  }
+
+  .swatch-item:hover,
+  .swatch-item.active {
+    border-color: {{ section.settings.heading_color }};
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .swatch-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .swatch-color-box {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Tooltip on Swatch Hover */
+  .swatch-item .swatch-tooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background-color: #111;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .swatch-item:hover .swatch-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  @media screen and (max-width: 749px) {
+    .specs-grid {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .specs-column-table,
+    .specs-column-media {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+
+    .specs-table-card {
+      padding: 20px 16px;
+    }
+
+    .spec-row {
+      padding: 12px 6px;
+    }
+
+    .spec-label {
+      font-size: 12px;
+    }
+
+    .spec-value {
+      font-size: 13px;
+    }
+
+    .swatch-item {
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>
+
+<section id="PerformanceSpecs-{{ section.id }}">
+  <div class="specs-wrapper">
+    {% if section.settings.heading != blank or section.settings.badge != blank %}
+      <div class="specs-header">
+        {% if section.settings.badge != blank %}
+          <span class="specs-badge">{{ section.settings.badge }}</span>
+        {% endif %}
+        {% if section.settings.heading != blank %}
+          <h2 class="specs-heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.subheading != blank %}
+          <p class="specs-subheading">{{ section.settings.subheading }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="specs-grid">
+      <!-- Specifications Table Column -->
+      <div class="specs-column-table">
+        <div class="specs-table-card">
+          {% if section.settings.table_title != blank %}
+            <div class="specs-table-title">{{ section.settings.table_title }}</div>
+          {% endif %}
+
+          <div class="specs-list">
+            {% for block in section.blocks %}
+              {% if block.type == 'spec_item' %}
+                <div class="spec-row" {{ block.shopify_attributes }}>
+                  <div class="spec-label">{{ block.settings.label }}</div>
+                  <div class="spec-value">{{ block.settings.value }}</div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Media & Color Swatches Column -->
+      <div class="specs-column-media">
+        <div class="specs-media-wrapper">
+          {% if section.settings.image != blank %}
+            <img
+              src="{{ section.settings.image | image_url: width: 1200 }}"
+              alt="{{ section.settings.heading | escape }}"
+              loading="lazy"
+              class="specs-main-image"
+            >
+          {% else %}
+            {{ 'product-1' | placeholder_svg_tag: 'specs-main-image placeholder-svg' }}
+          {% endif %}
+
+          {% assign swatch_count = 0 %}
+          {% for block in section.blocks %}
+            {% if block.type == 'swatch_item' %}
+              {% assign swatch_count = swatch_count | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+
+          {% if swatch_count > 0 %}
+            <div class="specs-swatches-container">
+              <div class="swatches-header">
+                <span class="swatches-title">{{ section.settings.swatches_title | default: 'AVAILABLE COLORS' }}</span>
+                <span class="swatch-selected-name" id="SelectedSwatchName-{{ section.id }}"></span>
+              </div>
+              <div class="swatches-grid">
+                {% for block in section.blocks %}
+                  {% if block.type == 'swatch_item' %}
+                    <div
+                      class="swatch-item{% if forloop.first %} active{% endif %}"
+                      data-name="{{ block.settings.color_name | escape }}"
+                      {{ block.shopify_attributes }}
+                    >
+                      <span class="swatch-tooltip">{{ block.settings.color_name }}</span>
+                      {% if block.settings.swatch_image != blank %}
+                        <img
+                          src="{{ block.settings.swatch_image | image_url: width: 100, height: 100, crop: 'center' }}"
+                          alt="{{ block.settings.color_name }}"
+                          loading="lazy"
+                        >
+                      {% else %}
+                        <div
+                          class="swatch-color-box"
+                          style="background-color: {{ block.settings.swatch_color | default: '#333' }};"
+                        ></div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var section = document.getElementById('PerformanceSpecs-{{ section.id }}');
+    if (!section) return;
+
+    var swatchItems = section.querySelectorAll('.swatch-item');
+    var selectedNameDisplay = section.querySelector('#SelectedSwatchName-{{ section.id }}');
+
+    if (swatchItems.length && selectedNameDisplay) {
+      // Set initial swatch name
+      var activeSwatch = section.querySelector('.swatch-item.active') || swatchItems[0];
+      if (activeSwatch) {
+        selectedNameDisplay.textContent = activeSwatch.getAttribute('data-name');
+      }
+
+      swatchItems.forEach(function (swatch) {
+        swatch.addEventListener('click', function () {
+          swatchItems.forEach(function (s) { s.classList.remove('active'); });
+          this.classList.add('active');
+          selectedNameDisplay.textContent = this.getAttribute('data-name');
+        });
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Performance Specs",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Small Badge / Tag",
+      "default": "PERFORMANCE AT A GLANCE"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Badge Color",
+      "default": "#22c55e"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "TECHNICAL SPECIFICATIONS"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 24,
+      "max": 54,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 36
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#111111"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading / Note",
+      "default": "Designed for heavy commercial traffic with precision manufacturing standards."
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading Color",
+      "default": "#666666"
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Header Alignment",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Layout & Media"
+    },
+    {
+      "type": "select",
+      "id": "layout_position",
+      "label": "Layout Order",
+      "default": "specs_first",
+      "options": [
+        { "value": "specs_first", "label": "Specs Table Left, Image Right" },
+        { "value": "image_first", "label": "Image Left, Specs Table Right" }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Product / Laid-out Mat Image"
+    },
+    {
+      "type": "text",
+      "id": "table_title",
+      "label": "Specs Table Title",
+      "default": "SPECIFICATIONS"
+    },
+    {
+      "type": "text",
+      "id": "swatches_title",
+      "label": "Swatches Label",
+      "default": "AVAILABLE COLORS"
+    },
+    {
+      "type": "header",
+      "content": "Colors & Styling"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background Color",
+      "default": "#fafafa"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Base Text Color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Spec Label Color",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "value_color",
+      "label": "Spec Value Color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border / Divider Color",
+      "default": "#e5e5e5"
+    },
+    {
+      "type": "color",
+      "id": "row_hover_color",
+      "label": "Row Hover Highlight Color",
+      "default": "#f4f4f5"
+    },
+    {
+      "type": "range",
+      "id": "card_corner_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Corner Radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Table Card Padding",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 20,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 20,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "spec_item",
+      "name": "Specification Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Specification Label (e.g. Construction)",
+          "default": "Construction"
+        },
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Specification Value (e.g. Polypropylene looped pile)",
+          "default": "Polypropylene looped pile"
+        }
+      ]
+    },
+    {
+      "type": "swatch_item",
+      "name": "Color Swatch",
+      "settings": [
+        {
+          "type": "text",
+          "id": "color_name",
+          "label": "Color Name (e.g. Forest Green)",
+          "default": "Forest Green"
+        },
+        {
+          "type": "image_picker",
+          "id": "swatch_image",
+          "label": "Swatch Texture Image"
+        },
+        {
+          "type": "color",
+          "id": "swatch_color",
+          "label": "Fallback Solid Color",
+          "default": "#2b5336"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Performance Specs Band",
+      "blocks": [
+        {
+          "type": "spec_item",
+          "settings": { "label": "Construction", "value": "Polypropylene looped pile" }
+        },
+        {
+          "type": "spec_item",
+          "settings": { "label": "Height", "value": "11 mm" }
+        },
+        {
+          "type": "spec_item",
+          "settings": { "label": "Weight", "value": "4.25 kg/m²" }
+        },
+        {
+          "type": "spec_item",
+          "settings": { "label": "Water Retention", "value": "4.50 L/m²" }
+        },
+        {
+          "type": "spec_item",
+          "settings": { "label": "Traffic", "value": "Up to 1.25M steps/year" }
+        },
+        {
+          "type": "spec_item",
+          "settings": { "label": "Backing", "value": "Prime vinyl" }
+        },
+        {
+          "type": "spec_item",
+          "settings": { "label": "Border", "value": "12 mm extended vinyl" }
+        },
+        {
+          "type": "spec_item",
+          "settings": { "label": "Warranty", "value": "15 months" }
+        },
+        {
+          "type": "swatch_item",
+          "settings": { "color_name": "Forest Green", "swatch_color": "#2b5336" }
+        },
+        {
+          "type": "swatch_item",
+          "settings": { "color_name": "Ruby Red", "swatch_color": "#8b1e22" }
+        },
+        {
+          "type": "swatch_item",
+          "settings": { "color_name": "Granite Grey", "swatch_color": "#71797e" }
+        },
+        {
+          "type": "swatch_item",
+          "settings": { "color_name": "Charcoal Black", "swatch_color": "#1c1c1c" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

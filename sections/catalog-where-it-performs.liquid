@@ -1,0 +1,627 @@
+{% comment %}
+  Catalog Where It Performs Section
+  Visual Image Gallery with hover overlays revealing location details
+{% endcomment %}
+
+<style>
+  #CatalogPerforms-{{ section.id }} {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.section_bg_color }};
+    overflow: hidden;
+  }
+
+  .catalog-performs__container {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .catalog-performs__header {
+    text-align: {{ section.settings.header_alignment }};
+    margin-bottom: 48px;
+    max-width: 800px;
+    {% if section.settings.header_alignment == 'center' %}
+      margin-left: auto;
+      margin-right: auto;
+    {% elsif section.settings.header_alignment == 'right' %}
+      margin-left: auto;
+      margin-right: 0;
+    {% else %}
+      margin-left: 0;
+      margin-right: auto;
+    {% endif %}
+  }
+
+  .catalog-performs__subtitle {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 12px;
+  }
+
+  .catalog-performs__title {
+    font-size: {{ section.settings.title_font_size }}px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 16px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .catalog-performs__description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+  }
+
+  /* Gallery Grid Layout */
+  .catalog-performs__gallery {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
+    gap: {{ section.settings.grid_gap }}px;
+  }
+
+  /* Item Card */
+  .catalog-performs__item {
+    position: relative;
+    border-radius: {{ section.settings.card_border_radius }}px;
+    overflow: hidden;
+    aspect-ratio: {{ section.settings.item_aspect_ratio }};
+    cursor: pointer;
+    background-color: #111827;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Image & Zoom Animation */
+  .catalog-performs__image-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .catalog-performs__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .catalog-performs__item:hover .catalog-performs__image {
+    transform: scale(1.08);
+    filter: brightness(0.85);
+  }
+
+  /* Default Visible Label (Bottom Bar) */
+  .catalog-performs__label-default {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 24px;
+    z-index: 2;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .catalog-performs__item:hover .catalog-performs__label-default {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .catalog-performs__location-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .catalog-performs__icon-arrow {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+  }
+
+  .catalog-performs__icon-arrow svg {
+    width: 12px;
+    height: 12px;
+    stroke: currentColor;
+    stroke-width: 2.5;
+  }
+
+  /* Hover Full Glass Overlay */
+  .catalog-performs__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    {% if section.settings.enable_glassmorphism %}
+      background: rgba(17, 24, 39, 0.78);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    {% else %}
+      background: rgba(17, 24, 39, 0.88);
+    {% endif %}
+  }
+
+  .catalog-performs__item:hover .catalog-performs__overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .catalog-performs__overlay-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 8px;
+    transform: translateY(15px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
+  }
+
+  .catalog-performs__overlay-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    transform: translateY(15px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+  }
+
+  .catalog-performs__overlay-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 16px 0;
+    transform: translateY(15px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+  }
+
+  .catalog-performs__overlay-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    transform: translateY(15px);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+  }
+
+  .catalog-performs__item:hover .catalog-performs__overlay-tag,
+  .catalog-performs__item:hover .catalog-performs__overlay-title,
+  .catalog-performs__item:hover .catalog-performs__overlay-desc,
+  .catalog-performs__item:hover .catalog-performs__overlay-features {
+    transform: translateY(0);
+  }
+
+  .catalog-performs__feature-pill {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Responsive Layout */
+  @media screen and (max-width: 1024px) {
+    .catalog-performs__gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .catalog-performs__gallery {
+      grid-template-columns: 1fr;
+    }
+    
+    #CatalogPerforms-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | divided_by: 1.5 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | divided_by: 1.5 }}px;
+    }
+
+    .catalog-performs__title {
+      font-size: calc({{ section.settings.title_font_size }}px * 0.8);
+    }
+
+    .catalog-performs__item {
+      aspect-ratio: {{ section.settings.mobile_item_aspect_ratio }};
+    }
+  }
+</style>
+
+<div id="CatalogPerforms-{{ section.id }}" class="catalog-performs">
+  <div class="catalog-performs__container">
+    {% if section.settings.title != blank or section.settings.subtitle != blank or section.settings.description != blank %}
+      <div class="catalog-performs__header">
+        {% if section.settings.subtitle != blank %}
+          <span class="catalog-performs__subtitle">{{ section.settings.subtitle | escape }}</span>
+        {% endif %}
+
+        {% if section.settings.title != blank %}
+          <h2 class="catalog-performs__title">{{ section.settings.title | escape }}</h2>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div class="catalog-performs__description">{{ section.settings.description }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="catalog-performs__gallery">
+      {% for block in section.blocks %}
+        <div class="catalog-performs__item" {{ block.shopify_attributes }}>
+          <div class="catalog-performs__image-wrap">
+            {% if block.settings.image != blank %}
+              <img class="catalog-performs__image" src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="800" height="600">
+            {% else %}
+              {% assign placeholder_index = forloop.index | cycle: 1, 2, 3, 4, 5, 6 %}
+              {{ 'lifestyle-' | append: placeholder_index | placeholder_svg_tag: 'catalog-performs__image' }}
+            {% endif %}
+          </div>
+
+          <!-- Always visible bottom bar -->
+          <div class="catalog-performs__label-default">
+            <h3 class="catalog-performs__location-name">{{ block.settings.title | escape }}</h3>
+            <div class="catalog-performs__icon-arrow">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+
+          <!-- Hover Overlay Details -->
+          <div class="catalog-performs__overlay">
+            <span class="catalog-performs__overlay-tag">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              {{ block.settings.tag | default: 'Ideal Application' }}
+            </span>
+            
+            <h3 class="catalog-performs__overlay-title">{{ block.settings.title | escape }}</h3>
+
+            {% if block.settings.description != blank %}
+              <p class="catalog-performs__overlay-desc">{{ block.settings.description | escape }}</p>
+            {% endif %}
+
+            {% if block.settings.feature_1 != blank or block.settings.feature_2 != blank or block.settings.feature_3 != blank %}
+              <ul class="catalog-performs__overlay-features">
+                {% if block.settings.feature_1 != blank %}
+                  <li class="catalog-performs__feature-pill">{{ block.settings.feature_1 | escape }}</li>
+                {% endif %}
+                {% if block.settings.feature_2 != blank %}
+                  <li class="catalog-performs__feature-pill">{{ block.settings.feature_2 | escape }}</li>
+                {% endif %}
+                {% if block.settings.feature_3 != blank %}
+                  <li class="catalog-performs__feature-pill">{{ block.settings.feature_3 | escape }}</li>
+                {% endif %}
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Where It Performs",
+  "tag": "section",
+  "class": "section-where-it-performs",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Header Settings"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle / Eyebrow",
+      "default": "Applications & Environments"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Where It Performs"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Section Description",
+      "default": "<p>Engineered for excellence across diverse high-demanding environments and architecturally refined spaces.</p>"
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Header Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 24,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Grid & Layout Settings"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Columns on Desktop",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 12,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Grid Gap",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "item_aspect_ratio",
+      "label": "Desktop Image Aspect Ratio",
+      "options": [
+        { "value": "4 / 3", "label": "4:3 Standard" },
+        { "value": "3 / 4", "label": "3:4 Portrait" },
+        { "value": "1 / 1", "label": "1:1 Square" },
+        { "value": "16 / 9", "label": "16:9 Wide" }
+      ],
+      "default": "4 / 3"
+    },
+    {
+      "type": "select",
+      "id": "mobile_item_aspect_ratio",
+      "label": "Mobile Image Aspect Ratio",
+      "options": [
+        { "value": "4 / 3", "label": "4:3 Standard" },
+        { "value": "3 / 4", "label": "3:4 Portrait" },
+        { "value": "1 / 1", "label": "1:1 Square" },
+        { "value": "16 / 9", "label": "16:9 Wide" }
+      ],
+      "default": "4 / 3"
+    },
+    {
+      "type": "header",
+      "content": "Styling Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#0066ff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Section Heading Color",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Section Body Text Color",
+      "default": "#4b5563"
+    },
+    {
+      "type": "boolean",
+      "id": "enable_glassmorphism",
+      "label": "Enable Glassmorphism Hover Overlay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 1000,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "label": "Maximum Section Width",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 64
+    }
+  ],
+  "blocks": [
+    {
+      "type": "location",
+      "name": "Location / Application",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Location Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Location Name",
+          "default": "Hotels & Hospitality"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Category Tag",
+          "default": "Ideal Location"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Hover Description",
+          "default": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall."
+        },
+        {
+          "type": "text",
+          "id": "feature_1",
+          "label": "Feature Badge 1",
+          "default": "Luxury Aesthetic"
+        },
+        {
+          "type": "text",
+          "id": "feature_2",
+          "label": "Feature Badge 2",
+          "default": "High Footfall"
+        },
+        {
+          "type": "text",
+          "id": "feature_3",
+          "label": "Feature Badge 3",
+          "default": "Quick Maintenance"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Where It Performs",
+      "category": "Catalog",
+      "blocks": [
+        {
+          "type": "location",
+          "settings": {
+            "title": "Hotels",
+            "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
+            "feature_1": "Lobby Entrances",
+            "feature_2": "Elegance Protection",
+            "feature_3": "High Traffic"
+          }
+        },
+        {
+          "type": "location",
+          "settings": {
+            "title": "Corporate Offices",
+            "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
+            "feature_1": "Executive Foyers",
+            "feature_2": "Noise Reduction",
+            "feature_3": "Anti-Slip"
+          }
+        },
+        {
+          "type": "location",
+          "settings": {
+            "title": "Retail",
+            "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
+            "feature_1": "Storefronts",
+            "feature_2": "Dirt Trapping",
+            "feature_3": "Heavy Duty"
+          }
+        },
+        {
+          "type": "location",
+          "settings": {
+            "title": "Hospitals",
+            "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
+            "feature_1": "Hygienic Clean",
+            "feature_2": "Easy Sanitization",
+            "feature_3": "Wheelchair Safe"
+          }
+        },
+        {
+          "type": "location",
+          "settings": {
+            "title": "Schools & Institutions",
+            "description": "Robust, high-durability protection engineered to withstand constant student activity.",
+            "feature_1": "High Durability",
+            "feature_2": "Scuff Resistant",
+            "feature_3": "Safe & Non-Slip"
+          }
+        },
+        {
+          "type": "location",
+          "settings": {
+            "title": "High-Traffic Entrances",
+            "description": "Maximum debris retention and water absorption at main building access points.",
+            "feature_1": "Debris Control",
+            "feature_2": "Water Absorbing",
+            "feature_3": "24/7 Endurance"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

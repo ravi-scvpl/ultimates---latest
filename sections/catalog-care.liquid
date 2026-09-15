@@ -1,0 +1,771 @@
+{% comment %}
+  Catalog Care Visual Process Section
+  Modern 2-Box Visual AI Cleaning Process Section (Light Cleaning & Deep Cleaning)
+{% endcomment %}
+
+<style>
+  #CatalogCare-{{ section.id }} {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.section_bg_color }};
+    overflow: hidden;
+  }
+
+  .catalog-care__container {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .catalog-care__header {
+    text-align: {{ section.settings.header_alignment }};
+    margin-bottom: 48px;
+    max-width: 800px;
+    {% if section.settings.header_alignment == 'center' %}
+      margin-left: auto;
+      margin-right: auto;
+    {% elsif section.settings.header_alignment == 'right' %}
+      margin-left: auto;
+      margin-right: 0;
+    {% else %}
+      margin-left: 0;
+      margin-right: auto;
+    {% endif %}
+  }
+
+  .catalog-care__subtitle {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 12px;
+  }
+
+  .catalog-care__title {
+    font-size: {{ section.settings.title_font_size }}px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 16px 0;
+    letter-spacing: -0.02em;
+  }
+
+  .catalog-care__description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+  }
+
+  /* Grid Layout for 2 Boxes */
+  .catalog-care__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  /* Box / Card Styling */
+  .catalog-care__card {
+    position: relative;
+    border-radius: {{ section.settings.card_border_radius }}px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    {% if section.settings.enable_glassmorphism %}
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
+    {% else %}
+      background-color: {{ section.settings.card_bg_color }};
+      border: 1px solid {{ section.settings.card_border_color }};
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    {% endif %}
+  }
+
+  .catalog-care__card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Card Header Tag */
+  .catalog-care__badge-wrap {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+  }
+
+  .catalog-care__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: {{ section.settings.badge_bg_color }};
+    color: {{ section.settings.badge_text_color }};
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* Media / Video Container */
+  .catalog-care__media-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: {{ section.settings.media_aspect_ratio }};
+    overflow: hidden;
+    background-color: #0d0d0d;
+  }
+
+  .catalog-care__video,
+  .catalog-care__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .catalog-care__card:hover .catalog-care__video,
+  .catalog-care__card:hover .catalog-care__image {
+    transform: scale(1.03);
+  }
+
+  /* Card Content */
+  .catalog-care__content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .catalog-care__card-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: {{ section.settings.card_title_color }};
+    margin: 0 0 12px 0;
+  }
+
+  .catalog-care__card-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: {{ section.settings.card_text_color }};
+    margin: 0 0 24px 0;
+    flex-grow: 1;
+  }
+
+  /* Feature Checklist */
+  .catalog-care__steps {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .catalog-care__step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: {{ section.settings.card_text_color }};
+  }
+
+  .catalog-care__step-icon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border-radius: 50%;
+    background-color: {{ section.settings.accent_color | color_modify: 'alpha', 0.12 }};
+    color: {{ section.settings.accent_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .catalog-care__step-icon svg {
+    width: 12px;
+    height: 12px;
+    stroke: currentColor;
+    stroke-width: 2.5;
+  }
+
+  /* Footer Meta Info / Pill */
+  .catalog-care__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid {{ section.settings.card_border_color }};
+  }
+
+  .catalog-care__meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: {{ section.settings.card_title_color }};
+  }
+
+  .catalog-care__meta-item svg {
+    width: 16px;
+    height: 16px;
+    stroke: {{ section.settings.accent_color }};
+  }
+
+  /* Responsive Adjustments */
+  @media screen and (max-width: 989px) {
+    .catalog-care__grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .catalog-care__title {
+      font-size: calc({{ section.settings.title_font_size }}px * 0.8);
+    }
+
+    .catalog-care__content {
+      padding: 24px;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    #CatalogCare-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top | divided_by: 1.5 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | divided_by: 1.5 }}px;
+    }
+    
+    .catalog-care__media-container {
+      aspect-ratio: {{ section.settings.mobile_media_aspect_ratio }};
+    }
+  }
+</style>
+
+<div id="CatalogCare-{{ section.id }}" class="catalog-care">
+  <div class="catalog-care__container">
+    {% if section.settings.title != blank or section.settings.subtitle != blank or section.settings.description != blank %}
+      <div class="catalog-care__header">
+        {% if section.settings.subtitle != blank %}
+          <span class="catalog-care__subtitle">{{ section.settings.subtitle | escape }}</span>
+        {% endif %}
+
+        {% if section.settings.title != blank %}
+          <h2 class="catalog-care__title">{{ section.settings.title | escape }}</h2>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div class="catalog-care__description">{{ section.settings.description }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="catalog-care__grid">
+      <!-- BOX 1: LIGHT CLEANING -->
+      <div class="catalog-care__card">
+        <div class="catalog-care__badge-wrap">
+          <span class="catalog-care__badge">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            {{ section.settings.box1_badge | default: 'Video 1 • Daily Maintenance' }}
+          </span>
+        </div>
+
+        <div class="catalog-care__media-container">
+          {% if section.settings.box1_video != blank %}
+            {{ section.settings.box1_video | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'catalog-care__video', playsinline: true }}
+          {% elsif section.settings.box1_video_url != blank %}
+            {% assign video_id = section.settings.box1_video_url.id %}
+            {% if section.settings.box1_video_url.type == 'youtube' %}
+              <iframe class="catalog-care__video" src="https://www.youtube.com/embed/{{ video_id }}?autoplay=1&mute=1&loop=1&playlist={{ video_id }}&controls=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            {% elsif section.settings.box1_video_url.type == 'vimeo' %}
+              <iframe class="catalog-care__video" src="https://player.vimeo.com/video/{{ video_id }}?background=1&autoplay=1&loop=1&byline=0&title=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            {% endif %}
+          {% elsif section.settings.box1_image != blank %}
+            <img class="catalog-care__image" src="{{ section.settings.box1_image | image_url: width: 800 }}" alt="{{ section.settings.box1_title | escape }}" loading="lazy" width="800" height="450">
+          {% else %}
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'catalog-care__image' }}
+          {% endif %}
+        </div>
+
+        <div class="catalog-care__content">
+          <h3 class="catalog-care__card-title">{{ section.settings.box1_title | escape }}</h3>
+          
+          {% if section.settings.box1_description != blank %}
+            <p class="catalog-care__card-desc">{{ section.settings.box1_description | escape }}</p>
+          {% endif %}
+
+          <ul class="catalog-care__steps">
+            {% if section.settings.box1_step_1 != blank %}
+              <li class="catalog-care__step-item">
+                <span class="catalog-care__step-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>{{ section.settings.box1_step_1 | escape }}</span>
+              </li>
+            {% endif %}
+            {% if section.settings.box1_step_2 != blank %}
+              <li class="catalog-care__step-item">
+                <span class="catalog-care__step-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>{{ section.settings.box1_step_2 | escape }}</span>
+              </li>
+            {% endif %}
+            {% if section.settings.box1_step_3 != blank %}
+              <li class="catalog-care__step-item">
+                <span class="catalog-care__step-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>{{ section.settings.box1_step_3 | escape }}</span>
+              </li>
+            {% endif %}
+          </ul>
+
+          {% if section.settings.box1_meta_1 != blank or section.settings.box1_meta_2 != blank %}
+            <div class="catalog-care__footer">
+              {% if section.settings.box1_meta_1 != blank %}
+                <div class="catalog-care__meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>{{ section.settings.box1_meta_1 | escape }}</span>
+                </div>
+              {% endif %}
+
+              {% if section.settings.box1_meta_2 != blank %}
+                <div class="catalog-care__meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span>{{ section.settings.box1_meta_2 | escape }}</span>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- BOX 2: DEEP CLEANING -->
+      <div class="catalog-care__card">
+        <div class="catalog-care__badge-wrap">
+          <span class="catalog-care__badge">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            {{ section.settings.box2_badge | default: 'Video 2 • Deep Restoration' }}
+          </span>
+        </div>
+
+        <div class="catalog-care__media-container">
+          {% if section.settings.box2_video != blank %}
+            {{ section.settings.box2_video | video_tag: autoplay: true, loop: true, muted: true, controls: false, class: 'catalog-care__video', playsinline: true }}
+          {% elsif section.settings.box2_video_url != blank %}
+            {% assign video_id2 = section.settings.box2_video_url.id %}
+            {% if section.settings.box2_video_url.type == 'youtube' %}
+              <iframe class="catalog-care__video" src="https://www.youtube.com/embed/{{ video_id2 }}?autoplay=1&mute=1&loop=1&playlist={{ video_id2 }}&controls=0&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            {% elsif section.settings.box2_video_url.type == 'vimeo' %}
+              <iframe class="catalog-care__video" src="https://player.vimeo.com/video/{{ video_id2 }}?background=1&autoplay=1&loop=1&byline=0&title=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            {% endif %}
+          {% elsif section.settings.box2_image != blank %}
+            <img class="catalog-care__image" src="{{ section.settings.box2_image | image_url: width: 800 }}" alt="{{ section.settings.box2_title | escape }}" loading="lazy" width="800" height="450">
+          {% else %}
+            {{ 'lifestyle-2' | placeholder_svg_tag: 'catalog-care__image' }}
+          {% endif %}
+        </div>
+
+        <div class="catalog-care__content">
+          <h3 class="catalog-care__card-title">{{ section.settings.box2_title | escape }}</h3>
+          
+          {% if section.settings.box2_description != blank %}
+            <p class="catalog-care__card-desc">{{ section.settings.box2_description | escape }}</p>
+          {% endif %}
+
+          <ul class="catalog-care__steps">
+            {% if section.settings.box2_step_1 != blank %}
+              <li class="catalog-care__step-item">
+                <span class="catalog-care__step-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>{{ section.settings.box2_step_1 | escape }}</span>
+              </li>
+            {% endif %}
+            {% if section.settings.box2_step_2 != blank %}
+              <li class="catalog-care__step-item">
+                <span class="catalog-care__step-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>{{ section.settings.box2_step_2 | escape }}</span>
+              </li>
+            {% endif %}
+            {% if section.settings.box2_step_3 != blank %}
+              <li class="catalog-care__step-item">
+                <span class="catalog-care__step-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </span>
+                <span>{{ section.settings.box2_step_3 | escape }}</span>
+              </li>
+            {% endif %}
+          </ul>
+
+          {% if section.settings.box2_meta_1 != blank or section.settings.box2_meta_2 != blank %}
+            <div class="catalog-care__footer">
+              {% if section.settings.box2_meta_1 != blank %}
+                <div class="catalog-care__meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>{{ section.settings.box2_meta_1 | escape }}</span>
+                </div>
+              {% endif %}
+
+              {% if section.settings.box2_meta_2 != blank %}
+                <div class="catalog-care__meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  <span>{{ section.settings.box2_meta_2 | escape }}</span>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Catalog Care & Cleaning",
+  "tag": "section",
+  "class": "section-catalog-care",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Header Settings"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Section Subtitle / Eyebrow",
+      "default": "Care & Maintenance Guide"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Short AI Visual Cleaning Process"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Section Description",
+      "default": "<p>Effortless maintenance tailored to keep your premium mats in pristine condition using advanced cleaning steps.</p>"
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Header Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 24,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "BOX 1: LIGHT CLEANING (VIDEO 1)"
+    },
+    {
+      "type": "text",
+      "id": "box1_badge",
+      "label": "Badge Text",
+      "default": "VIDEO 1 • LIGHT CLEANING"
+    },
+    {
+      "type": "video",
+      "id": "box1_video",
+      "label": "Shopify Hosted Video"
+    },
+    {
+      "type": "video_url",
+      "id": "box1_video_url",
+      "label": "External Video URL (YouTube / Vimeo)",
+      "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "image_picker",
+      "id": "box1_image",
+      "label": "Fallback Image (If no video)"
+    },
+    {
+      "type": "text",
+      "id": "box1_title",
+      "label": "Box 1 Title",
+      "default": "Light & Quick Cleaning Process"
+    },
+    {
+      "type": "textarea",
+      "id": "box1_description",
+      "label": "Box 1 Description",
+      "default": "Ideal for routine dust removal, liquid spills, and maintaining surface luster without deep scrubbing."
+    },
+    {
+      "type": "text",
+      "id": "box1_step_1",
+      "label": "Step 1",
+      "default": "Wipe surface down with damp microfiber cloth"
+    },
+    {
+      "type": "text",
+      "id": "box1_step_2",
+      "label": "Step 2",
+      "default": "Use gentle vacuum spray or light water rinse"
+    },
+    {
+      "type": "text",
+      "id": "box1_step_3",
+      "label": "Step 3",
+      "default": "Air dry for 5 minutes before reinstalling"
+    },
+    {
+      "type": "text",
+      "id": "box1_meta_1",
+      "label": "Meta Item 1",
+      "default": "Time: 2-3 Mins"
+    },
+    {
+      "type": "text",
+      "id": "box1_meta_2",
+      "label": "Meta Item 2",
+      "default": "Frequency: Weekly"
+    },
+    {
+      "type": "header",
+      "content": "BOX 2: DEEP CLEANING (VIDEO 2)"
+    },
+    {
+      "type": "text",
+      "id": "box2_badge",
+      "label": "Badge Text",
+      "default": "VIDEO 2 • DEEP CLEANING"
+    },
+    {
+      "type": "video",
+      "id": "box2_video",
+      "label": "Shopify Hosted Video"
+    },
+    {
+      "type": "video_url",
+      "id": "box2_video_url",
+      "label": "External Video URL (YouTube / Vimeo)",
+      "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "image_picker",
+      "id": "box2_image",
+      "label": "Fallback Image (If no video)"
+    },
+    {
+      "type": "text",
+      "id": "box2_title",
+      "label": "Box 2 Title",
+      "default": "Deep Restoration & Cleaning"
+    },
+    {
+      "type": "textarea",
+      "id": "box2_description",
+      "label": "Box 2 Description",
+      "default": "Designed for thorough mud extraction, heavy stain removal, and full material refresh."
+    },
+    {
+      "type": "text",
+      "id": "box2_step_1",
+      "label": "Step 1",
+      "default": "Pressure wash or hose down entire mat area"
+    },
+    {
+      "type": "text",
+      "id": "box2_step_2",
+      "label": "Step 2",
+      "default": "Apply mild detergent & soft brush scrub"
+    },
+    {
+      "type": "text",
+      "id": "box2_step_3",
+      "label": "Step 3",
+      "default": "Complete rinse and thorough dry"
+    },
+    {
+      "type": "text",
+      "id": "box2_meta_1",
+      "label": "Meta Item 1",
+      "default": "Time: 10 Mins"
+    },
+    {
+      "type": "text",
+      "id": "box2_meta_2",
+      "label": "Meta Item 2",
+      "default": "Frequency: Monthly"
+    },
+    {
+      "type": "header",
+      "content": "Styling & Layout Settings"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#f8f9fa"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card Border Color",
+      "default": "#e9ecef"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent / Highlight Color",
+      "default": "#0066ff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Section Heading Color",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Section Body Text Color",
+      "default": "#4b5563"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card Title Color",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "card_text_color",
+      "label": "Card Text Color",
+      "default": "#6b7280"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Badge Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge Text Color",
+      "default": "#111827"
+    },
+    {
+      "type": "boolean",
+      "id": "enable_glassmorphism",
+      "label": "Enable Glassmorphism Effect",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "media_aspect_ratio",
+      "label": "Desktop Media Aspect Ratio",
+      "options": [
+        { "value": "16 / 9", "label": "16:9 Landscape" },
+        { "value": "4 / 3", "label": "4:3 Standard" },
+        { "value": "1 / 1", "label": "1:1 Square" }
+      ],
+      "default": "16 / 9"
+    },
+    {
+      "type": "select",
+      "id": "mobile_media_aspect_ratio",
+      "label": "Mobile Media Aspect Ratio",
+      "options": [
+        { "value": "16 / 9", "label": "16:9 Landscape" },
+        { "value": "4 / 3", "label": "4:3 Standard" },
+        { "value": "1 / 1", "label": "1:1 Square" }
+      ],
+      "default": "16 / 9"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 1000,
+      "max": 1600,
+      "step": 20,
+      "unit": "px",
+      "label": "Maximum Section Width",
+      "default": 1400
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "Catalog Care & Cleaning",
+      "category": "Catalog"
+    }
+  ]
+}
+{% endschema %}

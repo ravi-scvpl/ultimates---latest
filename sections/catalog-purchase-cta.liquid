@@ -1,0 +1,441 @@
+{% comment %}
+  Catalog Dual CTA Section (Standard Sizes & Made To Measure crossover)
+{% endcomment %}
+
+<style>
+  #CatalogCrossoverCTA-{{ section.id }} {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.section_bg_color }};
+    overflow: hidden;
+  }
+
+  .catalog-cta__container {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .catalog-cta__header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .catalog-cta__subtitle {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 8px;
+  }
+
+  .catalog-cta__title {
+    font-size: {{ section.settings.title_font_size }}px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  /* 2-Column Grid */
+  .catalog-cta__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .catalog-cta__card {
+    position: relative;
+    border-radius: {{ section.settings.card_border_radius }}px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-sizing: border-box;
+    text-align: left;
+
+    {% if section.settings.enable_glassmorphism %}
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.05);
+    {% else %}
+      background-color: {{ section.settings.card_bg_color }};
+      border: 1px solid {{ section.settings.card_border_color }};
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    {% endif %}
+  }
+
+  .catalog-cta__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.09);
+  }
+
+  .catalog-cta__card-content {
+    margin-bottom: 28px;
+  }
+
+  .catalog-cta__card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+  }
+
+  .catalog-cta__card-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+  }
+
+  .catalog-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px 24px;
+    border-radius: {{ section.settings.btn_border_radius }}px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .catalog-cta__btn--primary {
+    background-color: {{ section.settings.btn1_bg }};
+    color: {{ section.settings.btn1_text }};
+    box-shadow: 0 6px 18px {{ section.settings.btn1_bg | color_modify: 'alpha', 0.25 }};
+  }
+
+  .catalog-cta__btn--primary:hover {
+    background-color: {{ section.settings.btn1_bg | color_darken: 8 }};
+    transform: translateY(-2px);
+  }
+
+  .catalog-cta__btn--secondary {
+    background-color: {{ section.settings.btn2_bg }};
+    color: {{ section.settings.btn2_text }};
+    border: 1px solid {{ section.settings.btn2_border }};
+  }
+
+  .catalog-cta__btn--secondary:hover {
+    background-color: {{ section.settings.btn2_bg | color_darken: 5 }};
+    transform: translateY(-2px);
+  }
+
+  .catalog-cta__btn svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 2.5;
+  }
+
+  @media screen and (max-width: 890px) {
+    .catalog-cta__grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .catalog-cta__card {
+      padding: 30px 24px;
+    }
+
+    .catalog-cta__title {
+      font-size: calc({{ section.settings.title_font_size }}px * 0.85);
+    }
+  }
+</style>
+
+<div id="CatalogCrossoverCTA-{{ section.id }}" class="catalog-cta">
+  <div class="catalog-cta__container">
+    {% if section.settings.title != blank or section.settings.subtitle != blank %}
+      <div class="catalog-cta__header">
+        {% if section.settings.subtitle != blank %}
+          <span class="catalog-cta__subtitle">{{ section.settings.subtitle | escape }}</span>
+        {% endif %}
+        {% if section.settings.title != blank %}
+          <h2 class="catalog-cta__title">{{ section.settings.title | escape }}</h2>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="catalog-cta__grid">
+      <!-- CARD 1: STANDARD SIZES -->
+      <div class="catalog-cta__card">
+        <div class="catalog-cta__card-content">
+          <h3 class="catalog-cta__card-title">{{ section.settings.card1_title | default: 'STANDARD SIZES' }}</h3>
+          <p class="catalog-cta__card-desc">{{ section.settings.card1_desc | default: 'Explore available standard-size mats for immediate dispatch and standard entrance dimensions.' }}</p>
+        </div>
+        
+        {% assign btn1_url = section.settings.card1_product.url %}
+        {% if btn1_url == blank and section.settings.card1_url != blank %}
+          {% assign btn1_url = section.settings.card1_url %}
+        {% endif %}
+        
+        <a href="{{ btn1_url | default: '#' }}" class="catalog-cta__btn catalog-cta__btn--primary">
+          <span>{{ section.settings.card1_btn_label | default: 'Explore Standard Sizes' }}</span>
+          <svg viewBox="0 0 24 24" fill="none"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <!-- CARD 2: MADE TO MEASURE -->
+      <div class="catalog-cta__card">
+        <div class="catalog-cta__card-content">
+          <h3 class="catalog-cta__card-title">{{ section.settings.card2_title | default: 'MADE TO MEASURE' }}</h3>
+          <p class="catalog-cta__card-desc">{{ section.settings.card2_desc | default: 'Customize to your exact size, recessed mat well specs, or custom architectural architectural layouts.' }}</p>
+        </div>
+
+        {% assign btn2_url = section.settings.card2_product.url %}
+        {% if btn2_url == blank and section.settings.card2_url != blank %}
+          {% assign btn2_url = section.settings.card2_url %}
+        {% endif %}
+
+        <a href="{{ btn2_url | default: '#' }}" class="catalog-cta__btn catalog-cta__btn--secondary">
+          <span>{{ section.settings.card2_btn_label | default: 'Configure Made To Measure' }}</span>
+          <svg viewBox="0 0 24 24" fill="none"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Catalog Purchase CTA",
+  "tag": "section",
+  "class": "section-catalog-purchase-cta",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Ready To Order?"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main Heading",
+      "default": "Looking to purchase?"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Font Size",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "CARD 1: STANDARD SIZES"
+    },
+    {
+      "type": "text",
+      "id": "card1_title",
+      "label": "Card 1 Title",
+      "default": "STANDARD SIZES"
+    },
+    {
+      "type": "textarea",
+      "id": "card1_desc",
+      "label": "Card 1 Description",
+      "default": "Explore available standard-size mats for immediate dispatch and standard entrance dimensions."
+    },
+    {
+      "type": "product",
+      "id": "card1_product",
+      "label": "Select Product (Optional)"
+    },
+    {
+      "type": "url",
+      "id": "card1_url",
+      "label": "Custom URL (Fallback if no product selected)"
+    },
+    {
+      "type": "text",
+      "id": "card1_btn_label",
+      "label": "Button Label",
+      "default": "Explore Standard Sizes"
+    },
+    {
+      "type": "header",
+      "content": "CARD 2: MADE TO MEASURE"
+    },
+    {
+      "type": "text",
+      "id": "card2_title",
+      "label": "Card 2 Title",
+      "default": "MADE TO MEASURE"
+    },
+    {
+      "type": "textarea",
+      "id": "card2_desc",
+      "label": "Card 2 Description",
+      "default": "Customize to your exact size, recessed mat well specs, or custom architectural layouts."
+    },
+    {
+      "type": "product",
+      "id": "card2_product",
+      "label": "Select Product (Optional)"
+    },
+    {
+      "type": "url",
+      "id": "card2_url",
+      "label": "Custom URL (Fallback if no product selected)"
+    },
+    {
+      "type": "text",
+      "id": "card2_btn_label",
+      "label": "Button Label",
+      "default": "Customize To Your Exact Size"
+    },
+    {
+      "type": "header",
+      "content": "Styling & Layout"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card Background Color",
+      "default": "#f9fafb"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card Border Color",
+      "default": "#e5e7eb"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent / Subtitle Color",
+      "default": "#0066ff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#4b5563"
+    },
+    {
+      "type": "color",
+      "id": "btn1_bg",
+      "label": "Button 1 BG",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "btn1_text",
+      "label": "Button 1 Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "btn2_bg",
+      "label": "Button 2 BG",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "btn2_text",
+      "label": "Button 2 Text",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "btn2_border",
+      "label": "Button 2 Border",
+      "default": "#111827"
+    },
+    {
+      "type": "boolean",
+      "id": "enable_glassmorphism",
+      "label": "Enable Glassmorphism",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "btn_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Border Radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 800,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "label": "Maximum Width",
+      "default": 1100
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 56
+    }
+  ],
+  "presets": [
+    {
+      "name": "Catalog Purchase CTA",
+      "category": "Catalog"
+    }
+  ]
+}
+{% endschema %}
