@@ -711,6 +711,21 @@
         "padding_top": 44,
         "padding_bottom": 44
       }
+    },
+    "catalog_care_new": {
+      "type": "catalog-care"
+    },
+    "catalog_where_it_performs_new": {
+      "type": "catalog-where-it-performs"
+    },
+    "catalog_resources_new": {
+      "type": "catalog-resources"
+    },
+    "catalog_purchase_cta_new": {
+      "type": "catalog-purchase-cta"
+    },
+    "catalog_product_family_new": {
+      "type": "catalog-product-family"
     }
   },
   "order": [
@@ -726,6 +741,11 @@
     "media_with_text_NaihVK",
     "media_with_text_f6VaAm",
     "large_media_with_text_box_wcgMWJ",
+    "catalog_care_new",
+    "catalog_where_it_performs_new",
+    "catalog_resources_new",
+    "catalog_purchase_cta_new",
+    "catalog_product_family_new",
     "collapsible_content_QXqK9a",
     "rich_text_AkVmJE",
     "contact_form_awRX6D"
