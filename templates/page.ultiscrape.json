@@ -542,6 +542,261 @@
         "padding_bottom": 44
       }
     },
+    "catalog_hero_LN7jUH": {
+      "type": "catalog-hero",
+      "name": "Catalog Hero Banner",
+      "settings": {
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "section_height_desktop": "600px",
+        "section_height_mobile": "400px",
+        "content_width": 800,
+        "content_position": "middle-center",
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "heading": "CATALOG COLLECTION",
+        "heading_size": 48,
+        "heading_color": "#ffffff",
+        "description": "<p>Explore our premium range of commercial and residential entrance mats designed for superior performance and elegance.</p>",
+        "description_size": 18,
+        "description_color": "#e0e0e0",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "catalog_fullwidth_feature_JJMzXk": {
+      "type": "catalog-fullwidth-feature",
+      "name": "Full Width Feature Section",
+      "settings": {
+        "layout_mode": "overlay",
+        "image_position": "left",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "card_position": "right",
+        "text_alignment": "left",
+        "mobile_text_alignment": "center",
+        "card_max_width": 550,
+        "card_padding": 36,
+        "card_border_radius": 16,
+        "card_bg_color": "#f4f4f4",
+        "enable_glassmorphism": false,
+        "badge": "PRODUCT HIGHLIGHT",
+        "badge_color": "#555555",
+        "heading": "ULTISCRUB CARPET MATTING",
+        "heading_size": 32,
+        "heading_color": "#111111",
+        "description": "<p>Polypropylene looped pile dual stiffness fiber commercial matting with tough vinyl backing and all-around compressed borders.</p>",
+        "description_size": 15,
+        "description_color": "#444444",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#111111",
+        "button_text_color": "#ffffff",
+        "button_border_color": "#111111",
+        "section_bg_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "promise_slider_Wh8jKn": {
+      "type": "promise-slider",
+      "blocks": {
+        "card_QaDVeX": {
+          "type": "card",
+          "settings": {
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "12 EXTENSIVE QUALITY CHECKS",
+            "text": "<p>Our 12-step quality assurance process ensures our output is excellent without fail, every single time!</p>"
+          }
+        },
+        "card_E8hTGK": {
+          "type": "card",
+          "settings": {
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "PERFECTION IN EVERY PIECE",
+            "text": "<p>Fabric testing, weight evaluation, seam quality check, and 9 other tests guarantee perfection in each product.</p>"
+          }
+        },
+        "card_UYcCkf": {
+          "type": "card",
+          "settings": {
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "UNMATCHABLE QUALITY",
+            "text": "<p>We take immense pride in our product quality that remains unparalleled and timeless!</p>"
+          }
+        },
+        "card_L3b7Pw": {
+          "type": "card",
+          "settings": {
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "QUILTING OPULENCE",
+            "text": "<p>Highest standard of low-residue thread go neat look quilting.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_QaDVeX",
+        "card_E8hTGK",
+        "card_UYcCkf",
+        "card_L3b7Pw"
+      ],
+      "name": "Promise Slider",
+      "settings": {
+        "background_video_url": "",
+        "section_height": 800,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "overlay_opacity": 40,
+        "heading": "PREMIUM MAT PROPERTIES",
+        "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
+      }
+    },
+    "three_layer_feature_REyGhN": {
+      "type": "three-layer-feature",
+      "name": "Three Layer Feature",
+      "settings": {
+        "bg_color": "#000000",
+        "text_color": "#ffffff",
+        "video_url": "",
+        "asset_video_name": "",
+        "heading": "THREE LAYER TECH",
+        "description": "<p>Our multi-layered mats ensure maximum performance with minimum weight.</p><p>Each layer traps dirt individually to ensure that your space stays clean throughout the day.</p>"
+      }
+    },
+    "catalog_performance_specs_MUiU78": {
+      "type": "catalog-performance-specs",
+      "blocks": {
+        "spec_item_nni6fL": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Construction",
+            "value": "Polypropylene looped pile"
+          }
+        },
+        "spec_item_cFNVUA": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Height",
+            "value": "11 mm"
+          }
+        },
+        "spec_item_QRGxYP": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Weight",
+            "value": "4.25 kg/m²"
+          }
+        },
+        "spec_item_jaqTkn": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Water Retention",
+            "value": "4.50 L/m²"
+          }
+        },
+        "spec_item_GYre4C": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Traffic",
+            "value": "Up to 1.25M steps/year"
+          }
+        },
+        "spec_item_y3TkGM": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Backing",
+            "value": "Prime vinyl"
+          }
+        },
+        "spec_item_W9iibB": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Border",
+            "value": "12 mm extended vinyl"
+          }
+        },
+        "spec_item_qq8QcB": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Warranty",
+            "value": "15 months"
+          }
+        },
+        "swatch_item_VidNep": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Forest Green",
+            "swatch_color": "#2b5336"
+          }
+        },
+        "swatch_item_DAppFU": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Ruby Red",
+            "swatch_color": "#8b1e22"
+          }
+        },
+        "swatch_item_Bkbk64": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Granite Grey",
+            "swatch_color": "#71797e"
+          }
+        },
+        "swatch_item_A9jFNX": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Charcoal Black",
+            "swatch_color": "#1c1c1c"
+          }
+        }
+      },
+      "block_order": [
+        "spec_item_nni6fL",
+        "spec_item_cFNVUA",
+        "spec_item_QRGxYP",
+        "spec_item_jaqTkn",
+        "spec_item_GYre4C",
+        "spec_item_y3TkGM",
+        "spec_item_W9iibB",
+        "spec_item_qq8QcB",
+        "swatch_item_VidNep",
+        "swatch_item_DAppFU",
+        "swatch_item_Bkbk64",
+        "swatch_item_A9jFNX"
+      ],
+      "name": "Performance Specs Band",
+      "settings": {
+        "badge": "PERFORMANCE AT A GLANCE",
+        "badge_color": "#22c55e",
+        "heading": "TECHNICAL SPECIFICATIONS",
+        "heading_size": 36,
+        "heading_color": "#111111",
+        "subheading": "Designed for heavy commercial traffic with precision manufacturing standards.",
+        "subheading_color": "#666666",
+        "header_alignment": "left",
+        "layout_position": "specs_first",
+        "table_title": "SPECIFICATIONS",
+        "swatches_title": "AVAILABLE COLORS",
+        "bg_color": "#fafafa",
+        "text_color": "#111111",
+        "card_bg_color": "#ffffff",
+        "label_color": "#555555",
+        "value_color": "#111111",
+        "border_color": "#e5e5e5",
+        "row_hover_color": "#f4f4f5",
+        "card_corner_radius": 12,
+        "card_padding": 28,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "collapsible_content_QXqK9a": {
       "type": "collapsible-content",
       "blocks": {
@@ -670,6 +925,11 @@
     "large_media_with_text_box_wcgMWJ",
     "media_with_text_A6py6b",
     "social_media_banner_7qVQMD",
+    "catalog_hero_LN7jUH",
+    "catalog_fullwidth_feature_JJMzXk",
+    "promise_slider_Wh8jKn",
+    "three_layer_feature_REyGhN",
+    "catalog_performance_specs_MUiU78",
     "collapsible_content_QXqK9a",
     "rich_text_aXwYKq",
     "contact_form_awRX6D"
