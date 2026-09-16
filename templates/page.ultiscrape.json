@@ -546,18 +546,19 @@
       "type": "catalog-hero",
       "name": "Catalog Hero Banner",
       "settings": {
+        "image": "shopify://shop_images/WhatsApp_Image_2026-09-09_at_9.05.00_PM.jpg",
         "overlay_color": "#000000",
-        "overlay_opacity": 30,
+        "overlay_opacity": 40,
         "section_height_desktop": "600px",
         "section_height_mobile": "400px",
         "content_width": 800,
-        "content_position": "middle-center",
+        "content_position": "bottom-center",
         "text_alignment": "center",
         "mobile_text_alignment": "center",
-        "heading": "CATALOG COLLECTION",
+        "heading": "<strong>ULTISCRApe</strong>",
         "heading_size": 48,
         "heading_color": "#ffffff",
-        "description": "<p>Explore our premium range of commercial and residential entrance mats designed for superior performance and elegance.</p>",
+        "description": "<p><strong>Heavy-duty commercial scraper carpet matting with double-reinforced borders for maximum dirt removal and durability.<br/></strong></p>",
         "description_size": 18,
         "description_color": "#e0e0e0",
         "padding_top": 0,
@@ -572,6 +573,7 @@
         "image_position": "left",
         "desktop_height": "550px",
         "mobile_height": "400px",
+        "image": "shopify://shop_images/close_up_1_876c3f58-af00-45b5-9f00-a89262a21769.png",
         "overlay_color": "#000000",
         "overlay_opacity": 30,
         "card_position": "right",
@@ -582,12 +584,12 @@
         "card_border_radius": 16,
         "card_bg_color": "#f4f4f4",
         "enable_glassmorphism": false,
-        "badge": "PRODUCT HIGHLIGHT",
+        "badge": "",
         "badge_color": "#555555",
-        "heading": "ULTISCRUB CARPET MATTING",
+        "heading": "ultiscrape",
         "heading_size": 32,
         "heading_color": "#111111",
-        "description": "<p>Polypropylene looped pile dual stiffness fiber commercial matting with tough vinyl backing and all-around compressed borders.</p>",
+        "description": "<p>Stiff‑fibre scraper cut‑pile tough commercial carpet entrance matting with double reinforced borders and durable vinyl backing</p>",
         "description_size": 15,
         "description_color": "#444444",
         "button_label": "",
@@ -606,45 +608,49 @@
         "card_QaDVeX": {
           "type": "card",
           "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
             "video_url": "",
             "asset_video_name": "",
-            "title": "12 EXTENSIVE QUALITY CHECKS",
-            "text": "<p>Our 12-step quality assurance process ensures our output is excellent without fail, every single time!</p>"
+            "title": "heavy scraping of dirt",
+            "text": ""
           }
         },
-        "card_E8hTGK": {
+        "card_t4EGCG": {
           "type": "card",
           "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
             "video_url": "",
             "asset_video_name": "",
-            "title": "PERFECTION IN EVERY PIECE",
-            "text": "<p>Fabric testing, weight evaluation, seam quality check, and 9 other tests guarantee perfection in each product.</p>"
+            "title": "Sleek low height design",
+            "text": ""
           }
         },
-        "card_UYcCkf": {
+        "card_d7U4Ce": {
           "type": "card",
           "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
             "video_url": "",
             "asset_video_name": "",
-            "title": "UNMATCHABLE QUALITY",
-            "text": "<p>We take immense pride in our product quality that remains unparalleled and timeless!</p>"
+            "title": "Extended vinyl borders",
+            "text": ""
           }
         },
-        "card_L3b7Pw": {
+        "card_FHXmQH": {
           "type": "card",
           "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
             "video_url": "",
             "asset_video_name": "",
-            "title": "QUILTING OPULENCE",
-            "text": "<p>Highest standard of low-residue thread go neat look quilting.</p>"
+            "title": "Tough vinyl backing ",
+            "text": ""
           }
         }
       },
       "block_order": [
         "card_QaDVeX",
-        "card_E8hTGK",
-        "card_UYcCkf",
-        "card_L3b7Pw"
+        "card_t4EGCG",
+        "card_d7U4Ce",
+        "card_FHXmQH"
       ],
       "name": "Promise Slider",
       "settings": {
@@ -653,7 +659,7 @@
         "padding_top": 100,
         "padding_bottom": 100,
         "overlay_opacity": 40,
-        "heading": "PREMIUM MAT PROPERTIES",
+        "heading": "Ultiscrape PROPERTIES",
         "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
       }
     },
@@ -663,9 +669,10 @@
       "settings": {
         "bg_color": "#000000",
         "text_color": "#ffffff",
+        "video": "shopify://files/videos/2nd.mp4",
         "video_url": "",
         "asset_video_name": "",
-        "heading": "THREE LAYER TECH",
+        "heading": "Ultiscrape LAYER TECH",
         "description": "<p>Our multi-layered mats ensure maximum performance with minimum weight.</p><p>Each layer traps dirt individually to ensure that your space stays clean throughout the day.</p>"
       }
     },
@@ -676,35 +683,35 @@
           "type": "spec_item",
           "settings": {
             "label": "Construction",
-            "value": "Polypropylene looped pile"
+            "value": "Stiff Polypropylene"
           }
         },
         "spec_item_cFNVUA": {
           "type": "spec_item",
           "settings": {
             "label": "Height",
-            "value": "11 mm"
+            "value": "10 mm"
           }
         },
         "spec_item_QRGxYP": {
           "type": "spec_item",
           "settings": {
-            "label": "Weight",
-            "value": "4.25 kg/m²"
+            "label": "Carpet Style",
+            "value": "Tufted cut-pile"
           }
         },
         "spec_item_jaqTkn": {
           "type": "spec_item",
           "settings": {
             "label": "Water Retention",
-            "value": "4.50 L/m²"
+            "value": "3.50 L/m²"
           }
         },
         "spec_item_GYre4C": {
           "type": "spec_item",
           "settings": {
-            "label": "Traffic",
-            "value": "Up to 1.25M steps/year"
+            "label": "Pedestrian annual traffic",
+            "value": "Up to 0.8 Million steps/year"
           }
         },
         "spec_item_y3TkGM": {
@@ -773,7 +780,7 @@
       ],
       "name": "Performance Specs Band",
       "settings": {
-        "badge": "PERFORMANCE AT A GLANCE",
+        "badge": "",
         "badge_color": "#22c55e",
         "heading": "TECHNICAL SPECIFICATIONS",
         "heading_size": 36,
@@ -782,6 +789,7 @@
         "subheading_color": "#666666",
         "header_alignment": "left",
         "layout_position": "specs_first",
+        "image": "shopify://shop_images/UltiScrape_Mats_Rolled_Up.png",
         "table_title": "SPECIFICATIONS",
         "swatches_title": "AVAILABLE COLORS",
         "bg_color": "#fafafa",
@@ -795,6 +803,173 @@
         "card_padding": 28,
         "padding_top": 60,
         "padding_bottom": 60
+      }
+    },
+    "catalog_care_new": {
+      "type": "catalog-care",
+      "settings": {
+        "subtitle": "Care & Maintenance Guide",
+        "title": "Short AI Visual Cleaning Process",
+        "description": "<p>Effortless maintenance tailored to keep your premium mats in pristine condition using advanced cleaning steps.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "box1_badge": "VIDEO 1 • LIGHT CLEANING",
+        "box1_video": "shopify://files/videos/Premium_Quality.mp4",
+        "box1_video_url": "",
+        "box1_title": "Light & Quick Cleaning Process",
+        "box1_description": "",
+        "box1_step_1": "",
+        "box1_step_2": "",
+        "box1_step_3": "",
+        "box1_meta_1": "Time: 2-3 Mins",
+        "box1_meta_2": "Frequency: Weekly",
+        "box2_badge": "VIDEO 2 • DEEP CLEANING",
+        "box2_video": "shopify://files/videos/Sustainability.mp4",
+        "box2_video_url": "",
+        "box2_title": "Deep Restoration & Cleaning",
+        "box2_description": "",
+        "box2_step_1": "",
+        "box2_step_2": "",
+        "box2_step_3": "",
+        "box2_meta_1": "Time: 10 Mins",
+        "box2_meta_2": "Frequency: Monthly",
+        "section_bg_color": "#f8f9fa",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#e9ecef",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "card_title_color": "#111827",
+        "card_text_color": "#6b7280",
+        "badge_bg_color": "#ffffff",
+        "badge_text_color": "#111827",
+        "enable_glassmorphism": true,
+        "media_aspect_ratio": "16 / 9",
+        "mobile_media_aspect_ratio": "16 / 9",
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "catalog_where_it_performs_new": {
+      "type": "catalog-where-it-performs",
+      "settings": {
+        "subtitle": "Applications & Environments",
+        "title": "Where It Performs",
+        "description": "<p>Engineered for excellence across diverse high-demanding environments and architecturally refined spaces.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#ffffff",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "catalog_resources_new": {
+      "type": "catalog-resources",
+      "settings": {
+        "subtitle": "Architect & PMC Documentation",
+        "title": "Resources & Specifications",
+        "description": "<p>Essential technical documentation and video demonstrations curated for Architects, Builders, and Project Management Consultants.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "pdf_badge": "Specification Sheet",
+        "pdf_title": "TECHNICAL DATA",
+        "pdf_desc": "Complete product specifications, CAD profiles, material composition, load ratings, and test certificates for architects and PMCs.",
+        "pdf_spec_1": "Comprehensive Material & Load Test Specs",
+        "pdf_spec_2": "Architectural CAD & Profile Dimensions",
+        "pdf_spec_3": "Fire & Safety Certifications Included",
+        "pdf_url": "",
+        "pdf_btn_text": "Download Technical Specs (PDF)",
+        "video_badge": "Product Walkthrough",
+        "video_title": "PRODUCT DEMO",
+        "video_desc": "Product overview video showing walking action, dirt extraction efficiency, and seamless floor integration in real time.",
+        "video_spec_1": "Real-time walking action & debris trapping",
+        "video_spec_2": "Recessed vs Surface Mount installation",
+        "video_spec_3": "Sound absorption & heavy load demonstration",
+        "youtube_url": "",
+        "video_btn_text": "Watch Product Demo Video",
+        "section_bg_color": "#f8f9fa",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#e5e7eb",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "btn_primary_bg": "#111827",
+        "btn_primary_text": "#ffffff",
+        "btn_secondary_bg": "#ffffff",
+        "btn_secondary_text": "#111827",
+        "btn_secondary_border": "#d1d5db",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "btn_border_radius": 10,
+        "max_width": 1200,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "catalog_purchase_cta_new": {
+      "type": "catalog-purchase-cta",
+      "settings": {
+        "subtitle": "Ready To Order?",
+        "title": "Looking to purchase?",
+        "title_font_size": 32,
+        "card1_title": "STANDARD SIZES",
+        "card1_desc": "Explore available standard-size mats for immediate dispatch and standard entrance dimensions.",
+        "card1_product": "",
+        "card1_url": "",
+        "card1_btn_label": "Explore Standard Sizes",
+        "card2_title": "MADE TO MEASURE",
+        "card2_desc": "Customize to your exact size, recessed mat well specs, or custom architectural layouts.",
+        "card2_product": "",
+        "card2_url": "",
+        "card2_btn_label": "Customize To Your Exact Size",
+        "section_bg_color": "#ffffff",
+        "card_bg_color": "#f9fafb",
+        "card_border_color": "#e5e7eb",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "btn1_bg": "#111827",
+        "btn1_text": "#ffffff",
+        "btn2_bg": "#ffffff",
+        "btn2_text": "#111827",
+        "btn2_border": "#111827",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "btn_border_radius": 8,
+        "max_width": 1100,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "catalog_product_family_new": {
+      "type": "catalog-product-family",
+      "settings": {
+        "subtitle": "Entrance Matting System",
+        "title": "Complete the Entrance Solution",
+        "title_font_size": 32,
+        "section_bg_color": "#f8f9fa",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#e5e7eb",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#6b7280",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "collapsible_content_QXqK9a": {
@@ -911,21 +1086,6 @@
         "padding_top": 44,
         "padding_bottom": 44
       }
-    },
-    "catalog_care_new": {
-      "type": "catalog-care"
-    },
-    "catalog_where_it_performs_new": {
-      "type": "catalog-where-it-performs"
-    },
-    "catalog_resources_new": {
-      "type": "catalog-resources"
-    },
-    "catalog_purchase_cta_new": {
-      "type": "catalog-purchase-cta"
-    },
-    "catalog_product_family_new": {
-      "type": "catalog-product-family"
     }
   },
   "order": [
