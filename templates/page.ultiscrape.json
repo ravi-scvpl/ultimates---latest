@@ -39,6 +39,7 @@
         "heading_fADqz7",
         "buttons_wNqzMq"
       ],
+      "disabled": true,
       "settings": {
         "background_image": "none",
         "custom_background_image": "shopify://shop_images/WhatsApp_Image_2026-09-09_at_9.05.00_PM.jpg",
@@ -147,6 +148,7 @@
         "text_6P6iEr",
         "button_9We6cF"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/close_up_1.png",
         "video_url": "",
@@ -198,6 +200,7 @@
         "text_xUxN7f",
         "button_CnG7kd"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/UltiScrape_features_adc61e5f-96e2-4435-844e-9e29f464d97a.png",
         "video_url": "",
@@ -249,6 +252,7 @@
         "text_FrPmdh",
         "button_zrtFfJ"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/UltiScrape_Green_fold_features_3_4_4bad3a8b-ba19-4d2f-b3c4-044a03d5c7a0.png",
         "video_url": "",
@@ -377,6 +381,7 @@
         "line_text_DjKTLw",
         "line_text_wJMWyM"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/hf_20260705_083945_410219c9-e117-4dc6-ab37-93083419e424.png",
         "show_scrim": false,
@@ -472,6 +477,7 @@
         "text_t88i4E",
         "button_qj8rWM"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/hf_20260703_130010_8a8b86c4-d520-4707-b897-d64006929a52.png",
         "video_url": "",
@@ -854,8 +860,38 @@
     },
     "catalog_where_it_performs_new": {
       "type": "catalog-where-it-performs",
+      "blocks": {
+        "location_qzwLp4": {
+          "type": "location",
+          "settings": {
+            "image": "shopify://shop_images/floor_mat.png",
+            "title": "Home",
+            "tag": "",
+            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
+            "feature_1": "Luxury Aesthetic",
+            "feature_2": "High Footfall",
+            "feature_3": "Quick Maintenance"
+          }
+        },
+        "location_GzaW3k": {
+          "type": "location",
+          "settings": {
+            "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
+            "title": "Hotels & Hospitality",
+            "tag": "Ideal Location",
+            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
+            "feature_1": "Luxury Aesthetic",
+            "feature_2": "High Footfall",
+            "feature_3": "Quick Maintenance"
+          }
+        }
+      },
+      "block_order": [
+        "location_qzwLp4",
+        "location_GzaW3k"
+      ],
       "settings": {
-        "subtitle": "Applications & Environments",
+        "subtitle": "",
         "title": "Where It Performs",
         "description": "<p>Engineered for excellence across diverse high-demanding environments and architecturally refined spaces.</p>",
         "header_alignment": "center",
@@ -864,7 +900,7 @@
         "grid_gap": 24,
         "item_aspect_ratio": "4 / 3",
         "mobile_item_aspect_ratio": "4 / 3",
-        "section_bg_color": "#ffffff",
+        "section_bg_color": "#E1E1E1",
         "accent_color": "#0066ff",
         "heading_color": "#111827",
         "text_color": "#4b5563",
@@ -878,7 +914,7 @@
     "catalog_resources_new": {
       "type": "catalog-resources",
       "settings": {
-        "subtitle": "Architect & PMC Documentation",
+        "subtitle": "",
         "title": "Resources & Specifications",
         "description": "<p>Essential technical documentation and video demonstrations curated for Architects, Builders, and Project Management Consultants.</p>",
         "header_alignment": "center",
@@ -921,7 +957,7 @@
     "catalog_purchase_cta_new": {
       "type": "catalog-purchase-cta",
       "settings": {
-        "subtitle": "Ready To Order?",
+        "subtitle": "",
         "title": "Looking to purchase?",
         "title_font_size": 32,
         "card1_title": "STANDARD SIZES",
@@ -955,8 +991,52 @@
     },
     "catalog_product_family_new": {
       "type": "catalog-product-family",
+      "blocks": {
+        "product_item_ytULGr": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ultiscrub-carpet-mat-1",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        },
+        "product_item_zcrx69": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ultimat-heavy-duty-vinyl-looped-matting",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        },
+        "product_item_gk7kCn": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ultidure-carpet-mat",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        },
+        "product_item_pCNcbC": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ulticlean-carpet-mat-1",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_item_ytULGr",
+        "product_item_zcrx69",
+        "product_item_gk7kCn",
+        "product_item_pCNcbC"
+      ],
       "settings": {
-        "subtitle": "Entrance Matting System",
+        "subtitle": "",
         "title": "Complete the Entrance Solution",
         "title_font_size": 32,
         "section_bg_color": "#f8f9fa",
