@@ -814,7 +814,7 @@
     "catalog_care_new": {
       "type": "catalog-care",
       "settings": {
-        "subtitle": "Care & Maintenance Guide",
+        "subtitle": "",
         "title": "Short AI Visual Cleaning Process",
         "description": "<p>Effortless maintenance tailored to keep your premium mats in pristine condition using advanced cleaning steps.</p>",
         "header_alignment": "center",
