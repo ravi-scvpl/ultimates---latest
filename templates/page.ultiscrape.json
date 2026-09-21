@@ -579,7 +579,14 @@
         "image_position": "left",
         "desktop_height": "550px",
         "mobile_height": "400px",
+        "media_type": "image",
         "image": "shopify://shop_images/close_up_1_876c3f58-af00-45b5-9f00-a89262a21769.png",
+        "video_url_mp4": "",
+        "video_url_external": "",
+        "mobile_video_url_mp4": "",
+        "video_autoplay": true,
+        "video_loop": true,
+        "video_muted": true,
         "overlay_color": "#000000",
         "overlay_opacity": 30,
         "card_position": "right",
@@ -970,7 +977,7 @@
         "card2_product": "",
         "card2_url": "",
         "card2_btn_label": "Customize To Your Exact Size",
-        "section_bg_color": "#E1E1E1",
+        "section_bg_color": "#e1e1e1",
         "card_bg_color": "#f9fafb",
         "card_border_color": "#e5e7eb",
         "accent_color": "#0066ff",
@@ -1052,6 +1059,88 @@
         "padding_bottom": 64
       }
     },
+    "premium_faq_nfWVkf": {
+      "type": "premium-faq",
+      "blocks": {
+        "faq_item_w7RQTV": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Custom Sizing",
+            "question": "Can I order a custom size mat?",
+            "answer": "<p>Yes! Most of our commercial barrier mat ranges can be manufactured to your exact dimensions. Specify width and length to the millimeter for a seamless architectural entrance fit.</p>",
+            "open_by_default": true
+          }
+        },
+        "faq_item_wmfxib": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Maintenance",
+            "question": "How do I clean and maintain my barrier mat?",
+            "answer": "<p>Daily vacuuming removes dry surface dirt. For deeper cleaning, our mats are compatible with injection-extraction cleaning equipment or mild shampoo washing under running water.</p>",
+            "open_by_default": false
+          }
+        },
+        "faq_item_Pg36NK": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Durability",
+            "question": "What is the expected lifespan in high-traffic commercial areas?",
+            "answer": "<p>Our commercial-grade matting systems are built for endurance. In busy hotel or corporate lobbies, you can expect 5–7 years of peak performance with regular maintenance. Residential usage routinely exceeds 10 years.</p>",
+            "open_by_default": false
+          }
+        },
+        "faq_item_FfNM6Q": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Shipping & Delivery",
+            "question": "What are your delivery turnaround times?",
+            "answer": "<p>Standard presized orders ship within 24–48 hours. Custom Made to Measure orders are crafted and dispatched within 5–7 business days with tracked delivery.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_w7RQTV",
+        "faq_item_wmfxib",
+        "faq_item_Pg36NK",
+        "faq_item_FfNM6Q"
+      ],
+      "name": "Premium Expert FAQ",
+      "settings": {
+        "layout_mode": "single_column",
+        "card_style": "glassmorphism",
+        "container_max_width": 900,
+        "card_border_radius": 16,
+        "header_alignment": "center",
+        "eyebrow_text": "",
+        "heading": "Frequently Asked Questions",
+        "heading_size": 36,
+        "subheading": "Find answers to common inquiries about custom sizing, commercial barrier matting, installation, and care maintenance.",
+        "enable_search": false,
+        "search_placeholder": "Search questions (e.g., custom size, cleaning, warranty)...",
+        "enable_categories": false,
+        "question_size": 17,
+        "answer_size": 15,
+        "enable_contact_box": false,
+        "contact_heading": "Still have questions?",
+        "contact_subheading": "Can't find the answer you're looking for? Reach out to our dedicated support team.",
+        "contact_btn_1_label": "Contact Support",
+        "contact_btn_1_link": "",
+        "contact_btn_2_label": "Request a Quote",
+        "contact_btn_2_link": "",
+        "bg_color": "#ffffff",
+        "card_bg": "#f9fafb",
+        "border_color": "#e5e7eb",
+        "heading_color": "#111827",
+        "subheading_color": "#4b5563",
+        "accent_color": "#111827",
+        "badge_bg": "#f3f4f6",
+        "badge_color": "#374151",
+        "contact_bg": "#f9fafb",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
     "collapsible_content_QXqK9a": {
       "type": "collapsible-content",
       "blocks": {
@@ -1088,6 +1177,7 @@
         "collapsible_row_i3RYTA",
         "collapsible_row_3JfeEa"
       ],
+      "disabled": true,
       "settings": {
         "show_information": false,
         "title": "FAQ",
@@ -1137,6 +1227,7 @@
         "text_wHc3Q9",
         "button_4WLFMY"
       ],
+      "disabled": true,
       "settings": {
         "text_align": "center",
         "background": "main-background",
@@ -1190,6 +1281,7 @@
     "catalog_resources_new",
     "catalog_purchase_cta_new",
     "catalog_product_family_new",
+    "premium_faq_nfWVkf",
     "collapsible_content_QXqK9a",
     "rich_text_aXwYKq",
     "contact_form_awRX6D"
