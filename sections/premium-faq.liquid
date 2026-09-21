@@ -1,74 +1,809 @@
-<!-- Premium FAQ Section / Expert Guidance -->
-{% style %}
-  #premium-faq-{{ section.id }} .glass-card {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(25, 23, 21, 0.1);
+<!-- Premium Modern FAQ Section -->
+<style>
+  #PremiumFAQ-{{ section.id }} {
+    position: relative;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background-color: {{ section.settings.bg_color }};
+    color: {{ section.settings.heading_color }};
+    overflow: hidden;
   }
-{% endstyle %}
 
-<section
-  id="premium-faq-{{ section.id }}"
-  class="bg-white py-20 md:py-28 relative z-10"
-  style="background-color: {{ section.settings.bg_color | default: '#ffffff' }};"
->
-  <div class="px-margin-mobile md:px-margin-desktop max-w-3xl mx-auto w-full">
-    <!-- Section Heading -->
-    {% if section.settings.heading != blank %}
-      <h2 class="font-headline-lg text-headline-lg mb-12 text-center text-primary">
-        {{ section.settings.heading }}
-      </h2>
+  .premium-faq-container {
+    max-width: {{ section.settings.container_max_width }}px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  /* Header Section */
+  .premium-faq-header {
+    text-align: {{ section.settings.header_alignment }};
+    margin-bottom: 40px;
+  }
+
+  .premium-faq-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background-color: {{ section.settings.badge_bg }};
+    color: {{ section.settings.badge_color }};
+    margin-bottom: 16px;
+  }
+
+  .premium-faq-heading {
+    margin: 0 0 16px 0;
+    font-size: {{ section.settings.heading_size }}px;
+    color: {{ section.settings.heading_color }};
+    font-family: var(--font-heading-family, inherit);
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  .premium-faq-subheading {
+    margin: 0 auto;
+    max-width: 650px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: {{ section.settings.subheading_color }};
+  }
+
+  /* Live Search Bar */
+  .premium-faq-search-box {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 36px auto;
+  }
+
+  .premium-faq-search-input {
+    width: 100%;
+    padding: 16px 44px 16px 48px;
+    font-size: 15px;
+    border-radius: 12px;
+    border: 1px solid {{ section.settings.border_color }};
+    background-color: {{ section.settings.card_bg }};
+    color: {{ section.settings.heading_color }};
+    outline: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .premium-faq-search-input:focus {
+    border-color: {{ section.settings.accent_color }};
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .premium-faq-search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: {{ section.settings.subheading_color }};
+    pointer-events: none;
+  }
+
+  .premium-faq-search-clear {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: {{ section.settings.subheading_color }};
+    cursor: pointer;
+    font-size: 18px;
+    display: none;
+    padding: 4px;
+    line-height: 1;
+  }
+
+  /* Category Filter Pills */
+  .premium-faq-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: {{ section.settings.header_alignment }};
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .premium-faq-cat-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 100px;
+    border: 1px solid {{ section.settings.border_color }};
+    background-color: {{ section.settings.card_bg }};
+    color: {{ section.settings.heading_color }};
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .premium-faq-cat-btn:hover,
+  .premium-faq-cat-btn.active {
+    background-color: {{ section.settings.accent_color }};
+    color: #ffffff;
+    border-color: {{ section.settings.accent_color }};
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+
+  /* FAQ Accordion Stack */
+  .premium-faq-grid {
+    display: grid;
+    gap: 16px;
+    {% if section.settings.layout_mode == 'two_column' %}
+      grid-template-columns: repeat(2, 1fr);
+    {% else %}
+      grid-template-columns: 1fr;
+    {% endif %}
+  }
+
+  .premium-faq-item {
+    border-radius: {{ section.settings.card_border_radius }}px;
+    border: 1px solid {{ section.settings.border_color }};
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+
+    {% if section.settings.card_style == 'glassmorphism' %}
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    {% elsif section.settings.card_style == 'soft_card' %}
+      background-color: {{ section.settings.card_bg }};
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    {% else %}
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid {{ section.settings.border_color }};
+      border-radius: 0;
+    {% endif %}
+  }
+
+  .premium-faq-item:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+    border-color: {{ section.settings.accent_color }};
+  }
+
+  .premium-faq-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .premium-faq-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .premium-faq-question {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: {{ section.settings.question_size }}px;
+    font-weight: 600;
+    color: {{ section.settings.heading_color }};
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .premium-faq-icon-pill {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    color: {{ section.settings.heading_color }};
+  }
+
+  .premium-faq-item[open] .premium-faq-icon-pill {
+    transform: rotate(180deg);
+    background-color: {{ section.settings.accent_color }};
+    color: #ffffff;
+  }
+
+  .premium-faq-icon-pill svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
+  .premium-faq-content {
+    padding: 0 24px 24px 24px;
+    font-size: {{ section.settings.answer_size }}px;
+    line-height: 1.65;
+    color: {{ section.settings.subheading_color }};
+    animation: faqFadeIn 0.3s ease-in-out;
+  }
+
+  .premium-faq-content p {
+    margin: 0 0 12px 0;
+  }
+
+  .premium-faq-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  @keyframes faqFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* No Search Results */
+  .premium-faq-no-results {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+    color: {{ section.settings.subheading_color }};
+  }
+
+  /* Contact CTA Box */
+  .premium-faq-contact-box {
+    margin-top: 56px;
+    padding: 36px 32px;
+    border-radius: 20px;
+    background: {{ section.settings.contact_bg }};
+    border: 1px solid {{ section.settings.border_color }};
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  }
+
+  .premium-faq-contact-info h3 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: {{ section.settings.heading_color }};
+  }
+
+  .premium-faq-contact-info p {
+    margin: 0;
+    font-size: 14px;
+    color: {{ section.settings.subheading_color }};
+  }
+
+  .premium-faq-contact-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .premium-faq-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .premium-faq-cta-btn--primary {
+    background-color: {{ section.settings.accent_color }};
+    color: #ffffff;
+  }
+
+  .premium-faq-cta-btn--primary:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+
+  .premium-faq-cta-btn--secondary {
+    background-color: transparent;
+    border: 1px solid {{ section.settings.border_color }};
+    color: {{ section.settings.heading_color }};
+  }
+
+  .premium-faq-cta-btn--secondary:hover {
+    background-color: rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+  }
+
+  @media screen and (max-width: 989px) {
+    .premium-faq-grid {
+      grid-template-columns: 1fr !important;
+    }
+    .premium-faq-contact-box {
+      flex-direction: column;
+      text-align: center;
+      padding: 28px 20px;
+    }
+    .premium-faq-contact-actions {
+      justify-content: center;
+      width: 100%;
+    }
+    .premium-faq-cta-btn {
+      width: 100%;
+    }
+  }
+</style>
+
+<section id="PremiumFAQ-{{ section.id }}" class="premium-faq-section">
+  <div class="premium-faq-container">
+    <!-- Header -->
+    {% if section.settings.heading != blank or section.settings.eyebrow_text != blank %}
+      <div class="premium-faq-header">
+        {% if section.settings.eyebrow_text != blank %}
+          <div class="premium-faq-eyebrow">
+            <span>✦</span>
+            <span>{{ section.settings.eyebrow_text }}</span>
+          </div>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h2 class="premium-faq-heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+
+        {% if section.settings.subheading != blank %}
+          <p class="premium-faq-subheading">{{ section.settings.subheading }}</p>
+        {% endif %}
+      </div>
     {% endif %}
 
-    <!-- Accordion Stack -->
-    <div class="space-y-4 text-left">
+    <!-- Live Search Bar -->
+    {% if section.settings.enable_search %}
+      <div class="premium-faq-search-box">
+        <svg class="premium-faq-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          type="text"
+          class="premium-faq-search-input"
+          placeholder="{{ section.settings.search_placeholder | default: 'Search questions...' }}"
+          aria-label="Search FAQs"
+        >
+        <button type="button" class="premium-faq-search-clear" aria-label="Clear search">✕</button>
+      </div>
+    {% endif %}
+
+    <!-- Category Tabs -->
+    {% if section.settings.enable_categories %}
+      {% assign categories = '' %}
       {% for block in section.blocks %}
-        {% if block.settings.question != blank and block.settings.answer != blank %}
+        {% assign cat = block.settings.category | default: 'General' | strip %}
+        {% unless categories contains cat %}
+          {% assign categories = categories | append: cat | append: ',' %}
+        {% endunless %}
+      {% endfor %}
+      {% assign cat_array = categories | split: ',' %}
+
+      {% if cat_array.size > 1 %}
+        <div class="premium-faq-categories">
+          <button type="button" class="premium-faq-cat-btn active" data-category="all">
+            All Questions
+          </button>
+          {% for cat in cat_array %}
+            {% if cat != blank %}
+              <button type="button" class="premium-faq-cat-btn" data-category="{{ cat | handleize }}">
+                {{ cat }}
+              </button>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endif %}
+
+    <!-- FAQ Accordion Stack -->
+    <div class="premium-faq-grid">
+      {% for block in section.blocks %}
+        {% if block.settings.question != blank %}
+          {% assign block_cat = block.settings.category | default: 'General' | handleize %}
           <details
-            class="group glass-card overflow-hidden transition-all duration-300 [&_summary::-webkit-details-marker]:hidden"
+            class="premium-faq-item"
+            data-category="{{ block_cat }}"
             {{ block.shopify_attributes }}
             {% if block.settings.open_by_default %}
               open
             {% endif %}
           >
-            <summary class="flex justify-between items-center p-6 cursor-pointer hover:bg-surface-container transition-colors list-none select-none">
-              <span class="font-headline-md text-xl text-primary leading-snug">
+            <summary class="premium-faq-summary">
+              <h3 class="premium-faq-question">
                 {{ block.settings.question }}
-              </span>
-              <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-primary text-2xl flex-shrink-0">
-                expand_more
-              </span>
+              </h3>
+              <div class="premium-faq-icon-pill">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
+                </svg>
+              </div>
             </summary>
-            <div class="p-6 pt-0 text-on-surface-variant font-body-md border-t border-on-surface/5 mt-4 leading-relaxed text-sm md:text-base">
-              {{ block.settings.answer | newline_to_br }}
+            <div class="premium-faq-content">
+              {% if block.settings.answer contains '<p>' %}
+                {{ block.settings.answer }}
+              {% else %}
+                <p>{{ block.settings.answer | newline_to_br }}</p>
+              {% endif %}
             </div>
           </details>
         {% endif %}
       {% endfor %}
     </div>
+
+    <!-- Empty Search State -->
+    <div class="premium-faq-no-results">
+      <p>No matching questions found. Try searching for something else or contact us directly.</p>
+    </div>
+
+    <!-- Contact Support CTA Box -->
+    {% if section.settings.enable_contact_box %}
+      <div class="premium-faq-contact-box">
+        <div class="premium-faq-contact-info">
+          <h3>{{ section.settings.contact_heading | default: 'Still have questions?' }}</h3>
+          <p>{{ section.settings.contact_subheading | default: "Can't find what you are looking for? Please contact our expert support team." }}</p>
+        </div>
+        <div class="premium-faq-contact-actions">
+          {% if section.settings.contact_btn_1_label != blank %}
+            <a href="{{ section.settings.contact_btn_1_link | default: '#' }}" class="premium-faq-cta-btn premium-faq-cta-btn--primary">
+              {{ section.settings.contact_btn_1_label }}
+            </a>
+          {% endif %}
+          {% if section.settings.contact_btn_2_label != blank %}
+            <a href="{{ section.settings.contact_btn_2_link | default: '#' }}" class="premium-faq-cta-btn premium-faq-cta-btn--secondary">
+              {{ section.settings.contact_btn_2_label }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.getElementById('PremiumFAQ-{{ section.id }}');
+    if (!section) return;
+
+    const searchInput = section.querySelector('.premium-faq-search-input');
+    const clearBtn = section.querySelector('.premium-faq-search-clear');
+    const catBtns = section.querySelectorAll('.premium-faq-cat-btn');
+    const faqItems = section.querySelectorAll('.premium-faq-item');
+    const noResults = section.querySelector('.premium-faq-no-results');
+
+    let currentCategory = 'all';
+
+    function filterFAQs() {
+      const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      let visibleCount = 0;
+
+      faqItems.forEach(item => {
+        const itemCat = item.getAttribute('data-category') || 'all';
+        const question = (item.querySelector('.premium-faq-question')?.textContent || '').toLowerCase();
+        const answer = (item.querySelector('.premium-faq-content')?.textContent || '').toLowerCase();
+
+        const matchesCat = currentCategory === 'all' || itemCat === currentCategory;
+        const matchesQuery = !query || question.includes(query) || answer.includes(query);
+
+        if (matchesCat && matchesQuery) {
+          item.style.display = 'block';
+          visibleCount++;
+          if (query) {
+            item.setAttribute('open', '');
+          }
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      if (noResults) {
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+
+      if (clearBtn) {
+        clearBtn.style.display = query ? 'block' : 'none';
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', filterFAQs);
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', function() {
+        searchInput.value = '';
+        filterFAQs();
+      });
+    }
+
+    catBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        catBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        currentCategory = this.getAttribute('data-category') || 'all';
+        filterFAQs();
+      });
+    });
+  });
+</script>
 
 {% schema %}
 {
   "name": "Premium Expert FAQ",
+  "tag": "section",
+  "class": "section",
   "settings": [
     {
       "type": "header",
-      "content": "Section Styling"
+      "content": "Layout & Container"
+    },
+    {
+      "type": "select",
+      "id": "layout_mode",
+      "label": "Grid Layout Mode",
+      "default": "single_column",
+      "options": [
+        { "value": "single_column", "label": "Single Column (Centered)" },
+        { "value": "two_column", "label": "2 Columns Grid" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "card_style",
+      "label": "Card Visual Style",
+      "default": "soft_card",
+      "options": [
+        { "value": "soft_card", "label": "Soft Elevated Card" },
+        { "value": "glassmorphism", "label": "Frosted Glassmorphism" },
+        { "value": "minimal_bordered", "label": "Minimal Underline" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "min": 600,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "label": "Container Max Width",
+      "default": 900
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Corner Radius",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Header Settings"
+    },
+    {
+      "type": "select",
+      "id": "header_alignment",
+      "label": "Header Alignment",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_text",
+      "label": "Eyebrow Tag / Sub-badge",
+      "default": "EXPERT GUIDANCE & SUPPORT"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 22,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 36
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Find answers to common inquiries about custom sizing, commercial barrier matting, installation, and care maintenance."
+    },
+    {
+      "type": "header",
+      "content": "Interactive Search & Filters"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_search",
+      "label": "Enable Live Search Bar",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "search_placeholder",
+      "label": "Search Placeholder Text",
+      "default": "Search questions (e.g., custom size, cleaning, warranty)..."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_categories",
+      "label": "Enable Category Filter Pills",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Typography & Sizes"
+    },
+    {
+      "type": "range",
+      "id": "question_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Question Size",
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "answer_size",
+      "min": 13,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Answer Size",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Contact Support CTA Box"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_contact_box",
+      "label": "Enable Bottom Contact Box",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "contact_heading",
+      "label": "Contact Box Heading",
+      "default": "Still have questions?"
+    },
+    {
+      "type": "text",
+      "id": "contact_subheading",
+      "label": "Contact Box Subheading",
+      "default": "Can't find the answer you're looking for? Reach out to our dedicated support team."
+    },
+    {
+      "type": "text",
+      "id": "contact_btn_1_label",
+      "label": "Primary Button Label",
+      "default": "Contact Support"
+    },
+    {
+      "type": "url",
+      "id": "contact_btn_1_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "contact_btn_2_label",
+      "label": "Secondary Button Label",
+      "default": "Request a Quote"
+    },
+    {
+      "type": "url",
+      "id": "contact_btn_2_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Color Palette"
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "Background Color",
+      "label": "Section Background",
       "default": "#ffffff"
     },
     {
-      "type": "text",
-      "id": "heading",
-      "label": "Section Heading",
-      "default": "Expert Guidance"
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card Background",
+      "default": "#f9fafb"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color",
+      "default": "#e5e7eb"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading & Question Color",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading & Answer Color",
+      "default": "#4b5563"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Color",
+      "default": "#111827"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Eyebrow Badge Background",
+      "default": "#f3f4f6"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Eyebrow Badge Text Color",
+      "default": "#374151"
+    },
+    {
+      "type": "color",
+      "id": "contact_bg",
+      "label": "Contact Box Background",
+      "default": "#f9fafb"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 80
     }
   ],
   "blocks": [
@@ -78,15 +813,21 @@
       "settings": [
         {
           "type": "text",
-          "id": "question",
-          "label": "Question",
-          "default": "Frequently Asked Question"
+          "id": "category",
+          "label": "Category Tag",
+          "default": "General"
         },
         {
-          "type": "textarea",
+          "type": "inline_richtext",
+          "id": "question",
+          "label": "Question",
+          "default": "Can I order a custom size?"
+        },
+        {
+          "type": "richtext",
           "id": "answer",
           "label": "Answer",
-          "default": "Provide a detailed and helpful response to address your customers' common inquiries."
+          "default": "<p>Yes. Most of our barrier mat ranges can be manufactured to your specific dimensions. We offer a Made to Measure service where you can specify width and length for a perfect fit.</p>"
         },
         {
           "type": "checkbox",
@@ -104,24 +845,36 @@
         {
           "type": "faq_item",
           "settings": {
-            "question": "Can I order a custom size?",
-            "answer": "Yes. Most of our barrier mat ranges can be manufactured to your specific dimensions. We offer a \"Made to Measure\" service where you can specify width and length to the millimeter for a perfect architectural fit.",
+            "category": "Custom Sizing",
+            "question": "Can I order a custom size mat?",
+            "answer": "<p>Yes! Most of our commercial barrier mat ranges can be manufactured to your exact dimensions. Specify width and length to the millimeter for a seamless architectural entrance fit.</p>",
             "open_by_default": true
           }
         },
         {
           "type": "faq_item",
           "settings": {
-            "question": "How do I clean my barrier mat?",
-            "answer": "Regular maintenance involves daily vacuuming to remove dry soil. For deeper cleans, our mats are compatible with injection-extraction cleaning systems. For smaller sizes, many are machine washable up to 30°C.",
+            "category": "Maintenance",
+            "question": "How do I clean and maintain my barrier mat?",
+            "answer": "<p>Daily vacuuming removes dry surface dirt. For deeper cleaning, our mats are compatible with injection-extraction cleaning equipment or mild shampoo washing under running water.</p>",
             "open_by_default": false
           }
         },
         {
           "type": "faq_item",
           "settings": {
-            "question": "What is the expected lifespan?",
-            "answer": "Our commercial-grade barrier mats are engineered for longevity. In high-traffic environments like hotel lobbies, you can expect 5-7 years of peak performance with proper maintenance. Residential usage often exceeds 10 years.",
+            "category": "Durability",
+            "question": "What is the expected lifespan in high-traffic commercial areas?",
+            "answer": "<p>Our commercial-grade matting systems are built for endurance. In busy hotel or corporate lobbies, you can expect 5–7 years of peak performance with regular maintenance. Residential usage routinely exceeds 10 years.</p>",
+            "open_by_default": false
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "Shipping & Delivery",
+            "question": "What are your delivery turnaround times?",
+            "answer": "<p>Standard presized orders ship within 24–48 hours. Custom Made to Measure orders are crafted and dispatched within 5–7 business days with tracked delivery.</p>",
             "open_by_default": false
           }
         }

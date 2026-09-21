@@ -9,7 +9,7 @@
     background-color: {{ section.settings.section_bg_color }};
   }
 
-  /* Overlay Mode (Full Background Image) */
+  /* Overlay Mode (Full Background Media) */
   .fullwidth-feature-banner {
     position: relative;
     width: 100%;
@@ -29,19 +29,31 @@
   }
 
   .fullwidth-feature-bg-media img,
-  .fullwidth-feature-bg-media svg {
+  .fullwidth-feature-bg-media svg,
+  .fullwidth-feature-bg-media video,
+  .fullwidth-feature-bg-media iframe,
+  .fullwidth-feature-split-image img,
+  .fullwidth-feature-split-image video,
+  .fullwidth-feature-split-image iframe {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
+    border: none;
   }
 
-  .fullwidth-feature-bg-media .desktop-img {
-    display: block;
+  .fullwidth-feature-bg-media video,
+  .fullwidth-feature-split-image video {
+    object-fit: cover;
   }
-  .fullwidth-feature-bg-media .mobile-img {
-    display: none;
+
+  .desktop-media {
+    display: block !important;
+  }
+
+  .mobile-media {
+    display: none !important;
   }
 
   .fullwidth-feature-overlay {
@@ -168,13 +180,7 @@
     flex: 1;
     position: relative;
     min-height: 400px;
-  }
-
-  .fullwidth-feature-split-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    overflow: hidden;
   }
 
   .fullwidth-feature-split-content {
@@ -192,14 +198,15 @@
       min-height: {{ section.settings.mobile_height }};
     }
 
-    {% if section.settings.mobile_image != blank %}
-      .fullwidth-feature-bg-media .desktop-img {
-        display: none;
-      }
-      .fullwidth-feature-bg-media .mobile-img {
-        display: block;
-      }
-    {% endif %}
+    .fullwidth-feature-bg-media .desktop-media.has-mobile,
+    .fullwidth-feature-split-image .desktop-media.has-mobile {
+      display: none !important;
+    }
+
+    .fullwidth-feature-bg-media .mobile-media,
+    .fullwidth-feature-split-image .mobile-media {
+      display: block !important;
+    }
 
     .fullwidth-feature-container {
       padding: 24px 16px;
@@ -234,35 +241,132 @@
   }
 </style>
 
+{% capture feature_media %}
+  {% if section.settings.media_type == 'video' %}
+    {% comment %} Video Mode {% endcomment %}
+    {% assign has_mobile = false %}
+    {% if section.settings.mobile_video != blank or section.settings.mobile_video_url_mp4 != blank or section.settings.mobile_image != blank %}
+      {% assign has_mobile = true %}
+    {% endif %}
+
+    {% assign desktop_class = 'desktop-media' %}
+    {% if has_mobile %}
+      {% assign desktop_class = 'desktop-media has-mobile' %}
+    {% endif %}
+
+    {% if section.settings.video != blank %}
+      {{
+        section.settings.video
+        | video_tag:
+          autoplay: section.settings.video_autoplay,
+          loop: section.settings.video_loop,
+          muted: section.settings.video_muted,
+          controls: false,
+          playsinline: true,
+          class: desktop_class
+      }}
+    {% elsif section.settings.video_url_mp4 != blank %}
+      <video
+        class="{{ desktop_class }}"
+        {% if section.settings.video_autoplay %}autoplay{% endif %}
+        {% if section.settings.video_loop %}loop{% endif %}
+        {% if section.settings.video_muted %}muted{% endif %}
+        playsinline
+        {% if section.settings.image != blank %}
+          poster="{{ section.settings.image | image_url: width: 2200 }}"
+        {% endif %}
+      >
+        <source src="{{ section.settings.video_url_mp4 }}" type="video/mp4">
+      </video>
+    {% elsif section.settings.video_url_external != blank %}
+      {% if section.settings.video_url_external.type == 'youtube' %}
+        <iframe
+          src="https://www.youtube.com/embed/{{ section.settings.video_url_external.id }}?autoplay={% if section.settings.video_autoplay %}1{% else %}0{% endif %}&mute={% if section.settings.video_muted %}1{% else %}0{% endif %}&loop={% if section.settings.video_loop %}1{% else %}0{% endif %}&playlist={{ section.settings.video_url_external.id }}&controls=0&showinfo=0&rel=0"
+          class="{{ desktop_class }}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      {% elsif section.settings.video_url_external.type == 'vimeo' %}
+        <iframe
+          src="https://player.vimeo.com/video/{{ section.settings.video_url_external.id }}?autoplay={% if section.settings.video_autoplay %}1{% else %}0{% endif %}&muted={% if section.settings.video_muted %}1{% else %}0{% endif %}&loop={% if section.settings.video_loop %}1{% else %}0{% endif %}&background=1"
+          class="{{ desktop_class }}"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      {% endif %}
+    {% elsif section.settings.image != blank %}
+      <img
+        src="{{ section.settings.image | image_url: width: 2200 }}"
+        alt="{{ section.settings.heading | escape }}"
+        loading="lazy"
+        class="{{ desktop_class }}"
+      >
+    {% else %}
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    {% endif %}
+
+    {% comment %} Mobile Specific Media {% endcomment %}
+    {% if section.settings.mobile_video != blank %}
+      {{
+        section.settings.mobile_video
+        | video_tag:
+          autoplay: section.settings.video_autoplay,
+          loop: section.settings.video_loop,
+          muted: section.settings.video_muted,
+          controls: false,
+          playsinline: true,
+          class: 'mobile-media'
+      }}
+    {% elsif section.settings.mobile_video_url_mp4 != blank %}
+      <video
+        class="mobile-media"
+        {% if section.settings.video_autoplay %}autoplay{% endif %}
+        {% if section.settings.video_loop %}loop{% endif %}
+        {% if section.settings.video_muted %}muted{% endif %}
+        playsinline
+        {% if section.settings.mobile_image != blank %}
+          poster="{{ section.settings.mobile_image | image_url: width: 1000 }}"
+        {% endif %}
+      >
+        <source src="{{ section.settings.mobile_video_url_mp4 }}" type="video/mp4">
+      </video>
+    {% elsif section.settings.mobile_image != blank %}
+      <img
+        src="{{ section.settings.mobile_image | image_url: width: 1000 }}"
+        alt="{{ section.settings.heading | escape }}"
+        loading="lazy"
+        class="mobile-media"
+      >
+    {% endif %}
+
+  {% else %}
+    {% comment %} Image Mode {% endcomment %}
+    {% if section.settings.image != blank %}
+      <img
+        src="{{ section.settings.image | image_url: width: 2200 }}"
+        alt="{{ section.settings.heading | escape }}"
+        loading="lazy"
+        class="desktop-media {% if section.settings.mobile_image != blank %}has-mobile{% endif %}"
+      >
+      {% if section.settings.mobile_image != blank %}
+        <img
+          src="{{ section.settings.mobile_image | image_url: width: 1000 }}"
+          alt="{{ section.settings.heading | escape }}"
+          loading="lazy"
+          class="mobile-media"
+        >
+      {% endif %}
+    {% else %}
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    {% endif %}
+  {% endif %}
+{% endcapture %}
+
 <section id="FullwidthFeature-{{ section.id }}">
   {% if section.settings.layout_mode == 'overlay' %}
     <div class="fullwidth-feature-banner">
       <div class="fullwidth-feature-bg-media">
-        {% if section.settings.image != blank %}
-          <img
-            src="{{ section.settings.image | image_url: width: 2200 }}"
-            alt="{{ section.settings.heading | escape }}"
-            loading="lazy"
-            class="desktop-img"
-          >
-          {% if section.settings.mobile_image != blank %}
-            <img
-              src="{{ section.settings.mobile_image | image_url: width: 1000 }}"
-              alt="{{ section.settings.heading | escape }}"
-              loading="lazy"
-              class="mobile-img"
-            >
-          {% else %}
-            <img
-              src="{{ section.settings.image | image_url: width: 1000 }}"
-              alt="{{ section.settings.heading | escape }}"
-              loading="lazy"
-              class="mobile-img"
-            >
-          {% endif %}
-        {% else %}
-          {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
-        {% endif %}
+        {{ feature_media }}
       </div>
 
       <div class="fullwidth-feature-overlay"></div>
@@ -294,15 +398,7 @@
     <div class="fullwidth-feature-split">
       {% capture media_block %}
         <div class="fullwidth-feature-split-image">
-          {% if section.settings.image != blank %}
-            <img
-              src="{{ section.settings.image | image_url: width: 1400 }}"
-              alt="{{ section.settings.heading | escape }}"
-              loading="lazy"
-            >
-          {% else %}
-            {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
-          {% endif %}
+          {{ feature_media }}
         </div>
       {% endcapture %}
 
@@ -357,18 +453,18 @@
       "label": "Layout Mode",
       "default": "overlay",
       "options": [
-        { "value": "overlay", "label": "Full Background Image with Overlay Card" },
-        { "value": "split", "label": "Full Width 50/50 Split (Image + Content)" }
+        { "value": "overlay", "label": "Full Background Media with Overlay Card" },
+        { "value": "split", "label": "Full Width 50/50 Split (Media + Content)" }
       ]
     },
     {
       "type": "select",
       "id": "image_position",
-      "label": "Image Position (Split Mode Only)",
+      "label": "Media Position (Split Mode Only)",
       "default": "left",
       "options": [
-        { "value": "left", "label": "Image Left, Content Right" },
-        { "value": "right", "label": "Content Left, Image Right" }
+        { "value": "left", "label": "Media Left, Content Right" },
+        { "value": "right", "label": "Content Left, Media Right" }
       ]
     },
     {
@@ -398,17 +494,76 @@
     },
     {
       "type": "header",
-      "content": "Images & Overlay"
+      "content": "Media (Image or Video) & Overlay"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media Type",
+      "default": "image",
+      "options": [
+        { "value": "image", "label": "Image" },
+        { "value": "video", "label": "Video" }
+      ]
     },
     {
       "type": "image_picker",
       "id": "image",
-      "label": "Desktop Image (100% Width)"
+      "label": "Desktop Image (or Video Poster)"
     },
     {
       "type": "image_picker",
       "id": "mobile_image",
       "label": "Mobile Image (Optional)"
+    },
+    {
+      "type": "header",
+      "content": "Video Options (When Media Type is Video)"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Shopify Hosted Video"
+    },
+    {
+      "type": "text",
+      "id": "video_url_mp4",
+      "label": "Direct MP4 Video URL",
+      "info": "Paste direct .mp4 link if not using Shopify Hosted Video"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url_external",
+      "label": "External Video (YouTube or Vimeo)",
+      "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "video",
+      "id": "mobile_video",
+      "label": "Mobile Shopify Hosted Video (Optional)"
+    },
+    {
+      "type": "text",
+      "id": "mobile_video_url_mp4",
+      "label": "Mobile MP4 Video URL (Optional)"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_autoplay",
+      "label": "Autoplay Video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_loop",
+      "label": "Loop Video",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "video_muted",
+      "label": "Mute Video (Required for Autoplay)",
+      "default": true
     },
     {
       "type": "color",
