@@ -1,23 +1,32 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "catalog_hero_main": {
       "type": "catalog-hero",
       "name": "Catalog Hero Banner",
       "settings": {
-        "image": "shopify://shop_images/WhatsApp_Image_2026-09-09_at_9.05.00_PM.jpg",
+        "image": "shopify://shop_images/ultimats_blog_2_a5ed580d-4f54-4b9c-b0e3-705da6b196a9.png",
         "overlay_color": "#000000",
         "overlay_opacity": 40,
-        "section_height_desktop": "600px",
+        "section_height_desktop": "800px",
         "section_height_mobile": "400px",
         "content_width": 800,
         "content_position": "bottom-center",
         "text_alignment": "center",
         "mobile_text_alignment": "center",
         "heading": "<strong>ULTIMAT</strong>",
-        "heading_size": 48,
+        "heading_size": 68,
         "heading_color": "#ffffff",
-        "description": "<p><strong>Heavy-duty vinyl looped matting engineered for open outdoor entrance scraping and all-weather durability.<br/></strong></p>",
-        "description_size": 18,
+        "description": "<p><strong>Premium quality vinyl looped barrier matting<br/><br/></strong></p>",
+        "description_size": 25,
         "description_color": "#e0e0e0",
         "padding_top": 0,
         "padding_bottom": 0
@@ -29,10 +38,10 @@
       "settings": {
         "layout_mode": "overlay",
         "image_position": "left",
-        "desktop_height": "550px",
+        "desktop_height": "700px",
         "mobile_height": "400px",
         "media_type": "image",
-        "image": "shopify://shop_images/WhatsApp_Image_2026-09-09_at_9.05.00_PM.jpg",
+        "image": "shopify://shop_images/floor_mat.png",
         "video_url_mp4": "",
         "video_url_external": "",
         "mobile_video_url_mp4": "",
@@ -54,7 +63,7 @@
         "heading": "ultimat",
         "heading_size": 32,
         "heading_color": "#111111",
-        "description": "<p>All-weather vinyl loop coil matting designed to trap and conceal massive amounts of dirt at building exterior perimeters.</p>",
+        "description": "<p>Premium vinyl looped heavy duty entrance matting designed for heavy commercial foot-traffic</p>",
         "description_size": 15,
         "description_color": "#444444",
         "button_label": "",
@@ -77,7 +86,7 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "All-Weather Vinyl Coils",
-            "text": ""
+            "text": "<p>backing holds collected debris from floor for subsequent removal</p>"
           }
         },
         "card_2": {
@@ -87,7 +96,7 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "Conceals Massive Dirt",
-            "text": ""
+            "text": "<p>Ultimat Unbacked: Open bottom allows debris and moisture to fall-through to the floor</p>"
           }
         },
         "card_3": {
@@ -97,7 +106,7 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "Easy Hose-Down Wash",
-            "text": ""
+            "text": "<p>Ultimat with borders: for flat surfaces with all-around compressed beveled edges</p>"
           }
         },
         "card_4": {
@@ -107,7 +116,7 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "Safety Beveled Edges",
-            "text": ""
+            "text": "<p>Ultimat without borders: to place in recessed areas/matwells</p>"
           }
         }
       },
