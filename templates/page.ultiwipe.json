@@ -1,639 +1,589 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "hero_image_3bhra4": {
-      "type": "hero-image",
-      "blocks": {
-        "heading_rUDpkN": {
-          "type": "heading",
-          "settings": {
-            "badge": "",
-            "heading": "ULTIWIPE®",
-            "subheading": "Engineered with alternating scraper and moisture-absorption fibers with double-compressed vinyl borders for clean, elegant entrances.",
-            "font_size": 100,
-            "font_color": "#ffffff"
-          }
-        },
-        "buttons_hg4VFq": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "",
-            "button_link_1": "",
-            "button_label_2": "",
-            "button_link_2": "",
-            "font_size": 100,
-            "button_color": "#ffffff",
-            "font_button_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_rUDpkN",
-        "buttons_hg4VFq"
-      ],
+    "catalog_hero_main": {
+      "type": "catalog-hero",
+      "name": "Catalog Hero Banner",
       "settings": {
-        "background_image": "none",
-        "custom_background_image": "shopify://shop_images/UltiWipe_Hero_Image_60447b40-ca93-4246-832c-01c8b8fd1fad.png",
-        "image_height": 70,
-        "show_scrim": false,
-        "scrim_lightness_background": 0,
-        "image_animation": "fade-in",
-        "transparent_header": false,
-        "image_size": 50,
-        "image_vertical_position": "bottom",
-        "image_below_position": 5,
-        "image_horizontal_position": 100,
-        "show_secondary_scrim": false,
-        "scrim_lightness": 0,
-        "content_aligment": "left",
-        "vertical_position": 50,
-        "horizontal_position": 10,
+        "image": "shopify://shop_images/UltiWipe_5_colors_orange_background.webp",
+        "overlay_color": "#000000",
+        "overlay_opacity": 40,
+        "section_height_desktop": "600px",
+        "section_height_mobile": "400px",
+        "content_width": 800,
+        "content_position": "bottom-center",
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "heading": "<strong>ULTIWIPE</strong>",
+        "heading_size": 48,
+        "heading_color": "#ffffff",
+        "description": "<p><strong>Ultra-absorbent microfiber & polypropylene entrance matting designed for rapid moisture absorption and fine dust drying.<br/></strong></p>",
+        "description_size": 18,
+        "description_color": "#e0e0e0",
         "padding_top": 0,
         "padding_bottom": 0
       }
     },
-    "main": {
-      "type": "main-page",
-      "disabled": true,
+    "catalog_fullwidth_feature_main": {
+      "type": "catalog-fullwidth-feature",
+      "name": "Full Width Feature Section",
       "settings": {
-        "content_height": 40,
-        "background": "main-background",
-        "banner_image": "shopify://shop_images/golden-autumn-leaves.jpg",
-        "parallax": true,
-        "show_scrim": true,
-        "scrim_lightness": 75
-      }
-    },
-    "rich_text_jEwqRH": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_bi7zR4": {
-          "type": "heading",
-          "settings": {
-            "heading": "About US",
-            "font_size": 100,
-            "font_type": "heading-font"
-          }
-        },
-        "text_aE4dpi": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p>We are committed to growing with our partners by providing the best matting solution, highest quality and the fastest delivery to the end-user customer. This commitment is the reason why we are by far the #1 Mat Company in the Indian Sub-Continent.</p><p>Backed with a strong national network and a large reseller base internationally, our diversified operations are seamlessly integrated right from product manufacturing to organized retail to providing high quality end-customer service.</p><p>Our high business ethics, reliability of our products and services and respect for people have contributed towards building our good corporate image in the industry.</p>",
-            "font_size": 100,
-            "font_type": "body-font"
-          }
-        },
-        "button_ndQX9i": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": "",
-            "button_style": "ghost"
-          }
-        }
-      },
-      "block_order": [
-        "heading_bi7zR4",
-        "text_aE4dpi",
-        "button_ndQX9i"
-      ],
-      "disabled": true,
-      "settings": {
-        "text_align": "left",
-        "background": "main-background",
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "media_with_text_QiiP9T": {
-      "type": "media-with-text",
-      "blocks": {
-        "heading_nG9xjU": {
-          "type": "heading",
-          "settings": {
-            "badge": "",
-            "title": "UltiWipe® Performance",
-            "font_size": 100,
-            "font_type": "heading-font"
-          }
-        },
-        "text_6P6iEr": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Dual-stiffness cut-pile polypropylene carpet matting with heavy-duty vinyl backing and double-compressed borders for superior scraping and drying.</p>",
-            "font_size": 100,
-            "font_type": "body-font"
-          }
-        },
-        "button_9We6cF": {
-          "type": "button",
-          "settings": {
-            "button_label": "Configure Your UltiWipe",
-            "button_link": "https://ultimats.com/products/ultiwipe-carpet-mat"
-          }
-        }
-      },
-      "block_order": [
-        "heading_nG9xjU",
-        "text_6P6iEr",
-        "button_9We6cF"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/hf_20260705_143249_f1f4e7ad-a4d2-4138-8ef9-21c714093f49.png",
-        "video_url": "",
-        "video_asset_name": "",
-        "autoplay_video": false,
-        "image_ratio": "16-9",
-        "media_width": 780,
-        "vertical_text_align": "top",
-        "layout": "left",
-        "section_align": "center",
-        "overlap_text": true,
-        "image_animation": "discover-image",
-        "background": "background-modal",
-        "frosted_glass": true,
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "media_with_text_hFVgUL": {
-      "type": "media-with-text",
-      "blocks": {
-        "heading_kqF9Ec": {
-          "type": "heading",
-          "settings": {
-            "badge": "",
-            "title": "",
-            "font_size": 80,
-            "font_type": "heading-font"
-          }
-        },
-        "text_tEG7Gf": {
-          "type": "text",
-          "settings": {
-            "text": "<p>1. Alternate bands of tough and soft fibers for scraping and drying action</p><p>2. Vinyl borders for added strength and great looks </p>",
-            "font_size": 120,
-            "font_type": "heading-font"
-          }
-        },
-        "button_UeecNq": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_kqF9Ec",
-        "text_tEG7Gf",
-        "button_UeecNq"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/UltiWipe_Featurs_1_2_bb77b1e8-b1b0-4545-8d98-0846a1514c2a.png",
-        "video_url": "",
-        "video_asset_name": "",
-        "autoplay_video": false,
-        "image_ratio": "5-4",
-        "media_width": 780,
-        "vertical_text_align": "center",
-        "layout": "right",
-        "section_align": "left",
-        "overlap_text": true,
-        "image_animation": "fade-up",
-        "background": "background-modal",
-        "frosted_glass": true,
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "collage_dxK46A": {
-      "type": "collage",
-      "blocks": {
-        "media_TaRdjV": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-02-18_at_11.57.25_AM.png",
-            "autoplay_video": true,
-            "link": ""
-          }
-        },
-        "media_EFpC6b": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-02-18_at_11.57.06_AM.png",
-            "autoplay_video": true,
-            "link": ""
-          }
-        },
-        "media_gwHnnc": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-02-18_at_11.57.25_AM.png",
-            "autoplay_video": true,
-            "link": ""
-          }
-        },
-        "media_G4bmEh": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-02-18_at_11.56.39_AM.png",
-            "autoplay_video": true,
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "media_TaRdjV",
-        "media_EFpC6b",
-        "media_gwHnnc",
-        "media_G4bmEh"
-      ],
-      "disabled": true,
-      "custom_css": [],
-      "settings": {
-        "title": "mat infills & base sections",
-        "text": "We offer a range of customizable mat infills in configurations best-suited to your application and floor design",
+        "layout_mode": "overlay",
+        "image_position": "left",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "media_type": "image",
+        "image": "shopify://shop_images/UltiWipe_5_colors_orange_background.webp",
+        "video_url_mp4": "",
+        "video_url_external": "",
+        "mobile_video_url_mp4": "",
+        "video_autoplay": true,
+        "video_loop": true,
+        "video_muted": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "card_position": "right",
+        "text_alignment": "left",
+        "mobile_text_alignment": "center",
+        "card_max_width": 550,
+        "card_padding": 36,
+        "card_border_radius": 16,
+        "card_bg_color": "#f4f4f4",
+        "enable_glassmorphism": false,
+        "badge": "",
+        "badge_color": "#555555",
+        "heading": "ultiwipe",
+        "heading_size": 32,
+        "heading_color": "#111111",
+        "description": "<p>Ultra-absorbent fine wiping barrier matting with double-reinforced vinyl borders for wet weather entrance protection and floor safety.</p>",
+        "description_size": 15,
+        "description_color": "#444444",
         "button_label": "",
         "button_link": "",
-        "font_size": 80,
-        "color_text": "primary-text-1",
-        "layout": "left",
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "checklist_iP6XbV": {
-      "type": "checklist",
-      "blocks": {
-        "line_text_fDihxG": {
-          "type": "line_text",
-          "settings": {
-            "icon": "shield-check",
-            "text": "Alternate Stiff and Soft Fibers"
-          }
-        },
-        "line_text_CrhqBR": {
-          "type": "line_text",
-          "settings": {
-            "icon": "shield-check",
-            "text": "Stiff fibers scrape-off dirt"
-          }
-        },
-        "line_text_qMhNcq": {
-          "type": "line_text",
-          "settings": {
-            "icon": "shield-check",
-            "text": "Soft fibers remove moisture"
-          }
-        },
-        "line_text_UXwHwM": {
-          "type": "line_text",
-          "settings": {
-            "icon": "shield-check",
-            "text": "Double compressed borders"
-          }
-        },
-        "line_text_nGaDrD": {
-          "type": "line_text",
-          "settings": {
-            "icon": "shield-check",
-            "text": "100% washable"
-          }
-        },
-        "line_text_wJMWyM": {
-          "type": "line_text",
-          "settings": {
-            "icon": "shield-check",
-            "text": "made in india"
-          }
-        }
-      },
-      "block_order": [
-        "line_text_fDihxG",
-        "line_text_CrhqBR",
-        "line_text_qMhNcq",
-        "line_text_UXwHwM",
-        "line_text_nGaDrD",
-        "line_text_wJMWyM"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/021.png",
-        "show_scrim": false,
-        "scrim_lightness": 0,
-        "icon": "shield-check",
-        "text": "",
-        "link": "",
-        "font_size": 70,
-        "font_type": "heading-font",
-        "background": "background-modal",
-        "margin_top": 44,
-        "margin_bottom": 44
-      }
-    },
-    "collection_list_FEk6H4": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_d4nP9a": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "collection_image": "shopify://shop_images/Screenshot_2024-02-18_at_12.04.35_PM.png",
-            "title": "UltiGrate Recess Wall Support Frame"
-          }
-        },
-        "featured_collection_YXqEdY": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "collection_image": "shopify://shop_images/Screenshot_2024-02-18_at_12.04.44_PM.png",
-            "title": "UltiGrate Ramping Frame"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_d4nP9a",
-        "featured_collection_YXqEdY"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "Accessories",
-        "subheading": "Matwell frames and Ramp Accessories",
-        "color_text": "primary-text-1",
-        "font_size": 100,
-        "image_ratio": "adapt",
-        "grid": 2,
-        "card_font_size": 100,
-        "font_type": "heading-font",
-        "background": "background-modal",
-        "show_view_all": false,
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "media_with_text_NaihVK": {
-      "type": "media-with-text",
-      "blocks": {
-        "heading_8djDaW": {
-          "type": "heading",
-          "settings": {
-            "badge": "",
-            "title": "Mission Statement",
-            "font_size": 100,
-            "font_type": "heading-font"
-          }
-        },
-        "text_wrfPDp": {
-          "type": "text",
-          "settings": {
-            "text": "<p><em>\"To offer innovative, functional and customized mat products that exceed our customers’ expectations in quality, performance and cost through development of new products and continuous improvement of existing ones.\"</em></p>",
-            "font_size": 120,
-            "font_type": "body-font"
-          }
-        },
-        "button_eACpzP": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_8djDaW",
-        "text_wrfPDp",
-        "button_eACpzP"
-      ],
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/Our_Vision.jpg",
-        "video_url": "",
-        "video_asset_name": "",
-        "autoplay_video": true,
-        "image_ratio": "16-9",
-        "media_width": 780,
-        "vertical_text_align": "top",
-        "layout": "left",
-        "section_align": "center",
-        "overlap_text": true,
-        "image_animation": "fade-up",
-        "background": "background-modal",
-        "frosted_glass": true,
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "media_with_text_f6VaAm": {
-      "type": "media-with-text",
-      "blocks": {
-        "heading_xKT8RP": {
-          "type": "heading",
-          "settings": {
-            "badge": "",
-            "title": "Technical Specifications",
-            "font_size": 80,
-            "font_type": "heading-font"
-          }
-        },
-        "text_rRUwgB": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Product Name: UltiWipe</p><p>Surface Material: Stiff & soft polypropylene fibers</p><p>Carpet Style: Tufted cut-pile</p><p>Carpet Weight: 750 gsm</p><p>Backing Weight: 2000 gsm</p><p>Mat height: 8mm</p><p>Pedestrian annual traffic: 0.8 Million</p><p>Water Retention: 3.0 Kgs/m2</p><p>Warranty: 12 months</p>",
-            "font_size": 80,
-            "font_type": "body-font"
-          }
-        },
-        "button_CcRHKM": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_xKT8RP",
-        "text_rRUwgB",
-        "button_CcRHKM"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/magnific_the-strips-of-the-mat-in-_wPqCb3Z7EI.png",
-        "video_url": "",
-        "video_asset_name": "",
-        "autoplay_video": true,
-        "image_ratio": "4-5",
-        "media_width": 780,
-        "vertical_text_align": "top",
-        "layout": "left",
-        "section_align": "left",
-        "overlap_text": true,
-        "image_animation": "discover-image",
-        "background": "background-modal",
-        "frosted_glass": true,
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "large_media_with_text_box_wcgMWJ": {
-      "type": "large-media-with-text-box",
-      "blocks": {
-        "heading_QaYLWq": {
-          "type": "heading",
-          "settings": {
-            "title": "Technical specifications",
-            "font_size": 80
-          }
-        },
-        "text_6XWaJr": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Product Name: UltiGrate</p><p>Application: Commercial heavy-traffic entrances</p><p>Material: Aluminium 6063T6 Anodized</p><p>Mat infills: Brush/Rubber/Carpet</p><p>Profile Height : 10 mm</p><p>Total Height (Brush): 14 mm</p><p>Total Height (Carpet): 12 mm</p><p>Matwell Depth: 10 mm</p><p>Pedestrian Annual Traffic: Upto 10 million </p><p>Trolley Crossings: Heavy (Max weight 600 Kgs)</p><p>Warranty: 5 years</p>",
-            "font_size": 100
-          }
-        },
-        "button_FcqrEC": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Configure your mat",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_QaYLWq",
-        "text_6XWaJr",
-        "button_FcqrEC"
-      ],
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/Entryway_Mat_3.jpg",
-        "autoplay_video": true,
-        "full_width": true,
-        "text_position": "top-left",
-        "container_width": 425,
-        "container_height": 20,
-        "inner_spacing": 40,
-        "vertical_position": 39,
-        "horizontal_position": 100,
-        "background": "background-modal",
-        "frosted_glass": false,
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "collapsible_content_QXqK9a": {
-      "type": "collapsible-content",
-      "blocks": {
-        "collapsible_row_WD6BM3": {
-          "type": "collapsible_row",
-          "settings": {
-            "row_icon": "none",
-            "title": "Why UltiWipe?",
-            "row_content": "<ul><li>Stiff-fibres scrape-off tough dirt</li><li>Soft-fibers retain moisture</li><li>Our USP: Double-compressed borders add style, longevity and neat looks</li><li>Dual-tone looks add elegance to your entrance</li><li>UltiWipe is a sleek design 8mm low-height product that allows unhindered door-movement over the mat</li></ul>",
-            "page": ""
-          }
-        },
-        "collapsible_row_g3dFpC": {
-          "type": "collapsible_row",
-          "settings": {
-            "row_icon": "none",
-            "title": "How is UltiWipe effective against dirt and moisture?",
-            "row_content": "<p>UltiWipe is purposefully crafted to create the perfect conditions for capturing and hiding dirt and moisture, making cleaning effortless while ensuring the mat's surface remains clean and fresh throughout the day.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_tdPPJk": {
-          "type": "collapsible_row",
-          "settings": {
-            "row_icon": "none",
-            "title": "How do I clean UltiWipe?",
-            "row_content": "<p>UltiWipe is 100% washable and quick-drying. Tap or vacuum for light cleaning or hose-down with water for deep-cleaning</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_3JfeEa": {
-          "type": "collapsible_row",
-          "settings": {
-            "row_icon": "none",
-            "title": "Are there any regulatory guidelines on commercial entrance matting?",
-            "row_content": "<p>The Americans with Disabilities Act sets specific codes regulations for public and commercial buildings so that people with a wide range of disabilities can freely and easily access all areas of these buildings. The ADA even has very specific guidelines on entrance mats. The best mats for wheelchairs are our recessed metal mats and our surface-mount mats. Ensure easy access to all who enter your facility.</p><p><strong>The ADA has these set of guidelines:</strong></p><p>Carpet must be securely affixed to the ground, have a stiff or no backing at all, and be no more than 12.5mm thick. If the carpet is more than 12.5mm thick, there must be a beveled edge for wheels to effortlessly glide over.<br/></p><p>Recessed entrance grates/mats need to have less than 12.5mm between pieces to prevent wheels or any other movement facilitating equipment to get caught.</p><p>UltiWipe satisfies all ADA regulatory guidelines.</p>",
-            "page": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_row_WD6BM3",
-        "collapsible_row_g3dFpC",
-        "collapsible_row_tdPPJk",
-        "collapsible_row_3JfeEa"
-      ],
-      "settings": {
-        "show_information": false,
-        "title": "FAQ",
-        "description": "<p>We've compiled a list of frequently asked questions to help you decide which matting configuration is the right choice for your premises. No matter what your needs may be, Ultimats has the right product for you.</p>",
-        "email_label": "",
-        "email": "",
-        "phone_label": "",
-        "phone": "",
-        "hours_label": "",
-        "hours": "",
-        "font_size": 100,
-        "background": "background-modal",
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "rich_text_MTikUV": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_fdqEwA": {
-          "type": "heading",
-          "settings": {
-            "heading": "",
-            "font_size": 100,
-            "font_type": "heading-font"
-          }
-        },
-        "text_FGiBRP": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "font_size": 100,
-            "font_type": "heading-font"
-          }
-        },
-        "button_tKNVbN": {
-          "type": "button",
-          "settings": {
-            "button_label": "customize your ultiwipe",
-            "button_link": "https://ultimats.com/products/ultiwipe-carpet-mat",
-            "button_style": "solid"
-          }
-        }
-      },
-      "block_order": [
-        "heading_fdqEwA",
-        "text_FGiBRP",
-        "button_tKNVbN"
-      ],
-      "settings": {
-        "text_align": "center",
-        "background": "main-background",
+        "button_bg_color": "#111111",
+        "button_text_color": "#ffffff",
+        "button_border_color": "#111111",
+        "section_bg_color": "#ffffff",
         "padding_top": 0,
         "padding_bottom": 0
       }
     },
-    "contact_form_awRX6D": {
+    "promise_slider_main": {
+      "type": "promise-slider",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "Ultra Moisture Wiping",
+            "text": ""
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "Fine Dust Interception",
+            "text": ""
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "Double-Compressed Borders",
+            "text": ""
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "Tough Non-Slip Backing",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
+      "name": "Promise Slider",
+      "settings": {
+        "background_video_url": "",
+        "section_height": 800,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "overlay_opacity": 40,
+        "heading": "ULTIWIPE PROPERTIES",
+        "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
+      }
+    },
+    "three_layer_feature_main": {
+      "type": "three-layer-feature",
+      "name": "Three Layer Feature",
+      "settings": {
+        "bg_color": "#000000",
+        "text_color": "#ffffff",
+        "video": "shopify://files/videos/2nd.mp4",
+        "video_url": "",
+        "asset_video_name": "",
+        "heading": "ULTIWIPE LAYER TECH",
+        "description": "<p>Microfiber tufted fibers lock moisture deep within the mat, keeping surface dry for consecutive footsteps.</p><p>Each layer traps dirt individually to ensure that your space stays clean throughout the day.</p>"
+      }
+    },
+    "catalog_performance_specs_main": {
+      "type": "catalog-performance-specs",
+      "blocks": {
+        "spec_1": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Construction",
+            "value": "Absorbent Polypropylene & Microfiber"
+          }
+        },
+        "spec_2": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Height",
+            "value": "8 mm"
+          }
+        },
+        "spec_3": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Carpet Style",
+            "value": "Fine Wiping Tufted Cut-Pile"
+          }
+        },
+        "spec_4": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Water Retention",
+            "value": "4.00 L/m²"
+          }
+        },
+        "spec_5": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Pedestrian annual traffic",
+            "value": "Up to 0.6 Million steps/year"
+          }
+        },
+        "spec_6": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Backing",
+            "value": "Prime vinyl"
+          }
+        },
+        "spec_7": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Border",
+            "value": "12 mm extended vinyl"
+          }
+        },
+        "spec_8": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Warranty",
+            "value": "12 months"
+          }
+        },
+        "swatch_1": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Granite Grey",
+            "swatch_color": "#71797e"
+          }
+        },
+        "swatch_2": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Charcoal Black",
+            "swatch_color": "#1c1c1c"
+          }
+        },
+        "swatch_3": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Rust Orange",
+            "swatch_color": "#d35400"
+          }
+        },
+        "swatch_4": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Navy Blue",
+            "swatch_color": "#000080"
+          }
+        }
+      },
+      "block_order": [
+        "spec_1",
+        "spec_2",
+        "spec_3",
+        "spec_4",
+        "spec_5",
+        "spec_6",
+        "spec_7",
+        "spec_8",
+        "swatch_1",
+        "swatch_2",
+        "swatch_3",
+        "swatch_4"
+      ],
+      "name": "Performance Specs Band",
+      "settings": {
+        "badge": "",
+        "badge_color": "#22c55e",
+        "heading": "TECHNICAL SPECIFICATIONS",
+        "heading_size": 36,
+        "heading_color": "#111111",
+        "subheading": "Engineered for rainy seasons, main building entrances, and high-moisture zones.",
+        "subheading_color": "#666666",
+        "header_alignment": "left",
+        "layout_position": "specs_first",
+        "image": "shopify://shop_images/UltiWipe_5_colors_orange_background.webp",
+        "table_title": "SPECIFICATIONS",
+        "swatches_title": "AVAILABLE COLORS",
+        "bg_color": "#fafafa",
+        "text_color": "#111111",
+        "card_bg_color": "#ffffff",
+        "label_color": "#555555",
+        "value_color": "#111111",
+        "border_color": "#e5e5e5",
+        "row_hover_color": "#f4f4f5",
+        "card_corner_radius": 12,
+        "card_padding": 28,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "catalog_care_main": {
+      "type": "catalog-care",
+      "settings": {
+        "subtitle": "",
+        "title": "Short AI Visual Cleaning Process",
+        "description": "<p>Effortless maintenance tailored to keep your UltiWipe mats in pristine condition using advanced cleaning steps.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "box1_badge": "VIDEO 1 • LIGHT CLEANING",
+        "box1_video": "shopify://files/videos/Premium_Quality.mp4",
+        "box1_video_url": "",
+        "box1_title": "Light & Quick Cleaning Process",
+        "box1_description": "",
+        "box1_step_1": "",
+        "box1_step_2": "",
+        "box1_step_3": "",
+        "box1_meta_1": "Time: 2-3 Mins",
+        "box1_meta_2": "Frequency: Weekly",
+        "box2_badge": "VIDEO 2 • DEEP CLEANING",
+        "box2_video": "shopify://files/videos/Sustainability.mp4",
+        "box2_video_url": "",
+        "box2_title": "Deep Restoration & Cleaning",
+        "box2_description": "",
+        "box2_step_1": "",
+        "box2_step_2": "",
+        "box2_step_3": "",
+        "box2_meta_1": "Time: 10 Mins",
+        "box2_meta_2": "Frequency: Monthly",
+        "section_bg_color": "#f8f9fa",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#e9ecef",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "card_title_color": "#111827",
+        "card_text_color": "#6b7280",
+        "badge_bg_color": "#ffffff",
+        "badge_text_color": "#111827",
+        "enable_glassmorphism": true,
+        "media_aspect_ratio": "16 / 9",
+        "mobile_media_aspect_ratio": "16 / 9",
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "catalog_where_it_performs_main": {
+      "type": "catalog-where-it-performs",
+      "blocks": {
+        "location_1": {
+          "type": "location",
+          "settings": {
+            "image": "shopify://shop_images/floor_mat.png",
+            "title": "Commercial Foyers",
+            "tag": "High Moisture",
+            "description": "Prevents slippery wet shoe soles from creating hazards on polished marble floors.",
+            "feature_1": "High Absorbency",
+            "feature_2": "Slip Prevention",
+            "feature_3": "Sleek Look"
+          }
+        },
+        "location_2": {
+          "type": "location",
+          "settings": {
+            "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
+            "title": "Luxury Lobbies",
+            "tag": "",
+            "description": "Ideal secondary matting layer behind outdoor scraper mats.",
+            "feature_1": "Fine Wiping",
+            "feature_2": "Vibrant Colors",
+            "feature_3": "Floor Protection"
+          }
+        }
+      },
+      "block_order": [
+        "location_1",
+        "location_2"
+      ],
+      "settings": {
+        "subtitle": "",
+        "title": "Where It Performs",
+        "description": "<p>Engineered for wet weather entryways, hotel reception areas, and commercial office foyers.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#e1e1e1",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "catalog_resources_main": {
+      "type": "catalog-resources",
+      "settings": {
+        "subtitle": "",
+        "title": "Resources & Specifications",
+        "description": "<p>Essential technical documentation and video demonstrations curated for Architects, Builders, and PMCs.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "pdf_badge": "",
+        "pdf_title": "TECHNICAL DATA",
+        "pdf_desc": "Complete product specifications, absorbency ratings, and maintenance guidelines.",
+        "pdf_spec_1": "Comprehensive Material & Spec Data",
+        "pdf_spec_2": "Water Absorption Test Results",
+        "pdf_spec_3": "Safety & Eco Certifications",
+        "pdf_url": "",
+        "pdf_btn_text": "Download Technical Specs (PDF)",
+        "video_badge": "",
+        "video_title": "PRODUCT DEMO",
+        "video_desc": "Product overview video showing walking action and moisture wiping efficiency.",
+        "video_spec_1": "Real-time wet shoe drying",
+        "video_spec_2": "Quick drying mat surface",
+        "video_spec_3": "Tough border durability",
+        "youtube_url": "",
+        "video_btn_text": "Watch Product Demo Video",
+        "section_bg_color": "#f8f9fa",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#e5e7eb",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "btn_primary_bg": "#111827",
+        "btn_primary_text": "#ffffff",
+        "btn_secondary_bg": "#ffffff",
+        "btn_secondary_text": "#111827",
+        "btn_secondary_border": "#d1d5db",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "btn_border_radius": 10,
+        "max_width": 1200,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "catalog_purchase_cta_main": {
+      "type": "catalog-purchase-cta",
+      "settings": {
+        "subtitle": "",
+        "title": "Looking to purchase?",
+        "title_font_size": 32,
+        "card1_title": "STANDARD SIZES",
+        "card1_desc": "Explore available standard-size mats for immediate dispatch.",
+        "card1_product": "ultiwipe-carpet-mat-1",
+        "card1_url": "/products/ultiwipe-carpet-mat-1",
+        "card1_btn_label": "Explore Standard Sizes",
+        "card2_title": "MADE TO MEASURE",
+        "card2_desc": "Customize to your exact size or custom architectural layout.",
+        "card2_product": "",
+        "card2_url": "/pages/made-to-measure-mats",
+        "card2_btn_label": "Customize To Your Exact Size",
+        "section_bg_color": "#e1e1e1",
+        "card_bg_color": "#f9fafb",
+        "card_border_color": "#e5e7eb",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "btn1_bg": "#111827",
+        "btn1_text": "#ffffff",
+        "btn2_bg": "#ffffff",
+        "btn2_text": "#111827",
+        "btn2_border": "#111827",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "btn_border_radius": 8,
+        "max_width": 1100,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "catalog_product_family_main": {
+      "type": "catalog-product-family",
+      "blocks": {
+        "prod_1": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ultiscrape-carpet-mat",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        },
+        "prod_2": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ultiscrub-carpet-mat-1",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        },
+        "prod_3": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ulticlean-carpet-mat-1",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        },
+        "prod_4": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ultidure-carpet-mat",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "prod_1",
+        "prod_2",
+        "prod_3",
+        "prod_4"
+      ],
+      "settings": {
+        "subtitle": "",
+        "title": "Complete the Entrance Solution",
+        "title_font_size": 32,
+        "section_bg_color": "#f8f9fa",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#e5e7eb",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#6b7280",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "premium_faq_main": {
+      "type": "premium-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Custom Sizing",
+            "question": "Can I order a custom size mat?",
+            "answer": "<p>Yes! Most of our commercial barrier mat ranges can be manufactured to your exact dimensions. Specify width and length to the millimeter for a seamless architectural entrance fit.</p>",
+            "open_by_default": true
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Maintenance",
+            "question": "How do I clean and maintain my barrier mat?",
+            "answer": "<p>Daily vacuuming removes dry surface dirt. For deeper cleaning, our mats are compatible with injection-extraction cleaning equipment or mild shampoo washing under running water.</p>",
+            "open_by_default": false
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Durability",
+            "question": "What is the expected lifespan in high-traffic commercial areas?",
+            "answer": "<p>Our commercial-grade matting systems are built for endurance. In busy hotel or corporate lobbies, you can expect 5–7 years of peak performance with regular maintenance.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "name": "Premium Expert FAQ",
+      "settings": {
+        "layout_mode": "single_column",
+        "card_style": "glassmorphism",
+        "container_max_width": 900,
+        "card_border_radius": 16,
+        "header_alignment": "center",
+        "eyebrow_text": "",
+        "heading": "Frequently Asked Questions",
+        "heading_size": 36,
+        "subheading": "Find answers to common inquiries about custom sizing, commercial barrier matting, installation, and care maintenance.",
+        "enable_search": false,
+        "search_placeholder": "",
+        "enable_categories": false,
+        "question_size": 17,
+        "answer_size": 15,
+        "enable_contact_box": false,
+        "contact_heading": "",
+        "contact_subheading": "",
+        "contact_btn_1_label": "",
+        "contact_btn_1_link": "",
+        "contact_btn_2_label": "",
+        "contact_btn_2_link": "",
+        "bg_color": "#ffffff",
+        "card_bg": "#f9fafb",
+        "border_color": "#e5e7eb",
+        "heading_color": "#111827",
+        "subheading_color": "#4b5563",
+        "accent_color": "#111827",
+        "badge_bg": "#f3f4f6",
+        "badge_color": "#374151",
+        "contact_bg": "#f9fafb",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "contact_form_main": {
       "type": "contact-form",
       "settings": {
         "heading": "need product support or a quote?",
@@ -643,11 +593,11 @@
         "show_address": false,
         "custom_address": "",
         "show_facebook": false,
-        "handle_facebook": "Find us on Facebook",
+        "handle_facebook": "",
         "show_instagram": false,
-        "handle_instagram": "Find us on Instagram",
+        "handle_instagram": "",
         "show_twitter": false,
-        "handle_twitter": "Find us on Twitter",
+        "handle_twitter": "",
         "operation": "",
         "response_time": "Thank you for contacting us. We will respond within 2 working days",
         "font_size": 100,
@@ -658,19 +608,17 @@
     }
   },
   "order": [
-    "hero_image_3bhra4",
-    "main",
-    "rich_text_jEwqRH",
-    "media_with_text_QiiP9T",
-    "media_with_text_hFVgUL",
-    "collage_dxK46A",
-    "checklist_iP6XbV",
-    "collection_list_FEk6H4",
-    "media_with_text_NaihVK",
-    "media_with_text_f6VaAm",
-    "large_media_with_text_box_wcgMWJ",
-    "collapsible_content_QXqK9a",
-    "rich_text_MTikUV",
-    "contact_form_awRX6D"
+    "catalog_hero_main",
+    "catalog_fullwidth_feature_main",
+    "promise_slider_main",
+    "three_layer_feature_main",
+    "catalog_performance_specs_main",
+    "catalog_care_main",
+    "catalog_where_it_performs_main",
+    "catalog_resources_main",
+    "catalog_purchase_cta_main",
+    "catalog_product_family_main",
+    "premium_faq_main",
+    "contact_form_main"
   ]
 }

@@ -1,913 +1,581 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "disabled": true,
+    "catalog_hero_main": {
+      "type": "catalog-hero",
+      "name": "Catalog Hero Banner",
       "settings": {
-        "content_height": 40,
-        "background": "main-background",
-        "banner_image": "shopify://shop_images/golden-autumn-leaves.jpg",
-        "parallax": true,
-        "show_scrim": true,
-        "scrim_lightness": 75
-      }
-    },
-    "hero_video_QQnnkK": {
-      "type": "hero-video",
-      "name": "t:sections.hero-video.presets.name",
-      "settings": {
-        "image_height": 70,
-        "media_position": "center",
-        "content_aligment": "center",
-        "container_width": 375,
-        "vertical_position": 50,
-        "horizontal_position": 50,
-        "show_scrim": true,
-        "scrim_lightness": 0,
-        "video_animation": "slide-in",
-        "transparent_header": false,
+        "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
+        "overlay_color": "#000000",
+        "overlay_opacity": 40,
+        "section_height_desktop": "600px",
+        "section_height_mobile": "400px",
+        "content_width": 800,
+        "content_position": "bottom-center",
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "heading": "<strong>ULTIGRATE ALUMINIUM</strong>",
+        "heading_size": 48,
+        "heading_color": "#ffffff",
+        "description": "<p><strong>Heavy-duty anodized aluminium entrance grate system engineered for extreme commercial traffic & rolling loads.<br/></strong></p>",
+        "description_size": 18,
+        "description_color": "#e0e0e0",
         "padding_top": 0,
         "padding_bottom": 0
       }
     },
-    "hero_image_LYgEmG": {
-      "type": "hero-image",
-      "blocks": {
-        "heading_LNHU3e": {
-          "type": "heading",
-          "settings": {
-            "badge": "",
-            "heading": "",
-            "subheading": "",
-            "font_size": 100,
-            "font_color": "#ffffff"
-          }
-        },
-        "buttons_JhqV3y": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "",
-            "button_link_1": "",
-            "button_label_2": "",
-            "button_link_2": "",
-            "font_size": 100,
-            "button_color": "#ffffff",
-            "font_button_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_LNHU3e",
-        "buttons_JhqV3y"
-      ],
-      "disabled": true,
+    "catalog_fullwidth_feature_main": {
+      "type": "catalog-fullwidth-feature",
+      "name": "Full Width Feature Section",
       "settings": {
-        "background_image": "none",
-        "custom_background_image": "shopify://shop_images/Grate_Hero_Image2.png",
-        "image_height": 0,
-        "show_scrim": false,
-        "scrim_lightness_background": 0,
-        "image_animation": "fade-in",
-        "transparent_header": false,
-        "image_size": 50,
-        "image_vertical_position": "top",
-        "image_below_position": 5,
-        "image_horizontal_position": 0,
-        "show_secondary_scrim": false,
-        "scrim_lightness": 0,
-        "content_aligment": "right",
-        "vertical_position": 50,
-        "horizontal_position": 10,
+        "layout_mode": "overlay",
+        "image_position": "left",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "media_type": "image",
+        "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
+        "video_url_mp4": "",
+        "video_url_external": "",
+        "mobile_video_url_mp4": "",
+        "video_autoplay": true,
+        "video_loop": true,
+        "video_muted": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "card_position": "right",
+        "text_alignment": "left",
+        "mobile_text_alignment": "center",
+        "card_max_width": 550,
+        "card_padding": 36,
+        "card_border_radius": 16,
+        "card_bg_color": "#f4f4f4",
+        "enable_glassmorphism": false,
+        "badge": "",
+        "badge_color": "#555555",
+        "heading": "ultigrate aluminium",
+        "heading_size": 32,
+        "heading_color": "#111111",
+        "description": "<p>Architectural grade anodized aluminium profile entrance grates with customizable wiper infills for luxury malls, airports, and high-traffic commercial towers.</p>",
+        "description_size": 15,
+        "description_color": "#444444",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#111111",
+        "button_text_color": "#ffffff",
+        "button_border_color": "#111111",
+        "section_bg_color": "#ffffff",
         "padding_top": 0,
         "padding_bottom": 0
       }
     },
-    "media_with_text_QiiP9T": {
-      "type": "media-with-text",
+    "promise_slider_main": {
+      "type": "promise-slider",
       "blocks": {
-        "heading_nG9xjU": {
-          "type": "heading",
-          "settings": {
-            "badge": "",
-            "title": "",
-            "font_size": 80,
-            "font_type": "heading-font"
-          }
-        },
-        "text_6P6iEr": {
-          "type": "text",
-          "settings": {
-            "text": "<h1>UltiGrate Aluminium matting</h1><p>We at Ultimats offer top-of-the-line aluminium entrance matting systems, boasting a robust construction designed to endure in even the most challenging environments for years to come. </p><p>Tailored to accommodate various entrance layouts and aesthetic preferences, our products cater to large entrances as well as revolving doors. </p><p>Additionally, we offer customization options such as embedding logos and branding into our aluminium mats to enhance branding at ground level. </p><p>Each option includes efficient surface finishes for dirt and moisture removal, ensuring durability and a premium visual appeal.</p>",
-            "font_size": 100,
-            "font_type": "body-font"
-          }
-        },
-        "button_9We6cF": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_nG9xjU",
-        "text_6P6iEr",
-        "button_9We6cF"
-      ],
-      "custom_css": [
-        "{font-size: 22px;}"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/right_one.png",
-        "video_url": "",
-        "video_asset_name": "",
-        "autoplay_video": false,
-        "image_ratio": "4-5",
-        "media_width": 780,
-        "vertical_text_align": "top",
-        "layout": "left",
-        "section_align": "center",
-        "overlap_text": true,
-        "image_animation": "discover-image",
-        "background": "background-modal",
-        "frosted_glass": true,
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "media_with_text_gWAydQ": {
-      "type": "media-with-text",
-      "blocks": {
-        "heading_AghnHY": {
-          "type": "heading",
-          "settings": {
-            "badge": "",
-            "title": "Mat Zoning with Aluminium Mats",
-            "font_size": 80,
-            "font_type": "heading-font"
-          }
-        },
-        "text_zrhRi4": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Zone 1 (Exterior): </p><p>Scraper matting to aggressively remove large dirt particles and also provide slip-protection in case of wet exterior conditions</p><p></p><p>Zone 2 (Vestibule):</p><p>Scraper matting for continued dirt removal alongwith carpet matting to retain moisture</p><p>Zone 3 (Interior):</p><p>High-performance carpet matting for final dirt and moisture removal</p><p></p><p></p>",
-            "font_size": 100,
-            "font_type": "body-font"
-          }
-        },
-        "button_MhCTeT": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_AghnHY",
-        "text_zrhRi4",
-        "button_MhCTeT"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/Mat_Zoning.png",
-        "video_url": "",
-        "video_asset_name": "",
-        "autoplay_video": true,
-        "image_ratio": "adapt",
-        "media_width": 780,
-        "vertical_text_align": "top",
-        "layout": "right",
-        "section_align": "left",
-        "overlap_text": false,
-        "image_animation": "fade-up",
-        "background": "background-modal",
-        "frosted_glass": false,
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "contained_video_iwaxxm": {
-      "type": "contained-video",
-      "name": "Contained Video Box",
-      "settings": {
-        "heading": "See It In Action",
-        "subheading": "Watch how our high-performance mats protect your space.",
-        "heading_alignment": "center",
-        "video": "shopify://files/videos/horizontal mall walkthrough.mp4",
-        "mp4_url": "",
-        "youtube_vimeo_url": "",
-        "max_width": 960,
-        "aspect_ratio": "16:9",
-        "border_radius": 16,
-        "autoplay": true,
-        "loop": true,
-        "muted": true,
-        "show_controls": false,
-        "bg_color": "",
-        "text_color": "",
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "media_grid_ePaxGh": {
-      "type": "media-grid",
-      "blocks": {
-        "media_H4yJHR": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-02-18_at_11.56.39_AM.png",
-            "autoplay_video": true,
-            "item_width": 1,
-            "item_height": 1,
-            "show_scrim": true,
-            "scrim_lightness": 0,
-            "title": "UltiBrush",
-            "text": "Stiff PA brush infills to aggressively remove large quantities of dirt (Zone 1)",
-            "link": ""
-          }
-        },
-        "media_qidpyE": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Brush_Rub_Side.png",
-            "autoplay_video": true,
-            "item_width": 1,
-            "item_height": 1,
-            "show_scrim": true,
-            "scrim_lightness": 0,
-            "title": "UltiBrush + UltiRub",
-            "text": "Alternate brush and ribbed rubber infills for heavy scraping with slip protection (Zone 1)",
-            "link": ""
-          }
-        },
-        "media_Hz9tXd": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-02-18_at_11.57.25_AM.png",
-            "autoplay_video": true,
-            "item_width": 1,
-            "item_height": 1,
-            "show_scrim": true,
-            "scrim_lightness": 0,
-            "title": "UltiRub Carpet",
-            "text": "Heavy duty rubber ribs for scraping and slip protection (Zone 1 & 2)",
-            "link": ""
-          }
-        },
-        "media_QYyptp": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Rub_Rib_Recess_Top.png",
-            "autoplay_video": true,
-            "item_width": 1,
-            "item_height": 1,
-            "show_scrim": true,
-            "scrim_lightness": 0,
-            "title": "UltiRub + UltiRib",
-            "text": "Alternate ribbed rubber and carpet for effective scraping of dirt and removal of moisture (Zone 2)",
-            "link": ""
-          }
-        },
-        "media_k6tL3A": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot2024-02-18at11.56.39AM.png",
-            "autoplay_video": true,
-            "item_width": 1,
-            "item_height": 1,
-            "show_scrim": true,
-            "scrim_lightness": 0,
-            "title": "UltiRIb",
-            "text": "Tough ribbed carpet infills for tough dirt and moisture removal (Zone 2 &3)",
-            "link": ""
-          }
-        },
-        "media_PjXJb3": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot2024-02-18at11.56.39AM_b29e45d9-bf59-41cf-afa3-00ec0da6eb41.png",
-            "autoplay_video": true,
-            "item_width": 1,
-            "item_height": 1,
-            "show_scrim": true,
-            "scrim_lightness": 0,
-            "title": "UltiDure Carpet",
-            "text": "Durable PA Carpet Mat infills for superior all-round performance against dirt and moisture (Zone 3)",
-            "link": ""
-          }
-        },
-        "media_waftRU": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-02-18_at_11.57.06_AM.png",
-            "autoplay_video": true,
-            "item_width": 2,
-            "item_height": 1,
-            "show_scrim": true,
-            "scrim_lightness": 0,
-            "title": "UltiScrub Carpet",
-            "text": "Tough grade UltiScrub carpet infills for trapping, removing and hiding dirt and mositure (Zone 3)",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "media_H4yJHR",
-        "media_qidpyE",
-        "media_Hz9tXd",
-        "media_QYyptp",
-        "media_k6tL3A",
-        "media_PjXJb3",
-        "media_waftRU"
-      ],
-      "disabled": true,
-      "custom_css": [],
-      "settings": {
-        "title": "choice of mat inserts",
-        "text": "We offer a range of customizable mat inserts in configurations best-suited to your application and floor design",
-        "font_size": 90,
-        "color_text": "primary-text-1",
-        "button_label": "",
-        "button_link": "",
-        "row_height": 170,
-        "font_image_size": 100,
-        "color_image_text": "primary-text-2",
-        "title_on_hover": false,
-        "description_on_hover": true,
-        "text_position": "bottom-left",
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "multicolor_cards_m9z8QB": {
-      "type": "multicolor-cards",
-      "blocks": {
-        "card_AT6wfm": {
+        "card_1": {
           "type": "card",
           "settings": {
-            "card_image": "shopify://shop_images/Zone_1_Infill_464px.png",
-            "card_title": "Zone 1 Inserts",
-            "link": "",
-            "background": "#919196",
-            "text_color": "#000000"
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "Anodized Aluminium 6063T6",
+            "text": ""
           }
         },
-        "card_KmMHHy": {
+        "card_2": {
           "type": "card",
           "settings": {
-            "card_image": "shopify://shop_images/Zone_2_Infill_464px.png",
-            "card_title": "Zone 2 Inserts",
-            "link": "",
-            "background": "#babac1",
-            "text_color": "#000000"
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "Heavy Rolling Load Capacity",
+            "text": ""
           }
         },
-        "card_76ihwA": {
+        "card_3": {
           "type": "card",
           "settings": {
-            "card_image": "shopify://shop_images/Zone_3_Infill_464px.png",
-            "card_title": "Zone 3 Inserts",
-            "link": "",
-            "background": "#dddde1",
-            "text_color": "#000000"
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "Replaceable Wiper Infills",
+            "text": ""
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "Recessed Architectural Fit",
+            "text": ""
           }
         }
       },
       "block_order": [
-        "card_AT6wfm",
-        "card_KmMHHy",
-        "card_76ihwA"
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
       ],
+      "name": "Promise Slider",
       "settings": {
-        "columns": 3,
-        "image_height": 145,
-        "font_size": 80,
-        "font_type": "heading-font",
-        "padding_top": 44,
-        "padding_bottom": 44
+        "background_video_url": "",
+        "section_height": 800,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "overlay_opacity": 40,
+        "heading": "ULTIGRATE PROPERTIES",
+        "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
       }
     },
-    "collage_dxK46A": {
-      "type": "collage",
-      "blocks": {
-        "media_TaRdjV": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-02-18_at_11.57.25_AM.png",
-            "autoplay_video": true,
-            "link": ""
-          }
-        },
-        "media_EFpC6b": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-02-18_at_11.57.06_AM.png",
-            "autoplay_video": true,
-            "link": ""
-          }
-        },
-        "media_gwHnnc": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-02-18_at_11.57.25_AM.png",
-            "autoplay_video": true,
-            "link": ""
-          }
-        },
-        "media_G4bmEh": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-02-18_at_11.56.39_AM.png",
-            "autoplay_video": true,
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "media_TaRdjV",
-        "media_EFpC6b",
-        "media_gwHnnc",
-        "media_G4bmEh"
-      ],
-      "disabled": true,
-      "custom_css": [],
+    "three_layer_feature_main": {
+      "type": "three-layer-feature",
+      "name": "Three Layer Feature",
       "settings": {
-        "title": "mat infills & base sections",
-        "text": "We offer a range of customizable mat infills in configurations best-suited to your application and floor design",
-        "button_label": "",
-        "button_link": "",
-        "font_size": 80,
-        "color_text": "primary-text-1",
-        "layout": "left",
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "collection_list_fDfR44": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_gAp996": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "collection_image": "shopify://shop_images/Placed_in_recess_with_frame.png",
-            "title": "Placed in Matwell recess"
-          }
-        },
-        "featured_collection_PNMFgw": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "collection_image": "shopify://shop_images/Suface_Laid_with_Frame_464px.png",
-            "title": "Surface laid with ramp frame"
-          }
-        },
-        "featured_collection_nAcj3a": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "collection_image": "shopify://shop_images/surface_loose_laid.png",
-            "title": "surface loose laid with 2-sided ramp"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_gAp996",
-        "featured_collection_PNMFgw",
-        "featured_collection_nAcj3a"
-      ],
-      "settings": {
-        "title": "Aluminium Mats Laying Styles",
-        "subheading": "Place in a recessed matwell, lay to surface with ramp frame or loose lay with 2-sided ramping. We offer all 3 options.",
-        "color_text": "primary-text-1",
-        "font_size": 90,
-        "image_ratio": "adapt",
-        "grid": 3,
-        "card_font_size": 100,
-        "font_type": "heading-font",
-        "background": "background-modal",
-        "show_view_all": false,
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "media_with_text_f6VaAm": {
-      "type": "media-with-text",
-      "blocks": {
-        "heading_xKT8RP": {
-          "type": "heading",
-          "settings": {
-            "badge": "",
-            "title": " Premium Features of Aluminium Mats",
-            "font_size": 80,
-            "font_type": "heading-font"
-          }
-        },
-        "text_rRUwgB": {
-          "type": "text",
-          "settings": {
-            "text": "<p>1. Sturdy 6063T6 Aluminium Sections</p><p>2. High quality and replaceable mat inserts</p><p>3. Open spaces between sections to allow removed dirt to fall-through</p><p>4. TPR anti-skid base</p><p>5. Rollable design </p><p>6. Sleek design - 10.5mm section height</p>",
-            "font_size": 120,
-            "font_type": "heading-font"
-          }
-        },
-        "button_CcRHKM": {
-          "type": "button",
-          "settings": {
-            "button_label": "",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_xKT8RP",
-        "text_rRUwgB",
-        "button_CcRHKM"
-      ],
-      "settings": {
-        "image": "shopify://shop_images/UltiGrate_Features_1_to_6_65975c03-aa3d-4686-b0a7-13fc27b25e7f.png",
+        "bg_color": "#000000",
+        "text_color": "#ffffff",
+        "video": "shopify://files/videos/2nd.mp4",
         "video_url": "",
-        "video_asset_name": "",
-        "autoplay_video": true,
-        "image_ratio": "adapt",
-        "media_width": 780,
-        "vertical_text_align": "center",
-        "layout": "right",
-        "section_align": "left",
-        "overlap_text": true,
-        "image_animation": "discover-image",
-        "background": "background-modal",
-        "frosted_glass": false,
-        "padding_top": 44,
-        "padding_bottom": 44
+        "asset_video_name": "",
+        "heading": "ULTIGRATE LAYER TECH",
+        "description": "<p>Architectural aluminium rails trap coarse soil in deep well channels while wiper strips dry shoe soles.</p><p>Each layer traps dirt individually to ensure that your space stays clean throughout the day.</p>"
       }
     },
-    "checklist_iP6XbV": {
-      "type": "checklist",
+    "catalog_performance_specs_main": {
+      "type": "catalog-performance-specs",
       "blocks": {
-        "line_text_fDihxG": {
-          "type": "line_text",
+        "spec_1": {
+          "type": "spec_item",
           "settings": {
-            "icon": "shield-check",
-            "text": "sturdy aluminium sections"
+            "label": "Material",
+            "value": "Anodized Aluminium 6063T6"
           }
         },
-        "line_text_CrhqBR": {
-          "type": "line_text",
+        "spec_2": {
+          "type": "spec_item",
           "settings": {
-            "icon": "shield-check",
-            "text": "superior mat infills"
+            "label": "Profile Height",
+            "value": "10 mm / 14 mm"
           }
         },
-        "line_text_7fDwQw": {
-          "type": "line_text",
+        "spec_3": {
+          "type": "spec_item",
           "settings": {
-            "icon": "shield-check",
-            "text": "Rollable Design"
+            "label": "Infill Options",
+            "value": "Heavy Brush / Carpet / Rubber"
           }
         },
-        "line_text_UXwHwM": {
-          "type": "line_text",
+        "spec_4": {
+          "type": "spec_item",
           "settings": {
-            "icon": "shield-check",
-            "text": "all infills are replaceable"
+            "label": "Matwell Depth",
+            "value": "10 mm / 15 mm"
           }
         },
-        "line_text_wJMWyM": {
-          "type": "line_text",
+        "spec_5": {
+          "type": "spec_item",
           "settings": {
-            "icon": "shield-check",
-            "text": "Handmade in india"
+            "label": "Pedestrian annual traffic",
+            "value": "Up to 10.0 Million steps/year"
+          }
+        },
+        "spec_6": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Trolley Load Capacity",
+            "value": "Max 600 Kgs"
+          }
+        },
+        "spec_7": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Assembly",
+            "value": "Stainless steel tension cable"
+          }
+        },
+        "spec_8": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Warranty",
+            "value": "5 Years"
+          }
+        },
+        "swatch_1": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Silver Anodized",
+            "swatch_color": "#c0c0c0"
+          }
+        },
+        "swatch_2": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Charcoal Black Infill",
+            "swatch_color": "#1c1c1c"
+          }
+        },
+        "swatch_3": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Granite Grey Infill",
+            "swatch_color": "#71797e"
           }
         }
       },
       "block_order": [
-        "line_text_fDihxG",
-        "line_text_CrhqBR",
-        "line_text_7fDwQw",
-        "line_text_UXwHwM",
-        "line_text_wJMWyM"
+        "spec_1",
+        "spec_2",
+        "spec_3",
+        "spec_4",
+        "spec_5",
+        "spec_6",
+        "spec_7",
+        "spec_8",
+        "swatch_1",
+        "swatch_2",
+        "swatch_3"
       ],
-      "disabled": true,
+      "name": "Performance Specs Band",
       "settings": {
-        "image": "shopify://shop_images/UltiGrate_At_Entrance_Checklist.png",
-        "show_scrim": false,
-        "scrim_lightness": 0,
-        "icon": "shield-check",
-        "text": "",
-        "link": "",
-        "font_size": 70,
-        "font_type": "heading-font",
-        "background": "background-modal",
-        "margin_top": 44,
-        "margin_bottom": 44
+        "badge": "",
+        "badge_color": "#22c55e",
+        "heading": "TECHNICAL SPECIFICATIONS",
+        "heading_size": 36,
+        "heading_color": "#111111",
+        "subheading": "Engineered for international airports, luxury malls, and corporate headquarters.",
+        "subheading_color": "#666666",
+        "header_alignment": "left",
+        "layout_position": "specs_first",
+        "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
+        "table_title": "SPECIFICATIONS",
+        "swatches_title": "AVAILABLE INFILL COLORS",
+        "bg_color": "#fafafa",
+        "text_color": "#111111",
+        "card_bg_color": "#ffffff",
+        "label_color": "#555555",
+        "value_color": "#111111",
+        "border_color": "#e5e5e5",
+        "row_hover_color": "#f4f4f5",
+        "card_corner_radius": 12,
+        "card_padding": 28,
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
-    "collection_list_FEk6H4": {
-      "type": "collection-list",
-      "blocks": {
-        "featured_collection_d4nP9a": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "collection_image": "shopify://shop_images/Screenshot_2024-02-18_at_12.04.35_PM.png",
-            "title": "UltiGrate Recess Wall Support Frame"
-          }
-        },
-        "featured_collection_YXqEdY": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "",
-            "collection_image": "shopify://shop_images/Screenshot_2024-02-18_at_12.04.44_PM.png",
-            "title": "UltiGrate Ramping Frame"
-          }
-        }
-      },
-      "block_order": [
-        "featured_collection_d4nP9a",
-        "featured_collection_YXqEdY"
-      ],
-      "disabled": true,
+    "catalog_care_main": {
+      "type": "catalog-care",
       "settings": {
-        "title": "Accessories",
-        "subheading": "Matwell frames and Ramp Accessories",
-        "color_text": "primary-text-1",
-        "font_size": 100,
-        "image_ratio": "adapt",
-        "grid": 2,
-        "card_font_size": 100,
-        "font_type": "heading-font",
-        "background": "background-modal",
-        "show_view_all": false,
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "size_chart_96CjFh": {
-      "type": "size-chart",
-      "blocks": {
-        "row_g69JKQ": {
-          "type": "row",
-          "settings": {
-            "is_thead": true,
-            "row_name": "Mat Insert",
-            "column_values": "UltiBrush, UltiRub, UltiRib, UltiDure, UltiScrub"
-          }
-        },
-        "row_HzdWbF": {
-          "type": "row",
-          "settings": {
-            "is_thead": false,
-            "row_name": "Grates (aluminium)",
-            "column_values": ", , 6063T6 Anodized, , ,"
-          }
-        },
-        "row_dgbiVE": {
-          "type": "row",
-          "settings": {
-            "is_thead": false,
-            "row_name": "Grate Style",
-            "column_values": "Narrow, Narrow, Wide, Wide, Wide"
-          }
-        },
-        "row_cw7hd6": {
-          "type": "row",
-          "settings": {
-            "is_thead": false,
-            "row_name": "Grate Height",
-            "column_values": ", , 10.5mm, ,"
-          }
-        },
-        "row_t8mfBB": {
-          "type": "row",
-          "settings": {
-            "is_thead": false,
-            "row_name": "Height with mat infill",
-            "column_values": "14mm, 14mm, 14mm, 11mm, 11mm"
-          }
-        },
-        "row_WWRJMA": {
-          "type": "row",
-          "settings": {
-            "is_thead": false,
-            "row_name": "Base material",
-            "column_values": ", , Antislip Rubber, ,"
-          }
-        },
-        "row_pzJ9Dm": {
-          "type": "row",
-          "settings": {
-            "is_thead": false,
-            "row_name": "Pedestrian Annual Traffic",
-            "column_values": "10 million, 10 million, 8 million, 8 million, 8 million"
-          }
-        },
-        "row_NebmGp": {
-          "type": "row",
-          "settings": {
-            "is_thead": false,
-            "row_name": "Trolley Crossings (600Kgs max)",
-            "column_values": ", , Heavy, ,"
-          }
-        }
-      },
-      "block_order": [
-        "row_g69JKQ",
-        "row_HzdWbF",
-        "row_dgbiVE",
-        "row_cw7hd6",
-        "row_t8mfBB",
-        "row_WWRJMA",
-        "row_pzJ9Dm",
-        "row_NebmGp"
-      ],
-      "custom_css": [
-        "h2 {font-size: 18px;}"
-      ],
-      "settings": {
-        "title": "UltiGrate Aluminium Matting – Technical Specifications",
-        "note": "",
-        "background": "background-modal",
-        "padding_top": 0,
-        "padding_bottom": 44
-      }
-    },
-    "large_media_with_text_box_wcgMWJ": {
-      "type": "large-media-with-text-box",
-      "blocks": {
-        "heading_QaYLWq": {
-          "type": "heading",
-          "settings": {
-            "title": "Technical specifications",
-            "font_size": 80
-          }
-        },
-        "text_6XWaJr": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Product Name: UltiGrate</p><p>Application: Commercial heavy-traffic entrances</p><p>Material: Aluminium 6063T6 Anodized</p><p>Mat infills: Brush/Rubber/Carpet</p><p>Profile Height : 10 mm</p><p>Total Height (Brush): 14 mm</p><p>Total Height (Carpet): 12 mm</p><p>Matwell Depth: 10 mm</p><p>Pedestrian Annual Traffic: Upto 10 million </p><p>Trolley Crossings: Heavy (Max weight 600 Kgs)</p><p>Warranty: 5 years</p>",
-            "font_size": 100
-          }
-        },
-        "button_FcqrEC": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Configure your mat",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_QaYLWq",
-        "text_6XWaJr",
-        "button_FcqrEC"
-      ],
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/Entryway_Mat_3.jpg",
-        "autoplay_video": true,
-        "full_width": true,
-        "text_position": "top-left",
-        "container_width": 425,
-        "container_height": 20,
-        "inner_spacing": 40,
-        "vertical_position": 39,
-        "horizontal_position": 100,
-        "background": "background-modal",
-        "frosted_glass": false,
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
-    "social_media_banner_XabhXA": {
-      "type": "social-media-banner",
-      "blocks": {
-        "media_nQB9bd": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/Emaar_UltiGrate.jpg",
-            "autoplay_video": true,
-            "image_link": ""
-          }
-        },
-        "media_K7qfGn": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/UltiGrate_Pic.jpg",
-            "autoplay_video": true,
-            "image_link": ""
-          }
-        },
-        "media_FpQpK4": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/UltiGrate_with_Brown_Spike_Hotel_entrance.jpg",
-            "autoplay_video": true,
-            "image_link": ""
-          }
-        },
-        "media_fndJfj": {
-          "type": "media",
-          "settings": {
-            "image": "shopify://shop_images/UltiGrate_Ramps_Grey_Floor.png",
-            "autoplay_video": true,
-            "image_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "media_nQB9bd",
-        "media_K7qfGn",
-        "media_FpQpK4",
-        "media_fndJfj"
-      ],
-      "settings": {
-        "show_scrim": true,
-        "scrim_lightness": 0,
-        "title": "",
         "subtitle": "",
-        "social_link": "social_instagram_link",
-        "font_size": 100,
-        "background": "background-modal",
-        "frosted_glass": false,
-        "padding_top": 44,
-        "padding_bottom": 44
+        "title": "Short AI Visual Cleaning Process",
+        "description": "<p>Effortless maintenance tailored to keep your UltiGrate mats in pristine condition using advanced cleaning steps.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "box1_badge": "VIDEO 1 • LIGHT CLEANING",
+        "box1_video": "shopify://files/videos/Premium_Quality.mp4",
+        "box1_video_url": "",
+        "box1_title": "Light & Quick Cleaning Process",
+        "box1_description": "",
+        "box1_step_1": "",
+        "box1_step_2": "",
+        "box1_step_3": "",
+        "box1_meta_1": "Time: 2-3 Mins",
+        "box1_meta_2": "Frequency: Weekly",
+        "box2_badge": "VIDEO 2 • DEEP CLEANING",
+        "box2_video": "shopify://files/videos/Sustainability.mp4",
+        "box2_video_url": "",
+        "box2_title": "Matwell Vacuum & Roll-Up Clean",
+        "box2_description": "",
+        "box2_step_1": "",
+        "box2_step_2": "",
+        "box2_step_3": "",
+        "box2_meta_1": "Time: 10 Mins",
+        "box2_meta_2": "Frequency: Monthly",
+        "section_bg_color": "#f8f9fa",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#e9ecef",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "card_title_color": "#111827",
+        "card_text_color": "#6b7280",
+        "badge_bg_color": "#ffffff",
+        "badge_text_color": "#111827",
+        "enable_glassmorphism": true,
+        "media_aspect_ratio": "16 / 9",
+        "mobile_media_aspect_ratio": "16 / 9",
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
-    "collapsible_content_QXqK9a": {
-      "type": "collapsible-content",
+    "catalog_where_it_performs_main": {
+      "type": "catalog-where-it-performs",
       "blocks": {
-        "collapsible_row_WD6BM3": {
-          "type": "collapsible_row",
+        "location_1": {
+          "type": "location",
           "settings": {
-            "row_icon": "none",
-            "title": "Do I need an aluminium mat product?",
-            "row_content": "<p>Aluminium floormats stand out as being at the top of the pyramid when it comes to floor matting systems. They are highly functional first stage dirt-barriers at high-traffic entrances, are low-maintenance and offer premium aesthetics with the longest durability. So if these advantages are what you are looking for, UltiGrate Aluminium Matting System may just be right for you.</p>",
-            "page": ""
+            "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
+            "title": "Airports & Railway Terminals",
+            "tag": "Max Traffic",
+            "description": "Supports heavy rolling luggage, wheelchairs, and trolley traffic seamlessly.",
+            "feature_1": "600kg Load Rating",
+            "feature_2": "10M Traffic Rating",
+            "feature_3": "ADA Compliant"
           }
         },
-        "collapsible_row_g3dFpC": {
-          "type": "collapsible_row",
+        "location_2": {
+          "type": "location",
           "settings": {
-            "row_icon": "none",
-            "title": "What benefits can I expect from Aluminium Matting?",
-            "row_content": "<p>Top three benefits of installing UltiGrate aluminum entrance matting system:</p><p>1. Increases the lifespan of your floor coverings.<br/>‍<br/>2. Our entrance mats, when laid with a walking cross-length between 6 to 15 feet from your doorway, can reduce dirt and moisture throughout your building by over 85%!<br/>‍<br/>‍3.Reduces building cleaning costs by trapping excess dust, dirt, and germs.</p><p>4. All mat inserts are fully replaceable. So you invest only once in the aluminium framework, and only pay for subsequent mat replacements!</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_tdPPJk": {
-          "type": "collapsible_row",
-          "settings": {
-            "row_icon": "none",
-            "title": "Do I need to discard the entire aluminium matting once the mat infills wear-out?",
-            "row_content": "<p>No, not when you purchase from Ultimats! Though the mat infills are of high quality with long usage life, once they eventually wear-out, you simply need to reorder the mat infill. And since we manufacture all mat components inhouse in India, we will promptly replace them for you in your existing aluminium mat frames at a fractional cost of your original investment. You may even opt for a change in color and type of the new mat infills, for a refreshing new look!  </p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_3JfeEa": {
-          "type": "collapsible_row",
-          "settings": {
-            "row_icon": "none",
-            "title": "Are there any regulatory guidelines on commercial entrance matting?",
-            "row_content": "<p>The Americans with Disabilities Act sets specific codes regulations for public and commercial buildings so that people with a wide range of disabilities can freely and easily access all areas of these buildings. The ADA even has very specific guidelines on entrance mats. The best mats for wheelchairs are our recessed metal mats and our surface-mount mats, which ensure easy access to all who enter your facility.</p><p><strong>The ADA has these set of guidelines:</strong></p><p>Carpet must be securely affixed to the ground, have a stiff or no backing at all, and be no more than 12.5mm thick. If the carpet is more than 12.5mm thick, there must be a beveled edge for wheels to effortlessly glide over.<br/></p><p>Recessed entrance grates/mats need to have less than 12.5mm between pieces to prevent wheels or any other movement facilitating equipment to get caught.</p><p>UltiGrate satisfies all ADA regulatory guidelines.</p>",
-            "page": ""
+            "image": "shopify://shop_images/floor_mat.png",
+            "title": "Shopping Malls & Commercial Towers",
+            "tag": "Architectural Recessed",
+            "description": "Sits flush with entrance floor finishes for luxury architectural lobbies.",
+            "feature_1": "Flush Matwell Installation",
+            "feature_2": "Replaceable Infill Strips",
+            "feature_3": "5-Year Warranty"
           }
         }
       },
       "block_order": [
-        "collapsible_row_WD6BM3",
-        "collapsible_row_g3dFpC",
-        "collapsible_row_tdPPJk",
-        "collapsible_row_3JfeEa"
+        "location_1",
+        "location_2"
       ],
       "settings": {
-        "show_information": false,
-        "title": "FAQ",
-        "description": "<p>It can be hard to choose the right aluminium mat for your premises. We've compiled a list of frequently asked questions to help you decide which configuration is the right choice for your facility. No matter what your needs may be, Ultimats has the right product for you.</p>",
-        "email_label": "",
-        "email": "",
-        "phone_label": "",
-        "phone": "",
-        "hours_label": "",
-        "hours": "",
-        "font_size": 100,
-        "background": "background-modal",
-        "padding_top": 44,
-        "padding_bottom": 44
+        "subtitle": "",
+        "title": "Where It Performs",
+        "description": "<p>Engineered for high-capacity public transport hubs, commercial towers, and retail complexes.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#e1e1e1",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
-    "contact_form_awRX6D": {
+    "catalog_resources_main": {
+      "type": "catalog-resources",
+      "settings": {
+        "subtitle": "",
+        "title": "Resources & Specifications",
+        "description": "<p>Essential technical documentation, CAD profile files, and load certificates for Architects and PMCs.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "pdf_badge": "",
+        "pdf_title": "ARCHITECTURAL CAD & SPECS",
+        "pdf_desc": "Complete CAD drawings, frame profiles, matwell recess depths, and load test certificates.",
+        "pdf_spec_1": "CAD & Profile Drawings (PDF & DWG)",
+        "pdf_spec_2": "Matwell Recess Construction Specs",
+        "pdf_spec_3": "500kg Load Rating Certificate",
+        "pdf_url": "",
+        "pdf_btn_text": "Download Technical Specs (PDF)",
+        "video_badge": "",
+        "video_title": "PRODUCT DEMO",
+        "video_desc": "Product overview video showing recessed installation and trolley rolling demo.",
+        "video_spec_1": "Roll-up matwell cleaning demo",
+        "video_spec_2": "Infill replacement walkthrough",
+        "video_spec_3": "Heavy trolley rolling demo",
+        "youtube_url": "",
+        "video_btn_text": "Watch Product Demo Video",
+        "section_bg_color": "#f8f9fa",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#e5e7eb",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "btn_primary_bg": "#111827",
+        "btn_primary_text": "#ffffff",
+        "btn_secondary_bg": "#ffffff",
+        "btn_secondary_text": "#111827",
+        "btn_secondary_border": "#d1d5db",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "btn_border_radius": 10,
+        "max_width": 1200,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "catalog_purchase_cta_main": {
+      "type": "catalog-purchase-cta",
+      "settings": {
+        "subtitle": "",
+        "title": "Looking to purchase?",
+        "title_font_size": 32,
+        "card1_title": "STANDARD SIZES",
+        "card1_desc": "Explore available standard-size mats for immediate dispatch.",
+        "card1_product": "",
+        "card1_url": "",
+        "card1_btn_label": "Explore Standard Sizes",
+        "card2_title": "MADE TO MEASURE",
+        "card2_desc": "Customize to your exact size or custom architectural matwell specs.",
+        "card2_product": "",
+        "card2_url": "/pages/made-to-measure-mats",
+        "card2_btn_label": "Customize To Your Exact Size",
+        "section_bg_color": "#e1e1e1",
+        "card_bg_color": "#f9fafb",
+        "card_border_color": "#e5e7eb",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "btn1_bg": "#111827",
+        "btn1_text": "#ffffff",
+        "btn2_bg": "#ffffff",
+        "btn2_text": "#111827",
+        "btn2_border": "#111827",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "btn_border_radius": 8,
+        "max_width": 1100,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "catalog_product_family_main": {
+      "type": "catalog-product-family",
+      "blocks": {
+        "prod_1": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ultiscrape-carpet-mat",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        },
+        "prod_2": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ultiscrub-carpet-mat-1",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        },
+        "prod_3": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ulticlean-carpet-mat-1",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        },
+        "prod_4": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ultidure-carpet-mat",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "prod_1",
+        "prod_2",
+        "prod_3",
+        "prod_4"
+      ],
+      "settings": {
+        "subtitle": "",
+        "title": "Complete the Entrance Solution",
+        "title_font_size": 32,
+        "section_bg_color": "#f8f9fa",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#e5e7eb",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#6b7280",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "premium_faq_main": {
+      "type": "premium-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Custom Sizing",
+            "question": "Can I order custom dimensions for recessed matwells?",
+            "answer": "<p>Yes! UltiGrate aluminium entrance grates are manufactured to precise site dimensions down to the millimeter for both surface and recessed installations.</p>",
+            "open_by_default": true
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Maintenance",
+            "question": "How do I clean recessed aluminium grates?",
+            "answer": "<p>The roll-up design allows the entire grate system to be rolled back to vacuum out trapped dirt from the matwell pit below.</p>",
+            "open_by_default": false
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Durability",
+            "question": "What is the expected lifespan and warranty?",
+            "answer": "<p>Anodized aluminium profiles feature a 5-year warranty and are engineered for up to 10 million annual foot traffic steps and 600kg rolling trolley loads.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "name": "Premium Expert FAQ",
+      "settings": {
+        "layout_mode": "single_column",
+        "card_style": "glassmorphism",
+        "container_max_width": 900,
+        "card_border_radius": 16,
+        "header_alignment": "center",
+        "eyebrow_text": "",
+        "heading": "Frequently Asked Questions",
+        "heading_size": 36,
+        "subheading": "Find answers to common inquiries about custom sizing, commercial barrier matting, installation, and care maintenance.",
+        "enable_search": false,
+        "search_placeholder": "",
+        "enable_categories": false,
+        "question_size": 17,
+        "answer_size": 15,
+        "enable_contact_box": false,
+        "contact_heading": "",
+        "contact_subheading": "",
+        "contact_btn_1_label": "",
+        "contact_btn_1_link": "",
+        "contact_btn_2_label": "",
+        "contact_btn_2_link": "",
+        "bg_color": "#ffffff",
+        "card_bg": "#f9fafb",
+        "border_color": "#e5e7eb",
+        "heading_color": "#111827",
+        "subheading_color": "#4b5563",
+        "accent_color": "#111827",
+        "badge_bg": "#f3f4f6",
+        "badge_color": "#374151",
+        "contact_bg": "#f9fafb",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "contact_form_main": {
       "type": "contact-form",
       "settings": {
         "heading": "need product support or a quote?",
@@ -917,11 +585,11 @@
         "show_address": false,
         "custom_address": "",
         "show_facebook": false,
-        "handle_facebook": "Find us on Facebook",
+        "handle_facebook": "",
         "show_instagram": false,
-        "handle_instagram": "Find us on Instagram",
+        "handle_instagram": "",
         "show_twitter": false,
-        "handle_twitter": "Find us on Twitter",
+        "handle_twitter": "",
         "operation": "",
         "response_time": "Thank you for contacting us. We will respond within 2 working days",
         "font_size": 100,
@@ -929,36 +597,20 @@
         "padding_top": 44,
         "padding_bottom": 44
       }
-    },
-    "custom_liquid_zLrhBc": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
-      "settings": {
-        "custom_liquid": "<style>\n    .aluminium-mats-section {\n      padding: 0px 20px;\n      max-width: 1200px;\n      margin: auto;\n      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n      color: #333;\n      line-height: 1.7;\n      background-color: #f9f9f9;\n      border-radius: 12px;\n    }\n\n    .aluminium-mats-section h2 {\n      color: #000;\n      font-size: 24px;\n      margin-top: 30px;\n      margin-bottom: 15px;\n      border-left: 4px solid #faad14;\n      padding-left: 12px;\n    }\n\n    .aluminium-mats-section p {\n      margin-bottom: 15px;\n      font-size: 16px;\n    }\n\n    .aluminium-mats-section ul {\n      margin: 15px 0 25px 20px;\n      padding-left: 0;\n      list-style-type: none;\n    }\n\n    .aluminium-mats-section ul li::before {\n      content: \"✔\";\n      color: #52c41a;\n      margin-right: 8px;\n    }\n\n    .aluminium-mats-section ol {\n      padding-left: 20px;\n      margin-bottom: 25px;\n    }\n\n    .aluminium-mats-section blockquote {\n      font-style: italic;\n      background-color: #fffbe6;\n      border-left: 4px solid #ffd666;\n      padding: 10px 15px;\n      margin: 20px 0;\n      border-radius: 6px;\n    }\n\n    .aluminium-mats-section a {\n      color: #096dd9;\n      font-weight: 600;\n      text-decoration: none;\n    }\n\n    .aluminium-mats-section a:hover {\n      text-decoration: underline;\n    }\n  </style>\n\n<div class=\"aluminium-mats-section\">\n  <h2>What Are Aluminium Mats?</h2>\n  <p>Aluminium mats are heavy-duty floor mats made from strong aluminium frames and durable inserts. These inserts can be made of carpet, rubber, or brush strips, depending on where the mat will be used. They are placed at the entrances of buildings to trap dust, mud, and moisture from shoes. The main job of an aluminium mat is to stop dirt at the door. This keeps your indoor floors clean and helps your flooring last longer. They also add a touch of class to your entrance and reduce the risk of slips and falls.</p>\n\n  <h2>Why Choose Aluminium Mats for Your Commercial Space?</h2>\n  <ul>\n    <li><strong>They Handle Heavy Traffic:</strong> Made for busy buildings, they last through thousands of footsteps.</li>\n    <li><strong>They Keep Your Floors Clean:</strong> Trap dirt, water, and dust before it spreads inside.</li>\n    <li><strong>They Can Keep People Safe:</strong> Reduce slipping hazards caused by wet shoes.</li>\n    <li><strong>They Last Years:</strong> Made from tough aluminium and quality inserts.</li>\n    <li><strong>They are Stylish:</strong> Custom options available with logo and color branding.</li>\n  </ul>\n\n  <h2>Where Can You Use Aluminium Entrance Mats?</h2>\n  <p>Common usage areas include:</p>\n  <ul>\n    <li>Shopping malls</li>\n    <li>Office buildings</li>\n    <li>Hotels and resorts</li>\n    <li>Airports and railway stations</li>\n    <li>Hospitals and clinics</li>\n    <li>Schools and universities</li>\n    <li>Government offices</li>\n    <li>Restaurants and cafes</li>\n    <li>Showrooms and reception areas</li>\n    <li>Public buildings and event venues</li>\n  </ul>\n\n  <h2>Features of Ultimats Aluminium Mats</h2>\n  <ul>\n    <li>High Durability</li>\n    <li>Custom Size and Shapes</li>\n    <li>Hygienic and Low Maintenance</li>\n    <li>Anti-Slip Surface</li>\n    <li>Weather Resistance</li>\n    <li>Logo and Branding Options</li>\n    <li>Stylish Finishes</li>\n  </ul>\n\n  <h2>Why Ultimats is the Best Choice</h2>\n  <ul>\n    <li>We use the best materials in the market.</li>\n    <li>Our mats are made to measure, so they always fit right.</li>\n    <li>We offer modern, attractive designs that go with your decor.</li>\n    <li>Our customer support is ready to guide you with every detail.</li>\n    <li>Our mats are used in top commercial places across India.</li>\n  </ul>\n\n  <h2>How to Order Aluminium Mats from Ultimats</h2>\n  <ol>\n    <li><strong>Contact Us</strong> – Reach us on the website or contact our support.</li>\n    <li><strong>Measure Your Space</strong> – Provide dimensions and design details.</li>\n    <li><strong>Select Style</strong> – Choose insert type (carpet, rubber or brush), color, and optional logo.</li>\n    <li><strong>Order Now</strong> – We’ll share a quotation and start production.</li>\n    <li><strong>Fast Shipping</strong> – Your mat will be delivered in just a few days.</li>\n  </ol>\n  <p><em>Can’t decide? Our specialists will help you choose the best mat based on your space and foot traffic.</em></p>\n\n  <h2>What Our Customers Say</h2>\n  <blockquote>“We got Ultimats aluminium mats for our office building in Gurgaon. They fit perfectly, look great, and have made a big difference in keeping the lobby clean.” – Rajiv M.</blockquote>\n  <blockquote>“We installed these mats at our hotel entrance. They look very elegant and are easy to maintain. Guests notice them and we love the quality.” – Fatima K.</blockquote>\n  <blockquote>“The team at Ultimats helped us with a custom design that includes our company logo. The mat looks professional and helps with branding right at the door.” – Sandeep P.</blockquote>\n\n  <h2>Final Thoughts</h2>\n  <p>Aluminium mats are not just ordinary doormats. They’re a smart investment in safety, cleanliness, and presentation. Whether you are upgrading an office, hotel, or public space — <strong>Ultimats has you covered</strong>.</p>\n</div>",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
     }
   },
   "order": [
-    "main",
-    "hero_video_QQnnkK",
-    "hero_image_LYgEmG",
-    "media_with_text_QiiP9T",
-    "media_with_text_gWAydQ",
-    "contained_video_iwaxxm",
-    "media_grid_ePaxGh",
-    "multicolor_cards_m9z8QB",
-    "collage_dxK46A",
-    "collection_list_fDfR44",
-    "media_with_text_f6VaAm",
-    "checklist_iP6XbV",
-    "collection_list_FEk6H4",
-    "size_chart_96CjFh",
-    "large_media_with_text_box_wcgMWJ",
-    "social_media_banner_XabhXA",
-    "collapsible_content_QXqK9a",
-    "contact_form_awRX6D",
-    "custom_liquid_zLrhBc"
+    "catalog_hero_main",
+    "catalog_fullwidth_feature_main",
+    "promise_slider_main",
+    "three_layer_feature_main",
+    "catalog_performance_specs_main",
+    "catalog_care_main",
+    "catalog_where_it_performs_main",
+    "catalog_resources_main",
+    "catalog_purchase_cta_main",
+    "catalog_product_family_main",
+    "premium_faq_main",
+    "contact_form_main"
   ]
 }

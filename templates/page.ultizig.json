@@ -1,1 +1,616 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"content_height":40,"background":"main-background","banner_image":"shopify:\/\/shop_images\/golden-autumn-leaves.jpg","parallax":true,"show_scrim":true,"scrim_lightness":75}},"rich_text_jEwqRH":{"type":"rich-text","blocks":{"heading_bi7zR4":{"type":"heading","settings":{"heading":"About US","font_size":100,"font_type":"heading-font"}},"text_aE4dpi":{"type":"text","disabled":true,"settings":{"text":"<p>We are committed to growing with our partners by providing the best matting solution, highest quality and the fastest delivery to the end-user customer. This commitment is the reason why we are by far the #1 Mat Company in the Indian Sub-Continent.<\/p><p>Backed with a strong national network and a large reseller base internationally, our diversified operations are seamlessly integrated right from product manufacturing to organized retail to providing high quality end-customer service.<\/p><p>Our high business ethics, reliability of our products and services and respect for people have contributed towards building our good corporate image in the industry.<\/p>","font_size":100,"font_type":"body-font"}},"button_ndQX9i":{"type":"button","settings":{"button_label":"","button_link":"","button_style":"ghost"}}},"block_order":["heading_bi7zR4","text_aE4dpi","button_ndQX9i"],"disabled":true,"settings":{"text_align":"left","background":"main-background","padding_top":44,"padding_bottom":44}},"media_with_text_QiiP9T":{"type":"media-with-text","blocks":{"heading_nG9xjU":{"type":"heading","settings":{"title":"UltiZig® Barrier Matting","font_size":80,"font_type":"heading-font"}},"text_6P6iEr":{"type":"text","settings":{"text":"<p>Heavy-duty open vinyl Z-web construction engineered to scrape, trap, and filter heavy dirt and debris away from the walking surface, preventing tracking into commercial premises.</p>","font_size":100,"font_type":"body-font"}},"button_9We6cF":{"type":"button","settings":{"button_label":"Configure Your UltiZig","button_link":"\/products\/ultizig-barrier-mat"}}},"block_order":["heading_nG9xjU","text_6P6iEr","button_9We6cF"],"custom_css":[],"settings":{"image":"shopify:\/\/shop_images\/UltiZig_main_page_Image_3_rolled.png","autoplay_video":false,"image_ratio":"adapt","media_width":780,"vertical_text_align":"top","layout":"left","section_align":"center","overlap_text":true,"image_animation":"discover-image","background":"background-modal","frosted_glass":true,"padding_top":44,"padding_bottom":44}},"media_with_text_YEa4Qa":{"type":"media-with-text","blocks":{"heading_6LmqRV":{"type":"heading","settings":{"title":"Backing Styles","font_size":80,"font_type":"heading-font"}},"text_fAXUeg":{"type":"text","settings":{"text":"<ul><li><strong>UltiZig Unbacked:<\/strong> open- bottom allows dirt and debris to fall through to the floor<\/li><\/ul><p><\/p><ul><li><strong>UltiZig Backed<\/strong>: backing holds collected debris from floor for subsequent removal <\/li><\/ul><p><\/p><p><\/p>","font_size":100,"font_type":"body-font"}},"button_gcWMdx":{"type":"button","settings":{"button_label":"","button_link":""}}},"block_order":["heading_6LmqRV","text_fAXUeg","button_gcWMdx"],"disabled":true,"settings":{"image":"shopify:\/\/shop_images\/UltiZigMainMTORev.png","autoplay_video":false,"image_ratio":"adapt","media_width":780,"vertical_text_align":"top","layout":"right","section_align":"center","overlap_text":false,"image_animation":"fade-up","background":"background-modal","frosted_glass":true,"padding_top":44,"padding_bottom":44}},"media_with_text_hy98VQ":{"type":"media-with-text","blocks":{"heading_3i7den":{"type":"heading","settings":{"title":"Border styles","font_size":80,"font_type":"heading-font"}},"text_LQN9CL":{"type":"text","settings":{"text":"<ul><li><strong>UltiZig Without Borders:<\/strong> to place in recessed areas\/matwells<\/li><\/ul><p><\/p><ul><li><strong>UltiZig With Borders<\/strong>: for flat surfaces with all-around compressed beveled edges<\/li><\/ul><p><\/p>","font_size":100,"font_type":"body-font"}},"button_xVy9pN":{"type":"button","settings":{"button_label":"","button_link":""}}},"block_order":["heading_3i7den","text_LQN9CL","button_xVy9pN"],"disabled":true,"settings":{"image":"shopify:\/\/shop_images\/UltiZigMainMTORev.png","autoplay_video":false,"image_ratio":"5-4","media_width":780,"vertical_text_align":"top","layout":"left","section_align":"center","overlap_text":false,"image_animation":"discover-image","background":"background-modal","frosted_glass":true,"padding_top":44,"padding_bottom":44}},"collection_list_fDfR44":{"type":"collection-list","blocks":{"featured_collection_gAp996":{"type":"featured_collection","settings":{"collection":"","collection_image":"shopify:\/\/shop_images\/UltiZig_Unbkd_Fold_for_m2m.png","title":"UltiZig Unbacked: open- bottom allows dirt and debris to fall through to the floor"}},"featured_collection_PNMFgw":{"type":"featured_collection","settings":{"collection":"","collection_image":"shopify:\/\/shop_images\/UltiZig_Bkd_Fold_for_m2m.png","title":"UltiZig Backed: backing holds collected debris from floor for subsequent removal"}},"featured_collection_tjwjtx":{"type":"featured_collection","settings":{"collection":"","collection_image":"shopify:\/\/shop_images\/UltiZig_With_Borders_464px.png","title":"UltiZig With Borders: for flat surfaces with all-around compressed beveled edges"}},"featured_collection_6aK7XF":{"type":"featured_collection","settings":{"collection":"","collection_image":"shopify:\/\/shop_images\/UltiZig_No_borders_in_recessed_area_3f6ddd77-a442-49a9-9a44-2b780fa22dcb.png","title":"UltiZig Without Borders: to place in recessed areas\/matwells"}}},"block_order":["featured_collection_gAp996","featured_collection_PNMFgw","featured_collection_tjwjtx","featured_collection_6aK7XF"],"settings":{"title":"Backing & Border Styles","subheading":"","color_text":"primary-text-1","font_size":80,"image_ratio":"portrait","grid":4,"card_font_size":100,"font_type":"body-font","background":"background-modal","show_view_all":false,"padding_top":44,"padding_bottom":44}},"multicolor_cards_BFFpn9":{"type":"multicolor-cards","blocks":{"card_gDJHGQ":{"type":"card","settings":{"card_image":"shopify:\/\/shop_images\/UltiZigYcolorSwatch.png","card_title":"UltiZig Unbacked","link":"","background":"#3a3a3e","text_color":"#ffffff"}},"card_zEdX7G":{"type":"card","settings":{"card_image":"shopify:\/\/shop_images\/UltiZigbacked.png","card_title":"UltiZig Backed","link":"","background":"#3a3a3e","text_color":"#ffffff"}},"card_MEDMyV":{"type":"card","settings":{"card_image":"shopify:\/\/shop_images\/UltiZig5x3withzoom.png","card_title":"UltiZig with Borders","link":"","background":"#3a3a3e","text_color":"#ffffff"}},"card_bF3xxW":{"type":"card","settings":{"card_image":"shopify:\/\/shop_images\/UltiZIgKColorSwatch.png","card_title":"Ultizig Without Borders","link":"","background":"#3a3a3e","text_color":"#ffffff"}}},"block_order":["card_gDJHGQ","card_zEdX7G","card_MEDMyV","card_bF3xxW"],"disabled":true,"settings":{"columns":4,"image_height":100,"font_size":100,"font_type":"heading-font","padding_top":44,"padding_bottom":44}},"checklist_iP6XbV":{"type":"checklist","blocks":{"line_text_fDihxG":{"type":"line_text","settings":{"icon":"shield-check","text":"No toxic chemicals"}},"line_text_CrhqBR":{"type":"line_text","settings":{"icon":"shield-check","text":"REACH and ROHS Compliant"}},"line_text_UXwHwM":{"type":"line_text","settings":{"icon":"shield-check","text":"Functional Z-construction"}},"line_text_TcbwGe":{"type":"line_text","settings":{"icon":"shield-check","text":"Peaked edges to scrape-off dirt"}},"line_text_8zVhnr":{"type":"line_text","settings":{"icon":"shield-check","text":"All around compressed borders"}},"line_text_wJMWyM":{"type":"line_text","settings":{"icon":"shield-check","text":"made in india"}}},"block_order":["line_text_fDihxG","line_text_CrhqBR","line_text_UXwHwM","line_text_TcbwGe","line_text_8zVhnr","line_text_wJMWyM"],"custom_css":["h2 {font-size: 18px;}"],"settings":{"image":"shopify:\/\/shop_images\/UltiZigYcolorSwatch.png","show_scrim":false,"scrim_lightness":0,"icon":"shield-check","text":"","link":"","font_size":70,"font_type":"heading-font","background":"background-modal","margin_top":44,"margin_bottom":44}},"media_with_text_NaihVK":{"type":"media-with-text","blocks":{"heading_8djDaW":{"type":"heading","settings":{"title":"Mission Statement","font_size":100,"font_type":"heading-font"}},"text_wrfPDp":{"type":"text","settings":{"text":"<p><em>\"To offer innovative, functional and customized mat products that exceed our customers’ expectations in quality, performance and cost through development of new products and continuous improvement of existing ones.\"<\/em><\/p>","font_size":120,"font_type":"body-font"}},"button_eACpzP":{"type":"button","settings":{"button_label":"","button_link":""}}},"block_order":["heading_8djDaW","text_wrfPDp","button_eACpzP"],"disabled":true,"settings":{"image":"shopify:\/\/shop_images\/Our_Vision.jpg","autoplay_video":true,"image_ratio":"16-9","media_width":780,"vertical_text_align":"top","layout":"left","section_align":"center","overlap_text":true,"image_animation":"fade-up","background":"background-modal","frosted_glass":true,"padding_top":44,"padding_bottom":44}},"large_media_with_text_box_wcgMWJ":{"type":"large-media-with-text-box","blocks":{"heading_QaYLWq":{"type":"heading","settings":{"title":"Technical specifications","font_size":80}},"text_6XWaJr":{"type":"text","settings":{"text":"<p>Product Name: UltiGrate<\/p><p>Application: Commercial heavy-traffic entrances<\/p><p>Material: Aluminium 6063T6 Anodized<\/p><p>Mat infills: Brush\/Rubber\/Carpet<\/p><p>Profile Height : 10 mm<\/p><p>Total Height (Brush): 14 mm<\/p><p>Total Height (Carpet): 12 mm<\/p><p>Matwell Depth: 10 mm<\/p><p>Pedestrian Annual Traffic: Upto 10 million <\/p><p>Trolley Crossings: Heavy (Max weight 600 Kgs)<\/p><p>Warranty: 5 years<\/p>","font_size":100}},"button_FcqrEC":{"type":"button","disabled":true,"settings":{"button_label":"Configure your mat","button_link":""}}},"block_order":["heading_QaYLWq","text_6XWaJr","button_FcqrEC"],"disabled":true,"settings":{"image":"shopify:\/\/shop_images\/Entryway_Mat_3.jpg","autoplay_video":true,"full_width":true,"text_position":"top-left","container_width":425,"container_height":20,"inner_spacing":40,"vertical_position":39,"horizontal_position":100,"background":"background-modal","frosted_glass":false,"padding_top":44,"padding_bottom":44}},"size_chart_YjYEmD":{"type":"size-chart","blocks":{"row_H6WB8D":{"type":"row","settings":{"is_thead":false,"row_name":"Model","column_values":"Unbacked, Backed, Unbacked with Borders, Backed with Borders"}},"row_xVCiwE":{"type":"row","settings":{"is_thead":false,"row_name":"Material","column_values":"100% prime pvc, 100% prime pvc, 100% prime pvc, 100% prime pvc"}},"row_UkPhAW":{"type":"row","settings":{"is_thead":false,"row_name":"Application Areas","column_values":"Outdoor\/wet matwell, Outdoor matwell, Outdoor\/wet areas, Outdoor"}},"row_hkB8At":{"type":"row","settings":{"is_thead":false,"row_name":"Total Height","column_values":"8mm, 9mm, 8mm, 9mm"}},"row_bHt9qB":{"type":"row","settings":{"is_thead":false,"row_name":"Total Weight","column_values":"6 Kgs\/m2, 7 Kgs\/m2, 6 Kgs\/m2, 7 Kgs\/m2"}},"row_BXKMVE":{"type":"row","settings":{"is_thead":false,"row_name":"Flammability DIN 9239-1","column_values":"Cfl-s1, cfl-s1, Cfl-s1, cfl-s1"}},"row_3YhzAy":{"type":"row","settings":{"is_thead":false,"row_name":"Foot-passes (annually)*","column_values":"0.8 million, 1.5 million, 1.5 million, 2 million"}},"row_8FWWyx":{"type":"row","settings":{"is_thead":false,"row_name":"Warranty","column_values":"18 months, 24 months, 24 months, 36 months"}},"row_HfeU8a":{"type":"row","settings":{"is_thead":false,"row_name":"Colors","column_values":"Grey | Black | Red, Grey | Black | Red, Grey | Black | Red, Grey | Black | Red"}}},"block_order":["row_H6WB8D","row_xVCiwE","row_UkPhAW","row_hkB8At","row_bHt9qB","row_BXKMVE","row_3YhzAy","row_8FWWyx","row_HfeU8a"],"custom_css":["h2 {font-size: 18px;}"],"settings":{"title":"ULTIZIG Technical Specifications","note":"subject to adhering to recommended maintenance instructions","background":"background-modal","padding_top":44,"padding_bottom":44}},"collapsible_content_QXqK9a":{"type":"collapsible-content","blocks":{"collapsible_row_WD6BM3":{"type":"collapsible_row","settings":{"row_icon":"none","title":"Why UltiZig?","row_content":"<ul><li>Peaked Z-shaped edges scrape-off dirt more effectively<\/li><li>Balanced 50% open structure allows all dirt and moisture to fall through<\/li><li>UltiZig is made using non-toxic prime grade vinyl materials that are REACH and ROHS compliant<\/li><\/ul>","page":""}},"collapsible_row_g3dFpC":{"type":"collapsible_row","settings":{"row_icon":"none","title":"Which backing style do I select - UltiZig with backing or without backing?","row_content":"<p>UltiZig unbacked is recommended for wet areas and other open areas where moisture and dirt can fall through to the floor and be cleaned or drained. Should you require dirt\/moisture to remain trapped at the bottom of the mat for subsequent removal and cleaning, use UltiZig with backing.<\/p>","page":""}},"collapsible_row_tdPPJk":{"type":"collapsible_row","settings":{"row_icon":"none","title":"Should I order with or without all-around borders?","row_content":"<p>If you are placing the mat in a matwell or recessed area, you should pick our product without borders. If however, the mat will be laid loose on a flat floor, we recommend our all-around compressed borders as they significantly reduce trip and fall accidents, increase mat longevity and are aesthetically more appealing, giving an overall neat and finished appearance.<\/p>","page":""}},"collapsible_row_3JfeEa":{"type":"collapsible_row","settings":{"row_icon":"none","title":"Are there any regulatory guidelines on commercial entrance matting?","row_content":"<p>The Americans with Disabilities Act sets specific codes regulations for public and commercial buildings so that people with a wide range of disabilities can freely and easily access all areas of these buildings. The ADA even has very specific guidelines on entrance mats. The best mats for wheelchairs are our recessed metal mats and our surface-mount mats. Ensure easy access to all who enter your facility.<\/p><p><strong>The ADA has these set of guidelines:<\/strong><\/p><p>Carpet must be securely affixed to the ground, have a stiff or no backing at all, and be no more than 12.5mm thick. If the carpet is more than 12.5mm thick, there must be a beveled edge for wheels to effortlessly glide over.<br\/><\/p><p>Recessed entrance grates\/mats need to have less than 12.5mm between pieces to prevent wheels or any other movement facilitating equipment to get caught.<\/p><p>UltiZig satisfies all ADA regulatory guidelines.<\/p>","page":""}}},"block_order":["collapsible_row_WD6BM3","collapsible_row_g3dFpC","collapsible_row_tdPPJk","collapsible_row_3JfeEa"],"settings":{"show_information":false,"title":"FAQ","description":"<p>It can be a challenge to pick the correct barrier matting for your entrance. We've compiled a list of frequently asked questions to help you decide which style is the right choice for your facility. No matter what your needs may be, Ultimats always has the right product for you!<\/p>","email_label":"","email":"","phone_label":"","phone":"","hours_label":"","hours":"","font_size":100,"background":"background-modal","padding_top":44,"padding_bottom":44}},"multicolor_cards_zJeaC4":{"type":"multicolor-cards","blocks":{"card_Lkcx7F":{"type":"card","settings":{"card_image":"shopify:\/\/shop_images\/UltiZig_Unbkd_Fold_for_m2m.png","card_title":"customize ultizig unbacked","link":"https:\/\/ultimats.com\/products\/ultizig-barrier-mat","background":"#919196","text_color":"#ffffff"}},"card_mEQkze":{"type":"card","settings":{"card_image":"shopify:\/\/shop_images\/UltiZig_Bkd_Fold_for_m2m.png","card_title":"customize ultizig backed","link":"https:\/\/ultimats.com\/products\/ultizig-barrier-mat-with-backing","background":"#919196","text_color":"#ffffff"}}},"block_order":["card_Lkcx7F","card_mEQkze"],"settings":{"columns":2,"image_height":100,"font_size":80,"font_type":"heading-font","padding_top":44,"padding_bottom":44}},"contact_form_awRX6D":{"type":"contact-form","settings":{"heading":"need product support or a quote?","subtitle":"Our Customer Service Team Will Connect With You","show_email":false,"show_phone":false,"show_address":false,"custom_address":"","show_facebook":false,"handle_facebook":"Find us on Facebook","show_instagram":false,"handle_instagram":"Find us on Instagram","show_twitter":false,"handle_twitter":"Find us on Twitter","operation":"","response_time":"Thank you for contacting us. We will respond within 2 working days","font_size":100,"background":"main-background","padding_top":44,"padding_bottom":44}}},"order":["main","rich_text_jEwqRH","media_with_text_QiiP9T","media_with_text_YEa4Qa","media_with_text_hy98VQ","collection_list_fDfR44","multicolor_cards_BFFpn9","checklist_iP6XbV","media_with_text_NaihVK","large_media_with_text_box_wcgMWJ","size_chart_YjYEmD","collapsible_content_QXqK9a","multicolor_cards_zJeaC4","contact_form_awRX6D"]}
+{
+  "sections": {
+    "catalog_hero_main": {
+      "type": "catalog-hero",
+      "name": "Catalog Hero Banner",
+      "settings": {
+        "image": "shopify://shop_images/WhatsApp_Image_2026-09-09_at_9.05.00_PM.jpg",
+        "overlay_color": "#000000",
+        "overlay_opacity": 40,
+        "section_height_desktop": "600px",
+        "section_height_mobile": "400px",
+        "content_width": 800,
+        "content_position": "bottom-center",
+        "text_alignment": "center",
+        "mobile_text_alignment": "center",
+        "heading": "<strong>ULTIZIG</strong>",
+        "heading_size": 48,
+        "heading_color": "#ffffff",
+        "description": "<p><strong>Chevron pattern dirt interceptor matting with double-reinforced vinyl borders for multi-directional scraping action.<br/></strong></p>",
+        "description_size": 18,
+        "description_color": "#e0e0e0",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "catalog_fullwidth_feature_main": {
+      "type": "catalog-fullwidth-feature",
+      "name": "Full Width Feature Section",
+      "settings": {
+        "layout_mode": "overlay",
+        "image_position": "left",
+        "desktop_height": "550px",
+        "mobile_height": "400px",
+        "media_type": "image",
+        "image": "shopify://shop_images/WhatsApp_Image_2026-09-09_at_9.05.00_PM.jpg",
+        "video_url_mp4": "",
+        "video_url_external": "",
+        "mobile_video_url_mp4": "",
+        "video_autoplay": true,
+        "video_loop": true,
+        "video_muted": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "card_position": "right",
+        "text_alignment": "left",
+        "mobile_text_alignment": "center",
+        "card_max_width": 550,
+        "card_padding": 36,
+        "card_border_radius": 16,
+        "card_bg_color": "#f4f4f4",
+        "enable_glassmorphism": false,
+        "badge": "",
+        "badge_color": "#555555",
+        "heading": "ultizig",
+        "heading_size": 32,
+        "heading_color": "#111111",
+        "description": "<p>Multi-directional zig-zag chevron ribbed matting designed to scrape dirt from all angles of shoe footfall.</p>",
+        "description_size": 15,
+        "description_color": "#444444",
+        "button_label": "",
+        "button_link": "",
+        "button_bg_color": "#111111",
+        "button_text_color": "#ffffff",
+        "button_border_color": "#111111",
+        "section_bg_color": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "promise_slider_main": {
+      "type": "promise-slider",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "Multi-Directional Scraping",
+            "text": ""
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "Chevron Dirt Channels",
+            "text": ""
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "Double-Compressed Borders",
+            "text": ""
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video_url": "",
+            "asset_video_name": "",
+            "title": "Tough Non-Slip Backing",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
+      "name": "Promise Slider",
+      "settings": {
+        "background_video_url": "",
+        "section_height": 800,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "overlay_opacity": 40,
+        "heading": "ULTIZIG PROPERTIES",
+        "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
+      }
+    },
+    "three_layer_feature_main": {
+      "type": "three-layer-feature",
+      "name": "Three Layer Feature",
+      "settings": {
+        "bg_color": "#000000",
+        "text_color": "#ffffff",
+        "video": "shopify://files/videos/2nd.mp4",
+        "video_url": "",
+        "asset_video_name": "",
+        "heading": "ULTIZIG LAYER TECH",
+        "description": "<p>Chevron channels redirect dirt into deeper channels away from shoe soles.</p><p>Each layer traps dirt individually to ensure that your space stays clean throughout the day.</p>"
+      }
+    },
+    "catalog_performance_specs_main": {
+      "type": "catalog-performance-specs",
+      "blocks": {
+        "spec_1": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Construction",
+            "value": "Chevron Ribbed Polypropylene"
+          }
+        },
+        "spec_2": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Height",
+            "value": "9 mm"
+          }
+        },
+        "spec_3": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Carpet Style",
+            "value": "Chevron Ribbed Interceptor"
+          }
+        },
+        "spec_4": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Water Retention",
+            "value": "3.20 L/m²"
+          }
+        },
+        "spec_5": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Pedestrian annual traffic",
+            "value": "Up to 0.6 Million steps/year"
+          }
+        },
+        "spec_6": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Backing",
+            "value": "Prime vinyl"
+          }
+        },
+        "spec_7": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Border",
+            "value": "12 mm extended vinyl"
+          }
+        },
+        "spec_8": {
+          "type": "spec_item",
+          "settings": {
+            "label": "Warranty",
+            "value": "12 months"
+          }
+        },
+        "swatch_1": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Charcoal Black",
+            "swatch_color": "#1c1c1c"
+          }
+        },
+        "swatch_2": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Granite Grey",
+            "swatch_color": "#71797e"
+          }
+        },
+        "swatch_3": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Chestnut Brown",
+            "swatch_color": "#5c4033"
+          }
+        }
+      },
+      "block_order": [
+        "spec_1",
+        "spec_2",
+        "spec_3",
+        "spec_4",
+        "spec_5",
+        "spec_6",
+        "spec_7",
+        "spec_8",
+        "swatch_1",
+        "swatch_2",
+        "swatch_3"
+      ],
+      "name": "Performance Specs Band",
+      "settings": {
+        "badge": "",
+        "badge_color": "#22c55e",
+        "heading": "TECHNICAL SPECIFICATIONS",
+        "heading_size": 36,
+        "heading_color": "#111111",
+        "subheading": "Engineered for active commercial doors, ramps, and main entrances.",
+        "subheading_color": "#666666",
+        "header_alignment": "left",
+        "layout_position": "specs_first",
+        "image": "shopify://shop_images/WhatsApp_Image_2026-09-09_at_9.05.00_PM.jpg",
+        "table_title": "SPECIFICATIONS",
+        "swatches_title": "AVAILABLE COLORS",
+        "bg_color": "#fafafa",
+        "text_color": "#111111",
+        "card_bg_color": "#ffffff",
+        "label_color": "#555555",
+        "value_color": "#111111",
+        "border_color": "#e5e5e5",
+        "row_hover_color": "#f4f4f5",
+        "card_corner_radius": 12,
+        "card_padding": 28,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "catalog_care_main": {
+      "type": "catalog-care",
+      "settings": {
+        "subtitle": "",
+        "title": "Short AI Visual Cleaning Process",
+        "description": "<p>Effortless maintenance tailored to keep your UltiZig mats in pristine condition using advanced cleaning steps.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "box1_badge": "VIDEO 1 • LIGHT CLEANING",
+        "box1_video": "shopify://files/videos/Premium_Quality.mp4",
+        "box1_video_url": "",
+        "box1_title": "Light & Quick Cleaning Process",
+        "box1_description": "",
+        "box1_step_1": "",
+        "box1_step_2": "",
+        "box1_step_3": "",
+        "box1_meta_1": "Time: 2-3 Mins",
+        "box1_meta_2": "Frequency: Weekly",
+        "box2_badge": "VIDEO 2 • DEEP CLEANING",
+        "box2_video": "shopify://files/videos/Sustainability.mp4",
+        "box2_video_url": "",
+        "box2_title": "Deep Restoration & Cleaning",
+        "box2_description": "",
+        "box2_step_1": "",
+        "box2_step_2": "",
+        "box2_step_3": "",
+        "box2_meta_1": "Time: 10 Mins",
+        "box2_meta_2": "Frequency: Monthly",
+        "section_bg_color": "#f8f9fa",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#e9ecef",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "card_title_color": "#111827",
+        "card_text_color": "#6b7280",
+        "badge_bg_color": "#ffffff",
+        "badge_text_color": "#111827",
+        "enable_glassmorphism": true,
+        "media_aspect_ratio": "16 / 9",
+        "mobile_media_aspect_ratio": "16 / 9",
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "catalog_where_it_performs_main": {
+      "type": "catalog-where-it-performs",
+      "blocks": {
+        "location_1": {
+          "type": "location",
+          "settings": {
+            "image": "shopify://shop_images/floor_mat.png",
+            "title": "Commercial Entrances",
+            "tag": "Multi-angle",
+            "description": "Scrapes off mud and coarse soil regardless of entry direction.",
+            "feature_1": "Chevron Scraping",
+            "feature_2": "High Footfall",
+            "feature_3": "Easy Vacuuming"
+          }
+        },
+        "location_2": {
+          "type": "location",
+          "settings": {
+            "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
+            "title": "Transit Corridors",
+            "tag": "",
+            "description": "Sturdy channel structure prevents soil tracking into main halls.",
+            "feature_1": "Soil Interception",
+            "feature_2": "Heavy Duty Base",
+            "feature_3": "Floor Safety"
+          }
+        }
+      },
+      "block_order": [
+        "location_1",
+        "location_2"
+      ],
+      "settings": {
+        "subtitle": "",
+        "title": "Where It Performs",
+        "description": "<p>Engineered for high-traffic corridors, office main doors, and commercial facilities.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#e1e1e1",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "catalog_resources_main": {
+      "type": "catalog-resources",
+      "settings": {
+        "subtitle": "",
+        "title": "Resources & Specifications",
+        "description": "<p>Essential technical documentation and video demonstrations curated for Architects, Builders, and PMCs.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "pdf_badge": "",
+        "pdf_title": "TECHNICAL DATA",
+        "pdf_desc": "Complete product specifications and chevron rib pattern specs.",
+        "pdf_spec_1": "Material & Pattern Data Sheet",
+        "pdf_spec_2": "Architectural Profile Specs",
+        "pdf_spec_3": "Fire & Safety Certifications",
+        "pdf_url": "",
+        "pdf_btn_text": "Download Technical Specs (PDF)",
+        "video_badge": "",
+        "video_title": "PRODUCT DEMO",
+        "video_desc": "Product overview video showing chevron scraping action.",
+        "video_spec_1": "Real-time multi-angle scraping",
+        "video_spec_2": "Vacuuming & cleaning demo",
+        "video_spec_3": "Border durability test",
+        "youtube_url": "",
+        "video_btn_text": "Watch Product Demo Video",
+        "section_bg_color": "#f8f9fa",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#e5e7eb",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "btn_primary_bg": "#111827",
+        "btn_primary_text": "#ffffff",
+        "btn_secondary_bg": "#ffffff",
+        "btn_secondary_text": "#111827",
+        "btn_secondary_border": "#d1d5db",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "btn_border_radius": 10,
+        "max_width": 1200,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "catalog_purchase_cta_main": {
+      "type": "catalog-purchase-cta",
+      "settings": {
+        "subtitle": "",
+        "title": "Looking to purchase?",
+        "title_font_size": 32,
+        "card1_title": "STANDARD SIZES",
+        "card1_desc": "Explore available standard-size mats for immediate dispatch.",
+        "card1_product": "",
+        "card1_url": "",
+        "card1_btn_label": "Explore Standard Sizes",
+        "card2_title": "MADE TO MEASURE",
+        "card2_desc": "Customize to your exact size or custom architectural layout.",
+        "card2_product": "",
+        "card2_url": "/pages/made-to-measure-mats",
+        "card2_btn_label": "Customize To Your Exact Size",
+        "section_bg_color": "#e1e1e1",
+        "card_bg_color": "#f9fafb",
+        "card_border_color": "#e5e7eb",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "btn1_bg": "#111827",
+        "btn1_text": "#ffffff",
+        "btn2_bg": "#ffffff",
+        "btn2_text": "#111827",
+        "btn2_border": "#111827",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "btn_border_radius": 8,
+        "max_width": 1100,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "catalog_product_family_main": {
+      "type": "catalog-product-family",
+      "blocks": {
+        "prod_1": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ultiscrape-carpet-mat",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        },
+        "prod_2": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ultiscrub-carpet-mat-1",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        },
+        "prod_3": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ulticlean-carpet-mat-1",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        },
+        "prod_4": {
+          "type": "product_item",
+          "settings": {
+            "selected_product": "ultidure-carpet-mat",
+            "custom_title": "",
+            "custom_desc": "",
+            "custom_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "prod_1",
+        "prod_2",
+        "prod_3",
+        "prod_4"
+      ],
+      "settings": {
+        "subtitle": "",
+        "title": "Complete the Entrance Solution",
+        "title_font_size": 32,
+        "section_bg_color": "#f8f9fa",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#e5e7eb",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#6b7280",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "premium_faq_main": {
+      "type": "premium-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Custom Sizing",
+            "question": "Can I order a custom size mat?",
+            "answer": "<p>Yes! Most of our commercial barrier mat ranges can be manufactured to your exact dimensions. Specify width and length to the millimeter for a seamless architectural entrance fit.</p>",
+            "open_by_default": true
+          }
+        },
+        "faq_2": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Maintenance",
+            "question": "How do I clean and maintain my barrier mat?",
+            "answer": "<p>Daily vacuuming removes dry surface dirt. For deeper cleaning, our mats are compatible with injection-extraction cleaning equipment or mild shampoo washing under running water.</p>",
+            "open_by_default": false
+          }
+        },
+        "faq_3": {
+          "type": "faq_item",
+          "settings": {
+            "category": "Durability",
+            "question": "What is the expected lifespan in high-traffic commercial areas?",
+            "answer": "<p>Our commercial-grade matting systems are built for endurance. In busy hotel or corporate lobbies, you can expect 5–7 years of peak performance with regular maintenance.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "name": "Premium Expert FAQ",
+      "settings": {
+        "layout_mode": "single_column",
+        "card_style": "glassmorphism",
+        "container_max_width": 900,
+        "card_border_radius": 16,
+        "header_alignment": "center",
+        "eyebrow_text": "",
+        "heading": "Frequently Asked Questions",
+        "heading_size": 36,
+        "subheading": "Find answers to common inquiries about custom sizing, commercial barrier matting, installation, and care maintenance.",
+        "enable_search": false,
+        "search_placeholder": "",
+        "enable_categories": false,
+        "question_size": 17,
+        "answer_size": 15,
+        "enable_contact_box": false,
+        "contact_heading": "",
+        "contact_subheading": "",
+        "contact_btn_1_label": "",
+        "contact_btn_1_link": "",
+        "contact_btn_2_label": "",
+        "contact_btn_2_link": "",
+        "bg_color": "#ffffff",
+        "card_bg": "#f9fafb",
+        "border_color": "#e5e7eb",
+        "heading_color": "#111827",
+        "subheading_color": "#4b5563",
+        "accent_color": "#111827",
+        "badge_bg": "#f3f4f6",
+        "badge_color": "#374151",
+        "contact_bg": "#f9fafb",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "contact_form_main": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "need product support or a quote?",
+        "subtitle": "Our Customer Service Team Will Connect With You",
+        "show_email": false,
+        "show_phone": false,
+        "show_address": false,
+        "custom_address": "",
+        "show_facebook": false,
+        "handle_facebook": "",
+        "show_instagram": false,
+        "handle_instagram": "",
+        "show_twitter": false,
+        "handle_twitter": "",
+        "operation": "",
+        "response_time": "Thank you for contacting us. We will respond within 2 working days",
+        "font_size": 100,
+        "background": "main-background",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    }
+  },
+  "order": [
+    "catalog_hero_main",
+    "catalog_fullwidth_feature_main",
+    "promise_slider_main",
+    "three_layer_feature_main",
+    "catalog_performance_specs_main",
+    "catalog_care_main",
+    "catalog_where_it_performs_main",
+    "catalog_resources_main",
+    "catalog_purchase_cta_main",
+    "catalog_product_family_main",
+    "premium_faq_main",
+    "contact_form_main"
+  ]
+}
