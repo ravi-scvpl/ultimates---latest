@@ -13,20 +13,20 @@
       "type": "catalog-hero",
       "name": "Catalog Hero Banner",
       "settings": {
-        "image": "shopify://shop_images/WhatsApp_Image_2026-09-09_at_9.05.00_PM.jpg",
+        "image": "shopify://shop_images/UltiZig_Lady_Walking_with_borders.png",
         "overlay_color": "#000000",
         "overlay_opacity": 40,
-        "section_height_desktop": "600px",
+        "section_height_desktop": "800px",
         "section_height_mobile": "400px",
         "content_width": 800,
         "content_position": "bottom-center",
         "text_alignment": "center",
         "mobile_text_alignment": "center",
         "heading": "<strong>ULTIZIG</strong>",
-        "heading_size": 48,
+        "heading_size": 62,
         "heading_color": "#ffffff",
-        "description": "<p><strong>Chevron pattern dirt interceptor matting with double-reinforced vinyl borders for multi-directional scraping action.<br/></strong></p>",
-        "description_size": 18,
+        "description": "<p><strong>Z-web structure heavy duty vinyl barrier matting designed to remove and allow heavy dirt and debris to get trapped and fall through, while helping to prevent tracking of dirt into the premises.</strong></p>",
+        "description_size": 22,
         "description_color": "#e0e0e0",
         "padding_top": 0,
         "padding_bottom": 0
@@ -38,10 +38,10 @@
       "settings": {
         "layout_mode": "overlay",
         "image_position": "left",
-        "desktop_height": "550px",
-        "mobile_height": "400px",
+        "desktop_height": "700px",
+        "mobile_height": "500px",
         "media_type": "image",
-        "image": "shopify://shop_images/WhatsApp_Image_2026-09-09_at_9.05.00_PM.jpg",
+        "image": "shopify://shop_images/UltiZigMainMTOnew.png",
         "video_url_mp4": "",
         "video_url_external": "",
         "mobile_video_url_mp4": "",
@@ -86,7 +86,7 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "Multi-Directional Scraping",
-            "text": ""
+            "text": "<p>UltiZig Unbacked: open- bottom allows dirt and debris to fall through to the floor</p>"
           }
         },
         "card_2": {
@@ -96,7 +96,7 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "Chevron Dirt Channels",
-            "text": ""
+            "text": "<p>UltiZig Backed: backing holds collected debris from floor for subsequent removal</p>"
           }
         },
         "card_3": {
@@ -106,7 +106,7 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "Double-Compressed Borders",
-            "text": ""
+            "text": "<p><a href=\"https://ultimats.com/pages/ultizig\">UltiZig With Borders: for flat surfaces with all-around compressed beveled edges</a></p>"
           }
         },
         "card_4": {
@@ -116,7 +116,7 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "Tough Non-Slip Backing",
-            "text": ""
+            "text": "<p>UltiZig Without Borders: to place in recessed areas/matwells</p>"
           }
         }
       },
