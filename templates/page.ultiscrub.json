@@ -86,7 +86,7 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "Intensive Dirt Scraping",
-            "text": ""
+            "text": "<p>Loops of stiff and soft fibers in herringbone pattern for dual action of scraping and drying</p>"
           }
         },
         "card_2": {
@@ -96,7 +96,7 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "Rapid Moisture Locking",
-            "text": ""
+            "text": "<p>Extended vinyl borders for stability and neat looks</p>"
           }
         },
         "card_3": {
@@ -106,25 +106,14 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "Double-Compressed Borders",
-            "text": ""
-          }
-        },
-        "card_4": {
-          "type": "card",
-          "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
-            "video_url": "",
-            "asset_video_name": "",
-            "title": "Tough Non-Slip Backing",
-            "text": ""
+            "text": "<p>Tough vinyl backing for grip and resilence</p>"
           }
         }
       },
       "block_order": [
         "card_1",
         "card_2",
-        "card_3",
-        "card_4"
+        "card_3"
       ],
       "name": "Promise Slider",
       "settings": {
