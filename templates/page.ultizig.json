@@ -519,8 +519,8 @@
           "type": "faq_item",
           "settings": {
             "category": "Custom Sizing",
-            "question": "Can I order a custom size mat?",
-            "answer": "<p>Yes! Most of our commercial barrier mat ranges can be manufactured to your exact dimensions. Specify width and length to the millimeter for a seamless architectural entrance fit.</p>",
+            "question": "Why UltiZig?",
+            "answer": "<ul><li>Peaked Z-shaped edges scrape-off dirt more effectively</li><li>Balanced 50% open structure allows all dirt and moisture to fall through</li><li>UltiZig is made using non-toxic prime grade vinyl materials that are REACH and ROHS compliant</li></ul>",
             "open_by_default": true
           }
         },
@@ -528,8 +528,17 @@
           "type": "faq_item",
           "settings": {
             "category": "Maintenance",
-            "question": "How do I clean and maintain my barrier mat?",
-            "answer": "<p>Daily vacuuming removes dry surface dirt. For deeper cleaning, our mats are compatible with injection-extraction cleaning equipment or mild shampoo washing under running water.</p>",
+            "question": "Which backing style do I select - UltiZig with backing or without backing?",
+            "answer": "<p>UltiZig unbacked is recommended for wet areas and other open areas where moisture and dirt can fall through to the floor and be cleaned or drained. Should you require dirt/moisture to remain trapped at the bottom of the mat for subsequent removal and cleaning, use UltiZig with backing.</p>",
+            "open_by_default": false
+          }
+        },
+        "faq_item_YcHmTm": {
+          "type": "faq_item",
+          "settings": {
+            "category": "General",
+            "question": "Are there any regulatory guidelines on commercial entrance matting?",
+            "answer": "<p>The Americans with Disabilities Act sets specific codes regulations for public and commercial buildings so that people with a wide range of disabilities can freely and easily access all areas of these buildings. The ADA even has very specific guidelines on entrance mats. The best mats for wheelchairs are our recessed metal mats and our surface-mount mats. Ensure easy access to all who enter your facility.</p><p><strong>The ADA has these set of guidelines:</strong></p><p>Carpet must be securely affixed to the ground, have a stiff or no backing at all, and be no more than 12.5mm thick. If the carpet is more than 12.5mm thick, there must be a beveled edge for wheels to effortlessly glide over.<br/></p><p>Recessed entrance grates/mats need to have less than 12.5mm between pieces to prevent wheels or any other movement facilitating equipment to get caught.</p><p>UltiZig satisfies all ADA regulatory guidelines.</p>",
             "open_by_default": false
           }
         },
@@ -537,8 +546,8 @@
           "type": "faq_item",
           "settings": {
             "category": "Durability",
-            "question": "What is the expected lifespan in high-traffic commercial areas?",
-            "answer": "<p>Our commercial-grade matting systems are built for endurance. In busy hotel or corporate lobbies, you can expect 5–7 years of peak performance with regular maintenance.</p>",
+            "question": "Should I order with or without all-around borders?",
+            "answer": "<p>If you are placing the mat in a matwell or recessed area, you should pick our product without borders. If however, the mat will be laid loose on a flat floor, we recommend our all-around compressed borders as they significantly reduce trip and fall accidents, increase mat longevity and are aesthetically more appealing, giving an overall neat and finished appearance.</p>",
             "open_by_default": false
           }
         }
@@ -546,6 +555,7 @@
       "block_order": [
         "faq_1",
         "faq_2",
+        "faq_item_YcHmTm",
         "faq_3"
       ],
       "name": "Premium Expert FAQ",
