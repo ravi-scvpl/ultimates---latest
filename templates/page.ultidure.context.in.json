@@ -46,30 +46,9 @@
       "block_order": [
         "forms_inline_hBWTM"
       ]
-    },
-    "contact_form_awRX6D": {
-      "disabled": false,
-      "settings": {},
-      "blocks": {}
     }
   },
   "order": [
-    "hero_image_XqmeNj",
-    "main",
-    "rich_text_jEwqRH",
-    "media_with_text_QiiP9T",
-    "hero_video_dU6LiN",
-    "collage_dxK46A",
-    "social_media_banner_QkKgiN",
-    "checklist_iP6XbV",
-    "collection_list_FEk6H4",
-    "media_with_text_NaihVK",
-    "media_with_text_f6VaAm",
-    "size_chart_aUX3X4",
-    "large_media_with_text_box_wcgMWJ",
-    "collapsible_content_QXqK9a",
-    "rich_text_UgtPzt",
-    "contact_form_awRX6D",
     "17721741083004b753"
   ]
 }
