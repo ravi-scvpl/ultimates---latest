@@ -153,6 +153,7 @@
     aspect-ratio: 4 / 3;
     object-fit: cover;
     display: block;
+    transition: opacity 0.25s ease;
   }
 
   .specs-swatches-container {
@@ -326,6 +327,7 @@
           {% if section.settings.image != blank %}
             <img
               src="{{ section.settings.image | image_url: width: 1200 }}"
+              data-default-src="{{ section.settings.image | image_url: width: 1200 }}"
               alt="{{ section.settings.heading | escape }}"
               loading="lazy"
               class="specs-main-image"
@@ -353,6 +355,9 @@
                     <div
                       class="swatch-item{% if forloop.first %} active{% endif %}"
                       data-name="{{ block.settings.color_name | escape }}"
+                      {% if block.settings.color_image != blank %}
+                        data-image="{{ block.settings.color_image | image_url: width: 1200 }}"
+                      {% endif %}
                       {{ block.shopify_attributes }}
                     >
                       <span class="swatch-tooltip">{{ block.settings.color_name }}</span>
@@ -387,19 +392,50 @@
 
     var swatchItems = section.querySelectorAll('.swatch-item');
     var selectedNameDisplay = section.querySelector('#SelectedSwatchName-{{ section.id }}');
+    var mainImage = section.querySelector('.specs-main-image');
 
-    if (swatchItems.length && selectedNameDisplay) {
-      // Set initial swatch name
+    if (swatchItems.length) {
+      var defaultSrc = mainImage ? (mainImage.getAttribute('data-default-src') || mainImage.src) : '';
+
+      function changeSwatch(swatch) {
+        swatchItems.forEach(function (s) { s.classList.remove('active'); });
+        swatch.classList.add('active');
+
+        if (selectedNameDisplay) {
+          selectedNameDisplay.textContent = swatch.getAttribute('data-name');
+        }
+
+        if (mainImage) {
+          var colorImgSrc = swatch.getAttribute('data-image');
+          var targetSrc = colorImgSrc || defaultSrc;
+
+          if (targetSrc && mainImage.src !== targetSrc) {
+            mainImage.style.opacity = '0.3';
+            setTimeout(function () {
+              mainImage.src = targetSrc;
+              mainImage.onload = function () {
+                mainImage.style.opacity = '1';
+              };
+              setTimeout(function () { mainImage.style.opacity = '1'; }, 150);
+            }, 150);
+          }
+        }
+      }
+
       var activeSwatch = section.querySelector('.swatch-item.active') || swatchItems[0];
       if (activeSwatch) {
-        selectedNameDisplay.textContent = activeSwatch.getAttribute('data-name');
+        if (selectedNameDisplay) {
+          selectedNameDisplay.textContent = activeSwatch.getAttribute('data-name');
+        }
+        var initImg = activeSwatch.getAttribute('data-image');
+        if (initImg && mainImage) {
+          mainImage.src = initImg;
+        }
       }
 
       swatchItems.forEach(function (swatch) {
         swatch.addEventListener('click', function () {
-          swatchItems.forEach(function (s) { s.classList.remove('active'); });
-          this.classList.add('active');
-          selectedNameDisplay.textContent = this.getAttribute('data-name');
+          changeSwatch(this);
         });
       });
     }
@@ -622,6 +658,12 @@
           "id": "color_name",
           "label": "Color Name (e.g. Forest Green)",
           "default": "Forest Green"
+        },
+        {
+          "type": "image_picker",
+          "id": "color_image",
+          "label": "Color Specific Product Image",
+          "info": "Main preview image displayed when this color swatch is clicked."
         },
         {
           "type": "image_picker",
