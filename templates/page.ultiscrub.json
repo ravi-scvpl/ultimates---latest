@@ -213,6 +213,7 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Chestnut Brown",
+            "color_image": "shopify://shop_images/magnific_generate-a-916-image-img1_ubINJnNQLD.png",
             "swatch_color": "#5c4033"
           }
         },
@@ -220,6 +221,7 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Charcoal Black",
+            "color_image": "shopify://shop_images/008.png",
             "swatch_color": "#1c1c1c"
           }
         },
