@@ -13,10 +13,10 @@
       "type": "catalog-hero",
       "name": "Catalog Hero Banner",
       "settings": {
-        "image": "shopify://shop_images/UltiWipe_5_colors_orange_background.webp",
+        "image": "shopify://shop_images/UltiWipeHotelentranceYangle_bf0dedbf-f689-4c9c-9542-3caa349be497.png",
         "overlay_color": "#000000",
         "overlay_opacity": 40,
-        "section_height_desktop": "600px",
+        "section_height_desktop": "800px",
         "section_height_mobile": "400px",
         "content_width": 800,
         "content_position": "bottom-center",
@@ -38,10 +38,10 @@
       "settings": {
         "layout_mode": "overlay",
         "image_position": "left",
-        "desktop_height": "550px",
+        "desktop_height": "700px",
         "mobile_height": "400px",
         "media_type": "image",
-        "image": "shopify://shop_images/UltiWipe_5_colors_orange_background.webp",
+        "image": "shopify://shop_images/UltiWipe_Brown_Comm.jpg",
         "video_url_mp4": "",
         "video_url_external": "",
         "mobile_video_url_mp4": "",
@@ -63,7 +63,7 @@
         "heading": "ultiwipe",
         "heading_size": 32,
         "heading_color": "#111111",
-        "description": "<p>Ultra-absorbent fine wiping barrier matting with double-reinforced vinyl borders for wet weather entrance protection and floor safety.</p>",
+        "description": "<p>Dual-stiffness cut-pile polypropylene carpet matting with vinyl backing and double-compressed vinyl borders</p>",
         "description_size": 15,
         "description_color": "#444444",
         "button_label": "",
@@ -86,7 +86,7 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "Ultra Moisture Wiping",
-            "text": ""
+            "text": "<p>Alternate bands of tough and soft cut-pile fibers in for scraping and drying action</p>"
           }
         },
         "card_2": {
@@ -96,7 +96,7 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "Fine Dust Interception",
-            "text": ""
+            "text": "<p>Extended vinyl borders for stability and neat looks</p>"
           }
         },
         "card_3": {
@@ -106,25 +106,14 @@
             "video_url": "",
             "asset_video_name": "",
             "title": "Double-Compressed Borders",
-            "text": ""
-          }
-        },
-        "card_4": {
-          "type": "card",
-          "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
-            "video_url": "",
-            "asset_video_name": "",
-            "title": "Tough Non-Slip Backing",
-            "text": ""
+            "text": "<p>Tough vinyl backing for grip and resilence</p>"
           }
         }
       },
       "block_order": [
         "card_1",
         "card_2",
-        "card_3",
-        "card_4"
+        "card_3"
       ],
       "name": "Promise Slider",
       "settings": {
@@ -527,8 +516,8 @@
           "type": "faq_item",
           "settings": {
             "category": "Custom Sizing",
-            "question": "Can I order a custom size mat?",
-            "answer": "<p>Yes! Most of our commercial barrier mat ranges can be manufactured to your exact dimensions. Specify width and length to the millimeter for a seamless architectural entrance fit.</p>",
+            "question": "Why UltiWipe?",
+            "answer": "<ul><li>Stiff-fibres scrape-off tough dirt</li><li>Soft-fibers retain moisture</li><li>Our USP: Double-compressed borders add style, longevity and neat looks</li><li>Dual-tone looks add elegance to your entrance</li><li>UltiWipe is a sleek design 8mm low-height product that allows unhindered door-movement over the mat</li></ul>",
             "open_by_default": true
           }
         },
@@ -536,8 +525,17 @@
           "type": "faq_item",
           "settings": {
             "category": "Maintenance",
-            "question": "How do I clean and maintain my barrier mat?",
-            "answer": "<p>Daily vacuuming removes dry surface dirt. For deeper cleaning, our mats are compatible with injection-extraction cleaning equipment or mild shampoo washing under running water.</p>",
+            "question": "How is UltiWipe effective against dirt and moisture?",
+            "answer": "<p>UltiWipe is purposefully crafted to create the perfect conditions for capturing and hiding dirt and moisture, making cleaning effortless while ensuring the mat's surface remains clean and fresh throughout the day.</p>",
+            "open_by_default": false
+          }
+        },
+        "faq_item_NkjRLp": {
+          "type": "faq_item",
+          "settings": {
+            "category": "General",
+            "question": "Are there any regulatory guidelines on commercial entrance matting?",
+            "answer": "<p>The Americans with Disabilities Act sets specific codes regulations for public and commercial buildings so that people with a wide range of disabilities can freely and easily access all areas of these buildings. The ADA even has very specific guidelines on entrance mats. The best mats for wheelchairs are our recessed metal mats and our surface-mount mats. Ensure easy access to all who enter your facility.</p><p><strong>The ADA has these set of guidelines:</strong></p><p>Carpet must be securely affixed to the ground, have a stiff or no backing at all, and be no more than 12.5mm thick. If the carpet is more than 12.5mm thick, there must be a beveled edge for wheels to effortlessly glide over.<br/></p><p>Recessed entrance grates/mats need to have less than 12.5mm between pieces to prevent wheels or any other movement facilitating equipment to get caught.</p><p>UltiWipe satisfies all ADA regulatory guidelines.</p>",
             "open_by_default": false
           }
         },
@@ -545,8 +543,8 @@
           "type": "faq_item",
           "settings": {
             "category": "Durability",
-            "question": "What is the expected lifespan in high-traffic commercial areas?",
-            "answer": "<p>Our commercial-grade matting systems are built for endurance. In busy hotel or corporate lobbies, you can expect 5–7 years of peak performance with regular maintenance.</p>",
+            "question": "How do I clean UltiWipe?",
+            "answer": "<p>UltiWipe is 100% washable and quick-drying. Tap or vacuum for light cleaning or hose-down with water for deep-cleaning</p>",
             "open_by_default": false
           }
         }
@@ -554,6 +552,7 @@
       "block_order": [
         "faq_1",
         "faq_2",
+        "faq_item_NkjRLp",
         "faq_3"
       ],
       "name": "Premium Expert FAQ",
