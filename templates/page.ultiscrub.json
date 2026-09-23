@@ -520,8 +520,8 @@
           "type": "faq_item",
           "settings": {
             "category": "Custom Sizing",
-            "question": "Can I order a custom size mat?",
-            "answer": "<p>Yes! Most of our commercial barrier mat ranges can be manufactured to your exact dimensions. Specify width and length to the millimeter for a seamless architectural entrance fit.</p>",
+            "question": "How does UltiScrub have a combined scraping and drying action?",
+            "answer": "<p>Yes! Most of our commercial barrier mat ranges can be manufactured to your exact dimensions. Specify width and length to the millimeter for a seamless architectural entrance fit.<br/><br/></p>",
             "open_by_default": true
           }
         },
@@ -529,8 +529,17 @@
           "type": "faq_item",
           "settings": {
             "category": "Maintenance",
-            "question": "How do I clean and maintain my barrier mat?",
-            "answer": "<p>Daily vacuuming removes dry surface dirt. For deeper cleaning, our mats are compatible with injection-extraction cleaning equipment or mild shampoo washing under running water.</p>",
+            "question": "Is UltiScrub easy to clean?",
+            "answer": "<p>Yes. UltiScrub is 100% washable and quick-drying. Tap or vacuum for light cleaning or hose-down with water for deep-cleaning</p>",
+            "open_by_default": false
+          }
+        },
+        "faq_item_T6ehhF": {
+          "type": "faq_item",
+          "settings": {
+            "category": "General",
+            "question": "Are there any regulatory guidelines on commercial entrance matting?",
+            "answer": "<p>The Americans with Disabilities Act sets specific codes regulations for public and commercial buildings so that people with a wide range of disabilities can freely and easily access all areas of these buildings. The ADA even has very specific guidelines on entrance mats. The best mats for wheelchairs are our recessed metal mats and our surface-mount mats. Ensure easy access to all who enter your facility.</p><p><strong>The ADA has these set of guidelines:</strong></p><p>Carpet must be securely affixed to the ground, have a stiff or no backing at all, and be no more than 12.5mm thick. If the carpet is more than 12.5mm thick, there must be a beveled edge for wheels to effortlessly glide over.<br/></p><p>Recessed entrance grates/mats need to have less than 12.5mm between pieces to prevent wheels or any other movement facilitating equipment to get caught.</p><p>UltiScrub satisfies all ADA regulatory guidelines.</p>",
             "open_by_default": false
           }
         },
@@ -538,8 +547,8 @@
           "type": "faq_item",
           "settings": {
             "category": "Durability",
-            "question": "What is the expected lifespan in high-traffic commercial areas?",
-            "answer": "<p>Our commercial-grade matting systems are built for endurance. In busy hotel or corporate lobbies, you can expect 5–7 years of peak performance with regular maintenance.</p>",
+            "question": "Why should a mat have borders?",
+            "answer": "<p>For applications other than a recess or matwell, all commercial mats should have all-around borders. UltiScrub is double-compressed with vinyl borders that help significantly reduce trip and fall accidents, increase mat longevity and are aesthetically more appealing, giving an overall neat and finished appearance.</p>",
             "open_by_default": false
           }
         }
@@ -547,6 +556,7 @@
       "block_order": [
         "faq_1",
         "faq_2",
+        "faq_item_T6ehhF",
         "faq_3"
       ],
       "name": "Premium Expert FAQ",
