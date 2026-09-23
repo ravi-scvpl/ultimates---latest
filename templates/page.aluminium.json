@@ -109,23 +109,12 @@
             "title": "Zone 3 (Interior)",
             "text": "<p>High-performance carpet matting for final dirt and moisture removal</p>"
           }
-        },
-        "card_4": {
-          "type": "card",
-          "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
-            "video_url": "",
-            "asset_video_name": "",
-            "title": "Recessed Architectural Fit",
-            "text": ""
-          }
         }
       },
       "block_order": [
         "card_1",
         "card_2",
-        "card_3",
-        "card_4"
+        "card_3"
       ],
       "name": "Promise Slider",
       "settings": {
