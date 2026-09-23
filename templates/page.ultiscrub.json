@@ -40,8 +40,9 @@
         "image_position": "left",
         "desktop_height": "700px",
         "mobile_height": "400px",
-        "media_type": "image",
+        "media_type": "video",
         "image": "shopify://shop_images/UltiScrub_4_mats_criss_cross.png",
+        "video": "shopify://files/videos/WhatsApp Video 2026-09-04 at 2.57.29 PM.mp4",
         "video_url_mp4": "",
         "video_url_external": "",
         "mobile_video_url_mp4": "",
@@ -49,7 +50,7 @@
         "video_loop": true,
         "video_muted": true,
         "overlay_color": "#000000",
-        "overlay_opacity": 30,
+        "overlay_opacity": 85,
         "card_position": "right",
         "text_alignment": "left",
         "mobile_text_alignment": "center",
@@ -117,11 +118,12 @@
       ],
       "name": "Promise Slider",
       "settings": {
+        "background_video": "shopify://files/videos/Lady Legs Dark Wide Video.mp4",
         "background_video_url": "",
         "section_height": 800,
         "padding_top": 100,
         "padding_bottom": 100,
-        "overlay_opacity": 40,
+        "overlay_opacity": 60,
         "heading": "ULTISCRUB PROPERTIES",
         "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
       }
@@ -202,6 +204,8 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Granite Grey",
+            "color_image": "shopify://shop_images/ultimats_blog_2.png",
+            "swatch_image": "shopify://shop_images/ChatGPT_Image_Jun_4_2026_03_37_06_PM.png",
             "swatch_color": "#71797e"
           }
         },
