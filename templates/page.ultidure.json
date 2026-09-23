@@ -527,8 +527,8 @@
           "type": "faq_item",
           "settings": {
             "category": "Custom Sizing",
-            "question": "Can I order a custom size mat?",
-            "answer": "<p>Yes! Most of our commercial barrier mat ranges can be manufactured to your exact dimensions. Specify width and length to the millimeter for a seamless architectural entrance fit.</p>",
+            "question": "How is UltiDure a premium carpet matting product?",
+            "answer": "<ul><li>The carpet is tufted from PA 6.6, renowned for its durability, making it the ideal yarn for floor matting</li><li>The yarn is tightly twisted and heat-set - a process that effectively hides footprints on the carpet surface</li><li>The backing is composed of nitrile rubber, known for its exceptional flexibility and grip, which empowers the mat with a 100% anti-skid feature.</li><li>Mat borders are reinforced with extra nitrile rubber ensuring they are non-tearable</li></ul>",
             "open_by_default": true
           }
         },
@@ -536,8 +536,17 @@
           "type": "faq_item",
           "settings": {
             "category": "Maintenance",
-            "question": "How do I clean and maintain my barrier mat?",
-            "answer": "<p>Daily vacuuming removes dry surface dirt. For deeper cleaning, our UltiDure mats are fully machine washable and compatible with injection-extraction cleaning equipment.</p>",
+            "question": "How is UltiDure effective against dirt and moisture?",
+            "answer": "<p>The spacing between individual carpet tufts and the tight twist in the yarn have been functionally designed to form an optimal environment for trapping and concealing dirt and moisture, while facilitating effortless removal during cleaning. This guarantees that the surface of the mat stays pristine and fresh all day long.<br/><br/></p>",
+            "open_by_default": false
+          }
+        },
+        "faq_item_GXmUNF": {
+          "type": "faq_item",
+          "settings": {
+            "category": "General",
+            "question": "What is the purpose of having two styles of backing - plain and nibbed?",
+            "answer": "<p>The backing style depends on the type of floor where UltiDure is placed. Use UltiDure Plain Backing for flat surfaces like stone, wood etc. and UltiDure Nibbed Backing over carpetted floors. Using the right backing product for a floor surface ensures full-enjoyment of its 100% anti-skid properties</p>",
             "open_by_default": false
           }
         },
@@ -545,8 +554,8 @@
           "type": "faq_item",
           "settings": {
             "category": "Durability",
-            "question": "What is the expected lifespan in high-traffic commercial areas?",
-            "answer": "<p>Our UltiDure matting systems are built for heavy commercial traffic. In busy hotel or corporate lobbies, you can expect 5–7 years of peak performance with regular maintenance.</p>",
+            "question": "Is UltiDure really so tough that it can be thrown in a washing-machine for cleaning?",
+            "answer": "<p>Yes. UltiDure is 100% machine-washable and can withstand over 150 commercial laundry wash-cycles.</p>",
             "open_by_default": false
           }
         }
@@ -554,6 +563,7 @@
       "block_order": [
         "faq_1",
         "faq_2",
+        "faq_item_GXmUNF",
         "faq_3"
       ],
       "name": "Premium Expert FAQ",
