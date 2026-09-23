@@ -38,10 +38,11 @@
       "settings": {
         "layout_mode": "overlay",
         "image_position": "left",
-        "desktop_height": "550px",
+        "desktop_height": "700px",
         "mobile_height": "400px",
-        "media_type": "image",
+        "media_type": "video",
         "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
+        "video": "shopify://files/videos/Ront UltiGrate.mp4",
         "video_url_mp4": "",
         "video_url_external": "",
         "mobile_video_url_mp4": "",
@@ -63,7 +64,7 @@
         "heading": "ultigrate aluminium",
         "heading_size": 32,
         "heading_color": "#111111",
-        "description": "<p>Architectural grade anodized aluminium profile entrance grates with customizable wiper infills for luxury malls, airports, and high-traffic commercial towers.</p>",
+        "description": "<p>We at Ultimats offer top-of-the-line aluminium entrance matting systems, boasting a robust construction designed to endure in even the most challenging environments for years to come.</p><p>Tailored to accommodate various entrance layouts and aesthetic preferences, our products cater to large entrances as well as revolving doors.</p><p>Additionally, we offer customization options such as embedding logos and branding into our aluminium mats to enhance branding at ground level.</p><p>Each option includes efficient surface finishes for dirt and moisture removal, ensuring durability and a premium visual appeal.</p>",
         "description_size": 15,
         "description_color": "#444444",
         "button_label": "",
@@ -85,8 +86,8 @@
             "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
             "video_url": "",
             "asset_video_name": "",
-            "title": "Anodized Aluminium 6063T6",
-            "text": ""
+            "title": "Zone 1",
+            "text": "<p>Scraper matting to aggressively remove large dirt particles and also provide slip-protection in case of wet exterior conditions</p>"
           }
         },
         "card_2": {
@@ -95,8 +96,8 @@
             "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
             "video_url": "",
             "asset_video_name": "",
-            "title": "Heavy Rolling Load Capacity",
-            "text": ""
+            "title": "Zone 2 (Vestibule)",
+            "text": "<p>Scraper matting for continued dirt removal alongwith carpet matting to retain moisture</p>"
           }
         },
         "card_3": {
@@ -105,8 +106,8 @@
             "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
             "video_url": "",
             "asset_video_name": "",
-            "title": "Replaceable Wiper Infills",
-            "text": ""
+            "title": "Zone 3 (Interior)",
+            "text": "<p>High-performance carpet matting for final dirt and moisture removal</p>"
           }
         },
         "card_4": {
@@ -519,8 +520,8 @@
           "type": "faq_item",
           "settings": {
             "category": "Custom Sizing",
-            "question": "Can I order custom dimensions for recessed matwells?",
-            "answer": "<p>Yes! UltiGrate aluminium entrance grates are manufactured to precise site dimensions down to the millimeter for both surface and recessed installations.</p>",
+            "question": "Do I need an aluminium mat product?",
+            "answer": "<p>Aluminium floormats stand out as being at the top of the pyramid when it comes to floor matting systems. They are highly functional first stage dirt-barriers at high-traffic entrances, are low-maintenance and offer premium aesthetics with the longest durability. So if these advantages are what you are looking for, UltiGrate Aluminium Matting System may just be right for you.<br/><br/></p>",
             "open_by_default": true
           }
         },
@@ -528,8 +529,17 @@
           "type": "faq_item",
           "settings": {
             "category": "Maintenance",
-            "question": "How do I clean recessed aluminium grates?",
-            "answer": "<p>The roll-up design allows the entire grate system to be rolled back to vacuum out trapped dirt from the matwell pit below.</p>",
+            "question": "What benefits can I expect from Aluminium Matting?",
+            "answer": "<p>Top three benefits of installing UltiGrate aluminum entrance matting system:</p><p>1. Increases the lifespan of your floor coverings.<br/>‍<br/>2. Our entrance mats, when laid with a walking cross-length between 6 to 15 feet from your doorway, can reduce dirt and moisture throughout your building by over 85%!<br/>‍<br/>‍3.Reduces building cleaning costs by trapping excess dust, dirt, and germs.</p><p>4. All mat inserts are fully replaceable. So you invest only once in the aluminium framework, and only pay for subsequent mat replacements!</p>",
+            "open_by_default": false
+          }
+        },
+        "faq_item_gBwhY9": {
+          "type": "faq_item",
+          "settings": {
+            "category": "General",
+            "question": "Are there any regulatory guidelines on commercial entrance matting?",
+            "answer": "<p>The Americans with Disabilities Act sets specific codes regulations for public and commercial buildings so that people with a wide range of disabilities can freely and easily access all areas of these buildings. The ADA even has very specific guidelines on entrance mats. The best mats for wheelchairs are our recessed metal mats and our surface-mount mats, which ensure easy access to all who enter your facility.</p><p><strong>The ADA has these set of guidelines:</strong></p><p>Carpet must be securely affixed to the ground, have a stiff or no backing at all, and be no more than 12.5mm thick. If the carpet is more than 12.5mm thick, there must be a beveled edge for wheels to effortlessly glide over.<br/></p><p>Recessed entrance grates/mats need to have less than 12.5mm between pieces to prevent wheels or any other movement facilitating equipment to get caught.</p><p>UltiGrate satisfies all ADA regulatory guidelines.</p>",
             "open_by_default": false
           }
         },
@@ -537,8 +547,8 @@
           "type": "faq_item",
           "settings": {
             "category": "Durability",
-            "question": "What is the expected lifespan and warranty?",
-            "answer": "<p>Anodized aluminium profiles feature a 5-year warranty and are engineered for up to 10 million annual foot traffic steps and 600kg rolling trolley loads.</p>",
+            "question": "Do I need to discard the entire aluminium matting once the mat infills wear-out?",
+            "answer": "<p>No, not when you purchase from Ultimats! Though the mat infills are of high quality with long usage life, once they eventually wear-out, you simply need to reorder the mat infill. And since we manufacture all mat components inhouse in India, we will promptly replace them for you in your existing aluminium mat frames at a fractional cost of your original investment. You may even opt for a change in color and type of the new mat infills, for a refreshing new look!</p>",
             "open_by_default": false
           }
         }
@@ -546,6 +556,7 @@
       "block_order": [
         "faq_1",
         "faq_2",
+        "faq_item_gBwhY9",
         "faq_3"
       ],
       "name": "Premium Expert FAQ",
