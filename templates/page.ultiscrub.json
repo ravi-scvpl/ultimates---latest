@@ -50,7 +50,7 @@
         "video_loop": true,
         "video_muted": true,
         "overlay_color": "#000000",
-        "overlay_opacity": 85,
+        "overlay_opacity": 65,
         "card_position": "right",
         "text_alignment": "left",
         "mobile_text_alignment": "center",
