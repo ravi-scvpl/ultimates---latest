@@ -63,16 +63,88 @@
     margin: 0;
   }
 
-  /* Gallery Grid Layout */
+  /* Gallery Grid & Slider Layout */
   .catalog-performs__gallery {
-    display: grid;
-    grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
-    gap: {{ section.settings.grid_gap }}px;
+    margin: 0 -12px;
+  }
+
+  .catalog-performs__gallery.slick-initialized .slick-track {
+    display: flex !important;
+    max-width: none !important;
+  }
+
+  .catalog-performs__gallery.slick-initialized .slick-slide {
+    height: auto !important;
+    display: flex !important;
+    max-width: none !important;
+  }
+
+  .catalog-performs__gallery.slick-initialized .slick-slide > div {
+    width: 100%;
+    display: flex;
+  }
+
+  .catalog-performs__card-wrapper {
+    padding: 0 12px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Slider Controls & Progress Bar Scrollbar */
+  .catalog-performs__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 20px;
+    padding: 0 12px;
+  }
+
+  .catalog-performs__controls button {
+    background: transparent;
+    border: 1px solid rgba(17, 24, 39, 0.3);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    color: {{ section.settings.heading_color }};
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .catalog-performs__controls button:hover {
+    background: rgba(17, 24, 39, 0.08);
+    border-color: {{ section.settings.heading_color }};
+  }
+
+  .catalog-performs__progress-container {
+    flex: 1;
+    max-width: 400px;
+    height: 3px;
+    background: rgba(17, 24, 39, 0.15);
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .catalog-performs__progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: {{ section.settings.accent_color }};
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 2px;
   }
 
   /* Item Card */
   .catalog-performs__item {
     position: relative;
+    width: 100%;
     border-radius: {{ section.settings.card_border_radius }}px;
     overflow: hidden;
     aspect-ratio: {{ section.settings.item_aspect_ratio }};
@@ -282,58 +354,152 @@
       </div>
     {% endif %}
 
-    <div class="catalog-performs__gallery">
-      {% for block in section.blocks %}
-        <div class="catalog-performs__item" {{ block.shopify_attributes }}>
-          <div class="catalog-performs__image-wrap">
-            {% if block.settings.image != blank %}
-              <img class="catalog-performs__image" src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="800" height="600">
-            {% else %}
-              {% assign placeholder_index = forloop.index | cycle: 1, 2, 3, 4, 5, 6 %}
-              {{ 'lifestyle-' | append: placeholder_index | placeholder_svg_tag: 'catalog-performs__image' }}
-            {% endif %}
-          </div>
+    <div class="catalog-performs__carousel-wrap">
+      <div class="catalog-performs__gallery" id="CatalogPerformsCarousel-{{ section.id }}">
+        {% for block in section.blocks %}
+          {% if block.settings.title != blank or block.settings.image != blank or block.settings.description != blank %}
+            <div class="catalog-performs__card-wrapper">
+              <div class="catalog-performs__item" {{ block.shopify_attributes }}>
+                <div class="catalog-performs__image-wrap">
+                  {% if block.settings.image != blank %}
+                    <img class="catalog-performs__image" src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="800" height="600">
+                  {% else %}
+                    {% assign placeholder_index = forloop.index | cycle: 1, 2, 3, 4, 5, 6 %}
+                    {{ 'lifestyle-' | append: placeholder_index | placeholder_svg_tag: 'catalog-performs__image' }}
+                  {% endif %}
+                </div>
 
-          <!-- Always visible bottom bar -->
-          <div class="catalog-performs__label-default">
-            <h3 class="catalog-performs__location-name">{{ block.settings.title | escape }}</h3>
-            <div class="catalog-performs__icon-arrow">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <!-- Always visible bottom bar -->
+                {% if block.settings.title != blank %}
+                  <div class="catalog-performs__label-default">
+                    <h3 class="catalog-performs__location-name">{{ block.settings.title | escape }}</h3>
+                    <div class="catalog-performs__icon-arrow">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                  </div>
+                {% endif %}
+
+                <!-- Hover Overlay Details -->
+                <div class="catalog-performs__overlay">
+                  <span class="catalog-performs__overlay-tag">
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    {{ block.settings.tag | default: 'Ideal Application' }}
+                  </span>
+                  
+                  {% if block.settings.title != blank %}
+                    <h3 class="catalog-performs__overlay-title">{{ block.settings.title | escape }}</h3>
+                  {% endif %}
+
+                  {% if block.settings.description != blank %}
+                    <p class="catalog-performs__overlay-desc">{{ block.settings.description | escape }}</p>
+                  {% endif %}
+
+                  {% if block.settings.feature_1 != blank or block.settings.feature_2 != blank or block.settings.feature_3 != blank %}
+                    <ul class="catalog-performs__overlay-features">
+                      {% if block.settings.feature_1 != blank %}
+                        <li class="catalog-performs__feature-pill">{{ block.settings.feature_1 | escape }}</li>
+                      {% endif %}
+                      {% if block.settings.feature_2 != blank %}
+                        <li class="catalog-performs__feature-pill">{{ block.settings.feature_2 | escape }}</li>
+                      {% endif %}
+                      {% if block.settings.feature_3 != blank %}
+                        <li class="catalog-performs__feature-pill">{{ block.settings.feature_3 | escape }}</li>
+                      {% endif %}
+                    </ul>
+                  {% endif %}
+                </div>
+              </div>
             </div>
-          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
 
-          <!-- Hover Overlay Details -->
-          <div class="catalog-performs__overlay">
-            <span class="catalog-performs__overlay-tag">
-              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              {{ block.settings.tag | default: 'Ideal Application' }}
-            </span>
-            
-            <h3 class="catalog-performs__overlay-title">{{ block.settings.title | escape }}</h3>
-
-            {% if block.settings.description != blank %}
-              <p class="catalog-performs__overlay-desc">{{ block.settings.description | escape }}</p>
-            {% endif %}
-
-            {% if block.settings.feature_1 != blank or block.settings.feature_2 != blank or block.settings.feature_3 != blank %}
-              <ul class="catalog-performs__overlay-features">
-                {% if block.settings.feature_1 != blank %}
-                  <li class="catalog-performs__feature-pill">{{ block.settings.feature_1 | escape }}</li>
-                {% endif %}
-                {% if block.settings.feature_2 != blank %}
-                  <li class="catalog-performs__feature-pill">{{ block.settings.feature_2 | escape }}</li>
-                {% endif %}
-                {% if block.settings.feature_3 != blank %}
-                  <li class="catalog-performs__feature-pill">{{ block.settings.feature_3 | escape }}</li>
-                {% endif %}
-              </ul>
-            {% endif %}
-          </div>
+      <!-- Scrollbar / Controls like promise slider -->
+      <div class="catalog-performs__controls">
+        <button class="catalog-performs__prev" id="CatalogPerformsPrev-{{ section.id }}" aria-label="Previous Slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <div class="catalog-performs__progress-container">
+          <div class="catalog-performs__progress-bar" id="CatalogPerformsProgress-{{ section.id }}"></div>
         </div>
-      {% endfor %}
+        <button class="catalog-performs__next" id="CatalogPerformsNext-{{ section.id }}" aria-label="Next Slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var $carousel = $('#CatalogPerformsCarousel-{{ section.id }}');
+    var $progressBar = $('#CatalogPerformsProgress-{{ section.id }}');
+
+    function initCatalogPerformsCarousel() {
+      if (typeof $ !== 'undefined' && $.fn.slick && $carousel.length) {
+        if ($carousel.hasClass('slick-initialized')) {
+          $carousel.slick('unslick');
+        }
+        $carousel.slick({
+          slidesToShow: {{ section.settings.columns_desktop }},
+          slidesToScroll: 1,
+          arrows: false,
+          dots: false,
+          infinite: false,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2
+              }
+            },
+            {
+              breakpoint: 640,
+              settings: {
+                slidesToShow: 1
+              }
+            }
+          ]
+        });
+
+        var totalSlides = $carousel.find('.catalog-performs__card-wrapper').length;
+        var getSlidesToShow = function() {
+          return $carousel.slick('slickGetOption', 'slidesToShow');
+        };
+
+        function updateProgress(currentSlide) {
+          var slidesToShow = getSlidesToShow();
+          var maxSlide = Math.max(0, totalSlides - slidesToShow);
+          var calc = maxSlide > 0 ? ((currentSlide) / maxSlide) * 100 : 100;
+          if (calc > 100) calc = 100;
+          if (calc < 0) calc = 0;
+          $progressBar.css('width', calc + '%');
+        }
+
+        updateProgress(0);
+
+        $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+          updateProgress(nextSlide);
+        });
+
+        $('#CatalogPerformsPrev-{{ section.id }}').off('click').on('click', function() {
+          $carousel.slick('slickPrev');
+        });
+        $('#CatalogPerformsNext-{{ section.id }}').off('click').on('click', function() {
+          $carousel.slick('slickNext');
+        });
+      } else {
+        setTimeout(initCatalogPerformsCarousel, 50);
+      }
+    }
+
+    initCatalogPerformsCarousel();
+  });
+</script>
 
 {% schema %}
 {

@@ -80,6 +80,26 @@
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.09);
   }
 
+  .catalog-cta__card-image-wrap {
+    width: 100%;
+    height: 180px;
+    border-radius: calc({{ section.settings.card_border_radius }}px - 4px);
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+
+  .catalog-cta__card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .catalog-cta__card:hover .catalog-cta__card-image {
+    transform: scale(1.05);
+  }
+
   .catalog-cta__card-content {
     margin-bottom: 28px;
   }
@@ -175,6 +195,11 @@
     <div class="catalog-cta__grid">
       <!-- CARD 1: STANDARD SIZES -->
       <div class="catalog-cta__card">
+        {% if section.settings.card1_image != blank %}
+          <div class="catalog-cta__card-image-wrap">
+            <img src="{{ section.settings.card1_image | image_url: width: 800 }}" alt="{{ section.settings.card1_title | escape }}" loading="lazy" class="catalog-cta__card-image">
+          </div>
+        {% endif %}
         <div class="catalog-cta__card-content">
           <h3 class="catalog-cta__card-title">{{ section.settings.card1_title | default: 'STANDARD SIZES' }}</h3>
           <p class="catalog-cta__card-desc">{{ section.settings.card1_desc | default: 'Explore available standard-size mats for immediate dispatch and standard entrance dimensions.' }}</p>
@@ -193,6 +218,11 @@
 
       <!-- CARD 2: MADE TO MEASURE -->
       <div class="catalog-cta__card">
+        {% if section.settings.card2_image != blank %}
+          <div class="catalog-cta__card-image-wrap">
+            <img src="{{ section.settings.card2_image | image_url: width: 800 }}" alt="{{ section.settings.card2_title | escape }}" loading="lazy" class="catalog-cta__card-image">
+          </div>
+        {% endif %}
         <div class="catalog-cta__card-content">
           <h3 class="catalog-cta__card-title">{{ section.settings.card2_title | default: 'MADE TO MEASURE' }}</h3>
           <p class="catalog-cta__card-desc">{{ section.settings.card2_desc | default: 'Customize to your exact size, recessed mat well specs, or custom architectural architectural layouts.' }}</p>
@@ -245,6 +275,11 @@
       "content": "CARD 1: STANDARD SIZES"
     },
     {
+      "type": "image_picker",
+      "id": "card1_image",
+      "label": "Card 1 Banner / Feature Image"
+    },
+    {
       "type": "text",
       "id": "card1_title",
       "label": "Card 1 Title",
@@ -275,6 +310,11 @@
     {
       "type": "header",
       "content": "CARD 2: MADE TO MEASURE"
+    },
+    {
+      "type": "image_picker",
+      "id": "card2_image",
+      "label": "Card 2 Banner / Feature Image"
     },
     {
       "type": "text",

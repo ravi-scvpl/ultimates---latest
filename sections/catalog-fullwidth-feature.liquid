@@ -363,6 +363,11 @@
 {% endcapture %}
 
 <section id="FullwidthFeature-{{ section.id }}">
+  {% assign has_content = false %}
+  {% if section.settings.badge != blank or section.settings.heading != blank or section.settings.description != blank or section.settings.button_label != blank %}
+    {% assign has_content = true %}
+  {% endif %}
+
   {% if section.settings.layout_mode == 'overlay' %}
     <div class="fullwidth-feature-banner">
       <div class="fullwidth-feature-bg-media">
@@ -371,40 +376,9 @@
 
       <div class="fullwidth-feature-overlay"></div>
 
-      <div class="fullwidth-feature-container">
-        <div class="fullwidth-feature-card">
-          {% if section.settings.badge != blank %}
-            <span class="fullwidth-feature-badge">{{ section.settings.badge }}</span>
-          {% endif %}
-
-          {% if section.settings.heading != blank %}
-            <h2 class="fullwidth-feature-heading">{{ section.settings.heading }}</h2>
-          {% endif %}
-
-          {% if section.settings.description != blank %}
-            <div class="fullwidth-feature-desc">{{ section.settings.description }}</div>
-          {% endif %}
-
-          {% if section.settings.button_label != blank %}
-            <a href="{{ section.settings.button_link | default: '#' }}" class="fullwidth-feature-btn">
-              {{ section.settings.button_label }}
-            </a>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  {% else %}
-    <!-- Split Layout Mode -->
-    <div class="fullwidth-feature-split">
-      {% capture media_block %}
-        <div class="fullwidth-feature-split-image">
-          {{ feature_media }}
-        </div>
-      {% endcapture %}
-
-      {% capture content_block %}
-        <div class="fullwidth-feature-split-content">
-          <div class="fullwidth-feature-card" style="max-width: {{ section.settings.card_max_width }}px;">
+      {% if has_content %}
+        <div class="fullwidth-feature-container">
+          <div class="fullwidth-feature-card">
             {% if section.settings.badge != blank %}
               <span class="fullwidth-feature-badge">{{ section.settings.badge }}</span>
             {% endif %}
@@ -424,6 +398,41 @@
             {% endif %}
           </div>
         </div>
+      {% endif %}
+    </div>
+  {% else %}
+    <!-- Split Layout Mode -->
+    <div class="fullwidth-feature-split">
+      {% capture media_block %}
+        <div class="fullwidth-feature-split-image">
+          {{ feature_media }}
+        </div>
+      {% endcapture %}
+
+      {% capture content_block %}
+        {% if has_content %}
+          <div class="fullwidth-feature-split-content">
+            <div class="fullwidth-feature-card" style="max-width: {{ section.settings.card_max_width }}px;">
+              {% if section.settings.badge != blank %}
+                <span class="fullwidth-feature-badge">{{ section.settings.badge }}</span>
+              {% endif %}
+
+              {% if section.settings.heading != blank %}
+                <h2 class="fullwidth-feature-heading">{{ section.settings.heading }}</h2>
+              {% endif %}
+
+              {% if section.settings.description != blank %}
+                <div class="fullwidth-feature-desc">{{ section.settings.description }}</div>
+              {% endif %}
+
+              {% if section.settings.button_label != blank %}
+                <a href="{{ section.settings.button_link | default: '#' }}" class="fullwidth-feature-btn">
+                  {{ section.settings.button_label }}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
       {% endcapture %}
 
       {% if section.settings.image_position == 'left' %}
