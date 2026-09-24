@@ -35,6 +35,17 @@
     "catalog_where_it_performs_main": {
       "type": "catalog-where-it-performs",
       "blocks": {
+        "location_diF83W": {
+          "type": "location",
+          "settings": {
+            "title": "",
+            "tag": "Ideal Location",
+            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
+            "feature_1": "Luxury Aesthetic",
+            "feature_2": "High Footfall",
+            "feature_3": "Quick Maintenance"
+          }
+        },
         "location_gCXtbU": {
           "type": "location",
           "settings": {
@@ -72,6 +83,7 @@
         }
       },
       "block_order": [
+        "location_diF83W",
         "location_gCXtbU",
         "location_1",
         "location_2"
