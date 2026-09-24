@@ -357,12 +357,29 @@
     <div class="catalog-performs__carousel-wrap">
       <div class="catalog-performs__gallery" id="CatalogPerformsCarousel-{{ section.id }}">
         {% for block in section.blocks %}
-          {% if block.settings.title != blank or block.settings.image != blank or block.settings.description != blank %}
+          {% assign card_product = block.settings.product %}
+          {% assign card_title = block.settings.title %}
+          {% assign card_image = block.settings.image %}
+          {% assign card_url = block.settings.url %}
+
+          {% if card_product != blank %}
+            {% if card_title == blank %}
+              {% assign card_title = card_product.title %}
+            {% endif %}
+            {% if card_image == blank and card_product.featured_image != blank %}
+              {% assign card_image = card_product.featured_image %}
+            {% endif %}
+            {% if card_url == blank %}
+              {% assign card_url = card_product.url %}
+            {% endif %}
+          {% endif %}
+
+          {% if card_title != blank or card_image != blank or block.settings.description != blank or card_product != blank %}
             <div class="catalog-performs__card-wrapper">
-              <div class="catalog-performs__item" {{ block.shopify_attributes }}>
+              <{% if card_url != blank %}a href="{{ card_url }}"{% else %}div{% endif %} class="catalog-performs__item" {{ block.shopify_attributes }}>
                 <div class="catalog-performs__image-wrap">
-                  {% if block.settings.image != blank %}
-                    <img class="catalog-performs__image" src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="800" height="600">
+                  {% if card_image != blank %}
+                    <img class="catalog-performs__image" src="{{ card_image | image_url: width: 800 }}" alt="{{ card_title | escape }}" loading="lazy" width="800" height="600">
                   {% else %}
                     {% assign placeholder_index = forloop.index | cycle: 1, 2, 3, 4, 5, 6 %}
                     {{ 'lifestyle-' | append: placeholder_index | placeholder_svg_tag: 'catalog-performs__image' }}
@@ -370,9 +387,16 @@
                 </div>
 
                 <!-- Always visible bottom bar -->
-                {% if block.settings.title != blank %}
+                {% if card_title != blank %}
                   <div class="catalog-performs__label-default">
-                    <h3 class="catalog-performs__location-name">{{ block.settings.title | escape }}</h3>
+                    <div>
+                      <h3 class="catalog-performs__location-name">{{ card_title | escape }}</h3>
+                      {% if card_product != blank and card_product.price != blank %}
+                        <span class="catalog-performs__product-price" style="font-size: 13px; color: rgba(255,255,255,0.8); display: block; margin-top: 2px;">
+                          {{ card_product.price | money }}
+                        </span>
+                      {% endif %}
+                    </div>
                     <div class="catalog-performs__icon-arrow">
                       <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </div>
@@ -386,12 +410,14 @@
                     {{ block.settings.tag | default: 'Ideal Application' }}
                   </span>
                   
-                  {% if block.settings.title != blank %}
-                    <h3 class="catalog-performs__overlay-title">{{ block.settings.title | escape }}</h3>
+                  {% if card_title != blank %}
+                    <h3 class="catalog-performs__overlay-title">{{ card_title | escape }}</h3>
                   {% endif %}
 
                   {% if block.settings.description != blank %}
                     <p class="catalog-performs__overlay-desc">{{ block.settings.description | escape }}</p>
+                  {% elsif card_product != blank and card_product.description != blank %}
+                    <p class="catalog-performs__overlay-desc">{{ card_product.description | strip_html | truncate: 120 | escape }}</p>
                   {% endif %}
 
                   {% if block.settings.feature_1 != blank or block.settings.feature_2 != blank or block.settings.feature_3 != blank %}
@@ -406,9 +432,13 @@
                         <li class="catalog-performs__feature-pill">{{ block.settings.feature_3 | escape }}</li>
                       {% endif %}
                     </ul>
+                  {% elsif card_url != blank %}
+                    <div class="catalog-performs__overlay-features">
+                      <span class="catalog-performs__feature-pill">View Product &rarr;</span>
+                    </div>
                   {% endif %}
                 </div>
-              </div>
+              </{% if card_url != blank %}a{% else %}div{% endif %}>
             </div>
           {% endif %}
         {% endfor %}
@@ -678,15 +708,25 @@
       "name": "Location / Application",
       "settings": [
         {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product (Optional)",
+          "info": "If selected, product title, image, description & URL will auto-populate as defaults."
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Custom Link URL (Fallback)"
+        },
+        {
           "type": "image_picker",
           "id": "image",
-          "label": "Location Image"
+          "label": "Location / Product Image (Overrides product image)"
         },
         {
           "type": "text",
           "id": "title",
-          "label": "Location Name",
-          "default": "Hotels & Hospitality"
+          "label": "Title / Location Name (Overrides product title)"
         },
         {
           "type": "text",
