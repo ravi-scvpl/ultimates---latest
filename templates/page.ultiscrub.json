@@ -38,6 +38,8 @@
         "location_diF83W": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "title": "",
             "tag": "Ideal Location",
             "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
@@ -49,6 +51,8 @@
         "location_gCXtbU": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "title": "Hotels & Hospitality",
             "tag": "Ideal Location",
             "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
@@ -60,6 +64,8 @@
         "location_1": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "image": "shopify://shop_images/floor_mat.png",
             "title": "Corporate Offices",
             "tag": "",
@@ -72,6 +78,8 @@
         "location_2": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
             "title": "Commercial Foyers",
             "tag": "High Traffic",
@@ -460,106 +468,6 @@
         "padding_bottom": 64
       }
     },
-    "catalog_where_it_performs_g4cHJM": {
-      "type": "catalog-where-it-performs",
-      "blocks": {
-        "location_gbjUqq": {
-          "type": "location",
-          "settings": {
-            "title": "Hotels",
-            "tag": "Ideal Location",
-            "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
-            "feature_1": "Lobby Entrances",
-            "feature_2": "Elegance Protection",
-            "feature_3": "High Traffic"
-          }
-        },
-        "location_pX7bUM": {
-          "type": "location",
-          "settings": {
-            "title": "Corporate Offices",
-            "tag": "Ideal Location",
-            "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
-            "feature_1": "Executive Foyers",
-            "feature_2": "Noise Reduction",
-            "feature_3": "Anti-Slip"
-          }
-        },
-        "location_Y66JHH": {
-          "type": "location",
-          "settings": {
-            "title": "Retail",
-            "tag": "Ideal Location",
-            "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
-            "feature_1": "Storefronts",
-            "feature_2": "Dirt Trapping",
-            "feature_3": "Heavy Duty"
-          }
-        },
-        "location_gm8YkM": {
-          "type": "location",
-          "settings": {
-            "title": "Hospitals",
-            "tag": "Ideal Location",
-            "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
-            "feature_1": "Hygienic Clean",
-            "feature_2": "Easy Sanitization",
-            "feature_3": "Wheelchair Safe"
-          }
-        },
-        "location_terQfk": {
-          "type": "location",
-          "settings": {
-            "title": "Schools & Institutions",
-            "tag": "Ideal Location",
-            "description": "Robust, high-durability protection engineered to withstand constant student activity.",
-            "feature_1": "High Durability",
-            "feature_2": "Scuff Resistant",
-            "feature_3": "Safe & Non-Slip"
-          }
-        },
-        "location_iegcxj": {
-          "type": "location",
-          "settings": {
-            "title": "High-Traffic Entrances",
-            "tag": "Ideal Location",
-            "description": "Maximum debris retention and water absorption at main building access points.",
-            "feature_1": "Debris Control",
-            "feature_2": "Water Absorbing",
-            "feature_3": "24/7 Endurance"
-          }
-        }
-      },
-      "block_order": [
-        "location_gbjUqq",
-        "location_pX7bUM",
-        "location_Y66JHH",
-        "location_gm8YkM",
-        "location_terQfk",
-        "location_iegcxj"
-      ],
-      "name": "Where It Performs",
-      "settings": {
-        "subtitle": "",
-        "title": "Where It Performs",
-        "description": "<p>Engineered for excellence across diverse high-demanding environments and architecturally refined spaces.</p>",
-        "header_alignment": "center",
-        "title_font_size": 36,
-        "columns_desktop": 3,
-        "grid_gap": 24,
-        "item_aspect_ratio": "4 / 3",
-        "mobile_item_aspect_ratio": "4 / 3",
-        "section_bg_color": "#ffffff",
-        "accent_color": "#0066ff",
-        "heading_color": "#111827",
-        "text_color": "#4b5563",
-        "enable_glassmorphism": true,
-        "card_border_radius": 16,
-        "max_width": 1400,
-        "padding_top": 64,
-        "padding_bottom": 64
-      }
-    },
     "catalog_purchase_cta_main": {
       "type": "catalog-purchase-cta",
       "settings": {
@@ -597,62 +505,111 @@
         "padding_bottom": 56
       }
     },
-    "catalog_product_family_main": {
-      "type": "catalog-product-family",
+    "catalog_where_it_performs_g4cHJM": {
+      "type": "catalog-where-it-performs",
       "blocks": {
-        "prod_1": {
-          "type": "product_item",
+        "location_gbjUqq": {
+          "type": "location",
           "settings": {
-            "selected_product": "ultiscrape-carpet-mat",
-            "custom_title": "",
-            "custom_desc": "",
-            "custom_url": ""
+            "product": "ulticlean-carpet-mat-1",
+            "url": "",
+            "title": "Ulticlean",
+            "tag": "",
+            "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
+            "feature_1": "Lobby Entrances",
+            "feature_2": "Elegance Protection",
+            "feature_3": "High Traffic"
           }
         },
-        "prod_2": {
-          "type": "product_item",
+        "location_pX7bUM": {
+          "type": "location",
           "settings": {
-            "selected_product": "ultidure-carpet-mat",
-            "custom_title": "",
-            "custom_desc": "",
-            "custom_url": ""
+            "product": "ultidure-carpet-mat",
+            "url": "",
+            "title": "Corporate Offices",
+            "tag": "Ideal Location",
+            "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
+            "feature_1": "Executive Foyers",
+            "feature_2": "Noise Reduction",
+            "feature_3": "Anti-Slip"
           }
         },
-        "prod_3": {
-          "type": "product_item",
+        "location_Y66JHH": {
+          "type": "location",
           "settings": {
-            "selected_product": "ulticlean-carpet-mat-1",
-            "custom_title": "",
-            "custom_desc": "",
-            "custom_url": ""
+            "product": "",
+            "url": "",
+            "title": "Retail",
+            "tag": "Ideal Location",
+            "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
+            "feature_1": "Storefronts",
+            "feature_2": "Dirt Trapping",
+            "feature_3": "Heavy Duty"
           }
         },
-        "prod_4": {
-          "type": "product_item",
+        "location_gm8YkM": {
+          "type": "location",
           "settings": {
-            "selected_product": "ultimat-heavy-duty-vinyl-looped-matting",
-            "custom_title": "",
-            "custom_desc": "",
-            "custom_url": ""
+            "product": "",
+            "url": "",
+            "title": "Hospitals",
+            "tag": "Ideal Location",
+            "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
+            "feature_1": "Hygienic Clean",
+            "feature_2": "Easy Sanitization",
+            "feature_3": "Wheelchair Safe"
+          }
+        },
+        "location_terQfk": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Schools & Institutions",
+            "tag": "Ideal Location",
+            "description": "Robust, high-durability protection engineered to withstand constant student activity.",
+            "feature_1": "High Durability",
+            "feature_2": "Scuff Resistant",
+            "feature_3": "Safe & Non-Slip"
+          }
+        },
+        "location_iegcxj": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "High-Traffic Entrances",
+            "tag": "Ideal Location",
+            "description": "Maximum debris retention and water absorption at main building access points.",
+            "feature_1": "Debris Control",
+            "feature_2": "Water Absorbing",
+            "feature_3": "24/7 Endurance"
           }
         }
       },
       "block_order": [
-        "prod_1",
-        "prod_2",
-        "prod_3",
-        "prod_4"
+        "location_gbjUqq",
+        "location_pX7bUM",
+        "location_Y66JHH",
+        "location_gm8YkM",
+        "location_terQfk",
+        "location_iegcxj"
       ],
+      "name": "Where It Performs",
       "settings": {
         "subtitle": "",
-        "title": "Complete the Entrance Solution",
-        "title_font_size": 32,
-        "section_bg_color": "#f8f9fa",
-        "card_bg_color": "#ffffff",
-        "card_border_color": "#e5e7eb",
+        "title": "Where It Performs",
+        "description": "<p>Engineered for excellence across diverse high-demanding environments and architecturally refined spaces.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#ffffff",
         "accent_color": "#0066ff",
         "heading_color": "#111827",
-        "text_color": "#6b7280",
+        "text_color": "#4b5563",
         "enable_glassmorphism": true,
         "card_border_radius": 16,
         "max_width": 1400,
@@ -776,9 +733,8 @@
     "catalog_performance_specs_main",
     "catalog_care_main",
     "catalog_resources_main",
-    "catalog_where_it_performs_g4cHJM",
     "catalog_purchase_cta_main",
-    "catalog_product_family_main",
+    "catalog_where_it_performs_g4cHJM",
     "premium_faq_main",
     "contact_form_main"
   ]
