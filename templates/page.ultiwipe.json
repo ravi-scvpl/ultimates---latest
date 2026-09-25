@@ -240,6 +240,23 @@
         "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
       }
     },
+    "before_after_YgaX3t": {
+      "type": "before-after",
+      "name": "t:sections.before-and-after.name",
+      "settings": {
+        "title": "Before & after",
+        "description": "Add a product feature or answer a common questions about your products.",
+        "font_size": 100,
+        "label_before": "Before",
+        "label_after": "After",
+        "initial_position": 50,
+        "button_label": "Optional Button",
+        "button_link": "",
+        "color_text": "primary-text-1",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
     "catalog_performance_specs_main": {
       "type": "catalog-performance-specs",
       "blocks": {
@@ -682,6 +699,7 @@
     "catalog_where_it_performs_DjTAXK",
     "catalog_fullwidth_feature_main",
     "promise_slider_main",
+    "before_after_YgaX3t",
     "catalog_performance_specs_main",
     "catalog_care_main",
     "catalog_where_it_performs_main",
