@@ -32,6 +32,118 @@
         "padding_bottom": 0
       }
     },
+    "catalog_where_it_performs_yY6Maw": {
+      "type": "catalog-where-it-performs",
+      "blocks": {
+        "location_U8kJDJ": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Hotels",
+            "tag": "",
+            "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
+            "feature_1": "Lobby Entrances",
+            "feature_2": "Elegance Protection",
+            "feature_3": "High Traffic"
+          }
+        },
+        "location_A9CKMc": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Corporate Offices",
+            "tag": "",
+            "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
+            "feature_1": "Executive Foyers",
+            "feature_2": "Noise Reduction",
+            "feature_3": "Anti-Slip"
+          }
+        },
+        "location_kKN4AC": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Retail",
+            "tag": "",
+            "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
+            "feature_1": "Storefronts",
+            "feature_2": "Dirt Trapping",
+            "feature_3": "Heavy Duty"
+          }
+        },
+        "location_zGcjVF": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Hospitals",
+            "tag": "",
+            "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
+            "feature_1": "Hygienic Clean",
+            "feature_2": "Easy Sanitization",
+            "feature_3": "Wheelchair Safe"
+          }
+        },
+        "location_dj6QxK": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Schools & Institutions",
+            "tag": "",
+            "description": "Robust, high-durability protection engineered to withstand constant student activity.",
+            "feature_1": "High Durability",
+            "feature_2": "Scuff Resistant",
+            "feature_3": "Safe & Non-Slip"
+          }
+        },
+        "location_GJrcx3": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "High-Traffic Entrances",
+            "tag": "",
+            "description": "Maximum debris retention and water absorption at main building access points.",
+            "feature_1": "Debris Control",
+            "feature_2": "Water Absorbing",
+            "feature_3": "24/7 Endurance"
+          }
+        }
+      },
+      "block_order": [
+        "location_U8kJDJ",
+        "location_A9CKMc",
+        "location_kKN4AC",
+        "location_zGcjVF",
+        "location_dj6QxK",
+        "location_GJrcx3"
+      ],
+      "name": "Where It Performs",
+      "settings": {
+        "subtitle": "Applications & Environments",
+        "title": "Where It Performs",
+        "description": "<p>Engineered for excellence across diverse high-demanding environments and architecturally refined spaces.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#ffffff",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "catalog_fullwidth_feature_main": {
       "type": "catalog-fullwidth-feature",
       "name": "Full Width Feature Section",
@@ -40,8 +152,9 @@
         "image_position": "left",
         "desktop_height": "700px",
         "mobile_height": "400px",
-        "media_type": "image",
+        "media_type": "video",
         "image": "shopify://shop_images/UltiDure_Brown_Mat_at_office_Entrance.png",
+        "video": "shopify://files/videos/UltiDure CGI video.mp4",
         "video_url_mp4": "",
         "video_url_external": "",
         "mobile_video_url_mp4": "",
@@ -60,10 +173,10 @@
         "enable_glassmorphism": false,
         "badge": "",
         "badge_color": "#555555",
-        "heading": "ultidure",
+        "heading": "",
         "heading_size": 32,
         "heading_color": "#111111",
-        "description": "<p>Polyamide premium carpet matting with anti‑skid nitrile rubber backing and reinforced non-tearable borders for heavy‑footfall areas. Machine-washable. Suited for both indoor and outdoor use.</p>",
+        "description": "",
         "description_size": 15,
         "description_color": "#444444",
         "button_label": "",
@@ -128,17 +241,19 @@
       ],
       "name": "Promise Slider",
       "settings": {
+        "background_video": "shopify://files/videos/4th.mp4",
         "background_video_url": "",
         "section_height": 800,
         "padding_top": 100,
         "padding_bottom": 100,
-        "overlay_opacity": 40,
+        "overlay_opacity": 75,
         "heading": "ULTIDURE PROPERTIES",
         "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
       }
     },
     "three_layer_feature_main": {
       "type": "three-layer-feature",
+      "disabled": true,
       "name": "Three Layer Feature",
       "settings": {
         "bg_color": "#000000",
@@ -332,6 +447,8 @@
         "location_1": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "image": "shopify://shop_images/UltiDure_6x4_Mall.png",
             "title": "Malls & Retail Lobbies",
             "tag": "High Footfall",
@@ -344,6 +461,8 @@
         "location_2": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "image": "shopify://shop_images/UltiDure_Grey_Entrance_Long_1000.png",
             "title": "Hotels & Airports",
             "tag": "Extreme Duty",
@@ -628,6 +747,7 @@
   },
   "order": [
     "catalog_hero_main",
+    "catalog_where_it_performs_yY6Maw",
     "catalog_fullwidth_feature_main",
     "promise_slider_main",
     "three_layer_feature_main",
