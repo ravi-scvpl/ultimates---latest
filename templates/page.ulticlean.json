@@ -16,7 +16,7 @@
         "image": "shopify://shop_images/magnific_closeup-of-premium-brown-_43xfsAV9Aa_1.png",
         "overlay_color": "#000000",
         "overlay_opacity": 40,
-        "section_height_desktop": "600px",
+        "section_height_desktop": "800px",
         "section_height_mobile": "400px",
         "content_width": 800,
         "content_position": "bottom-center",
@@ -32,16 +32,129 @@
         "padding_bottom": 0
       }
     },
+    "catalog_where_it_performs_cn9mUQ": {
+      "type": "catalog-where-it-performs",
+      "blocks": {
+        "location_rXqxdA": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Hotels",
+            "tag": "",
+            "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
+            "feature_1": "Lobby Entrances",
+            "feature_2": "Elegance Protection",
+            "feature_3": "High Traffic"
+          }
+        },
+        "location_hqe3Fw": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Corporate Offices",
+            "tag": "",
+            "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
+            "feature_1": "Executive Foyers",
+            "feature_2": "Noise Reduction",
+            "feature_3": "Anti-Slip"
+          }
+        },
+        "location_BtRP3i": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Retail",
+            "tag": "",
+            "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
+            "feature_1": "Storefronts",
+            "feature_2": "Dirt Trapping",
+            "feature_3": "Heavy Duty"
+          }
+        },
+        "location_V9bj9a": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Hospitals",
+            "tag": "",
+            "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
+            "feature_1": "Hygienic Clean",
+            "feature_2": "Easy Sanitization",
+            "feature_3": "Wheelchair Safe"
+          }
+        },
+        "location_rLAPdU": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Schools & Institutions",
+            "tag": "",
+            "description": "Robust, high-durability protection engineered to withstand constant student activity.",
+            "feature_1": "High Durability",
+            "feature_2": "Scuff Resistant",
+            "feature_3": "Safe & Non-Slip"
+          }
+        },
+        "location_KjxYbb": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "High-Traffic Entrances",
+            "tag": "",
+            "description": "Maximum debris retention and water absorption at main building access points.",
+            "feature_1": "Debris Control",
+            "feature_2": "Water Absorbing",
+            "feature_3": "24/7 Endurance"
+          }
+        }
+      },
+      "block_order": [
+        "location_rXqxdA",
+        "location_hqe3Fw",
+        "location_BtRP3i",
+        "location_V9bj9a",
+        "location_rLAPdU",
+        "location_KjxYbb"
+      ],
+      "name": "Where It Performs",
+      "settings": {
+        "subtitle": "",
+        "title": "Where It Performs",
+        "description": "<p>Engineered for excellence across diverse high-demanding environments and architecturally refined spaces.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#ffffff",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "catalog_fullwidth_feature_main": {
       "type": "catalog-fullwidth-feature",
       "name": "Full Width Feature Section",
       "settings": {
         "layout_mode": "overlay",
         "image_position": "left",
-        "desktop_height": "550px",
+        "desktop_height": "700px",
         "mobile_height": "400px",
-        "media_type": "image",
+        "media_type": "video",
         "image": "shopify://shop_images/magnific_closeup-of-premium-brown-_43xfsAV9Aa_1.png",
+        "video": "shopify://files/videos/UltiClean Ad.mp4",
         "video_url_mp4": "",
         "video_url_external": "",
         "mobile_video_url_mp4": "",
@@ -49,7 +162,7 @@
         "video_loop": true,
         "video_muted": true,
         "overlay_color": "#000000",
-        "overlay_opacity": 30,
+        "overlay_opacity": 60,
         "card_position": "right",
         "text_alignment": "left",
         "mobile_text_alignment": "center",
@@ -60,10 +173,10 @@
         "enable_glassmorphism": false,
         "badge": "",
         "badge_color": "#555555",
-        "heading": "ulticlean",
+        "heading": "",
         "heading_size": 32,
         "heading_color": "#111111",
-        "description": "<p>Soft plush tufted barrier carpet matting with double-reinforced borders designed for dust lock, water absorption, and aesthetic entrance spaces.</p>",
+        "description": "",
         "description_size": 15,
         "description_color": "#444444",
         "button_label": "",
@@ -137,17 +250,21 @@
         "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
       }
     },
-    "three_layer_feature_main": {
-      "type": "three-layer-feature",
-      "name": "Three Layer Feature",
+    "before_after_hAgbzg": {
+      "type": "before-after",
+      "name": "t:sections.before-and-after.name",
       "settings": {
-        "bg_color": "#000000",
-        "text_color": "#ffffff",
-        "video": "shopify://files/videos/2nd.mp4",
-        "video_url": "",
-        "asset_video_name": "",
-        "heading": "ULTICLEAN LAYER TECH",
-        "description": "<p>Plush multi-layered carpet fibers absorb wetness and trap micro-particles instantly upon step-on.</p><p>Each layer traps dirt individually to ensure that your space stays clean throughout the day.</p>"
+        "title": "Before & after",
+        "description": "Add a product feature or answer a common questions about your products.",
+        "font_size": 100,
+        "label_before": "Before",
+        "label_after": "After",
+        "initial_position": 50,
+        "button_label": "Optional Button",
+        "button_link": "",
+        "color_text": "primary-text-1",
+        "padding_top": 44,
+        "padding_bottom": 44
       }
     },
     "catalog_performance_specs_main": {
@@ -324,6 +441,8 @@
         "location_1": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "image": "shopify://shop_images/floor_mat.png",
             "title": "Luxury Residences",
             "tag": "",
@@ -336,6 +455,8 @@
         "location_2": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
             "title": "Executive Offices",
             "tag": "Interior Doors",
@@ -610,9 +731,10 @@
   },
   "order": [
     "catalog_hero_main",
+    "catalog_where_it_performs_cn9mUQ",
     "catalog_fullwidth_feature_main",
     "promise_slider_main",
-    "three_layer_feature_main",
+    "before_after_hAgbzg",
     "catalog_performance_specs_main",
     "catalog_care_main",
     "catalog_where_it_performs_main",
