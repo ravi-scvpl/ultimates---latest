@@ -141,6 +141,7 @@
     },
     "three_layer_feature_main": {
       "type": "three-layer-feature",
+      "disabled": true,
       "name": "Three Layer Feature",
       "settings": {
         "bg_color": "#000000",
