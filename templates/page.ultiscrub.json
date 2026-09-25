@@ -526,8 +526,8 @@
           "settings": {
             "product": "ultidure-carpet-mat",
             "url": "",
-            "title": "Corporate Offices",
-            "tag": "Ideal Location",
+            "title": "UltiDure",
+            "tag": "",
             "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
             "feature_1": "Executive Foyers",
             "feature_2": "Noise Reduction",
@@ -537,10 +537,10 @@
         "location_Y66JHH": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "ultimat-heavy-duty-vinyl-looped-matting",
             "url": "",
-            "title": "Retail",
-            "tag": "Ideal Location",
+            "title": "Ultimat",
+            "tag": "",
             "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
             "feature_1": "Storefronts",
             "feature_2": "Dirt Trapping",
@@ -550,9 +550,9 @@
         "location_gm8YkM": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "ultiscrape-carpet-mat",
             "url": "",
-            "title": "Hospitals",
+            "title": "Ultiscrape",
             "tag": "Ideal Location",
             "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
             "feature_1": "Hygienic Clean",
@@ -563,10 +563,10 @@
         "location_terQfk": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "ultirake-carpet-mat",
             "url": "",
-            "title": "Schools & Institutions",
-            "tag": "Ideal Location",
+            "title": "UltiRake",
+            "tag": "",
             "description": "Robust, high-durability protection engineered to withstand constant student activity.",
             "feature_1": "High Durability",
             "feature_2": "Scuff Resistant",
@@ -576,9 +576,9 @@
         "location_iegcxj": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "ultizig-barrier-mat-with-backing",
             "url": "",
-            "title": "High-Traffic Entrances",
+            "title": "Ultizig",
             "tag": "Ideal Location",
             "description": "Maximum debris retention and water absorption at main building access points.",
             "feature_1": "Debris Control",
@@ -598,8 +598,8 @@
       "name": "Where It Performs",
       "settings": {
         "subtitle": "",
-        "title": "Where It Performs",
-        "description": "<p>Engineered for excellence across diverse high-demanding environments and architecturally refined spaces.</p>",
+        "title": "Complete the Entrance Solution",
+        "description": "",
         "header_alignment": "center",
         "title_font_size": 36,
         "columns_desktop": 3,
