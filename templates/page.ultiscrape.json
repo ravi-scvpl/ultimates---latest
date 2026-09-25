@@ -679,6 +679,7 @@
     },
     "three_layer_feature_REyGhN": {
       "type": "three-layer-feature",
+      "disabled": true,
       "name": "Three Layer Feature",
       "settings": {
         "bg_color": "#000000",
