@@ -577,10 +577,11 @@
       "settings": {
         "layout_mode": "overlay",
         "image_position": "left",
-        "desktop_height": "550px",
+        "desktop_height": "700px",
         "mobile_height": "400px",
-        "media_type": "image",
+        "media_type": "video",
         "image": "shopify://shop_images/close_up_1_876c3f58-af00-45b5-9f00-a89262a21769.png",
+        "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
         "video_url_mp4": "",
         "video_url_external": "",
         "mobile_video_url_mp4": "",
@@ -599,10 +600,10 @@
         "enable_glassmorphism": false,
         "badge": "",
         "badge_color": "#555555",
-        "heading": "ultiscrape",
+        "heading": "",
         "heading_size": 32,
         "heading_color": "#111111",
-        "description": "<p>Stiff‑fibre scraper cut‑pile tough commercial carpet entrance matting with double reinforced borders and durable vinyl backing</p>",
+        "description": "",
         "description_size": 15,
         "description_color": "#444444",
         "button_label": "",
@@ -871,6 +872,8 @@
         "location_qzwLp4": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "image": "shopify://shop_images/floor_mat.png",
             "title": "Home",
             "tag": "",
@@ -883,6 +886,8 @@
         "location_GzaW3k": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
             "title": "Hotels & Hospitality",
             "tag": "Ideal Location",
