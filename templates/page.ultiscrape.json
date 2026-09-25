@@ -396,54 +396,6 @@
         "margin_bottom": 44
       }
     },
-    "large_media_with_text_box_wcgMWJ": {
-      "type": "large-media-with-text-box",
-      "blocks": {
-        "heading_QaYLWq": {
-          "type": "heading",
-          "settings": {
-            "title": "Technical specifications",
-            "font_size": 80
-          }
-        },
-        "text_6XWaJr": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Product Name: UltiGrate</p><p>Application: Commercial heavy-traffic entrances</p><p>Material: Aluminium 6063T6 Anodized</p><p>Mat infills: Brush/Rubber/Carpet</p><p>Profile Height : 10 mm</p><p>Total Height (Brush): 14 mm</p><p>Total Height (Carpet): 12 mm</p><p>Matwell Depth: 10 mm</p><p>Pedestrian Annual Traffic: Upto 10 million </p><p>Trolley Crossings: Heavy (Max weight 600 Kgs)</p><p>Warranty: 5 years</p>",
-            "font_size": 100
-          }
-        },
-        "button_FcqrEC": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "button_label": "Configure your mat",
-            "button_link": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_QaYLWq",
-        "text_6XWaJr",
-        "button_FcqrEC"
-      ],
-      "disabled": true,
-      "settings": {
-        "image": "shopify://shop_images/Entryway_Mat_3.jpg",
-        "autoplay_video": true,
-        "full_width": true,
-        "text_position": "top-left",
-        "container_width": 425,
-        "container_height": 20,
-        "inner_spacing": 40,
-        "vertical_position": 39,
-        "horizontal_position": 100,
-        "background": "background-modal",
-        "frosted_glass": false,
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
     "media_with_text_A6py6b": {
       "type": "media-with-text",
       "blocks": {
@@ -571,6 +523,118 @@
         "padding_bottom": 0
       }
     },
+    "catalog_where_it_performs_VhEXaj": {
+      "type": "catalog-where-it-performs",
+      "blocks": {
+        "location_FCNytG": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Hotels",
+            "tag": "",
+            "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
+            "feature_1": "Lobby Entrances",
+            "feature_2": "Elegance Protection",
+            "feature_3": "High Traffic"
+          }
+        },
+        "location_aDmDmc": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Corporate Offices",
+            "tag": "",
+            "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
+            "feature_1": "Executive Foyers",
+            "feature_2": "Noise Reduction",
+            "feature_3": "Anti-Slip"
+          }
+        },
+        "location_Dr37x9": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Retail",
+            "tag": "",
+            "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
+            "feature_1": "Storefronts",
+            "feature_2": "Dirt Trapping",
+            "feature_3": "Heavy Duty"
+          }
+        },
+        "location_Bgdpzf": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Hospitals",
+            "tag": "",
+            "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
+            "feature_1": "Hygienic Clean",
+            "feature_2": "Easy Sanitization",
+            "feature_3": "Wheelchair Safe"
+          }
+        },
+        "location_6rQ8fY": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Schools & Institutions",
+            "tag": "",
+            "description": "Robust, high-durability protection engineered to withstand constant student activity.",
+            "feature_1": "High Durability",
+            "feature_2": "Scuff Resistant",
+            "feature_3": "Safe & Non-Slip"
+          }
+        },
+        "location_bE4ACd": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "High-Traffic Entrances",
+            "tag": "",
+            "description": "Maximum debris retention and water absorption at main building access points.",
+            "feature_1": "Debris Control",
+            "feature_2": "Water Absorbing",
+            "feature_3": "24/7 Endurance"
+          }
+        }
+      },
+      "block_order": [
+        "location_FCNytG",
+        "location_aDmDmc",
+        "location_Dr37x9",
+        "location_Bgdpzf",
+        "location_6rQ8fY",
+        "location_bE4ACd"
+      ],
+      "name": "Where It Performs",
+      "settings": {
+        "subtitle": "",
+        "title": "Where It Performs",
+        "description": "<p>Engineered for excellence across diverse high-demanding environments and architecturally refined spaces.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#ffffff",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "catalog_fullwidth_feature_JJMzXk": {
       "type": "catalog-fullwidth-feature",
       "name": "Full Width Feature Section",
@@ -668,11 +732,12 @@
       ],
       "name": "Promise Slider",
       "settings": {
+        "background_video": "shopify://files/videos/4th.mp4",
         "background_video_url": "",
         "section_height": 800,
         "padding_top": 100,
         "padding_bottom": 100,
-        "overlay_opacity": 40,
+        "overlay_opacity": 65,
         "heading": "Ultiscrape PROPERTIES",
         "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
       }
@@ -1274,10 +1339,10 @@
     "media_with_text_HTDLiR",
     "social_media_banner_QkKgiN",
     "checklist_iP6XbV",
-    "large_media_with_text_box_wcgMWJ",
     "media_with_text_A6py6b",
     "social_media_banner_7qVQMD",
     "catalog_hero_LN7jUH",
+    "catalog_where_it_performs_VhEXaj",
     "catalog_fullwidth_feature_JJMzXk",
     "promise_slider_Wh8jKn",
     "three_layer_feature_REyGhN",
