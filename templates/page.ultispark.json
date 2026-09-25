@@ -32,6 +32,118 @@
         "padding_bottom": 0
       }
     },
+    "catalog_where_it_performs_Kx6QnA": {
+      "type": "catalog-where-it-performs",
+      "blocks": {
+        "location_E3Habz": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Hotels",
+            "tag": "",
+            "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
+            "feature_1": "Lobby Entrances",
+            "feature_2": "Elegance Protection",
+            "feature_3": "High Traffic"
+          }
+        },
+        "location_cr3WAN": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Corporate Offices",
+            "tag": "",
+            "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
+            "feature_1": "Executive Foyers",
+            "feature_2": "Noise Reduction",
+            "feature_3": "Anti-Slip"
+          }
+        },
+        "location_iHYtRK": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Retail",
+            "tag": "",
+            "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
+            "feature_1": "Storefronts",
+            "feature_2": "Dirt Trapping",
+            "feature_3": "Heavy Duty"
+          }
+        },
+        "location_BP7Cjk": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Hospitals",
+            "tag": "",
+            "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
+            "feature_1": "Hygienic Clean",
+            "feature_2": "Easy Sanitization",
+            "feature_3": "Wheelchair Safe"
+          }
+        },
+        "location_G8zkmc": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Schools & Institutions",
+            "tag": "",
+            "description": "Robust, high-durability protection engineered to withstand constant student activity.",
+            "feature_1": "High Durability",
+            "feature_2": "Scuff Resistant",
+            "feature_3": "Safe & Non-Slip"
+          }
+        },
+        "location_JDKMgy": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "High-Traffic Entrances",
+            "tag": "",
+            "description": "Maximum debris retention and water absorption at main building access points.",
+            "feature_1": "Debris Control",
+            "feature_2": "Water Absorbing",
+            "feature_3": "24/7 Endurance"
+          }
+        }
+      },
+      "block_order": [
+        "location_E3Habz",
+        "location_cr3WAN",
+        "location_iHYtRK",
+        "location_BP7Cjk",
+        "location_G8zkmc",
+        "location_JDKMgy"
+      ],
+      "name": "Where It Performs",
+      "settings": {
+        "subtitle": "",
+        "title": "Where It Performs",
+        "description": "<p>Engineered for excellence across diverse high-demanding environments and architecturally refined spaces.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#ffffff",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "catalog_fullwidth_feature_main": {
       "type": "catalog-fullwidth-feature",
       "name": "Full Width Feature Section",
@@ -42,6 +154,7 @@
         "mobile_height": "400px",
         "media_type": "image",
         "image": "shopify://shop_images/UltiSpark_Entry_Grey_46c7093a-8067-4b94-ad70-afcc458bd1c8.jpg",
+        "video": "shopify://files/videos/UltiSpark Texture.mp4",
         "video_url_mp4": "",
         "video_url_external": "",
         "mobile_video_url_mp4": "",
@@ -49,7 +162,7 @@
         "video_loop": true,
         "video_muted": true,
         "overlay_color": "#000000",
-        "overlay_opacity": 30,
+        "overlay_opacity": 55,
         "card_position": "right",
         "text_alignment": "left",
         "mobile_text_alignment": "center",
@@ -60,10 +173,10 @@
         "enable_glassmorphism": false,
         "badge": "",
         "badge_color": "#555555",
-        "heading": "ultispark",
+        "heading": "",
         "heading_size": 32,
         "heading_color": "#111111",
-        "description": "<p>Polypropylene looped pile dual stiffness fiber commercial matting in ribbed pattern with tough vinyl backing and all-around compressed borders</p>",
+        "description": "",
         "description_size": 15,
         "description_color": "#444444",
         "button_label": "",
@@ -126,17 +239,21 @@
         "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
       }
     },
-    "three_layer_feature_main": {
-      "type": "three-layer-feature",
-      "name": "Three Layer Feature",
+    "before_after_dU69HD": {
+      "type": "before-after",
+      "name": "t:sections.before-and-after.name",
       "settings": {
-        "bg_color": "#000000",
-        "text_color": "#ffffff",
-        "video": "shopify://files/videos/2nd.mp4",
-        "video_url": "",
-        "asset_video_name": "",
-        "heading": "ULTISPARK LAYER TECH",
-        "description": "<p>Multi-textured scraping channels catch coarse dirt while fine plush zones absorb moisture.</p><p>Each layer traps dirt individually to ensure that your space stays clean throughout the day.</p>"
+        "title": "Before & after",
+        "description": "Add a product feature or answer a common questions about your products.",
+        "font_size": 100,
+        "label_before": "Before",
+        "label_after": "After",
+        "initial_position": 50,
+        "button_label": "Optional Button",
+        "button_link": "",
+        "color_text": "primary-text-1",
+        "padding_top": 44,
+        "padding_bottom": 44
       }
     },
     "catalog_performance_specs_main": {
@@ -313,6 +430,8 @@
         "location_1": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "image": "shopify://shop_images/floor_mat.png",
             "title": "Boutique Offices",
             "tag": "Luxury Look",
@@ -325,6 +444,8 @@
         "location_2": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
             "title": "Hotel Entrances",
             "tag": "",
@@ -356,49 +477,6 @@
         "enable_glassmorphism": true,
         "card_border_radius": 16,
         "max_width": 1400,
-        "padding_top": 64,
-        "padding_bottom": 64
-      }
-    },
-    "catalog_resources_main": {
-      "type": "catalog-resources",
-      "settings": {
-        "subtitle": "",
-        "title": "Resources & Specifications",
-        "description": "<p>Essential technical documentation and video demonstrations curated for Architects and Interior Designers.</p>",
-        "header_alignment": "center",
-        "title_font_size": 36,
-        "pdf_badge": "",
-        "pdf_title": "TECHNICAL DATA",
-        "pdf_desc": "Complete product specifications and pattern documentation.",
-        "pdf_spec_1": "Material & Pattern Data Sheet",
-        "pdf_spec_2": "Architectural Dimensions",
-        "pdf_spec_3": "Fire & Safety Certifications",
-        "pdf_url": "",
-        "pdf_btn_text": "Download Technical Specs (PDF)",
-        "video_badge": "",
-        "video_title": "PRODUCT DEMO",
-        "video_desc": "Product overview video showing pattern texture and scraping action.",
-        "video_spec_1": "Real-time texture demonstration",
-        "video_spec_2": "Vacuuming & cleaning demo",
-        "video_spec_3": "Border durability test",
-        "youtube_url": "",
-        "video_btn_text": "Watch Product Demo Video",
-        "section_bg_color": "#f8f9fa",
-        "card_bg_color": "#ffffff",
-        "card_border_color": "#e5e7eb",
-        "accent_color": "#0066ff",
-        "heading_color": "#111827",
-        "text_color": "#4b5563",
-        "btn_primary_bg": "#111827",
-        "btn_primary_text": "#ffffff",
-        "btn_secondary_bg": "#ffffff",
-        "btn_secondary_text": "#111827",
-        "btn_secondary_border": "#d1d5db",
-        "enable_glassmorphism": true,
-        "card_border_radius": 16,
-        "btn_border_radius": 10,
-        "max_width": 1200,
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -436,69 +514,6 @@
         "max_width": 1100,
         "padding_top": 56,
         "padding_bottom": 56
-      }
-    },
-    "catalog_product_family_main": {
-      "type": "catalog-product-family",
-      "blocks": {
-        "prod_1": {
-          "type": "product_item",
-          "settings": {
-            "selected_product": "ultiscrape-carpet-mat",
-            "custom_title": "",
-            "custom_desc": "",
-            "custom_url": ""
-          }
-        },
-        "prod_2": {
-          "type": "product_item",
-          "settings": {
-            "selected_product": "ultiscrub-carpet-mat-1",
-            "custom_title": "",
-            "custom_desc": "",
-            "custom_url": ""
-          }
-        },
-        "prod_3": {
-          "type": "product_item",
-          "settings": {
-            "selected_product": "ulticlean-carpet-mat-1",
-            "custom_title": "",
-            "custom_desc": "",
-            "custom_url": ""
-          }
-        },
-        "prod_4": {
-          "type": "product_item",
-          "settings": {
-            "selected_product": "ultidure-carpet-mat",
-            "custom_title": "",
-            "custom_desc": "",
-            "custom_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "prod_1",
-        "prod_2",
-        "prod_3",
-        "prod_4"
-      ],
-      "settings": {
-        "subtitle": "",
-        "title": "Complete the Entrance Solution",
-        "title_font_size": 32,
-        "section_bg_color": "#f8f9fa",
-        "card_bg_color": "#ffffff",
-        "card_border_color": "#e5e7eb",
-        "accent_color": "#0066ff",
-        "heading_color": "#111827",
-        "text_color": "#6b7280",
-        "enable_glassmorphism": true,
-        "card_border_radius": 16,
-        "max_width": 1400,
-        "padding_top": 64,
-        "padding_bottom": 64
       }
     },
     "premium_faq_main": {
@@ -599,15 +614,14 @@
   },
   "order": [
     "catalog_hero_main",
+    "catalog_where_it_performs_Kx6QnA",
     "catalog_fullwidth_feature_main",
     "promise_slider_main",
-    "three_layer_feature_main",
+    "before_after_dU69HD",
     "catalog_performance_specs_main",
     "catalog_care_main",
-    "catalog_where_it_performs_main",
-    "catalog_resources_main",
     "catalog_purchase_cta_main",
-    "catalog_product_family_main",
+    "catalog_where_it_performs_main",
     "premium_faq_main",
     "contact_form_main"
   ]
