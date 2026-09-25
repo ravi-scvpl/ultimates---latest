@@ -441,65 +441,9 @@
         "padding_bottom": 64
       }
     },
-    "catalog_where_it_performs_main": {
-      "type": "catalog-where-it-performs",
-      "blocks": {
-        "location_1": {
-          "type": "location",
-          "settings": {
-            "product": "",
-            "url": "",
-            "image": "shopify://shop_images/UltiDure_6x4_Mall.png",
-            "title": "Malls & Retail Lobbies",
-            "tag": "High Footfall",
-            "description": "Handles millions of footsteps while retaining original pile shape.",
-            "feature_1": "Nylon 6.6 Strength",
-            "feature_2": "Heavy Absorption",
-            "feature_3": "High Resilience"
-          }
-        },
-        "location_2": {
-          "type": "location",
-          "settings": {
-            "product": "",
-            "url": "",
-            "image": "shopify://shop_images/UltiDure_Grey_Entrance_Long_1000.png",
-            "title": "Hotels & Airports",
-            "tag": "Extreme Duty",
-            "description": "Maintains luxury hotel entrance appearance under luggage and continuous foot traffic.",
-            "feature_1": "Anti-Skid Nitrile",
-            "feature_2": "Machine Washable",
-            "feature_3": "Noise Dampening"
-          }
-        }
-      },
-      "block_order": [
-        "location_1",
-        "location_2"
-      ],
-      "settings": {
-        "subtitle": "",
-        "title": "Where It Performs",
-        "description": "<p>Engineered for high-footfall public facilities, luxury hotels, and commercial buildings.</p>",
-        "header_alignment": "center",
-        "title_font_size": 36,
-        "columns_desktop": 3,
-        "grid_gap": 24,
-        "item_aspect_ratio": "4 / 3",
-        "mobile_item_aspect_ratio": "4 / 3",
-        "section_bg_color": "#e1e1e1",
-        "accent_color": "#0066ff",
-        "heading_color": "#111827",
-        "text_color": "#4b5563",
-        "enable_glassmorphism": true,
-        "card_border_radius": 16,
-        "max_width": 1400,
-        "padding_top": 64,
-        "padding_bottom": 64
-      }
-    },
     "catalog_resources_main": {
       "type": "catalog-resources",
+      "disabled": true,
       "settings": {
         "subtitle": "",
         "title": "Resources & Specifications",
@@ -547,11 +491,13 @@
         "subtitle": "",
         "title": "Looking to purchase?",
         "title_font_size": 32,
+        "card1_image": "shopify://shop_images/Ultimat_HD_3_mat_rolls.png",
         "card1_title": "STANDARD SIZES",
         "card1_desc": "Explore available standard-size mats for immediate dispatch.",
         "card1_product": "ultidure-carpet-mat",
         "card1_url": "/products/ultidure-carpet-mat",
         "card1_btn_label": "Explore Standard Sizes",
+        "card2_image": "shopify://shop_images/ULTIMATS.jpg",
         "card2_title": "MADE TO MEASURE",
         "card2_desc": "Customize to your exact size or custom architectural layout.",
         "card2_product": "",
@@ -622,6 +568,7 @@
         "prod_3",
         "prod_4"
       ],
+      "disabled": true,
       "settings": {
         "subtitle": "",
         "title": "Complete the Entrance Solution",
@@ -632,6 +579,63 @@
         "accent_color": "#0066ff",
         "heading_color": "#111827",
         "text_color": "#6b7280",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "catalog_where_it_performs_main": {
+      "type": "catalog-where-it-performs",
+      "blocks": {
+        "location_1": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "image": "shopify://shop_images/UltiDure_6x4_Mall.png",
+            "title": "Malls & Retail Lobbies",
+            "tag": "High Footfall",
+            "description": "Handles millions of footsteps while retaining original pile shape.",
+            "feature_1": "Nylon 6.6 Strength",
+            "feature_2": "Heavy Absorption",
+            "feature_3": "High Resilience"
+          }
+        },
+        "location_2": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "image": "shopify://shop_images/UltiDure_Grey_Entrance_Long_1000.png",
+            "title": "Hotels & Airports",
+            "tag": "Extreme Duty",
+            "description": "Maintains luxury hotel entrance appearance under luggage and continuous foot traffic.",
+            "feature_1": "Anti-Skid Nitrile",
+            "feature_2": "Machine Washable",
+            "feature_3": "Noise Dampening"
+          }
+        }
+      },
+      "block_order": [
+        "location_1",
+        "location_2"
+      ],
+      "settings": {
+        "subtitle": "",
+        "title": "complete the Entrance Solution",
+        "description": "<p>Engineered for high-footfall public facilities, luxury hotels, and commercial buildings.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#e1e1e1",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
         "enable_glassmorphism": true,
         "card_border_radius": 16,
         "max_width": 1400,
@@ -753,10 +757,10 @@
     "three_layer_feature_main",
     "catalog_performance_specs_main",
     "catalog_care_main",
-    "catalog_where_it_performs_main",
     "catalog_resources_main",
     "catalog_purchase_cta_main",
     "catalog_product_family_main",
+    "catalog_where_it_performs_main",
     "premium_faq_main",
     "contact_form_main"
   ]
