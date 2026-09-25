@@ -222,9 +222,140 @@
         "padding_top": 40,
         "padding_bottom": 40
       }
+    },
+    "before_after_f3QJRC": {
+      "type": "before-after",
+      "name": "t:sections.before-and-after.name",
+      "settings": {
+        "title": "Before & after",
+        "description": "Add a product feature or answer a common questions about your products.",
+        "font_size": 100,
+        "label_before": "Before",
+        "label_after": "After",
+        "initial_position": 50,
+        "button_label": "Optional Button",
+        "button_link": "",
+        "color_text": "primary-text-1",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "catalog_where_it_performs_g4cHJM": {
+      "type": "catalog-where-it-performs",
+      "blocks": {
+        "location_gbjUqq": {
+          "type": "location",
+          "settings": {
+            "product": "ulticlean-carpet-mat-1",
+            "url": "",
+            "title": "Ulticlean",
+            "tag": "",
+            "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": ""
+          }
+        },
+        "location_pX7bUM": {
+          "type": "location",
+          "settings": {
+            "product": "ultidure-carpet-mat",
+            "url": "",
+            "title": "UltiDure",
+            "tag": "",
+            "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
+            "feature_1": "Executive Foyers",
+            "feature_2": "Noise Reduction",
+            "feature_3": "Anti-Slip"
+          }
+        },
+        "location_Y66JHH": {
+          "type": "location",
+          "settings": {
+            "product": "ultimat-heavy-duty-vinyl-looped-matting",
+            "url": "",
+            "title": "Ultimat",
+            "tag": "",
+            "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
+            "feature_1": "Storefronts",
+            "feature_2": "Dirt Trapping",
+            "feature_3": "Heavy Duty"
+          }
+        },
+        "location_gm8YkM": {
+          "type": "location",
+          "settings": {
+            "product": "ultiscrape-carpet-mat",
+            "url": "",
+            "title": "Ultiscrape",
+            "tag": "Ideal Location",
+            "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
+            "feature_1": "Hygienic Clean",
+            "feature_2": "Easy Sanitization",
+            "feature_3": "Wheelchair Safe"
+          }
+        },
+        "location_terQfk": {
+          "type": "location",
+          "settings": {
+            "product": "ultirake-carpet-mat",
+            "url": "",
+            "title": "UltiRake",
+            "tag": "",
+            "description": "Robust, high-durability protection engineered to withstand constant student activity.",
+            "feature_1": "High Durability",
+            "feature_2": "Scuff Resistant",
+            "feature_3": "Safe & Non-Slip"
+          }
+        },
+        "location_iegcxj": {
+          "type": "location",
+          "settings": {
+            "product": "ultizig-barrier-mat-with-backing",
+            "url": "",
+            "title": "Ultizig",
+            "tag": "Ideal Location",
+            "description": "Maximum debris retention and water absorption at main building access points.",
+            "feature_1": "Debris Control",
+            "feature_2": "Water Absorbing",
+            "feature_3": "24/7 Endurance"
+          }
+        }
+      },
+      "block_order": [
+        "location_gbjUqq",
+        "location_pX7bUM",
+        "location_Y66JHH",
+        "location_gm8YkM",
+        "location_terQfk",
+        "location_iegcxj"
+      ],
+      "name": "Where It Performs",
+      "settings": {
+        "subtitle": "",
+        "title": "Complete the Entrance Solution",
+        "description": "",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#ffffff",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
     }
   },
   "order": [
+    "before_after_f3QJRC",
+    "catalog_where_it_performs_g4cHJM",
     "main",
     "contained_video_box",
     "feature_grid",
