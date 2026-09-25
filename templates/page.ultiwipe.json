@@ -32,6 +32,118 @@
         "padding_bottom": 0
       }
     },
+    "catalog_where_it_performs_DjTAXK": {
+      "type": "catalog-where-it-performs",
+      "blocks": {
+        "location_WkpQMY": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Hotels",
+            "tag": "",
+            "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
+            "feature_1": "Lobby Entrances",
+            "feature_2": "Elegance Protection",
+            "feature_3": "High Traffic"
+          }
+        },
+        "location_wnrWXJ": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Corporate Offices",
+            "tag": "",
+            "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
+            "feature_1": "Executive Foyers",
+            "feature_2": "Noise Reduction",
+            "feature_3": "Anti-Slip"
+          }
+        },
+        "location_RWP8Mr": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Retail",
+            "tag": "",
+            "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
+            "feature_1": "Storefronts",
+            "feature_2": "Dirt Trapping",
+            "feature_3": "Heavy Duty"
+          }
+        },
+        "location_XmCair": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Hospitals",
+            "tag": "",
+            "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
+            "feature_1": "Hygienic Clean",
+            "feature_2": "Easy Sanitization",
+            "feature_3": "Wheelchair Safe"
+          }
+        },
+        "location_NPpJBG": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Schools & Institutions",
+            "tag": "",
+            "description": "Robust, high-durability protection engineered to withstand constant student activity.",
+            "feature_1": "High Durability",
+            "feature_2": "Scuff Resistant",
+            "feature_3": "Safe & Non-Slip"
+          }
+        },
+        "location_dCiwcM": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "High-Traffic Entrances",
+            "tag": "",
+            "description": "Maximum debris retention and water absorption at main building access points.",
+            "feature_1": "Debris Control",
+            "feature_2": "Water Absorbing",
+            "feature_3": "24/7 Endurance"
+          }
+        }
+      },
+      "block_order": [
+        "location_WkpQMY",
+        "location_wnrWXJ",
+        "location_RWP8Mr",
+        "location_XmCair",
+        "location_NPpJBG",
+        "location_dCiwcM"
+      ],
+      "name": "Where It Performs",
+      "settings": {
+        "subtitle": "",
+        "title": "Where It Performs",
+        "description": "<p>Engineered for excellence across diverse high-demanding environments and architecturally refined spaces.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#ffffff",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "catalog_fullwidth_feature_main": {
       "type": "catalog-fullwidth-feature",
       "name": "Full Width Feature Section",
@@ -118,6 +230,7 @@
       ],
       "name": "Promise Slider",
       "settings": {
+        "background_video": "shopify://files/videos/3rd.mp4",
         "background_video_url": "",
         "section_height": 800,
         "padding_top": 100,
@@ -360,49 +473,6 @@
         "padding_bottom": 64
       }
     },
-    "catalog_resources_main": {
-      "type": "catalog-resources",
-      "settings": {
-        "subtitle": "",
-        "title": "Resources & Specifications",
-        "description": "<p>Essential technical documentation and video demonstrations curated for Architects, Builders, and PMCs.</p>",
-        "header_alignment": "center",
-        "title_font_size": 36,
-        "pdf_badge": "",
-        "pdf_title": "TECHNICAL DATA",
-        "pdf_desc": "Complete product specifications, absorbency ratings, and maintenance guidelines.",
-        "pdf_spec_1": "Comprehensive Material & Spec Data",
-        "pdf_spec_2": "Water Absorption Test Results",
-        "pdf_spec_3": "Safety & Eco Certifications",
-        "pdf_url": "",
-        "pdf_btn_text": "Download Technical Specs (PDF)",
-        "video_badge": "",
-        "video_title": "PRODUCT DEMO",
-        "video_desc": "Product overview video showing walking action and moisture wiping efficiency.",
-        "video_spec_1": "Real-time wet shoe drying",
-        "video_spec_2": "Quick drying mat surface",
-        "video_spec_3": "Tough border durability",
-        "youtube_url": "",
-        "video_btn_text": "Watch Product Demo Video",
-        "section_bg_color": "#f8f9fa",
-        "card_bg_color": "#ffffff",
-        "card_border_color": "#e5e7eb",
-        "accent_color": "#0066ff",
-        "heading_color": "#111827",
-        "text_color": "#4b5563",
-        "btn_primary_bg": "#111827",
-        "btn_primary_text": "#ffffff",
-        "btn_secondary_bg": "#ffffff",
-        "btn_secondary_text": "#111827",
-        "btn_secondary_border": "#d1d5db",
-        "enable_glassmorphism": true,
-        "card_border_radius": 16,
-        "btn_border_radius": 10,
-        "max_width": 1200,
-        "padding_top": 64,
-        "padding_bottom": 64
-      }
-    },
     "catalog_purchase_cta_main": {
       "type": "catalog-purchase-cta",
       "settings": {
@@ -609,12 +679,12 @@
   },
   "order": [
     "catalog_hero_main",
+    "catalog_where_it_performs_DjTAXK",
     "catalog_fullwidth_feature_main",
     "promise_slider_main",
     "catalog_performance_specs_main",
     "catalog_care_main",
     "catalog_where_it_performs_main",
-    "catalog_resources_main",
     "catalog_purchase_cta_main",
     "catalog_product_family_main",
     "premium_faq_main",
