@@ -129,11 +129,12 @@
       ],
       "name": "Promise Slider",
       "settings": {
+        "background_video": "shopify://files/videos/Ultimats Ramp.mp4",
         "background_video_url": "",
         "section_height": 800,
         "padding_top": 100,
         "padding_bottom": 100,
-        "overlay_opacity": 40,
+        "overlay_opacity": 65,
         "heading": "ULTIMAT PROPERTIES",
         "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
       }
