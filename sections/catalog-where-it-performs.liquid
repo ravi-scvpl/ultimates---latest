@@ -381,8 +381,7 @@
                   {% if card_image != blank %}
                     <img class="catalog-performs__image" src="{{ card_image | image_url: width: 800 }}" alt="{{ card_title | escape }}" loading="lazy" width="800" height="600">
                   {% else %}
-                    {% assign placeholder_index = forloop.index | cycle: 1, 2, 3, 4, 5, 6 %}
-                    {{ 'lifestyle-' | append: placeholder_index | placeholder_svg_tag: 'catalog-performs__image' }}
+                    {{ 'product-1' | placeholder_svg_tag: 'catalog-performs__image' }}
                   {% endif %}
                 </div>
 
@@ -391,11 +390,6 @@
                   <div class="catalog-performs__label-default">
                     <div>
                       <h3 class="catalog-performs__location-name">{{ card_title | escape }}</h3>
-                      {% if card_product != blank and card_product.price != blank %}
-                        <span class="catalog-performs__product-price" style="font-size: 13px; color: rgba(255,255,255,0.8); display: block; margin-top: 2px;">
-                          {{ card_product.price | money }}
-                        </span>
-                      {% endif %}
                     </div>
                     <div class="catalog-performs__icon-arrow">
                       <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -405,10 +399,12 @@
 
                 <!-- Hover Overlay Details -->
                 <div class="catalog-performs__overlay">
-                  <span class="catalog-performs__overlay-tag">
-                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    {{ block.settings.tag | default: 'Ideal Application' }}
-                  </span>
+                  {% if block.settings.tag != blank %}
+                    <span class="catalog-performs__overlay-tag">
+                      <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                      {{ block.settings.tag }}
+                    </span>
+                  {% endif %}
                   
                   {% if card_title != blank %}
                     <h3 class="catalog-performs__overlay-title">{{ card_title | escape }}</h3>
@@ -731,8 +727,7 @@
         {
           "type": "text",
           "id": "tag",
-          "label": "Category Tag",
-          "default": "Ideal Location"
+          "label": "Category Tag (Optional - leave empty to hide)"
         },
         {
           "type": "textarea",
