@@ -32,6 +32,118 @@
         "padding_bottom": 0
       }
     },
+    "catalog_where_it_performs_xQ96Uq": {
+      "type": "catalog-where-it-performs",
+      "blocks": {
+        "location_kREw8k": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Hotels",
+            "tag": "",
+            "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
+            "feature_1": "Lobby Entrances",
+            "feature_2": "Elegance Protection",
+            "feature_3": "High Traffic"
+          }
+        },
+        "location_NL3VD6": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Corporate Offices",
+            "tag": "",
+            "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
+            "feature_1": "Executive Foyers",
+            "feature_2": "Noise Reduction",
+            "feature_3": "Anti-Slip"
+          }
+        },
+        "location_gDCAnB": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Retail",
+            "tag": "",
+            "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
+            "feature_1": "Storefronts",
+            "feature_2": "Dirt Trapping",
+            "feature_3": "Heavy Duty"
+          }
+        },
+        "location_HppEKa": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Hospitals",
+            "tag": "",
+            "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
+            "feature_1": "Hygienic Clean",
+            "feature_2": "Easy Sanitization",
+            "feature_3": "Wheelchair Safe"
+          }
+        },
+        "location_GTGGB8": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "Schools & Institutions",
+            "tag": "",
+            "description": "Robust, high-durability protection engineered to withstand constant student activity.",
+            "feature_1": "High Durability",
+            "feature_2": "Scuff Resistant",
+            "feature_3": "Safe & Non-Slip"
+          }
+        },
+        "location_jqe7HU": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "High-Traffic Entrances",
+            "tag": "",
+            "description": "Maximum debris retention and water absorption at main building access points.",
+            "feature_1": "Debris Control",
+            "feature_2": "Water Absorbing",
+            "feature_3": "24/7 Endurance"
+          }
+        }
+      },
+      "block_order": [
+        "location_kREw8k",
+        "location_NL3VD6",
+        "location_gDCAnB",
+        "location_HppEKa",
+        "location_GTGGB8",
+        "location_jqe7HU"
+      ],
+      "name": "Where It Performs",
+      "settings": {
+        "subtitle": "",
+        "title": "Where It Performs",
+        "description": "<p>Engineered for excellence across diverse high-demanding environments and architecturally refined spaces.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#ffffff",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
     "catalog_fullwidth_feature_main": {
       "type": "catalog-fullwidth-feature",
       "name": "Full Width Feature Section",
@@ -324,6 +436,8 @@
         "location_1": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "image": "shopify://shop_images/floor_mat.png",
             "title": "Commercial Entrances",
             "tag": "Multi-angle",
@@ -336,6 +450,8 @@
         "location_2": {
           "type": "location",
           "settings": {
+            "product": "",
+            "url": "",
             "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
             "title": "Transit Corridors",
             "tag": "",
@@ -620,6 +736,7 @@
   },
   "order": [
     "catalog_hero_main",
+    "catalog_where_it_performs_xQ96Uq",
     "catalog_fullwidth_feature_main",
     "promise_slider_main",
     "three_layer_feature_main",
