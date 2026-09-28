@@ -13,7 +13,8 @@
       "type": "catalog-hero",
       "name": "Catalog Hero Banner",
       "settings": {
-        "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
+        "image": "shopify://shop_images/corporate.png",
+        "mobile_image": "shopify://shop_images/corporate.png",
         "overlay_color": "#000000",
         "overlay_opacity": 40,
         "section_height_desktop": "600px",
@@ -30,6 +31,63 @@
         "description_color": "#e0e0e0",
         "padding_top": 0,
         "padding_bottom": 0
+      }
+    },
+    "catalog_where_it_performs_main": {
+      "type": "catalog-where-it-performs",
+      "blocks": {
+        "location_1": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
+            "title": "Airports & Railway Terminals",
+            "tag": "Max Traffic",
+            "description": "Supports heavy rolling luggage, wheelchairs, and trolley traffic seamlessly.",
+            "feature_1": "600kg Load Rating",
+            "feature_2": "10M Traffic Rating",
+            "feature_3": "ADA Compliant"
+          }
+        },
+        "location_2": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "image": "shopify://shop_images/floor_mat.png",
+            "title": "Shopping Malls & Commercial Towers",
+            "tag": "Architectural Recessed",
+            "description": "Sits flush with entrance floor finishes for luxury architectural lobbies.",
+            "feature_1": "Flush Matwell Installation",
+            "feature_2": "Replaceable Infill Strips",
+            "feature_3": "5-Year Warranty"
+          }
+        }
+      },
+      "block_order": [
+        "location_1",
+        "location_2"
+      ],
+      "settings": {
+        "subtitle": "",
+        "title": "Where It Performs",
+        "description": "<p>Engineered for high-capacity public transport hubs, commercial towers, and retail complexes.</p>",
+        "header_alignment": "center",
+        "title_font_size": 36,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "item_aspect_ratio": "4 / 3",
+        "mobile_item_aspect_ratio": "4 / 3",
+        "section_bg_color": "#e1e1e1",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "max_width": 1400,
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "catalog_fullwidth_feature_main": {
@@ -306,63 +364,6 @@
         "enable_glassmorphism": true,
         "media_aspect_ratio": "16 / 9",
         "mobile_media_aspect_ratio": "16 / 9",
-        "card_border_radius": 16,
-        "max_width": 1400,
-        "padding_top": 64,
-        "padding_bottom": 64
-      }
-    },
-    "catalog_where_it_performs_main": {
-      "type": "catalog-where-it-performs",
-      "blocks": {
-        "location_1": {
-          "type": "location",
-          "settings": {
-            "product": "",
-            "url": "",
-            "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
-            "title": "Airports & Railway Terminals",
-            "tag": "Max Traffic",
-            "description": "Supports heavy rolling luggage, wheelchairs, and trolley traffic seamlessly.",
-            "feature_1": "600kg Load Rating",
-            "feature_2": "10M Traffic Rating",
-            "feature_3": "ADA Compliant"
-          }
-        },
-        "location_2": {
-          "type": "location",
-          "settings": {
-            "product": "",
-            "url": "",
-            "image": "shopify://shop_images/floor_mat.png",
-            "title": "Shopping Malls & Commercial Towers",
-            "tag": "Architectural Recessed",
-            "description": "Sits flush with entrance floor finishes for luxury architectural lobbies.",
-            "feature_1": "Flush Matwell Installation",
-            "feature_2": "Replaceable Infill Strips",
-            "feature_3": "5-Year Warranty"
-          }
-        }
-      },
-      "block_order": [
-        "location_1",
-        "location_2"
-      ],
-      "settings": {
-        "subtitle": "",
-        "title": "Where It Performs",
-        "description": "<p>Engineered for high-capacity public transport hubs, commercial towers, and retail complexes.</p>",
-        "header_alignment": "center",
-        "title_font_size": 36,
-        "columns_desktop": 3,
-        "grid_gap": 24,
-        "item_aspect_ratio": "4 / 3",
-        "mobile_item_aspect_ratio": "4 / 3",
-        "section_bg_color": "#e1e1e1",
-        "accent_color": "#0066ff",
-        "heading_color": "#111827",
-        "text_color": "#4b5563",
-        "enable_glassmorphism": true,
         "card_border_radius": 16,
         "max_width": 1400,
         "padding_top": 64,
