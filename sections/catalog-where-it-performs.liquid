@@ -14,14 +14,14 @@
     overflow: hidden;
   }
 
-  .catalog-performs__container {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__container {
     max-width: {{ section.settings.max_width }}px;
     margin: 0 auto;
     padding: 0 24px;
     box-sizing: border-box;
   }
 
-  .catalog-performs__header {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__header {
     text-align: {{ section.settings.header_alignment }};
     margin-bottom: 48px;
     max-width: 800px;
@@ -37,7 +37,7 @@
     {% endif %}
   }
 
-  .catalog-performs__subtitle {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__subtitle {
     display: inline-block;
     font-size: 13px;
     font-weight: 700;
@@ -47,7 +47,7 @@
     margin-bottom: 12px;
   }
 
-  .catalog-performs__title {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__title {
     font-size: {{ section.settings.title_font_size }}px;
     line-height: 1.2;
     font-weight: 700;
@@ -56,7 +56,7 @@
     letter-spacing: -0.02em;
   }
 
-  .catalog-performs__description {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__description {
     font-size: 16px;
     line-height: 1.6;
     color: {{ section.settings.text_color }};
@@ -64,27 +64,27 @@
   }
 
   /* Gallery Grid & Slider Layout */
-  .catalog-performs__gallery {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__gallery {
     margin: 0 -12px;
   }
 
-  .catalog-performs__gallery.slick-initialized .slick-track {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__gallery.slick-initialized .slick-track {
     display: flex !important;
     max-width: none !important;
   }
 
-  .catalog-performs__gallery.slick-initialized .slick-slide {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__gallery.slick-initialized .slick-slide {
     height: auto !important;
     display: flex !important;
     max-width: none !important;
   }
 
-  .catalog-performs__gallery.slick-initialized .slick-slide > div {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__gallery.slick-initialized .slick-slide > div {
     width: 100%;
     display: flex;
   }
 
-  .catalog-performs__card-wrapper {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__card-wrapper {
     padding: 0 12px;
     outline: none;
     width: 100%;
@@ -92,7 +92,7 @@
   }
 
   /* Slider Controls & Progress Bar Scrollbar */
-  .catalog-performs__controls {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__controls {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,7 +101,7 @@
     padding: 0 12px;
   }
 
-  .catalog-performs__controls button {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__controls button {
     background: transparent;
     border: 1px solid rgba(17, 24, 39, 0.3);
     border-radius: 50%;
@@ -115,12 +115,12 @@
     transition: all 0.3s ease;
   }
 
-  .catalog-performs__controls button:hover {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__controls button:hover {
     background: rgba(17, 24, 39, 0.08);
     border-color: {{ section.settings.heading_color }};
   }
 
-  .catalog-performs__progress-container {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__progress-container {
     flex: 1;
     max-width: 400px;
     height: 3px;
@@ -130,7 +130,7 @@
     overflow: hidden;
   }
 
-  .catalog-performs__progress-bar {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__progress-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -142,7 +142,7 @@
   }
 
   /* Item Card */
-  .catalog-performs__item {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__item {
     position: relative;
     width: 100%;
     border-radius: {{ section.settings.card_border_radius }}px;
@@ -154,14 +154,14 @@
   }
 
   /* Image & Zoom Animation */
-  .catalog-performs__image-wrap {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__image-wrap {
     width: 100%;
     height: 100%;
     position: relative;
     overflow: hidden;
   }
 
-  .catalog-performs__image {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -169,13 +169,13 @@
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .catalog-performs__item:hover .catalog-performs__image {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__image {
     transform: scale({{ section.settings.hover_image_zoom | default: 108 | divided_by: 100.0 }});
     filter: brightness(0.85){% if section.settings.hover_image_blur > 0 %} blur({{ section.settings.hover_image_blur }}px){% endif %};
   }
 
   /* Default Visible Label (Bottom Bar) */
-  .catalog-performs__label-default {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__label-default {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -190,13 +190,13 @@
   }
 
   {% if section.settings.enable_glassmorphism %}
-    .catalog-performs__item:hover .catalog-performs__label-default {
+    #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__label-default {
       opacity: 0;
       transform: translateY(10px);
     }
   {% endif %}
 
-  .catalog-performs__location-name {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__location-name {
     font-size: 18px;
     font-weight: 700;
     color: #ffffff;
@@ -204,7 +204,7 @@
     letter-spacing: -0.01em;
   }
 
-  .catalog-performs__icon-arrow {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__icon-arrow {
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -216,7 +216,7 @@
     color: #ffffff;
   }
 
-  .catalog-performs__icon-arrow svg {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__icon-arrow svg {
     width: 12px;
     height: 12px;
     stroke: currentColor;
@@ -224,7 +224,7 @@
   }
 
   /* Hover Full Glass Overlay */
-  .catalog-performs__overlay {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__overlay {
     position: absolute;
     inset: 0;
     z-index: 3;
@@ -248,17 +248,17 @@
   }
 
   {% if section.settings.enable_glassmorphism %}
-    .catalog-performs__item:hover .catalog-performs__overlay {
+    #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__overlay {
       opacity: 1;
       visibility: visible;
     }
   {% else %}
-    .catalog-performs__overlay {
+    #CatalogPerforms-{{ section.id }} .catalog-performs__overlay {
       display: none !important;
     }
   {% endif %}
 
-  .catalog-performs__overlay-tag {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__overlay-tag {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -272,7 +272,7 @@
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
   }
 
-  .catalog-performs__overlay-title {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__overlay-title {
     font-size: 22px;
     font-weight: 700;
     color: #ffffff;
@@ -281,7 +281,7 @@
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
   }
 
-  .catalog-performs__overlay-desc {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__overlay-desc {
     font-size: 14px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.85);
@@ -290,7 +290,7 @@
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
   }
 
-  .catalog-performs__overlay-features {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__overlay-features {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -301,14 +301,14 @@
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
   }
 
-  .catalog-performs__item:hover .catalog-performs__overlay-tag,
-  .catalog-performs__item:hover .catalog-performs__overlay-title,
-  .catalog-performs__item:hover .catalog-performs__overlay-desc,
-  .catalog-performs__item:hover .catalog-performs__overlay-features {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__overlay-tag,
+  #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__overlay-title,
+  #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__overlay-desc,
+  #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__overlay-features {
     transform: translateY(0);
   }
 
-  .catalog-performs__feature-pill {
+  #CatalogPerforms-{{ section.id }} .catalog-performs__feature-pill {
     font-size: 11px;
     font-weight: 600;
     padding: 4px 10px;
