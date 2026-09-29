@@ -13,7 +13,7 @@
       "type": "catalog-hero",
       "name": "Catalog Hero Banner",
       "settings": {
-        "image": "shopify://shop_images/UltiZig_Lady_Walking_with_borders.png",
+        "image": "shopify://shop_images/hero_image.png",
         "overlay_color": "#000000",
         "overlay_opacity": 40,
         "section_height_desktop": "800px",
@@ -40,6 +40,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/hotels.png",
             "title": "Hotels",
             "tag": "",
             "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
@@ -137,7 +138,7 @@
         "accent_color": "#0066ff",
         "heading_color": "#111827",
         "text_color": "#4b5563",
-        "enable_glassmorphism": true,
+        "enable_glassmorphism": false,
         "card_border_radius": 16,
         "max_width": 1400,
         "padding_top": 64,
@@ -435,6 +436,41 @@
         "padding_bottom": 64
       }
     },
+    "catalog_purchase_cta_main": {
+      "type": "catalog-purchase-cta",
+      "settings": {
+        "subtitle": "",
+        "title": "Looking to purchase?",
+        "title_font_size": 32,
+        "card1_title": "STANDARD SIZES",
+        "card1_desc": "Explore available standard-size mats for immediate dispatch.",
+        "card1_product": "",
+        "card1_url": "",
+        "card1_btn_label": "Explore Standard Sizes",
+        "card2_title": "MADE TO MEASURE",
+        "card2_desc": "Customize to your exact size or custom architectural layout.",
+        "card2_product": "",
+        "card2_url": "/pages/made-to-measure-mats",
+        "card2_btn_label": "Customize To Your Exact Size",
+        "section_bg_color": "#e1e1e1",
+        "card_bg_color": "#f9fafb",
+        "card_border_color": "#e5e7eb",
+        "accent_color": "#0066ff",
+        "heading_color": "#111827",
+        "text_color": "#4b5563",
+        "btn1_bg": "#111827",
+        "btn1_text": "#ffffff",
+        "btn2_bg": "#ffffff",
+        "btn2_text": "#111827",
+        "btn2_border": "#111827",
+        "enable_glassmorphism": true,
+        "card_border_radius": 16,
+        "btn_border_radius": 8,
+        "max_width": 1100,
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
     "catalog_where_it_performs_main": {
       "type": "catalog-where-it-performs",
       "blocks": {
@@ -490,41 +526,6 @@
         "max_width": 1400,
         "padding_top": 64,
         "padding_bottom": 64
-      }
-    },
-    "catalog_purchase_cta_main": {
-      "type": "catalog-purchase-cta",
-      "settings": {
-        "subtitle": "",
-        "title": "Looking to purchase?",
-        "title_font_size": 32,
-        "card1_title": "STANDARD SIZES",
-        "card1_desc": "Explore available standard-size mats for immediate dispatch.",
-        "card1_product": "",
-        "card1_url": "",
-        "card1_btn_label": "Explore Standard Sizes",
-        "card2_title": "MADE TO MEASURE",
-        "card2_desc": "Customize to your exact size or custom architectural layout.",
-        "card2_product": "",
-        "card2_url": "/pages/made-to-measure-mats",
-        "card2_btn_label": "Customize To Your Exact Size",
-        "section_bg_color": "#e1e1e1",
-        "card_bg_color": "#f9fafb",
-        "card_border_color": "#e5e7eb",
-        "accent_color": "#0066ff",
-        "heading_color": "#111827",
-        "text_color": "#4b5563",
-        "btn1_bg": "#111827",
-        "btn1_text": "#ffffff",
-        "btn2_bg": "#ffffff",
-        "btn2_text": "#111827",
-        "btn2_border": "#111827",
-        "enable_glassmorphism": true,
-        "card_border_radius": 16,
-        "btn_border_radius": 8,
-        "max_width": 1100,
-        "padding_top": 56,
-        "padding_bottom": 56
       }
     },
     "premium_faq_main": {
