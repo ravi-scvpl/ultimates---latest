@@ -170,8 +170,8 @@
   }
 
   .catalog-performs__item:hover .catalog-performs__image {
-    transform: scale(1.08);
-    filter: brightness(0.85);
+    transform: scale({{ section.settings.hover_image_zoom | default: 108 | divided_by: 100.0 }});
+    filter: brightness(0.85){% if section.settings.hover_image_blur > 0 %} blur({{ section.settings.hover_image_blur }}px){% endif %};
   }
 
   /* Default Visible Label (Bottom Bar) */
@@ -235,12 +235,13 @@
     visibility: hidden;
     transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
+    {% assign overlay_opacity_val = section.settings.hover_overlay_opacity | default: 78 | divided_by: 100.0 %}
+    {% assign overlay_bg = section.settings.hover_overlay_color | default: "#111827" %}
+    background: rgba({{ overlay_bg.red | default: 17 }}, {{ overlay_bg.green | default: 24 }}, {{ overlay_bg.blue | default: 39 }}, {{ overlay_opacity_val }});
     {% if section.settings.enable_glassmorphism %}
-      background: rgba(17, 24, 39, 0.78);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    {% else %}
-      background: rgba(17, 24, 39, 0.88);
+      {% assign backdrop_blur_val = section.settings.hover_backdrop_blur | default: 12 %}
+      backdrop-filter: blur({{ backdrop_blur_val }}px);
+      -webkit-backdrop-filter: blur({{ backdrop_blur_val }}px);
     {% endif %}
   }
 
@@ -656,6 +657,58 @@
       "id": "enable_glassmorphism",
       "label": "Enable Glassmorphism Hover Overlay",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Hover Effect Settings"
+    },
+    {
+      "type": "range",
+      "id": "hover_image_zoom",
+      "min": 100,
+      "max": 150,
+      "step": 2,
+      "unit": "%",
+      "label": "Hover Image Zoom Scale (%)",
+      "default": 108,
+      "info": "Controls image zoom scale when card is hovered (100% disables zoom)."
+    },
+    {
+      "type": "range",
+      "id": "hover_image_blur",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Hover Image Blur (px)",
+      "default": 0,
+      "info": "Applies blur effect directly to background image on hover."
+    },
+    {
+      "type": "color",
+      "id": "hover_overlay_color",
+      "label": "Hover Overlay Background Color",
+      "default": "#111827"
+    },
+    {
+      "type": "range",
+      "id": "hover_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Hover Overlay Background Opacity (%)",
+      "default": 78
+    },
+    {
+      "type": "range",
+      "id": "hover_backdrop_blur",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Hover Glassmorphism Backdrop Blur (px)",
+      "default": 12
     },
     {
       "type": "range",
