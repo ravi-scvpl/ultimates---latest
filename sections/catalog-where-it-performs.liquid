@@ -189,10 +189,12 @@
     transition: opacity 0.4s ease, transform 0.4s ease;
   }
 
-  .catalog-performs__item:hover .catalog-performs__label-default {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+  {% if section.settings.enable_glassmorphism %}
+    .catalog-performs__item:hover .catalog-performs__label-default {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  {% endif %}
 
   .catalog-performs__location-name {
     font-size: 18px;
@@ -238,17 +240,23 @@
     {% assign overlay_opacity_val = section.settings.hover_overlay_opacity | default: 78 | divided_by: 100.0 %}
     {% assign overlay_bg = section.settings.hover_overlay_color | default: "#111827" %}
     background: rgba({{ overlay_bg.red | default: 17 }}, {{ overlay_bg.green | default: 24 }}, {{ overlay_bg.blue | default: 39 }}, {{ overlay_opacity_val }});
-    {% if section.settings.enable_glassmorphism %}
-      {% assign backdrop_blur_val = section.settings.hover_backdrop_blur | default: 12 %}
+    {% assign backdrop_blur_val = section.settings.hover_backdrop_blur | default: 12 %}
+    {% if backdrop_blur_val > 0 %}
       backdrop-filter: blur({{ backdrop_blur_val }}px);
       -webkit-backdrop-filter: blur({{ backdrop_blur_val }}px);
     {% endif %}
   }
 
-  .catalog-performs__item:hover .catalog-performs__overlay {
-    opacity: 1;
-    visibility: visible;
-  }
+  {% if section.settings.enable_glassmorphism %}
+    .catalog-performs__item:hover .catalog-performs__overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+  {% else %}
+    .catalog-performs__overlay {
+      display: none !important;
+    }
+  {% endif %}
 
   .catalog-performs__overlay-tag {
     display: inline-flex;
@@ -655,8 +663,9 @@
     {
       "type": "checkbox",
       "id": "enable_glassmorphism",
-      "label": "Enable Glassmorphism Hover Overlay",
-      "default": true
+      "label": "Enable Hover Overlay",
+      "default": true,
+      "info": "Toggle ON to display dark overlay with text details on card hover. Toggle OFF to hide hover overlay."
     },
     {
       "type": "header",
