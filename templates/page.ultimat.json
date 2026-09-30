@@ -13,7 +13,7 @@
       "type": "catalog-hero",
       "name": "Catalog Hero Banner",
       "settings": {
-        "image": "shopify://shop_images/ultimats_blog_2_a5ed580d-4f54-4b9c-b0e3-705da6b196a9.png",
+        "image": "shopify://shop_images/hero_image_ultimat.png",
         "overlay_color": "#000000",
         "overlay_opacity": 40,
         "section_height_desktop": "800px",
@@ -40,6 +40,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/hotel.png",
             "title": "Hotels",
             "tag": "",
             "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
@@ -53,6 +54,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/corporate_01009a78-02ae-4cee-ba3b-f602ed5f00ed.png",
             "title": "Corporate Offices",
             "tag": "",
             "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
@@ -66,6 +68,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/retail_feafd0b5-8efc-4fec-aac7-9b5960f496cc.png",
             "title": "Retail",
             "tag": "",
             "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
@@ -79,6 +82,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/hospitals_6519f282-76f2-4c02-8413-89908a45eb64.png",
             "title": "Hospitals",
             "tag": "",
             "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
@@ -92,6 +96,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/institutes.png",
             "title": "Schools & Institutions",
             "tag": "",
             "description": "Robust, high-durability protection engineered to withstand constant student activity.",
@@ -105,6 +110,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/high_traffic.jpg",
             "title": "High-Traffic Entrances",
             "tag": "",
             "description": "Maximum debris retention and water absorption at main building access points.",
@@ -137,7 +143,7 @@
         "accent_color": "#0066ff",
         "heading_color": "#111827",
         "text_color": "#4b5563",
-        "enable_glassmorphism": true,
+        "hover_image_zoom": 108,
         "card_border_radius": 16,
         "max_width": 1400,
         "padding_top": 64,
@@ -606,13 +612,51 @@
     "catalog_where_it_performs_main": {
       "type": "catalog-where-it-performs",
       "blocks": {
+        "location_76QJfQ": {
+          "type": "location",
+          "settings": {
+            "product": "ultiscrub-carpet-mat-1",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
+            "feature_1": "Luxury Aesthetic",
+            "feature_2": "High Footfall",
+            "feature_3": "Quick Maintenance"
+          }
+        },
+        "location_C67aKd": {
+          "type": "location",
+          "settings": {
+            "product": "ultiscrape-carpet-mat",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
+            "feature_1": "Luxury Aesthetic",
+            "feature_2": "High Footfall",
+            "feature_3": "Quick Maintenance"
+          }
+        },
+        "location_jTPUzK": {
+          "type": "location",
+          "settings": {
+            "product": "ultirake-carpet-mat",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
+            "feature_1": "Luxury Aesthetic",
+            "feature_2": "High Footfall",
+            "feature_3": "Quick Maintenance"
+          }
+        },
         "location_1": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "ultizig-barrier-mat-with-backing",
             "url": "",
-            "image": "shopify://shop_images/floor_mat.png",
-            "title": "Outdoor Building Porches",
+            "title": "",
             "tag": "Outdoor Scraping",
             "description": "Stands up to extreme weather, UV rays, and heavy outdoor mud.",
             "feature_1": "All-Weather Proof",
@@ -623,9 +667,8 @@
         "location_2": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "ultidure-carpet-mat",
             "url": "",
-            "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
             "title": "Industrial Entryways",
             "tag": "",
             "description": "Traps coarse sand and heavy gravel before entrance into facilities.",
@@ -636,6 +679,9 @@
         }
       },
       "block_order": [
+        "location_76QJfQ",
+        "location_C67aKd",
+        "location_jTPUzK",
         "location_1",
         "location_2"
       ],
@@ -653,7 +699,7 @@
         "accent_color": "#0066ff",
         "heading_color": "#111827",
         "text_color": "#4b5563",
-        "enable_glassmorphism": true,
+        "hover_image_zoom": 108,
         "card_border_radius": 16,
         "max_width": 1400,
         "padding_top": 64,
