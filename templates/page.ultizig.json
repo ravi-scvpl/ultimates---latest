@@ -346,6 +346,7 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Granite Grey",
+            "color_image": "shopify://shop_images/schools.png",
             "swatch_color": "#71797e"
           }
         },
@@ -353,6 +354,7 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Chestnut Brown",
+            "color_image": "shopify://shop_images/high_traffic_c43ddd9b-bb89-457c-8b4a-a565cec6004c.png",
             "swatch_color": "#5c4033"
           }
         }
@@ -482,10 +484,36 @@
     "catalog_where_it_performs_main": {
       "type": "catalog-where-it-performs",
       "blocks": {
+        "location_9cgzV6": {
+          "type": "location",
+          "settings": {
+            "product": "ulticlean-carpet-mat-1",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
+            "feature_1": "Luxury Aesthetic",
+            "feature_2": "High Footfall",
+            "feature_3": "Quick Maintenance"
+          }
+        },
+        "location_w6ABDN": {
+          "type": "location",
+          "settings": {
+            "product": "ultimat-heavy-duty-vinyl-looped-matting",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
+            "feature_1": "Luxury Aesthetic",
+            "feature_2": "High Footfall",
+            "feature_3": "Quick Maintenance"
+          }
+        },
         "location_1": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "ulticlean-carpet-mat-1",
             "url": "",
             "image": "shopify://shop_images/floor_mat.png",
             "title": "Commercial Entrances",
@@ -499,7 +527,7 @@
         "location_2": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "nanotech-toughtread-technology-integrated-commercial-mat-charcoal",
             "url": "",
             "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
             "title": "Transit Corridors",
@@ -512,6 +540,8 @@
         }
       },
       "block_order": [
+        "location_9cgzV6",
+        "location_w6ABDN",
         "location_1",
         "location_2"
       ],
