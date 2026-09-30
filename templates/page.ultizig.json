@@ -269,6 +269,8 @@
         "button_label": "Optional Button",
         "button_link": "",
         "color_text": "primary-text-1",
+        "image_before": "shopify://shop_images/before_ultizig.png",
+        "image_after": "shopify://shop_images/after_ultizig.png",
         "padding_top": 44,
         "padding_bottom": 44
       }
@@ -336,6 +338,7 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Charcoal Black",
+            "color_image": "shopify://shop_images/black_colour.png",
             "swatch_color": "#1c1c1c"
           }
         },
