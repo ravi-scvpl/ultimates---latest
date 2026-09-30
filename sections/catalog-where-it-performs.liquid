@@ -171,7 +171,6 @@
 
   #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__image {
     transform: scale({{ section.settings.hover_image_zoom | default: 108 | divided_by: 100.0 }});
-    filter: brightness(0.85){% if section.settings.hover_image_blur > 0 %} blur({{ section.settings.hover_image_blur }}px){% endif %};
   }
 
   /* Default Visible Label (Bottom Bar) */
@@ -188,13 +187,6 @@
     justify-content: space-between;
     transition: opacity 0.4s ease, transform 0.4s ease;
   }
-
-  {% if section.settings.enable_glassmorphism %}
-    #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__label-default {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-  {% endif %}
 
   #CatalogPerforms-{{ section.id }} .catalog-performs__location-name {
     font-size: 18px;
@@ -221,101 +213,6 @@
     height: 12px;
     stroke: currentColor;
     stroke-width: 2.5;
-  }
-
-  /* Hover Full Glass Overlay */
-  #CatalogPerforms-{{ section.id }} .catalog-performs__overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 3;
-    padding: 30px 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    box-sizing: border-box;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-
-    {% assign overlay_opacity_val = section.settings.hover_overlay_opacity | default: 78 | divided_by: 100.0 %}
-    {% assign overlay_bg = section.settings.hover_overlay_color | default: "#111827" %}
-    background: rgba({{ overlay_bg.red | default: 17 }}, {{ overlay_bg.green | default: 24 }}, {{ overlay_bg.blue | default: 39 }}, {{ overlay_opacity_val }});
-    {% assign backdrop_blur_val = section.settings.hover_backdrop_blur | default: 12 %}
-    {% if backdrop_blur_val > 0 %}
-      backdrop-filter: blur({{ backdrop_blur_val }}px);
-      -webkit-backdrop-filter: blur({{ backdrop_blur_val }}px);
-    {% endif %}
-  }
-
-  {% if section.settings.enable_glassmorphism %}
-    #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__overlay {
-      opacity: 1;
-      visibility: visible;
-    }
-  {% else %}
-    #CatalogPerforms-{{ section.id }} .catalog-performs__overlay {
-      display: none !important;
-    }
-  {% endif %}
-
-  #CatalogPerforms-{{ section.id }} .catalog-performs__overlay-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: {{ section.settings.accent_color }};
-    margin-bottom: 8px;
-    transform: translateY(15px);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
-  }
-
-  #CatalogPerforms-{{ section.id }} .catalog-performs__overlay-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #ffffff;
-    margin: 0 0 10px 0;
-    transform: translateY(15px);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
-  }
-
-  #CatalogPerforms-{{ section.id }} .catalog-performs__overlay-desc {
-    font-size: 14px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85);
-    margin: 0 0 16px 0;
-    transform: translateY(15px);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
-  }
-
-  #CatalogPerforms-{{ section.id }} .catalog-performs__overlay-features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    transform: translateY(15px);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
-  }
-
-  #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__overlay-tag,
-  #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__overlay-title,
-  #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__overlay-desc,
-  #CatalogPerforms-{{ section.id }} .catalog-performs__item:hover .catalog-performs__overlay-features {
-    transform: translateY(0);
-  }
-
-  #CatalogPerforms-{{ section.id }} .catalog-performs__feature-pill {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   /* Responsive Layout */
@@ -406,43 +303,7 @@
                   </div>
                 {% endif %}
 
-                <!-- Hover Overlay Details -->
-                <div class="catalog-performs__overlay">
-                  {% if block.settings.tag != blank %}
-                    <span class="catalog-performs__overlay-tag">
-                      <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                      {{ block.settings.tag }}
-                    </span>
-                  {% endif %}
-                  
-                  {% if card_title != blank %}
-                    <h3 class="catalog-performs__overlay-title">{{ card_title | escape }}</h3>
-                  {% endif %}
 
-                  {% if block.settings.description != blank %}
-                    <p class="catalog-performs__overlay-desc">{{ block.settings.description | escape }}</p>
-                  {% elsif card_product != blank and card_product.description != blank %}
-                    <p class="catalog-performs__overlay-desc">{{ card_product.description | strip_html | truncate: 120 | escape }}</p>
-                  {% endif %}
-
-                  {% if block.settings.feature_1 != blank or block.settings.feature_2 != blank or block.settings.feature_3 != blank %}
-                    <ul class="catalog-performs__overlay-features">
-                      {% if block.settings.feature_1 != blank %}
-                        <li class="catalog-performs__feature-pill">{{ block.settings.feature_1 | escape }}</li>
-                      {% endif %}
-                      {% if block.settings.feature_2 != blank %}
-                        <li class="catalog-performs__feature-pill">{{ block.settings.feature_2 | escape }}</li>
-                      {% endif %}
-                      {% if block.settings.feature_3 != blank %}
-                        <li class="catalog-performs__feature-pill">{{ block.settings.feature_3 | escape }}</li>
-                      {% endif %}
-                    </ul>
-                  {% elsif card_url != blank %}
-                    <div class="catalog-performs__overlay-features">
-                      <span class="catalog-performs__feature-pill">View Product &rarr;</span>
-                    </div>
-                  {% endif %}
-                </div>
               </{% if card_url != blank %}a{% else %}div{% endif %}>
             </div>
           {% endif %}
@@ -661,13 +522,6 @@
       "default": "#4b5563"
     },
     {
-      "type": "checkbox",
-      "id": "enable_glassmorphism",
-      "label": "Enable Hover Overlay",
-      "default": true,
-      "info": "Toggle ON to display dark overlay with text details on card hover. Toggle OFF to hide hover overlay."
-    },
-    {
       "type": "header",
       "content": "Hover Effect Settings"
     },
@@ -681,43 +535,6 @@
       "label": "Hover Image Zoom Scale (%)",
       "default": 108,
       "info": "Controls image zoom scale when card is hovered (100% disables zoom)."
-    },
-    {
-      "type": "range",
-      "id": "hover_image_blur",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "label": "Hover Image Blur (px)",
-      "default": 0,
-      "info": "Applies blur effect directly to background image on hover."
-    },
-    {
-      "type": "color",
-      "id": "hover_overlay_color",
-      "label": "Hover Overlay Background Color",
-      "default": "#111827"
-    },
-    {
-      "type": "range",
-      "id": "hover_overlay_opacity",
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "unit": "%",
-      "label": "Hover Overlay Background Opacity (%)",
-      "default": 78
-    },
-    {
-      "type": "range",
-      "id": "hover_backdrop_blur",
-      "min": 0,
-      "max": 30,
-      "step": 2,
-      "unit": "px",
-      "label": "Hover Glassmorphism Backdrop Blur (px)",
-      "default": 12
     },
     {
       "type": "range",
