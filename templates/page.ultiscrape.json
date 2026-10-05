@@ -531,6 +531,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/HOTEL_copy.png",
             "title": "Hotels",
             "tag": "",
             "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
@@ -544,6 +545,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/magnific_i-want-this-mat-texture-t_WDExrnWcXe.png",
             "title": "Corporate Offices",
             "tag": "",
             "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
@@ -557,6 +559,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/retail_4133efe5-5d71-481d-899c-2f8de22ed4f8.png",
             "title": "Retail",
             "tag": "",
             "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
@@ -570,6 +573,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/hospitals_0fc1d53e-525f-4f78-bf96-263111218fdb.png",
             "title": "Hospitals",
             "tag": "",
             "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
@@ -577,41 +581,13 @@
             "feature_2": "Easy Sanitization",
             "feature_3": "Wheelchair Safe"
           }
-        },
-        "location_6rQ8fY": {
-          "type": "location",
-          "settings": {
-            "product": "",
-            "url": "",
-            "title": "Schools & Institutions",
-            "tag": "",
-            "description": "Robust, high-durability protection engineered to withstand constant student activity.",
-            "feature_1": "High Durability",
-            "feature_2": "Scuff Resistant",
-            "feature_3": "Safe & Non-Slip"
-          }
-        },
-        "location_bE4ACd": {
-          "type": "location",
-          "settings": {
-            "product": "",
-            "url": "",
-            "title": "High-Traffic Entrances",
-            "tag": "",
-            "description": "Maximum debris retention and water absorption at main building access points.",
-            "feature_1": "Debris Control",
-            "feature_2": "Water Absorbing",
-            "feature_3": "24/7 Endurance"
-          }
         }
       },
       "block_order": [
         "location_FCNytG",
         "location_aDmDmc",
         "location_Dr37x9",
-        "location_Bgdpzf",
-        "location_6rQ8fY",
-        "location_bE4ACd"
+        "location_Bgdpzf"
       ],
       "name": "Where It Performs",
       "settings": {
