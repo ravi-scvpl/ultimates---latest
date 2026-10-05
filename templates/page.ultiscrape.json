@@ -812,6 +812,7 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Forest Green",
+            "color_image": "shopify://shop_images/HOTEL_copy.png",
             "swatch_color": "#2b5336"
           }
         },
