@@ -13,7 +13,7 @@
       "type": "catalog-hero",
       "name": "Catalog Hero Banner",
       "settings": {
-        "image": "shopify://shop_images/WhatsApp_Image_2026-09-09_at_9.20.30_PM.jpg",
+        "image": "shopify://shop_images/main_hero.png",
         "overlay_color": "#000000",
         "overlay_opacity": 40,
         "section_height_desktop": "600px",
@@ -40,6 +40,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/hotel_2cbbe2bf-acbb-4e99-b0f1-812eb213aa6b.png",
             "title": "Hotels",
             "tag": "",
             "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
@@ -53,6 +54,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/corporate_cfc03f49-88fb-4355-b1f4-24d400f77976.png",
             "title": "Corporate Offices",
             "tag": "",
             "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
@@ -66,6 +68,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/retail_a882a06a-e58c-4052-90bb-0947b206129d.png",
             "title": "Retail",
             "tag": "",
             "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
@@ -79,6 +82,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/hospital_1.png",
             "title": "Hospitals",
             "tag": "",
             "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
@@ -92,6 +96,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/institute.png",
             "title": "Schools & Institutions",
             "tag": "",
             "description": "Robust, high-durability protection engineered to withstand constant student activity.",
@@ -105,6 +110,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/high_traffic_3efc1d36-cc10-494e-a72b-5203a60fbca2.png",
             "title": "High-Traffic Entrances",
             "tag": "",
             "description": "Maximum debris retention and water absorption at main building access points.",
@@ -251,6 +257,25 @@
         "description": "<p>We vow to meticulously ensure that each thread of your product is crafted with the highest precision!</p>"
       }
     },
+    "before_after_LEkwhC": {
+      "type": "before-after",
+      "name": "t:sections.before-and-after.name",
+      "settings": {
+        "title": "Before & after",
+        "description": "Add a product feature or answer a common questions about your products.",
+        "font_size": 100,
+        "label_before": "Before",
+        "label_after": "After",
+        "initial_position": 50,
+        "button_label": "",
+        "button_link": "",
+        "color_text": "primary-text-1",
+        "image_before": "shopify://shop_images/before_310e5cdd-e4e3-4556-a623-2b4e2f36b66b.png",
+        "image_after": "shopify://shop_images/After_e0f89315-363d-46ac-ac36-6e59166f9a4e.png",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
     "three_layer_feature_main": {
       "type": "three-layer-feature",
       "disabled": true,
@@ -328,28 +353,8 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Charcoal Black",
-            "swatch_color": "#1c1c1c"
-          }
-        },
-        "swatch_2": {
-          "type": "swatch_item",
-          "settings": {
-            "color_name": "Granite Grey",
-            "swatch_color": "#71797e"
-          }
-        },
-        "swatch_3": {
-          "type": "swatch_item",
-          "settings": {
-            "color_name": "Burgundy Red",
-            "swatch_color": "#800020"
-          }
-        },
-        "swatch_4": {
-          "type": "swatch_item",
-          "settings": {
-            "color_name": "Walnut Brown",
-            "swatch_color": "#432818"
+            "color_image": "shopify://shop_images/colour_grey.png",
+            "swatch_color": "#525456"
           }
         }
       },
@@ -362,10 +367,7 @@
         "spec_6",
         "spec_7",
         "spec_8",
-        "swatch_1",
-        "swatch_2",
-        "swatch_3",
-        "swatch_4"
+        "swatch_1"
       ],
       "name": "Performance Specs Band",
       "settings": {
@@ -754,6 +756,7 @@
     "catalog_where_it_performs_yY6Maw",
     "catalog_fullwidth_feature_main",
     "promise_slider_main",
+    "before_after_LEkwhC",
     "three_layer_feature_main",
     "catalog_performance_specs_main",
     "catalog_care_main",
