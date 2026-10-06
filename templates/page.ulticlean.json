@@ -251,9 +251,11 @@
         "label_before": "Before",
         "label_after": "After",
         "initial_position": 50,
-        "button_label": "Optional Button",
+        "button_label": "",
         "button_link": "",
         "color_text": "primary-text-1",
+        "image_before": "shopify://shop_images/before_b6e64fc7-9033-4160-a1ce-f2c4a0f62e42.png",
+        "image_after": "shopify://shop_images/after_8428b105-9ea5-44d1-bdb1-0875d831d3e1.png",
         "padding_top": 44,
         "padding_bottom": 44
       }
@@ -321,21 +323,32 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Mocha Brown",
-            "swatch_color": "#6e473b"
-          }
-        },
-        "swatch_2": {
-          "type": "swatch_item",
-          "settings": {
-            "color_name": "Granite Grey",
-            "swatch_color": "#71797e"
+            "color_image": "shopify://shop_images/colour_grey_7acf254a-d0b7-4e9f-b283-558b7c29aa61.png",
+            "swatch_color": "#3E4347"
           }
         },
         "swatch_3": {
           "type": "swatch_item",
           "settings": {
             "color_name": "Charcoal Black",
-            "swatch_color": "#1c1c1c"
+            "color_image": "shopify://shop_images/red_colour.png",
+            "swatch_color": "#842323"
+          }
+        },
+        "swatch_item_FXXKdT": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Charcoal Black",
+            "color_image": "shopify://shop_images/green_colour.png",
+            "swatch_color": "#1C5727"
+          }
+        },
+        "swatch_item_Qrax3X": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Charcoal Black",
+            "color_image": "shopify://shop_images/colour_brown.png",
+            "swatch_color": "#48230C"
           }
         }
       },
@@ -349,8 +362,9 @@
         "spec_7",
         "spec_8",
         "swatch_1",
-        "swatch_2",
-        "swatch_3"
+        "swatch_3",
+        "swatch_item_FXXKdT",
+        "swatch_item_Qrax3X"
       ],
       "name": "Performance Specs Band",
       "settings": {
