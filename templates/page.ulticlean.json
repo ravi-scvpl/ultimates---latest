@@ -13,7 +13,7 @@
       "type": "catalog-hero",
       "name": "Catalog Hero Banner",
       "settings": {
-        "image": "shopify://shop_images/magnific_closeup-of-premium-brown-_43xfsAV9Aa_1.png",
+        "image": "shopify://shop_images/Hero_image_33b0d303-0922-494c-99db-897a13dd6e3d.png",
         "overlay_color": "#000000",
         "overlay_opacity": 40,
         "section_height_desktop": "800px",
@@ -40,6 +40,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/hotel_9bdf6971-d3de-43d8-9f35-737270613914.png",
             "title": "Hotels",
             "tag": "",
             "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
@@ -53,6 +54,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/corporate_1.png",
             "title": "Corporate Offices",
             "tag": "",
             "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
@@ -66,7 +68,8 @@
           "settings": {
             "product": "",
             "url": "",
-            "title": "Retail",
+            "image": "shopify://shop_images/residential.png",
+            "title": "Residential",
             "tag": "",
             "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
             "feature_1": "Storefronts",
@@ -79,9 +82,10 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/hospitals_eb73fc4b-7748-4592-bf7f-362b50d4979b.png",
             "title": "Hospitals",
             "tag": "",
-            "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
+            "description": "",
             "feature_1": "Hygienic Clean",
             "feature_2": "Easy Sanitization",
             "feature_3": "Wheelchair Safe"
@@ -92,25 +96,13 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/institute_09042ca0-8c6f-4b3f-9392-20dd3e07850d.png",
             "title": "Schools & Institutions",
             "tag": "",
             "description": "Robust, high-durability protection engineered to withstand constant student activity.",
             "feature_1": "High Durability",
             "feature_2": "Scuff Resistant",
             "feature_3": "Safe & Non-Slip"
-          }
-        },
-        "location_KjxYbb": {
-          "type": "location",
-          "settings": {
-            "product": "",
-            "url": "",
-            "title": "High-Traffic Entrances",
-            "tag": "",
-            "description": "Maximum debris retention and water absorption at main building access points.",
-            "feature_1": "Debris Control",
-            "feature_2": "Water Absorbing",
-            "feature_3": "24/7 Endurance"
           }
         }
       },
@@ -119,8 +111,7 @@
         "location_hqe3Fw",
         "location_BtRP3i",
         "location_V9bj9a",
-        "location_rLAPdU",
-        "location_KjxYbb"
+        "location_rLAPdU"
       ],
       "name": "Where It Performs",
       "settings": {
@@ -137,7 +128,7 @@
         "accent_color": "#0066ff",
         "heading_color": "#111827",
         "text_color": "#4b5563",
-        "enable_glassmorphism": true,
+        "hover_image_zoom": 108,
         "card_border_radius": 16,
         "max_width": 1400,
         "padding_top": 64,
@@ -195,7 +186,7 @@
         "card_1": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/UltiClean_USP_1_C1.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Ultra Soft Dust Locking",
@@ -205,7 +196,7 @@
         "card_2": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/UltiClean_USP_1_C2.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "High Water Absorption",
@@ -215,7 +206,7 @@
         "card_3": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/ulticlean - brown 1.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Double-Compressed Borders",
@@ -225,7 +216,7 @@
         "card_4": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/UltiClean_USP_2_C3.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Tough Anti-Skid Backing",
@@ -522,7 +513,7 @@
         "accent_color": "#0066ff",
         "heading_color": "#111827",
         "text_color": "#4b5563",
-        "enable_glassmorphism": true,
+        "hover_image_zoom": 108,
         "card_border_radius": 16,
         "max_width": 1400,
         "padding_top": 64,
