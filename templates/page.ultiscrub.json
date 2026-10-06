@@ -13,7 +13,7 @@
       "type": "catalog-hero",
       "name": "Catalog Hero Banner",
       "settings": {
-        "image": "shopify://shop_images/WhatsApp_Image_2026-09-09_at_9.14.02_PM.jpg",
+        "image": "shopify://shop_images/hero_main.png",
         "overlay_color": "#000000",
         "overlay_opacity": 40,
         "section_height_desktop": "800px",
@@ -35,24 +35,12 @@
     "catalog_where_it_performs_main": {
       "type": "catalog-where-it-performs",
       "blocks": {
-        "location_diF83W": {
-          "type": "location",
-          "settings": {
-            "product": "",
-            "url": "",
-            "title": "",
-            "tag": "Ideal Location",
-            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
-            "feature_1": "Luxury Aesthetic",
-            "feature_2": "High Footfall",
-            "feature_3": "Quick Maintenance"
-          }
-        },
         "location_gCXtbU": {
           "type": "location",
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/Hotel_d2ee71a6-4cce-452d-b403-7108c1c384b6.png",
             "title": "Hotels & Hospitality",
             "tag": "Ideal Location",
             "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
@@ -66,7 +54,7 @@
           "settings": {
             "product": "",
             "url": "",
-            "image": "shopify://shop_images/floor_mat.png",
+            "image": "shopify://shop_images/corporate_b04039c5-9a53-48be-b0e8-f9fddf1a716f.png",
             "title": "Corporate Offices",
             "tag": "",
             "description": "Maintains corporate entryway aesthetic while locking moisture and fine dust particles.",
@@ -80,7 +68,7 @@
           "settings": {
             "product": "",
             "url": "",
-            "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
+            "image": "shopify://shop_images/commercial_foyer.png",
             "title": "Commercial Foyers",
             "tag": "High Traffic",
             "description": "Protects interior flooring against daily intense footfall and shoe soil.",
@@ -91,7 +79,6 @@
         }
       },
       "block_order": [
-        "location_diF83W",
         "location_gCXtbU",
         "location_1",
         "location_2"
@@ -168,7 +155,7 @@
         "card_1": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/UltiScrub_USP_1_C1_8986fe3d-ef4f-4e41-91fb-f6a26e13156f.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Intensive Dirt Scraping",
@@ -178,7 +165,7 @@
         "card_2": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/UltiScrub_USP_2_C1.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Rapid Moisture Locking",
@@ -188,7 +175,7 @@
         "card_3": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/UltiScrub_USP_3_C1.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Double-Compressed Borders",
@@ -237,9 +224,11 @@
         "label_before": "Before",
         "label_after": "After",
         "initial_position": 50,
-        "button_label": "Optional Button",
+        "button_label": "",
         "button_link": "",
         "color_text": "primary-text-1",
+        "image_before": "shopify://shop_images/before_0ee537f2-de4f-402c-9fb6-3507f666f472.png",
+        "image_after": "shopify://shop_images/after_45be569f-86ab-4eb1-8d87-24bdfaabf219.png",
         "padding_top": 44,
         "padding_bottom": 44
       }
