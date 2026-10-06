@@ -604,24 +604,51 @@
             "feature_3": ""
           }
         },
-        "location_2": {
+        "location_jfqb9a": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "ultirake-carpet-mat",
             "url": "",
-            "image": "shopify://shop_images/UltiDure_Grey_Entrance_Long_1000.png",
-            "title": "Hotels & Airports",
-            "tag": "Extreme Duty",
-            "description": "Maintains luxury hotel entrance appearance under luggage and continuous foot traffic.",
-            "feature_1": "Anti-Skid Nitrile",
-            "feature_2": "Machine Washable",
-            "feature_3": "Noise Dampening"
+            "title": "",
+            "tag": "",
+            "description": "",
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": ""
+          }
+        },
+        "location_i49DBf": {
+          "type": "location",
+          "settings": {
+            "product": "ultiscrape-carpet-mat",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "",
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": ""
+          }
+        },
+        "location_kpDTKR": {
+          "type": "location",
+          "settings": {
+            "product": "ultiscrub-carpet-mat-1",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "",
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": ""
           }
         }
       },
       "block_order": [
         "location_1",
-        "location_2"
+        "location_jfqb9a",
+        "location_i49DBf",
+        "location_kpDTKR"
       ],
       "settings": {
         "subtitle": "",
