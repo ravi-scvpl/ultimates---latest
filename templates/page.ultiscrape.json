@@ -829,15 +829,15 @@
           "settings": {
             "color_name": "Granite Grey",
             "color_image": "shopify://shop_images/hospitals_0fc1d53e-525f-4f78-bf96-263111218fdb.png",
-            "swatch_color": "#71797e"
+            "swatch_color": "#2E3031"
           }
         },
         "swatch_item_A9jFNX": {
           "type": "swatch_item",
           "settings": {
             "color_name": "Charcoal Black",
-            "color_image": "shopify://shop_images/hf_20260812_101758_ea82d244-6354-4caf-bcc1-22ea4c059337.png",
-            "swatch_color": "#1c1c1c"
+            "color_image": "shopify://shop_images/ultiscrape_product_colour.jpg",
+            "swatch_color": "#6E3410"
           }
         }
       },
