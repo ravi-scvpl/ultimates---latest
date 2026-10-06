@@ -267,9 +267,11 @@
         "label_before": "Before",
         "label_after": "After",
         "initial_position": 50,
-        "button_label": "Optional Button",
+        "button_label": "",
         "button_link": "",
         "color_text": "primary-text-1",
+        "image_before": "shopify://shop_images/ultimat_before.png",
+        "image_after": "shopify://shop_images/ultimat_after.png",
         "padding_top": 44,
         "padding_bottom": 44
       }
