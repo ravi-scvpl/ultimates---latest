@@ -972,39 +972,65 @@
         "location_qzwLp4": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "ulticlean-carpet-mat-1",
             "url": "",
-            "image": "shopify://shop_images/floor_mat.png",
-            "title": "Home",
+            "title": "",
             "tag": "",
-            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
-            "feature_1": "Luxury Aesthetic",
-            "feature_2": "High Footfall",
-            "feature_3": "Quick Maintenance"
+            "description": "",
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": ""
           }
         },
-        "location_GzaW3k": {
+        "location_WXCwaD": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "nanotech-toughtread-technology-integrated-commercial-mat-charcoal",
             "url": "",
-            "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
-            "title": "Hotels & Hospitality",
-            "tag": "Ideal Location",
-            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
-            "feature_1": "Luxury Aesthetic",
-            "feature_2": "High Footfall",
-            "feature_3": "Quick Maintenance"
+            "title": "",
+            "tag": "",
+            "description": "",
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": ""
+          }
+        },
+        "location_NbezG8": {
+          "type": "location",
+          "settings": {
+            "product": "ultimat-heavy-duty-vinyl-looped-matting",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "",
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": ""
+          }
+        },
+        "location_PrkbfE": {
+          "type": "location",
+          "settings": {
+            "product": "ultiscrub-carpet-mat-1",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "",
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": ""
           }
         }
       },
       "block_order": [
         "location_qzwLp4",
-        "location_GzaW3k"
+        "location_WXCwaD",
+        "location_NbezG8",
+        "location_PrkbfE"
       ],
       "settings": {
         "subtitle": "",
-        "title": "Where It Performs",
+        "title": "Complete the Entrance Solution",
         "description": "<p>Engineered for excellence across diverse high-demanding environments and architecturally refined spaces.</p>",
         "header_alignment": "center",
         "title_font_size": 36,
