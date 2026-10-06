@@ -296,8 +296,7 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Granite Grey",
-            "color_image": "shopify://shop_images/ultimats_blog_2.png",
-            "swatch_image": "shopify://shop_images/ChatGPT_Image_Jun_4_2026_03_37_06_PM.png",
+            "color_image": "shopify://shop_images/colour_DG.png",
             "swatch_color": "#71797e"
           }
         },
@@ -305,7 +304,7 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Chestnut Brown",
-            "color_image": "shopify://shop_images/magnific_generate-a-916-image-img1_ubINJnNQLD.png",
+            "color_image": "shopify://shop_images/colour.png",
             "swatch_color": "#5c4033"
           }
         },
@@ -313,15 +312,16 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Charcoal Black",
-            "color_image": "shopify://shop_images/008.png",
-            "swatch_color": "#1c1c1c"
+            "color_image": "shopify://shop_images/colour_g_9cab1510-5d5f-473e-9b77-83ec259d82e3.png",
+            "swatch_color": "#1C5727"
           }
         },
         "swatch_4": {
           "type": "swatch_item",
           "settings": {
             "color_name": "Midnight Blue",
-            "swatch_color": "#191970"
+            "color_image": "shopify://shop_images/colour_r.png",
+            "swatch_color": "#842323"
           }
         }
       },
