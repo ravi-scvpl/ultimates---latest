@@ -594,15 +594,14 @@
         "location_1": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "ultimat-heavy-duty-vinyl-looped-matting",
             "url": "",
-            "image": "shopify://shop_images/UltiDure_6x4_Mall.png",
-            "title": "Malls & Retail Lobbies",
-            "tag": "High Footfall",
-            "description": "Handles millions of footsteps while retaining original pile shape.",
-            "feature_1": "Nylon 6.6 Strength",
-            "feature_2": "Heavy Absorption",
-            "feature_3": "High Resilience"
+            "title": "",
+            "tag": "",
+            "description": "",
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": ""
           }
         },
         "location_2": {
