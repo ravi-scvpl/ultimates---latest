@@ -452,7 +452,7 @@
         "card1_product": "ulticlean-carpet-mat-1",
         "card1_url": "/products/ulticlean-carpet-mat-1",
         "card1_btn_label": "Explore Standard Sizes",
-        "card2_image": "shopify://shop_images/UltiClean_Green_Folded.jpg",
+        "card2_image": "shopify://shop_images/made_to_measure.png",
         "card2_title": "MADE TO MEASURE",
         "card2_desc": "Customize to your exact size or custom architectural layout.",
         "card2_product": "",
@@ -480,38 +480,64 @@
     "catalog_where_it_performs_main": {
       "type": "catalog-where-it-performs",
       "blocks": {
-        "location_1": {
-          "type": "location",
-          "settings": {
-            "product": "",
-            "url": "",
-            "image": "shopify://shop_images/floor_mat.png",
-            "title": "Luxury Residences",
-            "tag": "",
-            "description": "Complements plush interior decor while absorbing moisture and dust.",
-            "feature_1": "Soft Feel",
-            "feature_2": "Luxury Aesthetics",
-            "feature_3": "Floor Protection"
-          }
-        },
         "location_2": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "nanotech-toughtread-technology-integrated-commercial-mat-charcoal",
             "url": "",
-            "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
-            "title": "Executive Offices",
-            "tag": "Interior Doors",
-            "description": "Ideal secondary barrier mat for internal office doors and lobbies.",
-            "feature_1": "Dust Control",
-            "feature_2": "Low Height",
-            "feature_3": "Easy Clean"
+            "title": "",
+            "tag": "",
+            "description": "",
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": ""
+          }
+        },
+        "location_XwPKwc": {
+          "type": "location",
+          "settings": {
+            "product": "ultimat-heavy-duty-vinyl-looped-matting",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "",
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": ""
+          }
+        },
+        "location_enPwkp": {
+          "type": "location",
+          "settings": {
+            "product": "ultirake-carpet-mat",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "",
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": ""
+          }
+        },
+        "location_ynHELG": {
+          "type": "location",
+          "settings": {
+            "product": "ultiscrub-carpet-mat-1",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "",
+            "feature_1": "",
+            "feature_2": "",
+            "feature_3": ""
           }
         }
       },
       "block_order": [
-        "location_1",
-        "location_2"
+        "location_2",
+        "location_XwPKwc",
+        "location_enPwkp",
+        "location_ynHELG"
       ],
       "settings": {
         "subtitle": "",
