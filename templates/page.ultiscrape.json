@@ -545,7 +545,7 @@
           "settings": {
             "product": "",
             "url": "",
-            "image": "shopify://shop_images/magnific_i-want-this-mat-texture-t_WDExrnWcXe.png",
+            "image": "shopify://shop_images/hf_20260812_101758_00784437-1240-490d-87c7-f4f0c296378b.png",
             "title": "Corporate Offices",
             "tag": "",
             "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
@@ -731,6 +731,8 @@
         "button_label": "",
         "button_link": "",
         "color_text": "primary-text-1",
+        "image_before": "shopify://shop_images/ultiscrape_before.png",
+        "image_after": "shopify://shop_images/ultiscrape_after.png",
         "padding_top": 44,
         "padding_bottom": 44
       }
@@ -829,7 +831,7 @@
           "settings": {
             "color_name": "Granite Grey",
             "color_image": "shopify://shop_images/hospitals_0fc1d53e-525f-4f78-bf96-263111218fdb.png",
-            "swatch_color": "#2E3031"
+            "swatch_color": "#2e3031"
           }
         },
         "swatch_item_A9jFNX": {
@@ -837,7 +839,7 @@
           "settings": {
             "color_name": "Brown",
             "color_image": "shopify://shop_images/ultiscrape_product_colour.jpg",
-            "swatch_color": "#6E3410"
+            "swatch_color": "#6e3410"
           }
         }
       },
