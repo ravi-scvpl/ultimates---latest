@@ -160,7 +160,7 @@
         "mobile_height": "500px",
         "media_type": "video",
         "image": "shopify://shop_images/UltiZigMainMTOnew.png",
-        "video": "shopify://files/videos/2nd.mp4",
+        "video": "shopify://files/videos/1_a2dffbc2-2fdd-435d-8038-6e93efd80ebf.mp4",
         "video_url_mp4": "",
         "video_url_external": "",
         "mobile_video_url_mp4": "",
@@ -201,17 +201,17 @@
         "card_1": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/1_a2dffbc2-2fdd-435d-8038-6e93efd80ebf.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Multi-Directional Scraping",
-            "text": "<p>UltiZig Unbacked: open- bottom allows dirt and debris to fall through to the floor</p>"
+            "text": "<p>UltiZig Unbacked:&nbsp;open- bottom allows dirt and debris to fall through to the floor</p>"
           }
         },
         "card_2": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/3_41e251dc-ff2c-4cda-ac19-64196343ebe3.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Chevron Dirt Channels",
@@ -221,7 +221,7 @@
         "card_3": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/4_db35d83b-0bde-4a13-a706-6ca9eeb51ed8.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Double-Compressed Borders",
@@ -231,7 +231,7 @@
         "card_4": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/2_b429e28d-3666-4640-a662-80a23c5e3151.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Tough Non-Slip Backing",
