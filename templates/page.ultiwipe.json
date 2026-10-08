@@ -327,7 +327,7 @@
         "swatch_1": {
           "type": "swatch_item",
           "settings": {
-            "color_name": "Granite Grey",
+            "color_name": "Navy Blue",
             "color_image": "shopify://shop_images/colour_grey_1.png",
             "swatch_image": "shopify://shop_images/Colour_g.png",
             "swatch_color": "#71797e"
@@ -336,7 +336,7 @@
         "swatch_2": {
           "type": "swatch_item",
           "settings": {
-            "color_name": "Charcoal Black",
+            "color_name": "Red",
             "color_image": "shopify://shop_images/colour_red.png",
             "swatch_image": "shopify://shop_images/colour_red_1.jpg",
             "swatch_color": "#1c1c1c"
@@ -345,7 +345,7 @@
         "swatch_3": {
           "type": "swatch_item",
           "settings": {
-            "color_name": "Rust Orange",
+            "color_name": "Green",
             "color_image": "shopify://shop_images/retail_79573f22-8e10-4f9c-b9bd-b347aa8559e0.png",
             "swatch_image": "shopify://shop_images/colour_green.png",
             "swatch_color": "#d35400"
@@ -354,7 +354,7 @@
         "swatch_4": {
           "type": "swatch_item",
           "settings": {
-            "color_name": "Navy Blue",
+            "color_name": "orangOrange",
             "color_image": "shopify://shop_images/hero_image_90fd59d1-7c89-484c-a63c-9779517d7a52.png",
             "swatch_image": "shopify://shop_images/Colour_b.png",
             "swatch_color": "#000080"
@@ -411,7 +411,7 @@
         "header_alignment": "center",
         "title_font_size": 36,
         "box1_badge": "VIDEO 1 • LIGHT CLEANING",
-        "box1_video": "shopify://files/videos/Premium_Quality.mp4",
+        "box1_video": "shopify://files/videos/dry cleaning.mp4",
         "box1_video_url": "",
         "box1_title": "Light & Quick Cleaning Process",
         "box1_description": "",
@@ -421,7 +421,7 @@
         "box1_meta_1": "Time: 2-3 Mins",
         "box1_meta_2": "Frequency: Weekly",
         "box2_badge": "VIDEO 2 • DEEP CLEANING",
-        "box2_video": "shopify://files/videos/Sustainability.mp4",
+        "box2_video": "shopify://files/videos/Person_washing_mat_with_water_20261008114902.mp4",
         "box2_video_url": "",
         "box2_title": "Deep Restoration & Cleaning",
         "box2_description": "",
