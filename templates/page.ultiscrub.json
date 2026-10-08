@@ -297,7 +297,7 @@
           "settings": {
             "color_name": "Granite Grey",
             "color_image": "shopify://shop_images/colour_DG.png",
-            "swatch_color": "#3E4347"
+            "swatch_color": "#3e4347"
           }
         },
         "swatch_2": {
@@ -311,15 +311,15 @@
         "swatch_3": {
           "type": "swatch_item",
           "settings": {
-            "color_name": "Charcoal Black",
+            "color_name": "Green",
             "color_image": "shopify://shop_images/colour_g_9cab1510-5d5f-473e-9b77-83ec259d82e3.png",
-            "swatch_color": "#1C5727"
+            "swatch_color": "#1c5727"
           }
         },
         "swatch_4": {
           "type": "swatch_item",
           "settings": {
-            "color_name": "Midnight Blue",
+            "color_name": "Red",
             "color_image": "shopify://shop_images/colour_r.png",
             "swatch_color": "#842323"
           }
@@ -375,7 +375,7 @@
         "header_alignment": "center",
         "title_font_size": 36,
         "box1_badge": "VIDEO 1 • LIGHT CLEANING",
-        "box1_video": "shopify://files/videos/Premium_Quality.mp4",
+        "box1_video": "shopify://files/videos/dry cleaning.mp4",
         "box1_video_url": "",
         "box1_title": "Light & Quick Cleaning Process",
         "box1_description": "",
@@ -385,7 +385,7 @@
         "box1_meta_1": "Time: 2-3 Mins",
         "box1_meta_2": "Frequency: Weekly",
         "box2_badge": "VIDEO 2 • DEEP CLEANING",
-        "box2_video": "shopify://files/videos/Sustainability.mp4",
+        "box2_video": "shopify://files/videos/Person_washing_mat_with_water_20261008114902.mp4",
         "box2_video_url": "",
         "box2_title": "Deep Restoration & Cleaning",
         "box2_description": "",
