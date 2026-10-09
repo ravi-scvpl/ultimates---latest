@@ -41,7 +41,7 @@
           "settings": {
             "product": "",
             "url": "",
-            "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
+            "image": "shopify://shop_images/Emaar_UltiGrate_36978cfd-c9f8-4f23-b187-e78477189adf.jpg",
             "title": "Airports & Railway Terminals",
             "tag": "Max Traffic",
             "description": "Supports heavy rolling luggage, wheelchairs, and trolley traffic seamlessly.",
@@ -50,12 +50,26 @@
             "feature_3": "ADA Compliant"
           }
         },
+        "location_RqyKa4": {
+          "type": "location",
+          "settings": {
+            "product": "",
+            "url": "",
+            "image": "shopify://shop_images/UltiGrate_Woman_in_Heels.png",
+            "title": "corporate",
+            "tag": "",
+            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
+            "feature_1": "Luxury Aesthetic",
+            "feature_2": "High Footfall",
+            "feature_3": "Quick Maintenance"
+          }
+        },
         "location_2": {
           "type": "location",
           "settings": {
             "product": "",
             "url": "",
-            "image": "shopify://shop_images/floor_mat.png",
+            "image": "shopify://shop_images/UltiGrate_Mall_Entry.png",
             "title": "Shopping Malls & Commercial Towers",
             "tag": "Architectural Recessed",
             "description": "Sits flush with entrance floor finishes for luxury architectural lobbies.",
@@ -67,6 +81,7 @@
       },
       "block_order": [
         "location_1",
+        "location_RqyKa4",
         "location_2"
       ],
       "settings": {
