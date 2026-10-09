@@ -212,9 +212,11 @@
         "label_before": "Before",
         "label_after": "After",
         "initial_position": 50,
-        "button_label": "Optional Button",
+        "button_label": "",
         "button_link": "",
         "color_text": "primary-text-1",
+        "image_before": "shopify://shop_images/aluminium_before.png",
+        "image_after": "shopify://shop_images/aluminium_after.png",
         "padding_top": 44,
         "padding_bottom": 44
       }
@@ -278,20 +280,6 @@
             "value": "5 Years"
           }
         },
-        "swatch_1": {
-          "type": "swatch_item",
-          "settings": {
-            "color_name": "Silver Anodized",
-            "swatch_color": "#c0c0c0"
-          }
-        },
-        "swatch_2": {
-          "type": "swatch_item",
-          "settings": {
-            "color_name": "Charcoal Black Infill",
-            "swatch_color": "#1c1c1c"
-          }
-        },
         "swatch_3": {
           "type": "swatch_item",
           "settings": {
@@ -309,8 +297,6 @@
         "spec_6",
         "spec_7",
         "spec_8",
-        "swatch_1",
-        "swatch_2",
         "swatch_3"
       ],
       "name": "Performance Specs Band",
@@ -324,7 +310,7 @@
         "subheading_color": "#666666",
         "header_alignment": "left",
         "layout_position": "specs_first",
-        "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
+        "image": "shopify://shop_images/UltiGrate_Welcome.png",
         "table_title": "SPECIFICATIONS",
         "swatches_title": "AVAILABLE INFILL COLORS",
         "bg_color": "#fafafa",
