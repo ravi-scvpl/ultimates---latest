@@ -156,7 +156,7 @@
         "card_1": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/ULTIGRATE VIDEO.mp4",
+            "video": "shopify://files/videos/zone1_56eb6a40-6632-4bc5-8447-bd5f55218448.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Zone 1",
@@ -167,6 +167,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/UltiGrate_Ramps_Grey_Floor.png",
+            "video": "shopify://files/videos/zone2.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Zone 2 (Vestibule)",
@@ -177,6 +178,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/UltiGrate_Features_1_to_6_65975c03-aa3d-4686-b0a7-13fc27b25e7f.png",
+            "video": "shopify://files/videos/zone1.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Zone 3 (Interior)",
