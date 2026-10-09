@@ -201,7 +201,7 @@
         "card_1": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/V1.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Architectural Pattern Design",
@@ -211,7 +211,7 @@
         "card_2": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/v3.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "High Dirt Retention",
@@ -221,7 +221,7 @@
         "card_3": {
           "type": "card",
           "settings": {
-            "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+            "video": "shopify://files/videos/v4.mp4",
             "video_url": "",
             "asset_video_name": "",
             "title": "Double-Compressed Borders",
