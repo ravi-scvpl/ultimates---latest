@@ -13,7 +13,7 @@
       "type": "catalog-hero",
       "name": "Catalog Hero Banner",
       "settings": {
-        "image": "shopify://shop_images/Ultispark_Asper_Left_Entry.png",
+        "image": "shopify://shop_images/hero_image_fbb47b98-bc44-4549-a176-55ee440ceb92.png",
         "overlay_color": "#000000",
         "overlay_opacity": 40,
         "section_height_desktop": "800px",
@@ -40,6 +40,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/hotel_27d897f0-a5de-4a61-8fec-68804284c009.png",
             "title": "Hotels",
             "tag": "",
             "description": "Enhances grand grand entranceways and lobbies with clean, non-slip luxury protection.",
@@ -53,6 +54,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/corporate_bf286ff9-5a57-473c-ab2a-f46875c12bcb.png",
             "title": "Corporate Offices",
             "tag": "",
             "description": "Sleek, modern floor integration for executive foyers, elevators, and reception areas.",
@@ -66,6 +68,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/retail_aecceeb6-fcce-479f-9edc-e002497be657.png",
             "title": "Retail",
             "tag": "",
             "description": "Durable moisture trapping for storefronts and boutique retail entrances.",
@@ -79,6 +82,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/hospital_2dedd6c0-86d8-48fd-9c7f-7795d1784f94.png",
             "title": "Hospitals",
             "tag": "",
             "description": "Hygienic, easy-to-sanitize matting solutions for sterile and medical corridors.",
@@ -92,6 +96,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/school_c966640d-de7a-4b89-be52-ed431164249c.png",
             "title": "Schools & Institutions",
             "tag": "",
             "description": "Robust, high-durability protection engineered to withstand constant student activity.",
@@ -105,6 +110,7 @@
           "settings": {
             "product": "",
             "url": "",
+            "image": "shopify://shop_images/high_traffic_6b5fea48-7d9a-4ddd-b411-30d8d07c890d.png",
             "title": "High-Traffic Entrances",
             "tag": "",
             "description": "Maximum debris retention and water absorption at main building access points.",
@@ -137,7 +143,7 @@
         "accent_color": "#0066ff",
         "heading_color": "#111827",
         "text_color": "#4b5563",
-        "enable_glassmorphism": true,
+        "hover_image_zoom": 108,
         "card_border_radius": 16,
         "max_width": 1400,
         "padding_top": 64,
@@ -249,9 +255,11 @@
         "label_before": "Before",
         "label_after": "After",
         "initial_position": 50,
-        "button_label": "Optional Button",
+        "button_label": "",
         "button_link": "",
         "color_text": "primary-text-1",
+        "image_before": "shopify://shop_images/before_copy.png",
+        "image_after": "shopify://shop_images/after_91108df2-8703-42ec-a983-1dd79bb7786d.png",
         "padding_top": 44,
         "padding_bottom": 44
       }
@@ -319,21 +327,32 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Granite Grey",
+            "color_image": "shopify://shop_images/colour_grey_f7d1bec2-8ebd-42cc-98e0-c49875b780ae.png",
             "swatch_color": "#71797e"
           }
         },
         "swatch_2": {
           "type": "swatch_item",
           "settings": {
-            "color_name": "Charcoal Black",
-            "swatch_color": "#1c1c1c"
+            "color_name": "Red",
+            "color_image": "shopify://shop_images/colour_red_9934ee23-b550-480d-a06b-271e28a1dfe2.png",
+            "swatch_color": "#8E0A0A"
           }
         },
         "swatch_3": {
           "type": "swatch_item",
           "settings": {
             "color_name": "Mocha Brown",
+            "color_image": "shopify://shop_images/colour_brown_2f1e77af-c2fe-4e03-b038-c04a1c2f9d75.png",
             "swatch_color": "#6e473b"
+          }
+        },
+        "swatch_item_QkY8JK": {
+          "type": "swatch_item",
+          "settings": {
+            "color_name": "Green",
+            "color_image": "shopify://shop_images/colour_green_839d5b2c-260e-4bff-949a-62a1b08d8c8a.png",
+            "swatch_color": "#1C5727"
           }
         }
       },
@@ -348,7 +367,8 @@
         "spec_8",
         "swatch_1",
         "swatch_2",
-        "swatch_3"
+        "swatch_3",
+        "swatch_item_QkY8JK"
       ],
       "name": "Performance Specs Band",
       "settings": {
@@ -381,12 +401,12 @@
       "type": "catalog-care",
       "settings": {
         "subtitle": "",
-        "title": "Short AI Visual Cleaning Process",
+        "title": "Cleaning Process",
         "description": "<p>Effortless maintenance tailored to keep your UltiSpark mats in pristine condition using advanced cleaning steps.</p>",
         "header_alignment": "center",
         "title_font_size": 36,
         "box1_badge": "VIDEO 1 • LIGHT CLEANING",
-        "box1_video": "shopify://files/videos/Premium_Quality.mp4",
+        "box1_video": "shopify://files/videos/dry cleaning.mp4",
         "box1_video_url": "",
         "box1_title": "Light & Quick Cleaning Process",
         "box1_description": "",
@@ -396,7 +416,7 @@
         "box1_meta_1": "Time: 2-3 Mins",
         "box1_meta_2": "Frequency: Weekly",
         "box2_badge": "VIDEO 2 • DEEP CLEANING",
-        "box2_video": "shopify://files/videos/Sustainability.mp4",
+        "box2_video": "shopify://files/videos/Person_washing_mat_with_water_20261008114902.mp4",
         "box2_video_url": "",
         "box2_title": "Deep Restoration & Cleaning",
         "box2_description": "",
@@ -430,11 +450,13 @@
         "subtitle": "",
         "title": "Looking to purchase?",
         "title_font_size": 32,
+        "card1_image": "shopify://shop_images/UltiSpark_4_colors_side_on_floor.png",
         "card1_title": "STANDARD SIZES",
         "card1_desc": "Explore available standard-size mats for immediate dispatch.",
         "card1_product": "",
         "card1_url": "",
         "card1_btn_label": "Explore Standard Sizes",
+        "card2_image": "shopify://shop_images/made_to_measure.png",
         "card2_title": "MADE TO MEASURE",
         "card2_desc": "Customize to your exact size or custom architectural layout.",
         "card2_product": "",
@@ -465,10 +487,9 @@
         "location_1": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "ulticlean-carpet-mat-1",
             "url": "",
-            "image": "shopify://shop_images/floor_mat.png",
-            "title": "Boutique Offices",
+            "title": "Ulticlean",
             "tag": "Luxury Look",
             "description": "Enhances modern office aesthetics with geometric texture.",
             "feature_1": "Patterned Design",
@@ -476,13 +497,38 @@
             "feature_3": "Easy Maintenance"
           }
         },
+        "location_RBAK3t": {
+          "type": "location",
+          "settings": {
+            "product": "ultimat-heavy-duty-vinyl-looped-matting",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
+            "feature_1": "Luxury Aesthetic",
+            "feature_2": "High Footfall",
+            "feature_3": "Quick Maintenance"
+          }
+        },
+        "location_RpBt9K": {
+          "type": "location",
+          "settings": {
+            "product": "ultizig-barrier-mat",
+            "url": "",
+            "title": "",
+            "tag": "",
+            "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
+            "feature_1": "Luxury Aesthetic",
+            "feature_2": "High Footfall",
+            "feature_3": "Quick Maintenance"
+          }
+        },
         "location_2": {
           "type": "location",
           "settings": {
-            "product": "",
+            "product": "ultidure-carpet-mat",
             "url": "",
-            "image": "shopify://shop_images/Recessed_UltiGrate_Aluminium_Mats.png",
-            "title": "Hotel Entrances",
+            "title": "Ultidure",
             "tag": "",
             "description": "Combines elegance with practical dirt trapping.",
             "feature_1": "High Aesthetic",
@@ -493,6 +539,8 @@
       },
       "block_order": [
         "location_1",
+        "location_RBAK3t",
+        "location_RpBt9K",
         "location_2"
       ],
       "settings": {
@@ -509,7 +557,7 @@
         "accent_color": "#0066ff",
         "heading_color": "#111827",
         "text_color": "#4b5563",
-        "enable_glassmorphism": true,
+        "hover_image_zoom": 108,
         "card_border_radius": 16,
         "max_width": 1400,
         "padding_top": 64,
