@@ -42,7 +42,7 @@
             "url": "",
             "image": "shopify://shop_images/Hotel_d2ee71a6-4cce-452d-b403-7108c1c384b6.png",
             "title": "Hotels & Hospitality",
-            "tag": "Ideal Location",
+            "tag": "",
             "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
             "feature_1": "Luxury Aesthetic",
             "feature_2": "High Footfall",
@@ -168,8 +168,8 @@
             "video": "shopify://files/videos/UltiScrub_USP_2_C1.mp4",
             "video_url": "",
             "asset_video_name": "",
-            "title": "Rapid Moisture Locking",
-            "text": "<p>Extended vinyl borders for stability and neat looks</p>"
+            "title": "Anti-slip Backing",
+            "text": "<p>Vinyl backing for stability and durability</p>"
           }
         },
         "card_3": {
@@ -178,8 +178,8 @@
             "video": "shopify://files/videos/UltiScrub_USP_3_C1.mp4",
             "video_url": "",
             "asset_video_name": "",
-            "title": "Double-Compressed Borders",
-            "text": "<p>Tough vinyl backing for grip and resilence</p>"
+            "title": "Extended Vinyl Borders",
+            "text": "<p>Tough vinyl borders for grip and aesthetics</p>"
           }
         }
       },
