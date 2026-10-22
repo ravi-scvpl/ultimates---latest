@@ -307,6 +307,12 @@
   font-family: var(--font-body-family) !important;
 }
 
+#side-mat-preview,
+#side-mat-preview *,
+#side-mat-texture {
+  border-radius: 0 !important;
+}
+
 /* Reassurances bottom grid style */
 .premium-product-info-right .grid-cols-3 span.material-symbols-outlined {
   color: rgba(var(--color-foreground), 0.6) !important;
@@ -737,9 +743,9 @@
                   </style>
 
                   <!-- Mat Representation (Horizontal by default, No Rotation) -->
-                  <div id="side-mat-preview" class="transition-all duration-500 rounded overflow-hidden shadow-2xl" style="width: 200px; height: 100px; background-color: #1d1b19; border-radius: 4px; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: all 0.5s ease;">
+                  <div id="side-mat-preview" class="transition-all duration-500 rounded-none overflow-hidden shadow-2xl" style="width: 200px; height: 100px; background-color: #1d1b19; border-radius: 0px !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: all 0.5s ease;">
                     <!-- Texture Overlay -->
-                    <div id="side-mat-texture" data-handle="{{ product.handle }}" class="absolute inset-0 transition-opacity duration-300 texture-carpet" style="position: absolute; inset: 0; transition: opacity 0.3s;"></div>
+                    <div id="side-mat-texture" data-handle="{{ product.handle }}" class="absolute inset-0 transition-opacity duration-300 texture-carpet" style="position: absolute; inset: 0; border-radius: 0px !important; transition: opacity 0.3s;"></div>
                   </div>
 
                 </div>
