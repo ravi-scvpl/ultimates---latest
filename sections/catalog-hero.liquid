@@ -99,18 +99,20 @@
 
   .catalog-hero-heading {
     margin: 0 0 16px 0;
-    font-size: {{ section.settings.heading_size }}px;
+    font-size: clamp(2rem, 4.5vw, {{ section.settings.heading_size }}px);
     color: {{ section.settings.heading_color }};
     font-family: var(--font-heading-family, inherit);
-    line-height: 1.2;
+    line-height: 1.18;
+    letter-spacing: -0.015em;
     word-break: break-word;
   }
 
   .catalog-hero-description {
     margin: 0;
-    font-size: {{ section.settings.description_size }}px;
+    font-size: clamp(0.9375rem, 1.5vw, {{ section.settings.description_size }}px);
     color: {{ section.settings.description_color }};
     line-height: 1.6;
+    font-family: var(--font-body-family);
   }
 
   .catalog-hero-description p {

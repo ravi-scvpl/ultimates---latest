@@ -48,12 +48,13 @@
   }
 
   #CatalogPerforms-{{ section.id }} .catalog-performs__title {
-    font-size: {{ section.settings.title_font_size }}px;
+    font-size: clamp(1.75rem, 3.5vw, {{ section.settings.title_font_size }}px);
     line-height: 1.2;
     font-weight: 700;
     color: {{ section.settings.heading_color }};
     margin: 0 0 16px 0;
     letter-spacing: -0.02em;
+    font-family: var(--font-heading-family);
   }
 
   #CatalogPerforms-{{ section.id }} .catalog-performs__description {
@@ -61,6 +62,7 @@
     line-height: 1.6;
     color: {{ section.settings.text_color }};
     margin: 0;
+    font-family: var(--font-body-family);
   }
 
   /* Gallery Grid & Slider Layout */
@@ -194,7 +196,8 @@
   }
 
   #CatalogPerforms-{{ section.id }} .catalog-performs__location-name {
-    font-size: 18px;
+    font-family: var(--font-heading-family);
+    font-size: 1.15rem;
     font-weight: 700;
     color: #ffffff;
     margin: 0;

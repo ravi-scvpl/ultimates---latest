@@ -13,7 +13,7 @@
     {% if section.settings.title != blank or section.settings.subheading != blank %}
       <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16 space-y-4">
         {% if section.settings.title != blank %}
-          <h2 class="font-display-xl text-4xl lg:text-6xl font-normal leading-tight text-primary">
+          <h2 class="font-display-xl text-2xl lg:text-3xl font-normal leading-tight text-primary">
             {{ section.settings.title }}
           </h2>
         {% endif %}
@@ -53,7 +53,7 @@
                 {{ article.published_at | time_tag: format: 'date' }}
               </span>
 
-              <h3 class="font-headline-md text-xl md:text-2xl text-primary font-normal leading-snug hover:text-secondary transition-colors duration-300">
+              <h3 class="font-headline-md text-base md:text-lg text-primary font-medium leading-snug hover:text-secondary transition-colors duration-300">
                 <a href="{{ article.url }}" class="block">
                   {{ article.title }}
                 </a>

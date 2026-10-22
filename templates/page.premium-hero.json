@@ -602,7 +602,7 @@
           "type": "faq_item",
           "settings": {
             "question": "Can I order a custom size?",
-            "answer": "Yes. Most of our barrier mat ranges can be manufactured to your specific dimensions. We offer a \"Made to Measure\" service where you can specify width and length to the millimeter for a perfect architectural fit.",
+            "answer": "<p>Yes. Most of our barrier mat ranges can be manufactured to your specific dimensions. We offer a \"Made to Measure\" service where you can specify width and length to the millimeter for a perfect architectural fit.</p>",
             "open_by_default": true
           }
         },
@@ -610,7 +610,7 @@
           "type": "faq_item",
           "settings": {
             "question": "How do I clean my barrier mat?",
-            "answer": "Regular maintenance involves daily vacuuming to remove dry soil. For deeper cleans, our mats are compatible with injection-extraction cleaning systems. For smaller sizes, many are machine washable up to 30°C.",
+            "answer": "<p>Regular maintenance involves daily vacuuming to remove dry soil. For deeper cleans, our mats are compatible with injection-extraction cleaning systems. For smaller sizes, many are machine washable up to 30°C.</p>",
             "open_by_default": false
           }
         },
@@ -618,7 +618,7 @@
           "type": "faq_item",
           "settings": {
             "question": "What is the expected lifespan?",
-            "answer": "Our commercial-grade barrier mats are engineered for longevity. In high-traffic environments like hotel lobbies, you can expect 5-7 years of peak performance with proper maintenance. Residential usage often exceeds 10 years.",
+            "answer": "<p>Our commercial-grade barrier mats are engineered for longevity. In high-traffic environments like hotel lobbies, you can expect 5-7 years of peak performance with proper maintenance. Residential usage often exceeds 10 years.</p>",
             "open_by_default": false
           }
         }

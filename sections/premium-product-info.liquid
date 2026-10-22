@@ -305,6 +305,9 @@
 .m2m-live-preview-container #preview-length-label {
   color: rgb(var(--color-foreground)) !important;
   font-family: var(--font-body-family) !important;
+  white-space: nowrap !important;
+  display: inline-block !important;
+  width: max-content !important;
 }
 
 #side-mat-preview,
@@ -712,26 +715,26 @@
                 <div class="relative flex items-center justify-center w-[200px] h-[200px]" style="position: relative; width: 200px; height: 200px; display: flex; align-items: center; justify-content: center;">
                   
                   <!-- Length Arrow & Label (Top Horizontal Arrow) -->
-                  <div id="length-arrow-container" class="absolute" style="position: absolute; display: flex; flex-direction: column; align-items: center; width: 100%;">
-                    <span class="text-[10px] font-bold text-primary" id="preview-length-label" style="font-size: 11px; font-weight: bold; color: #111; margin-bottom: 2px;">Length: --</span>
-                    <div class="w-full flex items-center justify-between px-2" style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
-                      <span class="select-none flex items-center justify-center" style="color: #666;"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M15 18l-6-6 6-6z"/></svg></span>
-                      <div class="flex-1 h-[1px] bg-on-surface/10 mx-1" style="flex: 1; height: 1px; background: rgba(0,0,0,0.15); margin: 0 4px;"></div>
-                      <span class="select-none flex items-center justify-center" style="color: #666;"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M9 18l6-6-6-6z"/></svg></span>
+                  <div id="length-arrow-container" class="absolute" style="position: absolute; display: flex; flex-direction: column; align-items: center; width: 100%; z-index: 20; pointer-events: none;">
+                    <span class="text-[10px] font-bold text-primary select-none" id="preview-length-label" style="font-size: 11px; font-weight: bold; color: #111; margin-bottom: 4px; white-space: nowrap !important; display: inline-block;">Length: --</span>
+                    <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; height: 12px; padding: 0 2px;">
+                      <svg width="10" height="10" viewBox="0 0 24 24" style="display: block; flex-shrink: 0;"><polygon points="16,6 8,12 16,18" fill="#666"/></svg>
+                      <div style="flex: 1; height: 1.5px; background: #666; margin: 0 1px;"></div>
+                      <svg width="10" height="10" viewBox="0 0 24 24" style="display: block; flex-shrink: 0;"><polygon points="8,6 16,12 8,18" fill="#666"/></svg>
                     </div>
                   </div>
 
                   <!-- Width Arrow & Label (Left Vertical Arrow) -->
-                  <div id="width-arrow-container" class="absolute" style="position: absolute; display: flex; align-items: center; justify-content: center; width: 44px;">
+                  <div id="width-arrow-container" class="absolute" style="position: absolute; display: flex; align-items: center; justify-content: flex-end; width: 70px; z-index: 20; pointer-events: none;">
                     <!-- The Arrow Line -->
-                    <div class="absolute right-0 top-0 bottom-0 flex flex-col items-center py-2 h-full" style="width: 10px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 100%;">
-                      <span class="select-none flex items-center justify-center" style="color: #666; line-height: 1;"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M18 15l-6-6-6 6z"/></svg></span>
-                      <div class="w-[1px] flex-1 bg-on-surface/10 my-1" style="width: 1px; flex: 1; background: rgba(0,0,0,0.15); margin: 2px 0;"></div>
-                      <span class="select-none flex items-center justify-center" style="color: #666; line-height: 1;"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M18 9l-6 6-6-6z"/></svg></span>
+                    <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 10px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 100%;">
+                      <svg width="10" height="10" viewBox="0 0 24 24" style="display: block; flex-shrink: 0;"><polygon points="6,16 12,8 18,16" fill="#666"/></svg>
+                      <div style="width: 1.5px; flex: 1; background: #666; margin: 1px 0;"></div>
+                      <svg width="10" height="10" viewBox="0 0 24 24" style="display: block; flex-shrink: 0;"><polygon points="6,8 12,16 18,8" fill="#666"/></svg>
                     </div>
                     <!-- The Rotated Text (placed to the left, centered vertically) -->
-                    <div class="absolute left-0 top-1/2 -translate-y-1/2 flex items-center justify-center" style="position: absolute; left: -10px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center;">
-                      <span class="text-center whitespace-nowrap text-[10px] font-bold text-primary select-none" id="preview-width-label" style="font-size: 11px; font-weight: bold; color: #111; transform: rotate(-90deg); transform-origin: center; display: inline-block;">Width: --</span>
+                    <div style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; justify-content: center; width: max-content; white-space: nowrap !important;">
+                      <span class="text-center select-none" id="preview-width-label" style="font-size: 11px; font-weight: bold; color: #111; transform: rotate(-90deg); transform-origin: center; display: inline-block; white-space: nowrap !important; width: max-content !important;">Width: --</span>
                     </div>
                   </div>
 
@@ -1192,19 +1195,23 @@
       });
 
       // Align horizontal arrow (Length) above the mat
+      const lengthOffset = (pHeight / 2) + 38;
       $('#length-arrow-container').css({
         width: pWidth + 'px',
         left: '50%',
-        top: 'calc(50% - ' + (pHeight / 2 + 32) + 'px)',
-        transform: 'translateX(-50%)'
+        top: 'calc(50% - ' + lengthOffset + 'px)',
+        transform: 'translateX(-50%)',
+        zIndex: 20
       });
 
-      // Align vertical arrow (Width) to the left of the mat
+      // Align vertical arrow (Width) to the left of the mat with clean space
+      const widthOffset = (pWidth / 2) + 16;
       $('#width-arrow-container').css({
         height: pHeight + 'px',
-        left: 'calc(50% - ' + (pWidth / 2 + 40) + 'px)',
+        left: 'calc(50% - ' + widthOffset + 'px)',
         top: '50%',
-        transform: 'translateY(-50%)'
+        transform: 'translate(-100%, -50%)',
+        zIndex: 20
       });
 
       // 2. Update Colors

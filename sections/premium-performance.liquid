@@ -15,7 +15,7 @@
     {% else %}
       background-color: {{ section.settings.bg_color | default: '#15140f' }};
     {% endif %}
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-family: var(--font-body-family);
   }
 
   #premium-performance-{{ section.id }} .feature-showcase__backdrop {
@@ -67,9 +67,9 @@
   }
 
   #premium-performance-{{ section.id }} .feature-showcase__heading {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: var(--font-heading-family);
     font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem);
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.2;
     margin: 0 0 20px;
   }
@@ -215,8 +215,8 @@
   }
 
   #premium-performance-{{ section.id }} .feature-showcase__card-title {
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 1.1rem;
+    font-family: var(--font-heading-family);
+    font-size: 1.15rem;
     font-weight: 600;
     color: {{ section.settings.card_title_color | default: '#14110D' }};
     margin: 0 0 10px;
