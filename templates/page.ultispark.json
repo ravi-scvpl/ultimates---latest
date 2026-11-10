@@ -336,7 +336,7 @@
           "settings": {
             "color_name": "Red",
             "color_image": "shopify://shop_images/colour_red_9934ee23-b550-480d-a06b-271e28a1dfe2.png",
-            "swatch_color": "#8E0A0A"
+            "swatch_color": "#8e0a0a"
           }
         },
         "swatch_3": {
@@ -352,7 +352,7 @@
           "settings": {
             "color_name": "Green",
             "color_image": "shopify://shop_images/colour_green_839d5b2c-260e-4bff-949a-62a1b08d8c8a.png",
-            "swatch_color": "#1C5727"
+            "swatch_color": "#1c5727"
           }
         }
       },
@@ -416,7 +416,7 @@
         "box1_meta_1": "Time: 2-3 Mins",
         "box1_meta_2": "Frequency: Weekly",
         "box2_badge": "",
-        "box2_video": "shopify://files/videos/Person_washing_mat_with_water_20261008114902.mp4",
+        "box2_video": "shopify://files/videos/Ultispark.mp4",
         "box2_video_url": "",
         "box2_title": "Deep Restoration & Cleaning",
         "box2_description": "",
