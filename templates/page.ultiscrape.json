@@ -621,7 +621,7 @@
         "mobile_height": "400px",
         "media_type": "video",
         "image": "shopify://shop_images/close_up_1_876c3f58-af00-45b5-9f00-a89262a21769.png",
-        "video": "shopify://files/videos/UltiScrape Texture Video.mp4",
+        "video": "shopify://files/videos/Ultiscrub technical video.mp4",
         "video_url_mp4": "",
         "video_url_external": "",
         "mobile_video_url_mp4": "",
@@ -708,7 +708,7 @@
       ],
       "name": "Promise Slider",
       "settings": {
-        "background_video": "shopify://files/videos/4th.mp4",
+        "background_video": "shopify://files/videos/Ultiscrape_bg.mp4",
         "background_video_url": "",
         "section_height": 800,
         "padding_top": 100,
