@@ -150,51 +150,6 @@
         "padding_bottom": 64
       }
     },
-    "catalog_fullwidth_feature_main": {
-      "type": "catalog-fullwidth-feature",
-      "name": "Full Width Feature Section",
-      "settings": {
-        "layout_mode": "overlay",
-        "image_position": "left",
-        "desktop_height": "700px",
-        "mobile_height": "400px",
-        "media_type": "video",
-        "image": "shopify://shop_images/UltiDure_Brown_Mat_at_office_Entrance.png",
-        "video": "shopify://files/videos/UltiDure CGI video.mp4",
-        "video_url_mp4": "",
-        "video_url_external": "",
-        "mobile_video_url_mp4": "",
-        "video_autoplay": true,
-        "video_loop": true,
-        "video_muted": true,
-        "overlay_color": "#000000",
-        "overlay_opacity": 30,
-        "card_position": "right",
-        "text_alignment": "left",
-        "mobile_text_alignment": "center",
-        "card_max_width": 550,
-        "card_padding": 36,
-        "card_border_radius": 16,
-        "card_bg_color": "#f4f4f4",
-        "enable_glassmorphism": false,
-        "badge": "",
-        "badge_color": "#555555",
-        "heading": "",
-        "heading_size": 32,
-        "heading_color": "#111111",
-        "description": "",
-        "description_size": 15,
-        "description_color": "#444444",
-        "button_label": "",
-        "button_link": "",
-        "button_bg_color": "#111111",
-        "button_text_color": "#ffffff",
-        "button_border_color": "#111111",
-        "section_bg_color": "#ffffff",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
     "promise_slider_main": {
       "type": "promise-slider",
       "blocks": {
@@ -247,7 +202,7 @@
       ],
       "name": "Promise Slider",
       "settings": {
-        "background_video": "shopify://files/videos/4th.mp4",
+        "background_video": "shopify://files/videos/Ultidure_bg.mp4",
         "background_video_url": "",
         "section_height": 800,
         "padding_top": 100,
@@ -780,7 +735,6 @@
   "order": [
     "catalog_hero_main",
     "catalog_where_it_performs_yY6Maw",
-    "catalog_fullwidth_feature_main",
     "promise_slider_main",
     "before_after_LEkwhC",
     "three_layer_feature_main",
