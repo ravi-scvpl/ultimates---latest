@@ -13,7 +13,7 @@
       "type": "catalog-hero",
       "name": "Catalog Hero Banner",
       "settings": {
-        "image": "shopify://shop_images/hero_main.png",
+        "image": "shopify://shop_images/ultiscrub_1_37de4903-5e91-4a8f-af1f-540437976aa9.png",
         "overlay_color": "#000000",
         "overlay_opacity": 40,
         "section_height_desktop": "800px",
@@ -40,7 +40,7 @@
           "settings": {
             "product": "",
             "url": "",
-            "image": "shopify://shop_images/Hotel_d2ee71a6-4cce-452d-b403-7108c1c384b6.png",
+            "image": "shopify://shop_images/ultiscrub.png",
             "title": "Hotels & Hospitality",
             "tag": "",
             "description": "Maintains luxury foyer aesthetic while protecting floor surface from high guest footfall.",
@@ -296,7 +296,7 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Granite Grey",
-            "color_image": "shopify://shop_images/colour_DG.png",
+            "color_image": "shopify://shop_images/ultiscrub_0b6163ee-b97b-4eb5-9483-6cf66d5fe4a4.png",
             "swatch_color": "#3e4347"
           }
         },
@@ -304,7 +304,7 @@
           "type": "swatch_item",
           "settings": {
             "color_name": "Chestnut Brown",
-            "color_image": "shopify://shop_images/colour.png",
+            "color_image": "shopify://shop_images/ultiscrub3.png",
             "swatch_color": "#5c4033"
           }
         },
