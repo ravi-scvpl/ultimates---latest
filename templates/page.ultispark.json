@@ -13,7 +13,7 @@
       "type": "catalog-hero",
       "name": "Catalog Hero Banner",
       "settings": {
-        "image": "shopify://shop_images/hero_image_fbb47b98-bc44-4549-a176-55ee440ceb92.png",
+        "image": "shopify://shop_images/ultispark.png",
         "overlay_color": "#000000",
         "overlay_opacity": 40,
         "section_height_desktop": "800px",
