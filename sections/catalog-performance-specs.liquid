@@ -127,13 +127,59 @@
     padding-right: 12px;
   }
 
+  .spec-values-group {
+    flex: 0 0 60%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
   .spec-value {
     font-size: 14px;
     font-weight: 700;
     color: {{ section.settings.value_color }};
-    flex: 0 0 60%;
     text-align: right;
     word-break: break-word;
+  }
+
+  .spec-row:not(.spec-row--dual-value) .spec-value {
+    flex: 1 1 100%;
+  }
+
+  .spec-row--dual-value .spec-value {
+    flex: 1 1 50%;
+  }
+
+  .specs-table-col-headers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px 10px 12px;
+    border-bottom: 1.5px solid {{ section.settings.border_color }};
+    margin-bottom: 6px;
+  }
+
+  .spec-col-header-spacer {
+    flex: 0 0 40%;
+  }
+
+  .spec-col-headers-group {
+    flex: 0 0 60%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+
+  .spec-col-header {
+    flex: 1 1 50%;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: {{ section.settings.heading_color }};
+    text-align: right;
+    opacity: 0.85;
   }
 
   /* Media & Swatches Container */
@@ -277,6 +323,18 @@
       font-size: 13px;
     }
 
+    .spec-values-group {
+      gap: 10px;
+    }
+
+    .spec-col-headers-group {
+      gap: 10px;
+    }
+
+    .spec-col-header {
+      font-size: 10px;
+    }
+
     .swatch-item {
       width: 40px;
       height: 40px;
@@ -308,12 +366,27 @@
             <div class="specs-table-title">{{ section.settings.table_title }}</div>
           {% endif %}
 
+          {% if section.settings.col_1_header != blank or section.settings.col_2_header != blank %}
+            <div class="specs-table-col-headers">
+              <div class="spec-col-header-spacer"></div>
+              <div class="spec-col-headers-group">
+                <span class="spec-col-header spec-col-header-1">{{ section.settings.col_1_header }}</span>
+                <span class="spec-col-header spec-col-header-2">{{ section.settings.col_2_header }}</span>
+              </div>
+            </div>
+          {% endif %}
+
           <div class="specs-list">
             {% for block in section.blocks %}
               {% if block.type == 'spec_item' %}
-                <div class="spec-row" {{ block.shopify_attributes }}>
+                <div class="spec-row{% if block.settings.value_2 != blank %} spec-row--dual-value{% endif %}" {{ block.shopify_attributes }}>
                   <div class="spec-label">{{ block.settings.label }}</div>
-                  <div class="spec-value">{{ block.settings.value }}</div>
+                  <div class="spec-values-group">
+                    <div class="spec-value spec-value-1">{{ block.settings.value }}</div>
+                    {% if block.settings.value_2 != blank %}
+                      <div class="spec-value spec-value-2">{{ block.settings.value_2 }}</div>
+                    {% endif %}
+                  </div>
                 </div>
               {% endif %}
             {% endfor %}
@@ -535,6 +608,18 @@
     },
     {
       "type": "text",
+      "id": "col_1_header",
+      "label": "Value Column 1 Header (Optional)",
+      "info": "e.g. '13 mm' or 'Medium Duty'. Leave blank if not using dual values."
+    },
+    {
+      "type": "text",
+      "id": "col_2_header",
+      "label": "Value Column 2 Header (Optional)",
+      "info": "e.g. '15 mm' or 'Heavy Duty'. Leave blank if not using dual values."
+    },
+    {
+      "type": "text",
       "id": "swatches_title",
       "label": "Swatches Label",
       "default": "AVAILABLE COLORS"
@@ -638,14 +723,20 @@
         {
           "type": "text",
           "id": "label",
-          "label": "Specification Label (e.g. Construction)",
+          "label": "Specification Label (e.g. Construction / Height)",
           "default": "Construction"
         },
         {
           "type": "text",
           "id": "value",
-          "label": "Specification Value (e.g. Polypropylene looped pile)",
+          "label": "Specification Value (Value 1)",
           "default": "Polypropylene looped pile"
+        },
+        {
+          "type": "text",
+          "id": "value_2",
+          "label": "Second Specification Value (Optional)",
+          "info": "Optional second value (e.g. 15 mm or Heavy Duty). Leave blank if there is only 1 value."
         }
       ]
     },

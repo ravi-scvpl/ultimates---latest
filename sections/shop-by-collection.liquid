@@ -33,6 +33,21 @@
       "id": "show_new_badge",
       "label": "Show 'New' Badge",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Enable Auto-Slide",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_interval",
+      "label": "Auto-Slide Interval (seconds)",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "default": 5
     }
   ],
   "presets": [
@@ -230,7 +245,7 @@
 }
 </style>
 
-<div class="collection-carousel">
+<div class="collection-carousel" id="CollectionCarousel-{{ section.id }}" data-autoplay="{{ section.settings.enable_autoplay }}" data-interval="{{ section.settings.autoplay_interval | default: 5 | times: 1000 }}">
   <h2 class="carousel-title">{{ section.settings.title }}</h2>
   
   <div class="carousel-wrapper">
@@ -276,77 +291,158 @@
   </div>
   
   <div class="carousel-indicators">
-    {% for i in (1..section.settings.product_limit) %}
-      <div class="carousel-indicator {% if forloop.first %}active{% endif %}"></div>
+    {% for product in collection.products limit: section.settings.product_limit %}
+      <div class="carousel-indicator {% if forloop.first %}active{% endif %}" data-index="{{ forloop.index0 }}"></div>
     {% endfor %}
   </div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const carousel = document.querySelector('.products-carousel');
-  const prevBtn = document.querySelector('.carousel-arrow.prev');
-  const nextBtn = document.querySelector('.carousel-arrow.next');
-  const indicators = document.querySelectorAll('.carousel-indicator');
+  const container = document.getElementById('CollectionCarousel-{{ section.id }}') || document.querySelector('.collection-carousel');
+  if (!container) return;
+
+  const carousel = container.querySelector('.products-carousel');
+  const prevBtn = container.querySelector('.carousel-arrow.prev');
+  const nextBtn = container.querySelector('.carousel-arrow.next');
+  const indicators = container.querySelectorAll('.carousel-indicator');
+  const items = container.querySelectorAll('.carousel-item');
+  const totalItems = items.length;
+
+  if (!carousel || totalItems <= 1) return;
+
+  const enableAutoplay = container.getAttribute('data-autoplay') !== 'false';
+  const autoplayInterval = parseInt(container.getAttribute('data-interval'), 10) || 5000;
+
   let currentIndex = 0;
-  let autoScroll;
-  
-  function startAutoScroll() {
-    autoScroll = setInterval(() => {
-      currentIndex = (currentIndex + 1) % indicators.length;
-      scrollToItem(currentIndex);
-    }, 5000);
+  let autoScroll = null;
+  let manualInteracted = false;
+  let scrollTimeout = null;
+
+  function getItemWidth() {
+    if (items.length > 1) {
+      const diff = items[1].offsetLeft - items[0].offsetLeft;
+      if (diff > 0) return diff;
+    }
+    if (items[0]) {
+      return items[0].offsetWidth + 20;
+    }
+    return 0;
   }
-  
-  function stopAutoScroll() {
-    clearInterval(autoScroll);
+
+  function getVisibleIndex() {
+    const itemWidth = getItemWidth();
+    if (itemWidth <= 0) return 0;
+    const index = Math.round(carousel.scrollLeft / itemWidth);
+    return Math.max(0, Math.min(index, totalItems - 1));
   }
-  
-  function updateIndicators() {
-    indicators.forEach((indicator, index) => {
-      indicator.classList.toggle('active', index === currentIndex);
+
+  function updateIndicators(index) {
+    indicators.forEach((indicator, idx) => {
+      indicator.classList.toggle('active', idx === index);
     });
   }
-  
+
   function scrollToItem(index) {
-    const itemWidth = document.querySelector('.carousel-item').offsetWidth + 20;
+    const itemWidth = getItemWidth();
+    if (itemWidth <= 0) return;
+    
+    const targetLeft = index * itemWidth;
     carousel.scrollTo({
-      left: index * itemWidth,
+      left: targetLeft,
       behavior: 'smooth'
     });
     currentIndex = index;
-    updateIndicators();
+    updateIndicators(currentIndex);
   }
-  
-  function handleNavigation() {
-    stopAutoScroll();
-    // Optionally restart auto-scroll after a delay
-    // setTimeout(startAutoScroll, 10000);
+
+  // Stop auto-scroll permanently when manual interaction happens (especially on phones/swiping)
+  function stopAutoplayPermanently() {
+    manualInteracted = true;
+    if (autoScroll) {
+      clearInterval(autoScroll);
+      autoScroll = null;
+    }
   }
-  
-  prevBtn.addEventListener('click', () => {
-    currentIndex = Math.max(currentIndex - 1, 0);
-    scrollToItem(currentIndex);
-    handleNavigation();
-  });
-  
-  nextBtn.addEventListener('click', () => {
-    currentIndex = Math.min(currentIndex + 1, indicators.length - 1);
-    scrollToItem(currentIndex);
-    handleNavigation();
-  });
-  
+
+  function startAutoScroll() {
+    if (!enableAutoplay || manualInteracted) return;
+    if (autoScroll) clearInterval(autoScroll);
+
+    autoScroll = setInterval(function() {
+      if (manualInteracted) {
+        clearInterval(autoScroll);
+        autoScroll = null;
+        return;
+      }
+      // Always advance from where the user or carousel currently is!
+      const currentPos = getVisibleIndex();
+      const nextIndex = (currentPos + 1) % totalItems;
+      scrollToItem(nextIndex);
+    }, autoplayInterval);
+  }
+
+  // Keep indicator and internal index in sync when user scrolls manually
+  carousel.addEventListener('scroll', function() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function() {
+      const activeIdx = getVisibleIndex();
+      currentIndex = activeIdx;
+      updateIndicators(activeIdx);
+    }, 60);
+  }, { passive: true });
+
+  // On phone / touch devices, stop auto-scroll as soon as user touches or swipes
+  carousel.addEventListener('touchstart', stopAutoplayPermanently, { passive: true });
+  carousel.addEventListener('touchmove', stopAutoplayPermanently, { passive: true });
+  carousel.addEventListener('wheel', stopAutoplayPermanently, { passive: true });
+  carousel.addEventListener('pointerdown', stopAutoplayPermanently, { passive: true });
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      stopAutoplayPermanently();
+      const currentPos = getVisibleIndex();
+      const prevIndex = Math.max(currentPos - 1, 0);
+      scrollToItem(prevIndex);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      stopAutoplayPermanently();
+      const currentPos = getVisibleIndex();
+      const nextIndex = Math.min(currentPos + 1, totalItems - 1);
+      scrollToItem(nextIndex);
+    });
+  }
+
   indicators.forEach((indicator, index) => {
-    indicator.addEventListener('click', () => {
+    indicator.addEventListener('click', function(e) {
+      e.preventDefault();
+      stopAutoplayPermanently();
       scrollToItem(index);
-      handleNavigation();
     });
   });
-  
-  // Start auto-scroll initially
-  startAutoScroll();
-  
-  carousel.addEventListener('mouseenter', stopAutoScroll);
-  carousel.addEventListener('mouseleave', startAutoScroll);
+
+  // Pause on desktop hover (resumes on mouseleave only if user hasn't manually clicked/interacted)
+  carousel.addEventListener('mouseenter', function() {
+    if (!manualInteracted && autoScroll) {
+      clearInterval(autoScroll);
+      autoScroll = null;
+    }
+  });
+
+  carousel.addEventListener('mouseleave', function() {
+    if (!manualInteracted && enableAutoplay) {
+      startAutoScroll();
+    }
+  });
+
+  // Start auto-scroll initially if enabled
+  if (enableAutoplay) {
+    startAutoScroll();
+  }
 });
 </script>
