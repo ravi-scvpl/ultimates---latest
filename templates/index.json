@@ -107,7 +107,7 @@
           "type": "card",
           "settings": {
             "card_image": "shopify://shop_images/002.png",
-            "card_title": "Aluminium Dust Buster Mats",
+            "card_title": "Aluminium Dust Mats",
             "link": "shopify://pages/aluminium-dust-buster-mat",
             "background": "#565658",
             "text_color": "#ffffff"
