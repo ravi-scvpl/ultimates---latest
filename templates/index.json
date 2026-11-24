@@ -97,7 +97,7 @@
           "type": "card",
           "settings": {
             "card_image": "shopify://shop_images/006.png",
-            "card_title": "COMMERCIAL MATS",
+            "card_title": "Commercial Mats",
             "link": "shopify://collections/commercial-floormats",
             "background": "#565658",
             "text_color": "#ffffff"
