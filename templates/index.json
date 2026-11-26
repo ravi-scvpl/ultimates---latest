@@ -118,7 +118,7 @@
           "settings": {
             "card_image": "shopify://shop_images/008.png",
             "card_title": "Anti-Skid Floor Mats",
-            "link": "shopify://products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal",
+            "link": "shopify://products/ultidure-anti-slip-commercial-floor-mat-charcoal",
             "background": "#565658",
             "text_color": "#ffffff"
           }
@@ -521,7 +521,7 @@
             "image": "shopify://shop_images/UltiDure_Mall_Legs.png",
             "icon_size": 100,
             "slide_title": "All Terrain Mat",
-            "link": "shopify://products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal"
+            "link": "shopify://products/ultidure-anti-slip-commercial-floor-mat-charcoal"
           }
         },
         "shop_4fHa8C": {
@@ -586,7 +586,7 @@
           "type": "button",
           "settings": {
             "button_label": "SHOP NOW",
-            "button_link": "shopify://products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal"
+            "button_link": "shopify://products/ultidure-anti-slip-commercial-floor-mat-charcoal"
           }
         }
       },
@@ -778,7 +778,7 @@
             "scrim_lightness": 0,
             "title": "",
             "text": "Offices",
-            "link": "shopify://products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal"
+            "link": "shopify://products/ultidure-anti-slip-commercial-floor-mat-charcoal"
           }
         },
         "media_F7rJGT": {
@@ -792,7 +792,7 @@
             "scrim_lightness": 0,
             "title": "",
             "text": "",
-            "link": "shopify://products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal"
+            "link": "shopify://products/ultidure-anti-slip-commercial-floor-mat-charcoal"
           }
         },
         "media_T8Aitj": {
@@ -806,7 +806,7 @@
             "scrim_lightness": 0,
             "title": "",
             "text": "Villas",
-            "link": "shopify://products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal"
+            "link": "shopify://products/ultidure-anti-slip-commercial-floor-mat-charcoal"
           }
         },
         "media_EMY3UU": {
@@ -820,7 +820,7 @@
             "scrim_lightness": 0,
             "title": "",
             "text": "Malls",
-            "link": "shopify://products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal"
+            "link": "shopify://products/ultidure-anti-slip-commercial-floor-mat-charcoal"
           }
         },
         "media_AxN4Tq": {
@@ -834,7 +834,7 @@
             "scrim_lightness": 0,
             "title": "",
             "text": "Homes",
-            "link": "shopify://products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal"
+            "link": "shopify://products/ultidure-anti-slip-commercial-floor-mat-charcoal"
           }
         }
       },
@@ -852,7 +852,7 @@
         "font_size": 100,
         "color_text": "primary-text-1",
         "button_label": "",
-        "button_link": "shopify://products/nanotech-toughtread-technology-integrated-commercial-mat-charcoal",
+        "button_link": "shopify://products/ultidure-anti-slip-commercial-floor-mat-charcoal",
         "row_height": 170,
         "font_image_size": 100,
         "color_image_text": "secondary-text-4",
