@@ -513,7 +513,7 @@
         "content_position": "bottom-center",
         "text_alignment": "center",
         "mobile_text_alignment": "center",
-        "heading": "<strong>ULTISCRApe</strong>",
+        "heading": "<strong>ULTISCRAPE</strong>",
         "heading_size": 48,
         "heading_color": "#ffffff",
         "description": "<p><strong>Heavy-duty commercial scraper carpet matting with double-reinforced borders for maximum dirt removal and durability.<br/></strong></p>",
@@ -731,7 +731,7 @@
         "button_label": "",
         "button_link": "",
         "color_text": "primary-text-1",
-        "image_before": "shopify://shop_images/ultiscrape_before.png",
+        "image_before": "shopify://shop_images/Ultiscrape_before_image__converted.webp",
         "image_after": "shopify://shop_images/ultiscrape_after.png",
         "padding_top": 44,
         "padding_bottom": 44
@@ -758,56 +758,64 @@
           "type": "spec_item",
           "settings": {
             "label": "Construction",
-            "value": "Stiff Polypropylene"
+            "value": "Stiff Polypropylene",
+            "value_2": ""
           }
         },
         "spec_item_cFNVUA": {
           "type": "spec_item",
           "settings": {
             "label": "Height",
-            "value": "10 mm"
+            "value": "10 mm",
+            "value_2": ""
           }
         },
         "spec_item_QRGxYP": {
           "type": "spec_item",
           "settings": {
             "label": "Carpet Style",
-            "value": "Tufted cut-pile"
+            "value": "Tufted cut-pile",
+            "value_2": ""
           }
         },
         "spec_item_jaqTkn": {
           "type": "spec_item",
           "settings": {
             "label": "Water Retention",
-            "value": "3.50 L/m²"
+            "value": "3.50 L/m²",
+            "value_2": ""
           }
         },
         "spec_item_GYre4C": {
           "type": "spec_item",
           "settings": {
             "label": "Pedestrian annual traffic",
-            "value": "Up to 0.8 Million steps/year"
+            "value": "Up to 0.8 Million steps/year",
+            "value_2": ""
           }
         },
         "spec_item_y3TkGM": {
           "type": "spec_item",
           "settings": {
             "label": "Backing",
-            "value": "Prime vinyl"
+            "value": "Prime vinyl",
+            "value_2": ""
           }
         },
         "spec_item_W9iibB": {
           "type": "spec_item",
           "settings": {
             "label": "Border",
-            "value": "12 mm extended vinyl"
+            "value": "12 mm extended vinyl",
+            "value_2": ""
           }
         },
         "spec_item_qq8QcB": {
           "type": "spec_item",
           "settings": {
             "label": "Warranty",
-            "value": "15 months"
+            "value": "15 months",
+            "value_2": ""
           }
         },
         "swatch_item_VidNep": {
@@ -870,6 +878,8 @@
         "layout_position": "specs_first",
         "image": "shopify://shop_images/UltiScrape_Mats_Rolled_Up.png",
         "table_title": "SPECIFICATIONS",
+        "col_1_header": "",
+        "col_2_header": "",
         "swatches_title": "AVAILABLE COLORS",
         "bg_color": "#fafafa",
         "text_color": "#111111",
@@ -937,7 +947,7 @@
         "subtitle": "",
         "title": "Looking to purchase?",
         "title_font_size": 32,
-        "card1_image": "shopify://shop_images/STANDARD_SIZES_1.png",
+        "card1_image": "shopify://shop_images/Ultiscrape_standard_converted.webp",
         "card1_title": "STANDARD SIZES",
         "card1_desc": "Explore available standard-size mats for immediate dispatch and standard entrance dimensions.",
         "card1_product": "",
