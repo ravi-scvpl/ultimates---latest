@@ -226,56 +226,64 @@
           "type": "spec_item",
           "settings": {
             "label": "Construction",
-            "value": "Patterned Polypropylene"
+            "value": "Patterned Polypropylene",
+            "value_2": ""
           }
         },
         "spec_2": {
           "type": "spec_item",
           "settings": {
             "label": "Height",
-            "value": "9 mm"
+            "value": "9 mm",
+            "value_2": ""
           }
         },
         "spec_3": {
           "type": "spec_item",
           "settings": {
             "label": "Carpet Style",
-            "value": "Multi-Patterned Tufted"
+            "value": "Multi-Patterned Tufted",
+            "value_2": ""
           }
         },
         "spec_4": {
           "type": "spec_item",
           "settings": {
             "label": "Water Retention",
-            "value": "3.50 L/m²"
+            "value": "3.50 L/m²",
+            "value_2": ""
           }
         },
         "spec_5": {
           "type": "spec_item",
           "settings": {
             "label": "Pedestrian annual traffic",
-            "value": "Up to 0.7 Million steps/year"
+            "value": "Up to 0.7 Million steps/year",
+            "value_2": ""
           }
         },
         "spec_6": {
           "type": "spec_item",
           "settings": {
             "label": "Backing",
-            "value": "Prime vinyl"
+            "value": "Prime vinyl",
+            "value_2": ""
           }
         },
         "spec_7": {
           "type": "spec_item",
           "settings": {
             "label": "Border",
-            "value": "12 mm extended vinyl"
+            "value": "12 mm extended vinyl",
+            "value_2": ""
           }
         },
         "spec_8": {
           "type": "spec_item",
           "settings": {
             "label": "Warranty",
-            "value": "12 months"
+            "value": "12 months",
+            "value_2": ""
           }
         },
         "swatch_1": {
@@ -338,6 +346,8 @@
         "layout_position": "specs_first",
         "image": "shopify://shop_images/UltiSpark_4_colors_side_on_floor.png",
         "table_title": "SPECIFICATIONS",
+        "col_1_header": "",
+        "col_2_header": "",
         "swatches_title": "AVAILABLE COLORS",
         "bg_color": "#fafafa",
         "text_color": "#111111",
@@ -361,8 +371,8 @@
         "header_alignment": "center",
         "title_font_size": 36,
         "box1_badge": "",
-        "box1_video": "shopify://files/videos/dry cleaning.mp4",
         "box1_video_url": "",
+        "box1_image": "shopify://shop_images/ultispark_cleaning_image__converted.webp",
         "box1_title": "Light & Quick Cleaning Process",
         "box1_description": "",
         "box1_step_1": "",
@@ -405,7 +415,7 @@
         "subtitle": "",
         "title": "Looking to purchase?",
         "title_font_size": 32,
-        "card1_image": "shopify://shop_images/UltiSpark_4_colors_side_on_floor.png",
+        "card1_image": "shopify://shop_images/Ultispark_standard_converted.webp",
         "card1_title": "STANDARD SIZES",
         "card1_desc": "Explore available standard-size mats for immediate dispatch.",
         "card1_product": "",
