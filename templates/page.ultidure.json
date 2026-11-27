@@ -485,7 +485,7 @@
         "prod_1": {
           "type": "product_item",
           "settings": {
-            "selected_product": "ultiscrape-carpet-mat",
+            "selected_product": "ultiscrape-custom-size-entrance-mat",
             "custom_title": "",
             "custom_desc": "",
             "custom_url": ""
@@ -575,7 +575,7 @@
         "location_i49DBf": {
           "type": "location",
           "settings": {
-            "product": "ultiscrape-carpet-mat",
+            "product": "ultiscrape-custom-size-entrance-mat",
             "url": "",
             "title": "",
             "tag": "",
