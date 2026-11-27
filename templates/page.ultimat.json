@@ -252,56 +252,64 @@
           "type": "spec_item",
           "settings": {
             "label": "Construction",
-            "value": "Extruded Vinyl Loop Web"
+            "value": "Extruded Vinyl Loop Web",
+            "value_2": ""
           }
         },
         "spec_2": {
           "type": "spec_item",
           "settings": {
             "label": "Height",
-            "value": "12 mm"
+            "value": "12 mm",
+            "value_2": ""
           }
         },
         "spec_3": {
           "type": "spec_item",
           "settings": {
             "label": "Structure",
-            "value": "Open Coil Mesh"
+            "value": "Open Coil Mesh",
+            "value_2": ""
           }
         },
         "spec_4": {
           "type": "spec_item",
           "settings": {
             "label": "Drainage",
-            "value": "All-Weather Open Drain"
+            "value": "All-Weather Open Drain",
+            "value_2": ""
           }
         },
         "spec_5": {
           "type": "spec_item",
           "settings": {
             "label": "Pedestrian annual traffic",
-            "value": "Up to 1.0 Million steps/year"
+            "value": "Up to 1.0 Million steps/year",
+            "value_2": ""
           }
         },
         "spec_6": {
           "type": "spec_item",
           "settings": {
             "label": "Backing",
-            "value": "Solid or Unbacked options"
+            "value": "Solid or Unbacked options",
+            "value_2": ""
           }
         },
         "spec_7": {
           "type": "spec_item",
           "settings": {
             "label": "Border",
-            "value": "Beveled Safety Edge"
+            "value": "Beveled Safety Edge",
+            "value_2": ""
           }
         },
         "spec_8": {
           "type": "spec_item",
           "settings": {
             "label": "Warranty",
-            "value": "12 months"
+            "value": "12 months",
+            "value_2": ""
           }
         },
         "swatch_1": {
@@ -355,6 +363,8 @@
         "layout_position": "specs_first",
         "image": "shopify://shop_images/WhatsApp_Image_2026-09-09_at_9.05.00_PM.jpg",
         "table_title": "SPECIFICATIONS",
+        "col_1_header": "",
+        "col_2_header": "",
         "swatches_title": "AVAILABLE COLORS",
         "bg_color": "#fafafa",
         "text_color": "#111111",
@@ -378,8 +388,8 @@
         "header_alignment": "center",
         "title_font_size": 36,
         "box1_badge": "",
-        "box1_video": "shopify://files/videos/dry cleaning.mp4",
         "box1_video_url": "",
+        "box1_image": "shopify://shop_images/Ultimat_cleaning_converted.webp",
         "box1_title": "Light & Quick Cleaning Process",
         "box1_description": "",
         "box1_step_1": "",
@@ -466,7 +476,7 @@
         "subtitle": "",
         "title": "Looking to purchase?",
         "title_font_size": 32,
-        "card1_image": "shopify://shop_images/Ultimats_11094639-9514-46ba-a72d-222e1f86d82f.jpg",
+        "card1_image": "shopify://shop_images/Ultimat_standard_converted.webp",
         "card1_title": "STANDARD SIZES",
         "card1_desc": "Explore available standard-size mats for immediate dispatch.",
         "card1_product": "ultimat-custom-size-heavy-duty-vinyl-entrance-mat",
