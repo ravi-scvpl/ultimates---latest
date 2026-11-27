@@ -530,7 +530,7 @@
         "prod_4": {
           "type": "product_item",
           "settings": {
-            "selected_product": "ultidure-carpet-mat",
+            "selected_product": "ultidure-custom-size-antislip-commercial-mat",
             "custom_title": "",
             "custom_desc": "",
             "custom_url": ""
@@ -619,7 +619,7 @@
         "location_2": {
           "type": "location",
           "settings": {
-            "product": "ultidure-carpet-mat",
+            "product": "ultidure-custom-size-antislip-commercial-mat",
             "url": "",
             "title": "Industrial Entryways",
             "tag": "",
