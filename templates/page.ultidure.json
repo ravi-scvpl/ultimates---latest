@@ -512,7 +512,7 @@
         "prod_4": {
           "type": "product_item",
           "settings": {
-            "selected_product": "ultimat-heavy-duty-vinyl-looped-matting",
+            "selected_product": "ultimat-custom-size-heavy-duty-vinyl-entrance-mat",
             "custom_title": "",
             "custom_desc": "",
             "custom_url": ""
@@ -549,7 +549,7 @@
         "location_1": {
           "type": "location",
           "settings": {
-            "product": "ultimat-heavy-duty-vinyl-looped-matting",
+            "product": "ultimat-custom-size-heavy-duty-vinyl-entrance-mat",
             "url": "",
             "title": "",
             "tag": "",

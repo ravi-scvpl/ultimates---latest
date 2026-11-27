@@ -272,7 +272,7 @@
         "location_Y66JHH": {
           "type": "location",
           "settings": {
-            "product": "ultimat-heavy-duty-vinyl-looped-matting",
+            "product": "ultimat-custom-size-heavy-duty-vinyl-entrance-mat",
             "url": "",
             "title": "Ultimat",
             "tag": "",
@@ -345,7 +345,6 @@
         "accent_color": "#0066ff",
         "heading_color": "#111827",
         "text_color": "#4b5563",
-        "enable_glassmorphism": true,
         "card_border_radius": 16,
         "max_width": 1400,
         "padding_top": 64,

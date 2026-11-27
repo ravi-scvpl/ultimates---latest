@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "wrapper": "div.template-product-wrapper",
   "sections": {
@@ -219,7 +228,7 @@
           "ulticlean-carpet-mat-1",
           "ultizig-barrier-mat",
           "ultizig-barrier-mat-with-backing",
-          "ultimat-heavy-duty-vinyl-looped-matting",
+          "ultimat-custom-size-heavy-duty-vinyl-entrance-mat",
           "ultirake-carpet-mat"
         ],
         "columns": 4,
