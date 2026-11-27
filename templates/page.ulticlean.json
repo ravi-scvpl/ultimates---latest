@@ -223,56 +223,64 @@
           "type": "spec_item",
           "settings": {
             "label": "Construction",
-            "value": "Soft Polyamide Cut-Pile"
+            "value": "Soft Polyamide Cut-Pile",
+            "value_2": ""
           }
         },
         "spec_2": {
           "type": "spec_item",
           "settings": {
             "label": "Height",
-            "value": "7 mm"
+            "value": "7 mm",
+            "value_2": ""
           }
         },
         "spec_3": {
           "type": "spec_item",
           "settings": {
             "label": "Carpet Style",
-            "value": "Plush Soft Tufted"
+            "value": "Plush Soft Tufted",
+            "value_2": ""
           }
         },
         "spec_4": {
           "type": "spec_item",
           "settings": {
             "label": "Water Retention",
-            "value": "3.50 L/m²"
+            "value": "3.50 L/m²",
+            "value_2": ""
           }
         },
         "spec_5": {
           "type": "spec_item",
           "settings": {
             "label": "Pedestrian annual traffic",
-            "value": "Up to 0.5 Million steps/year"
+            "value": "Up to 0.5 Million steps/year",
+            "value_2": ""
           }
         },
         "spec_6": {
           "type": "spec_item",
           "settings": {
             "label": "Backing",
-            "value": "Prime vinyl"
+            "value": "Prime vinyl",
+            "value_2": ""
           }
         },
         "spec_7": {
           "type": "spec_item",
           "settings": {
             "label": "Border",
-            "value": "12 mm extended vinyl"
+            "value": "12 mm extended vinyl",
+            "value_2": ""
           }
         },
         "spec_8": {
           "type": "spec_item",
           "settings": {
             "label": "Warranty",
-            "value": "12 months"
+            "value": "12 months",
+            "value_2": ""
           }
         },
         "swatch_1": {
@@ -335,6 +343,8 @@
         "layout_position": "specs_first",
         "image": "shopify://shop_images/magnific_closeup-of-premium-brown-_43xfsAV9Aa_1.png",
         "table_title": "SPECIFICATIONS",
+        "col_1_header": "",
+        "col_2_header": "",
         "swatches_title": "AVAILABLE COLORS",
         "bg_color": "#fafafa",
         "text_color": "#111111",
@@ -358,8 +368,8 @@
         "header_alignment": "center",
         "title_font_size": 36,
         "box1_badge": "",
-        "box1_video": "shopify://files/videos/Ulticlean.mp4",
         "box1_video_url": "",
+        "box1_image": "shopify://shop_images/ulticlean_cleaning.png",
         "box1_title": "Light & Quick Cleaning Process",
         "box1_description": "",
         "box1_step_1": "",
