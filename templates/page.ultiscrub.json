@@ -240,56 +240,64 @@
           "type": "spec_item",
           "settings": {
             "label": "Construction",
-            "value": "Polypropylene Looped Pile"
+            "value": "Polypropylene Looped Pile",
+            "value_2": ""
           }
         },
         "spec_2": {
           "type": "spec_item",
           "settings": {
             "label": "Height",
-            "value": "9 mm"
+            "value": "9 mm",
+            "value_2": ""
           }
         },
         "spec_3": {
           "type": "spec_item",
           "settings": {
             "label": "Carpet Style",
-            "value": "Tufted loop-pile"
+            "value": "Tufted loop-pile",
+            "value_2": ""
           }
         },
         "spec_4": {
           "type": "spec_item",
           "settings": {
             "label": "Water Retention",
-            "value": "3.20 L/m²"
+            "value": "3.20 L/m²",
+            "value_2": ""
           }
         },
         "spec_5": {
           "type": "spec_item",
           "settings": {
             "label": "Pedestrian annual traffic",
-            "value": "Up to 0.6 Million steps/year"
+            "value": "Up to 0.6 Million steps/year",
+            "value_2": ""
           }
         },
         "spec_6": {
           "type": "spec_item",
           "settings": {
             "label": "Backing",
-            "value": "Prime vinyl"
+            "value": "Prime vinyl",
+            "value_2": ""
           }
         },
         "spec_7": {
           "type": "spec_item",
           "settings": {
             "label": "Border",
-            "value": "12 mm extended vinyl"
+            "value": "12 mm extended vinyl",
+            "value_2": ""
           }
         },
         "spec_8": {
           "type": "spec_item",
           "settings": {
             "label": "Warranty",
-            "value": "12 months"
+            "value": "12 months",
+            "value_2": ""
           }
         },
         "swatch_1": {
@@ -352,6 +360,8 @@
         "layout_position": "specs_first",
         "image": "shopify://shop_images/WhatsApp_Image_2026-09-09_at_9.14.02_PM.jpg",
         "table_title": "SPECIFICATIONS",
+        "col_1_header": "",
+        "col_2_header": "",
         "swatches_title": "AVAILABLE COLORS",
         "bg_color": "#fafafa",
         "text_color": "#111111",
@@ -375,8 +385,8 @@
         "header_alignment": "center",
         "title_font_size": 36,
         "box1_badge": "",
-        "box1_video": "shopify://files/videos/dry cleaning.mp4",
         "box1_video_url": "",
+        "box1_image": "shopify://shop_images/Ultiscrub_cleaning_converted.webp",
         "box1_title": "For Light Cleaning",
         "box1_description": "Dust-off dirt or vacuum regularly to remove collected dirt and debris.",
         "box1_step_1": "",
@@ -463,7 +473,7 @@
         "subtitle": "",
         "title": "Looking to purchase?",
         "title_font_size": 32,
-        "card1_image": "shopify://shop_images/STANDARD_SIZES_1.png",
+        "card1_image": "shopify://shop_images/Ultiscrub_standard_converted.webp",
         "card1_title": "STANDARD SIZES",
         "card1_desc": "Explore available standard-size mats for immediate dispatch and standard entrance dimensions.",
         "card1_product": "ultiscrub-made-to-measure-carpet-mat",
