@@ -230,7 +230,7 @@
           "ulticlean-carpet-mat-1",
           "ultirake-carpet-mat",
           "ultizig-barrier-mat",
-          "ultizig-barrier-mat-with-backing"
+          "ultizig-custom-size-backed-barrier-mat"
         ],
         "columns": 4,
         "font_card_size": 100,
