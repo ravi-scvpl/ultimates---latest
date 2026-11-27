@@ -494,7 +494,7 @@
         "prod_2": {
           "type": "product_item",
           "settings": {
-            "selected_product": "ultiscrub-carpet-mat-1",
+            "selected_product": "ultiscrub-made-to-measure-carpet-mat",
             "custom_title": "",
             "custom_desc": "",
             "custom_url": ""
@@ -588,7 +588,7 @@
         "location_kpDTKR": {
           "type": "location",
           "settings": {
-            "product": "ultiscrub-carpet-mat-1",
+            "product": "ultiscrub-made-to-measure-carpet-mat",
             "url": "",
             "title": "",
             "tag": "",

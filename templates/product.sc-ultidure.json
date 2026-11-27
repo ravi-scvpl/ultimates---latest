@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "wrapper": "div.template-product-wrapper",
   "sections": {
@@ -442,7 +451,7 @@
         "color_text": "primary-text-1",
         "collection": "commercial-floormats",
         "product_list": [
-          "ultiscrub-carpet-mat-1",
+          "ultiscrub-made-to-measure-carpet-mat",
           "ultiwipe",
           "ultimat-heavy-duty-vinyl-looped-matting",
           "ulticlean-carpet-mat-1",
